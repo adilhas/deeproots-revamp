@@ -18,10 +18,12 @@ export default function MobileMenu({
   expandedItems,
   toggleItem,
 }: Props) {
-  if (!isOpen) return null;
-
   return (
-    <div className="p-3 font-orbitron md:hidden absolute min-h-screen top-full left-0 w-full z-40 bg-neutral-300 dark:bg-[#1c1d20] shadow-lg border-t border-gray-200 dark:border-gray-700 transition-all duration-300">
+    <div
+      className={`min-h-screen p-3 font-orbitron md:hidden absolute top-[100%] left-0 w-full z-40 bg-neutral-300 dark:bg-[#1c1d20] shadow-lg border-t border-gray-200 dark:border-gray-700 transform transition-transform duration-300 ${
+        isOpen ? 'translate-x-0' : '-translate-x-full'
+      }`}
+    >
       <div className="flex flex-col">
         <ul className="flex flex-col ">
           {menuSection.map((item) => (
