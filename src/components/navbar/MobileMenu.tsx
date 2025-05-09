@@ -20,7 +20,7 @@ export default function MobileMenu({
 }: Props) {
   return (
     <div
-      className={`min-h-screen p-3 font-orbitron md:hidden absolute top-[100%] left-0 w-full z-40 bg-neutral-300 dark:bg-[#1c1d20] shadow-lg border-t border-gray-200 dark:border-gray-700 transform transition-transform duration-300 ${
+      className={`min-h-screen p-3 font-orbitron md:hidden absolute top-[100%] left-0 w-full z-40 bg-neutral-300 dark:bg-primary-dark shadow-lg border-t border-gray-200 dark:border-gray-700 transform transition-transform duration-300 ${
         isOpen ? 'translate-x-0' : '-translate-x-full'
       }`}
     >
