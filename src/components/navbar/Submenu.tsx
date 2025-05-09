@@ -1,5 +1,6 @@
 import { menuSection } from '@/constants/navitem';
 import { MenuItem, MenuSection } from './types';
+import { BellIcon } from '@heroicons/react/24/outline';
 
 type Props = {
   activeMenu: string | null;
@@ -24,9 +25,18 @@ export default function Submenu({ activeMenu }: Props) {
                   href="#"
                   className="block p-2  dark:hover:bg-neutral-600 hover:bg-neutral-50   rounded transition-colors"
                 >
-                  <div className="text-md font-semibold">{subitem.title}</div>
-                  <div className="text-sm light:text-neutral-400">
-                    {subitem.description}
+                  <div className="flex">
+                    <div className=" p-1 rounded self-center m-3">
+                      <BellIcon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-md font-semibold">
+                        {subitem.title}
+                      </div>
+                      <div className="text-sm light:text-neutral-400">
+                        {subitem.description}
+                      </div>
+                    </div>
                   </div>
                 </a>
               ))}

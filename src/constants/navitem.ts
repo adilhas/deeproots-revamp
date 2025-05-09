@@ -1,4 +1,17 @@
 import { MenuSection } from '@/components/navbar/types';
+import {
+  BriefcaseIcon,
+  CpuChipIcon,
+  DocumentCheckIcon,
+  FolderMinusIcon,
+  InboxArrowDownIcon,
+  MapIcon,
+  PuzzlePieceIcon,
+  ShareIcon,
+  ShieldCheckIcon,
+  UsersIcon,
+  WalletIcon,
+} from '@heroicons/react/24/outline';
 
 export const menuSection: MenuSection[] = [
   {
@@ -7,32 +20,32 @@ export const menuSection: MenuSection[] = [
       {
         title: 'Overview of Deep Roots',
         description: 'Deep Roots Overview.',
-        icon: '',
+        icon: UsersIcon,
       },
       {
         title: 'The Address Wallet – Your Earning Machine',
         description: 'Learn how to earn with The Address Wallet.',
-        icon: '',
+        icon: WalletIcon,
       },
       {
         title: 'The Foundation Seat Member',
         description: 'Be Part of the Foundation.',
-        icon: '',
+        icon: ShieldCheckIcon,
       },
       {
         title: 'White Paper',
         description: "Explore DeWorld's white paper.",
-        icon: '',
+        icon: ShareIcon,
       },
       {
         title: 'Roadmap',
         description: "Check out DeWorld's roadmap.",
-        icon: '',
+        icon: MapIcon,
       },
       {
         title: 'How to Get Started (Guides for New Users & Investors)',
         description: 'Guides for beginners and investors.',
-        icon: '',
+        icon: BriefcaseIcon,
       },
     ],
   },
@@ -42,28 +55,28 @@ export const menuSection: MenuSection[] = [
       {
         title: 'Truly Dynamic Blockchain',
         description: 'The Next-Gen Blockchain.',
-        icon: '',
+        icon: CpuChipIcon,
       },
       {
         title: 'Transforming Real-World Assets into Digital Value.',
         description: 'Explore digitized real assets.',
-        icon: '',
+        icon: DocumentCheckIcon,
       },
       {
         title: 'InnoFi: Milestone Vote Hub for DeWorld Funding',
         description: 'Vote for DeWorld funding milestones.',
-        icon: '',
+        icon: InboxArrowDownIcon,
       },
       {
         title:
           'MetaFabric: From Blockchain to Runway – Your Style, Your NFT DeWorld',
         description: 'Customize your style with MetaFabric NFTs.',
-        icon: '',
+        icon: PuzzlePieceIcon,
       },
       {
         title: 'RootOpia: Where the Biggest Pool Race Meets DeWorld Gaming',
         description: 'Join the pool race in DeWorld Gaming.',
-        icon: '',
+        icon: FolderMinusIcon,
       },
       {
         title:
