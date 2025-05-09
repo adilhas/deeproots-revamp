@@ -1,11 +1,10 @@
-import AuthGuard from '@/components/AuthGuard';
+import Navbar from '@/components/Navbar';
 
 export default function Home() {
   return (
-    <AuthGuard>
-      <div>
-        <h1 className="text-5xl font-orbitron">Hello World</h1>
-      </div>
-    </AuthGuard>
+    <div>
+      <Navbar />
+      <h1 className="text-5xl">Hello World</h1>
+    </div>
   );
 }
