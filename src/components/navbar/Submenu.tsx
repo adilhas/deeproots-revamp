@@ -12,7 +12,7 @@ export default function Submenu({ activeMenu }: Props) {
 
   return (
     <div
-      className={`overflow-hidden transition-all duration-500 ease-in-out ${activeMenu ? 'max-h-96' : 'max-h-0'}`}
+      className={`mx-4 overflow-hidden transition-all duration-500 ease-in-out ${activeMenu ? 'max-h-96' : 'max-h-0'}`}
     >
       {activeMenu && current && (
         <div className="w-full">
@@ -22,9 +22,12 @@ export default function Submenu({ activeMenu }: Props) {
                 <a
                   key={subitem.title}
                   href="#"
-                  className="block p-2 hover:bg-neutral-600  rounded transition-colors"
+                  className="block p-2  dark:hover:bg-neutral-600 hover:bg-neutral-50   rounded transition-colors"
                 >
-                  {subitem.title}
+                  <div className="text-md font-semibold">{subitem.title}</div>
+                  <div className="text-sm light:text-neutral-400">
+                    {subitem.description}
+                  </div>
                 </a>
               ))}
             </div>
