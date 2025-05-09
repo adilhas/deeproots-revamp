@@ -5,7 +5,7 @@ import {
   ChevronDownIcon,
   BellIcon,
 } from '@heroicons/react/24/outline';
-import { menuSection } from '@/constants/navitem';
+import { menuSection } from '@/constants/sectionData';
 
 type Props = {
   isOpen: boolean;

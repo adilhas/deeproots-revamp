@@ -1,4 +1,4 @@
-import { menuSection } from '@/constants/navitem';
+import { menuSection } from '@/constants/sectionData';
 import { MenuItem, MenuSection } from './types';
 import { BellIcon } from '@heroicons/react/24/outline';
 
