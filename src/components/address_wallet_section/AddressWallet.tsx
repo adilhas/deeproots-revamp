@@ -78,11 +78,11 @@ const AddressWallet = () => {
         </div>
 
         {/* Desktop Image */}
-        <div className="hidden lg:flex w-[600px] xl:w-[700px] mr-20">
+        <div className="hidden lg:flex w-full">
           <Image
             src="/landing/address-wallet.jpeg"
             alt="Desktop Wallet"
-            width={700}
+            width={600}
             height={437}
             className="rounded-2xl"
             priority
