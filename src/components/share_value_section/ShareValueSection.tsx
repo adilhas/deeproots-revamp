@@ -24,7 +24,7 @@ const ShareValueSection = () => {
         </div>
 
         {/* Image */}
-        <div className="inline-block my-2">
+        <div className="inline-block">
           <div className="relative w-full lg:w-[600px] rounded-2xl overflow-hidden">
             <Image
               src="/landing/share-value.webp"
@@ -43,18 +43,18 @@ const ShareValueSection = () => {
           {/* Desktop Header */}
           <div className="lg:flex justify-center items-start hidden mb-4 flex-col">
             <div className="inline-block">
-              <di h-fitv>
+              <div>
                 <h1 className="font-extrabold text-2xl lg:text-4xl font-orbitron bg-gradient-to-r from-[#E07C76] to-[#52b797] bg-clip-text text-transparent">
                   SHARE VALUE
                 </h1>
-              </di>
+              </div>
             </div>
             <div className="inline-block">
-              <di h-fitv>
+              <div>
                 <h1 className="font-bold text-xl mt-3 font-orbitron bg-gradient-to-r from-[#E07C76] to-[#52b797] bg-clip-text text-transparent">
                   Learn, Create, Innovate – A DeWorld Education Hub
                 </h1>
-              </di>
+              </div>
             </div>
           </div>
 
