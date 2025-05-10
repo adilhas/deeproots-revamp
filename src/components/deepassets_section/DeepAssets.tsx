@@ -70,8 +70,8 @@ const DeepAssets = () => {
             src="/landing/deep-assets.jpeg"
             alt="desktop Asset visual large"
             className="rounded-2xl object-cover"
-            width={1200} // Set an arbitrary width (based on the original image size)
-            height={800} // Set an arbitrary height (based on the original image size)
+            width={1200}
+            height={800}
             layout="intrinsic"
           />
         </div>

@@ -4,6 +4,7 @@ import UseCases from '@/components/deeproots_usecases/Usecases';
 import Features from '@/components/features/Features';
 import Hero from '@/components/hero/Hero';
 import Navbar from '@/components/navbar/Navbar';
+import ShareValueSection from '@/components/share_value_section/ShareValueSection';
 import Telexcoin from '@/components/telexcoin_section/Telexcoin';
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <Telexcoin />
       <DeepAssets />
       <UseCases />
+      <ShareValueSection />
     </div>
   );
 }

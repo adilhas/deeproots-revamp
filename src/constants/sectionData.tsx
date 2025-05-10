@@ -325,11 +325,11 @@ export const useCasesData = [
     description: 'Lightning-fast execution.',
     icon: (
       <svg
+        className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
         stroke="currentColor"
         fill="currentColor"
         strokeWidth="0"
         viewBox="0 0 512 512"
-        className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
         height="1em"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
@@ -343,11 +343,11 @@ export const useCasesData = [
     description: 'Trade fractional real-world assets.',
     icon: (
       <svg
+        className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
         stroke="currentColor"
         fill="currentColor"
         strokeWidth="0"
         viewBox="0 0 512 512"
-        className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
         height="1em"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
@@ -361,6 +361,7 @@ export const useCasesData = [
     description: 'Micro-payments with minimal fees.',
     icon: (
       <svg
+        className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
         stroke="currentColor"
         fill="currentColor"
         strokeWidth="0"
@@ -378,11 +379,11 @@ export const useCasesData = [
     description: 'Borderless, scalable, and adaptable.',
     icon: (
       <svg
+        className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
         stroke="currentColor"
         fill="currentColor"
         strokeWidth="0"
         viewBox="0 0 512 512"
-        className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
         height="1em"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
@@ -396,6 +397,7 @@ export const useCasesData = [
     description: 'Elevating blockchain gaming.',
     icon: (
       <svg
+        className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
         stroke="currentColor"
         fill="currentColor"
         strokeWidth="0"
@@ -413,11 +415,11 @@ export const useCasesData = [
     description: 'Fueling ecosystem growth.',
     icon: (
       <svg
+        className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
         stroke="currentColor"
         fill="currentColor"
         strokeWidth="0"
         viewBox="0 0 512 512"
-        className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
         height="1em"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
@@ -431,6 +433,7 @@ export const useCasesData = [
     description: 'Earn by expanding the network.',
     icon: (
       <svg
+        className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
         stroke="currentColor"
         fill="currentColor"
         strokeWidth="0"
@@ -448,11 +451,11 @@ export const useCasesData = [
     description: 'Manage DRC, RWA & more.',
     icon: (
       <svg
+        className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
         stroke="currentColor"
         fill="currentColor"
         strokeWidth="0"
         viewBox="0 0 512 512"
-        className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
         height="1em"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
@@ -466,11 +469,11 @@ export const useCasesData = [
     description: 'Exclusive access & governance.',
     icon: (
       <svg
+        className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
         stroke="currentColor"
         fill="currentColor"
         strokeWidth="0"
         viewBox="0 0 512 512"
-        className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
         height="1em"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
@@ -484,6 +487,7 @@ export const useCasesData = [
     description: 'Fast, low-cost global transfers.',
     icon: (
       <svg
+        className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
         stroke="currentColor"
         fill="currentColor"
         strokeWidth="0"
@@ -501,6 +505,7 @@ export const useCasesData = [
     description: 'Learning, AI solutions, and tools.',
     icon: (
       <svg
+        className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
         stroke="currentColor"
         fill="currentColor"
         strokeWidth="0"
@@ -518,11 +523,11 @@ export const useCasesData = [
     description: 'Digital art, trends, and style.',
     icon: (
       <svg
+        className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
         stroke="currentColor"
         fill="currentColor"
         strokeWidth="0"
         viewBox="0 0 512 512"
-        className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
         height="1em"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
@@ -536,6 +541,7 @@ export const useCasesData = [
     description: 'Web3 discussions and insights.',
     icon: (
       <svg
+        className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
         stroke="currentColor"
         fill="currentColor"
         strokeWidth="0"
@@ -553,6 +559,7 @@ export const useCasesData = [
     description: 'Tech, creativity, and growth.',
     icon: (
       <svg
+        className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
         stroke="currentColor"
         fill="currentColor"
         strokeWidth="0"
@@ -570,6 +577,7 @@ export const useCasesData = [
     description: 'Support, invest, and decide',
     icon: (
       <svg
+        className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
         stroke="currentColor"
         fill="none"
         strokeWidth="2"
