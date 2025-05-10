@@ -14,3 +14,17 @@
 .animate-fade-in {
   animation: fade-in 0.5s forwards;
 }
+
+.usecases-scroll {
+  animation: scroll-x 30s linear infinite;
+  width: max-content;
+}
+
+@keyframes scroll-x {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

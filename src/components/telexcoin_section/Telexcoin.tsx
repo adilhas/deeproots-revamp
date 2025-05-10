@@ -10,8 +10,8 @@ const Telexcoin = () => {
             <Image
               src="/landing/telexcoin.jpeg"
               alt="TeleXcoin DeX"
-              width={700} // adjust based on your original image size
-              height={437} // maintain aspect ratio
+              width={700}
+              height={437}
               className="rounded-2xl"
               priority
             />
