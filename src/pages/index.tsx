@@ -1,3 +1,4 @@
+import AboutSection from '@/components/about_section/AboutSection';
 import AddressWallet from '@/components/address_wallet_section/AddressWallet';
 import ComparisonSection from '@/components/comparison_section/ComparisionSection';
 import CryptoFlowSection from '@/components/crypto_flow_section/CryptoFlowSection';
@@ -10,6 +11,7 @@ import InnofiSection from '@/components/innofi_section/InnofiSection';
 import InnolaunchSection from '@/components/innolaunch_section/InnoLaunchSection';
 import MetaFabricSection from '@/components/metafabric_section/MetaFabric';
 import Navbar from '@/components/navbar/Navbar';
+import PodcastSection from '@/components/podcast_section/PodcastSection';
 import RootopiaRace from '@/components/rootopia_race_section/RootopiaRace';
 import ShareValueSection from '@/components/share_value_section/ShareValueSection';
 import Telexcoin from '@/components/telexcoin_section/Telexcoin';
@@ -32,6 +34,8 @@ export default function Home() {
       <RootopiaRace />
       <ComparisonSection />
       <FoundationSeatsSection />
+      <AboutSection />
+      <PodcastSection />
     </div>
   );
 }

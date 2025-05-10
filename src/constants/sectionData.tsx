@@ -820,3 +820,28 @@ export const foundationSeatsFeatures = [
     description: 'Unlock staking, launchpad, and ecosystem updates.',
   },
 ];
+
+export const aboutItems = [
+  {
+    question: 'Understand DeepRoots',
+    answer: 'Introduction to the platform mission...',
+  },
+  { question: 'What is DeepRoots?', answer: 'Overview of the ecosystem...' },
+  {
+    question: 'What is the Address Wallet?',
+    answer: 'Explanation of wallet functionality...',
+  },
+  { question: 'What is TelexCoin?', answer: 'Details on the currency...' },
+  {
+    question: 'How to Start with DeepRoots',
+    answer: 'Step by step guide to getting started...',
+  },
+  {
+    question: 'DeepRoots Whitepaper',
+    answer: 'Link to platform whitepaper...',
+  },
+  {
+    question: 'DeepRoots Roadmap',
+    answer: 'Showcase the platform future goals...',
+  },
+];
