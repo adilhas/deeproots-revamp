@@ -6,6 +6,18 @@ import {
   ShieldCheck,
   Smartphone,
   Sparkles,
+  SlidersVertical,
+  ShieldAlert,
+  DollarSign,
+  BadgeX,
+  Hourglass,
+  Lock,
+  Globe,
+  Zap,
+  Eye,
+  Link,
+  Handshake,
+  RefreshCcw,
 } from 'lucide-react';
 
 import {
@@ -748,4 +760,24 @@ export const metafabricFeatures = [
     icon: <Sparkles className="text-red-500 w-12 h-12 mr-3" />,
     text: 'Lifestyle Redefined: Wear your creativity and show off your digital art in the real world.',
   },
+];
+
+export const centralizedFeatures = [
+  { icon: <SlidersVertical />, label: 'Controlled' },
+  { icon: <ShieldAlert />, label: 'Limited' },
+  { icon: <DollarSign />, label: 'Risky' },
+  { icon: <BadgeX />, label: 'Corruptible' },
+  { icon: <DollarSign />, label: 'Expensive' },
+  { icon: <Hourglass />, label: 'Inefficient' },
+  { icon: <Lock />, label: 'Exclusive' },
+];
+
+export const decentralizedFeatures = [
+  { icon: <Zap />, label: 'Empowered' },
+  { icon: <Eye />, label: 'Transparent' },
+  { icon: <Lock />, label: 'Secure' },
+  { icon: <Link />, label: 'Trustless' },
+  { icon: <Globe />, label: 'Global' },
+  { icon: <Handshake />, label: 'Inclusive' },
+  { icon: <RefreshCcw />, label: 'Resilient' },
 ];
