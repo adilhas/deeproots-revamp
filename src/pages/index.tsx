@@ -3,6 +3,9 @@ import DeepAssets from '@/components/deepassets_section/DeepAssets';
 import UseCases from '@/components/deeproots_usecases/Usecases';
 import Features from '@/components/features/Features';
 import Hero from '@/components/hero/Hero';
+import InnofiSection from '@/components/innofi_section/InnofiSection';
+import InnolaunchSection from '@/components/innolaunch_section/InnoLaunchSection';
+import MetaFabricSection from '@/components/metafabric_section/MetaFabric';
 import Navbar from '@/components/navbar/Navbar';
 import ShareValueSection from '@/components/share_value_section/ShareValueSection';
 import Telexcoin from '@/components/telexcoin_section/Telexcoin';
@@ -18,6 +21,9 @@ export default function Home() {
       <DeepAssets />
       <UseCases />
       <ShareValueSection />
+      <InnofiSection />
+      <InnolaunchSection />
+      <MetaFabricSection />
     </div>
   );
 }
