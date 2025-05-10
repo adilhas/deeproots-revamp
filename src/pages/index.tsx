@@ -1,4 +1,5 @@
 import AddressWallet from '@/components/address_wallet_section/AddressWallet';
+import CryptoFlowSection from '@/components/crypto_flow_section/CryptoFlowSection';
 import DeepAssets from '@/components/deepassets_section/DeepAssets';
 import UseCases from '@/components/deeproots_usecases/Usecases';
 import Features from '@/components/features/Features';
@@ -24,6 +25,7 @@ export default function Home() {
       <InnofiSection />
       <InnolaunchSection />
       <MetaFabricSection />
+      <CryptoFlowSection />
     </div>
   );
 }
