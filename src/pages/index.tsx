@@ -4,6 +4,7 @@ import CryptoFlowSection from '@/components/crypto_flow_section/CryptoFlowSectio
 import DeepAssets from '@/components/deepassets_section/DeepAssets';
 import UseCases from '@/components/deeproots_usecases/Usecases';
 import Features from '@/components/features/Features';
+import FoundationSeatsSection from '@/components/foundation_seats/FoundationSeatsSection';
 import Hero from '@/components/hero/Hero';
 import InnofiSection from '@/components/innofi_section/InnofiSection';
 import InnolaunchSection from '@/components/innolaunch_section/InnoLaunchSection';
@@ -30,6 +31,7 @@ export default function Home() {
       <CryptoFlowSection />
       <RootopiaRace />
       <ComparisonSection />
+      <FoundationSeatsSection />
     </div>
   );
 }

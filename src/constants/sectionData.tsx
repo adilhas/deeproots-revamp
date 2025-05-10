@@ -18,6 +18,12 @@ import {
   Link,
   Handshake,
   RefreshCcw,
+  Wand,
+  PiggyBank,
+  Users,
+  Clock3,
+  Gamepad2,
+  Wallet,
 } from 'lucide-react';
 
 import {
@@ -780,4 +786,37 @@ export const decentralizedFeatures = [
   { icon: <Globe />, label: 'Global' },
   { icon: <Handshake />, label: 'Inclusive' },
   { icon: <RefreshCcw />, label: 'Resilient' },
+];
+
+export const foundationSeatsFeatures = [
+  {
+    icon: <Wand size={40} className="text-[#0085a5]" />,
+    title: 'Earn from Every Project',
+    description: 'Get a percentage of all new projects.',
+  },
+  {
+    icon: <PiggyBank size={40} className="text-[#0085a5]" />,
+    title: 'Passive Rewards (12%)',
+    description: 'Automatically earn ecosystem rewards.',
+  },
+  {
+    icon: <Users size={40} className="text-[#0085a5]" />,
+    title: 'Referral Rewards',
+    description: 'Earn by inviting users to join with multi-user referrals.',
+  },
+  {
+    icon: <Clock3 size={40} className="text-[#0085a5]" />,
+    title: 'Early Access',
+    description: 'Exclusive whitelist and private project opportunities.',
+  },
+  {
+    icon: <Gamepad2 size={40} className="text-[#0085a5]" />,
+    title: 'RootOpia Game',
+    description: 'Play and win BIG blockchain rewards.',
+  },
+  {
+    icon: <Wallet size={40} className="text-[#0085a5]" />,
+    title: 'Full Wallet Access',
+    description: 'Unlock staking, launchpad, and ecosystem updates.',
+  },
 ];
