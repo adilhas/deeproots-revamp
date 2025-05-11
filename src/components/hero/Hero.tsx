@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <main
       id="home"
-      className="dark:bg-primary-dark dark:text-white flex justify-center z-10 relative flex-col lg:scale-x-105 md:mt-[88px] mt-[70px] lg:mt-[93px] items-center mb-20"
+      className="dark:bg-primary-dark dark:text-white flex justify-center z-10 relative flex-col lg:scale-x-105  items-center mb-20"
     >
       {/* Banner Image */}
       <div
