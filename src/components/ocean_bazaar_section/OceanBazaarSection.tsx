@@ -3,25 +3,27 @@ import Link from 'next/link';
 
 export default function OceanBazaarSection() {
   return (
-    <section className="font-orbitron bg-gradient-to-br from-[#0C1F2E] to-[#112D3C] dark:from-[#0C1F2E] dark:to-[#112D3C] text-white px-6 py-16 lg:py-24">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Image First on Mobile, Second on Desktop */}
-        <div className="relative w-full h-96 lg:h-[500px] order-1 md:order-2">
-          <Image
-            src="/landing/ocean-bazaar.png"
-            alt="Ocean Bazaar Landing"
-            layout="fill"
-            objectFit="contain"
-            className="rounded-xl"
-            priority
-          />
-        </div>
-
-        {/* Content Second on Mobile, First on Desktop */}
-        <div className="order-2 md:order-1">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-[#28BDBD]">
+    <section className=" bg-gradient-to-br from-[#0C1F2E] to-[#112D3C] dark:from-[#0C1F2E] dark:to-[#112D3C] text-white px-6 py-16 lg:py-24">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Content - First on Mobile, First on Desktop */}
+        <div className="order-1 lg:order-1">
+          <h2 className="font-orbitron text-4xl lg:text-5xl font-bold mb-6 text-[#28BDBD]">
             Ocean Bazaar – The NFT Marketplace
           </h2>
+
+          {/* Mobile Image - Hidden on Desktop */}
+          <div className="w-full my-6 lg:hidden">
+            <Image
+              src="/landing/ocean-bazaar.png"
+              alt="Ocean Bazaar Landing"
+              className="rounded-xl shadow-lg"
+              width={800}
+              height={500}
+              layout="responsive"
+              priority
+            />
+          </div>
+
           <p className="text-lg mb-8 text-gray-200 dark:text-gray-300">
             Explore & Collect NFTs
           </p>
@@ -58,9 +60,22 @@ export default function OceanBazaarSection() {
               contracts.
             </li>
           </ul>
-          <button className="text-white mt-6 px-6 py-2 bg-gradient-to-l  from-[#1bc1ff] to-[#006eff] rounded-lg border-2 border-transparent hover:border-[#0ff0fc] hover:bg-none font-bold transition">
+          <button className="text-white mt-6 px-6 py-2 bg-gradient-to-l from-[#1bc1ff] to-[#006eff] rounded-lg border-2 border-transparent hover:border-[#0ff0fc] hover:bg-none font-bold transition">
             <Link href="http://oceanbazaar.earth/">Explore Ocean Bazaar</Link>
           </button>
+        </div>
+
+        {/* Desktop Image - Hidden on Mobile */}
+        <div className="w-full lg:w-[40vw] hidden lg:inline-block order-2 lg:order-2">
+          <Image
+            src="/landing/ocean-bazaar.png"
+            alt="Ocean Bazaar Landing"
+            className="rounded-xl shadow-lg"
+            width={1200}
+            height={800}
+            layout="responsive"
+            priority
+          />
         </div>
       </div>
     </section>

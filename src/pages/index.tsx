@@ -16,7 +16,9 @@ import MetaFabricSection from '@/components/metafabric_section/MetaFabric';
 import Navbar from '@/components/navbar/Navbar';
 import OceanBazaarSection from '@/components/ocean_bazaar_section/OceanBazaarSection';
 import PodcastSection from '@/components/podcast_section/PodcastSection';
+import RootChatSection from '@/components/rootchat_section/RootchatSection';
 import RootopiaRace from '@/components/rootopia_race_section/RootopiaRace';
+import RootscanSection from '@/components/rootscan_section/RootscanSection';
 import ShareValueSection from '@/components/share_value_section/ShareValueSection';
 import SocialLinks from '@/components/social_links_section/SocialLinks';
 import Telexcoin from '@/components/telexcoin_section/Telexcoin';
@@ -40,9 +42,11 @@ export default function Home() {
       <CryptoFlowSection />
       <GivefiSection />
       <RootopiaRace />
+      <RootscanSection />
       <ComparisonSection />
       <FoundationSeatsSection />
       <AboutSection />
+      <RootChatSection />
       <PodcastSection />
       <SocialLinks />
       <Footer />

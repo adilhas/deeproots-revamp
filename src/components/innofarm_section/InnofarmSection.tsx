@@ -3,26 +3,31 @@ import Link from 'next/link';
 
 export default function InnofarmSection() {
   return (
-    <section className="relative light:bg-white font-orbitron flex flex-col md:flex-row items-center justify-between gap-8 px-6 py-16 max-w-7xl mx-auto">
-      <div className="w-full md:w-1/2">
-        <Image
-          src="/landing/innofarm.png"
-          alt="InnoFarm Illustration"
-          width={600}
-          height={400}
-          className="w-full h-auto rounded-xl object-contain shadow-lg"
-          priority
-        />
-      </div>
+    <section className="relative light:bg-white  flex flex-col lg:flex-row items-center justify-between gap-8 px-6 py-16 max-w-7xl mx-auto">
+      {/* Mobile Image - Full width */}
+
+      {/* Gradient blurs */}
       <div className="w-60 h-60 top-32 left-12 blur-[350px] md:blur-[350px] bg-[#00ff94] rounded-full absolute" />
       <div className="w-60 h-60 bottom-32 right-12 blur-[350px] md:blur-[350px] bg-[#0ff0fc] rounded-full absolute" />
 
-      <div className="w-full md:w-1/2 space-y-6">
-        <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r text-transparent bg-clip-text dark:from-[#0ff0fc] dark:to-[#00ff94] from-[#005258] to-[#007a4d]">
+      {/* Content */}
+      <div className="w-full lg:w-[40vw] space-y-6">
+        <h2 className="font-orbitron text-3xl lg:text-5xl font-bold bg-gradient-to-r text-transparent bg-clip-text dark:from-[#0ff0fc] dark:to-[#00ff94] from-[#005258] to-[#007a4d]">
           InnoFarm – The Web3 Job Marketplace
         </h2>
+        <div className="w-full lg:hidden">
+          <Image
+            src="/landing/innofarm.png"
+            alt="InnoFarm Illustration"
+            width={1200}
+            height={800}
+            className="rounded-xl shadow-lg"
+            layout="responsive"
+            priority
+          />
+        </div>
 
-        <div className="space-y-4 text-gray-700 dark:text-gray-300 text-base md:text-lg">
+        <div className="space-y-4 text-gray-700 dark:text-gray-300 text-base lg:text-lg">
           <div>
             <h3 className="font-semibold text-gray-900 dark:text-white">
               Decentralized Hiring
@@ -63,6 +68,19 @@ export default function InnofarmSection() {
             <Link href="https://innofarm.earth/">Explore Innofarm</Link>
           </button>
         </div>
+      </div>
+
+      {/* Desktop Image - 60vw width */}
+      <div className="w-[40vw] hidden lg:block">
+        <Image
+          src="/landing/innofarm.png"
+          alt="InnoFarm Illustration"
+          width={1200}
+          height={800}
+          className="rounded-xl shadow-lg"
+          layout="responsive"
+          priority
+        />
       </div>
     </section>
   );

@@ -3,9 +3,9 @@ import Image from 'next/image';
 export default function GivefiSection() {
   return (
     <section className="bg-gradient-to-br from-[#F5EDFF] to-[#E8E9FF] dark:from-[#1F1A2B] dark:to-[#2C2C3F] text-gray-900 dark:text-white px-6 py-16 lg:py-24">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl text-center lg:text-left mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 className="text-center lg:text-left text-4xl lg:text-5xl font-bold mb-6 text-[#A66EFF] dark:text-[#B084FF]">
+          <h2 className="font-orbitron text-center lg:text-left text-4xl lg:text-5xl font-bold mb-6 text-[#A66EFF] dark:text-[#B084FF]">
             GIVEFI
           </h2>
           <div className="relative w-full h-80 lg:h-[400px] rounded-lg inline-block lg:hidden">
