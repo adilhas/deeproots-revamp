@@ -56,7 +56,7 @@ export default function SignIn() {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
-              className="p-2 mb-4 w-full rounded dark:bg-neutral-700 dark:text-white"
+              className="p-2 mb-4 w-full rounded bg-neutral-700 text-white"
             />
             <input
               type="password"
@@ -65,7 +65,7 @@ export default function SignIn() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="p-2 mb-4 w-full rounded dark:bg-neutral-700 dark:text-white"
+              className="p-2 mb-4 w-full rounded bg-neutral-700 text-white"
             />
             <button
               type="submit"
