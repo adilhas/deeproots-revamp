@@ -13,7 +13,7 @@ export default function Submenu({ activeMenu }: Props) {
 
   return (
     <div
-      className={`mx-4 overflow-hidden transition-all duration-500 ease-in-out ${activeMenu ? 'max-h-96' : 'max-h-0'}`}
+      className={`shadow-md mx-4 overflow-hidden transition-all duration-500 ease-in-out ${activeMenu ? 'max-h-96' : 'max-h-0'}`}
     >
       {activeMenu && current && (
         <div className="w-full">

@@ -7,11 +7,14 @@ import UseCases from '@/components/deeproots_usecases/Usecases';
 import Features from '@/components/features/Features';
 import Footer from '@/components/footer/Footer';
 import FoundationSeatsSection from '@/components/foundation_seats/FoundationSeatsSection';
+import GivefiSection from '@/components/givefi_section/GivefiSection';
 import Hero from '@/components/hero/Hero';
+import InnofarmSection from '@/components/innofarm_section/InnofarmSection';
 import InnofiSection from '@/components/innofi_section/InnofiSection';
 import InnolaunchSection from '@/components/innolaunch_section/InnoLaunchSection';
 import MetaFabricSection from '@/components/metafabric_section/MetaFabric';
 import Navbar from '@/components/navbar/Navbar';
+import OceanBazaarSection from '@/components/ocean_bazaar_section/OceanBazaarSection';
 import PodcastSection from '@/components/podcast_section/PodcastSection';
 import RootopiaRace from '@/components/rootopia_race_section/RootopiaRace';
 import ShareValueSection from '@/components/share_value_section/ShareValueSection';
@@ -31,8 +34,11 @@ export default function Home() {
       <ShareValueSection />
       <InnofiSection />
       <InnolaunchSection />
+      <InnofarmSection />
       <MetaFabricSection />
+      <OceanBazaarSection />
       <CryptoFlowSection />
+      <GivefiSection />
       <RootopiaRace />
       <ComparisonSection />
       <FoundationSeatsSection />

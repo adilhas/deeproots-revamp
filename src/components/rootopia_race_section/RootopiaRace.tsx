@@ -3,10 +3,10 @@ import Image from 'next/image';
 
 const RootopiaRace = () => {
   return (
-    <main className="my-20 relative bg-neutral-400 dark:bg-neutral-950 p-10">
+    <main className=" relative bg-neutral-400 dark:bg-neutral-950 px-10 py-20">
       <div className="flex justify-center flex-row items-center w-full"></div>
 
-      <div className="flex justify-center flex-col lg:flex-row rounded-2xl items-center w-full">
+      <div className="flex justify-center flex-col lg:flex-row rounded-2xl items-center ">
         <div className="inline-block" style={{ opacity: 1, transform: 'none' }}>
           <div className="w-full lg:flex hidden">
             <Image
@@ -20,7 +20,7 @@ const RootopiaRace = () => {
           </div>
         </div>
 
-        <div className="flex justify-center lg:ml-32 items-start w-full flex-col ">
+        <div className="flex justify-center lg:ml-32 items-start flex-col lg:w-1/2">
           <div className="w-full mx-auto">
             <div className="mt-6 ">
               <h1 className="font-extrabold text-2xl text-center lg:text-start lg:text-4xl mb-10 lg:leading-normal bg-gradient-to-r from-[#0085a8] to-[#a45204] bg-clip-text font-orbitron text-transparent">
@@ -52,7 +52,7 @@ const RootopiaRace = () => {
           </p>
 
           <div className="flex justify-center lg:mt-6 items-center flex-col md:flex-row">
-            <button className="cursor-pointer mt-6 lg:mt-10 mr-6 px-6 font-orbitron py-3 text-center border-2 dark:border-[#0085a8] border-[#0085a8] hover:scale-105 hover:text-[#0085a8] transition-all hover:ease-in-out text-white rounded-lg text-lg tracking-wider">
+            <button className="cursor-pointer mt-6 lg:mt-10 mr-6 px-6 font-orbitron py-3 text-center border-2 dark:border-[#0085a8] border-[#0085a8] hover:scale-105 hover:text-[#0085a8] transition-all hover:ease-in-out light:text-primary-dark dark:text-white rounded-lg text-lg tracking-wider">
               Play Now
             </button>
           </div>

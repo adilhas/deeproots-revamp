@@ -56,7 +56,7 @@ const AddressWallet = () => {
           {/* Description */}
           <p className="font-sans mt-5 lg:w-[500px] md:w-[70vw]">
             <span className="font-orbitron mb-5 font-bold">
-              Warp Around Wealth - 9 Layers of Dynamic Finance.
+              Warp Around Wealth - 21 Layers of Dynamic Finance.
             </span>
           </p>
           <p className="font-sans my-3">
