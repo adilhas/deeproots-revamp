@@ -27,7 +27,6 @@ import {
   GraduationCap,
   FlaskConical,
   Fingerprint,
-  Share2,
 } from 'lucide-react';
 
 import {
@@ -854,7 +853,7 @@ export const aboutItems = [
 export const footerLinks: IFooter[] = [
   {
     title: 'RootAcademy',
-    icon: <GraduationCap color="#34D399" size={32} />,
+    icon: <GraduationCap color="#34D399" size={38} />,
     links: [
       { label: 'What is Deep Roots?', href: '#' },
       { label: 'What is DRC? (Native currency)', href: '#' },
@@ -870,7 +869,7 @@ export const footerLinks: IFooter[] = [
   },
   {
     title: 'RootLab',
-    icon: <FlaskConical color="#60A5FA" size={32} />,
+    icon: <FlaskConical color="#60A5FA" size={38} />,
     links: [
       { label: 'Movement', href: '#' },
       { label: 'SEEDING', href: '#' },
@@ -885,7 +884,7 @@ export const footerLinks: IFooter[] = [
   },
   {
     title: 'DeWorld',
-    icon: <Globe color="#ad1aaf" size={32} />,
+    icon: <Globe color="#ad1aaf" size={38} />,
     links: [
       { label: 'The Address', href: '#' },
       { label: 'TeleXcoin', href: '#' },
@@ -901,7 +900,7 @@ export const footerLinks: IFooter[] = [
   },
   {
     title: 'RootIdentity',
-    icon: <Fingerprint color="#F87171" size={32} />,
+    icon: <Fingerprint color="#F87171" size={38} />,
     links: [
       { label: 'DeFi', href: '#' },
       { label: 'RWA', href: '#' },
@@ -917,7 +916,7 @@ export const footerLinks: IFooter[] = [
   },
   {
     title: 'RootConnect',
-    icon: <Share2 color="#FBBF24" size={32} />,
+    icon: <Link color="#FBBF24" size={38} />,
     links: [
       { label: 'Social Media', href: '#' },
       { label: 'Deep Roots Events', href: '#' },

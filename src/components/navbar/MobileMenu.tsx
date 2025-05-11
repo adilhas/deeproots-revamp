@@ -43,7 +43,7 @@ export default function MobileMenu({
 
               {/* Conditionally render dropdown */}
               {expandedItems[item.name] && (
-                <div className="transition-all duration-300 ease-in-out mt-2">
+                <div className="overflow-y-auto transition-all duration-300 ease-in-out mt-2">
                   <ul className="pb-2 pl-8 pr-4">
                     {item.subitems.map((subitem, index) => (
                       <li key={index}>

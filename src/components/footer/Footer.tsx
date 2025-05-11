@@ -26,10 +26,10 @@ const Footer: React.FC = () => {
             className="flex justify-center flex-col md:items-start items-center"
           >
             <div className="flex justify-center items-center my-5 gap-2">
-              {section.icon}
-              <h3 className="font-semibold font-orbitron md:text-[16px] lg:text-lg text-lg mb-2">
+              <div className="self-center">{section.icon}</div>
+              <div className="font-semibold font-orbitron md:text-[16px] lg:text-lg text-lg self-center">
                 {section.title}
-              </h3>
+              </div>
             </div>
             <ul className="space-y-4 text-center md:text-left text-sm">
               {section.links.map((link, linkIdx) => (
