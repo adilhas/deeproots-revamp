@@ -17,7 +17,7 @@ export default function InnofarmSection() {
         </h2>
         <div className="w-full lg:hidden">
           <Image
-            src="/landing/Innofarm.png"
+            src="/landing/innofarm.png"
             alt="InnoFarm Illustration"
             width={1200}
             height={800}
@@ -73,7 +73,7 @@ export default function InnofarmSection() {
       {/* Desktop Image - 60vw width */}
       <div className="w-[40vw] hidden lg:block">
         <Image
-          src="/landing/Innofarm.png"
+          src="/landing/innofarm.png"
           alt="InnoFarm Illustration"
           width={1200}
           height={800}
