@@ -1,8 +1,4 @@
-import {
-  ChevronUpIcon,
-  ChevronDownIcon,
-  BellIcon,
-} from '@heroicons/react/24/outline';
+import { ChevronUpIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import { menuSection } from '@/constants/sectionData';
 
 type Props = {
@@ -30,9 +26,6 @@ export default function MobileMenu({
                 onClick={() => toggleItem(item.name)}
                 className="flex justify-between items-center w-full cursor-pointer text-[#0085a8] font-orbitron font-extrabold text-xl hover:scale-105 px-4 py-2 hover:border-2 hover:border-[#0085a8] rounded transition-all"
               >
-                <span>
-                  <BellIcon className="w-5 h-5" />
-                </span>
                 <span>{item.name}</span>
                 {expandedItems[item.name] ? (
                   <ChevronUpIcon className="w-5 h-5" />

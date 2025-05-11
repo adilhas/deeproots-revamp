@@ -30,13 +30,9 @@ import {
 } from 'lucide-react';
 
 import {
-  BriefcaseIcon,
   CpuChipIcon,
   DocumentCheckIcon,
-  FolderMinusIcon,
   InboxArrowDownIcon,
-  MapIcon,
-  PuzzlePieceIcon,
   ShareIcon,
   ShieldCheckIcon,
   UsersIcon,
@@ -46,74 +42,60 @@ import { IFooter } from '@/components/footer/types';
 
 export const menuSection: MenuSection[] = [
   {
-    name: 'Discover',
+    name: 'RootAcademy',
     subitems: [
       {
-        title: 'Overview of Deep Roots',
+        title: 'What is Deep Roots?',
         description: 'Deep Roots Overview.',
         icon: UsersIcon,
+        link: '/academy/about',
       },
       {
-        title: 'The Address Wallet – Your Earning Machine',
+        title: 'Share Value (Learn & Earn)',
         description: 'Learn how to earn with The Address Wallet.',
         icon: WalletIcon,
-      },
-      {
-        title: 'The Foundation Seat Member',
-        description: 'Be Part of the Foundation.',
-        icon: ShieldCheckIcon,
+        link: ' https://sharevalue.earth',
       },
       {
         title: 'White Paper',
-        description: "Explore DeWorld's white paper.",
-        icon: ShareIcon,
+        description: 'Be Part of the Foundation.',
+        icon: ShieldCheckIcon,
+        link: '/academy/whitepaper',
       },
       {
         title: 'Roadmap',
-        description: "Check out DeWorld's roadmap.",
-        icon: MapIcon,
-      },
-      {
-        title: 'How to Get Started (Guides for New Users & Investors)',
-        description: 'Guides for beginners and investors.',
-        icon: BriefcaseIcon,
+        description: "Explore DeWorld's white paper.",
+        icon: ShareIcon,
+        link: '/academy/roadmap',
       },
     ],
   },
   {
-    name: 'Innovate',
+    name: 'Rootlab',
     subitems: [
       {
-        title: 'Truly Dynamic Blockchain',
+        title: 'InnoFi',
         description: 'The Next-Gen Blockchain.',
         icon: CpuChipIcon,
+        link: 'https://innofi.earth',
       },
       {
-        title: 'Transforming Real-World Assets into Digital Value.',
+        title: 'InnoLaunch',
         description: 'Explore digitized real assets.',
         icon: DocumentCheckIcon,
+        link: 'https://innolaunch.earth',
       },
       {
-        title: 'InnoFi: Milestone Vote Hub for DeWorld Funding',
+        title: 'InnoFarm',
         description: 'Vote for DeWorld funding milestones.',
         icon: InboxArrowDownIcon,
+        link: 'https://innofarm.earth',
       },
       {
-        title:
-          'MetaFabric: From Blockchain to Runway – Your Style, Your NFT DeWorld',
-        description: 'Customize your style with MetaFabric NFTs.',
-        icon: PuzzlePieceIcon,
-      },
-      {
-        title: 'RootOpia: Where the Biggest Pool Race Meets DeWorld Gaming',
-        description: 'Join the pool race in DeWorld Gaming.',
-        icon: FolderMinusIcon,
-      },
-      {
-        title:
-          'SHARE VALUE: Learn, Create, Innovate – A DeWorld Education Tool for All',
+        title: 'Token',
         description: 'Education hub for learning and innovation.',
         icon: '',
+        link: '/lab/tokenomics',
       },
     ],
   },
@@ -121,109 +103,101 @@ export const menuSection: MenuSection[] = [
     name: 'DeWorld',
     subitems: [
       {
-        title: 'DeWorld Currency to Wallet to DEX to Build Ecosystem',
+        title: 'The Address Wallet',
         description: 'The next-gen dynamic blockchain.',
         icon: '',
+        link: 'https://theaddress.earth',
       },
       {
-        title: 'Transforming Real-World Assets into Digital Value',
+        title: 'TelexCoin DEX',
         description: 'Explore digitized real assets.',
         icon: '',
+        link: 'https://telexcoin.earth',
       },
       {
-        title: 'AI Tools',
+        title: 'RootScan',
         description: 'AI Tools are Easy to Use and Simple to Learn for DeWorld',
         icon: '',
+        link: 'https://rootscan.earth',
       },
       {
-        title:
-          'MetaFabric: From Blockchain to Runway – Your Style, Your NFT DeWorld',
+        title: 'RootChat',
         description: 'Customize your style with MetaFabric NFTs.',
         icon: '',
+        link: 'https://rootchat.earth',
       },
+
       {
-        title: 'RootOpia: Where the Biggest Pool Race Meets DeWorld Gaming',
-        description: 'Join the pool race in DeWorld Gaming.',
-        icon: '',
-      },
-      {
-        title:
-          'SHARE VALUE: Learn, Create, Innovate – A DeWorld Education Tool for All',
+        title: 'OceanBazaar',
         description: 'Education hub for learning and innovation.',
         icon: '',
+        link: 'https://oceanbazaar.earth',
+      },
+      {
+        title: 'MetaFabric',
+        description: 'Education hub for learning and innovation.',
+        icon: '',
+        link: 'https://metafabric.earth',
       },
     ],
   },
   {
-    name: 'Solution',
+    name: 'RootIdentity',
     subitems: [
       {
-        title: 'Truly Dynamic Blockchain – Scalable and Secure',
-        description: 'Next-gen blockchain with borderless scalability.',
-        icon: '',
-      },
-      {
-        title: 'Tokenomics – Long-Term Value',
-        description: 'Limited supply over 41 years.',
-        icon: '',
-      },
-      {
-        title: 'The Address Wallet – Asset Management & Earnings Growth',
+        title: 'GiveFi',
         description: 'Manage assets and grow earnings with DeWorld.',
         icon: '',
+        link: 'https://givefi.earth',
       },
       {
-        title: 'Deep Assets RWA – Tokenized Real-World Assets',
+        title: 'DeepAssets',
+        description: 'Manage assets and grow earnings with DeWorld.',
+        icon: '',
+        link: 'https://deepassets.earth',
+      },
+      {
+        title: 'RootIdentity (DID)',
         description: 'Fractional trading of tokenized real-world assets.',
         icon: '',
+        link: '/identity/did',
       },
+
       {
-        title:
-          'MetaFabric: From Blockchain to Runway – Your Style, Your NFT DeWorld',
-        description: 'Customize your style with MetaFabric NFTs.',
-        icon: '',
-      },
-      {
-        title: 'Education - AI tools',
+        title: 'NFT/RWA',
         description:
           'To learn, create, innovate, vote, fund, and launch the next big thing in DeWorld.',
         icon: '',
-      },
-      {
-        title: 'HFT & DEX – Fast & Low-Cost Trading',
-        description: 'Instant trades with low slippage and minimal fees.',
-        icon: '',
+        link: '/identity/assets',
       },
     ],
   },
   {
-    name: 'Community',
+    name: 'RootConnect',
     subitems: [
       {
-        title: 'Saxophone Podcast – Where Blockchain Meets the Beat',
+        title: 'Saxophone',
         description: 'Tune into blockchain insights with Saxophone Podcast.',
         icon: '',
+        link: 'https://saxophone.earth',
       },
       {
-        title:
-          'MetaFabric: From Blockchain to Runway – Your Style, Your NFT DeWorld',
+        title: 'Volunteer',
         description: 'Customize your style with MetaFabric NFTs.',
         icon: '',
+        link: '/connect/volunteer',
       },
       {
-        title: 'News & Events – Stay Updated',
+        title: 'Events',
         description: 'Get the latest news and upcoming events.',
         icon: '',
+        link: '/connect/events',
       },
       {
-        title: 'Careers & Fun – Join the Movement',
+        title: 'Community',
         description: 'Be part of the team with creativity and collaboration.',
         icon: '',
-      },
-      {
-        title: 'Social Media – Stay Connected',
-        description: 'Connect for rewards, updates, and exclusive education.',
-        icon: '',
+        link: '/connect/community',
       },
     ],
   },
