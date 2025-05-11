@@ -29,15 +29,6 @@ import {
   Fingerprint,
 } from 'lucide-react';
 
-import {
-  CpuChipIcon,
-  DocumentCheckIcon,
-  InboxArrowDownIcon,
-  ShareIcon,
-  ShieldCheckIcon,
-  UsersIcon,
-  WalletIcon,
-} from '@heroicons/react/24/outline';
 import { IFooter } from '@/components/footer/types';
 
 export const menuSection: MenuSection[] = [
@@ -47,25 +38,25 @@ export const menuSection: MenuSection[] = [
       {
         title: 'What is Deep Roots?',
         description: 'Deep Roots Overview.',
-        icon: UsersIcon,
+
         link: '/academy/about',
       },
       {
         title: 'Share Value (Learn & Earn)',
         description: 'Learn how to earn with The Address Wallet.',
-        icon: WalletIcon,
+
         link: ' https://sharevalue.earth',
       },
       {
         title: 'White Paper',
         description: 'Be Part of the Foundation.',
-        icon: ShieldCheckIcon,
+
         link: '/academy/whitepaper',
       },
       {
         title: 'Roadmap',
         description: "Explore DeWorld's white paper.",
-        icon: ShareIcon,
+
         link: '/academy/roadmap',
       },
     ],
@@ -76,25 +67,24 @@ export const menuSection: MenuSection[] = [
       {
         title: 'InnoFi',
         description: 'The Next-Gen Blockchain.',
-        icon: CpuChipIcon,
+
         link: 'https://innofi.earth',
       },
       {
         title: 'InnoLaunch',
         description: 'Explore digitized real assets.',
-        icon: DocumentCheckIcon,
+
         link: 'https://innolaunch.earth',
       },
       {
         title: 'InnoFarm',
         description: 'Vote for DeWorld funding milestones.',
-        icon: InboxArrowDownIcon,
+
         link: 'https://innofarm.earth',
       },
       {
         title: 'Token',
         description: 'Education hub for learning and innovation.',
-        icon: '',
         link: '/lab/tokenomics',
       },
     ],
@@ -105,38 +95,32 @@ export const menuSection: MenuSection[] = [
       {
         title: 'The Address Wallet',
         description: 'The next-gen dynamic blockchain.',
-        icon: '',
         link: 'https://theaddress.earth',
       },
       {
         title: 'TelexCoin DEX',
         description: 'Explore digitized real assets.',
-        icon: '',
         link: 'https://telexcoin.earth',
       },
       {
         title: 'RootScan',
         description: 'AI Tools are Easy to Use and Simple to Learn for DeWorld',
-        icon: '',
         link: 'https://rootscan.earth',
       },
       {
         title: 'RootChat',
         description: 'Customize your style with MetaFabric NFTs.',
-        icon: '',
         link: 'https://rootchat.earth',
       },
 
       {
         title: 'OceanBazaar',
         description: 'Education hub for learning and innovation.',
-        icon: '',
         link: 'https://oceanbazaar.earth',
       },
       {
         title: 'MetaFabric',
         description: 'Education hub for learning and innovation.',
-        icon: '',
         link: 'https://metafabric.earth',
       },
     ],
@@ -147,19 +131,16 @@ export const menuSection: MenuSection[] = [
       {
         title: 'GiveFi',
         description: 'Manage assets and grow earnings with DeWorld.',
-        icon: '',
         link: 'https://givefi.earth',
       },
       {
         title: 'DeepAssets',
         description: 'Manage assets and grow earnings with DeWorld.',
-        icon: '',
         link: 'https://deepassets.earth',
       },
       {
         title: 'RootIdentity (DID)',
         description: 'Fractional trading of tokenized real-world assets.',
-        icon: '',
         link: '/identity/did',
       },
 
@@ -167,7 +148,6 @@ export const menuSection: MenuSection[] = [
         title: 'NFT/RWA',
         description:
           'To learn, create, innovate, vote, fund, and launch the next big thing in DeWorld.',
-        icon: '',
         link: '/identity/assets',
       },
     ],
@@ -178,25 +158,24 @@ export const menuSection: MenuSection[] = [
       {
         title: 'Saxophone',
         description: 'Tune into blockchain insights with Saxophone Podcast.',
-        icon: '',
         link: 'https://saxophone.earth',
       },
       {
         title: 'Volunteer',
         description: 'Customize your style with MetaFabric NFTs.',
-        icon: '',
+
         link: '/connect/volunteer',
       },
       {
         title: 'Events',
         description: 'Get the latest news and upcoming events.',
-        icon: '',
+
         link: '/connect/events',
       },
       {
         title: 'Community',
         description: 'Be part of the team with creativity and collaboration.',
-        icon: '',
+
         link: '/connect/community',
       },
     ],
@@ -828,78 +807,92 @@ export const footerLinks: IFooter[] = [
   {
     title: 'RootAcademy',
     icon: <GraduationCap color="#34D399" size={38} />,
+    link: '/academy',
     links: [
-      { label: 'What is Deep Roots?', href: '#' },
-      { label: 'What is DRC? (Native currency)', href: '#' },
-      { label: 'The Address Wallet', href: '#' },
-      { label: 'Telexcoin Dex', href: '#' },
-      { label: 'Smart Contract', href: '#' },
-      { label: 'Gas Fees', href: '#' },
-      { label: 'AI Tools', href: '#' },
+      { label: 'What is Deep Roots?', href: '/academy/about' },
+      { label: 'What is DRC (Native Currency)?', href: '#' },
       { label: 'White Paper', href: '#' },
-      { label: 'Foundation', href: '#' },
+      { label: 'Learn & Earn – ShareValue', href: 'https://sharevalue.earth' },
+      { label: 'RootOpia GameFi', href: '#' },
+      { label: 'DeEducation', href: '#' },
+      { label: 'AI Tools', href: '#' },
+      { label: 'Smart Contracts', href: '#' },
+      { label: 'Gas Fees', href: '#' },
+      { label: 'Roadmap', href: '/academy/roadmap' },
     ],
     hoverColor: 'hover:text-green-300',
   },
   {
     title: 'RootLab',
     icon: <FlaskConical color="#60A5FA" size={38} />,
+    link: '/lab',
     links: [
-      { label: 'Movement', href: '#' },
-      { label: 'SEEDING', href: '#' },
-      { label: 'DEFI', href: '#' },
-      { label: 'DeWorld', href: '#' },
-      { label: 'NFT', href: '#' },
-      { label: 'RWA', href: '#' },
-      { label: 'DEEP ROOTS Corporate Public Network', href: '#' },
-      { label: 'DEEP ROOTS Corporate Private Network', href: '#' },
+      { label: 'InnoFi – Fund & Vote', href: 'https://innofi.earth' },
+      { label: 'InnoLaunch – IDO Platform', href: 'https://innolaunch.earth' },
+      { label: 'InnoFarm – Web3 Jobs', href: 'https://innofarm.earth' },
+      { label: 'Internal Hackathon', href: '#' },
+      { label: 'Foundation Seats', href: '#' },
+      { label: 'Deep Roots Foundation', href: '#' },
+      { label: 'RootOpia Reward System', href: '#' },
+      { label: 'Token', href: '/lab/tokenomics' },
+      { label: 'Smart Contract', href: '#' },
+      { label: 'DeVote', href: '#' },
     ],
     hoverColor: 'hover:text-blue-300',
   },
   {
     title: 'DeWorld',
     icon: <Globe color="#ad1aaf" size={38} />,
+    link: '/dewrold',
     links: [
-      { label: 'The Address', href: '#' },
-      { label: 'TeleXcoin', href: '#' },
-      { label: 'Deep Assets', href: '#' },
-      { label: 'Share Value', href: '#' },
-      { label: 'InnoFi', href: '#' },
-      { label: 'InnoLaunch', href: '#' },
-      { label: 'MetaFabric', href: '#' },
-      { label: 'RootOpia', href: '#' },
-      { label: 'Saxophone', href: '#' },
+      { label: 'The Address Wallet', href: 'https://theaddress.earth' },
+      { label: 'Telexcoin DEX', href: 'https://telexcoin.earth' },
+      { label: 'RootScan Explorer', href: 'https://rootscan.earth' },
+      { label: 'RootChat – Web3 Messaging', href: 'https://rootchat.earth' },
+      {
+        label: 'DeepAssets – RWA Tokenization',
+        href: 'https://deepassets.earth',
+      },
+      {
+        label: 'OceanBazaar – NFT Marketplace',
+        href: 'https://oceanbazaar.earth',
+      },
+      { label: 'MetaFabric – Wearable NFTs', href: 'https://metafabric.earth' },
+      { label: 'DEFI', href: '#' },
+      { label: 'SEEDING', href: '#' },
+      { label: 'DeWorld Public Network', href: '#' },
+      { label: 'DeWorld Private Network', href: '#' },
     ],
     hoverColor: 'hover:text-yellow-300',
   },
   {
     title: 'RootIdentity',
     icon: <Fingerprint color="#F87171" size={38} />,
+    link: '/identity',
     links: [
-      { label: 'DeFi', href: '#' },
-      { label: 'RWA', href: '#' },
-      { label: 'NFT', href: '#' },
-      { label: 'DeVote', href: '#' },
-      { label: 'DeEducation', href: '#' },
-      { label: 'DeFashion', href: '#' },
-      { label: 'Token', href: '#' },
-      { label: 'DeWorld', href: '#' },
-      { label: 'Roadmap', href: '#' },
+      { label: 'MetaFabric – Style & ID', href: 'https://metafabric.earth' },
+      { label: 'DeepAssets – Ownership', href: 'https://deepassets.earth' },
+      { label: 'GiveFi – On-Chain Donations', href: 'https://givefi.earth' },
+      { label: 'RootIdentity (DID coming soon)', href: '/identity/did' },
+      { label: 'Ocean Bazaar NFT', href: 'https://oceanbazaar.earth' },
+      { label: 'RWA', href: '/identity/assets' },
+      { label: 'Privacy Policy', href: '#' },
+      { label: 'Terms of Service', href: '#' },
     ],
     hoverColor: 'hover:text-red-300',
   },
   {
     title: 'RootConnect',
     icon: <Link color="#FBBF24" size={38} />,
+    link: '/connect',
     links: [
+      { label: 'Saxophone – Podcast & News', href: 'https://saxophone.earth' },
+      { label: 'Volunteer Program', href: '/connect/volunteer' },
+      { label: 'Events & Meetups', href: '/connect/events' },
+      { label: 'RootConnect (Community App)', href: '/connect/community' },
       { label: 'Social Media', href: '#' },
-      { label: 'Deep Roots Events', href: '#' },
-      { label: 'Deep Roots Foundation', href: '#' },
-      { label: 'InnoFi', href: '#' },
-      { label: 'MetaFabrice', href: '#' },
-      { label: 'SaXophone Podcast', href: '#' },
-      { label: 'Volunteer Program', href: '#' },
-      { label: 'Internal Hackathon', href: '#' },
+      { label: 'DeFashion', href: '#' },
+      { label: 'Contact Us', href: '#' },
     ],
     hoverColor: 'hover:text-amber-400',
   },

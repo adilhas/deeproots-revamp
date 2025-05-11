@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="py-4">
+    <footer className="dark:bg-black bg-gray-300 dark:text-white py-10 px-5 relative flex w-full justify-center items-center flex-col space-y-10">
       <div className="relative grid grid-cols-1 w-full md:pt-16 mt-16 md:ml-12 md:grid-cols-3 lg:grid-cols-5 items-start justify-center gap-8">
         <div className="flex justify-center md:absolute top-0 left-0 items-center">
           <Image
@@ -26,22 +26,26 @@ const Footer: React.FC = () => {
             className="flex justify-center flex-col md:items-start items-center"
           >
             <div className="flex justify-center items-center my-5 gap-2">
-              <div className="self-center">{section.icon}</div>
-              <div className="font-semibold font-orbitron md:text-[16px] lg:text-lg text-lg self-center">
-                {section.title}
-              </div>
+              <Link href={section.link}>
+                <div className="self-center mx-auto w-fit py-1">
+                  {section.icon}
+                </div>
+                <div className="font-semibold font-orbitron md:text-[16px] lg:text-lg text-lg self-center">
+                  {section.title}
+                </div>
+              </Link>
             </div>
             <ul className="space-y-4 text-center md:text-left text-sm">
               {section.links.map((link, linkIdx) => (
                 <li key={linkIdx}>
-                  <a
+                  <Link
                     href={link.href}
                     className={`cursor-pointer ${section.hoverColor}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -49,7 +53,7 @@ const Footer: React.FC = () => {
         ))}
       </div>
       <div className="text-center pt-20">
-        <Link href="/#">
+        <Link href="/">
           <div className="flex justify-center items-center">
             <h3 className="text-xl font-bold font-orbitron bg-gradient-to-r from-[#ad1aaf] bg-clip-text text-transparent to-[#0085a8] mb-2">
               DeepQuest (Quiz Hub)

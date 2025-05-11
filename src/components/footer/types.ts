@@ -10,4 +10,5 @@ export interface IFooter {
   icon: ReactNode;
   links: IFooterLinks[];
   hoverColor: string;
+  link: string;
 }

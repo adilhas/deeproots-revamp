@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Logo() {
   return (
@@ -7,7 +8,7 @@ export default function Logo() {
         <Image alt="logo" width={100} height={100} src="/landing/logo.png" />
       </div>
       <h3 className="pl-3 self-center hidden sm:block font-bold text-md md:text-lg  bg-gradient-to-r from-[#AD1AAF] via-[#0085a8] to-[#0085a8] to-neutral-500 dark:bg-gradient-to-r dark:from-[#AD1AAF] dark:via-[#0085a8] to-inherit[#0085a8] dark:to-neutral-500 bg-clip-text font-orbitron text-transparent">
-        DEEPROOTS
+        <Link href="/">DEEPROOTS</Link>
       </h3>
     </div>
   );
