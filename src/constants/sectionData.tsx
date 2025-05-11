@@ -24,6 +24,10 @@ import {
   Clock3,
   Gamepad2,
   Wallet,
+  GraduationCap,
+  FlaskConical,
+  Fingerprint,
+  Share2,
 } from 'lucide-react';
 
 import {
@@ -39,6 +43,7 @@ import {
   UsersIcon,
   WalletIcon,
 } from '@heroicons/react/24/outline';
+import { IFooter } from '@/components/footer/types';
 
 export const menuSection: MenuSection[] = [
   {
@@ -843,5 +848,86 @@ export const aboutItems = [
   {
     question: 'DeepRoots Roadmap',
     answer: 'Showcase the platform future goals...',
+  },
+];
+
+export const footerLinks: IFooter[] = [
+  {
+    title: 'RootAcademy',
+    icon: <GraduationCap color="#34D399" size={32} />,
+    links: [
+      { label: 'What is Deep Roots?', href: '#' },
+      { label: 'What is DRC? (Native currency)', href: '#' },
+      { label: 'The Address Wallet', href: '#' },
+      { label: 'Telexcoin Dex', href: '#' },
+      { label: 'Smart Contract', href: '#' },
+      { label: 'Gas Fees', href: '#' },
+      { label: 'AI Tools', href: '#' },
+      { label: 'White Paper', href: '#' },
+      { label: 'Foundation', href: '#' },
+    ],
+    hoverColor: 'hover:text-green-300',
+  },
+  {
+    title: 'RootLab',
+    icon: <FlaskConical color="#60A5FA" size={32} />,
+    links: [
+      { label: 'Movement', href: '#' },
+      { label: 'SEEDING', href: '#' },
+      { label: 'DEFI', href: '#' },
+      { label: 'DeWorld', href: '#' },
+      { label: 'NFT', href: '#' },
+      { label: 'RWA', href: '#' },
+      { label: 'DEEP ROOTS Corporate Public Network', href: '#' },
+      { label: 'DEEP ROOTS Corporate Private Network', href: '#' },
+    ],
+    hoverColor: 'hover:text-blue-300',
+  },
+  {
+    title: 'DeWorld',
+    icon: <Globe color="#ad1aaf" size={32} />,
+    links: [
+      { label: 'The Address', href: '#' },
+      { label: 'TeleXcoin', href: '#' },
+      { label: 'Deep Assets', href: '#' },
+      { label: 'Share Value', href: '#' },
+      { label: 'InnoFi', href: '#' },
+      { label: 'InnoLaunch', href: '#' },
+      { label: 'MetaFabric', href: '#' },
+      { label: 'RootOpia', href: '#' },
+      { label: 'Saxophone', href: '#' },
+    ],
+    hoverColor: 'hover:text-yellow-300',
+  },
+  {
+    title: 'RootIdentity',
+    icon: <Fingerprint color="#F87171" size={32} />,
+    links: [
+      { label: 'DeFi', href: '#' },
+      { label: 'RWA', href: '#' },
+      { label: 'NFT', href: '#' },
+      { label: 'DeVote', href: '#' },
+      { label: 'DeEducation', href: '#' },
+      { label: 'DeFashion', href: '#' },
+      { label: 'Token', href: '#' },
+      { label: 'DeWorld', href: '#' },
+      { label: 'Roadmap', href: '#' },
+    ],
+    hoverColor: 'hover:text-red-300',
+  },
+  {
+    title: 'RootConnect',
+    icon: <Share2 color="#FBBF24" size={32} />,
+    links: [
+      { label: 'Social Media', href: '#' },
+      { label: 'Deep Roots Events', href: '#' },
+      { label: 'Deep Roots Foundation', href: '#' },
+      { label: 'InnoFi', href: '#' },
+      { label: 'MetaFabrice', href: '#' },
+      { label: 'SaXophone Podcast', href: '#' },
+      { label: 'Volunteer Program', href: '#' },
+      { label: 'Internal Hackathon', href: '#' },
+    ],
+    hoverColor: 'hover:text-amber-400',
   },
 ];
