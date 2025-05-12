@@ -3,15 +3,11 @@ import Link from 'next/link';
 
 export default function InnofarmSection() {
   return (
-    <section className="relative light:bg-white  flex flex-col lg:flex-row items-center justify-between gap-8 px-6 py-16 max-w-7xl mx-auto">
-      {/* Mobile Image - Full width */}
-
-      {/* Gradient blurs */}
+    <section className="relative light:bg-white  flex  flex-row items-center justify-between gap-8 px-6 py-16 max-w-7xl mx-auto">
       <div className="w-60 h-60 top-32 left-12 blur-[350px] md:blur-[350px] bg-[#00ff94] rounded-full absolute" />
       <div className="w-60 h-60 bottom-32 right-12 blur-[350px] md:blur-[350px] bg-[#0ff0fc] rounded-full absolute" />
-
       {/* Content */}
-      <div className="w-full lg:w-[40vw] space-y-6">
+      <div className="w-full lg:w-1/2 space-y-6">
         <h2 className="font-orbitron text-3xl lg:text-5xl font-bold bg-gradient-to-r text-transparent bg-clip-text dark:from-[#0ff0fc] dark:to-[#00ff94] from-[#005258] to-[#007a4d]">
           InnoFarm – The Web3 Job Marketplace
         </h2>
@@ -69,9 +65,8 @@ export default function InnofarmSection() {
           </button>
         </div>
       </div>
-
       {/* Desktop Image - 60vw width */}
-      <div className="w-[40vw] hidden lg:block">
+      <div className="w-1/2 hidden lg:block">
         <Image
           src="/landing/innofarm.png"
           alt="InnoFarm Illustration"

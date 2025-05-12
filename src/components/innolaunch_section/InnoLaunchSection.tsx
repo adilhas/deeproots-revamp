@@ -13,21 +13,13 @@ const fundingRounds = [
 
 const InnolaunchSection = () => {
   return (
-    <main className="my-10 p-6 md:p-10 bg-gray-400 dark:bg-transparent">
+    <main className=" p-6 md:p-10 bg-gray-400 dark:bg-transparent">
       <div className="flex justify-center lg:px-20 items-center flex-col lg:flex-row">
-        <div className="flex justify-start items-center w-full md:items-start flex-col">
-          <div className="flex justify-start lg:items-start items-center flex-col w-fit mx-auto">
-            <div className="inline-block ">
-              <h1 className="font-extrabold lg:max-w-[600px] leading-[40px] lg:text-start text-3xl lg:leading-normal bg-gradient-to-r dark:from-[#F68082] from-[#97f4f3] to-[#97f4f3] dark:to-[#97F4F3] bg-clip-text font-orbitron text-transparent">
-                InnoLaunch:
-              </h1>
-            </div>
-            <div className="inline-block">
-              <h1 className="font-extrabold text-center lg:max-w-[600px] text-xl leading-[40px] lg:text-start lg:text-2xl lg:leading-normal mb-3 bg-gradient-to-r dark:from-[#F68082] from-[#97f4f3] to-[#97f4f3] dark:to-[#97F4F3] bg-clip-text font-orbitron text-transparent">
-                Empowering DeWorld Projects on the Deep Roots Blockchain.
-              </h1>
-            </div>
-          </div>
+        <div className="flex justify-start  w-full md:items-start flex-col">
+          <h1 className="font-extrabold lg:w-1/2 leading-[40px] text-start text-3xl lg:leading-normal bg-gradient-to-r dark:from-[#F68082] from-[#97f4f3] to-[#97f4f3] dark:to-[#97F4F3] bg-clip-text font-orbitron text-transparent">
+            InnoLaunch: <br /> Empowering DeWorld Projects on the Deep Roots
+            Blockchain.
+          </h1>
 
           <div className="inline-block lg:hidden my-5 w-full">
             <Image
@@ -58,7 +50,7 @@ const InnolaunchSection = () => {
           </button>
         </div>
 
-        <div className="hidden lg:block my-5 w-full">
+        <div className="hidden lg:block my-5 w-1/2">
           <Image
             src="/landing/innolaunch.webp"
             alt="Launch"

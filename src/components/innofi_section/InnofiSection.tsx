@@ -32,7 +32,7 @@ const InnofiSection = () => {
               key={index}
               className="flex items-center gap-4 p-4 hover:scale-105 dark:text-neutral-200 rounded-lg shadow-md"
             >
-              {icon}
+              <div>{icon}</div>
               <div>
                 <h3 className="text-lg font-semibold font-orbitron">{title}</h3>
                 <p className="text-sm">{description}</p>

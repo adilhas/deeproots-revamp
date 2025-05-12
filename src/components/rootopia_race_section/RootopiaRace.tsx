@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const RootopiaRace = () => {
   return (
-    <main className=" relative bg-neutral-400 dark:bg-neutral-950 px-10 py-20">
+    <main className=" relative bg-neutral-100 dark:bg-neutral-950 px-10 py-20">
       <div className="flex justify-center flex-row items-center w-full"></div>
 
       <div className="flex justify-center flex-col lg:flex-row rounded-2xl items-center ">
@@ -23,7 +23,7 @@ const RootopiaRace = () => {
         <div className="flex justify-center lg:ml-32 items-start flex-col lg:w-1/2">
           <div className="w-full mx-auto">
             <div className="mt-6 ">
-              <h1 className="font-extrabold text-2xl text-center lg:text-start lg:text-4xl mb-10 lg:leading-normal bg-gradient-to-r from-[#0085a8] to-[#a45204] bg-clip-text font-orbitron text-transparent">
+              <h1 className="font-extrabold text-2xl text-center lg:text-start lg:text-4xl mb-10 lg:leading-normal bg-gradient-to-r from-[#0085a8] via-[#f4bb71] to-[#a45204] bg-clip-text font-orbitron text-transparent">
                 ROOTOPIA RACE
               </h1>
             </div>

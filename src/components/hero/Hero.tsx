@@ -4,15 +4,29 @@ const Hero = () => {
   return (
     <main
       id="home"
-      className="md:mt-[88px] mt-[70px] lg:mt-[93px] dark:bg-primary-dark dark:text-white flex justify-center z-10 relative flex-col lg:scale-x-105  items-center mb-20"
+      className="min-h-screen pt-[70px] md:pt-[88px] lg:pt-[93px] dark:bg-primary-dark dark:text-white flex justify-center z-10 relative flex-col lg:scale-x-105 items-center mb-20"
     >
       {/* Banner Image */}
       <div
-        className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[750px] bg-cover bg-center bg-no-repeat"
+        className="w-full bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('/landing/deeproots-banner.webp')",
+          height: 'calc(100vh - 95px)', // Default for mobile
         }}
-      ></div>
+      >
+        <style jsx>{`
+          @media (min-width: 768px) {
+            div[style] {
+              height: calc(100vh - 88px);
+            }
+          }
+          @media (min-width: 1024px) {
+            div[style] {
+              height: calc(100vh - 93px);
+            }
+          }
+        `}</style>
+      </div>
 
       {/* Title */}
       <div className="inline-block">

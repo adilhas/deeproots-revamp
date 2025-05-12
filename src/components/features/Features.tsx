@@ -2,7 +2,7 @@ import { featuresCardItems } from '@/constants/sectionData';
 
 const Features = () => {
   return (
-    <main className="md:my-10 my-5 relative py-10 md:py-20 flex bg-neutral-400 dark:bg-neutral-950 justify-center flex-col items-center w-full">
+    <main className="md:my-10 my-5 relative py-10 md:py-20 flex bg-neutral-200 dark:bg-neutral-950 justify-center flex-col items-center w-full">
       <div className="mt-10 lg:w-[80vw] gap-10 md:gap-x-6 w-full px-4 md:px-4 grid md:grid-cols-2 grid-cols-1">
         {featuresCardItems.map((card, index) => (
           <div key={index} className="inline-block">

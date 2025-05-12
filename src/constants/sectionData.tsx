@@ -27,6 +27,9 @@ import {
   GraduationCap,
   FlaskConical,
   Fingerprint,
+  CheckCircle,
+  ThumbsUp,
+  Rocket,
 } from 'lucide-react';
 
 import { IFooter } from '@/components/footer/types';
@@ -582,116 +585,33 @@ export const useCasesData = [
 
 export const innofiFeatures = [
   {
-    icon: (
-      <svg
-        stroke="currentColor"
-        fill="currentColor"
-        stroke-width="0"
-        viewBox="0 0 640 512"
-        className="text-5xl text-[#fb7087]"
-        height="1em"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M96 224c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64zm448 0c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64zm32 32h-64c-17.6 0-33.5 7.1-45.1 18.6 40.3 22.1 68.9 62 75.1 109.4h66c17.7 0 32-14.3 32-32v-32c0-35.3-28.7-64-64-64zm-256 0c61.9 0 112-50.1 112-112S381.9 32 320 32 208 82.1 208 144s50.1 112 112 112zm76.8 32h-8.3c-20.8 10-43.9 16-68.5 16s-47.6-6-68.5-16h-8.3C179.6 288 128 339.6 128 403.2V432c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48v-28.8c0-63.6-51.6-115.2-115.2-115.2zm-223.7-13.4C161.5 263.1 145.6 256 128 256H64c-35.3 0-64 28.7-64 64v32c0 17.7 14.3 32 32 32h65.9c6.3-47.4 34.9-87.3 75.2-109.4z"></path>
-      </svg>
-    ),
+    icon: <Users className="text-9xl text-[#fb7087]" />,
     title: 'Community-Driven Innovation',
     description: 'Fund and vote on projects shaping DeWorld’s future.',
   },
   {
-    icon: (
-      <svg
-        stroke="currentColor"
-        fill="currentColor"
-        stroke-width="0"
-        viewBox="0 0 24 24"
-        className="text-5xl text-[#fb7087]"
-        height="1em"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M20.322.75h1.176a1.75 1.75 0 0 1 1.75 1.749v1.177a10.75 10.75 0 0 1-2.925 7.374l-1.228 1.304a23.699 23.699 0 0 1-1.596 1.542v5.038c0 .615-.323 1.184-.85 1.5l-4.514 2.709a.75.75 0 0 1-1.12-.488l-.963-4.572a1.305 1.305 0 0 1-.14-.129L8.04 15.96l-1.994-1.873a1.305 1.305 0 0 1-.129-.14l-4.571-.963a.75.75 0 0 1-.49-1.12l2.71-4.514c.316-.527.885-.85 1.5-.85h5.037a23.668 23.668 0 0 1 1.542-1.594l1.304-1.23A10.753 10.753 0 0 1 20.321.75Zm-6.344 4.018v-.001l-1.304 1.23a22.275 22.275 0 0 0-3.255 3.851l-2.193 3.29 1.859 1.744a.545.545 0 0 1 .034.034l1.743 1.858 3.288-2.192a22.263 22.263 0 0 0 3.854-3.257l1.228-1.303a9.251 9.251 0 0 0 2.517-6.346V2.5a.25.25 0 0 0-.25-.25h-1.177a9.252 9.252 0 0 0-6.344 2.518Z..."></path>
-      </svg>
-    ),
+    icon: <CheckCircle className="text-9xl text-[#fb7087]" />,
     title: 'Milestone-Based Funding',
     description: 'Support projects at key stages and track progress.',
   },
   {
-    icon: (
-      <svg
-        stroke="currentColor"
-        fill="currentColor"
-        stroke-width="0"
-        viewBox="0 0 512 512"
-        className="text-5xl text-[#fb7087]"
-        height="1em"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098..."></path>
-      </svg>
-    ),
+    icon: <ThumbsUp className="text-9xl text-[#fb7087]" />,
     title: 'Democratic Approval',
     description: 'Community votes to approve or reject innovative ideas.',
   },
   {
-    icon: (
-      <svg
-        stroke="currentColor"
-        fill="currentColor"
-        stroke-width="0"
-        viewBox="0 0 512 512"
-        className="text-5xl text-[#fb7087]"
-        height="1em"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M170.718 216.482L141.6 245.6l93.6 93.6 208-208-29.118-29.118L235.2 279.918l-64.482-63.436zM422.4 256c0 91.518-74.883 166.4-166.4 166.4S89.6 347.518 89.6 256 164.482 89.6 256 89.6c15.6 0 31.2 2.082 45.764 6.241L334 63.6C310.082 53.2 284.082 48 256 48..."></path>
-      </svg>
-    ),
+    icon: <Rocket className="text-9xl text-[#fb7087]" />,
     title: 'Empowering Creators',
     description: 'Back innovators and help bring their projects to life.',
   },
   {
-    icon: (
-      <svg
-        stroke="currentColor"
-        fill="currentColor"
-        stroke-width="0"
-        viewBox="0 0 512 512"
-        className="text-5xl text-[#fb7087]"
-        height="1em"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M256 105c-101.8 0-188.4 62.4-224 151 35.6 88.6 122.2 151 224 151s188.4-62.4 224-151c-35.6-88.6-122.2-151-224-151zm0 251.7c-56 0-101.8-45.3-101.8-100.7S200 155.3 256 155.3 357.8 200.6 357.8 256 312 356.7 256 356.7z..."></path>
-      </svg>
-    ),
+    icon: <Eye className="text-9xl text-[#fb7087]" />,
     title: 'Transparency & Control',
     description:
       'Manage investments and influence project outcomes with full transparency.',
   },
   {
-    icon: (
-      <svg
-        stroke="currentColor"
-        fill="currentColor"
-        stroke-width="0"
-        viewBox="0 0 24 24"
-        className="text-5xl text-[#fb7087]"
-        height="1em"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g id="Wallet">
-          <g>
-            <path d="M19.435,4.065H4.565a2.5,2.5,0,0,0-2.5,2.5v10.87a2.5,2.5,0,0,0,2.5,2.5h14.87a2.5,2.5,0,0,0,2.5-2.5V6.565A2.5,2.5,0,0,0,19.435,4.065Zm1.5,9.93h-6.42a2,2,0,0,1,0-4h6.42Zm-6.42-5a3,3,0,0,0,0,6h6.42v2.44a1.5,1.5,0,0,1-1.5,1.5H4.565a1.5,1.5,0,0,1-1.5-1.5V6.565a1.5,1.5,0,0,1,1.5-1.5h14.87a1.5,1.5,0,0,1,1.5,1.5v2.43Z"></path>
-            <circle cx="14.519" cy="11.996" r="1"></circle>
-          </g>
-        </g>
-      </svg>
-    ),
+    icon: <Wallet className="text-9xl text-[#fb7087]" />,
     title: 'Secure Wallet Integration',
     description:
       'Seamlessly connect your wallet for secure funding and voting.',
@@ -806,7 +726,7 @@ export const aboutItems = [
 export const footerLinks: IFooter[] = [
   {
     title: 'RootAcademy',
-    icon: <GraduationCap color="#34D399" size={38} />,
+    icon: <GraduationCap color="#34D399" size={44} />,
     link: '/academy',
     links: [
       { label: 'What is Deep Roots?', href: '/academy/about' },

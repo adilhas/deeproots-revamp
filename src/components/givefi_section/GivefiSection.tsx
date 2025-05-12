@@ -1,11 +1,12 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function GivefiSection() {
   return (
     <section className="bg-gradient-to-br from-[#F5EDFF] to-[#E8E9FF] dark:from-[#1F1A2B] dark:to-[#2C2C3F] text-gray-900 dark:text-white px-6 py-16 lg:py-24">
       <div className="max-w-7xl text-center lg:text-left mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 className="font-orbitron text-center lg:text-left text-4xl lg:text-5xl font-bold mb-6 text-[#A66EFF] dark:text-[#B084FF]">
+          <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-[#A66EFF] via-[#6eb4ff] font-orbitron text-center lg:text-left text-4xl lg:text-5xl font-bold mb-6">
             GIVEFI
           </h2>
           <div className="relative w-full h-80 lg:h-[400px] rounded-lg inline-block lg:hidden">
@@ -58,14 +59,17 @@ export default function GivefiSection() {
               and donor profile.
             </li>
           </ul>
+          <button className="text-white mt-6 px-6 py-2 bg-gradient-to-r from-[#A66EFF] to-[#6eccff]  rounded-lg  hover:scale-105 font-bold transition">
+            <Link href="http://givefi.earth/">Explore Givefi</Link>
+          </button>
         </div>
 
-        <div className="relative w-full lg:inline-block hidden h-80 lg:h-[400px] rounded-lg">
+        <div className="relative w-full h-full  rounded-xl overflow-hidden">
           <Image
             src="/landing/givefi.png"
             alt="GIVEfi Branding"
             layout="fill"
-            objectFit="contain"
+            objectFit="cover"
             className="rounded-xl"
             priority
           />

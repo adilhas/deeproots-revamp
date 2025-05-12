@@ -4,16 +4,14 @@ import { metafabricFeatures } from '@/constants/sectionData';
 const MetaFabricSection = () => {
   return (
     <section className="flex relative flex-col lg:flex-row items-center py-10 p-6 lg:p-12 gap-8 bg-white dark:bg-neutral-900">
-      <div className="flex justify-center items-center my-4 flex-col">
+      <div className="my-4">
         <h1 className="font-extrabold lg:max-w-[600px] text-3xl lg:hidden leading-[40px] lg:text-4xl lg:leading-normal bg-gradient-to-l from-[#ee49fc] to-[#32d8fd] bg-clip-text font-orbitron text-transparent">
           MetaFabric:
-        </h1>
-        <h1 className="font-bold text-center lg:max-w-[600px] text-xl lg:hidden lg:text-2xl lg:leading-normal bg-gradient-to-l from-[#ee49fc] to-[#32d8fd] bg-clip-text font-orbitron text-transparent">
-          Blockchain to Runway Your Style,Your NFT DeWorld
+          <br /> Blockchain to Runway Your Style,Your NFT DeWorld
         </h1>
       </div>
 
-      <div className="w-full lg:w-[60vw]">
+      <div className="w-full lg:w-1/2">
         <Image
           src="/landing/metafabric.webp"
           alt="MetaFabric Fashion"
@@ -26,7 +24,7 @@ const MetaFabricSection = () => {
 
       <div className="w-60 h-60 top-32 right-12 blur-[350px] md:blur-[200px] bg-[#b875f3] rounded-full absolute" />
 
-      <div className="lg:w-[40vw] text-gray-800 font-sans dark:text-gray-200">
+      <div className="lg:w-1/2 text-gray-800 font-sans dark:text-gray-200">
         <h1 className="font-extrabold lg:max-w-[600px] text-3xl hidden lg:block leading-[40px] lg:text-start lg:text-4xl lg:leading-normal bg-gradient-to-l from-[#ee49fc] to-[#32d8fd] bg-clip-text font-orbitron text-transparent">
           MetaFabric:
         </h1>

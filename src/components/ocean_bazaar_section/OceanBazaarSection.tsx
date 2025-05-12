@@ -3,12 +3,13 @@ import Link from 'next/link';
 
 export default function OceanBazaarSection() {
   return (
-    <section className=" bg-gradient-to-br from-[#0C1F2E] to-[#112D3C] dark:from-[#0C1F2E] dark:to-[#112D3C] text-white px-6 py-16 lg:py-24">
+    <section className="bg-gradient-to-br from-[#E8F5FF] to-[#CDEBFF] dark:from-[#0C1F2E] dark:to-[#112D3C] text-black dark:text-white px-6 py-16 lg:py-24">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Content - First on Mobile, First on Desktop */}
         <div className="order-1 lg:order-1">
-          <h2 className="font-orbitron text-4xl lg:text-5xl font-bold mb-6 text-[#28BDBD]">
-            Ocean Bazaar – The NFT Marketplace
+          <h2 className="font-orbitron text-4xl lg:text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#1bc1ff] via-[#fead46] to-[#cb7b6d]">
+            Ocean Bazaar <br />
+            The NFT Marketplace
           </h2>
 
           {/* Mobile Image - Hidden on Desktop */}
@@ -24,43 +25,31 @@ export default function OceanBazaarSection() {
             />
           </div>
 
-          <p className="text-lg mb-8 text-gray-200 dark:text-gray-300">
-            Explore & Collect NFTs
-          </p>
-          <ul className="space-y-5 text-gray-300 dark:text-gray-400">
+          <ul className="space-y-5 text-gray-800 dark:text-gray-400">
             <li>
-              <strong className="text-white">
+              <strong className="text-black dark:text-white">
                 Browse and buy digital collectibles
               </strong>{' '}
               through an ocean-themed Web3 marketplace.
             </li>
             <li>
-              <strong className="text-white">Sell & Auction Easily</strong>:
-              Upload, list, and auction NFTs with a simple and secure interface.
+              <strong>Sell & Auction Easily</strong>: Upload, list, and auction
+              NFTs with a simple and secure interface.
             </li>
             <li>
-              <strong className="text-white">
-                Wallet-Connected Experience
-              </strong>
-              : Powered by The Address Wallet — connect to manage assets, bids,
-              and history.
+              <strong>Wallet-Connected Experience</strong>: Powered by The
+              Address Wallet — connect to manage assets, bids, and history.
             </li>
             <li>
-              <strong className="text-white">
-                Exclusive Drops & Timed Auctions
-              </strong>
-              : Access limited-edition NFTs and join live auctions with
-              countdowns.
+              <strong>Exclusive Drops & Timed Auctions</strong>: Access
+              limited-edition NFTs and join live auctions with countdowns.
             </li>
             <li>
-              <strong className="text-white">
-                Secure Peer-to-Peer Trading
-              </strong>
-              : Trade directly with other users through blockchain-secured smart
-              contracts.
+              <strong>Secure Peer-to-Peer Trading</strong>: Trade directly with
+              other users through blockchain-secured smart contracts.
             </li>
           </ul>
-          <button className="text-white mt-6 px-6 py-2 bg-gradient-to-l from-[#1bc1ff] to-[#006eff] rounded-lg border-2 border-transparent hover:border-[#0ff0fc] hover:bg-none font-bold transition">
+          <button className="text-white mt-6 px-6 py-2 bg-gradient-to-r from-[#1bc1ff] to-[#fead46]  rounded-lg  hover:scale-105 font-bold transition">
             <Link href="http://oceanbazaar.earth/">Explore Ocean Bazaar</Link>
           </button>
         </div>

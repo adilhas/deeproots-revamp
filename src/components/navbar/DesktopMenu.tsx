@@ -11,7 +11,7 @@ export default function DesktopMenu({ onHover }: Props) {
       {menuSection.map((item) => (
         <li key={item.name} className="relative self-center">
           <div
-            className="group flex self-center hover:border-b-2 hover:border-[#0085A8] font-bold p-3 rounded-xl cursor-pointer"
+            className="group flex text-lg self-center hover:border-b-2 hover:border-[#0085A8] font-bold p-3 rounded-xl cursor-pointer"
             onMouseEnter={() => onHover(item.name)}
           >
             <div

@@ -2,10 +2,10 @@ import Image from 'next/image';
 
 const Telexcoin = () => {
   return (
-    <main className="my-20 relative bg-neutral-400 dark:bg-neutral-950 p-10">
+    <main className="my-20 relative bg-neutral-100 dark:bg-neutral-950 p-10">
       <div className="flex justify-center flex-col lg:flex-row rounded-2xl items-center w-full">
         {/* Desktop Image */}
-        <div className="inline-block">
+        <div className="inline-block w-1/2 ">
           <div className="w-full lg:flex hidden">
             <Image
               src="/landing/telexcoin.jpeg"
@@ -19,14 +19,13 @@ const Telexcoin = () => {
         </div>
 
         {/* Content Section */}
-        <div className="flex justify-center lg:ml-16 items-start w-full flex-col">
+        <div className="flex justify-center lg:ml-16 items-start  flex-col lg:w-1/2 ">
           <div className="mt-6">
             {/* Header */}
-            <div className="inline-block">
-              <h1 className="font-extrabold text-2xl text-center lg:text-start lg:text-4xl mb-10 lg:leading-normal bg-gradient-to-r dark:bg-gradient-to-r from-[#0085a8] dark:via-[#ad1] dark:to-amber-400 via-blue-900 to-amber-600 bg-clip-text font-orbitron text-transparent">
-                TeleXcoin DeX: Unlock the future of Finance
-              </h1>
-            </div>
+            <h1 className="font-extrabold text-2xl text-center lg:text-start lg:text-4xl mb-10 lg:leading-normal bg-gradient-to-r dark:bg-gradient-to-r from-[#0085a8] dark:via-[#ad1] dark:to-amber-400 via-blue-900 to-amber-600 bg-clip-text font-orbitron text-transparent">
+              TeleXcoin DeX:
+              <br /> Unlock the future of Finance
+            </h1>
 
             {/* Mobile Image */}
             <div className="inline-block">
