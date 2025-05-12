@@ -7,7 +7,7 @@ type Props = {
 
 export default function DesktopMenu({ onHover }: Props) {
   return (
-    <ul className="hidden md:flex gap-6">
+    <ul className="hidden lg:flex gap-6">
       {menuSection.map((item) => (
         <li key={item.name} className="relative self-center">
           <div

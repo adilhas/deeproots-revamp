@@ -14,7 +14,7 @@ export default function MobileMenu({
 }: Props) {
   return (
     <div
-      className={`min-h-screen p-3 font-orbitron md:hidden absolute top-[100%] left-0 w-full z-40 bg-neutral-300 dark:bg-primary-dark shadow-lg border-t border-gray-200 dark:border-gray-700 transform transition-transform duration-300 overflow-y-auto max-h-[calc(100vh-4rem)] ${
+      className={`min-h-screen p-3 font-orbitron lg:hidden absolute top-[100%] left-0 w-full z-40 bg-neutral-300 dark:bg-primary-dark shadow-lg border-t border-gray-200 dark:border-gray-700 transform transition-transform duration-300 overflow-y-auto max-h-[calc(100vh-4rem)] ${
         isOpen ? 'translate-x-0' : '-translate-x-full'
       }`}
     >
@@ -41,7 +41,7 @@ export default function MobileMenu({
                     {item.subitems.map((subitem, index) => (
                       <li key={index}>
                         <a
-                          href="#"
+                          href={subitem.link}
                           className="my-3 block w-full text-left px-4 py-2 bg-neutral-400 text-neutral-950 hover:scale-105 dark:bg-neutral-700 dark:text-neutral-200 font-orbitron hover:bg-neutral-600 rounded transition-all"
                         >
                           {subitem.title}

@@ -46,14 +46,14 @@ export default function Navbar() {
             </button>
             {isMobileMenuOpen ? (
               <button
-                className="md:hidden p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+                className="lg:hidden p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <XMarkIcon className="h-6 w-6 text-gray-800 dark:text-white" />
               </button>
             ) : (
               <button
-                className="md:hidden p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+                className="lg:hidden p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
                 onClick={() => setMobileMenuOpen(true)}
               >
                 <Bars3Icon className="h-6 w-6 text-gray-800 dark:text-white" />

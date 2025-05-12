@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 
 export default function SignIn() {
-  const [username, setUsername] = useState('Deeproots');
-  const [password, setPassword] = useState('AdamRoots');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
   const { status } = useSession();
@@ -35,7 +35,7 @@ export default function SignIn() {
   return (
     <div
       className="w-full h-screen bg-cover flex justify-center items-center bg-center"
-      style={{ backgroundImage: 'url("/login/login-page-bg.png")' }}
+      style={{ backgroundImage: 'url("/landing/deeproots-banner.webp")' }}
     >
       <div className="flex flex-col lg:w-1/2 w-full rounded-lg backdrop-blur-md shadow-md transition-opacity p-5 md:p-10 items-center justify-center">
         <div className="flex justify-center items-center flex-col bg-gray-800 md:p-8 rounded-md">

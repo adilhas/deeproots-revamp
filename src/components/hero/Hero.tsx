@@ -8,9 +8,9 @@ const Hero = () => {
     >
       {/* Banner Image */}
       <div
-        className="w-full h-48 md:h-[500px] lg:h-[750px] bg-cover bg-center"
+        className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[750px] bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/landing/deeproot-banner.jpg')",
+          backgroundImage: "url('/landing/deeproots-banner.webp')",
         }}
       ></div>
 
