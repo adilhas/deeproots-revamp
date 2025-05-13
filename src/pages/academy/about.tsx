@@ -54,9 +54,9 @@ export default function AboutAcademy() {
               </div>
 
               {/* Scroll Indicator */}
-              <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
-                <ArrowDown className="text-green-500" />
-              </div>
+            </div>
+            <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+              <ArrowDown className="text-green-500" />
             </div>
           </section>
 
