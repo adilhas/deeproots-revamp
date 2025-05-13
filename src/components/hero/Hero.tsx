@@ -31,7 +31,7 @@ const Hero = () => {
       {/* Title */}
       <div className="inline-block">
         <div style={{ opacity: 1, transform: 'none' }}>
-          <h1 className="font-extrabold text-lg text-center md:text-4xl lg:text-6xl shadow-sm shadow-[#0085a8] leading-[55px] my-5 lg:leading-normal mb-3 bg-gradient-to-r from-[#AD1AAF] dark:via-[#0085a8] to-[#0085a8] dark:to-[#0085a8] bg-clip-text font-orbitron text-transparent">
+          <h1 className="font-extrabold text-lg text-center md:text-3xl lg:text-5xl py-2 px-3 shadow-sm shadow-[#0085a8] leading-[55px] my-5 lg:leading-normal mb-3 bg-gradient-to-r from-[#AD1AAF] dark:via-[#0085a8] to-[#0085a8] dark:to-[#0085a8] bg-clip-text font-orbitron text-transparent">
             HELLO FUTURE BY DEEP ROOTS
           </h1>
         </div>

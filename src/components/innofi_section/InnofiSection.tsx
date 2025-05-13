@@ -7,7 +7,7 @@ const InnofiSection = () => {
       <div className="w-full lg:w-1/2 flex flex-col gap-6">
         <div className="flex justify-start lg:items-start  flex-col">
           <h1 className="font-extrabold text-3xl lg:text-4xl bg-gradient-to-r from-[#fb7087] via-[#76dbfa] to-[#76dbfa] bg-clip-text font-orbitron text-transparent">
-            InnoFi:
+            InnoFi
           </h1>
           <h2 className="font-extrabold text-xl lg:text-2xl bg-gradient-to-l from-[#fb7087] to-[#76dbfa] bg-clip-text font-orbitron text-transparent">
             VOTE & FUND DeWorld

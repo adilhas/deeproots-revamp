@@ -15,20 +15,19 @@ const InnolaunchSection = () => {
   return (
     <main className=" p-6 md:p-10 bg-gray-400 dark:bg-transparent">
       <div className="flex justify-center lg:px-20 items-center flex-col lg:flex-row">
-        <div className="flex justify-start  w-full md:items-start flex-col">
-          <h1 className="font-extrabold  leading-[40px] text-start text-3xl lg:leading-normal bg-gradient-to-r dark:from-[#F68082] from-[#97f4f3] to-[#97f4f3] dark:to-[#97F4F3] bg-clip-text font-orbitron text-transparent">
-            InnoLaunch: <br /> Empowering DeWorld Projects on the Deep Roots
-            Blockchain.
-          </h1>
+        <div className="flex justify-start  w-full md:items-start flex-col lg:w-1/2">
+          <div className="font-extrabold  leading-[40px] text-start text-3xl lg:leading-normal bg-gradient-to-r dark:from-[#F68082] from-[#97f4f3] to-[#97f4f3] dark:to-[#97F4F3] bg-clip-text font-orbitron text-transparent">
+            <span className="text-5xl">InnoLaunch</span> <br /> Empowering
+            DeWorld Projects on the Deep Roots Blockchain.
+          </div>
 
           <div className="inline-block lg:hidden my-5 w-full">
             <Image
               src="/landing/innolaunch.webp"
               alt="Launch"
-              className="rounded-2xl w-full"
-              width={800}
-              height={500}
-              layout="responsive"
+              className="rounded-2xl w-full h-auto"
+              width={768}
+              height={768}
             />
           </div>
 
@@ -50,14 +49,13 @@ const InnolaunchSection = () => {
           </button>
         </div>
 
-        <div className="hidden lg:block my-5">
+        <div className="hidden lg:block my-5 lg:w-1/2 lg:mx-8">
           <Image
             src="/landing/innolaunch.webp"
             alt="Launch"
-            className="rounded-2xl w-full"
-            width={1200}
-            height={700}
-            layout="responsive"
+            className="rounded-2xl w-full h-auto"
+            width={768}
+            height={768}
           />
         </div>
       </div>

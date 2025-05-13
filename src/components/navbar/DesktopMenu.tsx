@@ -7,11 +7,11 @@ type Props = {
 
 export default function DesktopMenu({ onHover }: Props) {
   return (
-    <ul className="hidden xl:flex mx-5">
+    <ul className="hidden xl:flex mx-5 ">
       {menuSection.map((item) => (
         <li key={item.name} className="relative self-center">
           <div
-            className="group flex text-lg self-center hover:border-b-2 hover:border-[#0085A8] font-bold p-3 rounded-xl cursor-pointer"
+            className="text-neutral-700 dark:text-white group flex text-lg self-center hover:border-b-2 hover:border-[#0085A8] font-bold p-3 rounded-xl cursor-pointer"
             onMouseEnter={() => onHover(item.name)}
           >
             <div

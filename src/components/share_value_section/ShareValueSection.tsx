@@ -13,7 +13,7 @@ import {
 const ShareValueSection = () => {
   return (
     <main className="my-16 p-6 md:p-10">
-      <div className="flex flex-col lg:flex-row items-center justify-center ">
+      <div className="flex flex-col lg:flex-row items-center justify-center">
         {/* Mobile Header */}
         <div className="flex justify-center  lg:hidden my-8 flex-col">
           <div>
@@ -67,7 +67,7 @@ const ShareValueSection = () => {
           <div className="flex text-left flex-col gap-4">
             <p className="font-sans text-lg">
               <span className="font-bold flex items-center gap-2">
-                <Brain size={30} className="text-[#E07C76]" /> AI-Powered
+                <Brain size={30} className="text-[#52b797]" /> AI-Powered
                 Learning
               </span>
               Empowering anyone, anywhere to learn and innovate in the
@@ -75,7 +75,7 @@ const ShareValueSection = () => {
             </p>
             <p className="font-sans text-lg">
               <span className="font-bold flex items-center gap-2">
-                <Code2 size={30} className="text-[#E07C76]" /> Decentralized
+                <Code2 size={30} className="text-[#52b797]" /> Decentralized
                 Tech Resources
               </span>
               Access tools to build on blockchain and decentralized
@@ -83,35 +83,35 @@ const ShareValueSection = () => {
             </p>
             <p className="font-sans text-lg">
               <span className="font-bold flex items-center gap-2">
-                <Globe size={30} className="text-[#E07C76]" /> Global Access
+                <Globe size={30} className="text-[#52b797]" /> Global Access
               </span>
               Programs for all sectors, enabling global innovation and
               contribution to DeWorld.
             </p>
             <p className="font-sans text-lg">
               <span className="font-bold flex items-center gap-2">
-                <Lightbulb size={30} className="text-[#E07C76]" /> Innovation
+                <Lightbulb size={30} className="text-[#52b797]" /> Innovation
                 Hub
               </span>
               A platform for hackathons, collaboration, and idea-sharing.
             </p>
             <p className="font-sans text-lg">
               <span className="font-bold flex items-center gap-2">
-                <Rocket size={30} className="text-[#E07C76]" /> Empowering
+                <Rocket size={30} className="text-[#52b797]" /> Empowering
                 Creators
               </span>
               Turn ideas into reality and shape the future of DeWorld.
             </p>
             <p className="font-sans text-lg">
               <span className="font-bold flex items-center gap-2">
-                <Users size={30} className="text-[#E07C76]" /> Mentorship &amp;
+                <Users size={30} className="text-[#52b797]" /> Mentorship &amp;
                 Idea Sharing
               </span>
               Lead groups, share ideas, and gain knowledge by teaching others.
             </p>
             <p className="font-sans text-lg">
               <span className="font-bold flex items-center gap-2">
-                <BookOpen size={30} className="text-[#E07C76]" /> Knowledge
+                <BookOpen size={30} className="text-[#52b797]" /> Knowledge
                 Exchange
               </span>
               Learn by teaching, and help grow the DeWorld community.

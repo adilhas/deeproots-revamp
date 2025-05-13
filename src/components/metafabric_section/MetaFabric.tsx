@@ -6,7 +6,7 @@ const MetaFabricSection = () => {
     <section className="flex relative flex-col lg:flex-row items-center py-10 p-6 lg:p-12 gap-8 bg-white dark:bg-neutral-900">
       <div className="my-4">
         <h1 className="font-extrabold lg:max-w-[600px] text-3xl lg:hidden leading-[40px] lg:text-4xl lg:leading-normal bg-gradient-to-l from-[#ee49fc] to-[#32d8fd] bg-clip-text font-orbitron text-transparent">
-          MetaFabric:
+          MetaFabric
           <br /> Blockchain to Runway Your Style,Your NFT DeWorld
         </h1>
       </div>
@@ -26,7 +26,7 @@ const MetaFabricSection = () => {
 
       <div className="lg:w-1/2 text-gray-800 font-sans dark:text-gray-200">
         <h1 className="font-extrabold lg:max-w-[600px] text-3xl hidden lg:block leading-[40px] lg:text-start lg:text-4xl lg:leading-normal bg-gradient-to-l from-[#ee49fc] to-[#32d8fd] bg-clip-text font-orbitron text-transparent">
-          MetaFabric:
+          MetaFabric
         </h1>
         <h1 className="font-extrabold lg:max-w-[600px] text-xl leading-[40px] hidden lg:block lg:text-start lg:text-2xl lg:leading-normal bg-gradient-to-l from-[#ee49fc] to-[#32d8fd] bg-clip-text font-orbitron text-transparent">
           Blockchain to Runway Your Style,

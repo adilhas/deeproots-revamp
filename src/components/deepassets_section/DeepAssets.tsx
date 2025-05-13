@@ -9,9 +9,10 @@ const DeepAssets = () => {
       <div className="flex justify-center items-center">
         <div className="flex justify-start items-center w-full lg:mr-16 md:items-start flex-col">
           <div className="inline-block">
-            <h1 className="font-extrabold lg:max-w-[600px] text-2xl leading-[40px] lg:text-start lg:text-3xl my-5 lg:leading-normal mb-3 bg-gradient-to-r from-[#0085a8] to-orange-800 bg-clip-text font-orbitron text-transparent">
-              Deep Assets: Transforming Real-World Assets into Digital Value.
-            </h1>
+            <div className="font-extrabold lg:max-w-[600px] text-xl leading-[40px] lg:text-start lg:text-3xl my-5 lg:leading-normal mb-3 bg-gradient-to-r from-[#0085a8] to-orange-800 bg-clip-text font-orbitron text-transparent">
+              <span className="lg:text-5xl text-3xl">Deep Assets</span> <br />
+              Transforming Real-World Assets into Digital Value.
+            </div>
           </div>
 
           <div className="w-full lg:hidden flex my-5">

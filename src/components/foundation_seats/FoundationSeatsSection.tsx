@@ -15,7 +15,7 @@ const FoundationSeatsSection = () => {
           layout="responsive"
         />
         <button className="mt-6 font-bold border-2 hidden md:flex hover:scale-105 dark:hover:border-2 dark:bg-gradient-to-r from-[#0085a8] to-amber-700 mr-6 px-6 font-orbitron py-3 text-center hover:border-2 dark-hover:border-[#0085a8] border-[#0085a8] dark:hover:bg-none dark:hover:text-[#0085a8] transition-all hover:ease-in-out rounded-lg text-2xl tracking-wider">
-          Join The Future
+          Join The Movement
         </button>
       </div>
 

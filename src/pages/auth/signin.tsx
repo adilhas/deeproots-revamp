@@ -1,3 +1,4 @@
+import { X } from 'lucide-react';
 import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
@@ -6,6 +7,7 @@ export default function SignIn() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [showLogin, setShowLogin] = useState(false);
   const router = useRouter();
   const { status } = useSession();
 
@@ -34,48 +36,76 @@ export default function SignIn() {
 
   return (
     <div
-      className="w-full h-screen bg-cover flex justify-end items-center bg-center px-4 lg:px-20"
+      className="relative w-full h-screen bg-cover bg-center"
       style={{ backgroundImage: 'url("/landing/deeproots-banner.webp")' }}
     >
-      <div className="flex flex-col w-full max-w-lg rounded-lg shadow-md transition-opacity p-5 md:p-8">
-        <div className="flex justify-center items-center flex-col bg-gray-800/90 backdrop-blur-sm p-6 md:p-8 rounded-md">
-          <div className="flex justify-center items-center">
-            <h2 className="md:text-4xl shadow-2xl text-2xl font-bold bg-gradient-to-bl from-[#ad1aaf] to-[#0085a8] bg-clip-text text-transparent font-orbitron">
-              DEEPROOTS LOGIN
-            </h2>
-          </div>
-          {error && <p className="text-red-500 mb-4 text-center">{error}</p>}
-          <form
-            className="bg-transparent w-full rounded-lg shadow-md"
-            onSubmit={handleSubmit}
-          >
-            <input
-              type="text"
-              name="username"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-              className="p-2 mb-4 w-full rounded bg-neutral-700 text-white border border-neutral-600 focus:border-purple-500 focus:outline-none"
-            />
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="p-2 mb-4 w-full rounded bg-neutral-700 text-white border border-neutral-600 focus:border-purple-500 focus:outline-none"
-            />
+      {/* Top-right Login Button */}
+      <button
+        onClick={() => setShowLogin(true)}
+        className="absolute top-10 right-24 px-4 py-2 bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] text-white rounded hover:from-[#007693] hover:to-[#9c179e] transition-all z-10"
+      >
+        Login
+      </button>
+
+      {/* Modal */}
+      {showLogin && (
+        <>
+          {/* Modal Overlay */}
+          <div
+            className="fixed inset-0  bg-opacity-60 z-40"
+            onClick={() => setShowLogin(false)}
+          ></div>
+
+          {/* Modal Content */}
+          <div className="fixed z-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-xl p-6 md:p-8 bg-gray-800/70 backdrop-blur-lg border border-white/10 rounded-2xl shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] transition-transform duration-300 hover:scale-[1.01]">
+            {/* Close button in top-right */}
             <button
-              type="submit"
-              className="cursor-pointer text-white p-2 bg-gradient-to-r rounded from-[#0085a8] to-[#ad1aaf] w-full hover:from-[#007693] hover:to-[#9c179e] transition-all"
+              onClick={() => setShowLogin(false)}
+              className="absolute top-2 right-2 font-extrabold m-4 text-white hover:text-gray-300"
+              aria-label="Close login modal"
             >
-              Login
+              <X className="w-5 h-5" size={44} />
             </button>
-          </form>
-        </div>
-      </div>
+
+            <div className="flex flex-col items-center">
+              <h2 className="md:text-4xl text-2xl font-bold bg-gradient-to-bl from-[#ad1aaf] to-[#0085a8] bg-clip-text text-transparent font-orbitron mb-4">
+                DEEPROOTS LOGIN
+              </h2>
+
+              {error && (
+                <p className="text-red-500 mb-4 text-center">{error}</p>
+              )}
+
+              <form className="w-full" onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  name="username"
+                  placeholder="Username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  required
+                  className="p-3 mb-4 w-full rounded-lg bg-neutral-700 text-white border border-neutral-600 focus:border-purple-500 focus:outline-none"
+                />
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  className="p-3 mb-4 w-full rounded-lg bg-neutral-700 text-white border border-neutral-600 focus:border-purple-500 focus:outline-none"
+                />
+                <button
+                  type="submit"
+                  className="cursor-pointer text-white p-3 rounded-lg bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] w-full hover:from-[#007693] hover:to-[#9c179e] transition-all"
+                >
+                  Login
+                </button>
+              </form>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }
