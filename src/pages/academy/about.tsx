@@ -205,7 +205,7 @@ export default function AboutAcademy() {
             <section className="mb-24 w-full max-w-7xl mx-auto">
               <div className="p-8 sm:p-12 bg-gradient-to-br from-gray-900/90 to-black rounded-3xl border border-gray-700 shadow-2xl">
                 <div className="max-w-3xl mx-auto text-center">
-                  <div className="text-8xl text-green-500/20 mb-6 font-serif">
+                  <div className="text-8xl text-green-500 mb-6 font-serif">
                     &quot;
                   </div>
                   <blockquote className="text-2xl sm:text-3xl italic mb-8 text-white leading-relaxed">
