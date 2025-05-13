@@ -37,7 +37,7 @@ export default function AboutAcademy() {
                     </span>
                   </div>
                 </h1>
-                <p className="text-xl md:text-3xl text-gray-300 max-w-2xl mx-auto mt-6 leading-relaxed">
+                <p className="text-xl md:text-3xl dark:text-gray-300 max-w-2xl mx-auto mt-6 leading-relaxed">
                   A decentralized movement reshaping the internet
                   <span className="block mt-1 text-emerald-400 font-medium">
                     from its roots
@@ -83,9 +83,9 @@ export default function AboutAcademy() {
                         <span className="text-green-400 font-bold">
                           not just a blockchain
                         </span>
-                        . It's a movement. A bold shift from centralized control
-                        to open collaboration. From silence to voice. From
-                        gatekeeping to possibility.
+                        . It&apos;s a movement. A bold shift from centralized
+                        control to open collaboration. From silence to voice.
+                        From gatekeeping to possibility.
                       </p>
                       <p className="text-2xl leading-relaxed text-gray-300 font-medium">
                         We call it{' '}
@@ -206,10 +206,10 @@ export default function AboutAcademy() {
               <div className="p-8 sm:p-12 bg-gradient-to-br from-gray-900/90 to-black rounded-3xl border border-gray-700 shadow-2xl">
                 <div className="max-w-3xl mx-auto text-center">
                   <div className="text-8xl text-green-500/20 mb-6 font-serif">
-                    "
+                    &quot;
                   </div>
                   <blockquote className="text-2xl sm:text-3xl italic mb-8 text-white leading-relaxed">
-                    We seed visions in the earth's roots — and harvest deep
+                    We seed visions in the earth&apos;s roots — and harvest deep
                     solutions for life.
                   </blockquote>
                   <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-blue-500 mx-auto mb-6"></div>
