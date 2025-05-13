@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Head from 'next/head';
 import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/footer/Footer';
-import { ArrowDown } from 'lucide-react';
 
 export default function AboutAcademy() {
   return (
@@ -14,15 +13,11 @@ export default function AboutAcademy() {
           content="We Are the Next. We Are the DeWorld. Discover Deep Roots – a bold decentralized movement reshaping the internet."
         />
       </Head>
-      <Navbar />
 
-      {/* Hero Section with Animated Background */}
-      <main className="relative w-full">
-        {/* Particle Background with Overlay */}
-        <div className="fixed inset-0 z-0 bg-[url('/academy/particle-bg.webp')] bg-cover" />
-        <div className="fixed inset-0 z-0 dark:bg-primary-dark backdrop-blur-sm" />
-
-        <div className="relative z-10 w-full">
+      <div className="overflow-x-hidden">
+        <Navbar />
+        {/* Hero Section with Animated Background */}
+        <main className="relative w-full overflow-x-hidden max-w-[100vw] z-10 dark:bg-primary-dark">
           {/* Hero Section with Animated Text */}
           <section className="relative min-h-[90vh] flex flex-col items-center justify-center px-4 sm:px-6 pt-20 w-full">
             <div className="w-full mx-auto text-center">
@@ -55,9 +50,9 @@ export default function AboutAcademy() {
 
               {/* Scroll Indicator */}
             </div>
-            <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+            {/* <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
               <ArrowDown className="text-green-500" />
-            </div>
+            </div> */}
           </section>
 
           {/* Main Content */}
@@ -99,7 +94,7 @@ export default function AboutAcademy() {
                     <div className="mt-10 pt-6 border-t border-gray-700/50">
                       <button className="group relative px-6 py-3 bg-transparent border border-gray-600 hover:border-green-400 text-gray-300 rounded-full font-medium text-lg transition-all duration-300 flex items-center">
                         <span>Discover More</span>
-                        <ArrowDown className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
+                        {/* <ArrowDown className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform" /> */}
                       </button>
                     </div>
                   </div>
@@ -236,9 +231,9 @@ export default function AboutAcademy() {
               </div>
             </section>
           </div>
-        </div>
-      </main>
-      <Footer />
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }
