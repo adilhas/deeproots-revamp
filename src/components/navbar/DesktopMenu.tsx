@@ -1,5 +1,5 @@
 import { menuSection } from '@/constants/sectionData';
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { ChevronDown } from 'lucide-react';
 
 type Props = {
   onHover: (menuName: string) => void;
@@ -7,7 +7,7 @@ type Props = {
 
 export default function DesktopMenu({ onHover }: Props) {
   return (
-    <ul className="hidden lg:flex gap-6">
+    <ul className="hidden xl:flex mx-5">
       {menuSection.map((item) => (
         <li key={item.name} className="relative self-center">
           <div
@@ -23,7 +23,7 @@ export default function DesktopMenu({ onHover }: Props) {
             >
               {item.name}
             </div>
-            <ChevronDownIcon className="w-6 h-6 self-center transform transition-transform duration-300 group-hover:rotate-180" />
+            <ChevronDown className="w-6 h-6 self-center transform transition-transform duration-300 group-hover:rotate-180" />
           </div>
         </li>
       ))}

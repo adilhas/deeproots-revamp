@@ -19,26 +19,24 @@ const Telexcoin = () => {
         </div>
 
         {/* Content Section */}
-        <div className="flex justify-center lg:ml-16 items-start  flex-col lg:w-1/2 ">
+        <div className="flex justify-center lg:ml-16 items-start  flex-col lg:w-1/2 mx-auto">
           <div className="mt-6">
             {/* Header */}
-            <h1 className="font-extrabold text-2xl text-center lg:text-start lg:text-4xl mb-10 lg:leading-normal bg-gradient-to-r dark:bg-gradient-to-r from-[#0085a8] dark:via-[#ad1] dark:to-amber-400 via-blue-900 to-amber-600 bg-clip-text font-orbitron text-transparent">
+            <h1 className="font-extrabold text-2xl  lg:text-start lg:text-4xl mb-10 lg:leading-normal bg-gradient-to-r dark:bg-gradient-to-r from-[#0085a8] dark:via-[#ad1] dark:to-amber-400 via-blue-900 to-amber-600 bg-clip-text font-orbitron text-transparent">
               TeleXcoin DeX:
               <br /> Unlock the future of Finance
             </h1>
 
             {/* Mobile Image */}
-            <div className="inline-block">
-              <div className="w-full lg:hidden flex">
-                <Image
-                  src="/landing/telexcoin.jpeg"
-                  alt="TeleXcoin DeX Mobile"
-                  width={700}
-                  height={437}
-                  className="rounded-2xl"
-                  priority
-                />
-              </div>
+            <div className="w-full lg:hidden flex mx-auto justify-center">
+              <Image
+                src="/landing/telexcoin.jpeg"
+                alt="TeleXcoin DeX Mobile"
+                width={700}
+                height={437}
+                className="rounded-2xl"
+                priority
+              />
             </div>
 
             {/* Subheading */}

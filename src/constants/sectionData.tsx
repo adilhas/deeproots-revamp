@@ -744,7 +744,7 @@ export const footerLinks: IFooter[] = [
   },
   {
     title: 'RootLab',
-    icon: <FlaskConical color="#60A5FA" size={38} />,
+    icon: <FlaskConical color="#60A5FA" size={44} />,
     link: '/lab',
     links: [
       { label: 'InnoFi – Fund & Vote', href: 'https://innofi.earth' },
@@ -762,7 +762,7 @@ export const footerLinks: IFooter[] = [
   },
   {
     title: 'DeWorld',
-    icon: <Globe color="#ad1aaf" size={38} />,
+    icon: <Globe color="#ad1aaf" size={44} />,
     link: '/dewrold',
     links: [
       { label: 'The Address Wallet', href: 'https://theaddress.earth' },
@@ -783,11 +783,11 @@ export const footerLinks: IFooter[] = [
       { label: 'DeWorld Public Network', href: '#' },
       { label: 'DeWorld Private Network', href: '#' },
     ],
-    hoverColor: 'hover:text-yellow-300',
+    hoverColor: 'hover:text-[#ad1aaf]',
   },
   {
     title: 'RootIdentity',
-    icon: <Fingerprint color="#F87171" size={38} />,
+    icon: <Fingerprint color="#F87171" size={44} />,
     link: '/identity',
     links: [
       { label: 'MetaFabric – Style & ID', href: 'https://metafabric.earth' },
@@ -799,11 +799,11 @@ export const footerLinks: IFooter[] = [
       { label: 'Privacy Policy', href: '#' },
       { label: 'Terms of Service', href: '#' },
     ],
-    hoverColor: 'hover:text-red-300',
+    hoverColor: 'hover:text-[#F87171]',
   },
   {
     title: 'RootConnect',
-    icon: <Link color="#FBBF24" size={38} />,
+    icon: <Link color="#FBBF24" size={44} />,
     link: '/connect',
     links: [
       { label: 'Saxophone – Podcast & News', href: 'https://saxophone.earth' },
@@ -814,6 +814,6 @@ export const footerLinks: IFooter[] = [
       { label: 'DeFashion', href: '#' },
       { label: 'Contact Us', href: '#' },
     ],
-    hoverColor: 'hover:text-amber-400',
+    hoverColor: 'hover:text-[#FBBF24]',
   },
 ];

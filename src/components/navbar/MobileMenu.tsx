@@ -1,5 +1,5 @@
-import { ChevronUpIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import { menuSection } from '@/constants/sectionData';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 type Props = {
   isOpen: boolean;
@@ -14,7 +14,7 @@ export default function MobileMenu({
 }: Props) {
   return (
     <div
-      className={`min-h-screen p-3 font-orbitron lg:hidden absolute top-[100%] left-0 w-full z-40 bg-neutral-300 dark:bg-primary-dark shadow-lg border-t border-gray-200 dark:border-gray-700 transform transition-transform duration-300 overflow-y-auto max-h-[calc(100vh-4rem)] ${
+      className={`min-h-screen p-3 font-orbitron xl:hidden absolute top-[100%] left-0 w-full z-40 bg-neutral-300 dark:bg-primary-dark shadow-lg border-t border-gray-200 dark:border-gray-700 transform transition-transform duration-300 overflow-y-auto max-h-[calc(100vh-4rem)] ${
         isOpen ? 'translate-x-0' : '-translate-x-full'
       }`}
     >
@@ -28,9 +28,9 @@ export default function MobileMenu({
               >
                 <span>{item.name}</span>
                 {expandedItems[item.name] ? (
-                  <ChevronUpIcon className="w-5 h-5" />
+                  <ChevronUp className="w-5 h-5" />
                 ) : (
-                  <ChevronDownIcon className="w-5 h-5" />
+                  <ChevronDown className="w-5 h-5" />
                 )}
               </button>
 

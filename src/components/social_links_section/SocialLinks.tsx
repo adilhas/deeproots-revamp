@@ -56,16 +56,22 @@ const SocialLinks = () => {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group bg-white flex justify-center items-start md:items-center md:flex-row flex-col dark:bg-[#2A2B2E] rounded-xl p-6 shadow-md hover:shadow-lg transition-transform transform hover:-translate-y-2"
+            className="group bg-white dark:bg-[#2A2B2E] rounded-2xl p-6 border border-neutral-200 dark:border-neutral-700 
+             shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:shadow-[0_12px_45px_rgba(0,0,0,0.2)]
+             transform transition duration-300 hover:-translate-y-2 hover:scale-[1.02] flex justify-center items-start md:items-center md:flex-row flex-col"
           >
             <div
-              className="p-5 rounded-lg bg-opacity-10 md:mr-8 border-2 border-neutral-100 shadow-lg dark:shadow-[#1c1d20] dark:border-none inline-block"
+              className="p-5 rounded-xl bg-white dark:bg-[#1f1f22] shadow-inner shadow-neutral-200 dark:shadow-black/20 
+               border border-neutral-100 dark:border-neutral-700 transition-all duration-300 md:mr-8"
               style={{ color }}
             >
               <Icon size={30} />
             </div>
             <div className="flex justify-start items-start flex-col">
-              <h3 className="mt-4 text-xl font-semibold" style={{ color }}>
+              <h3
+                className="mt-4 text-xl font-semibold group-hover:tracking-wide transition-all"
+                style={{ color }}
+              >
                 {name}
               </h3>
               <p className="text-gray-600 dark:text-gray-400 mt-2">

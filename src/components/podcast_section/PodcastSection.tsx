@@ -7,7 +7,7 @@ const PodcastSection = () => {
         Our Podcast
       </h1>
       <div className="container lg:px-24 flex flex-col lg:flex-row items-center justify-between gap-8 mx-auto">
-        <div className="space-y-4 lg:w-1/2">
+        <div className="space-y-4 lg:w-1/2 lg:pr-9">
           <h2 className="text-3xl font-orbitron font-semibold">
             <span className="bg-gradient-to-t from-neutral-950 to-[#CF9345] dark:from-[#FDB91A] dark:to-[#626159] text-transparent bg-clip-text">
               Saxophone
@@ -36,7 +36,7 @@ const PodcastSection = () => {
             Join the Conversation
           </button>
         </div>
-        <div className="hidden lg:flex lg:w-1/2">
+        <div className="hidden lg:flex lg:w-1/2 pl-9">
           <Image
             src="/landing/podcast.webp"
             alt="Podcast Desktop"

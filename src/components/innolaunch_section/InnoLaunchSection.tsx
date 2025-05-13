@@ -16,7 +16,7 @@ const InnolaunchSection = () => {
     <main className=" p-6 md:p-10 bg-gray-400 dark:bg-transparent">
       <div className="flex justify-center lg:px-20 items-center flex-col lg:flex-row">
         <div className="flex justify-start  w-full md:items-start flex-col">
-          <h1 className="font-extrabold lg:w-1/2 leading-[40px] text-start text-3xl lg:leading-normal bg-gradient-to-r dark:from-[#F68082] from-[#97f4f3] to-[#97f4f3] dark:to-[#97F4F3] bg-clip-text font-orbitron text-transparent">
+          <h1 className="font-extrabold  leading-[40px] text-start text-3xl lg:leading-normal bg-gradient-to-r dark:from-[#F68082] from-[#97f4f3] to-[#97f4f3] dark:to-[#97F4F3] bg-clip-text font-orbitron text-transparent">
             InnoLaunch: <br /> Empowering DeWorld Projects on the Deep Roots
             Blockchain.
           </h1>
@@ -50,7 +50,7 @@ const InnolaunchSection = () => {
           </button>
         </div>
 
-        <div className="hidden lg:block my-5 w-1/2">
+        <div className="hidden lg:block my-5">
           <Image
             src="/landing/innolaunch.webp"
             alt="Launch"

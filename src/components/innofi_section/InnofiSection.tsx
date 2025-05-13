@@ -5,7 +5,7 @@ const InnofiSection = () => {
   return (
     <section className="w-full bg-[#F0FAFD] dark:bg-gray-900 my-20 py-28 px-6 md:px-16 flex flex-col lg:flex-row items-center gap-10">
       <div className="w-full lg:w-1/2 flex flex-col gap-6">
-        <div className="flex justify-start lg:items-start items-center flex-col">
+        <div className="flex justify-start lg:items-start  flex-col">
           <h1 className="font-extrabold text-3xl lg:text-4xl bg-gradient-to-r from-[#fb7087] via-[#76dbfa] to-[#76dbfa] bg-clip-text font-orbitron text-transparent">
             InnoFi:
           </h1>

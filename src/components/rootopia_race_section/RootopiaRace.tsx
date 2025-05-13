@@ -21,12 +21,10 @@ const RootopiaRace = () => {
         </div>
 
         <div className="flex justify-center lg:ml-32 items-start flex-col lg:w-1/2">
-          <div className="w-full mx-auto">
-            <div className="mt-6 ">
-              <h1 className="font-extrabold text-2xl text-center lg:text-start lg:text-4xl mb-10 lg:leading-normal bg-gradient-to-r from-[#0085a8] via-[#f4bb71] to-[#a45204] bg-clip-text font-orbitron text-transparent">
-                ROOTOPIA RACE
-              </h1>
-            </div>
+          <div>
+            <h1 className="font-extrabold text-2xl lg:text-start lg:text-4xl mb-10 lg:leading-normal bg-gradient-to-r from-[#0085a8] to-[#a45204] bg-clip-text font-orbitron text-transparent">
+              ROOTOPIA RACE
+            </h1>
 
             <div className="inline-block w-full lg:hidden mx-auto">
               <div className="flex justify-center w-full">
