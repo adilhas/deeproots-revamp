@@ -1,22 +1,36 @@
 import Head from 'next/head';
+import AppLayout from '@/Shared/AppLayout';
+import useEventForm from '@/components/connect/events_page/useEventForm';
+import EventsHeroSection from '@/components/connect/events_page/EventsHeroSection';
+import EventsIntroSection from '@/components/connect/events_page/EventsIntroSection';
+import EventsRegistrationForm from '@/components/connect/events_page/EventsRegistrationForm';
+import SuccessMessage from '@/components/connect/events_page/SuccessMessage';
 
-export default function Events() {
+const EventsPage = () => {
+  const { formData } = useEventForm();
+
   return (
-    <>
-      <Head>
-        <title>Events</title>
-        <meta name="description" content="description" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://deeproots.earth/connect/events" />
-      </Head>
-
-      <section className="pt-32 pb-16 bg-neutral-100 dark:bg-black text-center text-gray-800 dark:text-gray-100 min-h-screen flex items-center justify-center px-4">
-        <div className="max-w-2xl mx-auto">
-          <h1 className="text-5xl font-bold mb-4 font-orbitron tracking-wide">
-            🚧 Page Incoming...
-          </h1>
+    <AppLayout>
+      <div className="min-h-screen bg-neutral-300 dark:bg-primary-dark">
+        <Head>
+          <title>Events & Meetups - Deep Roots</title>
+          <meta
+            name="description"
+            content="Connect with the Deep Roots community through events and meetups."
+          />
+        </Head>
+        <div className="max-w-4xl mx-auto py-16 px-4 sm:px-6 lg:px-8 space-y-12">
+          <EventsHeroSection />
+          <EventsIntroSection />
+          {!formData.submitted ? (
+            <EventsRegistrationForm />
+          ) : (
+            <SuccessMessage />
+          )}
         </div>
-      </section>
-    </>
+      </div>
+    </AppLayout>
   );
-}
+};
+
+export default EventsPage;
