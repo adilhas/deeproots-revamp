@@ -1,45 +1,6 @@
-import {
-  Zap,
-  Settings,
-  Coins,
-  Vote,
-  Network,
-  Gamepad,
-  Image as ImageIcon,
-} from 'lucide-react';
+import { Settings } from 'lucide-react';
+import { drcUtilities } from './constant';
 
-const Data = [
-  {
-    icon: <Zap className="w-6 h-6 text-blue-600 dark:text-blue-400" />,
-    title: 'Gas for the Chain',
-    desc: 'Every smart contract, DApp, or token transfer runs on dRC.',
-  },
-  {
-    icon: <Coins className="w-6 h-6 text-yellow-600 dark:text-yellow-400" />,
-    title: 'Staking & Seeding',
-    desc: 'Earn 12% APY, unlock Foundation rewards, and fuel the ecosystem.',
-  },
-  {
-    icon: <Vote className="w-6 h-6 text-purple-600 dark:text-purple-400" />,
-    title: 'Governance',
-    desc: 'Vote on major decisions, upgrades, and platform initiatives.',
-  },
-  {
-    icon: <Network className="w-6 h-6 text-green-600 dark:text-green-400" />,
-    title: 'Referral System',
-    desc: 'Multi-level reward trees designed for mass adoption.',
-  },
-  {
-    icon: <Gamepad className="w-6 h-6 text-red-600 dark:text-red-400" />,
-    title: 'GameFi Utility',
-    desc: 'RootOpia and other products use dRC as core in-game currency.',
-  },
-  {
-    icon: <ImageIcon className="w-6 h-6 text-pink-600 dark:text-pink-400" />,
-    title: 'NFT Marketplace',
-    desc: 'Buy, sell, and trade NFTs directly with dRC.',
-  },
-];
 const UtilitySection = () => {
   return (
     <section className="bg-gray-100 dark:bg-gray-800/50 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-gray-300 dark:border-gray-700 shadow-xl">
@@ -57,7 +18,7 @@ const UtilitySection = () => {
           a decentralized world with multiple utilities:
         </p>
         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-          {Data.map((item) => (
+          {drcUtilities.map((item) => (
             <div
               key={item.title}
               className="bg-gray-200 dark:bg-gray-700/30 hover:bg-gray-300 dark:hover:bg-gray-700/50 p-4 sm:p-5 rounded-xl border border-gray-300 dark:border-gray-600 transition-all duration-300"
