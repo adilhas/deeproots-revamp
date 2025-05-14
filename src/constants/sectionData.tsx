@@ -735,7 +735,7 @@ export const footerLinks: IFooter[] = [
       { label: 'Learn & Earn – ShareValue', href: 'https://sharevalue.earth' },
       { label: 'RootOpia GameFi', href: '#' },
       { label: 'DeEducation', href: '#' },
-      { label: 'AI Tools', href: '#' },
+      { label: 'AI Tools', href: '/academy/ai-tools' },
       { label: 'Smart Contracts', href: '/academy/smart-contract' },
       { label: 'Gas Fees', href: '/academy/gas-fees' },
       { label: 'Roadmap', href: '/academy/roadmap' },
