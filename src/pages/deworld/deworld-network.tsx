@@ -1,0 +1,36 @@
+import Head from 'next/head';
+import AppLayout from '@/Shared/AppLayout';
+import DeworldNetworkHero from '@/components/deworld/deworld_network_page/DeworldNetworkHero';
+import PublicNetwork from '@/components/deworld/deworld_network_page/PublicNetwork';
+import PrivateNetwork from '@/components/deworld/deworld_network_page/PrivateNetwork';
+import DeworldNetworkCTA from '@/components/deworld/deworld_network_page/DeworldNetworkCTA';
+
+const NetworkPage = () => {
+  return (
+    <AppLayout>
+      <div className="min-h-screen bg-neutral-300 dark:bg-primary-dark transition-colors duration-300">
+        <Head>
+          <title>DeWorld Networks - Public & Private</title>
+          <meta
+            name="description"
+            content="Compare DeWorld's public and private blockchain networks."
+          />
+        </Head>
+
+        <div className="max-w-6xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+          <DeworldNetworkHero />
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <PublicNetwork />
+
+            <PrivateNetwork />
+          </div>
+
+          <DeworldNetworkCTA />
+        </div>
+      </div>
+    </AppLayout>
+  );
+};
+
+export default NetworkPage;
