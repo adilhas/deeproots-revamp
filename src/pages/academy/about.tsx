@@ -1,11 +1,10 @@
 import Head from 'next/head';
-import Navbar from '@/components/navbar/Navbar';
-import Footer from '@/components/main_page/footer/Footer';
 import Hero from '@/components/academy_page/about_page/Hero';
 import WhatIsDeepRoots from '@/components/academy_page/about_page/WhatIsDeepRoots';
 import VisionMission from '@/components/academy_page/about_page/VisionMission';
 import FounderNote from '@/components/academy_page/about_page/FounderNote';
 import JoinUs from '@/components/academy_page/about_page/JoinUs';
+import AppLayout from '@/Shared/AppLayout';
 
 export default function AboutAcademy() {
   return (
@@ -18,8 +17,7 @@ export default function AboutAcademy() {
         />
       </Head>
 
-      <div className="overflow-x-hidden">
-        <Navbar />
+      <AppLayout>
         <main className="relative w-full overflow-x-hidden max-w-[100vw] z-10 dark:bg-primary-dark">
           <Hero />
 
@@ -33,8 +31,7 @@ export default function AboutAcademy() {
             <JoinUs />
           </div>
         </main>
-        <Footer />
-      </div>
+      </AppLayout>
     </>
   );
 }

@@ -41,7 +41,6 @@ const Footer: React.FC = () => {
                   <Link
                     href={link.href}
                     className={`cursor-pointer ${section.hoverColor}`}
-                    target="_blank"
                     rel="noopener noreferrer"
                   >
                     {link.label}

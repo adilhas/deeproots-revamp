@@ -5,7 +5,7 @@ import CryptoFlowSection from '@/components/main_page/crypto_flow_section/Crypto
 import DeepAssets from '@/components/main_page/deepassets_section/DeepAssets';
 import UseCases from '@/components/main_page/deeproots_usecases/Usecases';
 import Features from '@/components/main_page/features/Features';
-import Footer from '@/components/main_page/footer/Footer';
+import Footer from '@/components/footer/Footer';
 import FoundationSeatsSection from '@/components/main_page/foundation_seats/FoundationSeatsSection';
 import GivefiSection from '@/components/main_page/givefi_section/GivefiSection';
 import Hero from '@/components/main_page/hero/Hero';

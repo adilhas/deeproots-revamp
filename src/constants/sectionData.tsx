@@ -32,7 +32,7 @@ import {
   Rocket,
 } from 'lucide-react';
 
-import { IFooter } from '@/components/main_page/footer/types';
+import { IFooter } from '@/components/footer/types';
 
 export const menuSection: MenuSection[] = [
   {
@@ -730,14 +730,14 @@ export const footerLinks: IFooter[] = [
     link: '/academy',
     links: [
       { label: 'What is Deep Roots?', href: '/academy/about' },
-      { label: 'What is DRC (Native Currency)?', href: '#' },
+      { label: 'What is DRC (Native Currency)?', href: '/academy/drc' },
       { label: 'White Paper', href: '#' },
       { label: 'Learn & Earn – ShareValue', href: 'https://sharevalue.earth' },
       { label: 'RootOpia GameFi', href: '#' },
       { label: 'DeEducation', href: '#' },
       { label: 'AI Tools', href: '#' },
-      { label: 'Smart Contracts', href: '#' },
-      { label: 'Gas Fees', href: '#' },
+      { label: 'Smart Contracts', href: '/academy/smart-contract' },
+      { label: 'Gas Fees', href: '/academy/gas-fees' },
       { label: 'Roadmap', href: '/academy/roadmap' },
     ],
     hoverColor: 'hover:text-green-300',
