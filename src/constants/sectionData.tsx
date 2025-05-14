@@ -32,7 +32,7 @@ import {
   Rocket,
 } from 'lucide-react';
 
-import { IFooter } from '@/components/footer/types';
+import { IFooter } from '@/components/main_page/footer/types';
 
 export const menuSection: MenuSection[] = [
   {
