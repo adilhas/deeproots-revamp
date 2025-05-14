@@ -778,7 +778,7 @@ export const footerLinks: IFooter[] = [
         href: 'https://oceanbazaar.earth',
       },
       { label: 'MetaFabric – Wearable NFTs', href: 'https://metafabric.earth' },
-      { label: 'DEFI', href: '#' },
+      { label: 'DEFI', href: '/deworld/defi' },
       { label: 'SEEDING', href: '#' },
       { label: 'DeWorld Public Network', href: '#' },
       { label: 'DeWorld Private Network', href: '#' },
