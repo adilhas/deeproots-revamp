@@ -7,7 +7,7 @@ const AiToolsHero = () => {
       <div className="absolute inset-0 overflow-hidden opacity-20 dark:opacity-10 pointer-events-none">
         <div className="absolute inset-0 bg-[url('/academy/grid-pattern.svg')] bg-[length:40px_40px]"></div>
       </div>
-      <div className="relative overflow-hidden py-16">
+      <div className="relative overflow-hidden md:p-16 p-4">
         {/* Background Elements */}
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-gradient-to-br from-[#0085a8]/10 to-[#ad1aaf]/10 rounded-full blur-3xl"></div>
         <div className="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-tr from-[#ad1aaf]/10 to-[#0085a8]/10 rounded-full blur-3xl"></div>
@@ -15,15 +15,15 @@ const AiToolsHero = () => {
         {/* Main Content */}
         <div className="container mx-auto px-4 grid md:grid-cols-12 gap-8 items-center">
           {/* Left Content */}
-          <div className="md:col-span-6 space-y-6 text-left">
-            <h1 className="text-5xl font-bold leading-tight lg:text-6xl">
+          <div className="md:col-span-6 space-y-6 md:text-left text-center">
+            <h1 className="text-3xl md:text-4xl font-bold leading-tight lg:text-6xl ">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0085a8] to-[#ad1aaf]">
                 We Are the Intelligence <br />
-                We Are the Edge.
+                We Are the Edge
               </span>
             </h1>
 
-            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-lg">
+            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-lg mx-auto md:mx-0">
               In Deep Roots, AI isn&apos;t just a feature — it&apos;s a core
               force behind how we learn, build, grow, and connect.
             </p>
