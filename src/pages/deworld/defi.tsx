@@ -19,23 +19,13 @@ const DeFiPage = () => {
           />
         </Head>
 
-        {/* Hero Section */}
         <DefiHero />
         <div className="max-w-5xl mx-auto relative z-10 py-16 px-4 sm:px-6 lg:px-8">
-          {/* Content Sections */}
           <div className="space-y-20">
-            {/* Intro Section */}
             <DefiIntro />
-            {/* Features Grid */}
             <DefiFeatures />
-
-            {/* DeFi Principles */}
             <DefiPrinciples />
-
-            {/* Benefits Section */}
             <DefiBenefits />
-
-            {/* Final CTA */}
             <DefiCTA />
           </div>
         </div>

@@ -796,7 +796,7 @@ export const footerLinks: IFooter[] = [
       { label: 'RootIdentity (DID coming soon)', href: '/identity/did' },
       { label: 'Ocean Bazaar NFT', href: 'https://oceanbazaar.earth' },
       { label: 'RWA', href: '/identity/assets' },
-      { label: 'Privacy Policy', href: '#' },
+      { label: 'Privacy Policy', href: '/identity/privacy-policy' },
       { label: 'Terms of Service', href: '#' },
     ],
     hoverColor: 'hover:text-[#F87171]',
