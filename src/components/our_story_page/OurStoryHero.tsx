@@ -20,7 +20,7 @@ const OurStoryHero = () => {
             From{' '}
             <span className="inline-block relative">
               <span className="bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] bg-clip-text text-transparent">
-                Possible
+                Impossible
               </span>
               <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#0085a8]/50 to-[#ad1aaf]/50 rounded-full"></span>
             </span>{' '}
