@@ -1,22 +1,4 @@
-import Image from 'next/image';
 import Head from 'next/head';
-import {
-  Megaphone,
-  MessageCircle,
-  FileText,
-  Calendar,
-  BookOpen,
-  Brain,
-  ShieldCheck,
-  Globe,
-  Lock,
-  Coins,
-  Gamepad2,
-  Lightbulb,
-  Box,
-  Download,
-  Mail,
-} from 'lucide-react';
 import AppLayout from '@/Shared/AppLayout';
 import PRHero from '@/components/public_relations_page/PRHero';
 import PROffers from '@/components/public_relations_page/PROffers';
