@@ -60,8 +60,9 @@ const Footer: React.FC = () => {
           </div>
         </Link>
         <p className="text-sm dark:text-gray-400 mx-2">
-          Our Story - Brands Assets - Code of Honor - Jobs - Private Policy -
-          Term of Use - Cookie Policy - Public Relations
+          <Link href={'/our-story'}>Our Story</Link> - Brands Assets - Code of
+          Honor - Jobs - Private Policy - Term of Use - Cookie Policy - Public
+          Relations
         </p>
       </div>
     </footer>

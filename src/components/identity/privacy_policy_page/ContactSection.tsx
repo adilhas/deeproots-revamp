@@ -12,10 +12,10 @@ const ContactSection = () => {
       <div className="flex items-center justify-center">
         <Mail className="w-5 h-5 text-[#0085a8] mr-2" />
         <a
-          href="mailto:Admin@deeproots.earth"
+          href="mailto:hello@deeproots.earth"
           className="text-lg font-medium text-[#0085a8] hover:text-[#ad1aaf] dark:text-[#ad1aaf] dark:hover:text-[#0085a8] transition-colors"
         >
-          Admin@deeproots.earth
+          hello@deeproots.earth
         </a>
       </div>
     </section>

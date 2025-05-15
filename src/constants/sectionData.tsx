@@ -812,7 +812,7 @@ export const footerLinks: IFooter[] = [
       { label: 'RootConnect (Community App)', href: '/connect/community' },
       { label: 'Social Media', href: '#' },
       { label: 'DeFashion', href: '#' },
-      { label: 'Contact Us', href: '#' },
+      { label: 'Contact Us', href: '/connect/contact-us' },
     ],
     hoverColor: 'hover:text-[#FBBF24]',
   },

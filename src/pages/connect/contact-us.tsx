@@ -1,0 +1,36 @@
+import Head from 'next/head';
+import AppLayout from '@/Shared/AppLayout';
+import ContactUsHero from '@/components/connect/contact_us_page/ContactUsHero';
+import GeneralContact from '@/components/connect/contact_us_page/GeneralContact';
+import BuildersSection from '@/components/connect/contact_us_page/BuildersSection';
+import ContactUsEventsSection from '@/components/connect/contact_us_page/ContactUsEventsSection';
+import ContactUsCTA from '@/components/connect/contact_us_page/ContactUsCTA';
+
+const ContactPage = () => {
+  return (
+    <AppLayout>
+      <div className="min-h-screen bg-neutral-300 dark:bg-primary-dark py-16 px-4 sm:px-6 lg:px-8">
+        <Head>
+          <title>Contact Us - Deep Roots</title>
+          <meta
+            name="description"
+            content="Get in touch with the Deep Roots team for support, partnerships, or collaborations."
+          />
+        </Head>
+        <div className="max-w-5xl mx-auto relative z-10">
+          <ContactUsHero />
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-8">
+              <GeneralContact />
+              <BuildersSection />
+            </div>
+            <ContactUsEventsSection />
+          </div>
+          <ContactUsCTA />
+        </div>
+      </div>
+    </AppLayout>
+  );
+};
+
+export default ContactPage;
