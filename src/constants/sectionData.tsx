@@ -779,7 +779,7 @@ export const footerLinks: IFooter[] = [
       },
       { label: 'MetaFabric – Wearable NFTs', href: 'https://metafabric.earth' },
       { label: 'DEFI', href: '/deworld/defi' },
-      { label: 'SEEDING', href: '#' },
+      { label: 'SEEDING', href: '/deworld/seeding' },
       { label: 'DeWorld Public Network', href: '/deworld/deworld-network' },
       { label: 'DeWorld Private Network', href: '/deworld/deworld-network' },
     ],

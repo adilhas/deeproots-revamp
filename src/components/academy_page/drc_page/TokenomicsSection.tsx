@@ -1,4 +1,5 @@
 import { Gem } from 'lucide-react';
+import Image from 'next/image';
 
 const TokenomicsSection = () => {
   return (
@@ -40,8 +41,13 @@ const TokenomicsSection = () => {
         {/* Sustainable Design Visual */}
         <div className="bg-gray-200 dark:bg-gray-700/50 rounded-xl p-6 border border-gray-300 dark:border-gray-600 flex items-center justify-center">
           <div className="text-center">
-            <div className="w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-4 rounded-full bg-yellow-100 dark:bg-gradient-to-br dark:from-yellow-500/20 dark:to-blue-500/20 border border-yellow-300 dark:border-yellow-500/30 flex items-center justify-center">
-              <Gem className="w-10 h-10 sm:w-12 sm:h-12 text-yellow-600 dark:text-yellow-400" />
+            <div className="rounded-full overflow-hidden ">
+              <Image
+                src={'/academy/drc-coin.png'}
+                width={200}
+                height={200}
+                alt="drc-coin"
+              />
             </div>
           </div>
         </div>
