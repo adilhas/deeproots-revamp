@@ -62,7 +62,8 @@ const Footer: React.FC = () => {
         <p className="text-sm dark:text-gray-400 mx-2">
           <Link href={'/our-story'}>Our Story</Link> - Brands Assets -{' '}
           <Link href={'/code-of-honor'}>Code of Honor</Link> - Jobs - Private
-          Policy - Term of Use - Cookie Policy - Public Relations
+          Policy - Term of Use -{' '}
+          <Link href={'/cookie-policy'}>Cookie Policy</Link> - Public Relations
         </p>
       </div>
     </footer>
