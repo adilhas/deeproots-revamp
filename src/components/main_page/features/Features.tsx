@@ -8,7 +8,7 @@ const Features = () => {
           <div key={index} className="inline-block">
             <div className="flex items-center cursor-pointer justify-center">
               <div className="dark:shadow-[2px_2px_2px_#0085a8,-2px_-2px_2px_#ad1aa0] shadow-[1px_1px_2px_#ad1aa0,-1px_-1px_2px_#0085a8] rounded-md">
-                <a href={'#'} target="_blank" rel="noopener noreferrer">
+                <a href={'#'} rel="noopener noreferrer">
                   {card.icon}
                 </a>
               </div>

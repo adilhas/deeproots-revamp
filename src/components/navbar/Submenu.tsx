@@ -25,7 +25,6 @@ export default function Submenu({ activeMenu }: Props) {
                 <Link
                   key={subitem.title}
                   href={subitem.link}
-                  target="_blank"
                   className="group block rounded-xl p-4 bg-neutral-50 dark:bg-neutral-900/50 border border-transparent hover:border-primary dark:hover:border-[#0085a8] transition-all duration-300 hover:shadow-lg"
                 >
                   <div className="text-lg font-bold text-neutral-800 dark:text-white group-hover:text-[#0085a8] transition-colors">

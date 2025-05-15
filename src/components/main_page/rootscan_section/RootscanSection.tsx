@@ -71,11 +71,7 @@ export default function RootscanSection() {
           </ul>
 
           <div className="mt-8">
-            <Link
-              href="https://rootscan.earth"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href="https://rootscan.earth" rel="noopener noreferrer">
               <button className="px-6 hover:scale-105 py-3 text-lg font-medium rounded-full bg-gradient-to-r from-yellow-500 to-green-500 text-black hover:from-yellow-400 hover:to-green-400 transition">
                 Explore RootScan
               </button>

@@ -54,7 +54,6 @@ const SocialLinks = () => {
           <a
             key={name}
             href={href}
-            target="_blank"
             rel="noopener noreferrer"
             className="group bg-white dark:bg-[#2A2B2E] rounded-2xl p-6 border border-neutral-200 dark:border-neutral-700 
              shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:shadow-[0_12px_45px_rgba(0,0,0,0.2)]
@@ -85,7 +84,6 @@ const SocialLinks = () => {
       <div className="text-center mt-10">
         <a
           href="https://deeproots.community"
-          target="_blank"
           rel="noopener noreferrer"
           className="inline-block px-6 py-3 bg-[#0085a8] text-white rounded-full text-lg font-semibold shadow-md hover:scale-105 transition"
         >
