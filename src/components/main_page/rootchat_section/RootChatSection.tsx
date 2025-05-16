@@ -21,7 +21,7 @@ const features = [
 
 const RootChatSection = () => {
   return (
-    <section className="flex flex-col lg:flex-row items-center  px-6 lg:px-12 gap-10 bg-gradient-to-br  from-[#C6B6F2] to-[#A0E6FF] dark:from-[#3D2A63] dark:via-[#5C3FA3] dark:to-[#00CFFF] relative overflow-hidden ">
+    <section className="flex flex-col py-20 lg:flex-row items-center  px-6 lg:px-12 gap-10 bg-gradient-to-br  from-[#C6B6F2] to-[#A0E6FF] dark:from-[#3D2A63] dark:via-[#5C3FA3] dark:to-[#00CFFF] relative overflow-hidden ">
       <div className="absolute w-60 h-60 top-20 right-10 bg-[#5C3FA3] blur-[200px] rounded-full opacity-40 dark:opacity-60 pointer-events-none z-0" />
 
       <div className="lg:w-1/2 text-gray-900 dark:text-gray-200 relative z-10 lg:pl-9">

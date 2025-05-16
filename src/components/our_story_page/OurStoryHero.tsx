@@ -3,7 +3,7 @@ import { Sparkles, ArrowRight } from 'lucide-react';
 
 const OurStoryHero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col lg:flex-row items-center overflow-hidden py-16 lg:py-0">
+    <section className="relative  min-h-screen flex flex-col lg:flex-row items-center overflow-hidden py-16 lg:py-0">
       {/* Content Side */}
       <div className="w-full lg:w-1/2 px-6 lg:px-12 xl:px-20 py-12 z-10">
         <div className="max-w-xl lg:mx-0 mx-auto">
@@ -16,7 +16,7 @@ const OurStoryHero = () => {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-8">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-primary-dark dark:text-white leading-tight mb-8">
             From{' '}
             <span className="inline-block relative">
               <span className="bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] bg-clip-text text-transparent">
@@ -34,14 +34,14 @@ const OurStoryHero = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl text-gray-200 mb-10">
+          <p className="text-xl text-primary-dark dark:text-gray-200 mb-10">
             Seeding intelligence to harvest solutions for tomorrow&apos;s
             challenges.
           </p>
 
           {/* Featured Box */}
           <div className="bg-white/10 backdrop-blur-md px-8 py-6 rounded-2xl border border-white/20 shadow-xl">
-            <p className="text-xl text-white font-medium">
+            <p className="text-xl text-primary-dark dark:text-white font-medium">
               We are{' '}
               <span className="font-bold bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] bg-clip-text text-transparent">
                 Deep Roots

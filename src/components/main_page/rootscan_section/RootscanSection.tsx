@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function RootscanSection() {
   return (
-    <section className="bg-gradient-to-br from-[#f9ecd4] to-[#c5dcb3] dark:bg-gradient-to-br dark:from-[#2e1300] dark:to-[#1f3d2a] text-amber-900 dark:text-amber-100 px-6 py-16 lg:py-24">
+    <section className="bg-gradient-to-br  from-[#f9ecd4] to-[#c5dcb3] dark:bg-gradient-to-br dark:from-[#2e1300] dark:to-[#1f3d2a] text-amber-900 dark:text-amber-100 px-10 py-16 lg:py-24">
       <div className="text-center lg:text-left max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <div
@@ -18,12 +18,14 @@ export default function RootscanSection() {
           </div>
 
           {/* Mobile image with rounded corners */}
-          <div className="relative w-full max-w-md mx-auto aspect-[2/3] lg:hidden my-3 rounded-2xl overflow-hidden">
+          <div className="w-full my-6 lg:hidden">
             <Image
-              src="/landing/rootscan.png"
-              alt="Rootscan Tree"
-              fill
-              className="object-cover"
+              src="/landing/rootscan-v2.png"
+              alt="Ocean Bazaar Landing"
+              className="rounded-xl shadow-lg"
+              width={800}
+              height={500}
+              layout="responsive"
               priority
             />
           </div>
@@ -31,7 +33,7 @@ export default function RootscanSection() {
           <ul className="space-y-5 text-amber-900 dark:text-amber-200">
             <li className="flex items-start gap-3">
               <TreePalm
-                className="w-[33px] h-[33px] shrink-0 text-yellow-600 dark:text-yellow-400 mt-[2px]"
+                className="w-[33px] h-[33px] shrink-0 text-[#2d8a4e] mt-[2px]"
                 size={33}
               />
               <span>
@@ -44,7 +46,7 @@ export default function RootscanSection() {
             </li>
             <li className="flex items-start gap-3">
               <TreePalm
-                className="w-[33px] h-[33px] shrink-0 text-yellow-600 dark:text-yellow-400 mt-[2px]"
+                className="w-[33px] h-[33px] shrink-0 text-[#2d8a4e] mt-[2px]"
                 size={33}
               />
               <span>
@@ -57,7 +59,7 @@ export default function RootscanSection() {
             </li>
             <li className="flex items-start gap-3">
               <TreePalm
-                className="w-[33px] h-[33px] shrink-0 text-yellow-600 dark:text-yellow-400 mt-[2px]"
+                className="w-[33px] h-[33px] shrink-0 text-[#2d8a4e] mt-[2px]"
                 size={33}
               />
               <span>
@@ -79,13 +81,14 @@ export default function RootscanSection() {
           </div>
         </div>
 
-        {/* Desktop image with rounded corners */}
-        <div className="hidden lg:block relative w-[25vw] aspect-[2/3] mx-auto rounded-2xl overflow-hidden">
+        <div className="w-full lg:w-[35vw] hidden lg:inline-block order-2 lg:order-2 lg:justify-self-end mx-auto lg:mx-0 ">
           <Image
-            src="/landing/rootscan.png"
-            alt="Rootscan Explorer"
-            fill
-            className="object-cover"
+            src="/landing/rootscan-v2.png"
+            alt="Ocean Bazaar Landing"
+            className="rounded-xl shadow-lg"
+            width={1200}
+            height={800}
+            layout="responsive"
             priority
           />
         </div>

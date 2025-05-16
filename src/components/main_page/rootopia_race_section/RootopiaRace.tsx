@@ -6,7 +6,7 @@ const RootopiaRace = () => {
     <main className=" relative bg-neutral-100 dark:bg-neutral-950 px-10 py-20">
       <div className="flex justify-center flex-row items-center w-full"></div>
 
-      <div className="flex justify-center flex-col lg:flex-row rounded-2xl items-center ">
+      <div className="flex justify-center flex-col lg:flex-row rounded-2xl items-center">
         <div className="inline-block" style={{ opacity: 1, transform: 'none' }}>
           <div className="w-full lg:flex hidden">
             <Image
