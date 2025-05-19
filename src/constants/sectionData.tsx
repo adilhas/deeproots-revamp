@@ -40,9 +40,9 @@ export const menuSection: MenuSection[] = [
     subitems: [
       {
         title: 'What is Deep Roots?',
-        description: 'Deep Roots Overview.',
+        description: '',
 
-        link: '/academy/about',
+        link: '/our-story',
       },
       {
         title: 'Share Value (Learn & Earn)',
@@ -61,6 +61,17 @@ export const menuSection: MenuSection[] = [
         description: "Explore DeWorld's white paper.",
 
         link: '/academy/roadmap',
+      },
+      {
+        title: 'What is DRC (Native Currency)?',
+        description: 'The foundational layer of DeWorld',
+        link: '/academy/drc',
+      },
+      {
+        title: 'Ai Tools',
+        description:
+          "AI isn't just a feature — it's a core force behind how we learn",
+        link: '/academy/ai-tools',
       },
     ],
   },
@@ -86,9 +97,14 @@ export const menuSection: MenuSection[] = [
         link: 'https://innofarm.earth',
       },
       {
-        title: 'Token',
-        description: 'Education hub for learning and innovation.',
-        link: '/lab/tokenomics',
+        title: 'Seeding',
+        description: 'From Vision to Ownership',
+        link: '/deworld/seeding',
+      },
+      {
+        title: 'Internal Hackathon',
+        description: 'Where Ideas Take Root',
+        link: '/lab/internal-hackathon',
       },
     ],
   },
@@ -106,25 +122,25 @@ export const menuSection: MenuSection[] = [
         link: 'https://telexcoin.earth',
       },
       {
-        title: 'RootScan',
-        description: 'AI Tools are Easy to Use and Simple to Learn for DeWorld',
-        link: 'https://rootscan.earth',
+        title: 'Foundation',
+        description: 'Join The Movement',
+        link: '#',
       },
       {
-        title: 'RootChat',
-        description: 'Customize your style with MetaFabric NFTs.',
-        link: 'https://rootchat.earth',
+        title: 'DeepAssets',
+        description: 'Manage assets and grow earnings with DeWorld.',
+        link: 'https://deepassets.earth',
       },
 
       {
-        title: 'OceanBazaar',
-        description: 'Education hub for learning and innovation.',
-        link: 'https://oceanbazaar.earth',
+        title: 'MetaFabric',
+        description: 'Education hub for learning and innovation',
+        link: 'https://metafabric.earth',
       },
       {
-        title: 'MetaFabric',
-        description: 'Education hub for learning and innovation.',
-        link: 'https://metafabric.earth',
+        title: 'GiveFi',
+        description: 'Empowering Non-profits through transparent giving',
+        link: 'https://givefi.earth',
       },
     ],
   },
@@ -132,26 +148,26 @@ export const menuSection: MenuSection[] = [
     name: 'RootIdentity',
     subitems: [
       {
-        title: 'GiveFi',
-        description: 'Manage assets and grow earnings with DeWorld.',
-        link: 'https://givefi.earth',
+        title: 'OceanBazaar',
+        description: 'Education hub for learning and innovation',
+        link: 'https://oceanbazaar.earth',
       },
       {
-        title: 'DeepAssets',
-        description: 'Manage assets and grow earnings with DeWorld.',
-        link: 'https://deepassets.earth',
-      },
-      {
-        title: 'RootIdentity (DID)',
-        description: 'Fractional trading of tokenized real-world assets.',
-        link: '/identity/did',
+        title: 'RootScan',
+        description: 'Deep Roots Blockchain Explorer',
+        link: 'https://rootscan.earth',
       },
 
       {
-        title: 'NFT/RWA',
-        description:
-          'To learn, create, innovate, vote, fund, and launch the next big thing in DeWorld.',
-        link: '/identity/assets',
+        title: 'RootChat',
+        description: 'The First Hybrid CALL & Messaging App',
+        link: 'https://rootchat.earth',
+      },
+
+      {
+        title: 'Privacy Policy',
+        description: `At Deep Roots, privacy is not a feature — it's a right.`,
+        link: '/identity/privacy-policy',
       },
     ],
   },
@@ -160,12 +176,12 @@ export const menuSection: MenuSection[] = [
     subitems: [
       {
         title: 'Saxophone',
-        description: 'Tune into blockchain insights with Saxophone Podcast.',
+        description: 'A Live Podcast',
         link: 'https://saxophone.earth',
       },
       {
         title: 'Volunteer',
-        description: 'Customize your style with MetaFabric NFTs.',
+        description: '',
 
         link: '/connect/volunteer',
       },
@@ -176,10 +192,10 @@ export const menuSection: MenuSection[] = [
         link: '/connect/events',
       },
       {
-        title: 'Community',
+        title: 'Social Media',
         description: 'Be part of the team with creativity and collaboration.',
 
-        link: '/connect/community',
+        link: '#',
       },
     ],
   },
