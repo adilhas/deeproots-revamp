@@ -40,25 +40,26 @@ export const menuSection: MenuSection[] = [
     subitems: [
       {
         title: 'What is Deep Roots?',
-        description: '',
+        description:
+          'We began with one mission: make blockchain simple and powerful.',
 
         link: '/our-story',
       },
       {
         title: 'Share Value (Learn & Earn)',
-        description: 'Learn how to earn with The Address Wallet.',
+        description: 'Learn, Create, Innovate – A DeWorld Education Hub.',
 
         link: ' https://sharevalue.earth',
       },
       {
         title: 'White Paper',
-        description: 'Be Part of the Foundation.',
+        description: "Explore DeWorld's white paper.",
 
         link: '/academy/whitepaper',
       },
       {
         title: 'Roadmap',
-        description: "Explore DeWorld's white paper.",
+        description: 'Explore the roadmap',
 
         link: '/academy/roadmap',
       },
@@ -80,19 +81,20 @@ export const menuSection: MenuSection[] = [
     subitems: [
       {
         title: 'InnoFi',
-        description: 'The Next-Gen Blockchain.',
+        description: 'VOTE & FUND DeWorld',
 
         link: 'https://innofi.earth',
       },
       {
         title: 'InnoLaunch',
-        description: 'Explore digitized real assets.',
+        description:
+          'Empowering DeWorld Projects on the Deep Roots Blockchain.',
 
         link: 'https://innolaunch.earth',
       },
       {
         title: 'InnoFarm',
-        description: 'Vote for DeWorld funding milestones.',
+        description: 'The Web3 Job Marketplace.',
 
         link: 'https://innofarm.earth',
       },
@@ -113,12 +115,12 @@ export const menuSection: MenuSection[] = [
     subitems: [
       {
         title: 'The Address Wallet',
-        description: 'The next-gen dynamic blockchain.',
+        description: 'Warp Around Wealth - 21 Layers of Dynamic Finance.',
         link: 'https://theaddress.earth',
       },
       {
         title: 'TelexCoin DEX',
-        description: 'Explore digitized real assets.',
+        description: 'Unlock the future of Finance.',
         link: 'https://telexcoin.earth',
       },
       {
@@ -128,13 +130,13 @@ export const menuSection: MenuSection[] = [
       },
       {
         title: 'DeepAssets',
-        description: 'Manage assets and grow earnings with DeWorld.',
+        description: 'Transforming Real-World Assets into Digital Value.',
         link: 'https://deepassets.earth',
       },
 
       {
         title: 'MetaFabric',
-        description: 'Education hub for learning and innovation',
+        description: 'Blockchain to Runway Your Style.',
         link: 'https://metafabric.earth',
       },
       {
@@ -149,7 +151,7 @@ export const menuSection: MenuSection[] = [
     subitems: [
       {
         title: 'OceanBazaar',
-        description: 'Education hub for learning and innovation',
+        description: 'The NFT Marketplace',
         link: 'https://oceanbazaar.earth',
       },
       {
@@ -176,18 +178,19 @@ export const menuSection: MenuSection[] = [
     subitems: [
       {
         title: 'Saxophone',
-        description: 'A Live Podcast',
+        description: 'Live Podcast For Blockchain Insights',
         link: 'https://saxophone.earth',
       },
       {
         title: 'Volunteer',
-        description: '',
+        description: 'Explore Volunteer program',
 
         link: '/connect/volunteer',
       },
       {
         title: 'Events',
-        description: 'Get the latest news and upcoming events.',
+        description:
+          'Deep Roots events are your chance to connect, learn, and grow with the community.',
 
         link: '/connect/events',
       },

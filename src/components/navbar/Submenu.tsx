@@ -30,6 +30,9 @@ export default function Submenu({ activeMenu }: Props) {
                   <div className="text-lg font-bold text-neutral-800 dark:text-white group-hover:text-[#0085a8] transition-colors">
                     {subitem.title}
                   </div>
+                  <div className="mt-2 text-sm text-neutral-600 dark:text-neutral-400 group-hover:text-[#0085a8] transition-colors">
+                    {subitem.description}
+                  </div>
                 </Link>
               ))}
             </div>
