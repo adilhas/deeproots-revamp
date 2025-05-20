@@ -14,7 +14,7 @@ const fundingRounds = [
 
 const InnolaunchSection = () => {
   return (
-    <main className=" px-6 md:px-10 pb-16 bg-gray-400 dark:bg-transparent">
+    <main className=" px-6 md:px-10 py-16 bg-gray-400 dark:bg-transparent">
       <div className="flex justify-center lg:px-20 items-center flex-col lg:flex-row">
         <div className="flex justify-start  w-full md:items-start flex-col lg:w-1/2">
           <div className="font-extrabold  leading-[40px] text-start text-3xl lg:leading-normal bg-gradient-to-r dark:from-[#F68082] from-[#97f4f3] to-[#97f4f3] dark:to-[#97F4F3] bg-clip-text font-orbitron text-transparent">

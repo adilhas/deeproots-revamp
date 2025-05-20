@@ -1,8 +1,8 @@
 export default function CryptoFlowSection() {
   return (
-    <section className="flex flex-col lg:flex-row justify-center items-center gap-6 p-8 transition-all min-h-[60vh] shadow-inner bg-neutral-300 dark:bg-gray-900 rounded-xl">
+    <section className="flex flex-col lg:flex-row justify-center items-center gap-6 p-8 transition-all min-h-[60vh] shadow-inner bg-white dark:bg-gray-900 rounded-xl">
       {/* Bitcoin */}
-      <div className="flex flex-col items-center text-center justify-center p-6 rounded-xl shadow-inner bg-white dark:bg-gray-800 w-72 transition-all">
+      <div className="flex flex-col items-center text-center justify-center p-6 rounded-xl shadow-inner bg-neutral-300 dark:bg-gray-800 w-72 transition-all">
         <h2 className="text-2xl font-bold">Bitcoin (BTC)</h2>
       </div>
 
@@ -13,7 +13,7 @@ export default function CryptoFlowSection() {
       </div>
 
       {/* Ethereum */}
-      <div className="flex flex-col items-center justify-center text-center p-6 rounded-xl  shadow-inner bg-white dark:bg-gray-800 w-72 transition-all">
+      <div className="flex flex-col items-center justify-center text-center p-6 rounded-xl  shadow-inner bg-neutral-300 dark:bg-gray-800 w-72 transition-all">
         <h2 className="text-2xl font-bold">Ethereum (ETH)</h2>
       </div>
 
@@ -65,7 +65,7 @@ export default function CryptoFlowSection() {
       </div>
 
       {/* DeepRoots */}
-      <div className="flex flex-col items-center text-center p-6 rounded-lg  shadow-inner bg-white dark:bg-gray-800 w-72 transition-all">
+      <div className="flex flex-col items-center text-center p-6 rounded-lg  shadow-inner bg-neutral-300 dark:bg-gray-800 w-72 transition-all">
         <h2 className="text-2xl font-bold">DeepRoots (dRC)</h2>
       </div>
     </section>

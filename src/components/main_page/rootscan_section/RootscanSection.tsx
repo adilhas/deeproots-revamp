@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function RootscanSection() {
   return (
-    <section className="bg-gradient-to-br  from-[#f9ecd4] to-[#c5dcb3] dark:bg-gradient-to-br dark:from-[#2e1300] dark:to-[#1f3d2a] text-amber-900 dark:text-amber-100 px-10 py-16 lg:py-24">
+    <section className="bg-gradient-to-br  from-[#f9ecd4] to-[#c5dcb391] dark:bg-gradient-to-br dark:from-[#2e1300] dark:to-[#1f3d2a] text-amber-900 dark:text-amber-100 px-10 py-16 lg:py-24">
       <div className="text-center lg:text-left max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <div
