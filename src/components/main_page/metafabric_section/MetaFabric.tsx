@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { metafabricFeatures } from '@/constants/sectionData';
+import Link from 'next/link';
 
 const MetaFabricSection = () => {
   return (
@@ -44,9 +45,11 @@ const MetaFabricSection = () => {
           ))}
         </ul>
 
-        <button className="mt-6 px-6 py-2 bg-gradient-to-l from-[#ee49fc] to-[#32d8fd] text-white rounded-lg hover:border-2 hover:bg-none hover:dark:text-neutral-200 hover:text-neutral-900 font-bold hover:border-[#ee49fc] transition">
-          Explore MetaFabric
-        </button>
+        <Link href="https://metafabric.earth/">
+          <button className="mt-6 px-6 py-2 bg-gradient-to-l from-[#ee49fc] to-[#32d8fd] text-white rounded-lg border-2 hover:bg-none hover:dark:text-neutral-200 hover:text-neutral-900 font-bold hover:border-[#ee49fc] transition">
+            Explore MetaFabric
+          </button>
+        </Link>
       </div>
     </section>
   );

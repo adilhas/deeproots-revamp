@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const RootopiaRace = () => {
   return (
@@ -49,11 +50,13 @@ const RootopiaRace = () => {
             you ready to claim your victory?
           </p>
 
-          <div className="flex justify-center lg:mt-6 items-center flex-col md:flex-row">
-            <button className="cursor-pointer mt-6 lg:mt-10 mr-6 px-6 font-orbitron py-3 text-center border-2 dark:border-[#0085a8] border-[#0085a8] hover:scale-105 hover:text-[#0085a8] transition-all hover:ease-in-out light:text-primary-dark dark:text-white rounded-lg text-lg tracking-wider">
-              Play Now
-            </button>
-          </div>
+          <Link href={'https://rootopia.earth/'}>
+            <div className="flex justify-center lg:mt-6 items-center flex-col md:flex-row">
+              <button className="cursor-pointer mt-6 lg:mt-10 mr-6 px-6 font-orbitron py-3 text-center border-2 dark:border-[#0085a8] border-[#0085a8] hover:scale-105 hover:text-[#0085a8] transition-all hover:ease-in-out light:text-primary-dark dark:text-white rounded-lg text-lg tracking-wider">
+                Play Now
+              </button>
+            </div>
+          </Link>
         </div>
       </div>
 

@@ -4,7 +4,7 @@ import { Wallet, Smartphone, Rocket, Eye, BadgeCheck } from 'lucide-react';
 
 export default function GivefiSection() {
   return (
-    <section className="bg-gradient-to-br from-[#F5EDFF] via-[#E8E9FF] to-[#B8D0FF] dark:from-[#432C7A] dark:via-[#6E4F9E] dark:to-[#8FC1FF] text-gray-900 dark:text-white px-6 py-16 lg:py-24">
+    <section className="inset-shadow-2xs bg-gradient-to-b from-[#F5EDFF] via-[#E8E9FF] to-[#B8D0FF] dark:from-[#432C7A] dark:via-[#6E4F9E] dark:to-[#432C7A] text-gray-900 dark:text-white px-6 py-16 lg:py-24">
       <div className="max-w-7xl text-center lg:text-left mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="w-fit mx-auto">
           <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#A66EFF] via-[#6eb4ff] to-[#6eb4ff] font-orbitron text-center lg:text-left text-2xl lg:text-3xl font-bold mb-6 drop-shadow-[0_1px_1px_rgba(0,0,0,0.2)] dark:drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)]">

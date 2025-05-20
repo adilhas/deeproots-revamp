@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const PodcastSection = () => {
   return (
@@ -32,9 +33,11 @@ const PodcastSection = () => {
             to shape the future, gain exclusive insights, collaborate with
             innovators, and be part of the community.
           </p>
-          <button className="hover:scale-105 bg-[#CF9345] text-white py-3 px-6 rounded-lg shadow-lg hover:bg-[#b8833d] transition duration-300">
-            Join the Conversation
-          </button>
+          <Link href="https://saxophone.earth/">
+            <button className="hover:scale-105 bg-[#CF9345] text-white py-3 px-6 rounded-lg shadow-lg hover:bg-[#b8833d] transition duration-300">
+              Join the Conversation
+            </button>
+          </Link>
         </div>
         <div className="hidden lg:flex lg:w-1/2 pl-9">
           <Image

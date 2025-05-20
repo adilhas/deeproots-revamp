@@ -1,5 +1,6 @@
 import { innofiFeatures } from '@/constants/sectionData';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const InnofiSection = () => {
   return (
@@ -41,9 +42,11 @@ const InnofiSection = () => {
           ))}
 
           {/* Mobile Vote Button */}
-          <button className="mt-6 font-bold border-2 lg:hidden hover:scale-105 dark:hover:border-2 dark:bg-gradient-to-r from-[#fb7087] to-[#76dbfa] mr-6 px-6 font-orbitron py-3 text-center hover:border-2 border-[#fb7087] dark:hover:bg-none hover:text-[#fb7087] transition-all hover:ease-in-out rounded-lg text-lg tracking-wider">
-            VOTE
-          </button>
+          <Link href={'https://innofi.earth/'}>
+            <button className="mt-6 font-bold border-2 lg:hidden hover:scale-105 dark:hover:border-2 dark:bg-gradient-to-r from-[#fb7087] to-[#76dbfa] mr-6 px-6 font-orbitron py-3 text-center hover:border-2 border-[#fb7087] dark:hover:bg-none hover:text-[#fb7087] transition-all hover:ease-in-out rounded-lg text-lg tracking-wider">
+              VOTE
+            </button>
+          </Link>
         </div>
       </div>
 
@@ -63,9 +66,11 @@ const InnofiSection = () => {
           className="object-cover rounded-2xl"
           sizes="(max-width: 1024px) 100vw, 600px"
         />
-        <button className="mt-6 font-bold w-1/2 justify-center lg:my-10 border-2 hidden md:flex hover:scale-105 dark:hover:border-2 dark:bg-gradient-to-r from-[#fb7087] to-[#76dbfa] mr-6 px-6 font-orbitron py-3 text-center hover:border-2 border-[#fb7087] dark:hover:bg-none hover:text-[#fb7087] transition-all hover:ease-in-out rounded-lg text-2xl tracking-wider">
-          VOTE
-        </button>
+        <Link href={'https://innofi.earth/'}>
+          <button className="mt-6 font-bold justify-center lg:my-10 border-2 hidden md:flex hover:scale-105 dark:hover:border-2 dark:bg-gradient-to-r from-[#fb7087] to-[#76dbfa] mr-6 px-6 font-orbitron py-3 text-center hover:border-2 border-[#fb7087] dark:hover:bg-none hover:text-[#fb7087] transition-all hover:ease-in-out rounded-lg text-2xl tracking-wider">
+            VOTE
+          </button>
+        </Link>
       </div>
     </section>
   );

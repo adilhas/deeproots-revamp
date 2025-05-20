@@ -1,9 +1,9 @@
 export default function CryptoFlowSection() {
   return (
-    <section className="flex flex-col lg:flex-row justify-center items-center mt-8 gap-6 p-8 transition-all">
+    <section className="flex flex-col lg:flex-row justify-center items-center gap-6 p-8 transition-all min-h-[60vh] shadow-inner bg-neutral-300 dark:bg-gray-900 rounded-xl">
       {/* Bitcoin */}
-      <div className="flex flex-col items-center text-center p-6 rounded-xl shadow-lg w-72 transition-all">
-        <h2 className="text-2xl font-bold mt-4">Bitcoin (BTC)</h2>
+      <div className="flex flex-col items-center text-center justify-center p-6 rounded-xl shadow-inner bg-white dark:bg-gray-800 w-72 transition-all">
+        <h2 className="text-2xl font-bold">Bitcoin (BTC)</h2>
       </div>
 
       {/* Arrow */}
@@ -13,8 +13,8 @@ export default function CryptoFlowSection() {
       </div>
 
       {/* Ethereum */}
-      <div className="flex flex-col items-center text-center p-6 rounded-xl shadow-lg w-72 transition-all">
-        <h2 className="text-2xl font-bold mt-4">Ethereum (ETH)</h2>
+      <div className="flex flex-col items-center justify-center text-center p-6 rounded-xl  shadow-inner bg-white dark:bg-gray-800 w-72 transition-all">
+        <h2 className="text-2xl font-bold">Ethereum (ETH)</h2>
       </div>
 
       {/* Arrow */}
@@ -24,7 +24,8 @@ export default function CryptoFlowSection() {
       </div>
 
       {/* Sun SVG */}
-      <div className="rounded-full w-28 h-28 shadow-xl flex justify-center items-center">
+      <div className="rounded-full w-28 h-28 shadow-inner  bg-yellow-100 dark:bg-yellow-300 flex justify-center items-center">
+        {/* SVG unchanged */}
         <svg
           stroke="currentColor"
           fill="currentColor"
@@ -64,8 +65,8 @@ export default function CryptoFlowSection() {
       </div>
 
       {/* DeepRoots */}
-      <div className="flex flex-col items-center text-center p-6 rounded-lg shadow-xl w-72 transition-all">
-        <h2 className="text-2xl font-bold mt-4">DeepRoots (DRC)</h2>
+      <div className="flex flex-col items-center text-center p-6 rounded-lg  shadow-inner bg-white dark:bg-gray-800 w-72 transition-all">
+        <h2 className="text-2xl font-bold">DeepRoots (dRC)</h2>
       </div>
     </section>
   );

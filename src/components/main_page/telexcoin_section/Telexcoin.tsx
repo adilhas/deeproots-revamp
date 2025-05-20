@@ -42,7 +42,7 @@ const Telexcoin = () => {
             {/* Subheading */}
             <div className="inline-block">
               <h4 className="font-orbitron font-bold text-xl leading-normal w-full">
-                Get Early Access to DRC Tokens!
+                Get Early Access to dRC Tokens!
               </h4>
             </div>
           </div>

@@ -1,4 +1,6 @@
 import { aboutItems } from '@/constants/sectionData';
+import { ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 const AboutSection: React.FC = () => {
@@ -22,18 +24,19 @@ const AboutSection: React.FC = () => {
         {aboutItems.map((item, index) => (
           <div
             key={index}
-            className="border border-[#0085a8] rounded-lg cursor-pointer"
+            className="border border-[#0085a8] rounded-lg cursor-pointer hover:scale-105 transition-all"
           >
-            <button
-              onClick={() => toggleAccordion(index)}
-              className="w-full text-left px-4 py-3 flex justify-between items-center cursor-pointer"
-            >
-              <span className="font-semibold">{item.question}</span>
-              <span>{openIndex === index ? '▲' : '▼'}</span>
-            </button>
-            {openIndex === index && (
-              <div className="px-4 pb-4">{item.answer}</div>
-            )}
+            <Link href={item.link}>
+              <button
+                onClick={() => toggleAccordion(index)}
+                className="w-full text-left px-4 py-3 flex justify-between items-center cursor-pointer"
+              >
+                <span className="font-semibold">{item.question}</span>
+                <span>
+                  <ArrowUpRight />
+                </span>
+              </button>
+            </Link>
           </div>
         ))}
       </div>

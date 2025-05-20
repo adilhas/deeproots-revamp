@@ -9,7 +9,7 @@ import {
 } from 'lucide-react';
 export default function InnofarmSection() {
   return (
-    <section className="relative flex flex-row items-center justify-between gap-8 px-6 py-16 lg:px-24 mx-auto bg-gradient-to-r from-[#e6f5ec] via-[#c3e7d7] to-[#a8d5c2] dark:from-[#0d1f1c] dark:via-[#13332d] dark:to-[#1a4a3f]">
+    <section className="relative flex flex-row items-center justify-between gap-8 px-6 py-16 lg:px-24 mx-auto bg-gradient-to-r from-[#e6f5ec] via-[#c3e7d7] to-[#a8d5c2] dark:from-[#0d1f1c] dark:via-[#0d1f1c] dark:to-[#0d1f1c]">
       {/* <div className="w-60 h-60 top-32 left-12 blur-[350px] md:blur-[350px] bg-[#00ff94] rounded-full absolute" />
       <div className="w-60 h-60 bottom-32 right-12 blur-[350px] md:blur-[350px] bg-[#f15c37] rounded-full absolute" /> */}
       {/* Content */}

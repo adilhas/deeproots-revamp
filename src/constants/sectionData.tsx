@@ -40,10 +40,9 @@ export const menuSection: MenuSection[] = [
     subitems: [
       {
         title: 'What is Deep Roots?',
-        description:
-          'We began with one mission: make blockchain simple and powerful.',
+        description: `Deep Roots is not just a blockchain. It's a movement.`,
 
-        link: '/our-story',
+        link: '/academy/about',
       },
       {
         title: 'Share Value (Learn & Earn)',
@@ -64,15 +63,16 @@ export const menuSection: MenuSection[] = [
         link: '/academy/roadmap',
       },
       {
-        title: 'What is DRC (Native Currency)?',
+        title: 'What is dRC (Native Currency)?',
         description: 'The foundational layer of DeWorld',
         link: '/academy/drc',
       },
       {
-        title: 'Ai Tools',
+        title: 'Our Story',
         description:
-          "AI isn't just a feature — it's a core force behind how we learn",
-        link: '/academy/ai-tools',
+          'We began with one mission: make blockchain simple and powerful.',
+
+        link: '/our-story',
       },
     ],
   },
@@ -182,13 +182,13 @@ export const menuSection: MenuSection[] = [
         link: 'https://saxophone.earth',
       },
       {
-        title: 'Volunteer',
+        title: 'Volunteer Program',
         description: 'Explore Volunteer program',
 
         link: '/connect/volunteer',
       },
       {
-        title: 'Events',
+        title: 'Events & Meetups',
         description:
           'Deep Roots events are your chance to connect, learn, and grow with the community.',
 
@@ -248,7 +248,7 @@ export const featuresCardItems = [
     ),
   },
   {
-    title: 'Get DRC Token (Deeproots Coin):',
+    title: 'Get dRC Token (Deeproots Coin):',
     description: 'Limited Supply, Distributed Over 41 Years - Here to Stay.',
     icon: (
       <svg
@@ -454,7 +454,7 @@ export const useCasesData = [
   },
   {
     title: 'Secure Digital Wallet',
-    description: 'Manage DRC, RWA & more.',
+    description: 'Manage dRC, RWA & more.',
     icon: (
       <svg
         className="w-14 h-10 m-3 group-hover:scale-105 dark:text-[#ad1]/80 text-[#0085a8]/80"
@@ -719,26 +719,29 @@ export const foundationSeatsFeatures = [
 
 export const aboutItems = [
   {
-    question: 'Understand DeepRoots',
-    answer: 'Introduction to the platform mission...',
+    question: `Deeproot's Story`,
+    link: '/our-story',
   },
-  { question: 'What is DeepRoots?', answer: 'Overview of the ecosystem...' },
+  { question: 'What is DeepRoots?', link: '/academy/about' },
   {
-    question: 'What is the Address Wallet?',
-    answer: 'Explanation of wallet functionality...',
+    question: 'What is deWorld?',
+    link: '/',
   },
-  { question: 'What is TelexCoin?', answer: 'Details on the currency...' },
   {
-    question: 'How to Start with DeepRoots',
-    answer: 'Step by step guide to getting started...',
+    question: 'What is dRC Native Currency',
+    link: '/academy/drc',
+  },
+  {
+    question: 'Deeproots Foundation Seats',
+    link: '/',
   },
   {
     question: 'DeepRoots Whitepaper',
-    answer: 'Link to platform whitepaper...',
+    link: '/',
   },
   {
     question: 'DeepRoots Roadmap',
-    answer: 'Showcase the platform future goals...',
+    link: '/',
   },
 ];
 
@@ -749,7 +752,7 @@ export const footerLinks: IFooter[] = [
     link: '/academy',
     links: [
       { label: 'What is Deep Roots?', href: '/academy/about' },
-      { label: 'What is DRC (Native Currency)?', href: '/academy/drc' },
+      { label: 'What is dRC (Native Currency)?', href: '/academy/drc' },
       { label: 'White Paper', href: '#' },
       { label: 'Learn & Earn – ShareValue', href: 'https://sharevalue.earth' },
       { label: 'RootOpia GameFi', href: '#' },
@@ -771,7 +774,6 @@ export const footerLinks: IFooter[] = [
       { label: 'InnoFarm – Web3 Jobs', href: 'https://innofarm.earth' },
       { label: 'Internal Hackathon', href: '/lab/internal-hackathon' },
       { label: 'Foundation Seats', href: '/lab/foundation-seats' },
-      { label: 'Deep Roots Foundation', href: '#' },
       { label: 'RootOpia Reward System', href: '#' },
       { label: 'Token', href: '/lab/tokenomics' },
       { label: 'Smart Contract', href: '#' },
@@ -784,21 +786,22 @@ export const footerLinks: IFooter[] = [
     icon: <Globe color="#ad1aaf" size={44} />,
     link: '/dewrold',
     links: [
+      { label: 'Deep Roots Foundation', href: '#' },
       { label: 'The Address Wallet', href: 'https://theaddress.earth' },
       { label: 'Telexcoin DEX', href: 'https://telexcoin.earth' },
       { label: 'RootScan Explorer', href: 'https://rootscan.earth' },
       { label: 'RootChat – Web3 Messaging', href: 'https://rootchat.earth' },
-      {
-        label: 'DeepAssets – RWA Tokenization',
-        href: 'https://deepassets.earth',
-      },
-      {
-        label: 'OceanBazaar – NFT Marketplace',
-        href: 'https://oceanbazaar.earth',
-      },
-      { label: 'MetaFabric – Wearable NFTs', href: 'https://metafabric.earth' },
-      { label: 'DEFI', href: '/deworld/defi' },
-      { label: 'SEEDING', href: '/deworld/seeding' },
+      // {
+      //   label: 'DeepAssets – RWA Tokenization',
+      //   href: 'https://deepassets.earth',
+      // },
+      // {
+      //   label: 'OceanBazaar – NFT Marketplace',
+      //   href: 'https://oceanbazaar.earth',
+      // },
+      // { label: 'MetaFabric – Wearable NFTs', href: 'https://metafabric.earth' },
+      // { label: 'DEFI', href: '/deworld/defi' },
+      { label: 'SEEDING Deworld', href: '/deworld/seeding' },
       { label: 'DeWorld Public Network', href: '/deworld/deworld-network' },
       { label: 'DeWorld Private Network', href: '/deworld/deworld-network' },
     ],

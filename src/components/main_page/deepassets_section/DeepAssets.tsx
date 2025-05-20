@@ -2,6 +2,7 @@ import { deepAssetsFeatures } from '@/constants/sectionData';
 import React from 'react';
 import DiamondIcon from './DiamondIcon';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const DeepAssets = () => {
   return (
@@ -47,23 +48,25 @@ const DeepAssets = () => {
             </p>
           </div>
 
-          <button className="py-3 font-sans text-neutral-200 text-lg px-5 bg-[#0085a8] dark:bg-amber-600 hover:bg-amber-800 rounded-lg flex justify-center items-center">
-            Explore
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-chevron-right ml-3"
-            >
-              <path d="m9 18 6-6-6-6"></path>
-            </svg>
-          </button>
+          <Link href={'https://deepassets.earth/'}>
+            <button className="py-3 font-sans text-neutral-200 text-lg px-5 bg-[#0085a8] dark:bg-amber-600 hover:bg-amber-800 rounded-lg flex justify-center items-center">
+              Explore
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="lucide lucide-chevron-right ml-3"
+              >
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </button>
+          </Link>
         </div>
 
         <div className="hidden lg:flex w-full">

@@ -1,5 +1,6 @@
 import { ChevronRight, RocketIcon } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const fundingRounds = [
@@ -43,10 +44,12 @@ const InnolaunchSection = () => {
               </div>
             ))}
           </div>
-          <button className="py-3 font-bold mt-5 font-sans text-neutral-200 text-lg px-5 bg-[#f68082] hover:bg-[#97F4F3] hover:text-neutral-900 rounded-lg flex justify-center items-center">
-            Launch
-            <ChevronRight />
-          </button>
+          <Link href="https://innolaunch.earth/">
+            <button className="py-3 font-bold mt-5 font-sans text-neutral-200 text-lg px-5 bg-[#f68082] hover:bg-[#97F4F3] hover:text-neutral-900 rounded-lg flex justify-center items-center">
+              Launch
+              <ChevronRight />
+            </button>
+          </Link>
         </div>
 
         <div className="hidden lg:block my-5 lg:w-1/2 lg:mx-8">

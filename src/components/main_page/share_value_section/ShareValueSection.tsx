@@ -9,6 +9,7 @@ import {
   Users,
   BookOpen,
 } from 'lucide-react';
+import Link from 'next/link';
 
 const ShareValueSection = () => {
   return (
@@ -119,9 +120,11 @@ const ShareValueSection = () => {
           </div>
 
           {/* CTA Button */}
-          <button className="py-4 font-bold mt-8 font-orbitron text-neutral-200 text-lg px-7 w-1/3 bg-gradient-to-r from-[#E07C76] to-[#52b797] hover:text-neutral-900 rounded-lg flex justify-center items-center">
-            Learn
-          </button>
+          <Link href={'https://sharevalue.earth/'}>
+            <button className="py-4 font-bold mt-8 font-orbitron text-neutral-200 text-lg px-7 w-1/3 bg-gradient-to-r from-[#E07C76] to-[#52b797] hover:text-neutral-900 rounded-lg flex justify-center items-center">
+              Learn
+            </button>
+          </Link>
         </div>
       </div>
     </main>
