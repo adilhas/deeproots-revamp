@@ -32,3 +32,13 @@
 button {
   cursor: pointer;
 }
+
+@keyframes spin-custom {
+  50% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-custom {
+  animation: spin-custom 3s infinite ease-in-out;
+}

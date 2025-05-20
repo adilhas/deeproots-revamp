@@ -33,7 +33,7 @@ export default function Home() {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://deeproots.earth/" />
       </Head>
-      <div className="overflow-x-hidden relative bg-neutral-300 dark:bg-primary-dark dark:text-neutral-200">
+      <div className="overflow-x-hidden relative  bg-neutral-300 dark:bg-primary-dark dark:text-neutral-200">
         <Navbar />
         <Hero />
         <Features />
