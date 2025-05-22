@@ -42,7 +42,7 @@ export default function SignIn() {
       {/* Top-right Login Button */}
       <button
         onClick={() => setShowLogin(true)}
-        className="absolute top-10 right-24 px-4 py-2 bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] text-white rounded hover:from-[#007693] hover:to-[#9c179e] transition-all z-10"
+        className="absolute text-sm md:text-md top-3 right-3 lg:top-10 lg:right-15 px-6 py-2 bg-gradient-to-r from-[#AD1AAF] via-[#A34BF0] to-[#0085a8] text-white rounded-4xl hover:bg-gradient-to-r hover:from-[#AD1AAF] hover:via-[#933BE0] hover:to-[#0085a8] transition-all z-10 hover:scale-105 font-bold border-2 border-[#FFFFFF30] hover:border-[#FFFFFF60] shadow-[0_0_15px_0_rgba(91,72,255,0.5)] hover:shadow-[0_0_20px_0_rgba(91,72,255,0.7)]"
       >
         Login
       </button>
