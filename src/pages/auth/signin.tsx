@@ -36,8 +36,7 @@ export default function SignIn() {
 
   return (
     <div
-      className="relative w-full h-screen bg-cover bg-center"
-      style={{ backgroundImage: 'url("/landing/deeproots-banner.webp")' }}
+      className={`relative w-full h-screen bg-cover bg-center bg-[url("/landing/deeproots-banner-mobile.png")] md:bg-[url("/landing/deeproots-banner.webp")]`}
     >
       {/* Top-right Login Button */}
       <button
@@ -57,18 +56,18 @@ export default function SignIn() {
           ></div>
 
           {/* Modal Content */}
-          <div className="fixed z-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-xl p-6 md:p-8 bg-gray-800/70 backdrop-blur-lg border border-white/10 rounded-2xl shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] transition-transform duration-300 hover:scale-[1.01]">
+          <div className="fixed z-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[80%] md:w-full max-w-xl p-4 md:p-8 bg-gray-800/70 backdrop-blur-lg border border-white/10 rounded-2xl shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] transition-transform duration-300 hover:scale-[1.01]">
             {/* Close button in top-right */}
             <button
               onClick={() => setShowLogin(false)}
-              className="absolute top-2 right-2 font-extrabold m-4 text-white hover:text-gray-300"
+              className="absolute top-1 right-1 md:inline-block hidden font-extrabold m-4 text-white hover:text-gray-300"
               aria-label="Close login modal"
             >
               <X className="w-5 h-5" size={44} />
             </button>
 
             <div className="flex flex-col items-center">
-              <h2 className="md:text-4xl text-2xl font-bold bg-gradient-to-bl from-[#ad1aaf] to-[#0085a8] bg-clip-text text-transparent font-orbitron mb-4">
+              <h2 className="md:text-4xl text-lg sm:text-2xl font-bold bg-gradient-to-bl from-[#ad1aaf] to-[#0085a8] bg-clip-text text-transparent font-orbitron mb-4">
                 DEEPROOTS LOGIN
               </h2>
 
@@ -84,7 +83,7 @@ export default function SignIn() {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   required
-                  className="p-3 mb-4 w-full rounded-lg bg-neutral-700 text-white border border-neutral-600 focus:border-purple-500 focus:outline-none"
+                  className="p-2 md:p-3 mb-4 w-full rounded-lg bg-neutral-700 text-white border border-neutral-600 focus:border-purple-500 focus:outline-none"
                 />
                 <input
                   type="password"
@@ -93,11 +92,11 @@ export default function SignIn() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="p-3 mb-4 w-full rounded-lg bg-neutral-700 text-white border border-neutral-600 focus:border-purple-500 focus:outline-none"
+                  className="p-2 md:p-3 mb-4 w-full rounded-lg bg-neutral-700 text-white border border-neutral-600 focus:border-purple-500 focus:outline-none"
                 />
                 <button
                   type="submit"
-                  className="cursor-pointer text-white p-3 rounded-lg bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] w-full hover:from-[#007693] hover:to-[#9c179e] transition-all"
+                  className="cursor-pointer text-white p-2 md:p-3 rounded-lg bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] w-full hover:from-[#007693] hover:to-[#9c179e] transition-all"
                 >
                   Login
                 </button>
