@@ -1,28 +1,29 @@
-import { featuresCardItems } from '@/constants/sectionData';
+import { featuresCardItems } from '@/constants/featuresSectionData';
+import { useThemeContext } from '@/context/ThemeContext';
 
 const Features = () => {
+  const { isDark } = useThemeContext();
   return (
-    <main className="md:my-10 my-5 relative py-10 md:py-20 flex bg-neutral-200 dark:bg-neutral-950 justify-center flex-col items-center w-full">
-      <div className="mt-10 lg:w-[80vw] gap-10 md:gap-x-6 w-full px-4 md:px-4 grid md:grid-cols-2 grid-cols-1">
+    <main className="relative py-10 md:py-20 flex flex-col items-center dark:bg-[#161616] bg-[#e8e8e9] w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl px-4 w-fit">
         {featuresCardItems.map((card, index) => (
-          <div key={index} className="inline-block">
-            <div className="flex items-center cursor-pointer justify-center">
-              <div className="dark:shadow-[2px_2px_2px_#0085a8,-2px_-2px_2px_#ad1aa0] shadow-[1px_1px_2px_#ad1aa0,-1px_-1px_2px_#0085a8] rounded-md">
-                <a href={'#'} rel="noopener noreferrer">
-                  {card.icon}
-                </a>
-              </div>
-              <div className="flex items-start w-[80vw] md:w-[60vw] ml-6 flex-col">
-                <h2 className="font-bold text-md md:text-lg text-center leading-[55px] lg:leading-normal bg-gradient-to-r from-[#AD1AAF] via-[#0085a8] to-[#0085a8] to-neutral-500 dark:bg-gradient-to-r dark:from-[#AD1AAF] dark:via-[#0085a8] dark:to-neutral-500 bg-clip-text font-orbitron text-transparent">
-                  {card.title}
-                </h2>
-                <p className="font-sans text-sm w-full">{card.description}</p>
-              </div>
+          <div key={index} className="flex items-center space-x-4 p-4">
+            <div className="flex-shrink-0">
+              {isDark ? card.icon : card.lightIcon}
+            </div>
+            <div>
+              <h2 className="font-orbitron text-lg font-bold bg-gradient-to-r from-[#AD1AAF] via-[#0085a8] to-neutral-500 dark:to-neutral-500 bg-clip-text text-transparent">
+                {card.title}
+              </h2>
+              <p className="text-lg font-sans text-neutral-700 dark:text-neutral-300 mt-1">
+                {card.description}
+              </p>
             </div>
           </div>
         ))}
       </div>
-      <div className="w-60 h-60 absolute lg:bottom-16 lg:left-0 bg-[#ad1aa0] blur-[300px] md:blur-[300px] hidden lg:flex rounded-full" />
+
+      {/* <div className="w-60 h-60 absolute lg:bottom-16 lg:left-0 bg-[#ad1aa0] blur-[300px] hidden lg:block rounded-full" /> */}
     </main>
   );
 };

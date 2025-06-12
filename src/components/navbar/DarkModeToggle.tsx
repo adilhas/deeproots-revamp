@@ -1,38 +1,15 @@
-import { Moon, Sun } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { useThemeContext } from '@/context/ThemeContext';
 
 export default function DarkModeToggle() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia(
-      '(prefers-color-scheme: dark)'
-    ).matches;
-
-    const initialTheme = savedTheme ? savedTheme === 'dark' : systemPrefersDark;
-
-    setDarkMode(initialTheme);
-    document.documentElement.classList.toggle('dark', initialTheme);
-  }, []);
-
-  const toggleDarkMode = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
-    document.documentElement.classList.toggle('dark', newMode);
-    localStorage.setItem('theme', newMode ? 'dark' : 'light');
-  };
+  const { toggleTheme } = useThemeContext();
 
   return (
     <button
-      onClick={toggleDarkMode}
+      onClick={toggleTheme}
       className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition"
     >
-      {darkMode ? (
-        <Sun className="w-6 h-6 text-yellow-400" />
-      ) : (
-        <Moon className="w-6 h-6 text-gray-800 dark:text-white" />
-      )}
+      <Image src="/moon.png" alt="theme toggle" width={25} height={25} />
     </button>
   );
 }

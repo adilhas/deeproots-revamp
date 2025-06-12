@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import type { AppProps } from 'next/app';
 import AuthGuard from '../components/AuthGuard';
 import Head from 'next/head';
+import { ThemeProvider } from '@/context/ThemeContext';
 
 const publicRoutes = ['/auth/signin'];
 
@@ -16,17 +17,19 @@ export default function MyApp({
 
   return (
     <SessionProvider session={session}>
-      <Head>
-        <title>DeepRoots</title>
-        <link rel="icon" href="/landing/logo.png" />
-      </Head>
-      {isPublic ? (
-        <Component {...pageProps} />
-      ) : (
-        <AuthGuard>
+      <ThemeProvider>
+        <Head>
+          <title>DeepRoots</title>
+          <link rel="icon" href="/landing/logo.png" />
+        </Head>
+        {isPublic ? (
           <Component {...pageProps} />
-        </AuthGuard>
-      )}
+        ) : (
+          <AuthGuard>
+            <Component {...pageProps} />
+          </AuthGuard>
+        )}
+      </ThemeProvider>
     </SessionProvider>
   );
 }

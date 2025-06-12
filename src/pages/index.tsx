@@ -23,6 +23,10 @@ import ShareValueSection from '@/components/main_page/share_value_section/ShareV
 import SocialLinks from '@/components/main_page/social_links_section/SocialLinks';
 import Telexcoin from '@/components/main_page/telexcoin_section/Telexcoin';
 import Head from 'next/head';
+import WhatIsDeeprootsSection from '@/components/main_page/what_is_deeproots_section/WhatIsDeeprootsSection';
+import EarnFoundationSection from '@/components/main_page/earn_foundation/EarnFoundationSection';
+import WhatIsdRCSection from '@/components/main_page/what_is_dRC/WhatIsdRCSection';
+import DeepRootsEcosystemSection from '@/components/main_page/deeproots_ecosystem/DeepRootsEcosystemSection';
 
 export default function Home() {
   return (
@@ -33,10 +37,16 @@ export default function Home() {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://deeproots.earth/" />
       </Head>
-      <div className="overflow-x-hidden relative  bg-neutral-300 dark:bg-primary-dark dark:text-neutral-200">
+      <div className="overflow-x-hidden relative  bg-[#e8e8e9] dark:bg-primary-dark dark:text-neutral-200">
         <Navbar />
         <Hero />
         <Features />
+        <div className="w-full max-w-[1200px] mx-auto">
+          <WhatIsDeeprootsSection />
+          <EarnFoundationSection />
+          <WhatIsdRCSection />
+          <DeepRootsEcosystemSection />
+        </div>
         <AddressWallet />
         <Telexcoin />
         <DeepAssets />

@@ -1,7 +1,9 @@
 @import 'tailwindcss';
 @custom-variant dark (&:where(.dark, .dark *));
 @theme {
-  --color-primary-dark: #1c1d20;
+  --color-primary-dark: #161616;
+  --color-gradient-from: #9e2ca9;
+  --color-gradient-to: #3b82a4;
   --font-orbitron: 'Orbitron', 'sans-serif';
 }
 
@@ -41,4 +43,19 @@ button {
 
 .animate-spin-custom {
   animation: spin-custom 3s infinite ease-in-out;
+}
+
+.custom-inward-corner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(
+    circle at bottom right,
+    transparent 14px,
+    #242424 15px
+  );
+  pointer-events: none;
 }

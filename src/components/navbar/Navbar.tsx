@@ -6,7 +6,8 @@ import DarkModeToggle from './DarkModeToggle';
 import DesktopMenu from './DesktopMenu';
 import MobileMenu from './MobileMenu';
 import Submenu from './Submenu';
-import { Globe, Menu, Mic, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -32,16 +33,26 @@ export default function Navbar() {
           <Logo />
           <DesktopMenu onHover={setActiveMenu} />
           <div className="flex items-center gap-4">
-            <button className="p-2 font-extrabold text-2xl rounded bg-gradient-to-r from-[#AD1AAF] via-[#0085a8] to-[#0085a8]  dark:bg-gradient-to-r dark:from-[#AD1AAF] dark:via-[#0085a8] hover:bg-gray-200 dark:hover:bg-gray-700 transition to-inherit[#0085a8] dark:to-neutral-500 bg-clip-text font-orbitron text-transparent">
-              Ai
-            </button>
             <DarkModeToggle />
-            <button className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-              <Globe className="w-6 h-6 text-gray-800 dark:text-white" />
-            </button>
-            <button className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-              <Mic className="w-6 h-6 text-gray-800 dark:text-red-700" />
-            </button>
+            <Image
+              src="/copyme-logo.png"
+              alt="copy me"
+              width={25}
+              height={25}
+            />
+            <Image
+              src="/menu-logo-dark.png"
+              alt="menu"
+              width={30}
+              height={30}
+            />
+            <Image
+              src="/profile-pic.jpg"
+              alt="profile"
+              width={30}
+              height={30}
+              className="rounded-full"
+            />
 
             {isMobileMenuOpen ? (
               <button

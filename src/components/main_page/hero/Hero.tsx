@@ -1,17 +1,15 @@
-import AnimatedParagraph from './AnimateParagraph';
-
 const Hero = () => {
   return (
     <main
       id="home"
-      className="min-h-screen pt-[70px] md:pt-[88px] lg:pt-[93px] dark:bg-primary-dark dark:text-white flex justify-center z-10 relative flex-col lg:scale-x-105 items-center mb-20"
+      className="min-h-screen pt-[70px] md:pt-[88px] lg:pt-[95px] dark:bg-primary-dark dark:text-white flex justify-center z-10 relative flex-col lg:scale-x-105 items-center"
     >
       {/* Banner Image */}
       <div
         className="w-full bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/landing/deeproots-banner.webp')",
-          height: 'calc(100vh - 95px)', // Default for mobile
+          backgroundImage: "url('/landing/deeproots-banner.png')",
+          height: 'calc(100vh - 95px)',
         }}
       >
         <style jsx>{`
@@ -28,34 +26,20 @@ const Hero = () => {
         `}</style>
       </div>
 
-      {/* Title */}
-      <div className="inline-block">
-        <div style={{ opacity: 1, transform: 'none' }}>
-          <h1 className="font-extrabold text-lg text-center md:text-3xl lg:text-5xl py-2 px-3 shadow-sm shadow-[#0085a8] leading-[55px] my-5 lg:leading-normal mb-3 bg-gradient-to-r from-[#AD1AAF] dark:via-[#0085a8] to-[#0085a8] dark:to-[#0085a8] bg-clip-text font-orbitron text-transparent">
-            HELLO FUTURE BY DEEP ROOTS
-          </h1>
+      <div className="flex flex-col py-[70px] text-center px-3">
+        <h1 className="font-extrabold  text-2xl md:text-4xl text-center w-fit mx-auto bg-gradient-to-r from-[#9E2CA9]  to-[#3B82A4]  bg-clip-text font-orbitron text-transparent">
+          HELLO FUTURE BY DEEP ROOTS
+        </h1>
+
+        <div className="inline-block text-lg my-6 max-w-[619px] mx-auto">
+          From impossible to possible - A platform for innovative DeWorld Apps
+          on the First Truly Dynamic Blockchain Network.
         </div>
-      </div>
 
-      {/* Right blur effect (desktop only) */}
-      <div className="z-0 hidden lg:flex text-lg">
-        <div className="w-60 h-60 absolute lg:bottom-16 lg:right-0 bg-[#0085a8] lg:blur-[300px] rounded-full"></div>
+        <button className="mx-auto cursor-pointer px-6 font-orbitron py-3 bg-gradient-to-r from-[#9E2CA9] to-[#3B82A4] text-center relative font-bold hover:bg-gradient-to-l  transition-all hover:delay-1000 hover:ease-in-out text-white rounded-2xl  text-lg">
+          Join the Movement
+        </button>
       </div>
-
-      {/* Left blur effect (desktop only) */}
-      <div className="z-0 text-lg">
-        <div className="w-60 h-60 absolute lg:bottom-16 lg:left-0 bg-[#0085a8] hidden lg:flex lg:blur-[300px] rounded-full"></div>
-      </div>
-
-      {/* Description */}
-      <div className="inline-block">
-        <AnimatedParagraph />
-      </div>
-
-      {/* CTA Button */}
-      <button className="cursor-pointer mt-6 mx-5 md:w-[70vw] px-6 font-orbitron py-3 bg-gradient-to-r from-[#ad1aaf] to-[#0085a8] text-center relative font-bold hover:bg-gradient-to-l from-[#7947df] to-[#0085a8] transition-all hover:delay-1000 hover:ease-in-out text-white rounded-2xl w-[80vw] lg:w-[30vw] text-lg md:text-3xl md:my-6 tracking-wider">
-        Join the Movement
-      </button>
     </main>
   );
 };
