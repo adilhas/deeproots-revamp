@@ -47,7 +47,6 @@ export default function Home() {
           <EarnFoundationSection />
           <WhatIsdRCSection />
           <DeepRootsEcosystemSection />
-          <div className="w-full h-10 hidden md:block" />
         </div>
         <AddressWallet />
         <Telexcoin />
@@ -68,8 +67,10 @@ export default function Home() {
         <RootChatSection />
         <PodcastSection />
         {/* <SocialLinks /> */}
-        <CopyMeSection />
-        <AboutSection />
+        <div className="overflow-y-hidden">
+          <CopyMeSection />
+          <AboutSection />
+        </div>
         <Footer />
       </div>
     </>

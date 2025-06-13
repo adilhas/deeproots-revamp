@@ -3,20 +3,24 @@ import Link from 'next/link';
 
 const features = [
   {
-    emoji: '📱',
-    text: 'Mobile-First Chat & Call\nSmooth, secure messaging and wallet-to-wallet voice calling — on any device.',
+    icon: 'rootchat-mobile-first',
+    title: 'Mobile-First Chat & Call',
+    text: 'Smooth, secure messaging and wallet-to-wallet voice calling — on any device.',
   },
   {
-    emoji: '🔐',
-    text: 'High-Security by Default\nNo tracking, no backdoors, no data leaks — ever.',
+    icon: 'rootchat-security',
+    title: 'High-Security by Default',
+    text: 'No tracking, no backdoors, no data leaks — ever.',
   },
   {
-    emoji: '🧠',
-    text: 'One-Click Mode Switch\nChoose between real-time (centralized) or decentralized communication, instantly.',
+    icon: 'rootchat-mode-switch',
+    title: 'One-Click Mode Switch',
+    text: 'Choose between real-time (centralized) or decentralized communication, instantly.',
   },
   {
-    emoji: '🌐',
-    text: 'Built for DeWorld\nPrivate, borderless, and censorship-free — your voice, your messages, your control.',
+    icon: 'rootchat-globe',
+    title: 'Built for DeWorld',
+    text: 'Private, borderless, and censorship-free — your voice, your messages, your control.',
   },
 ];
 
@@ -47,10 +51,18 @@ const RootChatSection = () => {
             The First Hybrid CALL & Messaging App
           </h1>
           <ul className="space-y-6 text-base">
-            {features.map(({ emoji, text }) => (
-              <li key={emoji} className="flex items-start gap-3">
-                <span className="text-2xl">{emoji}</span>
-                <span className="whitespace-pre-line">{text}</span>
+            {features.map(({ icon, title, text }) => (
+              <li key={icon} className="flex flex-col items-start gap-1">
+                <div className="flex items-center gap-3">
+                  <Image
+                    src={`/landing/${icon}.svg`}
+                    alt={icon}
+                    width={28}
+                    height={28}
+                  />
+                  <span className="font-semibold text-lg">{title}</span>
+                </div>
+                <p className="text-neutral-700 dark:text-neutral-300">{text}</p>
               </li>
             ))}
           </ul>

@@ -4,7 +4,7 @@ import UseCaseMobileView from './UseCaseMobileView';
 
 const DeepRootsEcosystemSection = () => {
   return (
-    <section className="px-8">
+    <section className="px-8 pb-16 overflow-hidden">
       <h2 className="font-[600] w-fit leading-normal text-md md:text-5xl font-orbitron text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
         DeepRoots Ecosystem
       </h2>

@@ -97,7 +97,7 @@ export default function OceanBazaarSection() {
               </li>
             </ul>
 
-            <div className="flex justify-center sm:justify-start mt-6">
+            <div className="flex justify-start mt-6 ">
               <button className="text-neutral-800 px-6 py-2 bg-gradient-to-r from-[#1bc1ff] to-[#fead46] rounded-lg hover:scale-105 font-bold transition">
                 <Link href="http://oceanbazaar.earth/">
                   Explore Ocean Bazaar

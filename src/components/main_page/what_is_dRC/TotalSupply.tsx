@@ -13,11 +13,11 @@ const TotalSupply: React.FC = () => {
             {totalSupplyData.map((item) => (
               <div
                 key={item.name}
-                className="flex items-center justify-between rounded-[12px] px-[16px] py-[12px] bg-[#F2F2F2] dark:bg-[rgba(36,36,48,0.7)]"
+                className="flex items-center justify-between rounded-[18px] px-[16px] py-[5px] bg-[#F2F2F2] dark:bg-[rgba(36,36,48,0.7)]"
                 style={{
-                  boxShadow: `${isDark ? `0px 8px 16px 0px #0F172A05,0px 4px 8px 0px #0F172A08,inset 0px 0px 20px 0px #433E57,2px 2px 20px 0px ${item.color}` : `2px 2px 20px 0px ${item.color}, 0px 0px 20px 0px ${item.color} inset, 0px 4px 8px 0px #0F172A08, 0px 8px 16px 0px #0F172A05`}`,
+                  boxShadow: `${isDark ? `0px 8px 16px 0px #0F172A05,0px 4px 8px 0px #0F172A08,inset 0px 0px 20px 0px #433E57,2px 2px 20px 0px ${item.color}` : `0px 8px 16px 0px #0F172A05,0px 4px 8px 0px #0F172A08,inset 0px 0px 20px 0px #F9BDFF,2px 2px 20px 0px ${item.color}`}`,
                   // boxShadow: `0 0 12px 0 ${item.color}33, 0 2px 8px 0 #0002, 0 1.5px 8px 0 ${item.color}22, 0 0 0 2px ${item.color}11`,
-                  border: `1px solid ${item.color}33`,
+                  // border: `1px solid ${item  .color}33`,
                 }}
               >
                 <div className="flex items-center gap-[10px]">

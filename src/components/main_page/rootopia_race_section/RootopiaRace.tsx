@@ -32,7 +32,7 @@ const RootopiaRace = () => {
         <div className="flex justify-center flex-row items-center w-full"></div>
 
         <div className="flex justify-center lg:gap-5 flex-col lg:flex-row rounded-2xl items-center">
-          <div className="w-full lg:inline-block hidden max-w-[500px] lg:w-1/2">
+          <div className="w-full lg:inline-block hidden max-w-[500px] lg:w-1/2 ">
             <Image
               src="/landing/rootopia-v2.png"
               alt="Rootopia Race Banner"
@@ -49,17 +49,15 @@ const RootopiaRace = () => {
                 ROOTOPIA
               </h2>
 
-              <div className="inline-block w-full lg:hidden mx-auto my-3">
-                <div className="flex justify-center w-full">
-                  <Image
-                    src="/landing/rootopia-v2.png"
-                    alt="Rootopia Race Banner Mobile"
-                    className="rounded-2xl"
-                    width={800}
-                    height={420}
-                    layout="responsive"
-                  />
-                </div>
+              <div className="w-full flex justify-center items-center self-center lg:hidden my-6">
+                <Image
+                  src="/landing/rootopia-v2.png"
+                  alt="Rootopia Race Banner Mobile"
+                  className="rounded-2xl w-full max-w-[500px] shadow-lg"
+                  width={800}
+                  height={420}
+                  layout="responsive"
+                />
               </div>
               <h2 className="font-extrabold font-serif text-2xl lg:text-start lg:text-3xl mb-10 lg:leading-normal bg-gradient-to-r from-[#E57B0C] to-[#A42E0C] bg-clip-text text-transparent">
                 CALL TO HERO

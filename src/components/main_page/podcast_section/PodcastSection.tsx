@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const PodcastSection = () => {
   return (
-    <section className="bg-gradient-to-b from-[#F3CE7E] to-[#B17D4D] dark:from-primary-dark dark:to-primary-dark relative overflow-hidden">
+    <section className="bg-gradient-to-r from-[#F3CE7E] to-[#B17D4D] dark:from-primary-dark dark:to-primary-dark relative overflow-hidden">
       <div className="absolute top-[-100px] right-[-100px] w-[500px] h-[400px] bg-[#DFB186] blur-[150px] opacity-50 pointer-events-none z-0" />
       <div className="absolute bottom-[-100px] left-[-100px] w-full md:w-[600px] h-[50%] bg-[#B17D4D] blur-3xl opacity-90 dark:opacity-20 rounded-full z-0" />
       <div className="absolute bottom-[-100px] right-[-100px] w-[200px] md:w-[500px] h-[300px] lg:h-[200px] bg-[#B17D4D] blur-3xl opacity-50 dark:opacity-40 pointer-events-none rounded-full z-0" />

@@ -2,13 +2,13 @@ import Image from 'next/image';
 import React from 'react';
 
 const ProgramData = [
-  'Premium Access to CopyMe AI',
-  '12% Guaranteed APY',
-  'Access to 16+ Web3 Products',
-  'Whitelist for Grants, IDOs & Launches',
-  'Lifetime Share in All Ecosystem Projects',
   'Full Seat in the Deep Roots Foundation',
+  '12% Guaranteed APY',
+  'Lifetime Share in All Ecosystem Projects',
+  'Premium Access to CopyMe AI',
+  'Whitelist for Grants, IDOs & Launches',
   'Full Access to RootOpia GameFi (Seeding, Battle, Leaderboards)',
+  'Access to 16+ Web3 Products',
 ];
 
 const SeedingProgram = () => {

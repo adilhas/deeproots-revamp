@@ -10,7 +10,7 @@ const WhatIsDeeprootsSection = () => {
     <div className="py-16 w-full max-w-[1200px] mx-auto dark:bg-[#161616] bg-[#e8e8e9]">
       {/* Heading */}
       <h2
-        className="w-fit font-[600] text-center rounded-md p-3 mx-auto text-2xl bg-[#212121] md:text-3xl font-orbitron text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text"
+        className="w-fit font-[600] text-center rounded-md p-3 mx-auto text-2xl bg-[#212121] md:text-3xl font-orbitron text-transparent bg-gradient-to-r from-gradient-from-light to-gradient-to-light dark:from-gradient-from dark:to-gradient-to bg-clip-text"
         style={{ boxShadow: `0px 6px 20px 0px #00000045` }}
       >
         What is Deep Roots?
@@ -32,7 +32,7 @@ const WhatIsDeeprootsSection = () => {
           />
         </div>
 
-        <div className="text-4xl font-orbitron font-[600] text-transparent whitespace-nowrap bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
+        <div className="text-4xl font-orbitron font-[600] text-transparent whitespace-nowrap bg-gradient-to-r from-gradient-from-light to-gradient-to-light dark:from-gradient-from dark:to-gradient-to bg-clip-text">
           To DeWorld
         </div>
       </div>
@@ -64,7 +64,7 @@ const WhatIsDeeprootsSection = () => {
       <div className="w-full mt-8">
         <div className="text-center text-lg  md:text-3xl my-4 text-[#4B5563] dark:text-white">
           A New Foundation for the <br className="block md:hidden" />{' '}
-          <span className="text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
+          <span className="text-transparent font-[600] bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
             Decentralized
           </span>{' '}
           World
