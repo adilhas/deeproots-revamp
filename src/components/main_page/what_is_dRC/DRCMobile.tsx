@@ -56,14 +56,17 @@ const DRCMobile = () => {
         ))}
       </ul>
       <div className="mt-10 w-fit mx-auto flex flex-row gap-3">
-        <CTAGlowButton className="text-md ">Seed Now</CTAGlowButton>
+        <CTAGlowButton className="text-md w-1/2  whitespace-nowrap flex items-center justify-center">
+          Seed Now
+        </CTAGlowButton>
+
         <button
-          className="px-3 border text-md border-[#BFAAFB] text-[#303030] dark:text-white dark:border-[#BFAAFB] py-[8px] rounded-3xl"
+          className="inline-flex w-1/2 items-center justify-center  py-2 text-center text-md whitespace-nowrap border border-[#BFAAFB] text-[#303030] dark:text-white dark:border-[#BFAAFB] rounded-3xl"
           style={{
             boxShadow: `0px 0px 18px 0px #B082FF, 0px 0px 1px 0px #B082FF`,
           }}
         >
-          Learn More About dRC
+          Learn About dRC
         </button>
       </div>
     </>

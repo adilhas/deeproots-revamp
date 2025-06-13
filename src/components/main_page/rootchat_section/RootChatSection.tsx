@@ -27,10 +27,9 @@ const features = [
 const RootChatSection = () => {
   return (
     <section className="px-6 lg:px-12 gap-10 bg-gradient-to-t  from-[#A0E6FF] to-[#C6B6F2] dark:from-primary-dark dark:to-primary-dark relative overflow-hidden ">
-      <div className="absolute top-[-100px] right-[-100px] w-[500px] h-[400px] bg-[#5641A3] blur-[150px] opacity-50 pointer-events-none z-0 hidden lg:dark:inline-block" />
-      <div className="absolute bottom-[-100px] left-[-100px] w-full md:w-[600px] h-[50%] bg-[#C6B6F2] dark:bg-[#3CB1F2] blur-3xl opacity-90 dark:opacity-20 rounded-full z-0" />
-
-      <div className="max-w-[1200px] mx-auto flex flex-col py-20 lg:flex-row items-center  ">
+      <div className="max-w-[1200px] relative mx-auto flex flex-col py-20 lg:flex-row items-center  ">
+        <div className="absolute top-[-100px] right-[200px] w-[500px] h-[400px] bg-[#5641A3] blur-[150px] opacity-50 pointer-events-none z-0 hidden lg:dark:inline-block" />
+        <div className="absolute bottom-[-100px] left-[150px] w-full md:w-[600px] h-[50%] bg-[#C6B6F2] dark:bg-[#3CB1F2] blur-3xl opacity-90 dark:opacity-20 rounded-full z-0" />
         {/* <div className="absolute w-60 h-60 top-20 right-10 bg-[#5C3FA3] blur-[200px] rounded-full opacity-40 dark:opacity-60 pointer-events-none z-0" /> */}
 
         <div className="lg:w-1/2 text-gray-900 dark:text-gray-200 relative z-10 lg:pl-9">

@@ -7,7 +7,19 @@ export default function OceanBazaarSection() {
     <section className="bg-[#D4FFFE] dark:bg-primary-dark relative overflow-hidden">
       <div className="absolute top-[-100px] right-[-100px] w-[300px] h-[500px] bg-[#0A4764] blur-3xl opacity-30 pointer-events-none z-0 dark:inline-block lg:dark:hidden" />
       <div className="absolute top-[-100px] right-[-100px] w-[500px] h-[400px] bg-[#30AFEC] blur-[150px] opacity-30 pointer-events-none z-0 hidden lg:dark:inline-block" />
-      <div className="absolute top-[-100px] right-[47%] w-[150px] h-[400px] bg-[#30AFEC] blur-[80px] opacity-30 pointer-events-none z-0 hidden lg:dark:inline-block" />
+      <div className="absolute top-[-100px] right-[35%] w-[350px] h-[500px] bg-[#30AFEC] blur-[80px] opacity-30 pointer-events-none z-0 hidden lg:dark:inline-block" />
+
+      <div className="absolute top-[-100px] right-[38%] aspect-square w-[300px] h-[700px]  pointer-events-none z-0 hidden lg:dark:inline-block">
+        <div className="relative w-full h-full">
+          <Image
+            src="/landing/ocean-bazaar-bg-blur.png"
+            alt="Oceanbazaar Background"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+      </div>
 
       <div className="max-w-[1200px] mx-auto text-black dark:text-white px-6 py-16 lg:py-24">
         <div className=" grid grid-cols-1 lg:grid-cols-2 gap-x-16 items-center">

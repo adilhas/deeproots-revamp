@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="dark:bg-primary-dark bg-[#e8e8e9] text-[#1C1C1C] dark:text-[#F0F0F0] px-6 py-12">
       <div className="max-w-[1200px] mx-auto">
-        <div className="flex justify-start items-center px-4 w-fit mb-10">
+        <div className="flex justify-start items-center w-fit mb-10">
           <Image
             src="/landing/logo.png"
             alt="logo-footer"

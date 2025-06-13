@@ -25,18 +25,18 @@ const RootopiaRace = () => {
   const { isDark } = useThemeContext();
   return (
     <section className="bg-[#F3D390] dark:bg-primary-dark relative overflow-hidden">
-      <div className="absolute top-[-100px] right-[-100px] lg:right-[20%] w-[250px] lg:w-[500px] h-[300px] bg-[#145412] blur-[80px] opacity-40 dark:opacity-40 pointer-events-none z-0" />
-      <div className="absolute bottom-[-100px] right-[-100px] w-[200px] md:w-[500px] h-[200px] lg:h-[500px] bg-[#F08135] blur-3xl opacity-50 dark:opacity-40 pointer-events-none rounded-full z-0" />
+      <div className="absolute top-[-100px] right-[-100px] lg:right-[20%] dark:right-[0px] w-[250px] lg:w-[500px] h-[300px] bg-[#145412] dark:bg-[#60420C] blur-[80px] opacity-40 dark:opacity-40 pointer-events-none z-0" />
 
-      <div className="w-full z-10 max-w-[1200px] mx-auto px-5 py-10">
-        <div className="flex justify-center flex-row items-center w-full"></div>
+      <div className="relative w-full z-10 max-w-[1200px] mx-auto px-5 py-10">
+        <div className="absolute bottom-[-100px] right-[-100px] w-[200px] md:w-[500px] h-[200px] lg:h-[500px] bg-[#F08135] dark:bg-[#5E400C] blur-3xl opacity-50 dark:opacity-40 pointer-events-none rounded-full z-0" />
+        {/* <div className="flex justify-center flex-row items-center w-full"></div> */}
 
         <div className="flex justify-center lg:gap-5 flex-col lg:flex-row rounded-2xl items-center">
           <div className="w-full lg:inline-block hidden max-w-[500px] lg:w-1/2 ">
             <Image
               src="/landing/rootopia-v2.png"
               alt="Rootopia Race Banner"
-              className="rounded-2xl"
+              className="rounded-4xl"
               width={1200}
               height={630}
               layout="responsive"
@@ -45,21 +45,21 @@ const RootopiaRace = () => {
 
           <div className="flex justify-center items-start flex-col lg:w-1/2 p-3">
             <div>
-              <h2 className="font-extrabold font-serif text-3xl lg:text-start lg:text-5xl lg:leading-normal bg-gradient-to-r from-[#E57B0C] to-[#A42E0C] bg-clip-text text-transparent">
+              <h2 className="font-extrabold font-serif text-3xl lg:text-start lg:text-5xl lg:leading-normal bg-gradient-to-b from-[#E57B0C] to-[#A42E0C] bg-clip-text text-transparent">
                 ROOTOPIA
               </h2>
 
-              <div className="w-full flex justify-center items-center self-center lg:hidden my-6">
+              <div className="w-full flex justify-center items-center self-center lg:hidden my-3">
                 <Image
                   src="/landing/rootopia-v2.png"
                   alt="Rootopia Race Banner Mobile"
-                  className="rounded-2xl w-full max-w-[500px] shadow-lg"
+                  className="rounded-4xl w-full max-w-[500px] shadow-lg"
                   width={800}
                   height={420}
                   layout="responsive"
                 />
               </div>
-              <h2 className="font-extrabold font-serif text-2xl lg:text-start lg:text-3xl mb-10 lg:leading-normal bg-gradient-to-r from-[#E57B0C] to-[#A42E0C] bg-clip-text text-transparent">
+              <h2 className="font-extrabold font-serif text-2xl lg:text-start lg:text-3xl mb-10 lg:leading-normal bg-gradient-to-b from-[#E57B0C] to-[#A42E0C] bg-clip-text text-transparent">
                 CALL TO HERO
               </h2>
               <h3 className="font-orbitron font-bold text-xl leading-normal w-full">
@@ -110,17 +110,7 @@ const RootopiaRace = () => {
         </div>
 
         <div className="z-0 text-lg">
-          <div
-            className="w-72 h-72 absolute top-150 right-200 bg-[#ad1aa0] hidden lg:flex dark:bg-[#0085a8] blur-[300px] rounded-full"
-            style={{ backgroundColor: 'rgb(173, 26, 160)' }}
-          ></div>
-        </div>
-
-        <div className="z-0 text-lg">
-          <div
-            className="w-60 h-60 absolute lg:top-0 dark:lg:right-0 lg:right-16 bg-neutral-950 dark:bg-[#0085a8] blur-[300px] rounded-full"
-            style={{ backgroundColor: 'rgb(0, 133, 168)' }}
-          ></div>
+          <div className="w-72 h-72 absolute bottom-[10px] left-[10px] bg-[#DC8758] hidden lg:flex dark:bg-[#5E400C] blur-[300px] rounded-full"></div>
         </div>
       </div>
     </section>

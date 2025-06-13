@@ -60,34 +60,34 @@ const ShareValueSection = () => {
       <div className="absolute top-0 bg-[#47866F] left-0 w-[100px] md:w-[500px] h-[300px] blur-3xl opacity-60 pointer-events-none z-10 dark:hidden" />
       <div className="absolute bottom-[-10px] bg-[#E88874] right-[-100px] w-[200px] md:w-[500px] h-[300px] blur-3xl opacity-50 pointer-events-none rounded-full z-10 dark:hidden" />
 
-      <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-center">
-        <div className="flex flex-col lg:hidden">
-          <h1 className="font-extrabold w-fit text-2xl lg:text-4xl font-orbitron bg-gradient-to-r from-[#E07C76] to-[#52b797] bg-clip-text text-transparent">
+      <div className="max-w-[1200px] mx-auto flex flex-col xl:flex-row items-start xl:items-center justify-center">
+        <div className="flex flex-col xl:hidden">
+          <h1 className="font-extrabold w-fit text-2xl xl:text-4xl font-orbitron bg-gradient-to-r from-[#E07C76] to-[#52b797] bg-clip-text text-transparent">
             SHARE VALUE
           </h1>
         </div>
 
-        <div className="my-8 lg:my-0">
-          <div className="relative w-full lg:w-[600px] rounded-2xl overflow-hidden z-20">
+        <div className="my-8 xl:my-0">
+          <div className="relative w-full xl:w-[600px] rounded-2xl overflow-hidden z-20">
             <Image
               src="/landing/share-value.webp"
               alt="Education Hub"
               width={600}
               height={500}
               className="object-cover rounded-2xl"
-              sizes="(max-width: 1024px) 100vw, 600px"
+              sizes="(max-width: 1280px) 100vw, 600px"
               priority
             />
           </div>
-          <div className="flex flex-col lg:hidden">
+          <div className="flex flex-col xl:hidden">
             <h2 className="font-bold text-xl mt-3 w-fit font-orbitron bg-gradient-to-r from-[#E07C76] to-[#52b797] bg-clip-text text-transparent">
               Learn, Create, Innovate – A DeWorld Education Hub
             </h2>
           </div>
         </div>
 
-        <div className="lg:w-1/2 lg:ml-24">
-          <div className="hidden lg:flex flex-col mb-4">
+        <div className="xl:w-1/2 xl:ml-24">
+          <div className="hidden xl:flex flex-col mb-4">
             <ShareValueHeader />
           </div>
 

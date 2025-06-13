@@ -59,7 +59,7 @@ const FoundationSeatsSection = () => {
             )}
           </div>
 
-          <button className="mt-6 font-bold w-fit hover:scale-105  bg-[#0085a8] px-6 font-orbitron py-3 text-center  transition-all hover:ease-in-out rounded-lg text-lg">
+          <button className="mt-6 text-white font-bold w-fit hover:scale-105  bg-[#0085a8] px-6 font-orbitron py-3 text-center  transition-all hover:ease-in-out rounded-lg text-lg">
             Join The Movement
           </button>
         </div>

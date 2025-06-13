@@ -37,9 +37,30 @@ export default function GivefiSection() {
   return (
     <section className="bg-[#C6E3D5] dark:bg-primary-dark relative overflow-hidden bg-gradient-to-br from-[#F5EDFF] to-[#B8D0FF] dark:from-primary-dark dark:to-primary-dark">
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[-100px] right-[-100px] lg:right-[30%] w-[250px] lg:w-[350px] h-[300px] bg-[#E3A4FE] blur-[80px] opacity-70 dark:opacity-40" />
-        <div className="absolute bottom-[-100px] right-[-100px] lg:left-[-100px] w-full md:w-[600px] h-[40%] bg-[#E3A4FE] blur-3xl opacity-50 dark:opacity-40 rounded-full dark:hidden" />
-        <div className="absolute bottom-[-100px] right-[-100px] w-[200px] md:w-[500px] h-[200px] lg:h-[500px] bg-[#E3A4FE] blur-3xl opacity-50 dark:opacity-40 rounded-full" />
+        <div
+          className="absolute top-[-50px] right-[-100px] lg:right-[30%] w-[250px] lg:w-[350px] h-[300px] bg-[#E3A4FE]"
+          style={{
+            filter: 'blur(166.707763671875px)',
+            mixBlendMode: 'color-dodge',
+            opacity: '0.5',
+          }}
+        />
+        <div
+          className="absolute bottom-[-100px] right-[-100px] lg:left-[-100px] w-full md:w-[600px] h-[40%] bg-[#E3A4FE]  rounded-full dark:hidden"
+          style={{
+            filter: 'blur(166.707763671875px)',
+            mixBlendMode: 'color-dodge',
+            opacity: '0.5',
+          }}
+        />
+        <div
+          className="absolute bottom-[-100px] right-[-100px] w-[200px] md:w-[500px] h-[200px] lg:h-[500px] bg-[#E3A4FE]  rounded-full"
+          style={{
+            filter: 'blur(166.707763671875px)',
+            mixBlendMode: 'color-dodge',
+            opacity: '0.5',
+          }}
+        />
       </div>
 
       <div className="relative z-[1] w-full max-w-[1200px] mx-auto inset-shadow-2xs text-gray-900 dark:text-white px-6 py-16 lg:py-24">

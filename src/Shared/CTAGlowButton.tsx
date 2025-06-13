@@ -16,7 +16,8 @@ const CTAGlowButton: React.FC<CTAGlowProps> = ({
     <button
       disabled={disabled}
       className={clsx(
-        'border border-white py-[8px] text-sm   rounded-[48px] bg-gradient-to-b from-[#8EE9E9] via-[#BCACFA] to-[#C4A2FD] text-[#373737] font-bold transition-all duration-200',
+        'border border-white py-[8px] text-sm rounded-[48px] bg-gradient-to-b from-[#8EE9E9] via-[#BCACFA] to-[#C4A2FD] text-[#373737] font-bold transition-all duration-200',
+
         !className.includes('w-') && 'w-fit',
         !className.includes('px-') && 'px-14',
         !className.includes('sm:text-') && 'sm:text-lg',
