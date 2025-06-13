@@ -17,7 +17,7 @@ const UseCases = () => {
           {repeatedData.map((item, index) => (
             <div
               key={index}
-              className="backdrop-blur-md transition-opacity dark:shadow-2xl group hover:scale-105 rounded-lg px-6 py-14 text-center flex shadow-xl items-center gap-4 min-w-[450px]"
+              className="backdrop-blur-md transition-opacity dark:shadow-2xl group hover:scale-105 rounded-lg px-6 py-8 text-center flex shadow-xl items-center gap-4 min-w-[450px]"
             >
               <div className="dark:shadow-[2px_2px_2px_#0085a8,-2px_-2px_2px_#ad1] shadow-[1px_1px_2px_#ad1aa0,-1px_-1px_2px_#0085a8] rounded-md">
                 {item.icon}

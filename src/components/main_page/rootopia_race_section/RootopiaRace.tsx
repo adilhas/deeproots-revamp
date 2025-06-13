@@ -1,17 +1,40 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import { useThemeContext } from '@/context/ThemeContext';
+const Data = [
+  { icon: 'rootopia-daily-reward', title: 'Daily Rewards' },
+  {
+    icon: 'rootopia-earn-nft',
+    title: 'Earn rare NFTs and real utility tokens',
+  },
+  {
+    icon: 'rootopia-weekly-prize',
+    title: 'Weekly Prize Drops',
+  },
+  {
+    icon: 'rootopia-climb-leaderboard',
+    title: 'Climb the leaderboard to unlock elite rewards',
+  },
+  {
+    icon: 'rootopia-battle',
+    title: 'Battle for Glory',
+  },
+];
 const RootopiaRace = () => {
+  const { isDark } = useThemeContext();
   return (
-    <main className=" relative bg-neutral-100 dark:bg-neutral-950 px-10 py-20">
-      <div className="flex justify-center flex-row items-center w-full"></div>
+    <section className="bg-[#F3D390] dark:bg-primary-dark relative overflow-hidden">
+      <div className="absolute top-[-100px] right-[-100px] lg:right-[20%] w-[250px] lg:w-[500px] h-[300px] bg-[#145412] blur-[80px] opacity-40 dark:opacity-40 pointer-events-none z-0" />
+      <div className="absolute bottom-[-100px] right-[-100px] w-[200px] md:w-[500px] h-[200px] lg:h-[500px] bg-[#F08135] blur-3xl opacity-50 dark:opacity-40 pointer-events-none rounded-full z-0" />
 
-      <div className="flex justify-center flex-col lg:flex-row rounded-2xl items-center">
-        <div className="inline-block" style={{ opacity: 1, transform: 'none' }}>
-          <div className="w-full lg:flex hidden">
+      <div className="w-full z-10 max-w-[1200px] mx-auto px-5 py-10">
+        <div className="flex justify-center flex-row items-center w-full"></div>
+
+        <div className="flex justify-center lg:gap-5 flex-col lg:flex-row rounded-2xl items-center">
+          <div className="w-full lg:inline-block hidden max-w-[500px] lg:w-1/2">
             <Image
-              src="/landing/rootopia.jpeg"
+              src="/landing/rootopia-v2.png"
               alt="Rootopia Race Banner"
               className="rounded-2xl"
               width={1200}
@@ -19,61 +42,90 @@ const RootopiaRace = () => {
               layout="responsive"
             />
           </div>
-        </div>
 
-        <div className="flex justify-center lg:ml-32 items-start flex-col lg:w-1/2">
-          <div>
-            <h1 className="font-extrabold text-2xl lg:text-start lg:text-4xl mb-10 lg:leading-normal bg-gradient-to-r from-[#0085a8] to-[#a45204] bg-clip-text font-orbitron text-transparent">
-              ROOTOPIA RACE
-            </h1>
+          <div className="flex justify-center items-start flex-col lg:w-1/2 p-3">
+            <div>
+              <h2 className="font-extrabold font-serif text-3xl lg:text-start lg:text-5xl lg:leading-normal bg-gradient-to-r from-[#E57B0C] to-[#A42E0C] bg-clip-text text-transparent">
+                ROOTOPIA
+              </h2>
 
-            <div className="inline-block w-full lg:hidden mx-auto">
-              <div className="flex justify-center w-full">
-                <Image
-                  src="/landing/rootopia.jpeg"
-                  alt="Rootopia Race Banner Mobile"
-                  className="rounded-2xl"
-                  width={800}
-                  height={420}
-                  layout="responsive"
-                />
+              <div className="inline-block w-full lg:hidden mx-auto my-3">
+                <div className="flex justify-center w-full">
+                  <Image
+                    src="/landing/rootopia-v2.png"
+                    alt="Rootopia Race Banner Mobile"
+                    className="rounded-2xl"
+                    width={800}
+                    height={420}
+                    layout="responsive"
+                  />
+                </div>
               </div>
+              <h2 className="font-extrabold font-serif text-2xl lg:text-start lg:text-3xl mb-10 lg:leading-normal bg-gradient-to-r from-[#E57B0C] to-[#A42E0C] bg-clip-text text-transparent">
+                CALL TO HERO
+              </h2>
+              <h3 className="font-orbitron font-bold text-xl leading-normal w-full">
+                The Largest GameFi Launch in DeWorld History
+              </h3>
             </div>
 
-            <h3 className="font-orbitron font-bold text-xl leading-normal w-full">
-              Step into Rootopia World Race
-            </h3>
-          </div>
+            <p className="font-sans mt-5">
+              Step into the battle to save the Tree of Life. Rootopia is the
+              first fully animated 2D GameFi experience — combining cinematic
+              storytelling, NFT rewards, and epic PvE strategy.
+            </p>
 
-          <p className="font-sans mt-5 lg:w-[500px] md:w-[70vw]">
-            Game on! The Ultimate Race Begins Soon - Get Ready to compete! Are
-            you ready to claim your victory?
-          </p>
+            <ul className="my-3">
+              {Data.map((data) => (
+                <li key={data.title} className="flex flex-row gap-2 my-2">
+                  <Image
+                    src={`/landing/${isDark ? data.icon + '-dark' : data.icon}.svg`}
+                    width={24}
+                    height={24}
+                    alt={data.icon}
+                  />
+                  <div>{data.title}</div>
+                </li>
+              ))}
+              <div className="flex flex-row gap-2 my-3 items-start">
+                <Image
+                  src={`/landing/${isDark ? 'rootopia-starting-pool-dark' : 'rootopia-starting-pool'}.svg`}
+                  width={24}
+                  height={24}
+                  alt={'rootopia-starting-pool'}
+                />
+                <div>
+                  Starting pool: <br />
+                  <span className="text-lg font-[600]">
+                    $1,000,000 - $20,000,000 <br /> This... is... RootOpia.
+                  </span>
+                </div>
+              </div>
+            </ul>
 
-          <Link href={'https://rootopia.earth/'}>
-            <div className="flex justify-center lg:mt-6 items-center flex-col md:flex-row">
-              <button className="cursor-pointer mt-6 lg:mt-10 mr-6 px-6 font-orbitron py-3 text-center border-2 dark:border-[#0085a8] border-[#0085a8] hover:scale-105 hover:text-[#0085a8] transition-all hover:ease-in-out light:text-primary-dark dark:text-white rounded-lg text-lg tracking-wider">
-                Play Now
+            <Link href={'https://rootopia.earth/'}>
+              <button className="bg-gradient-to-b from-[#B44601] to-[#853401] rounded-2xl border-[#EE8A08] text-[#FEA500] cursor-pointer  lg:mt-10  px-6 font-serif font-[600] py-3 text-center border-3  transition-all hover:ease-in-out text-lg">
+                PLAY NOW
               </button>
-            </div>
-          </Link>
+            </Link>
+          </div>
+        </div>
+
+        <div className="z-0 text-lg">
+          <div
+            className="w-72 h-72 absolute top-150 right-200 bg-[#ad1aa0] hidden lg:flex dark:bg-[#0085a8] blur-[300px] rounded-full"
+            style={{ backgroundColor: 'rgb(173, 26, 160)' }}
+          ></div>
+        </div>
+
+        <div className="z-0 text-lg">
+          <div
+            className="w-60 h-60 absolute lg:top-0 dark:lg:right-0 lg:right-16 bg-neutral-950 dark:bg-[#0085a8] blur-[300px] rounded-full"
+            style={{ backgroundColor: 'rgb(0, 133, 168)' }}
+          ></div>
         </div>
       </div>
-
-      <div className="z-0 text-lg">
-        <div
-          className="w-72 h-72 absolute top-150 right-200 bg-[#ad1aa0] hidden lg:flex dark:bg-[#0085a8] blur-[300px] rounded-full"
-          style={{ backgroundColor: 'rgb(173, 26, 160)' }}
-        ></div>
-      </div>
-
-      <div className="z-0 text-lg">
-        <div
-          className="w-60 h-60 absolute lg:top-0 dark:lg:right-0 lg:right-16 bg-neutral-950 dark:bg-[#0085a8] blur-[300px] rounded-full"
-          style={{ backgroundColor: 'rgb(0, 133, 168)' }}
-        ></div>
-      </div>
-    </main>
+    </section>
   );
 };
 

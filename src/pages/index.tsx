@@ -20,13 +20,14 @@ import RootChatSection from '@/components/main_page/rootchat_section/RootChatSec
 import RootopiaRace from '@/components/main_page/rootopia_race_section/RootopiaRace';
 import RootscanSection from '@/components/main_page/rootscan_section/RootscanSection';
 import ShareValueSection from '@/components/main_page/share_value_section/ShareValueSection';
-import SocialLinks from '@/components/main_page/social_links_section/SocialLinks';
+// import SocialLinks from '@/components/main_page/social_links_section/SocialLinks';
 import Telexcoin from '@/components/main_page/telexcoin_section/Telexcoin';
 import Head from 'next/head';
 import WhatIsDeeprootsSection from '@/components/main_page/what_is_deeproots_section/WhatIsDeeprootsSection';
 import EarnFoundationSection from '@/components/main_page/earn_foundation/EarnFoundationSection';
 import WhatIsdRCSection from '@/components/main_page/what_is_dRC/WhatIsdRCSection';
 import DeepRootsEcosystemSection from '@/components/main_page/deeproots_ecosystem/DeepRootsEcosystemSection';
+import CopyMeSection from '@/components/main_page/copy_me_section/CopyMeSection';
 
 export default function Home() {
   return (
@@ -46,6 +47,7 @@ export default function Home() {
           <EarnFoundationSection />
           <WhatIsdRCSection />
           <DeepRootsEcosystemSection />
+          <div className="w-full h-10 hidden md:block" />
         </div>
         <AddressWallet />
         <Telexcoin />
@@ -63,10 +65,11 @@ export default function Home() {
         <RootscanSection />
         <ComparisonSection />
         <FoundationSeatsSection />
-        <AboutSection />
         <RootChatSection />
         <PodcastSection />
-        <SocialLinks />
+        {/* <SocialLinks /> */}
+        <CopyMeSection />
+        <AboutSection />
         <Footer />
       </div>
     </>

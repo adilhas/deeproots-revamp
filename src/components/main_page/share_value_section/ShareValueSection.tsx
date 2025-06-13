@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import Link from 'next/link';
 import {
   Brain,
   Code2,
@@ -9,119 +10,100 @@ import {
   Users,
   BookOpen,
 } from 'lucide-react';
-import Link from 'next/link';
+import ShareValueHeader from './ShareValueHeader';
+
+const features = [
+  {
+    icon: <Brain size={30} className="text-[#52b797]" />,
+    title: 'AI-Powered Learning',
+    description:
+      'Empowering anyone, anywhere to learn and innovate in the decentralized world.',
+  },
+  {
+    icon: <Code2 size={30} className="text-[#52b797]" />,
+    title: 'Decentralized Tech Resources',
+    description:
+      'Access tools to build on blockchain and decentralized technologies.',
+  },
+  {
+    icon: <Globe size={30} className="text-[#52b797]" />,
+    title: 'Global Access',
+    description:
+      'Programs for all sectors, enabling global innovation and contribution to DeWorld.',
+  },
+  {
+    icon: <Lightbulb size={30} className="text-[#52b797]" />,
+    title: 'Innovation Hub',
+    description: 'A platform for hackathons, collaboration, and idea-sharing.',
+  },
+  {
+    icon: <Rocket size={30} className="text-[#52b797]" />,
+    title: 'Empowering Creators',
+    description: 'Turn ideas into reality and shape the future of DeWorld.',
+  },
+  {
+    icon: <Users size={30} className="text-[#52b797]" />,
+    title: 'Mentorship & Idea Sharing',
+    description:
+      'Lead groups, share ideas, and gain knowledge by teaching others.',
+  },
+  {
+    icon: <BookOpen size={30} className="text-[#52b797]" />,
+    title: 'Knowledge Exchange',
+    description: 'Learn by teaching, and help grow the DeWorld community.',
+  },
+];
 
 const ShareValueSection = () => {
   return (
-    <main className="my-16 p-6 md:p-10">
-      <div className="flex flex-col lg:flex-row items-center justify-center">
-        {/* Mobile Header */}
-        <div className="flex justify-center  lg:hidden my-8 flex-col">
-          <div>
-            <h1 className="font-extrabold text-2xl lg:text-4xl font-orbitron bg-gradient-to-r from-[#E07C76] to-[#52b797] bg-clip-text text-transparent">
-              SHARE VALUE
-            </h1>
-          </div>
-          <div>
-            <h1 className="font-extrabold text-xl mt-3 lg:text-2xl font-orbitron mb-5 bg-gradient-to-r from-[#E07C76] to-[#52b797] bg-clip-text text-transparent">
-              Learn, Create, Innovate – A DeWorld Education Hub
-            </h1>
-          </div>
+    <main className="py-16 p-6 md:p-10 bg-[#E8F4D4] dark:bg-primary-dark relative">
+      <div className="absolute top-0 bg-[#47866F] left-0 w-[100px] md:w-[500px] h-[300px] blur-3xl opacity-60 pointer-events-none z-10 dark:hidden" />
+      <div className="absolute bottom-[-10px] bg-[#E88874] right-[-100px] w-[200px] md:w-[500px] h-[300px] blur-3xl opacity-50 pointer-events-none rounded-full z-10 dark:hidden" />
+
+      <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-center">
+        <div className="flex flex-col lg:hidden">
+          <h1 className="font-extrabold w-fit text-2xl lg:text-4xl font-orbitron bg-gradient-to-r from-[#E07C76] to-[#52b797] bg-clip-text text-transparent">
+            SHARE VALUE
+          </h1>
         </div>
 
-        {/* Image */}
-        <div className="inline-block my-8">
-          <div className="relative w-full lg:w-[600px] rounded-2xl overflow-hidden">
+        <div className="my-8 lg:my-0">
+          <div className="relative w-full lg:w-[600px] rounded-2xl overflow-hidden z-20">
             <Image
               src="/landing/share-value.webp"
               alt="Education Hub"
-              layout="intrinsic"
               width={600}
               height={500}
               className="object-cover rounded-2xl"
               sizes="(max-width: 1024px) 100vw, 600px"
+              priority
             />
+          </div>
+          <div className="flex flex-col lg:hidden">
+            <h2 className="font-bold text-xl mt-3 w-fit font-orbitron bg-gradient-to-r from-[#E07C76] to-[#52b797] bg-clip-text text-transparent">
+              Learn, Create, Innovate – A DeWorld Education Hub
+            </h2>
           </div>
         </div>
 
-        {/* Text Content */}
         <div className="lg:w-1/2 lg:ml-24">
-          {/* Desktop Header */}
-          <div className="lg:flex justify-center items-start hidden mb-4 flex-col">
-            <div className="inline-block">
-              <div>
-                <h1 className="font-extrabold text-2xl lg:text-4xl font-orbitron bg-gradient-to-r from-[#E07C76] to-[#52b797] bg-clip-text text-transparent">
-                  SHARE VALUE
-                </h1>
-              </div>
-            </div>
-            <div className="inline-block">
-              <div>
-                <h1 className="font-bold text-xl mt-3 font-orbitron bg-gradient-to-r from-[#E07C76] to-[#52b797] bg-clip-text text-transparent">
-                  Learn, Create, Innovate – A DeWorld Education Hub
-                </h1>
-              </div>
-            </div>
+          <div className="hidden lg:flex flex-col mb-4">
+            <ShareValueHeader />
           </div>
 
-          {/* Feature List */}
-          <div className="flex text-left flex-col gap-4">
-            <p className="font-sans text-lg">
-              <span className="font-bold flex items-center gap-2">
-                <Brain size={30} className="text-[#52b797]" /> AI-Powered
-                Learning
-              </span>
-              Empowering anyone, anywhere to learn and innovate in the
-              decentralized world.
-            </p>
-            <p className="font-sans text-lg">
-              <span className="font-bold flex items-center gap-2">
-                <Code2 size={30} className="text-[#52b797]" /> Decentralized
-                Tech Resources
-              </span>
-              Access tools to build on blockchain and decentralized
-              technologies.
-            </p>
-            <p className="font-sans text-lg">
-              <span className="font-bold flex items-center gap-2">
-                <Globe size={30} className="text-[#52b797]" /> Global Access
-              </span>
-              Programs for all sectors, enabling global innovation and
-              contribution to DeWorld.
-            </p>
-            <p className="font-sans text-lg">
-              <span className="font-bold flex items-center gap-2">
-                <Lightbulb size={30} className="text-[#52b797]" /> Innovation
-                Hub
-              </span>
-              A platform for hackathons, collaboration, and idea-sharing.
-            </p>
-            <p className="font-sans text-lg">
-              <span className="font-bold flex items-center gap-2">
-                <Rocket size={30} className="text-[#52b797]" /> Empowering
-                Creators
-              </span>
-              Turn ideas into reality and shape the future of DeWorld.
-            </p>
-            <p className="font-sans text-lg">
-              <span className="font-bold flex items-center gap-2">
-                <Users size={30} className="text-[#52b797]" /> Mentorship &amp;
-                Idea Sharing
-              </span>
-              Lead groups, share ideas, and gain knowledge by teaching others.
-            </p>
-            <p className="font-sans text-lg">
-              <span className="font-bold flex items-center gap-2">
-                <BookOpen size={30} className="text-[#52b797]" /> Knowledge
-                Exchange
-              </span>
-              Learn by teaching, and help grow the DeWorld community.
-            </p>
+          <div className="flex flex-col gap-4 text-left">
+            {features.map((feature, index) => (
+              <p key={index} className="font-sans text-lg">
+                <span className="font-bold flex items-center gap-2 font-orbitron">
+                  {feature.icon} {feature.title}
+                </span>
+                {feature.description}
+              </p>
+            ))}
           </div>
 
-          {/* CTA Button */}
-          <Link href={'https://sharevalue.earth/'}>
-            <button className="py-4 font-bold mt-8 font-orbitron text-neutral-200 text-lg px-7 w-1/3 bg-gradient-to-r from-[#E07C76] to-[#52b797] hover:text-neutral-900 rounded-lg flex justify-center items-center">
+          <Link href="https://sharevalue.earth/" passHref>
+            <button className="mt-8 py-4 px-7 w-1/3 font-orbitron font-bold text-lg text-neutral-200 bg-gradient-to-r from-[#E07C76] to-[#52b797] hover:text-neutral-900 rounded-lg">
               Learn
             </button>
           </Link>

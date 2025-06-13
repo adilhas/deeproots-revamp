@@ -35,9 +35,9 @@ const FeatureList: React.FC<FeatureListProps> = ({
   };
 
   return (
-    <div className={`${colorClasses[color].bg} p-6 rounded-lg shadow-lg`}>
+    <div className={`${colorClasses[color].bg} p-6 rounded-3xl shadow-lg`}>
       <h3
-        className={`text-xl font-semibold ${colorClasses[color].text} mb-8 flex items-center`}
+        className={`text-2xl font-semibold font-orbitron ${colorClasses[color].text} mb-8 flex items-center`}
       >
         {React.cloneElement(icon, {
           className: `mr-6 ${colorClasses[color].icon}`,

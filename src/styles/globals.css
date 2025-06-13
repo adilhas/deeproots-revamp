@@ -5,6 +5,7 @@
   --color-gradient-from: #9e2ca9;
   --color-gradient-to: #3b82a4;
   --font-orbitron: 'Orbitron', 'sans-serif';
+  --font-glorio: 'Gloria Hallelujah', cursive;
 }
 
 @keyframes fade-in {

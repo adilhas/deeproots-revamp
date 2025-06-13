@@ -563,27 +563,33 @@ export const innofiFeatures = [
 export const metafabricFeatures = [
   {
     icon: <ShoppingCart className="text-blue-500 w-12 h-12 mr-3" />,
-    text: 'NFT Marketplace: Buy, sell, and trade digital art designed for fashion.',
+    title: 'NFT Marketplace',
+    text: `Buy, sell, and trade digital art designed for fashion.`,
   },
   {
     icon: <Paintbrush className="text-[#ee49fc] w-12 h-12 mr-3" />,
-    text: 'Custom Printing: Transform your NFTs into wearable fashion on clothes, accessories, and more.',
+    title: 'Custom Printing',
+    text: 'Transform your NFTs into wearable fashion on clothes, accessories, and more.',
   },
   {
     icon: <User className="text-green-500 w-12 h-12 mr-3" />,
-    text: 'Designer Collaboration: Connect with top designers to create custom fashion pieces.',
+    title: 'Designer Collaboration',
+    text: 'Connect with top designers to create custom fashion pieces.',
   },
   {
     icon: <ShieldCheck className="text-yellow-500 w-12 h-12 mr-3" />,
-    text: 'Fashion Meets Blockchain: Own unique fashion that’s verified and secured on the blockchain.',
+    title: 'Fashion Meets Blockchain',
+    text: 'Own unique fashion that’s verified and secured on the blockchain.',
   },
   {
     icon: <Smartphone className="text-[#9a37f0] w-12 h-12 mr-3" />,
-    text: 'Seamless Experience: Shop, design, and print directly from the MetaFabric platform.',
+    title: 'Seamless Experience',
+    text: 'Shop, design, and print directly from the MetaFabric platform.',
   },
   {
     icon: <Sparkles className="text-red-500 w-12 h-12 mr-3" />,
-    text: 'Lifestyle Redefined: Wear your creativity and show off your digital art in the real world.',
+    title: 'Lifestyle Redefined',
+    text: 'Wear your creativity and show off your digital art in the real world.',
   },
 ];
 
@@ -609,32 +615,32 @@ export const decentralizedFeatures = [
 
 export const foundationSeatsFeatures = [
   {
-    icon: <Wand size={40} className="text-[#0085a5]" />,
+    icon: <Wand size={30} className="text-[#0085a5]" />,
     title: 'Earn from Every Project',
     description: 'Get a percentage of all new projects.',
   },
   {
-    icon: <PiggyBank size={40} className="text-[#0085a5]" />,
+    icon: <PiggyBank size={30} className="text-[#0085a5]" />,
     title: 'Passive Rewards (12%)',
     description: 'Automatically earn ecosystem rewards.',
   },
   {
-    icon: <Users size={40} className="text-[#0085a5]" />,
+    icon: <Users size={30} className="text-[#0085a5]" />,
     title: 'Referral Rewards',
     description: 'Earn by inviting users to join with multi-user referrals.',
   },
   {
-    icon: <Clock3 size={40} className="text-[#0085a5]" />,
+    icon: <Clock3 size={30} className="text-[#0085a5]" />,
     title: 'Early Access',
     description: 'Exclusive whitelist and private project opportunities.',
   },
   {
-    icon: <Gamepad2 size={40} className="text-[#0085a5]" />,
+    icon: <Gamepad2 size={30} className="text-[#0085a5]" />,
     title: 'RootOpia Game',
     description: 'Play and win BIG blockchain rewards.',
   },
   {
-    icon: <Wallet size={40} className="text-[#0085a5]" />,
+    icon: <Wallet size={30} className="text-[#0085a5]" />,
     title: 'Full Wallet Access',
     description: 'Unlock staking, launchpad, and ecosystem updates.',
   },
