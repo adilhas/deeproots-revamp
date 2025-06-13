@@ -1,4 +1,4 @@
-import Footer from '@/components/footer/Footer';
+import FooterV2 from '@/components/footer/FooterV2';
 import Navbar from '@/components/navbar/Navbar';
 import { ReactNode } from 'react';
 
@@ -11,7 +11,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
     <div className="overflow-x-hidden">
       <Navbar />
       <main className="pt-[70px] md:pt-[88px] lg:pt-[93px]">{children}</main>
-      <Footer />
+      <FooterV2 />
     </div>
   );
 };

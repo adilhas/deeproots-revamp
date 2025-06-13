@@ -720,16 +720,6 @@ export const footerLinks: IFooter[] = [
       { label: 'Telexcoin DEX', href: 'https://telexcoin.earth' },
       { label: 'RootScan Explorer', href: 'https://rootscan.earth' },
       { label: 'RootChat – Web3 Messaging', href: 'https://rootchat.earth' },
-      // {
-      //   label: 'DeepAssets – RWA Tokenization',
-      //   href: 'https://deepassets.earth',
-      // },
-      // {
-      //   label: 'OceanBazaar – NFT Marketplace',
-      //   href: 'https://oceanbazaar.earth',
-      // },
-      // { label: 'MetaFabric – Wearable NFTs', href: 'https://metafabric.earth' },
-      // { label: 'DEFI', href: '/deworld/defi' },
       { label: 'SEEDING Deworld', href: '/deworld/seeding' },
       { label: 'DeWorld Public Network', href: '/deworld/deworld-network' },
       { label: 'DeWorld Private Network', href: '/deworld/deworld-network' },

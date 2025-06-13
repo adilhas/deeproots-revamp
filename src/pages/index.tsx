@@ -20,7 +20,7 @@ import RootChatSection from '@/components/main_page/rootchat_section/RootChatSec
 import RootopiaRace from '@/components/main_page/rootopia_race_section/RootopiaRace';
 import RootscanSection from '@/components/main_page/rootscan_section/RootscanSection';
 import ShareValueSection from '@/components/main_page/share_value_section/ShareValueSection';
-// import SocialLinks from '@/components/main_page/social_links_section/SocialLinks';
+import SocialLinks from '@/components/main_page/social_links_section/SocialLinks';
 import Telexcoin from '@/components/main_page/telexcoin_section/Telexcoin';
 import Head from 'next/head';
 import WhatIsDeeprootsSection from '@/components/main_page/what_is_deeproots_section/WhatIsDeeprootsSection';
@@ -28,6 +28,7 @@ import EarnFoundationSection from '@/components/main_page/earn_foundation/EarnFo
 import WhatIsdRCSection from '@/components/main_page/what_is_dRC/WhatIsdRCSection';
 import DeepRootsEcosystemSection from '@/components/main_page/deeproots_ecosystem/DeepRootsEcosystemSection';
 import CopyMeSection from '@/components/main_page/copy_me_section/CopyMeSection';
+import FooterV2 from '@/components/footer/FooterV2';
 
 export default function Home() {
   return (
@@ -66,12 +67,13 @@ export default function Home() {
         <FoundationSeatsSection />
         <RootChatSection />
         <PodcastSection />
-        {/* <SocialLinks /> */}
-        <div className="overflow-y-hidden">
+        <div className="overflow-hidden">
           <CopyMeSection />
           <AboutSection />
         </div>
-        <Footer />
+        <SocialLinks />
+        {/* <Footer /> */}
+        <FooterV2 />
       </div>
     </>
   );
