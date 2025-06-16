@@ -32,11 +32,11 @@ const RootChatSection = () => {
         <div className="absolute bottom-[-100px] left-[150px] w-full md:w-[600px] h-[50%] bg-[#C6B6F2] dark:bg-[#3CB1F2] blur-3xl opacity-90 dark:opacity-20 rounded-full z-0" />
         {/* <div className="absolute w-60 h-60 top-20 right-10 bg-[#5C3FA3] blur-[200px] rounded-full opacity-40 dark:opacity-60 pointer-events-none z-0" /> */}
 
-        <div className="lg:w-1/2 text-gray-900 dark:text-gray-200 relative z-10 lg:pl-9">
-          <h1 className="text-3xl lg:text-4xl font-extrabold font-orbitron leading-tight w-fit bg-gradient-to-r from-[#3D2A63]  to-[#00CFFF] dark:from-[#C6B6F2] dark:to-[#A0E6FF] bg-clip-text text-transparent mb-4">
+        <div className="lg:w-1/2 w-full text-gray-900 dark:text-gray-200 relative z-10 lg:pl-9">
+          <h1 className="text-5xl lg:text-4xl font-extrabold font-orbitron leading-tight w-fit bg-gradient-to-r from-[#3D2A63]  to-[#00CFFF] dark:from-[#C6B6F2] dark:to-[#A0E6FF] bg-clip-text text-transparent mb-4">
             RootChat
           </h1>
-          <div className="block lg:hidden w-full max-w-md mx-auto">
+          <div className="block lg:hidden my-4 w-full max-w-md mx-auto">
             <Image
               src="/landing/rootchat.png"
               alt="RootChat Mobile"

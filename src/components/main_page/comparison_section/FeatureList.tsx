@@ -35,7 +35,9 @@ const FeatureList: React.FC<FeatureListProps> = ({
   };
 
   return (
-    <div className={`${colorClasses[color].bg} p-6 rounded-3xl shadow-lg`}>
+    <div
+      className={`${colorClasses[color].bg} p-6 rounded-3xl shadow-lg w-full max-w-[400px] mx-auto`}
+    >
       <h3
         className={`text-2xl font-semibold font-orbitron ${colorClasses[color].text} mb-8 flex items-center`}
       >

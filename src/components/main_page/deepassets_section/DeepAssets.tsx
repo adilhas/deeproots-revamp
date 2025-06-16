@@ -8,12 +8,11 @@ import { ChevronRight } from 'lucide-react';
 const DeepAssets = () => {
   return (
     <main className="relative bg-[#FBF2E7] dark:bg-primary-dark px-5 py-20 overflow-hidden">
-      {/* Background Blur Behind Everything */}
       <div className="absolute top-0 left-0 w-full h-[30%] md:w-[10%] md:h-full bg-[#AD1AA0] blur-[300px] md:blur-[200px] dark:hidden z-0 pointer-events-none" />
 
       <div className="max-w-[1200px] mx-auto relative z-10">
+        <div className="absolute bottom-[-50px] mix-blend-color-dodge right-[10%] w-[300px] h-[200px] rounded-full blur-3xl opacity-40 pointer-events-none z-0 hidden dark:block bg-[#DA6A6D]" />
         <div className="flex justify-center items-center relative z-10">
-          {/* Content Column */}
           <div className="flex justify-start  w-full lg:mr-16 items-start flex-col z-20">
             <div className="font-extrabold w-fit leading-normal text-4xl mb-3 bg-gradient-to-r from-[#0085a8] to-orange-800 bg-clip-text font-orbitron text-transparent">
               Deep Assets

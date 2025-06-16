@@ -43,23 +43,23 @@ const RootopiaRace = () => {
             />
           </div>
 
-          <div className="flex justify-center items-start flex-col lg:w-1/2 p-3">
-            <div>
-              <h2 className="font-extrabold font-serif text-3xl lg:text-start lg:text-5xl lg:leading-normal bg-gradient-to-b from-[#E57B0C] to-[#A42E0C] bg-clip-text text-transparent">
+          <div className="flex justify-center items-start flex-col w-full  lg:w-1/2 p-3">
+            <div className="w-full">
+              <h2 className="font-extrabold font-serif text-5xl lg:text-start lg:text-5xl lg:leading-normal bg-gradient-to-b from-[#E57B0C] to-[#A42E0C] bg-clip-text text-transparent">
                 ROOTOPIA
               </h2>
 
-              <div className="w-full flex justify-center items-center self-center lg:hidden my-3">
+              <div className="w-full mx-auto flex  justify-center items-center self-center lg:hidden my-5">
                 <Image
                   src="/landing/rootopia-v2.png"
                   alt="Rootopia Race Banner Mobile"
-                  className="rounded-4xl w-full max-w-[500px] shadow-lg"
+                  className="rounded-4xl w-full  shadow-lg"
                   width={800}
                   height={420}
                   layout="responsive"
                 />
               </div>
-              <h2 className="font-extrabold font-serif text-2xl lg:text-start lg:text-3xl mb-10 lg:leading-normal bg-gradient-to-b from-[#E57B0C] to-[#A42E0C] bg-clip-text text-transparent">
+              <h2 className="font-extrabold text-center font-serif text-3xl lg:text-start lg:text-3xl mb-10 lg:leading-normal bg-gradient-to-b from-[#E57B0C] to-[#A42E0C] bg-clip-text text-transparent">
                 CALL TO HERO
               </h2>
               <h3 className="font-orbitron font-bold text-xl leading-normal w-full">

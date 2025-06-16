@@ -14,17 +14,17 @@ export default function MobileMenu({
 }: Props) {
   return (
     <div
-      className={`min-h-screen p-3 font-orbitron xl:hidden absolute top-[100%] left-0 w-full z-40 bg-neutral-300 dark:bg-primary-dark shadow-lg border-t border-gray-200 dark:border-gray-700 transform transition-transform duration-300 overflow-y-auto max-h-[calc(100vh-4rem)] ${
+      className={`max-w-screen overflow-hidden xl:hidden absolute top-[100%] left-0 w-full z-40 bg-neutral-300 dark:bg-primary-dark shadow-lg border-t border-gray-200 dark:border-gray-700 transform transition-transform duration-300 overflow-y-auto  ${
         isOpen ? 'translate-x-0' : '-translate-x-full'
       }`}
     >
-      <div className="flex flex-col">
+      <div className="flex flex-col p-3">
         <ul className="flex flex-col">
           {menuSection.map((item) => (
             <li key={item.name} className="mb-4">
               <button
                 onClick={() => toggleItem(item.name)}
-                className="flex justify-between items-center w-full cursor-pointer text-[#0085a8] font-orbitron font-extrabold text-xl hover:scale-105 px-4 py-2 hover:border-2 hover:border-[#0085a8] rounded transition-all"
+                className="flex justify-between items-center w-full cursor-pointer text-xl hover:scale-105 px-4 py-2 hover:border-2 hover:border-[#0085a8] rounded transition-all"
               >
                 <span>{item.name}</span>
                 {expandedItems[item.name] ? (
@@ -42,7 +42,7 @@ export default function MobileMenu({
                       <li key={index}>
                         <a
                           href={subitem.link}
-                          className="my-3 block w-full text-left px-4 py-2 bg-neutral-400 text-neutral-950 hover:scale-105 dark:bg-neutral-700 dark:text-neutral-200 font-orbitron hover:bg-neutral-600 rounded transition-all"
+                          className="my-3 block w-full text-left px-4 py-2 bg-neutral-400 text-neutral-950 hover:scale-105 dark:bg-neutral-700 dark:text-neutral-200  hover:bg-neutral-600 rounded transition-all"
                         >
                           {subitem.title}
                         </a>
@@ -55,6 +55,7 @@ export default function MobileMenu({
           ))}
         </ul>
       </div>
+      <div className="w-full h-2 absolute bottom-0 bg-gradient-to-r from-gradient-from to-gradient-to"></div>
     </div>
   );
 }

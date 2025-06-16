@@ -33,11 +33,11 @@ const WhatIsDeepRoots = () => {
                 blockchain and AI.
               </p>
             </div>
-            <div className="mt-10 pt-6 border-t border-gray-700/50">
+            {/* <div className="mt-10 pt-6 border-t border-gray-700/50">
               <button className="group relative px-6 py-3 bg-transparent border border-gray-600 hover:border-[#0085a8] text-gray-300 rounded-full font-medium text-lg transition-all duration-300 flex items-center">
                 <span>Discover More</span>
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
 

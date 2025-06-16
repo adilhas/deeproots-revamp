@@ -29,7 +29,9 @@ const DRCMobile = () => {
       </h2>
       <div className="w-fit mx-auto my-5">
         <TotalSupplyChart showGradient={false} />
-        <TotalSupply />
+        <div className="mt-6">
+          <TotalSupply />
+        </div>
       </div>
       <div className="text-xl font-orbitron text-center my-10">
         Built for Real Use – Not Just Trading

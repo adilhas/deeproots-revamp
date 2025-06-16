@@ -17,14 +17,20 @@ export default function Navbar() {
   >({});
 
   const toggleMobileItem = (itemName: string) => {
-    setExpandedMobileItems((prev) => ({
-      ...prev,
-      [itemName]: !prev[itemName],
-    }));
+    setExpandedMobileItems((prev) => {
+      const isOpen = prev[itemName];
+      if (isOpen) return {};
+      return { [itemName]: true };
+    });
+  };
+
+  const onMenuClose = () => {
+    setExpandedMobileItems({});
+    setMobileMenuOpen(false);
   };
 
   return (
-    <header className="shadow-sm fixed top-0 z-50 bg-neutral-300 dark:bg-primary-dark dark:text-neutral-200 w-full">
+    <header className="px-2 shadow-sm fixed top-0 z-50 bg-neutral-300 dark:bg-primary-dark dark:text-neutral-200 w-full">
       <div
         className="bg-neutral-300 dark:bg-primary-dark dark:text-neutral-200"
         onMouseLeave={() => setActiveMenu(null)}
@@ -57,7 +63,7 @@ export default function Navbar() {
             {isMobileMenuOpen ? (
               <button
                 className="xl:hidden p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={onMenuClose}
               >
                 <X className="h-6 w-6 text-gray-800 dark:text-white" />
               </button>

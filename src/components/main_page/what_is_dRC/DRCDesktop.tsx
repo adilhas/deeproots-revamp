@@ -36,7 +36,7 @@ const DRCDesktop = () => {
           What is dRC?
         </h2>
       </div>
-      <div className="flex flex-row items-center gap-2 w-full justify-between">
+      <div className="flex  flex-row items-center gap-2 w-full justify-between">
         <TotalSupplyChart />
         <div className="font-orbitron text-3xl text-center font-[500]">
           dRC token distributed <br /> over 41 years
@@ -49,7 +49,7 @@ const DRCDesktop = () => {
         />
       </div>
       <div className="h-[580px] relative">
-        <div className="flex items-center h-full justify-between relative z-10">
+        <div className="flex items-center h-max justify-between relative z-10">
           <TotalSupply />
 
           <div className="text-center">
@@ -64,12 +64,12 @@ const DRCDesktop = () => {
             </div>
           </div>
 
-          <div className="flex flex-col justify-center p-4 h-full">
-            <ul className="space-y-4 mt-3 h-full flex flex-col justify-start text-center text-2xl font-orbitron text-[#5C5F62] dark:text-[#94A3B8]">
+          <div className="flex flex-col justify-center my-2 h-full">
+            <ul className="space-y-[23px] h-full justify-start flex flex-col text-center text-2xl font-orbitron text-[#5C5F62] dark:text-[#94A3B8]">
               {Data.map((item, index) => (
                 <li
                   key={index}
-                  className="py-2.5 px-8 rounded-2xl"
+                  className="py-[8px] px-8 rounded-2xl bg-[#EBEBEB] dark:bg-[#212121]"
                   style={{
                     boxShadow: isDark
                       ? '0px 15px 31px 0px #000000'

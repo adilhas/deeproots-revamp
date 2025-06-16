@@ -22,7 +22,7 @@ const CopyMeSection = () => {
       </div>
 
       <section className="relative z-40 py-12 px-4 max-w-[1200px] mx-auto">
-        <div className="absolute bottom-[-100px] left-0 w-[220px] md:w-[400px] h-[220px] lg:h-[400px] bg-[#F4C9FF] dark:bg-black blur-md opacity-70 dark:opacity-100 pointer-events-none rounded-full z-0" />
+        <div className="absolute bottom-[-100px] left-0 w-[250px] lg:w-[400px] h-[250px] lg:h-[400px] bg-[#F4C9FF] dark:bg-black blur-md opacity-70 dark:opacity-100 pointer-events-none rounded-full z-0" />
 
         <div className="relative z-10 container lg:px-24 flex flex-col lg:flex-row items-center justify-between gap-8 mx-auto">
           <div className="space-y-4 lg:w-1/2 lg:pr-9">
@@ -41,10 +41,10 @@ const CopyMeSection = () => {
               />
             </div>
             <h2 className="text-3xl w-fit font-orbitron font-semibold bg-gradient-to-r from-[#887FFF] via-[#9F5FFF] to-[#86A1FF] dark:from-[#fff] dark:via-[#AE86F1] dark:to-[#50D0FF] text-transparent bg-clip-text">
-              I learn you, I copy you, I guide you.
+              I learn you, I copy you <br /> I guide you
             </h2>
 
-            <p className="my-8 z-10">
+            <p className="my-8 z-10 dark:text-[#F1F5F9] text-[#334155]">
               <div className="mb-2">
                 An AI that mirrors your mind, learns, adapts, and leads.
               </div>

@@ -8,21 +8,20 @@ const WhatIsDeeprootsSection = () => {
   const { isDark } = useThemeContext();
   return (
     <div className="py-16 w-full max-w-[1200px] mx-auto dark:bg-[#161616] bg-[#e8e8e9]">
-      {/* Heading */}
       <h2
-        className="w-fit font-[600] text-center rounded-md p-3 mx-auto text-2xl bg-[#212121] md:text-3xl font-orbitron text-transparent bg-gradient-to-r from-gradient-from-light to-gradient-to-light dark:from-gradient-from dark:to-gradient-to bg-clip-text"
-        style={{ boxShadow: `0px 6px 20px 0px #00000045` }}
+        className="w-fit font-[600] text-center rounded-xl p-3 mx-auto text-2xl bg-[#212121] md:text-3xl font-orbitron text-transparent bg-gradient-to-r from-gradient-from-light to-gradient-to-light dark:from-gradient-from dark:to-gradient-to bg-clip-text"
+        style={{
+          boxShadow: `0px 6px 20px 0px ${isDark ? '#00000045' : '#0000001F'}`,
+        }}
       >
         What is Deep Roots?
       </h2>
 
-      {/* From - Logo - To */}
       <div className="relative flex flex-col lg:flex-row items-center justify-center gap-8 mt-8 w-full">
         <div className="text-4xl font-orbitron text-[#4B5563] dark:text-[#F8FAFC] whitespace-nowrap">
           From World
         </div>
 
-        {/* Logo with branches */}
         <div className="relative shrink-0">
           <Image
             src="/landing/logo-big.png"

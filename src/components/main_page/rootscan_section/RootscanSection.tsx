@@ -34,7 +34,7 @@ export default function RootscanSection() {
         <div className="lg:text-left max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="flex flex-col justify-between">
             <div>
-              <div className="font-orbitron z-20 text-3xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-[#F0B100] to-[#00C951] bg-clip-text">
+              <div className="w-fit mx-auto lg:mx-0 font-orbitron z-20 text-5xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-[#F0B100] to-[#00C951] bg-clip-text">
                 RootScan
               </div>
 
@@ -56,7 +56,7 @@ export default function RootscanSection() {
               </div>
             </div>
 
-            <ul className=" text-white">
+            <ul className="my-3 text-white">
               {featureList.map(({ title, description }) => (
                 <li key={title}>
                   <div className="flex items-end gap-2">
@@ -75,7 +75,7 @@ export default function RootscanSection() {
               ))}
             </ul>
 
-            <div className="">
+            <div className="mt-3">
               <Link href="https://rootscan.earth" rel="noopener noreferrer">
                 <button className="px-6 hover:scale-105 py-3 text-lg font-medium rounded-full bg-gradient-to-r from-yellow-500 to-green-500 text-black hover:from-yellow-400 hover:to-green-400 transition">
                   Explore RootScan

@@ -12,7 +12,7 @@ const ComparisonSection = () => {
       <div className="max-w-[1200px] mx-auto py-12 px-6">
         {/* <SectionHeader /> */}
 
-        <div className="md:grid grid-cols-1 hidden md:grid-cols-3 gap-6 items-center">
+        <div className="lg:grid grid-cols-1 hidden lg:grid-cols-3 gap-6 items-center">
           <div>
             <h1 className="font-extrabold text-2xl text-center md:text-3xl md:mb-20 mb-10 lg:leading-normal bg-gradient-to-r from-[#0085a8] to-[#a45204] bg-clip-text font-orbitron text-transparent">
               Centralized
@@ -45,7 +45,7 @@ const ComparisonSection = () => {
         </div>
 
         {/* Mobile View */}
-        <div className="grid grid-cols-1 md:hidden gap-6">
+        <div className="grid grid-cols-1 lg:hidden gap-6">
           <h1 className="font-extrabold text-2xl text-center bg-gradient-to-r from-[#0085a8] to-[#a45204] bg-clip-text font-orbitron text-transparent">
             Centralized
           </h1>

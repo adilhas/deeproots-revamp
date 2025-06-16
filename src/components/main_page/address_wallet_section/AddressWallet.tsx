@@ -5,9 +5,9 @@ const AddressWallet = () => {
   const { isDark } = useThemeContext();
   return (
     <main className="bg-[#D4D4D4] dark:bg-primary-dark">
-      <div className="w-full  max-w-[1200px] mx-auto  py-20 relative md:px-10 px-5">
-        <div className="flex flex-col md:flex-row items-stretch  gap-2 w-full">
-          <div className="flex justify-between w-full md:w-1/2  md:items-center lg:ml-10 lg:items-start lg:text-start items-start flex-col">
+      <div className="w-full  max-w-[1200px] mx-auto  py-20 relative lg:px-10 px-5">
+        <div className="flex flex-col lg:flex-row items-stretch  gap-2 w-full">
+          <div className="flex justify-between w-full lg:w-1/2   lg:ml-10  lg:text-start items-start flex-col">
             <div className="inline-block">
               <div style={{ opacity: 1, transform: 'none' }}>
                 <h1 className="font-extrabold text-3xl  lg:text-start lg:text-3xl lg:leading-normal bg-gradient-to-r from-[#0085a8] to-orange-400 bg-clip-text font-orbitron text-transparent">
@@ -28,7 +28,7 @@ const AddressWallet = () => {
             </div>
 
             <div>
-              <p className="font-sans my-3 lg:w-[500px] md:w-[70vw]">
+              <p className="font-sans my-3 lg:w-[500px] lg:w-[70vw]">
                 <span className="font-orbitron mb-5 font-bold">
                   Warp Around Wealth - 21 Layers of Dynamic Finance.
                 </span>
@@ -64,14 +64,14 @@ const AddressWallet = () => {
                 More Than a Wallet, It&apos;s an Earning Machine. Activate &amp;
                 Begin Your Journey to wealth!
               </p>
-              <p className="font-sans my-3 lg:w-[500px] md:w-[70vw]">
+              <p className="font-sans my-3 lg:w-[500px] lg:w-[70vw]">
                 <span className="font-orbitron font-bold">
                   Manage Asset | SEED | FOUNDATION | Referral | Gaming &amp;
                   More.
                 </span>
               </p>
             </div>
-            <div className="flex justify-center lg:mt-6 items-center flex-col md:flex-row">
+            <div className="flex justify-center lg:mt-6 items-center flex-col lg:flex-row">
               <button
                 className="text-white mt-6 font-bold lg:mt-10 bg-gradient-to-r from-[#0085a8] to-orange-400 mr-6 px-6 font-orbitron py-3 text-center hover:bg-none hover:border-2 dark:border-[#0085a8] border-[#0085a8] dark:hover:text-[#0085a8] transition-all hover:ease-in-out rounded-lg text-lg tracking-wider"
                 style={{
@@ -85,7 +85,7 @@ const AddressWallet = () => {
 
           {/* Desktop Image */}
           <div className="hidden lg:flex w-1/2 p-2 relative z-30">
-            <div className=" absolute bottom-[-50px] hidden md:block bg-[#FF700D] right-0 w-[500px] h-[300px] rounded-full blur-3xl opacity-40 pointer-events-none z-10" />
+            <div className=" absolute bottom-[-50px] hidden lg:block bg-[#FF700D] right-0 w-[500px] h-[300px] rounded-full blur-3xl opacity-40 pointer-events-none z-10" />
 
             <Image
               src="/landing/address-wallet.jpeg"

@@ -639,11 +639,11 @@ export const foundationSeatsFeatures = [
     title: 'RootOpia Game',
     description: 'Play and win BIG blockchain rewards.',
   },
-  {
-    icon: <Wallet size={30} className="text-[#0085a5]" />,
-    title: 'Full Wallet Access',
-    description: 'Unlock staking, launchpad, and ecosystem updates.',
-  },
+  // {
+  //   icon: <Wallet size={30} className="text-[#0085a5]" />,
+  //   title: 'Full Wallet Access',
+  //   description: 'Unlock staking, launchpad, and ecosystem updates.',
+  // },
 ];
 
 export const aboutItems = [

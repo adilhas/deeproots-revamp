@@ -67,8 +67,8 @@ const ShareValueSection = () => {
           </h1>
         </div>
 
-        <div className="my-8 xl:my-0">
-          <div className="relative w-full xl:w-[600px] rounded-2xl overflow-hidden z-20">
+        <div className="my-8 xl:my-0 w-fit mx-auto">
+          <div className="relative w-full  xl:w-[600px] rounded-2xl overflow-hidden z-20">
             <Image
               src="/landing/share-value.webp"
               alt="Education Hub"
@@ -79,11 +79,11 @@ const ShareValueSection = () => {
               priority
             />
           </div>
-          <div className="flex flex-col xl:hidden">
-            <h2 className="font-bold text-xl mt-3 w-fit font-orbitron bg-gradient-to-r from-[#E07C76] to-[#52b797] bg-clip-text text-transparent">
-              Learn, Create, Innovate – A DeWorld Education Hub
-            </h2>
-          </div>
+        </div>
+        <div className="flex flex-col xl:hidden">
+          <h2 className="font-bold text-xl my-3 mb-6 w-fit font-orbitron bg-gradient-to-r from-[#E07C76] to-[#52b797] bg-clip-text text-transparent">
+            Learn, Create, Innovate – A DeWorld Education Hub
+          </h2>
         </div>
 
         <div className="xl:w-1/2 xl:ml-24">

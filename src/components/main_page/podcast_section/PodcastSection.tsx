@@ -25,7 +25,7 @@ const PodcastSection = () => {
             />
           </div>
 
-          <div className="space-y-4 lg:w-1/2 lg:pr-9 relative z-10">
+          <div className=" space-y-10 justify-evenly flex flex-col lg:w-1/2 lg:pr-9 relative z-10">
             <h2 className="text-3xl w-fit font-orbitron font-semibold bg-gradient-to-r from-[#B9620F] to-[#391D07] dark:from-[#CA9968] dark:to-[#D76306] text-transparent bg-clip-text">
               Saxophone Live Podcast For Blockchain Insights
             </h2>
@@ -45,7 +45,7 @@ const PodcastSection = () => {
               />
             </div>
 
-            <p className="my-8">
+            <p className="">
               Explore Deep Roots and the future of blockchain and DeWorld. Join
               us to shape the future, gain exclusive insights, collaborate with
               innovators, and be part of the community.
