@@ -34,20 +34,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="grid gap-8 grid-cols-2 lg:grid-cols-6 text-md">
+        <div className="grid md:gap-10 gap-3 grid-cols-2 lg:grid-cols-6 text-md">
           {footerLinksV3.map((section) => (
             <div
               key={section.title}
-              className={
-                section.title === 'DeWorld' ? 'col-span-2' : 'mx-2 md:mx-0'
-              }
+              className={`${section.title === 'DeWorld' ? 'col-span-2' : 'mx-2 md:mx-0'}  w-max mx-auto`}
             >
-              <h4
-                className={`font-semibold mb-4 font-orbitron text-[#1F2937] cursor-pointer dark:text-white flex flex-col justify-center items-end hover:text-[${section.hoverColor}] items-start gap-2 ${section.hoverColor}`}
+              <Link
+                href={section.link}
+                className={`font-semibold mb-4 font-orbitron text-[#1F2937] cursor-pointer dark:text-white flex flex-col justify-center items-start hover:text-[${section.hoverColor}] items-start gap-2 ${section.hoverColor}`}
               >
-                {section.icon}
-                {section.title}
-              </h4>
+                <div className={`mx-auto`}>{section.icon}</div>
+                <div className={`mx-auto`}>{section.title}</div>
+              </Link>
               <ul
                 className={`${
                   section.title === 'DeWorld'

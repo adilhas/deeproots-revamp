@@ -59,9 +59,44 @@ export const footerLinksV2 = {
 };
 export const footerLinksV3 = [
   {
+    title: 'RootAcademy',
+    icon: <GraduationCap color="#04B95F" size={24} />,
+    link: '/academy',
+    links: [
+      { label: 'What is Deep Root?', href: '/academy/about' },
+      { label: 'What is $dRC?', href: '/academy/drc' },
+      { label: 'Whitepaper', href: '#' },
+      { label: 'Gas Fee', href: '/academy/gas-fees' },
+      { label: 'What is Seeding?', href: '/deworld/seeding' },
+      { label: 'RootOpia Reward System', href: '#' },
+      { label: 'RoadMap', href: '/academy/roadmap' },
+      { label: 'DeEducation', href: '#' },
+    ],
+    hoverColor: 'hover:text-[#04B95F]',
+  },
+  {
+    title: 'RootLab',
+    icon: <FlaskConical color="#1B75FF" size={20} />,
+    link: '/lab',
+    links: [
+      { label: 'DeepRoots Network', href: '/deworld/deworld-network' },
+      // { label: 'Public Network', href: '/deworld/deworld-network' },
+      { label: 'Root Scan', href: 'https://rootscan.earth' },
+      { label: 'AI Tools', href: '/academy/ai-tools' },
+      { label: 'Documentation', href: '#' },
+      { label: 'Seeding', href: '/deworld/seeding' },
+      { label: 'Developer', href: '#' },
+      { label: 'Smart Contract', href: '/academy/smart-contract' },
+      { label: 'DeVote', href: '#' },
+      { label: 'Tokenomics', href: '#' },
+    ],
+    hoverColor: 'hover:text-[#1B75FF]',
+  },
+
+  {
     title: 'DeWorld',
     icon: <Globe color="#9F2BA9" size={20} />,
-    link: '/dewrold',
+    link: '/deworld/ecosystem',
     links: [
       { label: 'The Address Wallet', href: 'https://theaddress.earth' },
       { label: 'TeleXcoin', href: 'https://telexcoin.earth' },
@@ -82,41 +117,6 @@ export const footerLinksV3 = [
 
     hoverColor: 'hover:text-[#9F2BA9]',
   },
-  {
-    title: 'RootLab',
-    icon: <FlaskConical color="#1B75FF" size={20} />,
-    link: '/lab',
-    links: [
-      { label: 'DeepRoots Network', href: '/deworld/deworld-network' },
-      // { label: 'Public Network', href: '/deworld/deworld-network' },
-      { label: 'Root Scan', href: 'https://rootscan.earth' },
-      { label: 'AI Tools', href: '/academy/ai-tools' },
-      { label: 'Documentation', href: '#' },
-      { label: 'Seeding', href: '/deworld/seeding' },
-      { label: 'Developer', href: '#' },
-      { label: 'Smart Contract', href: '/academy/smart-contract' },
-      { label: 'DeVote', href: '#' },
-      { label: 'Tokenomics', href: '#' },
-    ],
-    hoverColor: 'hover:text-[#1B75FF]',
-  },
-  {
-    title: 'RootAcademy',
-    icon: <GraduationCap color="#04B95F" size={24} />,
-    link: '/academy',
-    links: [
-      { label: 'What is Deep Root?', href: '/academy/about' },
-      { label: 'What is $dRC?', href: '/academy/drc' },
-      { label: 'Whitepaper', href: '#' },
-      { label: 'Gas Fee', href: '/academy/gas-fees' },
-      { label: 'What is Seeding?', href: '/deworld/seeding' },
-      { label: 'RootOpia Reward System', href: '#' },
-      { label: 'RoadMap', href: '/academy/roadmap' },
-      { label: 'DeEducation', href: '#' },
-    ],
-    hoverColor: 'hover:text-[#04B95F]',
-  },
-
   {
     title: 'RootIdentity',
     icon: <Fingerprint color="#FF635D" size={20} />,

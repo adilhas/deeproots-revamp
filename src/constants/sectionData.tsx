@@ -37,6 +37,7 @@ import { IFooter } from '@/components/footer/types';
 export const menuSection: MenuSection[] = [
   {
     name: 'RootAcademy',
+    link: '#',
     subitems: [
       {
         title: 'What is Deep Roots?',
@@ -78,6 +79,7 @@ export const menuSection: MenuSection[] = [
   },
   {
     name: 'Rootlab',
+    link: '#',
     subitems: [
       {
         title: 'InnoFi',
@@ -112,6 +114,8 @@ export const menuSection: MenuSection[] = [
   },
   {
     name: 'DeWorld',
+    link: '/deworld/ecosystem',
+
     subitems: [
       {
         title: 'The Address Wallet',
@@ -148,6 +152,8 @@ export const menuSection: MenuSection[] = [
   },
   {
     name: 'RootIdentity',
+    link: '#',
+
     subitems: [
       {
         title: 'OceanBazaar',
@@ -175,6 +181,7 @@ export const menuSection: MenuSection[] = [
   },
   {
     name: 'RootConnect',
+    link: '#',
     subitems: [
       {
         title: 'Saxophone',

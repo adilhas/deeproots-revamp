@@ -1,5 +1,6 @@
 import { menuSection } from '@/constants/sectionData';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import Link from 'next/link';
 
 type Props = {
   isOpen: boolean;
@@ -26,7 +27,7 @@ export default function MobileMenu({
                 onClick={() => toggleItem(item.name)}
                 className="flex justify-between items-center w-full cursor-pointer text-xl hover:scale-105 px-4 py-2 hover:border-2 hover:border-[#0085a8] rounded transition-all"
               >
-                <span>{item.name}</span>
+                <Link href={item.link}>{item.name}</Link>
                 {expandedItems[item.name] ? (
                   <ChevronUp className="w-5 h-5" />
                 ) : (

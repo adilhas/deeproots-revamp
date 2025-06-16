@@ -6,5 +6,6 @@ export type MenuItem = {
 
 export type MenuSection = {
   name: string;
+  link: string;
   subitems: MenuItem[];
 };
