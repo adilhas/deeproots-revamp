@@ -1,35 +1,36 @@
+import Image from 'next/image';
+
 const Hero = () => {
   return (
-    <main
-      id="home"
-      className="min-h-screen pt-[70px] md:pt-[88px] lg:pt-[95px] dark:bg-primary-dark dark:text-white flex justify-center z-10 relative flex-col lg:scale-x-105 items-center"
-    >
-      {/* Banner Image */}
-      <div
-        className="w-full bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/landing/deeproots-banner.png')",
-          height: 'calc(100vh - 95px)',
-        }}
+    <>
+      <main
+        id="home"
+        className=" pt-[70px] md:pt-[88px] lg:pt-[95px] dark:bg-primary-dark dark:text-white flex justify-center z-10 relative flex-col lg:scale-x-105 items-center"
       >
-        <style jsx>{`
-          @media (min-width: 768px) {
-            div[style] {
-              height: calc(100vh - 88px);
-            }
-          }
-          @media (min-width: 1024px) {
-            div[style] {
-              height: calc(100vh - 93px);
-            }
-          }
-        `}</style>
-      </div>
+        <div className="w-full max-w-[1200px] py-10 md:py-20  px-3">
+          <h2 className="text-3xl md:text-6xl font-semibold font-orbitron w-fit text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
+            Decentralization <br /> From the Roots
+          </h2>
 
-      <div className="flex flex-col py-[70px] text-center px-3">
-        <h1 className="font-extrabold  text-2xl md:text-4xl text-center w-fit mx-auto bg-gradient-to-r from-[#9E2CA9]  to-[#3B82A4]  bg-clip-text font-orbitron text-transparent">
+          <p className="max-w-[500px] mb-10">
+            From impossible to possible - A platform for innovative DeWorld Apps
+            on the First Truly Dynamic Blockchain Network.
+          </p>
+
+          <div className="relative w-full h-[334px] md:h-[628px] mt-4">
+            <Image
+              src="/landing/deeproots-banner-v2.jpg"
+              alt="banner"
+              fill
+              className="object-cover rounded-2xl border-4 border-white dark:border-black"
+            />
+          </div>
+        </div>
+      </main>
+      <div className="flex flex-col py-[70px] text-center px-3 bg-[#D4D4D4] dark:bg-[#222222]">
+        <h2 className="font-extrabold  text-2xl md:text-4xl text-center w-fit mx-auto bg-gradient-to-r from-[#9E2CA9]  to-[#3B82A4]  bg-clip-text font-orbitron text-transparent">
           HELLO FUTURE BY DEEP ROOTS
-        </h1>
+        </h2>
 
         <div className="inline-block text-lg my-6 max-w-[619px] mx-auto">
           From impossible to possible - A platform for innovative DeWorld Apps
@@ -40,7 +41,7 @@ const Hero = () => {
           Join the Movement
         </button>
       </div>
-    </main>
+    </>
   );
 };
 

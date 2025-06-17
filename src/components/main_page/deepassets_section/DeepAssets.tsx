@@ -7,7 +7,7 @@ import { ChevronRight } from 'lucide-react';
 
 const DeepAssets = () => {
   return (
-    <main className="relative bg-[#FBF2E7] dark:bg-primary-dark px-5 py-20 overflow-hidden">
+    <main className="relative bg-[#FBF2E7] dark:bg-primary-dark px-5 py-20">
       <div className="absolute top-0 left-0 w-full h-[30%] md:w-[10%] md:h-full bg-[#AD1AA0] blur-[300px] md:blur-[200px] dark:hidden z-0 pointer-events-none" />
 
       <div className="max-w-[1200px] mx-auto relative z-10">

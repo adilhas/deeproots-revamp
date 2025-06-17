@@ -5,7 +5,7 @@ import React from 'react';
 const SocialLinks = () => {
   const { isDark } = useThemeContext();
   return (
-    <section className="py-20 px-4">
+    <section className="py-20 px-4 bg-[#D2D5DB] dark:bg-primary-dark">
       <div className="max-w-[1200px] mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl font-bold font-orbitron bg-gradient-to-r from-[#9E2CA9] to-[#3B82A4] w-fit mx-auto text-transparent bg-clip-text">
           Join the Deep Roots Community

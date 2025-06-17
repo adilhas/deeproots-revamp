@@ -4,8 +4,12 @@ import Link from 'next/link';
 
 const MetaFabricSection = () => {
   return (
-    <section className="bg-[#B0C9D3] dark:bg-primary-dark relative overflow-hidden">
-      <div className="absolute top-[-100px] lg:right-[-100px] w-[100%] md:w-[300px] h-[40%] lg:h-[500px] bg-[#928FFD] blur-3xl opacity-60 pointer-events-none z-0 dark:hidden" />
+    <section className=" bg-[#B0C9D3] dark:bg-primary-dark relative overflow-hidden">
+      {/* <div
+        className="bg-[#FFFFFF03] h-18 w-full absolute top-[-40px]"
+        style={{ backdropFilter: 'blur(68px)' }}
+      ></div> */}
+      <div className="absolute top-[0px] lg:right-[-100px] w-[100%] md:w-[300px] h-[40%] lg:h-[400px] bg-[#928FFD] blur-3xl opacity-60 pointer-events-none z-0 dark:hidden" />
       <div className="absolute bottom-[-100px] right-[-100px] lg:left-[-100px] w-full md:w-[500px] h-[30%] lg:h-[80%] bg-[#928FFD] blur-3xl opacity-50 dark:opacity-20 pointer-events-none rounded-full z-0 dark:hidden" />
       <div className="absolute left-1/2 top-1/2 w-[500px] h-[500px] rounded-full bg-[#fff] opacity-60 blur-3xl pointer-events-none z-0 dark:hidden transform -translate-x-1/2 -translate-y-1/2" />
 

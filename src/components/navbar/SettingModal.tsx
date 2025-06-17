@@ -1,6 +1,7 @@
 import { useThemeContext } from '@/context/ThemeContext';
-import { ArrowLeftRight, ChevronDown, Globe, Sun } from 'lucide-react';
+import { ArrowLeftRight, ChevronDown, Globe, Moon, Sun } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 const SettingModal = () => {
@@ -14,7 +15,7 @@ const SettingModal = () => {
   };
   return (
     <div className="font-sans">
-      <div onClick={openModal}>
+      <div onClick={openModal} className="cursor-pointer">
         <Image
           src="/profile-pic.jpg"
           alt="profile"
@@ -24,10 +25,16 @@ const SettingModal = () => {
         />
       </div>
 
-      <dialog id="my_modal_3" className="modal">
-        <div className="modal-box dark:bg-primary-dark bg-neutral-300 max-w-[307px]">
+      <dialog
+        id="my_modal_3"
+        className="modal"
+        style={{
+          boxShadow: ` 0px 12px 42px -4px #14171A1F, 0px 8px 18px -6px #14171A1F`,
+        }}
+      >
+        <div className="modal-box dark:bg-[#232323] bg-white max-w-[307px]">
           <form method="dialog">
-            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            <button className="btn btn-sm btn-circle btn-ghost dark:hover:bg-[#232323] hover:bg-white dark:hover:text-white hover:text-black absolute right-2 top-2">
               ✕
             </button>
           </form>
@@ -70,7 +77,7 @@ const SettingModal = () => {
             onClick={toggleTheme}
           >
             <div className="flex items-center gap-2">
-              <Sun size={16} />
+              {isDark ? <Moon size={16} /> : <Sun size={16} />}
               <span className="text-sm">
                 Theme • {`${isDark ? 'Dark' : 'Light'}`}
               </span>
@@ -81,10 +88,18 @@ const SettingModal = () => {
           <hr className="my-4 border-gray-200" />
 
           <div className="space-y-2 text-sm">
-            <div className="cursor-pointer">Privacy Policy</div>
-            <div className="cursor-pointer">Cookie Policy</div>
-            <div className="cursor-pointer">Terms of Use</div>
-            <div className="cursor-pointer">Public Relations</div>
+            <div className="cursor-pointer">
+              <Link href="/identity/privacy-policy"> Privacy Policy </Link>
+            </div>
+            <div className="cursor-pointer">
+              <Link href="/cookie-policy">Cookie Policy</Link>
+            </div>
+            <div className="cursor-pointer">
+              <Link href="#">Terms of Use</Link>
+            </div>
+            <div className="cursor-pointer">
+              <Link href="/public-relations">Public Relations</Link>
+            </div>
           </div>
         </div>
       </dialog>
