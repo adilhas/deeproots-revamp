@@ -8,6 +8,7 @@ import MobileMenu from './MobileMenu';
 import Submenu from './Submenu';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
+import DeWorldAllProducts from './DeWorldAllProducts';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -46,12 +47,7 @@ export default function Navbar() {
               width={25}
               height={25}
             />
-            <Image
-              src="/menu-logo-dark.png"
-              alt="menu"
-              width={30}
-              height={30}
-            />
+            <DeWorldAllProducts />
             <Image
               src="/profile-pic.jpg"
               alt="profile"

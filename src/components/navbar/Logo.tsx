@@ -7,7 +7,7 @@ export default function Logo() {
       <div className="w-10 h-10 md:w-16 md:h-16 overflow-hidden relative">
         <Image
           alt="logo"
-          src="/landing/logo-v2.svg"
+          src="/landing/logo-big.png"
           fill
           className="object-contain" // or "object-cover"
         />
