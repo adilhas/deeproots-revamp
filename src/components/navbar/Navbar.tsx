@@ -9,6 +9,7 @@ import Submenu from './Submenu';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import DeWorldAllProducts from './DeWorldAllProducts';
+import SettingModal from './SettingModal';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -40,7 +41,7 @@ export default function Navbar() {
           <Logo />
           <DesktopMenu onHover={setActiveMenu} />
           <div className="flex items-center gap-4">
-            <DarkModeToggle />
+            {/* <DarkModeToggle /> */}
             <Image
               src="/copyme-logo.png"
               alt="copy me"
@@ -48,13 +49,8 @@ export default function Navbar() {
               height={25}
             />
             <DeWorldAllProducts />
-            <Image
-              src="/profile-pic.jpg"
-              alt="profile"
-              width={30}
-              height={30}
-              className="rounded-full"
-            />
+
+            <SettingModal />
 
             {isMobileMenuOpen ? (
               <button
