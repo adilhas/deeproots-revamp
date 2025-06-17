@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Logo from './Logo';
-import DarkModeToggle from './DarkModeToggle';
 import DesktopMenu from './DesktopMenu';
 import MobileMenu from './MobileMenu';
 import Submenu from './Submenu';
