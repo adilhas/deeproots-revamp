@@ -8,7 +8,7 @@ const TopicsList = (props: IAcademyTopics) => {
   const { isDark } = useThemeContext();
   return (
     <div
-      className="relative border p-4 my-4 flex flex-col md:flex-row py-4 gap-3 rounded-2xl"
+      className="relative border  my-4 flex flex-col md:flex-row py-4 gap-3 rounded-2xl"
       style={{
         backgroundColor: isDark ? '#323336' : props.topicListBg,
         borderColor: isDark ? '#323336' : props.borderColor,

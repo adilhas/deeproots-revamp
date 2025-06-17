@@ -18,7 +18,7 @@ export default function Academy() {
         <main className="min-h-screen bg-neutral-300 dark:bg-primary-dark">
           <div className="w-full max-w-[1200px] mx-auto px-3">
             <div className="py-16">
-              <h1 className="text-3xl md:text-6xl font-orbitron text-[#4B5563] dark:text-[#F1F5F9] w-fit">
+              <h1 className="text-3xl md:text-6xl font-semibold font-orbitron text-[#4B5563] dark:text-[#F1F5F9] w-fit">
                 Master the <br className="hidden md:inline-block" />
                 <span className="text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
                   DeepRoots Ecosystem
