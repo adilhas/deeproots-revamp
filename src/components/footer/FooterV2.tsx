@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="dark:bg-primary-dark bg-[#e8e8e9] text-[#1C1C1C] dark:text-[#F0F0F0] px-6 py-12">
       <div className="max-w-[1200px] mx-auto">
-        <div className="flex flex-row w-full mb-10 justify-between items-center">
+        <div className="flex flex-col gap-8 md:flex-row w-full mb-10 justify-between items-center">
           <div
             className="flex items-center w-fit cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

@@ -37,7 +37,7 @@ import { IFooter } from '@/components/footer/types';
 export const menuSection: MenuSection[] = [
   {
     name: 'RootAcademy',
-    link: '#',
+    link: '/academy',
     subitems: [
       {
         title: 'What is Deep Roots?',

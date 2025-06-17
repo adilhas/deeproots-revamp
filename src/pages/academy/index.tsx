@@ -1,4 +1,8 @@
+import { AcademyTopicsData } from '@/components/academy_page/data';
+import TopicsList from '@/components/academy_page/TopicsList';
+import AppLayout from '@/Shared/AppLayout';
 import Head from 'next/head';
+import { IoMdFunnel } from 'react-icons/io';
 
 export default function Academy() {
   return (
@@ -10,13 +14,43 @@ export default function Academy() {
         <link rel="canonical" href="https://deeproots.earth/academy/about" />
       </Head>
 
-      <section className="pt-32 pb-16 bg-neutral-100 dark:bg-black text-center text-gray-800 dark:text-gray-100 min-h-screen flex items-center justify-center px-4">
-        <div className="max-w-2xl mx-auto">
-          <h1 className="text-5xl font-bold mb-4 font-orbitron tracking-wide">
-            🚧 Page Incoming...
-          </h1>
-        </div>
-      </section>
+      <AppLayout>
+        <main className="min-h-screen bg-neutral-300 dark:bg-primary-dark">
+          <div className="w-full max-w-[1200px] mx-auto px-3">
+            <div className="py-16">
+              <h1 className="text-3xl md:text-6xl font-orbitron text-[#4B5563] dark:text-[#F1F5F9] w-fit">
+                Master the <br className="hidden md:inline-block" />
+                <span className="text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
+                  DeepRoots Ecosystem
+                </span>
+              </h1>
+              <p className="text-[#4B5563] dark:text-[#E2E8F0]">
+                From DeepRoots Basics to its Mastery
+              </p>
+            </div>
+            <div className="flex flex-row w-full md:justify-end">
+              <div className="flex flex-row w-full md:w-fit gap-1 items-center">
+                <div className="relative w-full  md:max-w-md">
+                  <input
+                    type="text"
+                    placeholder="Search Topic"
+                    className="w-full px-4 py-[7px] text-sm text-gray-900 dark:text-gray-100 bg-white dark:bg-[#2F2F31] border dark:border-[#2F2F31] rounded-lg border-[#FFFFFF] placeholder-gray-700 dark:placeholder-gray-300"
+                  />
+                </div>
+
+                <div className=" bg-white dark:bg-[#2F2F31] h-[37px] w-10 flex items-center justify-center rounded-lg border dark:border-[#2F2F31] border-[#FFFFFF]">
+                  <IoMdFunnel className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                </div>
+              </div>
+            </div>
+            <div className="py-8">
+              {AcademyTopicsData.map((data) => (
+                <TopicsList key={data.title} {...data} />
+              ))}
+            </div>
+          </div>
+        </main>
+      </AppLayout>
     </>
   );
 }
