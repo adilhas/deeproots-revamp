@@ -43,6 +43,7 @@ const RootopiaRace = () => {
               width={1200}
               height={630}
               layout="responsive"
+              priority
             />
           </div>
 
@@ -60,6 +61,7 @@ const RootopiaRace = () => {
                   width={800}
                   height={420}
                   layout="responsive"
+                  priority
                 />
               </div>
               <h2 className="font-extrabold text-center font-serif text-3xl lg:text-start lg:text-3xl mb-10 lg:leading-normal bg-gradient-to-b from-[#E57B0C] to-[#A42E0C] bg-clip-text text-transparent">
