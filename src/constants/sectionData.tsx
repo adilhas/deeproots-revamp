@@ -46,10 +46,21 @@ export const menuSection: MenuSection[] = [
         link: '/academy/about',
       },
       {
-        title: 'Share Value (Learn & Earn)',
-        description: 'Learn, Create, Innovate – A DeWorld Education Hub.',
+        title: 'What is fullseat?',
+        description: `Be the first of 20 to earn Full seat in the Deep Roots Ecosystem.`,
 
-        link: ' https://sharevalue.earth',
+        link: '/seeding/fullseat',
+      },
+      // {
+      //   title: 'Share Value (Learn & Earn)',
+      //   description: 'Learn, Create, Innovate – A DeWorld Education Hub.',
+
+      //   link: ' https://sharevalue.earth',
+      // },
+      {
+        title: 'What is dRC (Native Currency)?',
+        description: 'The foundational layer of DeWorld',
+        link: '/academy/drc',
       },
       {
         title: 'White Paper',
@@ -58,23 +69,24 @@ export const menuSection: MenuSection[] = [
         link: '/academy/whitepaper',
       },
       {
+        title: 'Tokenomics',
+        description: 'Explore Tokenomics',
+
+        link: '',
+      },
+      {
         title: 'Roadmap',
         description: 'Explore the roadmap',
 
         link: '/academy/roadmap',
       },
-      {
-        title: 'What is dRC (Native Currency)?',
-        description: 'The foundational layer of DeWorld',
-        link: '/academy/drc',
-      },
-      {
-        title: 'Our Story',
-        description:
-          'We began with one mission: make blockchain simple and powerful.',
+      // {
+      //   title: 'Our Story',
+      //   description:
+      //     'We began with one mission: make blockchain simple and powerful.',
 
-        link: '/our-story',
-      },
+      //   link: '/our-story',
+      // },
     ],
   },
   {
@@ -82,34 +94,58 @@ export const menuSection: MenuSection[] = [
     link: '#',
     subitems: [
       {
-        title: 'InnoFi',
-        description: 'VOTE & FUND DeWorld',
+        title: 'Smart Contract',
+        description: 'Smart Contracts — The Code That Powers DeWorld',
 
-        link: 'https://innofi.earth',
+        link: '/academy/smart-contract',
       },
       {
-        title: 'InnoLaunch',
-        description:
-          'Empowering DeWorld Projects on the Deep Roots Blockchain.',
+        title: 'Developer Tools',
+        description: 'Explore Developer Tools',
 
-        link: 'https://innolaunch.earth',
+        link: '',
       },
       {
-        title: 'InnoFarm',
-        description: 'The Web3 Job Marketplace.',
+        title: 'Gas Fee',
+        description: `In Deep Roots, gas fees aren't a barrier — they're a gateway to affordable blockchain access.`,
 
-        link: 'https://innofarm.earth',
+        link: '/academy/gas-fees',
       },
       {
-        title: 'Seeding',
-        description: 'From Vision to Ownership',
-        link: '/deworld/seeding',
+        title: 'Documentation',
+        description: 'Explore Documentation',
+        link: '',
       },
-      {
-        title: 'Internal Hackathon',
-        description: 'Where Ideas Take Root',
-        link: '/lab/internal-hackathon',
-      },
+
+      // {
+      //   title: 'InnoFi',
+      //   description: 'VOTE & FUND DeWorld',
+
+      //   link: 'https://innofi.earth',
+      // },
+      // {
+      //   title: 'InnoLaunch',
+      //   description:
+      //     'Empowering DeWorld Projects on the Deep Roots Blockchain.',
+
+      //   link: 'https://innolaunch.earth',
+      // },
+      // {
+      //   title: 'InnoFarm',
+      //   description: 'The Web3 Job Marketplace.',
+
+      //   link: 'https://innofarm.earth',
+      // },
+      // {
+      //   title: 'Seeding',
+      //   description: 'From Vision to Ownership',
+      //   link: '/deworld/seeding',
+      // },
+      // {
+      //   title: 'Internal Hackathon',
+      //   description: 'Where Ideas Take Root',
+      //   link: '/lab/internal-hackathon',
+      // },
     ],
   },
   {
@@ -123,30 +159,20 @@ export const menuSection: MenuSection[] = [
         link: 'https://theaddress.earth',
       },
       {
-        title: 'TelexCoin DEX',
+        title: 'TelexCoin',
         description: 'Unlock the future of Finance.',
         link: 'https://telexcoin.earth',
       },
-      {
-        title: 'Foundation',
-        description: 'Join The Movement',
-        link: '#',
-      },
-      {
-        title: 'DeepAssets',
-        description: 'Transforming Real-World Assets into Digital Value.',
-        link: 'https://deepassets.earth',
-      },
 
       {
-        title: 'MetaFabric',
-        description: 'Blockchain to Runway Your Style.',
-        link: 'https://metafabric.earth',
+        title: 'OceanBazaar',
+        description: 'The NFT Marketplace',
+        link: 'https://oceanbazaar.earth',
       },
       {
-        title: 'GiveFi',
-        description: 'Empowering Non-profits through transparent giving',
-        link: 'https://givefi.earth',
+        title: 'Rootopia',
+        description: 'Step into the battle to save the Tree of Life.',
+        link: 'https://www.rootopia.earth/',
       },
     ],
   },
@@ -156,26 +182,27 @@ export const menuSection: MenuSection[] = [
 
     subitems: [
       {
-        title: 'OceanBazaar',
-        description: 'The NFT Marketplace',
-        link: 'https://oceanbazaar.earth',
+        title: 'Who We Are',
+        description: 'We are Deep Roots. And our story is still being written.',
+        link: '/our-story',
+      },
+
+      {
+        title: 'What is Seeding?',
+        description:
+          'Join the core of the movement. This is your chance to claim a Foundation Seat.',
+        link: '/deworld/seeding',
+      },
+
+      {
+        title: 'Foundation Full Seat',
+        description: `Seeding Event Starting soon.`,
+        link: '/seeding/foundation',
       },
       {
         title: 'RootScan',
-        description: 'Deep Roots Blockchain Explorer',
-        link: 'https://rootscan.earth',
-      },
-
-      {
-        title: 'RootChat',
-        description: 'The First Hybrid CALL & Messaging App',
-        link: 'https://rootchat.earth',
-      },
-
-      {
-        title: 'Privacy Policy',
-        description: `At Deep Roots, privacy is not a feature — it's a right.`,
-        link: '/identity/privacy-policy',
+        description: `Deep Roots Blockchain Explorer`,
+        link: 'https://www.rootscan.earth/',
       },
     ],
   },
@@ -184,15 +211,10 @@ export const menuSection: MenuSection[] = [
     link: '#',
     subitems: [
       {
-        title: 'Saxophone',
-        description: 'Live Podcast For Blockchain Insights',
-        link: 'https://saxophone.earth',
-      },
-      {
-        title: 'Volunteer Program',
-        description: 'Explore Volunteer program',
+        title: 'Social Media',
+        description: 'Be part of the team with creativity and collaboration.',
 
-        link: '/connect/volunteer',
+        link: '#',
       },
       {
         title: 'Events & Meetups',
@@ -202,10 +224,16 @@ export const menuSection: MenuSection[] = [
         link: '/connect/events',
       },
       {
-        title: 'Social Media',
-        description: 'Be part of the team with creativity and collaboration.',
+        title: 'Volunteer Program',
+        description: 'Explore Volunteer program',
 
-        link: '#',
+        link: '/connect/volunteer',
+      },
+      {
+        title: 'Career',
+        description:
+          'Join the DeepRoots journey and help build the decentralized future.',
+        link: '/career',
       },
     ],
   },
