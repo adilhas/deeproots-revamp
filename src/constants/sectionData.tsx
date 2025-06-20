@@ -49,7 +49,7 @@ export const menuSection: MenuSection[] = [
         title: 'What is fullseat?',
         description: `Be the first of 20 to earn Full seat in the Deep Roots Ecosystem.`,
 
-        link: '/seeding/fullseat',
+        link: '/seeding/foundation',
       },
       // {
       //   title: 'Share Value (Learn & Earn)',

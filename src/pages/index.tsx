@@ -40,7 +40,7 @@ export default function Home() {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://deeproots.earth/" />
       </Head>
-      <div className="overflow-x-hidden relative  bg-[#e8e8e9] dark:bg-primary-dark text-[#404040] dark:text-neutral-200">
+      <div className="overflow-x-hidden relative  bg-primary-light dark:bg-primary-dark text-[#404040] dark:text-neutral-200">
         <Navbar />
         <Hero />
         <Features />
