@@ -7,7 +7,23 @@ import {
   BadgeCheck,
   GraduationCap,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+
+const icons = [
+  <Network key="network" size={30} className="text-[#E06643]" />,
+  <Bot key="bot" size={30} className="text-[#E06643]" />,
+  <ShieldCheck key="shield" size={30} className="text-[#E06643]" />,
+  <BadgeCheck key="badge" size={30} className="text-[#E06643]" />,
+  <GraduationCap key="graduation" size={30} className="text-[#E06643]" />,
+];
+
 export default function InnofarmSection() {
+  const { t } = useTranslation('landing_page');
+  const features = t('innofarm_section.features', { returnObjects: true }) as {
+    title: string;
+    description: string;
+  }[];
+
   return (
     <section className="bg-[#C6E3D5] dark:bg-primary-dark relative overflow-hidden">
       <div className="absolute top-[-100px] left-[-100px] w-[100px] md:w-[300px] h-[500px] bg-[#9DF725] blur-3xl opacity-60 pointer-events-none z-0 dark:hidden" />
@@ -15,7 +31,7 @@ export default function InnofarmSection() {
       <div className="w-full  max-w-[1200px] relative flex flex-row items-center justify-between gap-8 px-6 py-16 lg:px-24 mx-auto">
         <div className="w-full lg:w-1/2  space-y-6">
           <div className="font-orbitron w-fit text-4xl md:text-5xl font-bold bg-gradient-to-r text-transparent bg-clip-text from-[#FF8120] to-[#00903D]">
-            InnoFarm
+            {t('innofarm_section.title')}
           </div>
           <div className="w-full lg:hidden aspect-square h-full max-h-[450px] relative">
             <Image
@@ -28,55 +44,23 @@ export default function InnofarmSection() {
             />
           </div>
           <div className="font-orbitron w-fit text-xl lg:text-3xl font-bold lg:bg-gradient-to-r  lg:text-transparent bg-clip-text lg:from-[#FF8120] lg:to-[#00903D]">
-            The Web3 Job Marketplace
+            {t('innofarm_section.subtitle')}
           </div>
 
           <div className="space-y-4 text-gray-700 dark:text-gray-300 text-base lg:text-lg">
-            <div>
-              <h3 className="font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-                <Network size={30} className="text-[#E06643]" /> Decentralized
-                Hiring
-              </h3>
-              <p>
-                Post jobs or find work in a secure blockchain-powered network.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-                <Bot size={30} className="text-[#E06643]" /> AI Job Matching
-              </h3>
-              <p>Smart algorithms connect talent to the right opportunities.</p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-                <ShieldCheck size={30} className="text-[#E06643]" /> Secure
-                Escrow Payments
-              </h3>
-              <p>Crypto and fiat payments protected by smart contracts.</p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-                <BadgeCheck size={30} className="text-[#E06643]" /> Verified
-                Web3 Profiles
-              </h3>
-              <p>On-chain badges, wallet sync, and optional KYC for trust.</p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-                <GraduationCap size={30} className="text-[#E06643]" /> Learn &
-                Grow
-              </h3>
-              <p>
-                Access courses, certifications, and earn while you level up.
-              </p>
-            </div>
+            {features.map((feature, index) => (
+              <div key={feature.title}>
+                <h3 className="font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+                  {icons[index]} {feature.title}
+                </h3>
+                <p>{feature.description}</p>
+              </div>
+            ))}
 
             <button className="text-white font-orbitron mt-6 px-6 py-2 bg-gradient-to-l   from-[#FF8120] to-[#00903D] rounded-lg hover:scale-105  font-bold  transition">
-              <Link href="https://innofarm.earth/">Explore Innofarm</Link>
+              <Link href="https://innofarm.earth/">
+                {t('innofarm_section.button')}
+              </Link>
             </button>
           </div>
         </div>

@@ -4,7 +4,7 @@ import DRCMobile from './DRCMobile';
 
 const WhatIsdRCSection = () => {
   return (
-    <div className="dark:bg-[#171717] ">
+    <div className=" ">
       <div className="py-16  max-w-[1200px] mx-auto">
         <div className="hidden lg:block px-4">
           <DRCDesktop />

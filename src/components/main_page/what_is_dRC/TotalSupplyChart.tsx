@@ -1,6 +1,7 @@
+import { getTotalSupplyData } from '@/constants/totalSuppyData';
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { PieChart, Pie, Cell } from 'recharts';
-import { totalSupplyData } from '@/constants/totalSuppyData';
 
 interface TotalSupplyChartProps {
   showGradient?: boolean; // optional prop to control the gradient
@@ -14,6 +15,8 @@ const TotalSupplyChart: React.FC<TotalSupplyChartProps> = ({
   useEffect(() => {
     setMounted(true);
   }, []);
+  const { t } = useTranslation('landing_page');
+  const totalSupplyData = getTotalSupplyData(t);
 
   const generateConicGradient = (data: typeof totalSupplyData) => {
     const total = data.reduce((sum, item) => sum + item.value, 0);

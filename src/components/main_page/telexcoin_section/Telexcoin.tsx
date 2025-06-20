@@ -1,8 +1,10 @@
 import { useThemeContext } from '@/context/ThemeContext';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 const Telexcoin = () => {
   const { isDark } = useThemeContext();
+  const { t } = useTranslation('landing_page');
   return (
     <main className="py-20 relative bg-[#D1D9D4] dark:bg-primary-dark px-5">
       <div className="max-w-[1200px] mx-auto">
@@ -26,7 +28,7 @@ const Telexcoin = () => {
             <div className="mt-6">
               {/* Header */}
               <h1 className="font-extrabold text-2xl  lg:text-start lg:text-4xl  lg:leading-normal bg-gradient-to-r dark:bg-gradient-to-r from-[#0085a8] dark:via-[#ad1] dark:to-amber-400 via-blue-900 to-amber-600 bg-clip-text font-orbitron text-transparent">
-                TeleXcoin DeX
+                {t('telexcoin.title')}
               </h1>
 
               {/* Mobile Image */}
@@ -43,11 +45,11 @@ const Telexcoin = () => {
 
               {/* Subheading */}
               <h1 className="font-extrabold text-xl lg:text-2xl lg:text-start mb-5 lg:mb-10 lg:leading-normal bg-gradient-to-r dark:bg-gradient-to-r from-[#0085a8] dark:via-[#ad1] dark:to-amber-400 via-blue-900 to-amber-600 bg-clip-text font-orbitron lg:text-transparent">
-                Unlock the future of Finance
+                {t('telexcoin.subtitle')}
               </h1>
               <div className="inline-block">
                 <h4 className="font-orbitron font-bold text-xl leading-normal w-full">
-                  Get Early Access to dRC Tokens!
+                  {t('telexcoin.access')}
                 </h4>
               </div>
             </div>
@@ -63,16 +65,13 @@ const Telexcoin = () => {
                 />
               </div>
               <p className="lg:w-[500px] font-sans md:w-[70vw]">
-                <span className="text-lg">Seed, Earn, and Grow</span>
+                <span className="text-lg">{t('telexcoin.seedGrow')}</span>
               </p>
             </div>
 
             {/* Description */}
             <p className="font-sans my-2 lg:w-[650px] md:w-[70vw]">
-              <span className="text-lg">
-                Pool Liquidity | Exclusive Podcast | FOUNDATION | Shared
-                Rewards.
-              </span>
+              <span className="text-lg">{t('telexcoin.features')}</span>
             </p>
 
             {/* Another Icon with Text */}
@@ -85,9 +84,7 @@ const Telexcoin = () => {
                   height={25}
                 />
               </div>
-              <span className="text-lg ml-2">
-                The Hub for Trading, Strategies, &amp; Connection.
-              </span>
+              <span className="text-lg ml-2">{t('telexcoin.hub')}</span>
             </p>
 
             {/* CTA Button */}
@@ -98,7 +95,7 @@ const Telexcoin = () => {
                   boxShadow: `${isDark ? '0px 15px 31px 0px #000000' : '0px 8px 28px 0px #605644A3'}`,
                 }}
               >
-                JOIN &amp; EARN
+                {t('telexcoin.cta')}
               </button>
             </div>
           </div>

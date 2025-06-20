@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useThemeContext } from '@/context/ThemeContext';
+import { useTranslation } from 'react-i18next';
 const Data = [
   { icon: 'rootopia-daily-reward', title: 'Daily Rewards' },
   {
@@ -23,6 +24,8 @@ const Data = [
 ];
 const RootopiaRace = () => {
   const { isDark } = useThemeContext();
+  const { t } = useTranslation('landing_page');
+  const features = t('rootopia.features', { returnObjects: true }) as string[];
   return (
     <section className="bg-[#F3D390] dark:bg-primary-dark relative overflow-hidden">
       <div className="absolute top-[-100px] right-[-100px] lg:right-[20%] dark:right-[0px] w-[250px] lg:w-[500px] h-[300px] bg-[#145412] dark:bg-[#60420C] blur-[80px] opacity-40 dark:opacity-40 pointer-events-none z-0" />
@@ -46,7 +49,7 @@ const RootopiaRace = () => {
           <div className="flex justify-center items-start flex-col w-full  lg:w-1/2 p-3">
             <div className="w-full">
               <h2 className="font-extrabold font-serif text-5xl lg:text-start lg:text-5xl lg:leading-normal bg-gradient-to-b from-[#E57B0C] to-[#A42E0C] bg-clip-text text-transparent">
-                ROOTOPIA
+                {t('rootopia.main-title')}
               </h2>
 
               <div className="w-full mx-auto flex  justify-center items-center self-center lg:hidden my-5">
@@ -60,29 +63,25 @@ const RootopiaRace = () => {
                 />
               </div>
               <h2 className="font-extrabold text-center font-serif text-3xl lg:text-start lg:text-3xl mb-10 lg:leading-normal bg-gradient-to-b from-[#E57B0C] to-[#A42E0C] bg-clip-text text-transparent">
-                CALL TO HERO
+                {t('rootopia.subtitle')}
               </h2>
               <h3 className="font-orbitron font-bold text-xl leading-normal w-full">
-                The Largest GameFi Launch in DeWorld History
+                {t('rootopia.tagline')}
               </h3>
             </div>
 
-            <p className="font-sans mt-5">
-              Step into the battle to save the Tree of Life. Rootopia is the
-              first fully animated 2D GameFi experience — combining cinematic
-              storytelling, NFT rewards, and epic PvE strategy.
-            </p>
+            <p className="font-sans mt-5">{t('rootopia.description')}</p>
 
             <ul className="my-3">
-              {Data.map((data) => (
-                <li key={data.title} className="flex flex-row gap-2 my-2">
+              {features.map((data, index) => (
+                <li key={data} className="flex flex-row gap-2 my-2">
                   <Image
-                    src={`/landing/${isDark ? data.icon + '-dark' : data.icon}.svg`}
+                    src={`/landing/${isDark ? Data[index].icon + '-dark' : Data[index].icon}.svg`}
                     width={24}
                     height={24}
-                    alt={data.icon}
+                    alt={data}
                   />
-                  <div>{data.title}</div>
+                  <div>{data}</div>
                 </li>
               ))}
               <div className="flex flex-row gap-2 my-3 items-start">
@@ -93,9 +92,10 @@ const RootopiaRace = () => {
                   alt={'rootopia-starting-pool'}
                 />
                 <div>
-                  Starting pool: <br />
+                  {t('rootopia.starting-pool.label')} <br />
                   <span className="text-lg font-[600]">
-                    $1,000,000 - $20,000,000 <br /> This... is... RootOpia.
+                    $1,000,000 - $20,000,000 <br />
+                    {t('rootopia.starting-pool.ending')}
                   </span>
                 </div>
               </div>
@@ -103,7 +103,7 @@ const RootopiaRace = () => {
 
             <Link href={'https://rootopia.earth/'}>
               <button className="bg-gradient-to-b from-[#B44601] to-[#853401] rounded-2xl border-[#EE8A08] text-[#FEA500] cursor-pointer  lg:mt-10  px-6 font-serif font-[600] py-3 text-center border-3  transition-all hover:ease-in-out text-lg">
-                PLAY NOW
+                {t('rootopia.cta')}
               </button>
             </Link>
           </div>

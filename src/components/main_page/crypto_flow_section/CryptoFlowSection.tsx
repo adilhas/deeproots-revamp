@@ -1,15 +1,17 @@
 import { useThemeContext } from '@/context/ThemeContext';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 export default function CryptoFlowSection() {
   const { isDark } = useThemeContext();
+  const { t } = useTranslation('landing_page');
   return (
     <section className="p-8 bg-[#D4D4D4] dark:bg-[#121827]">
       <div className="flex flex-col h-fit  xl:flex-row justify-center items-center gap-3 transition-all min-h-[300px] bg-transparent rounded-xl text-[#434343] dark:text-[#E9E9E9]">
         {/* Bitcoin */}
         <div className="flex flex-col items-center relative ">
           <div className="text-xl font-glorio mb-4 xl:mb-0 xl:absolute top-[-40px]">
-            Thank you
+            {t('crypto_flow_section.thank_you')}
           </div>
           <div
             className="flex flex-col items-center text-center justify-center p-4 rounded-xl bg-white dark:bg-[#202937] w-72 transition-all"
@@ -30,7 +32,7 @@ export default function CryptoFlowSection() {
         {/* Ethereum */}
         <div className="flex flex-col items-center relative">
           <div className="text-xl font-glorio mb-4 xl:mb-0 xl:absolute top-[-40px]">
-            Thank you
+            {t('crypto_flow_section.thank_you')}
           </div>
           <div
             className="flex flex-col items-center text-center justify-center p-4 rounded-xl bg-white dark:bg-[#202937] w-72 transition-all"
@@ -62,7 +64,7 @@ export default function CryptoFlowSection() {
         {/* DeepRoots */}
         <div className="flex flex-col items-center relative">
           <div className="text-xl font-glorio mb-4 xl:mb-0 xl:absolute top-[-40px]">
-            New Mission
+            {t('crypto_flow_section.new_mission')}
           </div>
           <div
             className="flex flex-col items-center text-center justify-center p-4 rounded-xl bg-white dark:bg-[#202937] w-72 transition-all"
@@ -77,7 +79,7 @@ export default function CryptoFlowSection() {
 
       {/* Add top margin to control spacing manually */}
       <div className="text-2xl font-glorio mt-4 text-center xl:-translate-y-12">
-        Our mission is to build the decentralized world for humanity
+        {t('crypto_flow_section.our_mission')}
       </div>
     </section>
   );

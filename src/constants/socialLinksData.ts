@@ -1,3 +1,4 @@
+import { TFunction } from 'next-i18next';
 import {
   SiTelegram,
   SiX,
@@ -65,5 +66,68 @@ export const socialLinks = [
     Icon: SiYoutube,
     brandColor: '#000000',
     iconColor: '#FF0000', // YouTube's actual red icon color
+  },
+];
+
+export const getSocialLinksData = (t: TFunction) => [
+  {
+    name: 'X',
+    username: '@DeepRoots_earth',
+    href: 'https://twitter.com/DeepRoots_earth',
+    Icon: SiX,
+    brandColor: '#000000',
+    iconColor: '#000000',
+    title: t('social.links.x.title'),
+    description: t('social.links.x.description'),
+  },
+  {
+    name: 'Reddit',
+    username: '@DeepRoots',
+    href: 'https://reddit.com/r/DeepRoots',
+    Icon: SiReddit,
+    brandColor: '#FF4500',
+    iconColor: '#FF4500',
+    title: t('social.links.reddit.title'),
+    description: t('social.links.reddit.description'),
+  },
+  {
+    name: 'Discord',
+    username: '@DeepRoots',
+    href: 'https://discord.gg/DeepRoots',
+    Icon: SiDiscord,
+    brandColor: '#5865F2',
+    iconColor: '#5865F2',
+    title: t('social.links.discord.title'),
+    description: t('social.links.discord.description'),
+  },
+  {
+    name: 'Telegram',
+    username: '@DeepRoots',
+    href: 'https://t.me/DeepRootsCommunity',
+    Icon: SiTelegram,
+    brandColor: '#2AAAEC',
+    iconColor: '#2AAAEC',
+    title: t('social.links.telegram.title'),
+    description: t('social.links.telegram.description'),
+  },
+  {
+    name: 'TikTok',
+    username: '@DeepRoots',
+    href: 'https://www.tiktok.com/@DeepRoots',
+    Icon: SiTiktok,
+    brandColor: '#000000',
+    iconColor: '#000000',
+    title: t('social.links.tikTok.title'),
+    description: t('social.links.tiktok.description'),
+  },
+  {
+    name: 'YouTube',
+    username: '@DeepRoots',
+    href: 'https://www.youtube.com/@DeepRoots',
+    Icon: SiYoutube,
+    brandColor: '#000000',
+    iconColor: '#FF0000',
+    title: t('social.links.youTube.title'),
+    description: t('social.links.youTube.description'),
   },
 ];

@@ -1,30 +1,31 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 
-const features = [
-  {
-    icon: 'rootchat-mobile-first',
-    title: 'Mobile-First Chat & Call',
-    text: 'Smooth, secure messaging and wallet-to-wallet voice calling — on any device.',
-  },
-  {
-    icon: 'rootchat-security',
-    title: 'High-Security by Default',
-    text: 'No tracking, no backdoors, no data leaks — ever.',
-  },
-  {
-    icon: 'rootchat-mode-switch',
-    title: 'One-Click Mode Switch',
-    text: 'Choose between real-time (centralized) or decentralized communication, instantly.',
-  },
-  {
-    icon: 'rootchat-globe',
-    title: 'Built for DeWorld',
-    text: 'Private, borderless, and censorship-free — your voice, your messages, your control.',
-  },
+const icons = [
+  'rootchat-mobile-first',
+  'rootchat-security',
+  'rootchat-mode-switch',
+  'rootchat-globe',
 ];
 
+interface Feature {
+  title: string;
+  text: string;
+}
+
 const RootChatSection = () => {
+  const { t } = useTranslation('landing_page');
+  const translatedFeatures = t('rootchat.features', {
+    returnObjects: true,
+  }) as Feature[];
+
+  const features = translatedFeatures.map((feature, idx) => ({
+    icon: icons[idx],
+    title: feature.title,
+    text: feature.text,
+  }));
+
   return (
     <section className="px-6 lg:px-12 gap-10 bg-gradient-to-t  from-[#A0E6FF] to-[#C6B6F2] dark:from-primary-dark dark:to-primary-dark relative overflow-hidden ">
       <div className="max-w-[1200px] relative mx-auto flex flex-col py-20 lg:flex-row items-center  ">
@@ -34,7 +35,7 @@ const RootChatSection = () => {
 
         <div className="lg:w-1/2 w-full text-gray-900 dark:text-gray-200 relative z-10 lg:pl-9">
           <h1 className="text-5xl lg:text-4xl font-extrabold font-orbitron leading-tight w-fit bg-gradient-to-r from-[#3D2A63]  to-[#00CFFF] dark:from-[#C6B6F2] dark:to-[#A0E6FF] bg-clip-text text-transparent mb-4">
-            RootChat
+            {t('rootchat.title')}
           </h1>
           <div className="block lg:hidden my-4 w-full max-w-md mx-auto">
             <Image
@@ -47,7 +48,7 @@ const RootChatSection = () => {
             />
           </div>
           <h1 className="text-xl font-extrabold font-orbitron leading-tight w-fit bg-gradient-to-r from-[#3D2A63]  to-[#00CFFF] dark:from-[#C6B6F2] dark:to-[#A0E6FF] bg-clip-text text-transparent mb-4">
-            The First Hybrid CALL & Messaging App
+            {t('rootchat.subtitle')}
           </h1>
           <ul className="space-y-6 text-base">
             {features.map(({ icon, title, text }) => (
@@ -59,7 +60,7 @@ const RootChatSection = () => {
                     width={28}
                     height={28}
                   />
-                  <span className="font-semibold text-lg">{title}</span>
+                  <span className="font-semibold text-md">{title}</span>
                 </div>
                 <p className="text-neutral-700 dark:text-neutral-300">{text}</p>
               </li>

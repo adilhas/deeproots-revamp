@@ -1,6 +1,10 @@
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
+  const { t } = useTranslation('landing_page');
+  const title = t('hero-section.title');
+  const [firstWord, ...rest] = title.split(' ');
   return (
     <>
       <main
@@ -9,13 +13,12 @@ const Hero = () => {
       >
         <div className="w-full max-w-[1200px] py-10 md:py-20  px-3">
           <h2 className="text-3xl md:text-6xl font-semibold font-orbitron w-fit text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
-            Decentralization <br /> From the Roots
+            {firstWord}
+            <br />
+            {rest.join(' ')}
           </h2>
 
-          <p className="max-w-[500px] mb-10">
-            From impossible to possible - A platform for innovative DeWorld Apps
-            on the First Truly Dynamic Blockchain Network.
-          </p>
+          <p className="max-w-[500px] mb-10">{t('hero-section.subtitle')}</p>
 
           <div className="relative w-full h-[334px] md:h-[628px] mt-4">
             <Image
@@ -29,16 +32,15 @@ const Hero = () => {
       </main>
       <div className="flex flex-col py-[70px] text-center px-3 bg-[#D4D4D4] dark:bg-[#222222]">
         <h2 className="font-extrabold  text-2xl md:text-4xl text-center w-fit mx-auto bg-gradient-to-r from-[#9E2CA9]  to-[#3B82A4]  bg-clip-text font-orbitron text-transparent">
-          HELLO FUTURE BY DEEP ROOTS
+          {t('hero-section.hello')}
         </h2>
 
         <div className="inline-block text-lg my-6 max-w-[619px] mx-auto">
-          From impossible to possible - A platform for innovative DeWorld Apps
-          on the First Truly Dynamic Blockchain Network.
+          {t('hero-section.paragraph')}
         </div>
 
         <button className="mx-auto cursor-pointer px-6 font-orbitron py-3 bg-gradient-to-r from-[#9E2CA9] to-[#3B82A4] text-center relative font-bold hover:bg-gradient-to-l  transition-all hover:delay-1000 hover:ease-in-out text-white rounded-2xl  text-lg">
-          Join the Movement
+          {t('hero-section.btnContent')}
         </button>
       </div>
     </>

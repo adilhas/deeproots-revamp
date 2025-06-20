@@ -4,21 +4,17 @@ import Image from 'next/image';
 import TotalSupply from './TotalSupply';
 import CTAGlowButton from '@/Shared/CTAGlowButton';
 import { useThemeContext } from '@/context/ThemeContext';
-
-const Data = [
-  'Gas Chain',
-  'Seeding',
-  'Governance',
-  'Referral',
-  'Gamefi',
-  'NFT & More',
-];
+import { useTranslation } from 'react-i18next';
 
 const DRCDesktop = () => {
   const { isDark } = useThemeContext();
+  const { t } = useTranslation('landing_page');
+  const tokenFeatures: string[] = t('drc.features', {
+    returnObjects: true,
+  }) as string[];
 
   return (
-    <div className="relative ">
+    <div className="relative">
       <div
         className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[300px] rounded-full blur-[324px] opacity-30 pointer-events-none z-0"
         style={{
@@ -33,13 +29,13 @@ const DRCDesktop = () => {
         }}
       >
         <h2 className="w-fit font-[600] text-center rounded-md p-3 mx-auto text-4xl md:text-3xl font-orbitron text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
-          What is dRC?
+          {t('drc.heading')}
         </h2>
       </div>
       <div className="flex  flex-row items-center gap-2 w-full justify-between">
         <TotalSupplyChart />
-        <div className="font-orbitron text-3xl text-center font-[500]">
-          dRC token distributed <br /> over 41 years
+        <div className="font-orbitron text-3xl text-center font-[500] max-w-sm">
+          {t('drc.distributed')}
         </div>
         <Image
           src={`/landing/drc-token-frame-${isDark ? 'dark' : 'light'}.png`}
@@ -53,20 +49,23 @@ const DRCDesktop = () => {
           <TotalSupply />
 
           <div className="text-center">
-            <div className="text-3xl font-orbitron font-[500]">
-              Built for Real Use – <br /> Not Just Trading
+            <div className="text-3xl font-orbitron font-[500] max-w-xs mx-auto">
+              {t('drc.built_for_use')}
             </div>
             <div className="mt-5">
-              <CTAGlowButton className="text-xl mr-2">Seed Now</CTAGlowButton>
+              <CTAGlowButton className="text-xl mr-2">
+                {/* {t('drc.cta_seed_now')} */}
+                Seed Now
+              </CTAGlowButton>
               <button className="px-3 border border-[#BFAAFB] text-[#303030] dark:text-white dark:border-white py-[8px] rounded-3xl ml-2">
-                Learn More About dRC
+                {t('drc.cta_learn_more')}
               </button>
             </div>
           </div>
 
           <div className="flex flex-col justify-center my-2 h-full">
             <ul className="space-y-[23px] h-full justify-start flex flex-col text-center text-2xl font-orbitron text-[#5C5F62] dark:text-[#94A3B8]">
-              {Data.map((item, index) => (
+              {tokenFeatures.map((item, index) => (
                 <li
                   key={index}
                   className="py-[8px] px-8 rounded-2xl bg-[#EBEBEB] dark:bg-[#212121]"

@@ -1,8 +1,10 @@
 import { useThemeContext } from '@/context/ThemeContext';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 const AddressWallet = () => {
   const { isDark } = useThemeContext();
+  const { t } = useTranslation('landing_page');
   return (
     <main className="bg-[#D4D4D4] dark:bg-primary-dark">
       <div className="w-full  max-w-[1200px] mx-auto  py-20 relative lg:px-10 px-5">
@@ -11,7 +13,7 @@ const AddressWallet = () => {
             <div className="inline-block">
               <div style={{ opacity: 1, transform: 'none' }}>
                 <h1 className="font-extrabold text-3xl  lg:text-start lg:text-3xl lg:leading-normal bg-gradient-to-r from-[#0085a8] to-orange-400 bg-clip-text font-orbitron text-transparent">
-                  THE ADDRESS WALLET
+                  {t('address_wallet.title')}
                 </h1>
               </div>
             </div>
@@ -28,9 +30,9 @@ const AddressWallet = () => {
             </div>
 
             <div>
-              <p className="font-sans my-3 lg:w-[500px] lg:w-[70vw]">
+              <p className="font-sans my-3 lg:w-[500px]">
                 <span className="font-orbitron mb-5 font-bold">
-                  Warp Around Wealth - 21 Layers of Dynamic Finance.
+                  {t('address_wallet.subtitle')}
                 </span>
               </p>
               <div className="flex justify-start  my-3 items-center">
@@ -54,20 +56,18 @@ const AddressWallet = () => {
                 <div className="inline-block my-5">
                   <div style={{ opacity: 1, transform: 'none' }}>
                     <h4 className="font-sans font-bold text-[#0085a8] ml-3 text-lg">
-                      Start Earning Today!
+                      {t('address_wallet.startEarning')}
                     </h4>
                   </div>
                 </div>
               </div>
 
               <p className="font-sans my-3">
-                More Than a Wallet, It&apos;s an Earning Machine. Activate &amp;
-                Begin Your Journey to wealth!
+                {t('address_wallet.description')}
               </p>
-              <p className="font-sans my-3 lg:w-[500px] lg:w-[70vw]">
+              <p className="font-sans my-3 lg:w-[500px] ">
                 <span className="font-orbitron font-bold">
-                  Manage Asset | SEED | FOUNDATION | Referral | Gaming &amp;
-                  More.
+                  {t('address_wallet.features')}
                 </span>
               </p>
             </div>
@@ -78,7 +78,7 @@ const AddressWallet = () => {
                   boxShadow: `${isDark ? '0px 15px 31px 0px #000000' : '0px 8px 28px 0px #6D5D3F'}`,
                 }}
               >
-                Manage Asset
+                {t('address_wallet.button')}
               </button>
             </div>
           </div>

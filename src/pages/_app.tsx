@@ -5,13 +5,14 @@ import type { AppProps } from 'next/app';
 import AuthGuard from '../components/AuthGuard';
 import Head from 'next/head';
 import { ThemeProvider } from '@/context/ThemeContext';
+import { appWithTranslation } from 'next-i18next';
 
 const publicRoutes = ['/auth/signin'];
 
-export default function MyApp({
+const MyApp = ({
   Component,
   pageProps: { session, ...pageProps },
-}: AppProps) {
+}: AppProps) => {
   const router = useRouter();
   const isPublic = publicRoutes.includes(router.pathname);
 
@@ -32,4 +33,6 @@ export default function MyApp({
       </ThemeProvider>
     </SessionProvider>
   );
-}
+};
+
+export default appWithTranslation(MyApp);

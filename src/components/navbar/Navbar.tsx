@@ -8,7 +8,7 @@ import Submenu from './Submenu';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import DeWorldAllProducts from './DeWorldAllProducts';
-import SettingModal from './SettingModal';
+import SettingDropdown from './SettingDropdown';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -49,7 +49,8 @@ export default function Navbar() {
             />
             <DeWorldAllProducts />
 
-            <SettingModal />
+            {/* <SettingModal /> */}
+            <SettingDropdown />
 
             {isMobileMenuOpen ? (
               <button

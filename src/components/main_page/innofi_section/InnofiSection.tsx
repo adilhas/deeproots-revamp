@@ -1,11 +1,37 @@
-import { innofiFeatures } from '@/constants/sectionData';
 import { useThemeContext } from '@/context/ThemeContext';
-import { ChevronRight } from 'lucide-react';
+import {
+  CheckCircle,
+  ChevronRight,
+  Eye,
+  Rocket,
+  ThumbsUp,
+  Users,
+  Wallet,
+} from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { JSX } from 'react';
+import { useTranslation } from 'react-i18next';
 
+interface FeatureItem {
+  icon: JSX.Element;
+  title: string;
+  description: string;
+}
+const iconComponents = [
+  <Users className="text-9xl text-[#fb7087]" key="Users" />,
+  <CheckCircle className="text-9xl text-[#fb7087]" key="CheckCircle" />,
+  <ThumbsUp className="text-9xl text-[#fb7087]" key="ThumbsUp" />,
+  <Rocket className="text-9xl text-[#fb7087]" key="Rocket" />,
+  <Eye className="text-9xl text-[#fb7087]" key="Eye" />,
+  <Wallet className="text-9xl text-[#fb7087]" key="Wallet" />,
+];
 const InnofiSection = () => {
   const { isDark } = useThemeContext();
+  const { t } = useTranslation('landing_page');
+  const innofiFeatures = t('innofi_section.features', {
+    returnObjects: true,
+  }) as FeatureItem[];
   return (
     <section className="bg-[#FDFDF1] dark:bg-primary-dark py-28 px-6 md:px-16 w-full relative overflow-hidden">
       <div className="absolute top-0 left-0 w-[100px] md:w-[300px] h-[500px] bg-[#C37692] blur-3xl opacity-30 pointer-events-none z-0 dark:hidden" />
@@ -16,7 +42,7 @@ const InnofiSection = () => {
         <div className="w-full lg:w-1/2 flex flex-col gap-6">
           <div className="flex justify-start lg:items-start  flex-col">
             <h1 className="font-extrabold w-fit text-3xl lg:text-4xl bg-gradient-to-r from-[#40CEF9]  to-[#FF3EAB] bg-clip-text font-orbitron text-transparent">
-              InnoFi
+              {t('innofi_section.title')}
             </h1>
           </div>
 
@@ -32,11 +58,11 @@ const InnofiSection = () => {
             />
           </div>
           <h2 className="font-extrabold text-xl w-fit lg:text-2xl bg-gradient-to-r from-[#40CEF9] to-[#FF3EAB] bg-clip-text font-orbitron text-transparent">
-            VOTE & FUND DeWorld
+            {t('innofi_section.subtitle')}
           </h2>
 
           <div className="flex flex-col gap-4 z-[20]">
-            {innofiFeatures.map(({ icon, title, description }, index) => (
+            {innofiFeatures.map(({ title, description }, index) => (
               <div
                 key={index}
                 className="flex items-center gap-4 p-4 hover:scale-105 bg-[#FDFDF1] dark:bg-primary-dark rounded-lg shadow-md"
@@ -44,7 +70,7 @@ const InnofiSection = () => {
                   boxShadow: `${isDark ? 'none' : '0px 4px 8px 0px #0000002B'}`,
                 }}
               >
-                <div>{icon}</div>
+                <div>{iconComponents[index]}</div>
                 <div>
                   <h3 className="text-lg font-semibold font-orbitron">
                     {title}

@@ -1,0 +1,602 @@
+{
+  "hero-section": {
+    "title": "Décentralisation depuis les racines",
+    "subtitle": "De l'impossible au possible – Une plateforme pour les applications DeWorld innovantes sur le premier réseau blockchain véritablement dynamique.",
+    "hello": "BONJOUR L’AVENIR PAR DEEP ROOTS",
+    "paragraph": "De l'impossible au possible – Une plateforme pour les applications DeWorld innovantes sur le premier réseau blockchain véritablement dynamique.",
+    "btnContent": "Rejoindre le Mouvement"
+  },
+  "features": {
+    "address_wallet": {
+      "title": "The Address Wallet",
+      "description": "Inscrivez-vous maintenant, gérez vos actifs, construisez votre richesse."
+    },
+    "get_drc_token": {
+      "title": "Obtenez le jeton dRC (Deeproots Coin):",
+      "description": "Offre limitée, distribuée sur 41 ans – Là pour durer."
+    },
+    "telexcoin": {
+      "title": "TelexCoin :",
+      "description": "Rejoignez et développez l'avenir du trading."
+    },
+    "deeproots_network": {
+      "title": "Réseau DeepRoots.",
+      "description": "La première blockchain véritablement dynamique, évolutive et sans frontières."
+    }
+  },
+  "what_is_deeproots_section": {
+    "title": "Qu'est-ce que Deep Roots ?",
+    "from_world": "Du Monde",
+    "to_deworld": "Au DeWorld",
+    "subtitle": "Une nouvelle fondation pour le monde décentralisé",
+    "button": "En savoir plus",
+    "deeproots_cards": {
+      "card_1": {
+        "title": "Un mouvement, pas seulement une blockchain",
+        "text": "Deep Roots représente une transition des systèmes centralisés vers une collaboration ouverte et décentralisée qui donne le pouvoir aux personnes, pas aux plateformes."
+      },
+      "card_2": {
+        "title": "DeWorld : L'Internet Décentralisé",
+        "text": "Un nouvel internet conçu pour les utilisateurs, propulsé par la blockchain et l’IA, garantissant confidentialité, interopérabilité et propriété communautaire."
+      },
+      "card_3": {
+        "title": "Conçu pour l’impact",
+        "text": "Deep Roots alimente plus de 20 véritables produits Web3 dans les domaines de la DeFi, du GameFi, de l'identité, de l'éducation, et plus encore, offrant une utilité concrète et un accès mondial."
+      },
+      "card_4": {
+        "title": "Un écosystème guidé par une vision",
+        "text": "Conçu pour décentraliser le pouvoir, permettre de gagner et d'apprendre au quotidien, et créer des outils durables — fondé sur la confiance, la liberté et l’innovation."
+      }
+    }
+  },
+  "earn_foundation": {
+    "title": "Obtenez un siège à la Fondation",
+    "subtitle_1": "Devenez une force fondatrice de DeWorld.",
+    "subtitle_2": "Les détenteurs d’un siège à la Fondation reçoivent un pourcentage de chaque projet construit sur Deep Roots."
+  },
+  "seeding_program": {
+    "title": "Programme de Semis",
+    "description": "La passerelle officielle vers une propriété à long terme dans la blockchain Deep Roots. Bloquez vos jetons dRC pendant 365 jours et débloquez :",
+    "benefits": [
+      "Siège complet à la Fondation Deep Roots",
+      "APY garanti de 12 %",
+      "Part à vie dans tous les projets de l'écosystème",
+      "Accès premium à CopyMe AI",
+      "Liste blanche pour les subventions, IDO et lancements",
+      "Accès complet au RootOpia GameFi (Semis, Bataille, Classements)",
+      "Accès à plus de 16 produits Web3"
+    ],
+    "closing_text": "Prenez votre place. Façonnez l’avenir. Gagnez pour toujours."
+  },
+  "drc": {
+    "heading": "Qu'est-ce que le dRC ?",
+    "distributed": "Jeton dRC distribué sur 41 ans",
+    "built_for_use": "Conçu pour une utilisation réelle – Pas seulement pour le trading",
+    "cta_seed_now": "Participer maintenant",
+    "cta_learn_more": "En savoir plus sur le dRC",
+    "features": [
+      "Chaîne de Gaz",
+      "Semis",
+      "Gouvernance",
+      "Parrainage",
+      "Gamefi",
+      "NFT et plus"
+    ],
+    "total-supply": {
+      "over-years": {
+        "name": "Plus de 41 ans",
+        "desc": "Émissions de récompenses à long terme"
+      },
+      "vesting": {
+        "name": "Acquisition sur 3 à 5 ans",
+        "desc": "Allocations pour l’équipe/les partenaires"
+      },
+      "seed": {
+        "name": "Prévente & GameFi",
+        "desc": "Premiers jeux + croissance des utilisateurs"
+      },
+      "dev": {
+        "name": "Développement & Innovation",
+        "desc": "Développement technique & mises à jour"
+      },
+      "community": {
+        "name": "Communauté & Partenariats",
+        "desc": "Revenus, collaborations stratégiques"
+      },
+      "foundation": {
+        "name": "Fondation",
+        "desc": "Fonds de gouvernance et récompenses"
+      },
+      "ai": {
+        "name": "Développement IA",
+        "desc": "Financement d’outils IA natifs"
+      },
+      "reserved": {
+        "name": "Réservé",
+        "desc": "Réserves froides pour expansion future"
+      }
+    }
+  },
+  "deeproots_ecosystem": {
+    "title": "DeepRoots Ecosystem",
+    "subtitle": "From World to DeWorld",
+    "use_case": "Cas d'utilisation"
+  },
+  "address_wallet": {
+    "title": "THE ADDRESS WALLET",
+    "subtitle": "Entourez-vous de richesse - 21 couches de finance dynamique.",
+    "startEarning": "Commencez à gagner dès aujourd'hui !",
+    "description": "Plus qu'un portefeuille, c'est une machine à revenus. Activez-le et commencez votre voyage vers la richesse !",
+    "features": "Gérer les actifs | SEED | FONDATION | Parrainage | Jeux & plus.",
+    "button": "Gérer les actifs"
+  },
+  "telexcoin": {
+    "title": "TeleXcoin DeX",
+    "subtitle": "Libérez l'avenir de la finance",
+    "access": "Accédez tôt aux jetons dRC !",
+    "seedGrow": "Semez, Gagnez et Développez",
+    "features": "Liquidité de pool | Podcast exclusif | FONDATION | Récompenses partagées.",
+    "hub": "Le Hub pour le trading, les stratégies et la connexion.",
+    "cta": "REJOIGNEZ & GAGNEZ"
+  },
+  "deepAssets": {
+    "title": "Deep Assets",
+    "subtitle": "Transformer les actifs du monde réel en valeur numérique.",
+    "description": "Le protocole DeepRoots rend les actifs du monde réel plus intelligents, plus sûrs et plus accessibles.",
+    "button": "Explorer",
+    "features": [
+      {
+        "title": "Tokenisation",
+        "description": "Convertir la valeur réelle en propriété numérique."
+      },
+      {
+        "title": "Accès DeFi",
+        "description": "Débloquez la finance mondiale."
+      },
+      {
+        "title": "Transactions sécurisées",
+        "description": "Alimenter l'immobilier, la chaîne d'approvisionnement."
+      },
+      {
+        "title": "Transparence & Confiance",
+        "description": "Garantir l'authenticité de chaque transaction."
+      },
+      {
+        "title": "Identité numérique",
+        "description": "Dossiers sécurisés et vérifiables pour un avenir de confiance."
+      }
+    ]
+  },
+  "use_case_section": {
+    "title": "Cas d'utilisation de DeepRoots - Internet Révolutionnaire",
+    "usecases": {
+      "high_freq": {
+        "title": "Trading Haute Fréquence & DEX",
+        "description": "Exécution ultra-rapide."
+      },
+      "asset_token": {
+        "title": "Tokenisation d'Actifs",
+        "description": "Échange d'actifs réels fractionnés."
+      },
+      "low_cost": {
+        "title": "Transactions à Faible Coût",
+        "description": "Micro-paiements avec des frais minimes."
+      },
+      "dynamic_blockchain": {
+        "title": "Blockchain Vraiment Dynamique",
+        "description": "Sans frontières, évolutive et adaptable."
+      },
+      "gamefi": {
+        "title": "GameFi avec Rootopia",
+        "description": "Élever le jeu blockchain."
+      },
+      "foundation": {
+        "title": "Fondation & Lancement",
+        "description": "Stimuler la croissance de l'écosystème."
+      },
+      "referral": {
+        "title": "Parrainage & Récompenses",
+        "description": "Gagnez en élargissant le réseau."
+      },
+      "wallet": {
+        "title": "Portefeuille Numérique Sécurisé",
+        "description": "Gérez dRC, RWA et plus encore."
+      },
+      "utility": {
+        "title": "Utilité Limitée de la Monnaie",
+        "description": "Accès exclusif et gouvernance."
+      },
+      "payments": {
+        "title": "Paiements Transfrontaliers",
+        "description": "Transferts mondiaux rapides et économiques."
+      },
+      "ai_tools": {
+        "title": "Éducation & Outils d'IA",
+        "description": "Apprentissage, solutions IA et outils."
+      },
+      "nfts": {
+        "title": "NFTs & Mode",
+        "description": "Art numérique, tendances et style."
+      },
+      "show": {
+        "title": "Émission DeWorld",
+        "description": "Discussions et perspectives Web3."
+      },
+      "innovation": {
+        "title": "Favoriser l'Innovation & Plus",
+        "description": "Technologie, créativité et croissance."
+      },
+      "vote": {
+        "title": "Votez & Financez",
+        "description": "Soutenir, investir et décider"
+      }
+    }
+  },
+  "share_value_section": {
+    "title": "PARTAGE DE VALEUR",
+    "subtitle": "Apprendre, Créer, Innover – Un Centre Éducatif DeWorld",
+    "button": "Apprendre",
+    "features": [
+      {
+        "title": "Apprentissage Propulsé par l'IA",
+        "description": "Permettre à chacun, partout, d'apprendre et d'innover dans un monde décentralisé."
+      },
+      {
+        "title": "Ressources Technologiques Décentralisées",
+        "description": "Accédez à des outils pour construire sur la blockchain et les technologies décentralisées."
+      },
+      {
+        "title": "Accès Mondial",
+        "description": "Des programmes pour tous les secteurs, favorisant l'innovation et la contribution globale à DeWorld."
+      },
+      {
+        "title": "Centre d'Innovation",
+        "description": "Une plateforme pour les hackathons, la collaboration et le partage d'idées."
+      },
+      {
+        "title": "Autonomiser les Créateurs",
+        "description": "Transformer des idées en réalité et façonner l'avenir de DeWorld."
+      },
+      {
+        "title": "Mentorat & Partage d'Idées",
+        "description": "Dirigez des groupes, partagez vos idées et développez vos connaissances en enseignant aux autres."
+      },
+      {
+        "title": "Échange de Connaissances",
+        "description": "Apprenez en enseignant et contribuez à la croissance de la communauté DeWorld."
+      }
+    ]
+  },
+  "innofi_section": {
+    "title": "InnoFi",
+    "subtitle": "VOTER & FUND DeWorld",
+    "button": "VOTER",
+    "features": [
+      {
+        "title": "Innovation Pilotée par la Communauté",
+        "description": "Financez et votez pour les projets qui façonnent l’avenir de DeWorld."
+      },
+      {
+        "title": "Financement par Étapes",
+        "description": "Soutenez les projets à des étapes clés et suivez leur progression."
+      },
+      {
+        "title": "Approbation Démocratique",
+        "description": "La communauté vote pour approuver ou rejeter les idées innovantes."
+      },
+      {
+        "title": "Autonomiser les Créateurs",
+        "description": "Soutenez les innovateurs et aidez-les à concrétiser leurs projets."
+      },
+      {
+        "title": "Transparence & Contrôle",
+        "description": "Gérez vos investissements et influencez les résultats avec une transparence totale."
+      },
+      {
+        "title": "Intégration Sécurisée du Portefeuille",
+        "description": "Connectez votre portefeuille en toute sécurité pour financer et voter."
+      }
+    ]
+  },
+  "innolaunch_section": {
+    "title": "InnoLaunch",
+    "subtitle": "Autonomiser les projets DeWorld sur la blockchain Deep Roots.",
+    "button": "Lancer",
+    "funding_rounds": [
+      "Première Phase (Financement InnoFi).",
+      "Phase de Fondation Privée.",
+      "Accès aux Investisseurs Privés Externes.",
+      "Système de Parrainage Deep Roots Communautaire.",
+      "Lancement Public sur le DEX TeleXcoin.",
+      "Favoriser l’Innovation."
+    ]
+  },
+  "innofarm_section": {
+    "title": "InnoFarm",
+    "subtitle": "Le Marché de l’Emploi Web3",
+    "button": "Explorer InnoFarm",
+    "features": [
+      {
+        "title": "Recrutement Décentralisé",
+        "description": "Publiez des offres ou trouvez du travail via un réseau sécurisé basé sur la blockchain."
+      },
+      {
+        "title": "Correspondance d’Emplois par IA",
+        "description": "Des algorithmes intelligents connectent les talents aux bonnes opportunités."
+      },
+      {
+        "title": "Paiements Sécurisés sous Séquestre",
+        "description": "Paiements en crypto et fiat sécurisés par des contrats intelligents."
+      },
+      {
+        "title": "Profils Web3 Vérifiés",
+        "description": "Badges on-chain, synchronisation de portefeuille et KYC facultatif pour plus de confiance."
+      },
+      {
+        "title": "Apprendre & Évoluer",
+        "description": "Accédez à des cours, certifications et gagnez en montant en compétences."
+      }
+    ]
+  },
+  "metafabric_section": {
+    "title": "MetaFabric",
+    "subtitle": "Du Blockchain à la Mode – Votre style, votre NFT DeWorld",
+    "button": "Explorer MetaFabric",
+    "features": [
+      {
+        "title": "Marketplace NFT",
+        "description": "Achetez, vendez et échangez de l’art numérique conçu pour la mode."
+      },
+      {
+        "title": "Impression Personnalisée",
+        "description": "Transformez vos NFTs en mode portable sur vêtements, accessoires, et plus encore."
+      },
+      {
+        "title": "Collaboration avec Designers",
+        "description": "Collaborez avec des designers pour créer des pièces de mode uniques."
+      },
+      {
+        "title": "Mode & Blockchain",
+        "description": "Possédez une mode unique vérifiée et sécurisée sur la blockchain."
+      },
+      {
+        "title": "Expérience Intégrée",
+        "description": "Achetez, créez et imprimez directement depuis la plateforme MetaFabric."
+      },
+      {
+        "title": "Style Redéfini",
+        "description": "Portez votre créativité et affichez votre art numérique dans le monde réel."
+      }
+    ]
+  },
+  "ocean_bazaar_section": {
+    "title": "Ocean Bazaar",
+    "subtitle": "Le Marché des NFT",
+    "button": "Explorer Ocean Bazaar",
+    "features": [
+      {
+        "title": "Parcourez et achetez des objets numériques",
+        "description": "via une place de marché Web3 sur le thème de l'océan."
+      },
+      {
+        "title": "Vente & Enchères Faciles",
+        "description": "Téléversez, répertoriez et mettez aux enchères des NFTs facilement et en toute sécurité."
+      },
+      {
+        "title": "Expérience Connectée au Portefeuille",
+        "description": "Propulsée par The Address Wallet — connectez-vous pour gérer vos actifs, offres et historique."
+      },
+      {
+        "title": "Drops Exclusifs & Enchères Chronométrées",
+        "description": "Accédez à des NFTs en édition limitée et participez à des enchères en direct avec compte à rebours."
+      },
+      {
+        "title": "Échanges Sécurisés de Pair à Pair",
+        "description": "Échangez directement avec d'autres utilisateurs via des contrats intelligents sécurisés par la blockchain."
+      }
+    ]
+  },
+  "crypto_flow_section": {
+    "thank_you": "Merci",
+    "new_mission": "Nouvelle Mission",
+    "our_mission": "Notre mission est de construire un monde décentralisé pour l'humanité"
+  },
+  "givefi_section": {
+    "title": "GiveFi",
+    "subtitle": "Autonomiser les associations grâce à une transparence des dons",
+    "button": "Explorer GiveFi",
+    "features": [
+      {
+        "title": "Plateforme de dons sur la blockchain",
+        "description": "Chaque association reçoit son propre portefeuille et jeton pour collecter des fonds en toute transparence."
+      },
+      {
+        "title": "Expérience mobile de dons",
+        "description": "Interface fluide et intuitive avec navigation facile dans toutes les sections principales."
+      },
+      {
+        "title": "Mise en place rapide sans code",
+        "description": "Création du portefeuille et du jeton gérée pour vous — lancez sans effort technique."
+      },
+      {
+        "title": "Transparence en temps réel",
+        "description": "Suivi des dons en direct avec des enregistrements vérifiés sur la blockchain pour renforcer la confiance des donateurs."
+      },
+      {
+        "title": "Outils personnalisés par association",
+        "description": "Chaque association obtient un tableau de bord, un jeton, des QR codes et un profil donateur personnalisés."
+      }
+    ]
+  },
+  "rootopia": {
+    "main-title": "ROOTOPIA",
+    "subtitle": "APPEL AUX HÉROS",
+    "tagline": "Le plus grand lancement GameFi de l’histoire de DeWorld",
+    "description": "Entrez dans la bataille pour sauver l’Arbre de Vie. Rootopia est la première expérience GameFi 2D entièrement animée — combinant narration cinématographique, récompenses NFT et stratégie PvE épique.",
+    "features": [
+      "Récompenses quotidiennes",
+      "Gagnez des NFT rares et des tokens utilitaires réels",
+      "Gains hebdomadaires",
+      "Grimpez dans le classement pour débloquer des récompenses d'élite",
+      "Combattez pour la gloire"
+    ],
+    "starting-pool": {
+      "label": "Mise de départ :",
+      "ending": "Ceci... est... RootOpia."
+    },
+    "cta": "JOUER MAINTENANT"
+  },
+  "rootscan": {
+    "title": "RootScan",
+    "subtitle": "Explorateur de la Blockchain Deep Roots",
+    "features": [
+      {
+        "title": "Suivez Chaque Transaction",
+        "description": "Consultez l'activité des portefeuilles, les transferts de tokens, les interactions avec les smart contracts, et plus encore — en temps réel."
+      },
+      {
+        "title": "Recherche avec Clarté",
+        "description": "Recherchez des adresses, des transactions, des blocs ou des données de tokens instantanément."
+      },
+      {
+        "title": "Sécurisé & Privé",
+        "description": "Construit sur la blockchain Deep Roots avec performance, transparence et confidentialité en tête."
+      }
+    ],
+    "cta": "Explorer RootScan"
+  },
+  "comparison": {
+    "centralized-title": "Centralisé",
+    "decentralized-title": "Décentralisé",
+    "vs": "VS",
+    "centralized-features": [
+      "Contrôlé",
+      "Limité",
+      "Risque élevé",
+      "Corruptible",
+      "Coûteux",
+      "Inefficace",
+      "Exclusif"
+    ],
+    "decentralized-features": [
+      "Autonomisé",
+      "Transparent",
+      "Sécurisé",
+      "Sans confiance",
+      "Mondial",
+      "Inclusif",
+      "Résilient"
+    ]
+  },
+  "foundation": {
+    "heading": "LES SIÈGES DE LA FONDATION",
+    "features": [
+      {
+        "title": "Gagnez sur chaque projet",
+        "description": "Recevez un pourcentage sur tous les nouveaux projets."
+      },
+      {
+        "title": "Récompenses passives (12%)",
+        "description": "Recevez automatiquement des récompenses de l'écosystème."
+      },
+      {
+        "title": "Récompenses de parrainage",
+        "description": "Gagnez en invitant des utilisateurs avec des parrainages multiples."
+      },
+      {
+        "title": "Accès anticipé",
+        "description": "Opportunités exclusives de liste blanche et de projets privés."
+      },
+      {
+        "title": "Jeu RootOpia",
+        "description": "Jouez et gagnez de grosses récompenses blockchain."
+      }
+    ],
+    "cta": "Rejoignez le mouvement"
+  },
+  "rootchat": {
+    "title": "RootChat",
+    "subtitle": "La première application hybride d'appels et de messagerie",
+    "features": [
+      {
+        "title": "Chat et appel pensés pour le mobile",
+        "text": "Messagerie fluide et sécurisée avec appels vocaux portefeuille à portefeuille — sur n'importe quel appareil."
+      },
+      {
+        "title": "Sécurité renforcée par défaut",
+        "text": "Aucun suivi, aucune porte dérobée, aucune fuite de données — jamais."
+      },
+      {
+        "title": "Changement de mode en un clic",
+        "text": "Basculez instantanément entre communication centralisée en temps réel ou décentralisée."
+      },
+      {
+        "title": "Conçu pour DeWorld",
+        "text": "Privé, sans frontières et sans censure — votre voix, vos messages, votre contrôle."
+      }
+    ],
+    "cta": "Explorer RootChat"
+  },
+  "podcast_section": {
+    "title": "Notre Podcast",
+    "subtitle": "Podcast en Direct au Saxophone sur la Blockchain",
+    "description": "Explorez Deep Roots et l'avenir de la blockchain et de DeWorld. Rejoignez-nous pour façonner le futur, obtenir des informations exclusives, collaborer avec des innovateurs et faire partie de la communauté.",
+    "cta": "Rejoignez la Conversation"
+  },
+  "copyme_section": {
+    "title": "Copy Me",
+    "subtitle1": "Je t'apprends, je te copie",
+    "subtitle2": "Je te guide",
+    "description1": "Une IA qui reflète ton esprit, apprend, s’adapte et te guide.",
+    "description2": "Chaque action commence par une GRAINE, j'apprends de tes graines. Tu la sèmes – je la fais grandir.",
+    "cta": "Commander"
+  },
+  "about": {
+    "title": "À PROPOS DE DEEPROOTS",
+    "items": {
+      "story": "L’histoire de DeepRoots",
+      "about": "Qu'est-ce que DeepRoots ?",
+      "deworld": "Qu'est-ce que deWorld ?",
+      "drc": "Qu'est-ce que la monnaie native dRC ?",
+      "foundation": "Sièges de la Fondation DeepRoots",
+      "whitepaper": "Livre blanc DeepRoots",
+      "roadmap": "Feuille de route DeepRoots"
+    }
+  },
+  "social": {
+    "title": "Rejoignez la communauté Deep Roots",
+    "subtitle": "Participez à la communauté DeepRoots sur vos plateformes préférées.",
+    "links": [
+      {
+        "name": "x",
+        "title": "X",
+        "description": "Suivez-nous sur Twitter pour les dernières mises à jour et annonces."
+      },
+      {
+        "name": "reddit",
+        "title": "Reddit",
+        "description": "Participez aux discussions et explorez les sujets populaires sur notre subreddit."
+      },
+      {
+        "name": "discord",
+        "title": "Discord",
+        "description": "Rejoignez les discussions et découvrez les sujets populaires sur notre Discord."
+      },
+      {
+        "name": "telegram",
+        "title": "Telegram",
+        "description": "Rejoignez notre groupe Telegram pour discuter avec la communauté en temps réel."
+      },
+      {
+        "name": "tikTok",
+        "title": "TikTok",
+        "description": "Regardez nos dernières vidéos courtes et contenus créatifs."
+      },
+      {
+        "name": "youTube",
+        "title": "YouTube",
+        "description": "Rejoignez la communauté YouTube pour en savoir plus sur l’écosystème Deep Roots."
+      }
+    ]
+  }
+}

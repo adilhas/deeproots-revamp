@@ -1,12 +1,17 @@
-import { featuresCardItems } from '@/constants/featuresSectionData';
+import { getFeaturesCardItems } from '@/constants/featuresSectionData';
 import { useThemeContext } from '@/context/ThemeContext';
+import { useTranslation } from 'react-i18next';
 
 const Features = () => {
   const { isDark } = useThemeContext();
+  const { t } = useTranslation('landing_page');
+
+  const features = getFeaturesCardItems(t);
+
   return (
     <main className="relative py-10 md:py-20 flex flex-col items-center dark:bg-[#161616] bg-[#e8e8e9] w-full">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl px-4 w-fit">
-        {featuresCardItems.map((card, index) => (
+        {features.map((card, index) => (
           <div key={index} className="flex items-center space-x-4 p-4">
             <div className="flex-shrink-0">
               {isDark ? card.icon : card.lightIcon}
@@ -22,8 +27,6 @@ const Features = () => {
           </div>
         ))}
       </div>
-
-      {/* <div className="w-60 h-60 absolute lg:bottom-16 lg:left-0 bg-[#ad1aa0] blur-[300px] hidden lg:block rounded-full" /> */}
     </main>
   );
 };

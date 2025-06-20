@@ -255,6 +255,7 @@ export const deepAssetsFeatures = [
   },
 ];
 
+// TODO: to be usecassesdata is shifted to data.tsx of UseCases compoent folder
 export const useCasesData = [
   {
     title: 'High-Frequency Trading & DEX',
@@ -532,6 +533,7 @@ export const useCasesData = [
   },
 ];
 
+// TODO: to be removed
 export const innofiFeatures = [
   {
     icon: <Users className="text-9xl text-[#fb7087]" />,
@@ -567,6 +569,7 @@ export const innofiFeatures = [
   },
 ];
 
+// TODO: to be removed
 export const metafabricFeatures = [
   {
     icon: <ShoppingCart className="text-blue-500 w-12 h-12 mr-3" />,
@@ -600,6 +603,7 @@ export const metafabricFeatures = [
   },
 ];
 
+// TODO: to be removed
 export const centralizedFeatures = [
   { icon: <SlidersVertical />, label: 'Controlled' },
   { icon: <ShieldAlert />, label: 'Limited' },
@@ -610,6 +614,7 @@ export const centralizedFeatures = [
   { icon: <Lock />, label: 'Exclusive' },
 ];
 
+// TODO: to be removed
 export const decentralizedFeatures = [
   { icon: <Zap />, label: 'Empowered' },
   { icon: <Eye />, label: 'Transparent' },
@@ -620,6 +625,7 @@ export const decentralizedFeatures = [
   { icon: <RefreshCcw />, label: 'Resilient' },
 ];
 
+// TODO: to be removed
 export const foundationSeatsFeatures = [
   {
     icon: <Wand size={30} className="text-[#0085a5]" />,
@@ -653,6 +659,7 @@ export const foundationSeatsFeatures = [
   // },
 ];
 
+// TODO: to be removed
 export const aboutItems = [
   {
     question: `Deeproot's Story`,

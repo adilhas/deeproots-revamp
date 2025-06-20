@@ -1,7 +1,10 @@
-import { useCasesData } from '@/constants/sectionData';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { getUseCasesData } from './data';
 
 const UseCases = () => {
+  const { t } = useTranslation('landing_page');
+  const useCasesData = getUseCasesData(t);
   const repeatedData = [...useCasesData, ...useCasesData];
 
   return (

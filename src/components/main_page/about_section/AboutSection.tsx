@@ -1,9 +1,20 @@
-import { aboutItems } from '@/constants/sectionData';
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
+const aboutItems = [
+  { title: 'story', link: '/our-story' },
+  { title: 'about', link: '/academy/about' },
+  { title: 'deworld', link: '/' },
+  { title: 'drc', link: '/academy/drc' },
+  { title: 'foundation', link: '/' },
+  { title: 'whitepaper', link: '/' },
+  { title: 'roadmap', link: '/' },
+];
 const AboutSection: React.FC = () => {
+  const { t } = useTranslation('landing_page');
+
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number) => {
@@ -13,7 +24,7 @@ const AboutSection: React.FC = () => {
   return (
     <section className="max-w-4xl mx-auto py-[112px] z-40 px-4">
       <h1 className="font-extrabold mx-auto w-fit text-2xl text-center lg:text-start lg:text-3xl my-5 lg:leading-normal mb-10 bg-gradient-to-r from-[#0085a8] to-orange-400 bg-clip-text font-orbitron text-transparent">
-        ABOUT DEEPROOTS
+        {t('about.title')}
       </h1>
 
       <div className="md:space-y-6 space-y-4">
@@ -27,7 +38,9 @@ const AboutSection: React.FC = () => {
                 onClick={() => toggleAccordion(index)}
                 className="w-full text-left px-4 py-3 flex justify-between items-center cursor-pointer"
               >
-                <span className="font-semibold">{item.question}</span>
+                <span className="font-semibold">
+                  {t(`about.items.${item.title}`)}
+                </span>
                 <span>
                   <ArrowUpRight />
                 </span>

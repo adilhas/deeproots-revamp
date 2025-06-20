@@ -1,29 +1,13 @@
-import { TreePalm } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-
-const featureList = [
-  {
-    icon: TreePalm,
-    title: 'Track Every Transaction',
-    description:
-      'View wallet activity, token transfers, smart contract interactions, and more — all in real time.',
-  },
-  {
-    icon: TreePalm,
-    title: 'Search with Clarity',
-    description:
-      'Look up wallet addresses, transaction hashes, blocks, and token data instantly.',
-  },
-  {
-    icon: TreePalm,
-    title: 'Secure & Private',
-    description:
-      'Built on Deep Roots Blockchain with performance, transparency, and privacy in mind.',
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 export default function RootscanSection() {
+  const { t } = useTranslation('landing_page');
+  const features = t('rootscan.features', { returnObjects: true }) as {
+    title: string;
+    description: string;
+  }[];
   return (
     <section className="bg-[#BC965A] dark:bg-primary-dark relative overflow-hidden">
       <div className="absolute top-[-100px] right-[-100px] lg:right-[10%] w-[250px] lg:w-[500px] h-[300px] bg-[#677950] blur-[80px] opacity-60 pointer-events-none z-0 dark:hidden" />
@@ -35,7 +19,7 @@ export default function RootscanSection() {
           <div className="flex flex-col justify-between">
             <div>
               <div className="w-fit mx-auto lg:mx-0 font-orbitron z-20 text-5xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-[#F0B100] to-[#00C951] bg-clip-text">
-                RootScan
+                {t('rootscan.title')}
               </div>
 
               {/* Mobile image */}
@@ -52,12 +36,12 @@ export default function RootscanSection() {
               </div>
 
               <div className="font-orbitron text-xl my-2 lg:text-3xl font-bold text-transparent bg-gradient-to-r md:from-[#F0B100] md:to-[#00C951] from-[#fff] to-[#fff] bg-clip-text">
-                Deep Roots Blockchain Explorer
+                {t('rootscan.subtitle')}
               </div>
             </div>
 
             <ul className="my-3 text-white">
-              {featureList.map(({ title, description }) => (
+              {features.map(({ title, description }) => (
                 <li key={title}>
                   <div className="flex items-end gap-2">
                     <Image
@@ -78,7 +62,7 @@ export default function RootscanSection() {
             <div className="mt-3">
               <Link href="https://rootscan.earth" rel="noopener noreferrer">
                 <button className="px-6 hover:scale-105 py-3 text-lg font-medium rounded-full bg-gradient-to-r from-yellow-500 to-green-500 text-black hover:from-yellow-400 hover:to-green-400 transition">
-                  Explore RootScan
+                  {t('rootscan.cta')}
                 </button>
               </Link>
             </div>

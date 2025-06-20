@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 
 const PodcastSection = () => {
+  const { t } = useTranslation('landing_page');
   return (
     <section className="bg-gradient-to-r from-[#F3CE7E] to-[#B17D4D] dark:from-primary-dark dark:to-primary-dark relative overflow-hidden">
       <div className="absolute top-[-100px] right-[-100px] w-[500px] h-[400px] bg-[#DFB186] blur-[150px] opacity-50 pointer-events-none z-0" />
@@ -10,7 +12,7 @@ const PodcastSection = () => {
 
       <section className="py-12 px-4 max-w-[1200px] mx-auto relative z-10">
         <h1 className="lg:text-5xl text-4xl font-orbitron font-bold text-center mb-10 bg-gradient-to-r from-[#B9620F] to-[#391D07] dark:from-[#CA9968] dark:to-[#D76306] text-transparent bg-clip-text">
-          Our Podcast
+          {t('podcast_section.title')}
         </h1>
 
         <div className="container lg:px-24 flex flex-col lg:flex-row items-center justify-between gap-8 mx-auto relative z-10">
@@ -27,7 +29,7 @@ const PodcastSection = () => {
 
           <div className=" space-y-10 justify-evenly flex flex-col lg:w-1/2 lg:pr-9 relative z-10">
             <h2 className="text-3xl w-fit font-orbitron font-semibold bg-gradient-to-r from-[#B9620F] to-[#391D07] dark:from-[#CA9968] dark:to-[#D76306] text-transparent bg-clip-text">
-              Saxophone Live Podcast For Blockchain Insights
+              {t('podcast_section.subtitle')}
             </h2>
 
             {/* Mobile Image */}
@@ -45,15 +47,11 @@ const PodcastSection = () => {
               />
             </div>
 
-            <p className="">
-              Explore Deep Roots and the future of blockchain and DeWorld. Join
-              us to shape the future, gain exclusive insights, collaborate with
-              innovators, and be part of the community.
-            </p>
+            <p className="">{t('podcast_section.description')}</p>
 
             <Link href="https://saxophone.earth/">
               <button className="hover:scale-105 bg-[#4B210A] font-orbitron text-white py-3 px-6 rounded-lg shadow-lg transition duration-300">
-                Join the Conversation
+                {t('podcast_section.cta')}
               </button>
             </Link>
           </div>

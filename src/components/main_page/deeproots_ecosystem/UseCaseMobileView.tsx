@@ -2,9 +2,12 @@ import { Data1, Data2 } from '@/constants/dRCUsecasesData';
 import Image from 'next/image';
 import React from 'react';
 import { useThemeContext } from '@/context/ThemeContext';
+import { useTranslation } from 'react-i18next';
 
 const UseCaseMobileView = () => {
   const { isDark } = useThemeContext();
+  const { t } = useTranslation('landing_page');
+
   return (
     <div>
       <div className="px-5 z-20">
@@ -20,7 +23,7 @@ const UseCaseMobileView = () => {
       <div className="">
         <div className="bg-[#CECECE] max-w-[500px] mx-auto dark:bg-[#242424] pb-8 pt-12 w-full rounded-[32px] translate-y-[-40px] z-10 mb-10">
           <div className="text-3xl  w-fit mx-auto text-center font-orbitron font-[600] text-transparent bg-gradient-to-r darkfrom-gradient-from darkto-gradient-to from-gradient-from-light to-gradient-to-light bg-clip-text">
-            Usecases
+            {t('deeproots_ecosystem.use_case')}
           </div>
           <div className="flex my-8 justify-center flex-row gap-4">
             <ul className="flex flex-col w-max gap-y-2 lg:gap-y-5 text-center text-sm md:text-md xl:text-lg font-orbitron text-[#404040] dark:text-[#F1F5F9]">

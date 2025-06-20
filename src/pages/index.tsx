@@ -5,7 +5,6 @@ import CryptoFlowSection from '@/components/main_page/crypto_flow_section/Crypto
 import DeepAssets from '@/components/main_page/deepassets_section/DeepAssets';
 import UseCases from '@/components/main_page/deeproots_usecases/Usecases';
 import Features from '@/components/main_page/features/Features';
-// import Footer from '@/components/footer/Footer';
 import FoundationSeatsSection from '@/components/main_page/foundation_seats/FoundationSeatsSection';
 import GivefiSection from '@/components/main_page/givefi_section/GivefiSection';
 import Hero from '@/components/main_page/hero/Hero';
@@ -29,6 +28,8 @@ import WhatIsdRCSection from '@/components/main_page/what_is_dRC/WhatIsdRCSectio
 import DeepRootsEcosystemSection from '@/components/main_page/deeproots_ecosystem/DeepRootsEcosystemSection';
 import CopyMeSection from '@/components/main_page/copy_me_section/CopyMeSection';
 import FooterV2 from '@/components/footer/FooterV2';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import type { GetStaticProps } from 'next';
 
 export default function Home() {
   return (
@@ -78,3 +79,11 @@ export default function Home() {
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'en', ['landing_page'])),
+    },
+  };
+};

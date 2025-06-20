@@ -5,10 +5,11 @@ import LeftCurvedShape from './LeftCurveShape';
 import Image from 'next/image';
 import RightCurveShape from './RightCurveShape';
 import { Data1, Data2 } from '@/constants/dRCUsecasesData';
+import { useTranslation } from 'react-i18next';
 
 const UseCasesDeskView = () => {
   const { isDark } = useThemeContext();
-
+  const { t } = useTranslation('landing_page');
   const bgColor = isDark ? '#242424' : '#CECECE';
 
   return (
@@ -48,7 +49,7 @@ const UseCasesDeskView = () => {
 
       <div className="bg-[#CECECE] dark:bg-[#242424] py-6 xl:py-8 rounded-b-[115px] relative z-0">
         <div className="text-5xl w-fit mx-auto text-center font-orbitron font-[600] text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
-          Usecases
+          {t('deeproots_ecosystem.use_case')}
         </div>
       </div>
     </div>

@@ -1,8 +1,10 @@
 import { Wand2 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 
 const CopyMeSection = () => {
+  const { t } = useTranslation('landing_page');
   return (
     <section className="bg-[#F3F3F3] dark:bg-primary-dark relative">
       <div className="absolute top-[-100px] right-[-100px] w-[200px] md:w-[500px] h-[400px] bg-[#BBACFF] dark:bg-[#9BB6FF] blur-[150px] opacity-70 pointer-events-none z-0  inline-block md:dark:hidden" />
@@ -27,7 +29,7 @@ const CopyMeSection = () => {
         <div className="relative z-10 container lg:px-24 flex flex-col lg:flex-row items-center justify-between gap-8 mx-auto">
           <div className="space-y-4 lg:w-1/2 lg:pr-9">
             <h1 className="text-5xl  font-orbitron font-bold bg-gradient-to-r from-[#887FFF] via-[#9F5FFF] to-[#86A1FF] dark:from-[#fff] dark:via-[#AE86F1] dark:to-[#50D0FF] leading-normal text-transparent bg-clip-text">
-              Copy Me
+              {t('copyme_section.title')}
             </h1>
 
             {/* Mobile Image */}
@@ -41,20 +43,18 @@ const CopyMeSection = () => {
               />
             </div>
             <h2 className="text-3xl w-fit font-orbitron font-semibold bg-gradient-to-r from-[#887FFF] via-[#9F5FFF] to-[#86A1FF] dark:from-[#fff] dark:via-[#AE86F1] dark:to-[#50D0FF] text-transparent bg-clip-text">
-              I learn you, I copy you <br /> I guide you
+              {t('copyme_section.subtitle1')} <br />{' '}
+              {t('copyme_section.subtitle2')}
             </h2>
 
             <p className="my-8 z-10 dark:text-[#F1F5F9] text-[#334155]">
-              <div className="mb-2">
-                An AI that mirrors your mind, learns, adapts, and leads.
-              </div>
-              Every action starts with a SEED, I learn you from your seeds. You
-              seed it – I grow it.
+              <div className="mb-2">{t('copyme_section.description1')}</div>
+              {t('copyme_section.description2')}
             </p>
 
             <Link href="https://saxophone.earth/" className="z-10">
               <button className="hover:scale-105 flex flex-row gap-2 bg-gradient-to-r from-[#8D9FFF] to-[#A4D1FF] font-[600] font-orbitron text-white py-3 px-6 rounded-lg shadow-lg transition duration-300">
-                Command <Wand2 />
+                {t('copyme_section.cta')} <Wand2 />
               </button>
             </Link>
           </div>

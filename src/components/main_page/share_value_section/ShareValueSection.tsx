@@ -1,6 +1,10 @@
+'use client';
+
 import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
+
 import {
   Brain,
   Code2,
@@ -10,51 +14,27 @@ import {
   Users,
   BookOpen,
 } from 'lucide-react';
+
 import ShareValueHeader from './ShareValueHeader';
 
-const features = [
-  {
-    icon: <Brain size={30} className="text-[#52b797]" />,
-    title: 'AI-Powered Learning',
-    description:
-      'Empowering anyone, anywhere to learn and innovate in the decentralized world.',
-  },
-  {
-    icon: <Code2 size={30} className="text-[#52b797]" />,
-    title: 'Decentralized Tech Resources',
-    description:
-      'Access tools to build on blockchain and decentralized technologies.',
-  },
-  {
-    icon: <Globe size={30} className="text-[#52b797]" />,
-    title: 'Global Access',
-    description:
-      'Programs for all sectors, enabling global innovation and contribution to DeWorld.',
-  },
-  {
-    icon: <Lightbulb size={30} className="text-[#52b797]" />,
-    title: 'Innovation Hub',
-    description: 'A platform for hackathons, collaboration, and idea-sharing.',
-  },
-  {
-    icon: <Rocket size={30} className="text-[#52b797]" />,
-    title: 'Empowering Creators',
-    description: 'Turn ideas into reality and shape the future of DeWorld.',
-  },
-  {
-    icon: <Users size={30} className="text-[#52b797]" />,
-    title: 'Mentorship & Idea Sharing',
-    description:
-      'Lead groups, share ideas, and gain knowledge by teaching others.',
-  },
-  {
-    icon: <BookOpen size={30} className="text-[#52b797]" />,
-    title: 'Knowledge Exchange',
-    description: 'Learn by teaching, and help grow the DeWorld community.',
-  },
+const icons = [
+  <Brain key="brain" size={30} className="text-[#52b797]" />,
+  <Code2 key="code2" size={30} className="text-[#52b797]" />,
+  <Globe key="globe" size={30} className="text-[#52b797]" />,
+  <Lightbulb key="lightbulb" size={30} className="text-[#52b797]" />,
+  <Rocket key="rocket" size={30} className="text-[#52b797]" />,
+  <Users key="users" size={30} className="text-[#52b797]" />,
+  <BookOpen key="bookopen" size={30} className="text-[#52b797]" />,
 ];
-
 const ShareValueSection = () => {
+  const { t } = useTranslation('landing_page');
+  const features = t('share_value_section.features', {
+    returnObjects: true,
+  }) as {
+    title: string;
+    description: string;
+  }[];
+
   return (
     <main className="py-16 p-6 md:p-10 bg-[#E8F4D4] dark:bg-primary-dark relative">
       <div className="absolute top-0 bg-[#47866F] left-0 w-[100px] md:w-[500px] h-[300px] blur-3xl opacity-60 pointer-events-none z-10 dark:hidden" />
@@ -63,7 +43,7 @@ const ShareValueSection = () => {
       <div className="max-w-[1200px] mx-auto flex flex-col xl:flex-row items-start xl:items-center justify-center">
         <div className="flex flex-col xl:hidden">
           <h1 className="font-extrabold w-fit text-2xl xl:text-4xl font-orbitron bg-gradient-to-r from-[#E07C76] to-[#52b797] bg-clip-text text-transparent">
-            SHARE VALUE
+            {t('share_value_section.title')}
           </h1>
         </div>
 
@@ -80,9 +60,10 @@ const ShareValueSection = () => {
             />
           </div>
         </div>
+
         <div className="flex flex-col xl:hidden">
           <h2 className="font-bold text-xl my-3 mb-6 w-fit font-orbitron bg-gradient-to-r from-[#E07C76] to-[#52b797] bg-clip-text text-transparent">
-            Learn, Create, Innovate – A DeWorld Education Hub
+            {t('share_value_section.subtitle')}
           </h2>
         </div>
 
@@ -93,9 +74,9 @@ const ShareValueSection = () => {
 
           <div className="flex flex-col gap-4 text-left">
             {features.map((feature, index) => (
-              <p key={index} className="font-sans text-lg">
+              <p key={index} className="font-sans text-md">
                 <span className="font-bold flex items-center gap-2 font-orbitron">
-                  {feature.icon} {feature.title}
+                  {icons[index]} {feature.title}
                 </span>
                 {feature.description}
               </p>
@@ -104,7 +85,7 @@ const ShareValueSection = () => {
 
           <Link href="https://sharevalue.earth/" passHref>
             <button className="mt-8 py-4 px-7 w-1/3 font-orbitron font-bold text-lg text-neutral-200 bg-gradient-to-r from-[#E07C76] to-[#52b797] hover:text-neutral-900 rounded-lg">
-              Learn
+              {t('share_value_section.button')}
             </button>
           </Link>
         </div>

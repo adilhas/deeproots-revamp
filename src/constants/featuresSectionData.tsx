@@ -1,9 +1,95 @@
+import { TFunction } from 'next-i18next';
 import Image from 'next/image';
 
-export const featuresCardItems = [
+// TODO: to be removed
+// export const featuresCardItems = [
+//   {
+//     title: 'The Address Wallet:',
+//     description: 'Register now, Manage assets, build wealth.',
+//     icon: (
+//       <Image
+//         src="/landing/address-feature.svg"
+//         alt="address feature"
+//         width={60}
+//         height={60}
+//       />
+//     ),
+//     lightIcon: (
+//       <Image
+//         src="/landing/address-feature-light.svg"
+//         alt="address feature"
+//         width={60}
+//         height={60}
+//       />
+//     ),
+//   },
+//   {
+//     title: 'Get dRC Token (Deeproots Coin):',
+//     description: 'Limited Supply, Distributed Over 41 Years - Here to Stay.',
+//     icon: (
+//       <Image
+//         src="/landing/get-drc-feature.svg"
+//         alt="address feature"
+//         width={60}
+//         height={60}
+//       />
+//     ),
+//     lightIcon: (
+//       <Image
+//         src="/landing/get-drc-feature-light.svg"
+//         alt="address feature"
+//         width={60}
+//         height={60}
+//       />
+//     ),
+//   },
+//   {
+//     title: 'TelexCoin:',
+//     description: 'Join and grow the future of trading.',
+//     icon: (
+//       <Image
+//         src="/landing/telexcoin-feature.svg"
+//         alt="address feature"
+//         width={60}
+//         height={60}
+//       />
+//     ),
+//     lightIcon: (
+//       <Image
+//         src="/landing/telexcoin-feature-light.svg"
+//         alt="address feature"
+//         width={60}
+//         height={60}
+//       />
+//     ),
+//   },
+//   {
+//     title: 'DeepRoots Network.',
+//     description:
+//       'The First Truly Dynamic, Scalable, and Borderless Blockchain.',
+//     icon: (
+//       <Image
+//         src="/landing/deeproots-network-feature.svg"
+//         alt="address feature"
+//         width={60}
+//         height={60}
+//       />
+//     ),
+//     lightIcon: (
+//       <Image
+//         src="/landing/deeproots-network-feature-light.svg"
+//         alt="address feature"
+//         width={60}
+//         height={60}
+//       />
+//     ),
+//   },
+// ];
+
+export const getFeaturesCardItems = (t: TFunction) => [
   {
-    title: 'The Address Wallet:',
-    description: 'Register now, Manage assets, build wealth.',
+    title: t('features.address_wallet.title'),
+    description: t('features.address_wallet.description'),
     icon: (
       <Image
         src="/landing/address-feature.svg"
@@ -22,12 +108,12 @@ export const featuresCardItems = [
     ),
   },
   {
-    title: 'Get dRC Token (Deeproots Coin):',
-    description: 'Limited Supply, Distributed Over 41 Years - Here to Stay.',
+    title: t('features.get_drc_token.title'),
+    description: t('features.get_drc_token.description'),
     icon: (
       <Image
         src="/landing/get-drc-feature.svg"
-        alt="address feature"
+        alt="drc feature"
         width={60}
         height={60}
       />
@@ -35,19 +121,19 @@ export const featuresCardItems = [
     lightIcon: (
       <Image
         src="/landing/get-drc-feature-light.svg"
-        alt="address feature"
+        alt="drc feature"
         width={60}
         height={60}
       />
     ),
   },
   {
-    title: 'TelexCoin:',
-    description: 'Join and grow the future of trading.',
+    title: t('features.telexcoin.title'),
+    description: t('features.telexcoin.description'),
     icon: (
       <Image
         src="/landing/telexcoin-feature.svg"
-        alt="address feature"
+        alt="telexcoin feature"
         width={60}
         height={60}
       />
@@ -55,20 +141,19 @@ export const featuresCardItems = [
     lightIcon: (
       <Image
         src="/landing/telexcoin-feature-light.svg"
-        alt="address feature"
+        alt="telexcoin feature"
         width={60}
         height={60}
       />
     ),
   },
   {
-    title: 'DeepRoots Network.',
-    description:
-      'The First Truly Dynamic, Scalable, and Borderless Blockchain.',
+    title: t('features.deeproots_network.title'),
+    description: t('features.deeproots_network.description'),
     icon: (
       <Image
         src="/landing/deeproots-network-feature.svg"
-        alt="address feature"
+        alt="network feature"
         width={60}
         height={60}
       />
@@ -76,7 +161,7 @@ export const featuresCardItems = [
     lightIcon: (
       <Image
         src="/landing/deeproots-network-feature-light.svg"
-        alt="address feature"
+        alt="network feature"
         width={60}
         height={60}
       />
