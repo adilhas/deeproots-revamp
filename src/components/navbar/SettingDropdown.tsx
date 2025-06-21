@@ -41,7 +41,7 @@ const SettingDropdown = () => {
       </div>
       <ul
         tabIndex={0}
-        className="dropdown-content menu bg-white dark:bg-[#232323] rounded-3xl z-10 p-2 shadow-sm"
+        className="dropdown-content menu bg-white dark:bg-[#232323]  rounded-3xl z-10 p-2 shadow-sm"
         style={{
           boxShadow: `0px 12px 42px -4px #14171A1F,0px 8px 18px -6px #14171A1F`,
         }}

@@ -1,0 +1,112 @@
+import React from 'react';
+import PhaseCard from './PhaseCard';
+
+const p1Items = [
+  'Launch deeproots.earth – the digital gateway to DeWorld',
+  'Deploy DeepRoots Blockchain Architecture (custom consensus, EVM-compatible)',
+  'Open global Community Channels (Discord, X, Telegram)',
+  'Release the Tokenomics Manifesto - the blueprint of $dRC',
+  'Preview the Seeding Engine – a new way to earn & grow',
+  'Enable Cross-Chain Connectivity (ETH, BSC, more)',
+  'Deploy the Referral System Framework – built for virality',
+];
+
+const p2Items = [
+  'Launch the Full Seat Foundation Campaign – 5 powerful rounds',
+  'Activate On-Chain Referral Rewards – growth goes viral',
+  'Deploy TelexCoin DEX – swap, trade, and own liquidity',
+  'Go live with Ocean Bazaar – discover & mint NFTs',
+];
+
+const p3Items = [
+  'Launch RootOpia GameFi – play, earn, seed, lead',
+  'Deploy CopyMe AI Assistant – your digital mind, mirrored',
+  'Finalize Foundation Governance – decentralized by design',
+  'Launch Mobile Wallet (iOS & Android) – power in your pocket',
+];
+
+const p4Items = [
+  'Launch InnoLaunch – a decentralized IDO engine',
+  'Launch InnoFi – raise funds, distribute grants',
+  'Launch GiveFi – redefine transparent giving',
+  'Launch InnoFarm – connect talent, unlock jobs in Web3',
+];
+
+const p5Items = [
+  'Launch Saxophone – news, culture, and podcast platform',
+  'Activate RootIdentity + DAO Governance – verified voice & vote',
+  'Launch MetaFabric – own fashion NFTs, print them in real life',
+  'Launch DeepAssets – tokenize real estate, gold, and businesses',
+  'Launch ShareValue – learn, earn, and level up',
+  'Launch RootChat – secure decentralized messaging',
+  'Release Dev Tools + SDKs – builders, your toolkit is ready',
+  'Open Audit Docs & Explorer APIs – transparency unlocked',
+  'Enable dApp Builder Onboarding – your ideas go live',
+];
+const PhasesList = () => {
+  return (
+    <section className="relative pt-32 lg:pb-16 px-3 max-w-[1200px] mx-auto z-10 lg:min-h-[3100px]">
+      <div className=" mx-auto">
+        <h1 className="text-5xl font-bold mb-4 font-orbitron text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text w-fit mx-auto text-center">
+          Our Roadmap
+        </h1>
+        <div className="text-transparent font-bold font-orbitron text-3xl bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text w-fit mx-auto text-center">
+          2025-2027
+        </div>
+      </div>
+
+      <div className="flex justify-center lg:justify-end lg:max-w-[1000px] z-10">
+        <div className="w-fit">
+          <PhaseCard
+            className="bg-[#E9D5FF]  border border-[#C084FC] my-8 lg:my-20 lg:translate-y-[100px]"
+            titleContainerClassname="bg-[#F3E8FF] border-[#C084FC]"
+            phase="Phase 1"
+            title="Core Infrastructure Launch"
+            subtitle="The roots are planted — our world begins."
+            timeline="Q2–Q3 2025"
+            items={p1Items}
+            isCurrent
+          />
+          <PhaseCard
+            className="bg-[#D1E9FF] border border-[#53B1FD] my-8 lg:my-20 lg:translate-y-[300px]"
+            titleContainerClassname="bg-[#EFF8FF] border-[#84CAFF]"
+            phase="Phase 2"
+            title="Activate the Ecosystem Core"
+            subtitle="The users rise. Identity, rewards, and purpose converge."
+            timeline="Q3–Q4 2025"
+            items={p2Items}
+          />
+          <PhaseCard
+            className="bg-[#BBF7D0] border border-[#34D399] my-8 lg:my-20 lg:translate-y-[300px]"
+            titleContainerClassname="bg-[#D1FAE5] border-[#34D399]"
+            phase="Phase 3"
+            title="Engage & Expand the Movement"
+            subtitle="The ecosystem awakens. Value begins to flow."
+            timeline="Q1–Q2 2026"
+            items={p3Items}
+          />
+          <PhaseCard
+            className="bg-[#FBCFE8] border border-[#8F8F8F] my-8 lg:my-20 lg:translate-y-[400px]"
+            titleContainerClassname="bg-[#FFE3F2] border-[#F472B6]"
+            phase="Phase 4"
+            title="Launch Core Opportunity Platforms"
+            subtitle="Builders, dreamers, and doers your time begins now."
+            timeline="Q2–Q3 2026"
+            items={p4Items}
+          />
+          <PhaseCard
+            className="bg-[#FED7AA] border border-[#8F8F8F] my-8 lg:my-20 lg:translate-y-[600px]"
+            titleContainerClassname="bg-[#FFEDD5] border-[#FB923C]"
+            phase="Phase 5"
+            title="Activate the Ecosystem Core"
+            subtitle="The ecosystem awakens. Value begins to flow."
+            timeline="Q3–Q4 2026"
+            items={p5Items}
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default PhasesList;

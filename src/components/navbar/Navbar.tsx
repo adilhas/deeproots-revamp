@@ -31,7 +31,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="px-2 shadow-sm fixed top-0 z-50 bg-neutral-300 dark:bg-primary-dark dark:text-neutral-200 w-full">
+    <header className="px-2 shadow-sm fixed top-0 z-50 bg-neutral-300 dark:bg-primary-dark text-[#4B5563] dark:text-neutral-200 w-full">
       <div
         className="bg-neutral-300 dark:bg-primary-dark dark:text-neutral-200"
         onMouseLeave={() => setActiveMenu(null)}
