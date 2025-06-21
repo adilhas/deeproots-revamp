@@ -87,15 +87,16 @@ export const AcademyTopicsData: IAcademyTopics[] = [
         url: '#',
       },
       {
-        name: 'What is dRC?',
+        name: 'What is Deeproots?',
         description:
-          'The dRC token powers the DeepRoots ecosystem. Its the backbone of finance, security and structure',
-        image: '/academy/what-is-drc.png',
+          'We Launched Deeproots to provide a all in one solution on the first dynamic blockchain',
+        image: '/academy/what-is-deeproots.png',
         url: '#',
       },
       {
-        name: 'Gas Fees on dRC',
-        description: `In Deep Roots, gas fees aren't a barrier — they're a gateway to affordable blockchain access.`,
+        name: 'What is Deeproots?',
+        description:
+          'We Launched Deeproots to provide a all in one solution on the first dynamic blockchain',
         image: '/academy/what-is-deeproots.png',
         url: '#',
       },

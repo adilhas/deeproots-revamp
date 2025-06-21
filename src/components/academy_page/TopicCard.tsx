@@ -43,10 +43,10 @@ const TopicCard: React.FC<Props> = ({
           <h2 className="text-[16px] text-xl font-bold tracking-wider text-[#0F172A]">
             {name}
           </h2>
-          <p className="text-[#4B5563] text-md my-2">{description}</p>
+          <p className="text-[#4B5563] text-md my-2 line-clamp-3">
+            {description}
+          </p>
         </div>
-
-        <div className="h-4" />
 
         <Link
           href={url}
