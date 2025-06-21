@@ -10,6 +10,8 @@ interface Props {
   image: string;
   className?: string;
   style?: React.CSSProperties;
+  titleClassName?: string;
+  descriptionClassName?: string;
 }
 
 const TopicCard: React.FC<Props> = ({
@@ -19,6 +21,8 @@ const TopicCard: React.FC<Props> = ({
   image,
   className,
   style,
+  titleClassName,
+  descriptionClassName,
 }) => {
   return (
     <div
@@ -40,10 +44,17 @@ const TopicCard: React.FC<Props> = ({
       </div>
       <div className="flex flex-col flex-1 px-3 pb-2 ">
         <div className="flex-1">
-          <h2 className="text-[16px] text-xl font-bold tracking-wider text-[#0F172A]">
+          <h2
+            className={clsx(
+              titleClassName,
+              'text-[16px] text-xl font-bold tracking-wider '
+            )}
+          >
             {name}
           </h2>
-          <p className="text-[#4B5563] text-md my-2 line-clamp-3">
+          <p
+            className={clsx(descriptionClassName, ' text-md my-2 line-clamp-3')}
+          >
             {description}
           </p>
         </div>

@@ -64,10 +64,10 @@ export const footerLinksV3 = [
     link: '/academy',
     links: [
       { label: 'What is Deep Root?', href: '/academy/about' },
-      { label: 'What is $dRC?', href: '/academy/drc' },
-      { label: 'What is fullseat?', href: '/seeding/fullseat' },
+      { label: 'What is dRC?', href: '/academy/drc' },
+      { label: 'What is fullseat?', href: '/academy/what-is-fullseat' },
       { label: 'Whitepaper', href: '#' },
-      { label: 'What is Web3?', href: '' },
+      { label: 'What is Web3?', href: '/academy/what-is-web3' },
       { label: 'Tokenomics', href: '' },
       { label: 'RoadMap', href: '/academy/roadmap' },
 
@@ -126,9 +126,9 @@ export const footerLinksV3 = [
     icon: <Fingerprint color="#FF635D" size={20} />,
     link: '/identity',
     links: [
-      { label: 'Who we are', href: '/our-story' },
+      { label: 'Who we are', href: '/identity/who-we-are' },
       { label: 'Contact Us', href: '/connect/contact-us' },
-      { label: 'What is Seeding?', href: '/deworld/seeding' },
+      { label: 'What is Seeding?', href: '/identity/what-is-seeding' },
       { label: 'Foundation Full Seat', href: '/seeding/foundation' },
       { label: 'Root Scan', href: 'https://rootscan.earth' },
       // { label: 'AI Tools', href: '/academy/ai-tools' },

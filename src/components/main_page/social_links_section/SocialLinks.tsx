@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 const SocialLinks = () => {
   const { isDark } = useThemeContext();
-  const { t } = useTranslation('landing_page');
+  const { t } = useTranslation('common');
   const socialLinks = getSocialLinksData(t);
   console.log(socialLinks);
   return (

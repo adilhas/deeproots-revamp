@@ -562,41 +562,5 @@
       "whitepaper": "Livre blanc DeepRoots",
       "roadmap": "Feuille de route DeepRoots"
     }
-  },
-  "social": {
-    "title": "Rejoignez la communauté Deep Roots",
-    "subtitle": "Participez à la communauté DeepRoots sur vos plateformes préférées.",
-    "links": [
-      {
-        "name": "x",
-        "title": "X",
-        "description": "Suivez-nous sur Twitter pour les dernières mises à jour et annonces."
-      },
-      {
-        "name": "reddit",
-        "title": "Reddit",
-        "description": "Participez aux discussions et explorez les sujets populaires sur notre subreddit."
-      },
-      {
-        "name": "discord",
-        "title": "Discord",
-        "description": "Rejoignez les discussions et découvrez les sujets populaires sur notre Discord."
-      },
-      {
-        "name": "telegram",
-        "title": "Telegram",
-        "description": "Rejoignez notre groupe Telegram pour discuter avec la communauté en temps réel."
-      },
-      {
-        "name": "tikTok",
-        "title": "TikTok",
-        "description": "Regardez nos dernières vidéos courtes et contenus créatifs."
-      },
-      {
-        "name": "youTube",
-        "title": "YouTube",
-        "description": "Rejoignez la communauté YouTube pour en savoir plus sur l’écosystème Deep Roots."
-      }
-    ]
   }
 }

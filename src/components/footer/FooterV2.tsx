@@ -85,10 +85,10 @@ export default function Footer() {
           </Link>
           <p className="text-sm dark:text-gray-400 mx-2">
             <Link href={'/our-story'}>Our Story</Link> - Brands Assets -{' '}
-            <Link href={'/code-of-honor'}>Code of Honor</Link> - Jobs - Private
-            Policy - Term of Use -{' '}
-            <Link href={'/cookie-policy'}>Cookie Policy</Link> -{' '}
-            <Link href={'/public-relations'}>Public Relations</Link>
+            <Link href={'/code-of-honor'}>Code of Honor</Link>- Privacy Policy -
+            Term of Use - <Link href={'/cookie-policy'}>Cookie Policy</Link> -{' '}
+            <Link href={'/public-relations'}>Public Relations</Link> -
+            Disclaimer
           </p>
         </div>
         {/* <div className="text-center text-sm mt-10">

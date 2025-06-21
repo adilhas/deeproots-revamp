@@ -1,1 +1,32 @@
-{}
+{
+  "social": {
+    "title": "Rejoignez la communauté Deep Roots",
+    "subtitle": "Participez avec la communauté DeepRoots sur vos plateformes préférées.",
+    "links": {
+      "x": {
+        "title": "X",
+        "description": "Suivez-nous sur Twitter pour les dernières mises à jour et annonces."
+      },
+      "reddit": {
+        "title": "Reddit",
+        "description": "Participez aux discussions et explorez les sujets tendances sur notre subreddit."
+      },
+      "discord": {
+        "title": "Discord",
+        "description": "Participez aux discussions et explorez les sujets tendances sur notre Discord."
+      },
+      "telegram": {
+        "title": "Telegram",
+        "description": "Rejoignez notre groupe Telegram pour discuter avec la communauté en temps réel."
+      },
+      "tikTok": {
+        "title": "TikTok",
+        "description": "Regardez nos dernières vidéos courtes et notre contenu créatif."
+      },
+      "youTube": {
+        "title": "YouTube",
+        "description": "Rejoignez la communauté YouTube où nous partageons l'écosystème Deep Roots."
+      }
+    }
+  }
+}

@@ -31,7 +31,7 @@ const TopicsList = (props: IAcademyTopics) => {
       </div>
       <div
         ref={scrollRef}
-        className="flex flex-row flex-nowrap overflow-x-auto gap-4 pl-2 hide-scrollbar border"
+        className="flex flex-row flex-nowrap overflow-x-auto gap-4 pl-2 hide-scrollbar"
       >
         {props.topics.map((topic) => (
           <div key={topic.name} className="max-w-[282px] w-full flex-shrink-0">
@@ -41,6 +41,8 @@ const TopicsList = (props: IAcademyTopics) => {
               image={topic.image}
               url={topic.url}
               className={`h-full`}
+              titleClassName="text-[#0F172A]"
+              descriptionClassName="text-[#4B5563]"
               style={{ background: props.topicCardBg }}
             />
           </div>

@@ -9,8 +9,8 @@ export interface IAcademyTopics {
   title: string;
   description: string;
   topics: ITopic[];
-  topicCardBg: string;
-  topicListBg: string;
+  topicCardBg?: string;
+  topicListBg?: string;
   borderColor?: string;
 }
 export const AcademyTopicsData: IAcademyTopics[] = [

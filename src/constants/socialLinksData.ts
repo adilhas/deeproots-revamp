@@ -118,7 +118,7 @@ export const getSocialLinksData = (t: TFunction) => [
     brandColor: '#000000',
     iconColor: '#000000',
     title: t('social.links.tikTok.title'),
-    description: t('social.links.tiktok.description'),
+    description: t('social.links.tikTok.description'),
   },
   {
     name: 'YouTube',
