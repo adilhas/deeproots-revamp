@@ -8,7 +8,8 @@ import { useRouter } from 'next/router';
 
 const languages = [
   { label: 'English', code: 'en' },
-  { label: 'French', code: 'fr' },
+  // { label: 'French', code: 'fr' },
+  { label: 'Arabic', code: 'ar' },
 ];
 
 const SettingDropdown = () => {
