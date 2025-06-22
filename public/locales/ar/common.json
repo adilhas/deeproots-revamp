@@ -1,0 +1,88 @@
+{
+  "header_menu": {
+    "rootAcademy": {
+      "whatIsDeepRoots": "ما هو Deep Roots؟",
+      "whatIsDeepRoots_desc": "Deep Roots ليست مجرد بلوكتشين، إنها حركة.",
+      "whatIsFullseat": "ما هو المقعد الكامل؟",
+      "whatIsFullseat_desc": "كن من أوائل 20 شخصًا يحصلون على المقعد الكامل في نظام Deep Roots.",
+      "whatIsDrc": "ما هي dRC (العملة الأصلية)؟",
+      "whatIsDrc_desc": "الطبقة الأساسية لـ DeWorld",
+      "whitePaper": "الورقة البيضاء",
+      "whitePaper_desc": "استكشاف الورقة البيضاء لـ DeWorld.",
+      "tokenomics": "Tokenomics",
+      "tokenomics_desc": "استكشاف Tokenomics",
+      "roadmap": "خريطة الطريق",
+      "roadmap_desc": "استكشاف خريطة الطريق"
+    },
+    "rootlab": {
+      "smartContract": "العقد الذكي",
+      "smartContract_desc": "العقود الذكية — الشيفرة التي تُشغل DeWorld",
+      "developerTools": "أدوات المطورين",
+      "developerTools_desc": "استكشاف أدوات المطورين",
+      "gasFee": "رسوم الغاز",
+      "gasFee_desc": "في Deep Roots، رسوم الغاز ليست عائقاً — بل بوابة للوصول إلى بلوكتشين بأسعار معقولة.",
+      "documentation": "التوثيق",
+      "documentation_desc": "استكشاف التوثيق"
+    },
+    "deWorld": {
+      "theAddressWallet": "محفظة العنوان",
+      "theAddressWallet_desc": "ثروة متغيرة في 21 طبقة من التمويل الديناميكي.",
+      "telexCoin": "TelexCoin",
+      "telexCoin_desc": "افتح مستقبل التمويل.",
+      "oceanBazaar": "OceanBazaar",
+      "oceanBazaar_desc": "سوق NFT",
+      "rootopia": "Rootopia",
+      "rootopia_desc": "ادخل في معركة إنقاذ شجرة الحياة."
+    },
+    "rootIdentity": {
+      "whoWeAre": "من نحن",
+      "whoWeAre_desc": "نحن Deep Roots، وقصتنا لا تزال تُكتب.",
+      "whatIsSeeding": "ما هو Seeding؟",
+      "whatIsSeeding_desc": "انضم إلى جوهر الحركة. هذه فرصتك لحجز مقعد التأسيس.",
+      "foundationFullSeat": "Foundation Full Seat",
+      "foundationFullSeat_desc": "حدث Seeding سيبدأ قريبًا.",
+      "rootScan": "روت سكان",
+      "rootScan_desc": "مستكشف بلوكتشين Deep Roots"
+    },
+    "rootConnect": {
+      "socialMedia": "وسائل التواصل الاجتماعي",
+      "socialMedia_desc": "كن جزءًا من الفريق بالإبداع والتعاون.",
+      "eventsAndMeetups": "الفعاليات واللقاءات",
+      "eventsAndMeetups_desc": "فعاليات Deep Roots هي فرصتك للتواصل والتعلم والنمو مع المجتمع.",
+      "volunteerProgram": "برنامج التطوع",
+      "volunteerProgram_desc": "استكشاف برنامج التطوع",
+      "career": "الوظائف",
+      "career_desc": "انضم إلى رحلة Deep Roots وساهم في بناء المستقبل اللامركزي."
+    }
+  },
+  "social": {
+    "title": "انضم إلى مجتمع Deep Roots",
+    "subtitle": "تواصل مع مجتمع DeepRoots على منصاتك المفضلة.",
+    "links": {
+      "x": {
+        "title": "X",
+        "description": "تابعنا على تويتر للحصول على آخر التحديثات والإعلانات."
+      },
+      "reddit": {
+        "title": "Reddit",
+        "description": "انضم إلى النقاشات واستكشف المواضيع الرائجة في منتدى Reddit الخاص بنا."
+      },
+      "discord": {
+        "title": "Discord",
+        "description": "انضم إلى النقاشات واستكشف المواضيع الرائجة على Discord."
+      },
+      "telegram": {
+        "title": "Telegram",
+        "description": "انضم إلى مجموعة التليجرام الخاصة بنا للدردشة مع المجتمع في الوقت الفعلي."
+      },
+      "tikTok": {
+        "title": "TikTok",
+        "description": "شاهد أحدث مقاطع الفيديو القصيرة والمحتوى الإبداعي الخاص بنا."
+      },
+      "youTube": {
+        "title": "YouTube",
+        "description": "انضم إلى مجتمع اليوتيوب حيث نشارك معلومات حول نظام Deep Roots البيئي."
+      }
+    }
+  }
+}

@@ -9,7 +9,7 @@ const Hero = () => {
     <>
       <main
         id="home"
-        className=" pt-[70px] md:pt-[88px] lg:pt-[95px] dark:bg-primary-dark dark:text-white flex justify-center z-10 relative flex-col lg:scale-x-105 items-center"
+        className=" pt-[70px] px-8 md:pt-[88px] lg:pt-[95px] dark:bg-primary-dark dark:text-white flex justify-center z-10 relative flex-col lg:scale-x-105 items-center"
       >
         <div className="w-full max-w-[1200px] py-10 md:py-20  px-3">
           <h2 className="text-3xl md:text-6xl font-semibold font-orbitron w-fit text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">

@@ -1,0 +1,47 @@
+{
+  "contactUsHero": {
+    "title_line1": "Let's Talk",
+    "title_line2": "We're Listening",
+    "description": "Whether you're a builder, backer, creator, or just curious — we'd love to hear from you.",
+    "image_alt": "Contact Deep Roots"
+  },
+  "generalContact": {
+    "heading": "Contact Us Anytime",
+    "description": "For support, partnerships, media, or general inquiries:",
+    "email": "hello@deeproots.earth"
+  },
+  "buildersSection": {
+    "heading": "Building Something?",
+    "description": "Planning to launch, integrate, or collaborate? We support creators, communities, and teams across DeWorld.",
+    "cards": {
+      "integration": "dApp Integration",
+      "growth": "Community Growth",
+      "wallet": "Wallet Solutions"
+    }
+  },
+  "contactUsEvents": {
+    "heading": "Want to Meet?",
+    "description": "Join our events and meetups to connect with the community in person or virtually.",
+    "events": {
+      "virtual": {
+        "title": "Virtual Town Halls",
+        "desc": "Monthly updates and AMAs"
+      },
+      "meetups": {
+        "title": "Local Meetups",
+        "desc": "Global community gatherings"
+      },
+      "workshops": {
+        "title": "Builder Workshops",
+        "desc": "Technical deep dives"
+      }
+    },
+    "cta": "Join Events & Meetups"
+  },
+  "cta": {
+    "heading": "This Movement Grows Through Conversation",
+    "description": "Reach out anytime — we're here to connect and collaborate.",
+    "email": "Email Us",
+    "events": "Join Events"
+  }
+}

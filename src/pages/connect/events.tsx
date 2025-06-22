@@ -5,6 +5,8 @@ import EventsHeroSection from '@/components/connect/events_page/EventsHeroSectio
 import EventsIntroSection from '@/components/connect/events_page/EventsIntroSection';
 import EventsRegistrationForm from '@/components/connect/events_page/EventsRegistrationForm';
 import SuccessMessage from '@/components/connect/events_page/SuccessMessage';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const EventsPage = () => {
   const { formData } = useEventForm();
@@ -34,3 +36,14 @@ const EventsPage = () => {
 };
 
 export default EventsPage;
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'en', [
+        'connect/events',
+        'common',
+      ])),
+    },
+  };
+};

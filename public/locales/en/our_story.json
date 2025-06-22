@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "tagline": "Our Story",
+    "title": {
+      "before": "From",
+      "impossible": "Impossible",
+      "middle": "to",
+      "possible": "Possible"
+    },
+    "subtitle": "Seeding intelligence to harvest solutions for tomorrow's challenges.",
+    "box": {
+      "prefix": "We are",
+      "highlight": "Deep Roots",
+      "suffix": "And our story is still being written."
+    },
+    "cta": "Learn More",
+    "imageAlt": "Deep Roots Story"
+  },
+  "vision": {
+    "title": "It Started with a Vision",
+    "p1": "Not to build another blockchain — but to build a world powered by people, not platforms.",
+    "p2": "A world where anyone can own, earn, learn, and create — without asking permission.",
+    "p3": "A world where trust is coded, and value is shared.",
+    "highlight": "We call it DeWorld."
+  },
+  "journey": {
+    "title": "The Journey So Far",
+    "p1": "We began with one mission: make blockchain simple, powerful, and useful in real life.",
+    "p2": "We built tools — not just for developers, but for people.",
+    "p3": "From one token, we grew an ecosystem. From one idea, we formed a movement.",
+    "highlight": "Every product in Deep Roots was designed for one thing: to bring freedom back to everyday technology."
+  },
+  "beliefs": {
+    "title": "What We Believe",
+    "privacy": "Privacy is a right",
+    "ownership": "Ownership is for everyone",
+    "simplicity": "Simplicity is strength",
+    "community": "Communities are more powerful than corporations",
+    "working_web3": "Web3 should work — not just exist"
+  },
+  "products": {
+    "title": "What We're Building",
+    "address": "The Address – A wallet that earns",
+    "telex": "TelexCoin – A DEX that's fair",
+    "rootopia": "RootOpia – A game that rewards loyalty",
+    "innolaunch": "InnoLaunch – A launchpad that funds real ideas",
+    "deworld": "DeWorld – An internet owned by the people",
+    "sharevalue": "ShareValue – Learn & earn Web3 education",
+    "deepassets": "DeepAssets – Real-world asset tokenization",
+    "innofi": "InnoFi – Fund + vote for innovation",
+    "innofarm": "InnoFarm – A Web3 job & talent marketplace",
+    "metafabric": "MetaFabric – Wearable NFT fashion",
+    "givefi": "GiveFi – Blockchain-powered giving",
+    "oceanbazaar": "OceanBazaar – NFT marketplace with true ownership",
+    "saxophone": "Saxophone – Live podcasts and community voice",
+    "rootchat": "RootChat – Private messaging in the decentralized world"
+  },
+  "cta": {
+    "title": "Deep Roots was built to stay. Built to grow.",
+    "description": "From people — to people.\nFrom seed — to system.\nFrom vision — to movement.",
+    "footer": "We're just getting started."
+  }
+}

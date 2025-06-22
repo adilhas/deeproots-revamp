@@ -5,11 +5,13 @@ import React, { useState, useRef, useEffect } from 'react';
 import { DeWorldProductsData } from './DeWorldProductsData';
 import Link from 'next/link';
 import { useThemeContext } from '@/context/ThemeContext';
+import useLocaleDirection from '@/hooks/useLocaleDirection';
 
 const DeWorldAllProducts = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const { isDark } = useThemeContext();
+  const { isArabic } = useLocaleDirection();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -28,12 +30,13 @@ const DeWorldAllProducts = () => {
       </button>
 
       {isOpen && (
-        <div className="absolute p-3 right-0 mt-2 w-[98vw] max-w-[354px] max-h-[400px] overflow-y-auto rounded-3xl bg-white dark:bg-[#1D1D1D] shadow-xl">
+        <div
+          className={`absolute p-3 ${isArabic ? 'left-0' : 'right-0'} mt-2 w-[98vw] max-w-[354px] max-h-[400px] overflow-y-auto rounded-3xl bg-white dark:bg-[#1D1D1D] shadow-xl`}
+        >
           <div
             className="relative overflow-hidden border border-[#E2E8F0] dark:border-[#581C87] rounded-3xl"
             style={{ boxShadow: `0px 4px 4px 0px #581C8763` }}
           >
-            {/* Gradient BG */}
             <div
               className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[300px] rounded-full blur-[324px] opacity-30 pointer-events-none z-0"
               style={{
@@ -42,7 +45,6 @@ const DeWorldAllProducts = () => {
               }}
             ></div>
 
-            {/* Main content */}
             <div className="relative z-10">
               <h3 className="pt-3 px-5 text-lg sm:text-xl text-black dark:text-white font-semibold">
                 DeWorld Ecosystem

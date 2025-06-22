@@ -6,6 +6,8 @@ import UtilitySection from '@/components/academy_page/drc_page/UtilitySection';
 import FoundationSection from '@/components/academy_page/drc_page/FoundationSection';
 import TokenomicsSection from '@/components/academy_page/drc_page/TokenomicsSection';
 import CTASection from '@/components/academy_page/drc_page/CTASection';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { GetStaticProps } from 'next';
 
 const DRCPage = () => {
   return (
@@ -40,3 +42,13 @@ const DRCPage = () => {
 };
 
 export default DRCPage;
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'en', [
+        'academy/drc',
+        'common',
+      ])),
+    },
+  };
+};

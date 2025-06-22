@@ -1,6 +1,9 @@
 import { Shield } from 'lucide-react';
+import { useTranslation } from 'next-i18next';
 
 const CPIntro = () => {
+  const { t } = useTranslation('cookie_policy');
+
   return (
     <section className="bg-white dark:bg-gray-800/50 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm mb-12">
       <div className="flex flex-col md:flex-row gap-8 items-center">
@@ -9,12 +12,10 @@ const CPIntro = () => {
         </div>
         <div>
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-            Our Cookie Policy
+            {t('intro.title')}
           </h2>
           <p className="text-gray-700 dark:text-gray-300">
-            At Deep Roots, we believe in privacy by design — not intrusive
-            tracking. We use cookies sparingly, only where they improve your
-            experience or help us protect the platform.
+            {t('intro.description')}
           </p>
         </div>
       </div>

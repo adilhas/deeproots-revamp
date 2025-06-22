@@ -4,11 +4,14 @@ import React from 'react';
 import DeepRootsCard from './FeatureCard';
 import { useThemeContext } from '@/context/ThemeContext';
 import { useTranslation } from 'react-i18next';
+import useLocaleDirection from '@/hooks/useLocaleDirection';
 
 const WhatIsDeeprootsSection = () => {
   const { isDark } = useThemeContext();
   const { t } = useTranslation('landing_page');
   const deeprootsCardsData = getDeeprootsCards(t);
+  const { lang } = useLocaleDirection();
+  const isArabic = lang === 'ar';
   return (
     <div className="py-16 w-full max-w-[1200px] mx-auto dark:bg-[#161616] bg-[#e8e8e9] ">
       <h2
@@ -17,13 +20,15 @@ const WhatIsDeeprootsSection = () => {
           boxShadow: `0px 6px 20px 0px ${isDark ? '#00000045' : '#0000001F'}`,
         }}
       >
-        {/* What is Deep Roots? */}
         {t('what_is_deeproots_section.title')}
       </h2>
 
-      <div className="relative flex flex-col lg:flex-row items-center justify-center gap-8 mt-8 w-fit mx-auto">
+      <div
+        className={`relative flex flex-col lg:flex-row items-center justify-center gap-8 mt-8 w-fit mx-auto ${
+          isArabic ? 'lg:-translate-x-[60px]' : ''
+        }`}
+      >
         <div className="text-4xl font-orbitron text-[#4B5563] dark:text-[#F8FAFC] whitespace-nowrap">
-          {/* From World */}
           {t('what_is_deeproots_section.from_world')}
         </div>
 
@@ -37,7 +42,6 @@ const WhatIsDeeprootsSection = () => {
         </div>
 
         <div className="text-4xl font-orbitron font-[600] text-transparent whitespace-nowrap bg-gradient-to-r from-gradient-from-light to-gradient-to-light dark:from-gradient-from dark:to-gradient-to bg-clip-text">
-          {/* To DeWorld */}
           {t('what_is_deeproots_section.to_deworld')}
         </div>
       </div>

@@ -1,6 +1,8 @@
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 const SmartContractHero = () => {
+  const { t } = useTranslation('lab/smart_contract');
   return (
     <div className="mb-16 px-2 sm:px-6 lg:px-8">
       <div className="flex flex-col lg:flex-row items-center gap-10">
@@ -20,14 +22,14 @@ const SmartContractHero = () => {
         {/* Text */}
         <div className="w-full lg:w-1/2 text-center lg:text-left">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] mb-6 leading-tight">
-            We Are the Logic. We Are the Trust.
+            {t('hero.title1')} <br />
+            {t('hero.title2')}
           </h1>
           <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-3xl mx-auto lg:mx-0">
-            In Deep Roots, smart contracts are self-executing agreements of
-            trust — designed to protect, empower, and scale.
+            {t('hero.description')}
           </p>
           <button className="bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] text-white font-bold py-3 px-8 rounded-full text-lg shadow-md hover:shadow-lg transition-all">
-            Explore Contracts
+            {t('hero.button')}
           </button>
         </div>
       </div>

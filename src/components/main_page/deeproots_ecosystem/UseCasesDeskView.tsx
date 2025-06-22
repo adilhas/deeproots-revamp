@@ -6,11 +6,14 @@ import Image from 'next/image';
 import RightCurveShape from './RightCurveShape';
 import { Data1, Data2 } from '@/constants/dRCUsecasesData';
 import { useTranslation } from 'react-i18next';
+import useLocaleDirection from '@/hooks/useLocaleDirection';
 
 const UseCasesDeskView = () => {
   const { isDark } = useThemeContext();
   const { t } = useTranslation('landing_page');
   const bgColor = isDark ? '#242424' : '#CECECE';
+
+  const { isArabic } = useLocaleDirection();
 
   return (
     <div className="my-8 relative">
@@ -25,7 +28,9 @@ const UseCasesDeskView = () => {
       <div className="flex flex-row w-full justify-between items-center lg:items-start relative z-10 gap-6">
         <div className="relative z-10">
           <ListBlock items={Data1} />
-          <div className="absolute bottom-[-1px] right-[-76px] xl:right-[-79px] w-20 h-20 z-20">
+          <div
+            className={`absolute bottom-[-1px] ${isArabic ? 'left-[-76px] xl:left-[-79px] scale-x-[-1]' : 'right-[-76px] xl:right-[-79px]'} w-20 h-20 z-20`}
+          >
             <LeftCurvedShape width="100%" height="100%" color={bgColor} />
           </div>
         </div>
@@ -41,7 +46,9 @@ const UseCasesDeskView = () => {
 
         <div className="relative z-10">
           <ListBlock items={Data2} />
-          <div className="absolute bottom-[-1px] right-[235px] xl:right-[251px] w-20 h-20 z-20">
+          <div
+            className={`absolute bottom-[-1px] ${isArabic ? 'left-[235px] xl:left-[251px] scale-x-[-1]' : 'right-[235px] xl:right-[251px]'} w-20 h-20 z-20`}
+          >
             <RightCurveShape width="100%" height="100%" color={bgColor} />
           </div>
         </div>

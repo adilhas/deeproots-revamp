@@ -1,14 +1,35 @@
-import { Cookie } from 'lucide-react';
+import { Cookie, Lock, Settings, Shield } from 'lucide-react';
 import React from 'react';
-import { cookieUses } from './data';
+import { useTranslation } from 'next-i18next';
 
 const CookieUses = () => {
+  const { t } = useTranslation('cookie_policy');
+
+  const cookieUses = [
+    {
+      icon: <Settings className="w-6 h-6 text-[#0085a8]" />,
+      text: t('uses.preference'),
+    },
+    {
+      icon: <Lock className="w-6 h-6 text-[#ad1aaf]" />,
+      text: t('uses.session'),
+    },
+    {
+      icon: <Shield className="w-6 h-6 text-[#0085a8]" />,
+      text: t('uses.performance'),
+    },
+    {
+      icon: <Cookie className="w-6 h-6 text-[#ad1aaf]" />,
+      text: t('uses.navigation'),
+    },
+  ];
+
   return (
     <section className="mb-12">
       <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 flex items-center">
         <Cookie className="w-8 h-8 text-[#0085a8] mr-3" />
         <span className="bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] text-transparent bg-clip-text">
-          What We Use Cookies For
+          {t('uses.title')}
         </span>
       </h2>
       <div className="grid md:grid-cols-2 gap-6">

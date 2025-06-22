@@ -1,0 +1,46 @@
+{
+  "title": {
+    "line1": "Full Seat Of",
+    "line2": "DeepRoots Foundation"
+  },
+  "countdown": {
+    "heading": "Seeding Event Starting soon.",
+    "description": "Be the first of 20 to earn Full seat in the Deep Roots Ecosystem. This is a one time opportunity to become a long-term Foundation Member",
+    "label": "Starting In:"
+  },
+  "benefits-title": "Benefits",
+  "desk-benefits": {
+    "col1": [
+      "Earn from each project built on Deeproots Blockchain.",
+      "Earn 12% annually as a full seat founder.",
+      "Seats are limited and on-chain, tied to your identity.",
+      "Full referral system for 365 days."
+    ],
+    "col2": [
+      "Full access to the entire ecosystem.",
+      "Legacy and prestige.",
+      "Access GameFi weekly and daily rewards with the $1M prize pool."
+    ],
+    "col3": [
+      "Get full access to the AI.",
+      "Only full seat founders can invite users.",
+      "Decide DeepRoots' future and access any innovative project pre-launch."
+    ]
+  },
+  "mobile_benefits": {
+    "top": [
+      "Earn from each project built on Deeproots Blockchain.",
+      "Earn 12% annually as a full seat founder.",
+      "Seats are limited and on-chain, tied to your identity.",
+      "Full referral system for 365 days.",
+      "Full access to the entire ecosystem"
+    ],
+    "bottom": [
+      "Legacy and prestige.",
+      "Access GameFi weekly and daily rewards with the $1M prize pool.",
+      "Get full access to the AI.",
+      "Only full seat founders can invite users.",
+      "Decide DeepRoots' future and access any innovative project pre-launch."
+    ]
+  }
+}

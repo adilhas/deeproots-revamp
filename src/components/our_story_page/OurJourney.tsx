@@ -1,32 +1,30 @@
+import useLocaleDirection from '@/hooks/useLocaleDirection';
 import { Globe } from 'lucide-react';
+import { useTranslation } from 'next-i18next';
 
 const OurJourney = () => {
+  const { t } = useTranslation('our_story');
+  const { isArabic } = useLocaleDirection();
+
   return (
     <section className="mb-24">
-      <div className="flex flex-col md:flex-row gap-12 items-center">
+      <div
+        className={`flex flex-col gap-12 items-center ${isArabic ? 'md:flex-row-reverse' : 'md:flex-row'}`}
+      >
         <div className="md:order-2 flex-shrink-0 bg-[#ad1aaf]/10 p-6 rounded-2xl">
           <Globe className="w-12 h-12 text-[#ad1aaf]" />
         </div>
-        <div className="md:order-1">
+        <div className="md:order-1 flex-1">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
             <span className="bg-gradient-to-r from-[#ad1aaf] to-[#0085a8] text-transparent bg-clip-text">
-              The Journey So Far
+              {t('journey.title')}
             </span>
           </h2>
           <div className="space-y-4 text-gray-700 dark:text-gray-300 text-lg">
-            <p>
-              We began with one mission: make blockchain simple, powerful, and
-              useful in real life.
-            </p>
-            <p>We built tools — not just for developers, but for people.</p>
-            <p>
-              From one token, we grew an ecosystem. From one idea, we formed a
-              movement.
-            </p>
-            <p className="font-bold">
-              Every product in Deep Roots was designed for one thing: to bring
-              freedom back to everyday technology.
-            </p>
+            <p>{t('journey.p1')}</p>
+            <p>{t('journey.p2')}</p>
+            <p>{t('journey.p3')}</p>
+            <p className="font-bold">{t('journey.highlight')}</p>
           </div>
         </div>
       </div>

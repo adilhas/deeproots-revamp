@@ -6,6 +6,8 @@ import OurJourney from '@/components/our_story_page/OurJourney';
 import OurBeliefs from '@/components/our_story_page/OurBeliefs';
 import OurProducts from '@/components/our_story_page/OurProducts';
 import OurStoryCTA from '@/components/our_story_page/OurStoryCTA';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const StoryPage = () => {
   return (
@@ -33,3 +35,13 @@ const StoryPage = () => {
 };
 
 export default StoryPage;
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'en', [
+        'our_story',
+        'common',
+      ])),
+    },
+  };
+};

@@ -1,7 +1,10 @@
 import { Settings } from 'lucide-react';
-import { drcUtilities } from './constant';
+import { getDrcUtilities } from './constant';
+import { useTranslation } from 'react-i18next';
 
 const UtilitySection = () => {
+  const { t } = useTranslation('academy/drc');
+  const drcUtilities = getDrcUtilities(t);
   return (
     <section className="bg-gray-100 dark:bg-gray-800/50 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-gray-300 dark:border-gray-700 shadow-xl">
       <div className="flex flex-col sm:flex-row items-start mb-6">
@@ -9,13 +12,12 @@ const UtilitySection = () => {
           <Settings className="w-8 h-8 text-blue-600 dark:text-blue-400" />
         </div>
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-1">
-          Designed for Purpose, Not Pump
+          {t('utilities.title')}
         </h2>
       </div>
       <div className="pl-0 sm:pl-14">
         <p className="text-gray-700 dark:text-gray-300 mb-6 text-base sm:text-lg leading-relaxed">
-          dRC isn&apos;t just a coin — it&apos;s a complete financial engine for
-          a decentralized world with multiple utilities:
+          {t('utilities.title')}
         </p>
         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {drcUtilities.map((item) => (

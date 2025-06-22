@@ -9,87 +9,63 @@ import {
   Rocket,
   Gift,
   Mic,
-  Code,
 } from 'lucide-react';
-
-export const products = [
+import { TFunction } from 'next-i18next';
+export const getProductData = (t: TFunction) => [
   {
     icon: <CircleDollarSign className="w-6 h-6" />,
-    name: 'The Address – A wallet that earns',
+    name: t('products.address'),
   },
   {
     icon: <Globe className="w-6 h-6" />,
-    name: "TelexCoin – A DEX that's fair",
+    name: t('products.telex'),
   },
   {
     icon: <Gamepad className="w-6 h-6" />,
-    name: 'RootOpia – A game that rewards loyalty',
+    name: t('products.rootopia'),
   },
   {
     icon: <Rocket className="w-6 h-6" />,
-    name: 'InnoLaunch – A launchpad that funds real ideas',
+    name: t('products.innolaunch'),
   },
   {
     icon: <Globe className="w-6 h-6" />,
-    name: 'DeWorld – An internet owned by the people',
+    name: t('products.deworld'),
   },
   {
     icon: <BookOpen className="w-6 h-6" />,
-    name: 'ShareValue – Learn & earn Web3 education',
+    name: t('products.sharevalue'),
   },
   {
     icon: <CircleDollarSign className="w-6 h-6" />,
-    name: 'DeepAssets – Real-world asset tokenization',
+    name: t('products.deepassets'),
   },
   {
     icon: <Zap className="w-6 h-6" />,
-    name: 'InnoFi – Fund + vote for innovation',
+    name: t('products.innofi'),
   },
   {
     icon: <Users className="w-6 h-6" />,
-    name: 'InnoFarm – A Web3 job & talent marketplace',
+    name: t('products.innofarm'),
   },
   {
     icon: <Users className="w-6 h-6" />,
-    name: 'MetaFabric – Wearable NFT fashion',
+    name: t('products.metafabric'),
   },
   {
     icon: <Gift className="w-6 h-6" />,
-    name: 'GiveFi – Blockchain-powered giving',
+    name: t('products.givefi'),
   },
   {
     icon: <Globe className="w-6 h-6" />,
-    name: 'OceanBazaar – NFT marketplace with true ownership',
+    name: t('products.oceanbazaar'),
   },
   {
     icon: <Mic className="w-6 h-6" />,
-    name: 'Saxophone – Live podcasts and community voice',
+    name: t('products.saxophone'),
   },
   {
     icon: <Lock className="w-6 h-6" />,
-    name: 'RootChat – Private messaging in the decentralized world',
-  },
-];
-
-export const ourBelief = [
-  {
-    icon: <Lock className="w-8 h-8 text-[#0085a8]" />,
-    text: 'Privacy is a right',
-  },
-  {
-    icon: <Users className="w-8 h-8 text-[#ad1aaf]" />,
-    text: 'Ownership is for everyone',
-  },
-  {
-    icon: <Zap className="w-8 h-8 text-[#0085a8]" />,
-    text: 'Simplicity is strength',
-  },
-  {
-    icon: <Users className="w-8 h-8 text-[#ad1aaf]" />,
-    text: 'Communities are more powerful than corporations',
-  },
-  {
-    icon: <Code className="w-8 h-8 text-[#0085a8]" />,
-    text: 'Web3 should work — not just exist',
+    name: t('products.rootchat'),
   },
 ];

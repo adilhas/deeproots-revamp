@@ -1,0 +1,23 @@
+{
+  "learnMore": {
+    "title": "Learn More",
+    "topics": [
+      {
+        "name": "What is Deeproots?",
+        "description": "We Launched Deeproots to provide a all in one solution on the first dynamic blockchain"
+      },
+      {
+        "name": "What is dRC?",
+        "description": "The dRC token powers the DeepRoots ecosystem. Its the backbone of finance, security and structure"
+      },
+      {
+        "name": "Gas Fees on dRC",
+        "description": "In Deep Roots, gas fees aren't a barrier — they're a gateway to affordable blockchain access."
+      },
+      {
+        "name": "What is Deeproots?",
+        "description": "We Launched Deeproots to provide a all in one solution on the first dynamic blockchain"
+      }
+    ]
+  }
+}

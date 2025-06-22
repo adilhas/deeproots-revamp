@@ -1,0 +1,38 @@
+{
+  "network": {
+    "hero": {
+      "title": "DeWorld Networks",
+      "description": "Two complementary layers powering the ecosystem"
+    },
+    "publicNetwork": {
+      "title": "Public Network",
+      "subtitle": "For users, creators, and open access",
+      "description": "This is the main blockchain layer where people interact, create, and earn.",
+      "builtFor": "Built for:",
+      "footer": "Open. Transparent. Made for the world.",
+      "features": [
+        "Everyday users (wallets, staking, GameFi, NFTs)",
+        "Creators launching tokens, games, or digital assets",
+        "Projects seeking visibility and adoption",
+        "Seamless onboarding without technical barriers"
+      ]
+    },
+    "privateNetwork": {
+      "title": "Private Network",
+      "subtitle": "For teams, builders, and long-term protection",
+      "description": "This is the infrastructure layer supporting innovation, compliance, and governance.",
+      "builtFor": "Built for:",
+      "features": [
+        "Project teams managing smart contracts and token logic",
+        "Company admins using compliance tools",
+        "Secure testing and audit environments",
+        "Identity systems before going public"
+      ],
+      "footer": "Protected. Controlled. Built for longevity."
+    },
+    "cta": {
+      "title": "Two Networks, One Ecosystem",
+      "paragraph": " Whether building publicly or privately, you&apos;re part of the same growing DeWorld."
+    }
+  }
+}

@@ -4,6 +4,8 @@ import DeworldNetworkHero from '@/components/deworld/deworld_network_page/Deworl
 import PublicNetwork from '@/components/deworld/deworld_network_page/PublicNetwork';
 import PrivateNetwork from '@/components/deworld/deworld_network_page/PrivateNetwork';
 import DeworldNetworkCTA from '@/components/deworld/deworld_network_page/DeworldNetworkCTA';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const NetworkPage = () => {
   return (
@@ -34,3 +36,13 @@ const NetworkPage = () => {
 };
 
 export default NetworkPage;
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'en', [
+        'lab/network',
+        'common',
+      ])),
+    },
+  };
+};

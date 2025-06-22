@@ -1,12 +1,16 @@
-import { menuSection } from '@/constants/sectionData';
+import { useTranslation } from 'react-i18next';
 import { MenuItem, MenuSection } from './types';
 import Link from 'next/link';
+import { getMenuSectionData } from './headerMenuData';
 
 type Props = {
   activeMenu: string | null;
 };
 
 export default function Submenu({ activeMenu }: Props) {
+  const { t } = useTranslation('common');
+  const menuSection = getMenuSectionData(t);
+
   const current = menuSection.find(
     (item: MenuSection) => item.name === activeMenu
   );

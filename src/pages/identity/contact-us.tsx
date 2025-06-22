@@ -5,6 +5,8 @@ import GeneralContact from '@/components/connect/contact_us_page/GeneralContact'
 import BuildersSection from '@/components/connect/contact_us_page/BuildersSection';
 import ContactUsEventsSection from '@/components/connect/contact_us_page/ContactUsEventsSection';
 import ContactUsCTA from '@/components/connect/contact_us_page/ContactUsCTA';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const ContactPage = () => {
   return (
@@ -34,3 +36,13 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'en', [
+        'identity/contact_us',
+        'common',
+      ])),
+    },
+  };
+};

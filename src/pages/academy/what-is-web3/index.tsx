@@ -9,8 +9,10 @@ import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Image from 'next/image';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Web3Page = () => {
+  const { t } = useTranslation('academy/web3');
   return (
     <AppLayout className="bg-white dark:bg-[#303030] text-on-primary dark:text-on-primary-dark">
       <section className="min-h-screen">
@@ -18,16 +20,18 @@ const Web3Page = () => {
           <div className="flex flex-row justify-start gap-1 my-10 text-md items-center text-[#737373] dark:text-[#F1F5F9]">
             <Home className="w-5 h-5" />
             <ChevronRight className="w-4 h-5" />
-            <div>Learn</div>
+            <div>{t('web3.breadcrumb.learn')}</div>
             <ChevronRight className="w-4 h-5" />
-            <div className="text-[#A855F7] font-semibold">What is web3?</div>
+            <div className="text-[#A855F7] font-semibold">
+              {t('web3.breadcrumb.title')}
+            </div>
           </div>
           <div className="flex flex-row items-start gap-2">
             <h1 className="text-4xl font-orbitron font-semibold">
-              What is Web3?
+              {t('web3.header.title')}
             </h1>
             <div className="badge badge-outline bg-[#EEF4FF] border-[#818CF8] text-[#3538CD] rounded-3xl text-xs">
-              Basic
+              {t('web3.header.badge')}
             </div>
           </div>
           <div className="w-full relative min-h-[262px] my-4">
@@ -39,22 +43,14 @@ const Web3Page = () => {
             />
           </div>
           <div className="my-20">
-            <h2 className="text-3xl font-semibold my-4">Introduction</h2>
+            <h2 className="text-3xl font-semibold my-4">
+              {t('web3.introduction.title')}
+            </h2>
             <p className="my-4 text-[#737373] dark:text-[#F1F5F9]">
-              The internet we know today was shaped by centralized companies.
-              They own the data, control the platforms, and dictate the rules.
-              Web3 is the shift away from that control toward a decentralized,
-              user-owned internet. Web3 is not just a new technology. It’s a new
-              internet model built on blockchain, governed by users, and
-              designed for open participation.
+              {t('web3.introduction.paragraph1')}
             </p>
             <p className="my-4 text-[#737373] dark:text-[#F1F5F9]">
-              The internet we know today was shaped by centralized companies.
-              They own the data, control the platforms, and dictate the rules.
-              Web3 is the shift away from that control toward a decentralized,
-              user-owned internet. Web3 is not just a new technology. It’s a new
-              internet model built on blockchain, governed by users, and
-              designed for open participation.
+              {t('web3.introduction.paragraph2')}
             </p>
           </div>
           <div>
@@ -63,8 +59,7 @@ const Web3Page = () => {
             <WhyWeb3Matters />
           </div>
           <div className="text-2xl max-w-[530px] w-fit mx-auto bg-gradient-to-r from-gradient-from to-gradient-to text-transparent bg-clip-text text-center font-bold font-orbitron">
-            Web3 puts power in the hands of users and Deep Roots is building the
-            foundation to make it real.
+            {t('web3.conclusion.highlight')}
           </div>
         </div>
         <LearnMore />
@@ -78,7 +73,11 @@ export default Web3Page;
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? 'en', ['common'])),
+      ...(await serverSideTranslations(locale ?? 'en', [
+        'common',
+        'learn_more',
+        'academy/web3',
+      ])),
     },
   };
 };

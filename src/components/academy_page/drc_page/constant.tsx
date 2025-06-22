@@ -6,36 +6,37 @@ import {
   Gamepad,
   Image as ImageIcon,
 } from 'lucide-react';
+import { TFunction } from 'i18next';
 
-export const drcUtilities = [
+export const getDrcUtilities = (t: TFunction) => [
   {
     icon: <Zap className="w-6 h-6 text-blue-600 dark:text-blue-400" />,
-    title: 'Gas for the Chain',
-    desc: 'Every smart contract, DApp, or token transfer runs on dRC.',
+    title: t('utilities.items.0.title'),
+    desc: t('utilities.items.0.desc'),
   },
   {
     icon: <Coins className="w-6 h-6 text-yellow-600 dark:text-yellow-400" />,
-    title: 'Staking & Seeding',
-    desc: 'Earn 12% APY, unlock Foundation rewards, and fuel the ecosystem.',
+    title: t('utilities.items.1.title'),
+    desc: t('utilities.items.1.desc'),
   },
   {
     icon: <Vote className="w-6 h-6 text-purple-600 dark:text-purple-400" />,
-    title: 'Governance',
-    desc: 'Vote on major decisions, upgrades, and platform initiatives.',
+    title: t('utilities.items.2.title'),
+    desc: t('utilities.items.2.desc'),
   },
   {
     icon: <Network className="w-6 h-6 text-green-600 dark:text-green-400" />,
-    title: 'Referral System',
-    desc: 'Multi-level reward trees designed for mass adoption.',
+    title: t('utilities.items.3.title'),
+    desc: t('utilities.items.3.desc'),
   },
   {
     icon: <Gamepad className="w-6 h-6 text-red-600 dark:text-red-400" />,
-    title: 'GameFi Utility',
-    desc: 'RootOpia and other products use dRC as core in-game currency.',
+    title: t('utilities.items.4.title'),
+    desc: t('utilities.items.4.desc'),
   },
   {
     icon: <ImageIcon className="w-6 h-6 text-pink-600 dark:text-pink-400" />,
-    title: 'NFT Marketplace',
-    desc: 'Buy, sell, and trade NFTs directly with dRC.',
+    title: t('utilities.items.5.title'),
+    desc: t('utilities.items.5.desc'),
   },
 ];

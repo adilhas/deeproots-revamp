@@ -1,0 +1,86 @@
+{
+  "web3": {
+    "breadcrumb": {
+      "learn": "Learn",
+      "title": "What is web3?"
+    },
+    "header": {
+      "title": "What is Web3?",
+      "badge": "Basic"
+    },
+    "introduction": {
+      "title": "Introduction",
+      "paragraph1": "The internet we know today was shaped by centralized companies. They own the data, control the platforms, and dictate the rules. Web3 is the shift away from that control toward a decentralized, user-owned internet. Web3 is not just a new technology. It’s a new internet model built on blockchain, governed by users, and designed for open participation.",
+      "paragraph2": "The internet we know today was shaped by centralized companies. They own the data, control the platforms, and dictate the rules. Web3 is the shift away from that control toward a decentralized, user-owned internet. Web3 is not just a new technology. It’s a new internet model built on blockchain, governed by users, and designed for open participation."
+    },
+    "conclusion": {
+      "highlight": "Web3 puts power in the hands of users and Deep Roots is building the foundation to make it real."
+    },
+    "evolution": {
+      "title": "The Evolution of the Web",
+      "items": [
+        {
+          "title": "Web 1.0",
+          "subtitle": "Read Only",
+          "description": "The early web (1990–2004) was static. You could read, but not interact. Pages were simple, and users were just consumers."
+        },
+        {
+          "title": "Web 2.0",
+          "subtitle": "Read and Write",
+          "description": "Web 2.0 (2004–now) brought platforms like Facebook, YouTube, and Twitter. You could create content but companies owned your data and monetized your activity."
+        },
+        {
+          "title": "Web 3.0",
+          "subtitle": "Read, Write, Own",
+          "description": "Web3 changes the game. Now, users can own their identity, assets, and participation. With wallets, smart contracts, and tokens, the internet becomes open, programmable, and user-driven."
+        }
+      ]
+    },
+    "principles": {
+      "title": "Core Principles of Web3",
+      "items": [
+        {
+          "title": "Decentralization",
+          "description": "No central authority. Control is shared across nodes and smart contracts."
+        },
+        {
+          "title": "Permission",
+          "description": "Anyone can participate. No approvals, no gatekeepers."
+        },
+        {
+          "title": "Trustless",
+          "description": "Code replaces middlemen. Smart contracts handle logic and security."
+        },
+        {
+          "title": "Ownership",
+          "description": "Your tokens, your NFTs, your identity is truly yours, portable and protected."
+        },
+        {
+          "title": "Native Payment",
+          "description": "Send and receive value with crypto, no banks required."
+        }
+      ]
+    },
+    "whyWeb3": {
+      "title": "Why Web3 Matters",
+      "items": [
+        {
+          "title": "You own your data and assets",
+          "description": "not the platform."
+        },
+        {
+          "title": "You earn and govern",
+          "description": "not just use"
+        },
+        {
+          "title": "You participate globally",
+          "description": "no borders, no banks, no bias."
+        },
+        {
+          "title": "You build and migrate freely",
+          "description": "your identity moves with you"
+        }
+      ]
+    }
+  }
+}

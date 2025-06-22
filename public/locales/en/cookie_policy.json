@@ -1,0 +1,40 @@
+{
+  "hero": {
+    "title": "Simple, Transparent, and Respectful",
+    "imageAlt": "Cookie Policy - Deep Roots"
+  },
+  "intro": {
+    "title": "Our Cookie Policy",
+    "description": "At Deep Roots, we believe in privacy by design — not intrusive tracking. We use cookies sparingly, only where they improve your experience or help us protect the platform."
+  },
+  "uses": {
+    "title": "What We Use Cookies For",
+    "preference": "Remember your preferences (like dark mode or language)",
+    "session": "Secure your session if you log in",
+    "performance": "Understand site performance (basic analytics, privacy-respecting)",
+    "navigation": "Simplify navigation across DeWorld products"
+  },
+  "donts": {
+    "title": "What We Never Do",
+    "noMarketingCookies": "No third-party marketing cookies",
+    "noDataResale": "No data resale or behavioral tracking",
+    "noAdsOrProfiling": "No personalized ads or invasive profiling"
+  },
+  "control": {
+    "title": "Your Control",
+    "subtitle": "You can manage cookies in these ways:",
+    "acceptOrDecline": "Accept/decline non-essential cookies anytime",
+    "clearOrBlock": "Clear or block cookies via browser settings",
+    "useRequiredOnly": "Use site with only required cookies"
+  },
+  "commitment": {
+    "title": "Our Commitment",
+    "essentialOnly": "Essential cookies only by default",
+    "consentRequired": "Optional cookies require consent",
+    "dataStays": "All data stays within Deep Roots"
+  },
+  "contact": {
+    "title": "Questions?",
+    "subtitle": "For privacy-related concerns or cookie inquiries:"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "hero": {
+    "line1": "Our Roots Run Deep",
+    "line2": "So Does Our Honor",
+    "description": "Deep Roots is more than a blockchain. It's a movement built on purpose, people, and principles.",
+    "imageAlt": "Deep Roots Code of Honor"
+  },
+  "intro": {
+    "title": "Code of Honor",
+    "description": "The values that guide everything we create, protect, and grow."
+  },
+  "principles_section_title": "What Guides Us",
+  "principles": [
+    {
+      "title": "Respect over ego",
+      "description": "We build with humility. We listen more than we speak."
+    },
+    {
+      "title": "Truth over hype",
+      "description": "We don't chase trends. We commit to real value."
+    },
+    {
+      "title": "Community over control",
+      "description": "Power belongs in the hands of people, not platforms."
+    },
+    {
+      "title": "Transparency over perfection",
+      "description": "We'd rather show progress than pretend polish."
+    },
+    {
+      "title": "Creativity over conformity",
+      "description": "Innovation requires freedom — and bold thinking."
+    },
+    {
+      "title": "Ownership over permission",
+      "description": "Everyone deserves access. Everyone deserves control."
+    },
+    {
+      "title": "Consistency over chaos",
+      "description": "We keep showing up. Even when no one's watching."
+    }
+  ],
+  "pledges": {
+    "title": "Our Pledge",
+    "items": [
+      "We protect user rights.",
+      "We write open code.",
+      "We celebrate collaboration.",
+      "We defend digital freedom."
+    ],
+    "quote": "Honor is not branding. It's behavior.",
+    "subtext": "It's how we treat each other — and what we're willing to defend."
+  },
+  "final_section": {
+    "title": "If You Build Here, You Share This Code",
+    "description": "Anyone who builds on Deep Roots is part of this code. It's not enforced by rules — it's led by example.",
+    "button": "Join the Movement"
+  }
+}

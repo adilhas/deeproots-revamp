@@ -1,7 +1,10 @@
 import { Gem } from 'lucide-react';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 const TokenomicsSection = () => {
+  const { t } = useTranslation('academy/drc');
+  const specs = t('tokenomics.specs', { returnObjects: true }) as string[];
   return (
     <section className="bg-gray-100 dark:bg-gray-800/50 backdrop-blur-sm px-4 sm:px-6 py-8 rounded-2xl border border-gray-300 dark:border-gray-700 shadow-xl">
       <div className="flex flex-col sm:flex-row items-start mb-6">
@@ -9,7 +12,7 @@ const TokenomicsSection = () => {
           <Gem className="w-8 h-8 text-yellow-600 dark:text-yellow-400" />
         </div>
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-          Built for Real Use – Not Just Trading
+          {t('tokenomics.title')}
         </h2>
       </div>
 
@@ -17,17 +20,10 @@ const TokenomicsSection = () => {
         {/* Token Specifications */}
         <div>
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-            Token Specifications:
+            {t('tokenomics.specsTitle')}
           </h3>
           <ul className="space-y-3 text-gray-700 dark:text-gray-300">
-            {[
-              'Total Supply: 100 million',
-              'Distribution Period: 41 years',
-              'Initial Mint: 40%',
-              'Rewards Pool: 60% controlled emission',
-              'Deflationary: No inflation minting',
-              'Ecosystem Integration: 15+ products',
-            ].map((text, index) => (
+            {specs.map((text, index) => (
               <li key={index} className="flex items-start">
                 <span className="bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                   {index + 1}

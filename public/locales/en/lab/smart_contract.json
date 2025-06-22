@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "title": "Smart Contracts - The Code That Powers DeWorld",
+    "description": "Deep Roots smart contracts are self-executing agreements of trust designed to protect, empower, and scale a decentralized world."
+  },
+  "hero": {
+    "title1": "We Are the Logic",
+    "title2": "We Are the Trust",
+    "description": "In Deep Roots, smart contracts are self-executing agreements of trust — designed to protect, empower, and scale.",
+    "button": "Explore Contracts"
+  },
+  "overview": {
+    "title": "Smart Contracts — The Code That Powers DeWorld",
+    "paragraph1": "In Deep Roots, smart contracts aren't just tools. They are self-executing agreements of trust — designed to protect, empower, and scale a decentralized world.",
+    "paragraph2": "Every interaction across the ecosystem is powered by secure, seamless smart contracts — built to serve people, not confuse them."
+  },
+  "highlightsSection": {
+    "title": "What Makes Our Smart Contracts Different?"
+  },
+  "highlights": [
+    {
+      "title": "Modular & Optimized",
+      "description": "Built for speed, low cost, and growth"
+    },
+    {
+      "title": "Flexible & Safe",
+      "description": "Enhanced with layers of protection"
+    },
+    {
+      "title": "User-Centered",
+      "description": "Created to feel simple, not technical"
+    },
+    {
+      "title": "Reward-Driven",
+      "description": "Powering earning, sharing, and growth"
+    },
+    {
+      "title": "Invisible by Intention",
+      "description": "You don't need to see the code"
+    },
+    {
+      "title": "Connected by Design",
+      "description": "Everything works together, effortlessly"
+    }
+  ],
+  "cta": {
+    "title": "Ready to Experience Trustless Logic?",
+    "description": "Discover how our smart contracts can power your decentralized journey.",
+    "button": "Explore Contracts"
+  }
+}

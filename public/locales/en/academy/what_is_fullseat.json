@@ -1,0 +1,80 @@
+{
+  "fullseat": {
+    "breadcrumbs": {
+      "learn": "Learn",
+      "title": "What is Full Seat?"
+    },
+    "heading": {
+      "title": "What is Full Seat?",
+      "badge": "Basic"
+    },
+    "intro": {
+      "description": "Full Seat is your exclusive position in the Deep Roots Foundation where early supporters earn from the entire ecosystem"
+    },
+    "quote": {
+      "strike": "It’s not just access.",
+      "highlight": "It’s ownership."
+    },
+    "limited": {
+      "title": "Why Seats Are Limited",
+      "description": "Only a fixed number of Full Seats exist and not every project uses them. This keeps access ",
+      "emphasis1": "rare, valuable",
+      "emphasis2": "community-first"
+    },
+    "flow": {
+      "step1": "Start with seeding",
+      "step2": "Earn with seeding",
+      "step3": "Own The Movement"
+    },
+    "cta": {
+      "button": "Seed Now"
+    },
+    "features": {
+      "title": "What a Full Seat Gives You",
+      "items": [
+        {
+          "title": "Revenue Share",
+          "description": "Earn a percentage from every new project built on Deep Roots."
+        },
+        {
+          "title": "12% Passive Rewards",
+          "description": "Fixed annual yield from seeding"
+        },
+        {
+          "title": "Referral Rewards",
+          "description": "Earn by inviting others to join the ecosystem"
+        },
+        {
+          "title": "Private Access",
+          "description": "Whitelist spots, early investments, exclusive drops"
+        },
+        {
+          "title": "Governance Power",
+          "description": "Shape platform decisions in the future DAO"
+        },
+        {
+          "title": "RootOpia GameFi Power",
+          "description": "Boosted benefits inside the game world"
+        }
+      ]
+    },
+    "claim": {
+      "title": "How to Claim Your Full Seat",
+      "steps": [
+        "Join the Foundation Seeding Round",
+        "Lock your dRC tokens",
+        "Get assigned a Full Seat with benefits tied to your round"
+      ],
+      "note": "Early rounds offer higher discounts, better rewards, and priority access."
+    },
+    "who": {
+      "title": "Who It’s For",
+      "points": [
+        "Long-term believers in decentralization",
+        "Early adopters of Deep Roots and DeWorld",
+        "Builders, validators, and supporters who grow the ecosystem"
+      ],
+      "cta": "Secure your seat. Shape the future."
+    }
+  }
+}

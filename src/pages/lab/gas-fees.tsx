@@ -3,6 +3,8 @@ import AppLayout from '@/Shared/AppLayout';
 import GasFeesHero from '@/components/academy_page/gas_fees_page/GasFeesHero';
 import GasFeesUitility from '@/components/academy_page/gas_fees_page/GasFeesUitility';
 import GasFeesCTA from '@/components/academy_page/gas_fees_page/GasFeesCTA';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const GasFeesPage = () => {
   return (
@@ -29,3 +31,13 @@ const GasFeesPage = () => {
 };
 
 export default GasFeesPage;
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'en', [
+        'lab/gas_fees',
+        'common',
+      ])),
+    },
+  };
+};

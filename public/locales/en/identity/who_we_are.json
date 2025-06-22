@@ -1,0 +1,68 @@
+{
+  "whoWeAre": {
+    "breadcrumb": {
+      "learn": "Learn",
+      "current": "Who We Are"
+    },
+    "title": "Who We Are",
+    "image_alt": "what is web3",
+    "strike_lines": {
+      "company": "We are not a company.",
+      "brand": "We are not a brand."
+    },
+    "movement": "We are a movement.",
+    "description": "Deep Roots is a decentralized ecosystem powered by blockchain, AI, and the people who believe in building a freer, fairer digital world."
+  },
+  "whatDrivesUs": {
+    "heading": "What Drives Us",
+    "items": [
+      "Freedom over control",
+      "Ownership over permission",
+      "Community over corporations"
+    ],
+    "description": "We believe the internet’s future belongs to its users not platforms. We’re here to build that future, from the ground up."
+  },
+  "whatWeAreBuilding": {
+    "heading": "What We’re Building",
+    "intro": "We’re building an ecosystem of over 20 products all connected by one chain, one token, and one mission:",
+    "items": [
+      {
+        "title": "The Address Wallet",
+        "description": "Web3 gateway"
+      },
+      {
+        "title": "TelexCoin DEX",
+        "description": "on-chain liquidity"
+      },
+      {
+        "title": "Ocean Bazaar",
+        "description": "NFT economy"
+      },
+      {
+        "title": "RootOpia GameFi",
+        "description": "earn by playing and seeding"
+      }
+    ],
+    "extra": {
+      "description": "MetaFabric, GiveFi, InnoLaunch, and more...",
+      "cta": "Explore"
+    }
+  },
+  "whoBuildsIt": {
+    "heading": "Who Builds It",
+    "items": [
+      "Developers, designers, strategists, and creators",
+      "Open-source contributors and full-stack builders",
+      "Backed by community, not VC control",
+      "Global, borderless, and mission-first"
+    ],
+    "footer": "We don’t just build tech. We build tools for generations."
+  },
+  "ourMission": {
+    "title": "From World To DeWorld",
+    "line1": "We call our mission <strong>DeWorld</strong> - the shift from centralized control to a decentralized digital reality.",
+    "line2": "This isn’t a brand project. It’s a root system for the new internet.",
+    "footer": "We seed visions in the earth’s roots and harvest deep solutions for life.",
+    "image_alt": "our mission"
+  }
+}

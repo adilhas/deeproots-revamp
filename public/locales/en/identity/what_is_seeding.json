@@ -1,0 +1,84 @@
+{
+  "breadcrumbs": {
+    "learn": "Learn",
+    "page": "What is Seeding?"
+  },
+  "hero": {
+    "title": "What is Seeding?",
+    "text": "Seeding is the Deep Roots way to grow, not just invest. It’s how users plant value into the ecosystem and earn real rewards in return.",
+    "footer": "From roots to rewards — it all begins with seeding."
+  },
+  "how_works": {
+    "section_title": "How Seeding Works",
+    "items": [
+      {
+        "title": "Grow rewards",
+        "description": "(12% APY or more)"
+      },
+      {
+        "title": "Unlock early access",
+        "description": "to projects and perks"
+      },
+      {
+        "title": "Strengthen the network",
+        "description": "by supporting real growth"
+      }
+    ],
+    "strike_1": "It’s not staking,",
+    "strike_2": "It’s not farming,",
+    "final": "It’s seeding.",
+    "caption": "because this is how DeWorld grows."
+  },
+  "why_matters": {
+    "title": "Why Seeding Matters",
+    "items": [
+      {
+        "title": "Long-Term Alignment",
+        "description": "You're supporting the ecosystem, not just chasing short-term gains."
+      },
+      {
+        "title": "Real Utility",
+        "description": "Seeding connects you to platform launches, Foundation Seats, and in-game power."
+      },
+      {
+        "title": "Low Circulation, High Impact",
+        "description": "Seeding reduces supply pressure while rewarding commitment."
+      }
+    ]
+  },
+  "benefits": {
+    "title": "What You Get When You Seed",
+    "items": [
+      {
+        "title": "12% APY",
+        "description": "Earn 12% APY on More on your Seed.."
+      },
+      {
+        "title": "Referral Boosts",
+        "description": "Earn referral reward, Boosts and bonuses for invites"
+      },
+      {
+        "title": "Access",
+        "description": "Enjoy Exclusive Foundation Seat Access"
+      },
+      {
+        "title": "DAO power",
+        "description": "Gain Future DAO power (Governance + Reputation)"
+      },
+      {
+        "title": "Connection",
+        "description": "Connection to GameFi, Launchpad, and beyond"
+      }
+    ]
+  },
+  "seedingSoon": {
+    "title": "Seeding is Live Soon",
+    "description": "The seeding engine is preparing for launch. When it opens:",
+    "steps": [
+      "Connect your wallet",
+      "Choose your amount and lock time",
+      "Preview your rewards",
+      "Confirm and grow"
+    ]
+  }
+}

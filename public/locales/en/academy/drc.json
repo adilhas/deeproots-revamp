@@ -1,0 +1,74 @@
+{
+  "hero": {
+    "title": "The Pulse of Deep Roots",
+    "description": "dRC isn't just currency—it's the lifeblood of a decentralized economy designed to last generations.",
+    "button": "Get Started with dRC"
+  },
+  "whatIsDrc": {
+    "title": "What is dRC?",
+    "description": "dRC is the native currency of Deep Roots — the foundational layer of DeWorld. It's engineered to power every aspect of the ecosystem with precision and purpose.",
+    "quote": "While others mint for hype, we designed dRC to build for generations. Low supply. High value. Pure utility."
+  },
+  "utilities": {
+    "title": "Designed for Purpose, Not Pump",
+    "description": "dRC isn't just a coin — it's a complete financial engine for a decentralized world with multiple utilities:",
+    "items": [
+      {
+        "title": "Gas for the Chain",
+        "desc": "Every smart contract, DApp, or token transfer runs on dRC."
+      },
+      {
+        "title": "Staking & Seeding",
+        "desc": "Earn 12% APY, unlock Foundation rewards, and fuel the ecosystem."
+      },
+      {
+        "title": "Governance",
+        "desc": "Vote on major decisions, upgrades, and platform initiatives."
+      },
+      {
+        "title": "Referral System",
+        "desc": "Multi-level reward trees designed for mass adoption."
+      },
+      {
+        "title": "GameFi Utility",
+        "desc": "RootOpia and other products use dRC as core in-game currency."
+      },
+      {
+        "title": "NFT Marketplace",
+        "desc": "Buy, sell, and trade NFTs directly with dRC."
+      }
+    ]
+  },
+  "foundation": {
+    "title": "The Foundation of dRC",
+    "description": "Holding dRC means more than just owning tokens—it means owning a stake in the Foundation, the heart of Deep Roots.",
+    "highlight": "Anyone who holds dRC becomes part of the Foundation by default.",
+    "benefitsTitle": "Foundation Benefits:",
+    "benefits": [
+      "High-Yield Passive Rewards",
+      "Launchpad Share Allocation",
+      "Foundation Voting Seats",
+      "Multi-tier Referral Bonuses",
+      "Enhanced GameFi Rewards",
+      "Exclusive Ecosystem Access"
+    ],
+    "finalNote": "Your tokens aren't just coins — they are keys to a powerful earning system and governance framework."
+  },
+  "tokenomics": {
+    "title": "Built for Real Use – Not Just Trading",
+    "specsTitle": "Token Specifications:",
+    "specs": [
+      "Total Supply: 100 million",
+      "Distribution Period: 41 years",
+      "Initial Mint: 40%",
+      "Rewards Pool: 60% controlled emission",
+      "Deflationary: No inflation minting",
+      "Ecosystem Integration: 15+ products"
+    ]
+  },
+  "cta": {
+    "title": "Ready to Join the Future of Finance?",
+    "description": "dRC is more than utility—it’s a movement towards true decentralized ownership and participation.",
+    "button": "Get dRC Now"
+  }
+}

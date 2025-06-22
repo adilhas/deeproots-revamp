@@ -1,0 +1,56 @@
+{
+  "hero": {
+    "title1": "We Are the Builders",
+    "title2": "We Are the Bold",
+    "subtitle": "Where visionaries, designers, writers, and builders unite to turn sparks into systems.",
+    "cta": "Learn About Our Culture"
+  },
+  "features": {
+    "title": "Why It Exists",
+    "unlock": "Unlock Hidden Ideas",
+    "unlock_desc": "Discover solutions already within our team",
+    "cross": "Cross-Functional Teams",
+    "cross_desc": "Form instantly around shared visions",
+    "test": "Test & Learn Fast",
+    "test_desc": "Rapid iteration with real user focus",
+    "spark": "From Spark to System",
+    "spark_desc": "Turn concepts into working demos in 48 hours"
+  },
+  "process": {
+    "title": "What Happens",
+    "step1": {
+      "strong": "One weekend",
+      "text": "with a central challenge theme"
+    },
+    "step2": {
+      "strong": "Teams form organically",
+      "text": "across all disciplines"
+    },
+    "step3": {
+      "strong": "User-focused building",
+      "text": "with working demos"
+    },
+    "step4": {
+      "strong": "Best ideas go live",
+      "text": "in the DeWorld ecosystem"
+    }
+  },
+  "outcome": {
+    "title": "What We’ve Already Built",
+    "game": "Game prototypes",
+    "referral": "Referral systems",
+    "ai": "AI chat modules",
+    "nft": "NFT utilities"
+  },
+  "culture": {
+    "title": "Culture, Not Competition",
+    "subtitle": "This isn't a race. It's a ritual of creativity where anyone can lead, and everyone can learn.",
+    "point1": "Build what you dream.",
+    "point2": "Ship what we believe in."
+  },
+  "cta": {
+    "title": "Join Our Builder's Culture",
+    "subtitle": "Where DeWorld starts from within and spreads to everyone.",
+    "button": "Explore Opportunities"
+  }
+}

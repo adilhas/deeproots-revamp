@@ -1,4 +1,60 @@
 {
+  "header_menu": {
+    "rootAcademy": {
+      "whatIsDeepRoots": "What is Deep Roots?",
+      "whatIsDeepRoots_desc": "Deep Roots is not just a blockchain. It's a movement.",
+      "whatIsFullseat": "What is fullseat?",
+      "whatIsFullseat_desc": "Be the first of 20 to earn Full seat in the Deep Roots Ecosystem.",
+      "whatIsDrc": "What is dRC (Native Currency)?",
+      "whatIsDrc_desc": "The foundational layer of DeWorld",
+      "whitePaper": "White Paper",
+      "whitePaper_desc": "Explore DeWorld's white paper.",
+      "tokenomics": "Tokenomics",
+      "tokenomics_desc": "Explore Tokenomics",
+      "roadmap": "Roadmap",
+      "roadmap_desc": "Explore the roadmap"
+    },
+    "rootlab": {
+      "smartContract": "Smart Contract",
+      "smartContract_desc": "Smart Contracts — The Code That Powers DeWorld",
+      "developerTools": "Developer Tools",
+      "developerTools_desc": "Explore Developer Tools",
+      "gasFee": "Gas Fee",
+      "gasFee_desc": "In Deep Roots, gas fees aren't a barrier — they're a gateway to affordable blockchain access.",
+      "documentation": "Documentation",
+      "documentation_desc": "Explore Documentation"
+    },
+    "deWorld": {
+      "theAddressWallet": "The Address Wallet",
+      "theAddressWallet_desc": "Warp Around Wealth - 21 Layers of Dynamic Finance.",
+      "telexCoin": "TelexCoin",
+      "telexCoin_desc": "Unlock the future of Finance.",
+      "oceanBazaar": "OceanBazaar",
+      "oceanBazaar_desc": "The NFT Marketplace",
+      "rootopia": "Rootopia",
+      "rootopia_desc": "Step into the battle to save the Tree of Life."
+    },
+    "rootIdentity": {
+      "whoWeAre": "Who We Are",
+      "whoWeAre_desc": "We are Deep Roots. And our story is still being written.",
+      "whatIsSeeding": "What is Seeding?",
+      "whatIsSeeding_desc": "Join the core of the movement. This is your chance to claim a Foundation Seat.",
+      "foundationFullSeat": "Foundation Full Seat",
+      "foundationFullSeat_desc": "Seeding Event Starting soon.",
+      "rootScan": "RootScan",
+      "rootScan_desc": "Deep Roots Blockchain Explorer"
+    },
+    "rootConnect": {
+      "socialMedia": "Social Media",
+      "socialMedia_desc": "Be part of the team with creativity and collaboration.",
+      "eventsAndMeetups": "Events & Meetups",
+      "eventsAndMeetups_desc": "Deep Roots events are your chance to connect, learn, and grow with the community.",
+      "volunteerProgram": "Volunteer Program",
+      "volunteerProgram_desc": "Explore Volunteer program",
+      "career": "Career",
+      "career_desc": "Join the DeepRoots journey and help build the decentralized future."
+    }
+  },
   "social": {
     "title": "Join the Deep Roots Community",
     "subtitle": "Engage with the DeepRoots community on your favorite platforms.",

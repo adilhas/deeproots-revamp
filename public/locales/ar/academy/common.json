@@ -1,0 +1,66 @@
+{
+  "academy": {
+    "pageTitle": "الأكاديمية",
+    "metaDescription": "الوصف",
+    "heading": "أتقن <br />نظام DeepRoots البيئي",
+    "subheading": "من أساسيات DeepRoots إلى إتقانها",
+    "searchPlaceholder": "ابحث عن موضوع",
+    "filterLabel": "تصفية",
+    "sections": {
+      "new": {
+        "title": "جديد على DeepRoots؟",
+        "description": "استكشف المعرفة الأساسية حول نظام DeepRoots البيئي. تعرف على حلولنا وكيف نجعل Web3 يحل المشاكل الواقعية",
+        "topics": [
+          {
+            "name": "ما هو DeepRoots؟",
+            "description": "أطلقنا DeepRoots لتوفير حل شامل على أول سلسلة كتل ديناميكية"
+          },
+          {
+            "name": "ما هو dRC؟",
+            "description": "رمز dRC يغذي نظام DeepRoots. وهو العمود الفقري للتمويل والأمان والبنية"
+          },
+          {
+            "name": "رسوم الغاز على dRC",
+            "description": "في DeepRoots، رسوم الغاز ليست عائقًا — بل هي بوابة للوصول الميسور إلى البلوكشين"
+          }
+        ]
+      },
+      "build": {
+        "title": "البناء على DeepRoots؟",
+        "description": "ابنِ على DeepRoot: العقود الذكية، SDK، واجهات برمجة التطبيقات. تعرف على كيفية عمل DeepRoot من البنية التحتية.",
+        "topics": [
+          {
+            "name": "شبكات DeWorld",
+            "description": "شبكتان، نظام بيئي واحد. سواء كنت تبني علنًا أو خاصًا، فأنت جزء من DeWorld المتنامي نفسه"
+          },
+          {
+            "name": "العقود الذكية",
+            "description": "في DeepRoots، العقود الذكية ليست مجرد أدوات. إنها اتفاقيات ذاتية التنفيذ مصممة للحماية والتمكين والتوسع في عالم لامركزي"
+          },
+          {
+            "name": "ما هو DeepRoots؟",
+            "description": "أطلقنا DeepRoots لتوفير حل شامل على أول سلسلة كتل ديناميكية"
+          }
+        ]
+      },
+      "creators": {
+        "title": "المبدعون",
+        "description": "تعلم كيف تصبح مبدعًا في نظام DeepRoots. أطلق NFTs على Ocean Bazaar، وابنِ مجتمعك، واختبر الفرص للمبدعين",
+        "topics": [
+          {
+            "name": "ما هو DeepRoots؟",
+            "description": "أطلقنا DeepRoots لتوفير حل شامل على أول سلسلة كتل ديناميكية"
+          },
+          {
+            "name": "ما هو DeepRoots؟",
+            "description": "أطلقنا DeepRoots لتوفير حل شامل على أول سلسلة كتل ديناميكية"
+          },
+          {
+            "name": "ما هو DeepRoots؟",
+            "description": "أطلقنا DeepRoots لتوفير حل شامل على أول سلسلة كتل ديناميكية"
+          }
+        ]
+      }
+    }
+  }
+}

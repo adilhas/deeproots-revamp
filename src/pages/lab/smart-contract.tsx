@@ -4,6 +4,8 @@ import SmartContractHero from '@/components/academy_page/smart_contract_page/Sma
 import SmartContractOverview from '@/components/academy_page/smart_contract_page/SmartContractOverview';
 import SmartContractHighlights from '@/components/academy_page/smart_contract_page/SmartContractHighlights';
 import SmartContractCTA from '@/components/academy_page/smart_contract_page/SmartContractCTA';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const SmartContractsPage = () => {
   return (
@@ -30,3 +32,13 @@ const SmartContractsPage = () => {
 };
 
 export default SmartContractsPage;
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'en', [
+        'lab/smart_contract',
+        'common',
+      ])),
+    },
+  };
+};

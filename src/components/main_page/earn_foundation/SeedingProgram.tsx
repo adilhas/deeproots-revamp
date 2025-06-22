@@ -1,12 +1,14 @@
 import Image from 'next/image';
 import React from 'react';
 import { useTranslation } from 'next-i18next';
+import useLocaleDirection from '@/hooks/useLocaleDirection';
 
 const SeedingProgram = () => {
   const { t } = useTranslation('landing_page');
   const benefits = t('seeding_program.benefits', {
     returnObjects: true,
   }) as string[];
+  useLocaleDirection();
 
   return (
     <div className="py-6 mt-8">

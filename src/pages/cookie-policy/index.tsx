@@ -7,6 +7,8 @@ import CookieDonts from '@/components/cookie_policy_page/CookieDonts';
 import CookieUserControl from '@/components/cookie_policy_page/CookieUserControl';
 import CookieCommitment from '@/components/cookie_policy_page/CookieCommitment';
 import CookieContact from '@/components/cookie_policy_page/CookieContact';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const CookiePolicyPage = () => {
   return (
@@ -35,3 +37,13 @@ const CookiePolicyPage = () => {
 };
 
 export default CookiePolicyPage;
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'en', [
+        'cookie_policy',
+        'common',
+      ])),
+    },
+  };
+};

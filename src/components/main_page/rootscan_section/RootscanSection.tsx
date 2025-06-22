@@ -35,7 +35,7 @@ export default function RootscanSection() {
                 />
               </div>
 
-              <div className="font-orbitron text-xl my-2 lg:text-3xl font-bold text-transparent bg-gradient-to-r md:from-[#F0B100] md:to-[#00C951] from-[#fff] to-[#fff] bg-clip-text">
+              <div className=" w-fit font-orbitron text-xl my-2 lg:text-3xl font-bold text-transparent bg-gradient-to-r md:from-[#F0B100] md:to-[#00C951] from-[#fff] to-[#fff] bg-clip-text">
                 {t('rootscan.subtitle')}
               </div>
             </div>
@@ -59,7 +59,7 @@ export default function RootscanSection() {
               ))}
             </ul>
 
-            <div className="mt-3">
+            <div className="mt-3 w-fit">
               <Link href="https://rootscan.earth" rel="noopener noreferrer">
                 <button className="px-6 hover:scale-105 py-3 text-lg font-medium rounded-full bg-gradient-to-r from-yellow-500 to-green-500 text-black hover:from-yellow-400 hover:to-green-400 transition">
                   {t('rootscan.cta')}

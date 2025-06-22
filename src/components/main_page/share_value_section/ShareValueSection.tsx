@@ -67,7 +67,7 @@ const ShareValueSection = () => {
           </h2>
         </div>
 
-        <div className="xl:w-1/2 xl:ml-24">
+        <div className="xl:w-1/2 mx-8">
           <div className="hidden xl:flex flex-col mb-4">
             <ShareValueHeader />
           </div>

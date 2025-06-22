@@ -8,7 +8,7 @@ const Telexcoin = () => {
   return (
     <main className="py-20 relative bg-[#D1D9D4] dark:bg-primary-dark px-5">
       <div className="max-w-[1200px] mx-auto">
-        <div className="flex justify-center flex-col lg:flex-row rounded-2xl items-center w-full">
+        <div className="flex justify-center  gap-6 flex-col lg:flex-row rounded-2xl items-center w-full">
           {/* Desktop Image */}
           <div className="inline-block w-1/2 ">
             <div className="w-full lg:flex hidden">
@@ -24,7 +24,9 @@ const Telexcoin = () => {
           </div>
 
           {/* Content Section */}
-          <div className="flex justify-center lg:ml-16 items-start  flex-col lg:w-1/2 mx-auto">
+          <div
+            className={`flex justify-center  items-start  flex-col lg:w-1/2 mx-auto`}
+          >
             <div className="mt-6">
               {/* Header */}
               <h1 className="font-extrabold text-2xl  lg:text-start lg:text-4xl  lg:leading-normal bg-gradient-to-r dark:bg-gradient-to-r from-[#0085a8] dark:via-[#ad1] dark:to-amber-400 via-blue-900 to-amber-600 bg-clip-text font-orbitron text-transparent">

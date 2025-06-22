@@ -1,10 +1,12 @@
 import { useThemeContext } from '@/context/ThemeContext';
+import useLocaleDirection from '@/hooks/useLocaleDirection';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 
 export default function CryptoFlowSection() {
   const { isDark } = useThemeContext();
   const { t } = useTranslation('landing_page');
+  const { isArabic } = useLocaleDirection();
   return (
     <section className="p-8 bg-[#D4D4D4] dark:bg-[#121827]">
       <div className="flex flex-col h-fit  xl:flex-row justify-center items-center gap-3 transition-all min-h-[300px] bg-transparent rounded-xl text-[#434343] dark:text-[#E9E9E9]">
@@ -24,7 +26,9 @@ export default function CryptoFlowSection() {
         </div>
 
         {/* Arrow */}
-        <div className="flex items-center justify-center text-4xl text-gray-500 dark:text-gray-400">
+        <div
+          className={`flex items-center justify-center text-4xl text-gray-500 dark:text-gray-400 ${isArabic ? 'scale-x-[-1]' : ''}`}
+        >
           <span className="hidden xl:block">➝</span>
           <span className="block xl:hidden">↓</span>
         </div>
@@ -45,7 +49,9 @@ export default function CryptoFlowSection() {
         </div>
 
         {/* Arrow */}
-        <div className="flex items-center justify-center text-4xl text-gray-500 dark:text-gray-400">
+        <div
+          className={`flex items-center justify-center text-4xl text-gray-500 dark:text-gray-400 ${isArabic ? 'scale-x-[-1]' : ''}`}
+        >
           <span className="hidden xl:block">➝</span>
           <span className="block xl:hidden">↓</span>
         </div>
@@ -56,7 +62,9 @@ export default function CryptoFlowSection() {
         </div>
 
         {/* Arrow */}
-        <div className="flex items-center justify-center text-4xl text-gray-500 dark:text-gray-400">
+        <div
+          className={`flex items-center justify-center text-4xl text-gray-500 dark:text-gray-400 ${isArabic ? 'scale-x-[-1]' : ''}`}
+        >
           <span className="hidden xl:block">➝</span>
           <span className="block xl:hidden">↓</span>
         </div>

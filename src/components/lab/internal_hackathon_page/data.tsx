@@ -44,6 +44,8 @@ export const HackathonFeaturesData: IHackathonFeature[] = [
   },
 ];
 
+// TODO this file to be removed
+
 export const HackathonOutcomeData: IHackathonOutcome[] = [
   {
     icon: <Gamepad2 className="w-5 h-5 text-[#0085a8]" />,

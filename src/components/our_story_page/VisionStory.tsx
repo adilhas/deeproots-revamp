@@ -1,7 +1,10 @@
 import { Leaf } from 'lucide-react';
 import React from 'react';
+import { useTranslation } from 'next-i18next';
 
 const VisionStory = () => {
+  const { t } = useTranslation('our_story');
+
   return (
     <section className="mb-24">
       <div className="flex flex-col md:flex-row gap-12 items-center">
@@ -11,21 +14,15 @@ const VisionStory = () => {
         <div>
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
             <span className="bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] text-transparent bg-clip-text">
-              It Started with a Vision
+              {t('vision.title')}
             </span>
           </h2>
           <div className="space-y-4 text-gray-700 dark:text-gray-300 text-lg">
-            <p>
-              Not to build another blockchain — but to build a world powered by
-              people, not platforms.
-            </p>
-            <p>
-              A world where anyone can own, earn, learn, and create — without
-              asking permission.
-            </p>
-            <p>A world where trust is coded, and value is shared.</p>
+            <p>{t('vision.p1')}</p>
+            <p>{t('vision.p2')}</p>
+            <p>{t('vision.p3')}</p>
             <p className="text-2xl font-bold text-[#0085a8] dark:text-[#00c6ff]">
-              We call it DeWorld.
+              {t('vision.highlight')}
             </p>
           </div>
         </div>

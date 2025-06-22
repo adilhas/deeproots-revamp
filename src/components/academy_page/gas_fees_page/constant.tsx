@@ -13,6 +13,7 @@ import {
   Leaf,
 } from 'lucide-react';
 
+//TODO this file to be removed
 export const UtilityData = [
   {
     icon: <Zap className="w-8 h-8 text-[#0085a8]" />,

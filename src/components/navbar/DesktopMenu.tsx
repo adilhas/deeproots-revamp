@@ -1,12 +1,15 @@
-import { menuSection } from '@/constants/sectionData';
 import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
+import { getMenuSectionData } from './headerMenuData';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   onHover: (menuName: string) => void;
 };
 
 export default function DesktopMenu({ onHover }: Props) {
+  const { t } = useTranslation('common');
+  const menuSection = getMenuSectionData(t);
   return (
     <ul className="hidden xl:flex mx-5 ">
       {menuSection.map((item) => (

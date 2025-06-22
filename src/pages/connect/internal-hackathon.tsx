@@ -7,6 +7,8 @@ import HackathonProcess from '@/components/lab/internal_hackathon_page/Hackathon
 import HackathonOutcome from '@/components/lab/internal_hackathon_page/HackathonOutcome';
 import HackathonCulture from '@/components/lab/internal_hackathon_page/HackathonCulture';
 import HackathonCTA from '@/components/lab/internal_hackathon_page/HackathonCTA';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const HackathonPage = () => {
   return (
@@ -37,3 +39,13 @@ const HackathonPage = () => {
 };
 
 export default HackathonPage;
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'en', [
+        'connect/internal_hackathon',
+        'common',
+      ])),
+    },
+  };
+};

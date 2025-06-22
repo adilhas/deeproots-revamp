@@ -4,7 +4,9 @@ import COHHero from '@/components/code_of_honor/COHHero';
 import COHIntro from '@/components/code_of_honor/COHIntro';
 import COHPrinciple from '@/components/code_of_honor/COHPrinciple';
 import COHPledge from '@/components/code_of_honor/COHPledge';
-import COHFInalSection from '@/components/code_of_honor/COHFInalSection';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import COHFinalSection from '@/components/code_of_honor/COHFinalSection';
 
 const CodeOfHonorPage = () => {
   return (
@@ -22,7 +24,7 @@ const CodeOfHonorPage = () => {
           <COHIntro />
           <COHPrinciple />
           <COHPledge />
-          <COHFInalSection />
+          <COHFinalSection />
         </div>
       </div>
     </AppLayout>
@@ -30,3 +32,13 @@ const CodeOfHonorPage = () => {
 };
 
 export default CodeOfHonorPage;
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'en', [
+        'code_of_honor',
+        'common',
+      ])),
+    },
+  };
+};

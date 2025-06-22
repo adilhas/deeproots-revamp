@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "title1": "Hello, Builder",
+    "title2": "Let's Meet",
+    "subtitle": "From virtual town halls to global gatherings, connect with the people shaping DeWorld."
+  },
+  "intro": {
+    "title": "Events & Meetups",
+    "description": "Big updates. Bold ideas. Real energy. Deep Roots events are your chance to connect, learn, and grow with the community."
+  },
+  "form": {
+    "title": "Get Invited",
+    "description": "Register to receive exclusive invites, early access, and location details for upcoming events.",
+    "fullName": "Full Name",
+    "email": "Email Address",
+    "location": "City / Country",
+    "interestTitle": "Area of Interest:",
+    "interests": {
+      "web3": "Web3 / DeFi",
+      "gamefi": "GameFi / RootOpia",
+      "nfts": "NFTs / OceanBazaar",
+      "governance": "Governance / Foundation",
+      "updates": "General Community Updates"
+    },
+    "earlyAccess": {
+      "title": "Want early access to private events?",
+      "yes": "Yes",
+      "no": "No"
+    },
+    "submit": "Submit & Get Notified",
+    "success-message": {
+      "title": "You're in!",
+      "description": "Thank you for registering! We'll send you exclusive invites and updates for upcoming Deep Roots events."
+    }
+  }
+}

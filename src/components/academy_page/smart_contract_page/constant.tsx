@@ -1,3 +1,4 @@
+// TODO file to be removed
 import { Shield, User, Gift, EyeOff, Link, Zap } from 'lucide-react';
 export const highlights = [
   {

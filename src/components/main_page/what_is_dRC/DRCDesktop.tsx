@@ -5,6 +5,7 @@ import TotalSupply from './TotalSupply';
 import CTAGlowButton from '@/Shared/CTAGlowButton';
 import { useThemeContext } from '@/context/ThemeContext';
 import { useTranslation } from 'react-i18next';
+import useLocaleDirection from '@/hooks/useLocaleDirection';
 
 const DRCDesktop = () => {
   const { isDark } = useThemeContext();
@@ -12,6 +13,7 @@ const DRCDesktop = () => {
   const tokenFeatures: string[] = t('drc.features', {
     returnObjects: true,
   }) as string[];
+  const { isArabic } = useLocaleDirection();
 
   return (
     <div className="relative">
@@ -42,6 +44,7 @@ const DRCDesktop = () => {
           alt="drc token"
           width={250}
           height={250}
+          className={isArabic ? 'translate-x-[13px]' : ''}
         />
       </div>
       <div className="h-[580px] relative">
@@ -53,7 +56,7 @@ const DRCDesktop = () => {
               {t('drc.built_for_use')}
             </div>
             <div className="mt-5">
-              <CTAGlowButton className="text-xl mr-2">
+              <CTAGlowButton className="text-xl mx-2">
                 {/* {t('drc.cta_seed_now')} */}
                 Seed Now
               </CTAGlowButton>
@@ -63,7 +66,9 @@ const DRCDesktop = () => {
             </div>
           </div>
 
-          <div className="flex flex-col justify-center my-2 h-full">
+          <div
+            className={`flex flex-col justify-center my-2 h-full ${isArabic ? 'min-w-[280px]' : ''}`}
+          >
             <ul className="space-y-[23px] h-full justify-start flex flex-col text-center text-2xl font-orbitron text-[#5C5F62] dark:text-[#94A3B8]">
               {tokenFeatures.map((item, index) => (
                 <li
