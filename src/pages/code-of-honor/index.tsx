@@ -6,7 +6,7 @@ import COHPrinciple from '@/components/code_of_honor/COHPrinciple';
 import COHPledge from '@/components/code_of_honor/COHPledge';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import COHFinalSection from '@/components/code_of_honor/COHFinalSection';
+// import COHFinalSection from '@/components/code_of_honor/COHFinalSection';
 
 const CodeOfHonorPage = () => {
   return (
@@ -24,7 +24,7 @@ const CodeOfHonorPage = () => {
           <COHIntro />
           <COHPrinciple />
           <COHPledge />
-          <COHFinalSection />
+          {/* <COHFinalSection /> */}
         </div>
       </div>
     </AppLayout>
