@@ -14,7 +14,7 @@ import { DropdownField } from './DropdownField';
 import {
   defaultVolunteerForm,
   handleVolunteerSelect,
-} from './VolunteerFormUtils';
+} from './volunteerFormUtils';
 
 const VolunteerForm = () => {
   const { t } = useTranslation('connect/volunteer');
