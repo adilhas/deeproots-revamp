@@ -1,15 +1,20 @@
+'use client';
+
 import Image from 'next/image';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const WhatIsDeepRoots = () => {
+  const { t } = useTranslation('academy/about');
+
   return (
     <section className="mb-24 w-full max-w-7xl mx-auto">
       <div className="flex items-center mb-12">
-        <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#0085a8]/20 to-[#ad1aaf]/20 flex items-center justify-center mr-6 shadow-lg">
+        <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#0085a8]/20 to-[#ad1aaf]/20 flex items-center justify-center mx-6 shadow-lg">
           <span className="text-4xl">🌍</span>
         </div>
         <h2 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#0085a8] via-[#0085a8] to-[#ad1aaf]">
-          What is Deep Roots?
+          {t('what_is_deep_roots.title')}
         </h2>
       </div>
 
@@ -18,26 +23,20 @@ const WhatIsDeepRoots = () => {
           <div className="p-10 bg-gradient-to-br from-gray-900/90 via-gray-900/70 to-gray-800/80 rounded-3xl border border-gray-700 hover:border-[#0085a8]/40 shadow-2xl transition-all duration-500 hover:shadow-[#0085a8]/10 h-full flex flex-col justify-center">
             <div className="space-y-8">
               <p className="text-2xl leading-relaxed text-gray-300 font-medium">
-                Deep Roots is{' '}
+                {t('what_is_deep_roots.p1.before')}{' '}
                 <span className="text-[#0085a8] font-bold">
-                  not just a blockchain
+                  {t('what_is_deep_roots.p1.highlight')}
                 </span>
-                . It&apos;s a movement. A bold shift from centralized control to
-                open collaboration. From silence to voice. From gatekeeping to
-                possibility.
+                {t('what_is_deep_roots.p1.after')}
               </p>
               <p className="text-2xl leading-relaxed text-gray-300 font-medium">
-                We call it{' '}
-                <span className="font-extrabold text-[#ad1aaf]">DeWorld</span> —
-                the decentralized internet, rebuilt for people, powered by
-                blockchain and AI.
+                {t('what_is_deep_roots.p2.before')}{' '}
+                <span className="font-extrabold text-[#ad1aaf]">
+                  {t('what_is_deep_roots.p2.highlight')}
+                </span>{' '}
+                {t('what_is_deep_roots.p2.after')}
               </p>
             </div>
-            {/* <div className="mt-10 pt-6 border-t border-gray-700/50">
-              <button className="group relative px-6 py-3 bg-transparent border border-gray-600 hover:border-[#0085a8] text-gray-300 rounded-full font-medium text-lg transition-all duration-300 flex items-center">
-                <span>Discover More</span>
-              </button>
-            </div> */}
           </div>
         </div>
 
@@ -54,11 +53,10 @@ const WhatIsDeepRoots = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-10">
               <h3 className="text-3xl font-bold text-white mb-3">
-                Building the Future Together
+                {t('what_is_deep_roots.imageTitle')}
               </h3>
               <p className="text-gray-300 text-lg max-w-md">
-                The Deep Roots team pioneering decentralized solutions that
-                empower communities worldwide
+                {t('what_is_deep_roots.imageSubtitle')}
               </p>
             </div>
           </div>

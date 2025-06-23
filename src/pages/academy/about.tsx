@@ -5,6 +5,8 @@ import VisionMission from '@/components/academy_page/about_page/VisionMission';
 import FounderNote from '@/components/academy_page/about_page/FounderNote';
 import JoinUs from '@/components/academy_page/about_page/JoinUs';
 import AppLayout from '@/Shared/AppLayout';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function AboutAcademy() {
   return (
@@ -35,3 +37,13 @@ export default function AboutAcademy() {
     </>
   );
 }
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'en', [
+        'academy/about',
+        'common',
+      ])),
+    },
+  };
+};

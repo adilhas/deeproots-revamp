@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "title": {
+      "part1": "We Are the",
+      "part2": "DeWorld."
+    },
+    "subtitle": {
+      "line1": "A decentralized movement reshaping the internet",
+      "line2": "from its roots"
+    },
+    "cta": "Join the Movement"
+  },
+  "what_is_deep_roots": {
+    "title": "What is Deep Roots?",
+    "p1": {
+      "before": "Deep Roots is",
+      "highlight": "not just a blockchain",
+      "after": ". It's a movement. A bold shift from centralized control to open collaboration. From silence to voice. From gatekeeping to possibility."
+    },
+    "p2": {
+      "before": "We call it",
+      "highlight": "DeWorld",
+      "after": "— the decentralized internet, rebuilt for people, powered by blockchain and AI."
+    },
+    "imageTitle": "Building the Future Together",
+    "imageSubtitle": "The Deep Roots team pioneering decentralized solutions that empower communities worldwide"
+  },
+  "vision_mission": {
+    "title": "Our Vision & Mission",
+    "vision": {
+      "title": "Our Vision",
+      "items": [
+        "Decentralize the Internet – Shift power from corporations to the people.",
+        "Empower Millions – Enable daily learning, earning, and access for all.",
+        "Fuel Innovation – Support creators, coders, and breakthrough ideas.",
+        "Ensure Privacy & Security – Trustless by design, secure by default.",
+        "Promote Community Governance – Users shape and evolve the network.",
+        "Connect Seamlessly – Interoperate across chains and systems.",
+        "Deliver Real Impact – From local solutions to global change."
+      ]
+    },
+    "mission": {
+      "title": "Our Mission",
+      "items": [
+        "Build tools and products that last for generations",
+        "Make everything easy to use, quick to learn, and simple to build",
+        "Invite the world to join, shape, and grow DeWorld",
+        "Provide free access to education, opportunity, and innovation",
+        "Promote freedom, privacy, and low-cost access for everyone",
+        "Create the root system of a new digital era"
+      ]
+    }
+  },
+  "founder_note": {
+    "quote": "We seed visions in the earth's roots — and harvest deep solutions for life.",
+    "author": "— Deep Roots Founder"
+  },
+  "join_us": {
+    "title": "Ready to Build the Future With Us?",
+    "subtitle": "Join thousands of builders shaping the decentralized world of tomorrow.",
+    "cta": "Join the Movement"
+  }
+}
