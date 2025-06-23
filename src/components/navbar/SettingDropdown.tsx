@@ -1,33 +1,12 @@
 'use client';
 import { useThemeContext } from '@/context/ThemeContext';
-import { ArrowLeftRight, ChevronDown, Globe, Moon, Sun } from 'lucide-react';
+import { ArrowLeftRight, Moon, Sun } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
-import { useRouter } from 'next/router';
-
-const languages = [
-  { label: 'English', code: 'en' },
-  // { label: 'French', code: 'fr' },
-  { label: 'Arabic', code: 'ar' },
-];
+import React from 'react';
 
 const SettingDropdown = () => {
-  const router = useRouter();
-  const { locale, pathname, query, asPath } = router;
-
-  const [isLangOpen, setIsLangOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState(() => {
-    return languages.find((lang) => lang.code === locale)?.label || 'English';
-  });
-
   const { isDark, toggleTheme } = useThemeContext();
-
-  const changeLanguage = (langCode: string, langLabel: string) => {
-    router.replace({ pathname, query }, asPath, { locale: langCode });
-    setSelectedLanguage(langLabel);
-    setIsLangOpen(false);
-  };
 
   return (
     <div className="dropdown dropdown-end font-sans">
@@ -56,37 +35,6 @@ const SettingDropdown = () => {
               height={88}
               className="rounded-full mx-auto"
             />
-          </div>
-        </li>
-
-        <li>
-          <div className="relative px-2">
-            <button
-              className="flex items-center justify-between w-full py-2 rounded cursor-pointer"
-              onClick={() => setIsLangOpen((prev) => !prev)}
-            >
-              <div className="flex items-center gap-2">
-                <Globe size={16} />
-                <span className="text-sm">Language • {selectedLanguage}</span>
-              </div>
-              <ChevronDown size={16} />
-            </button>
-
-            {isLangOpen && (
-              <div className="absolute z-20 bg-base-200 dark:bg-black mt-1 w-full rounded shadow-md">
-                {languages.map((lang) => (
-                  <div
-                    key={lang.code}
-                    className={`px-4 py-2 text-sm cursor-pointer hover:bg-base-300 ${
-                      locale === lang.code ? 'font-semibold' : ''
-                    }`}
-                    onClick={() => changeLanguage(lang.code, lang.label)}
-                  >
-                    {lang.label}
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
         </li>
 

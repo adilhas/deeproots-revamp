@@ -23,7 +23,7 @@ const LanguageDropdown = () => {
   };
 
   return (
-    <div className="dropdown dropdown-start :dropdown-end font-sans">
+    <div className="dropdown dropdown-start md:dropdown-end font-sans">
       <div tabIndex={0} role="button" className="cursor-pointer">
         <Globe className="w-6 h-6 text-[#4B5563] dark:text-[#E2E8F0]" />
       </div>
