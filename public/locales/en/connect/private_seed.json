@@ -1,4 +1,11 @@
 {
+  "hero": {
+    "badge": "Exclusive Entry for High-Net-Worth Contributors to the DeepRoots.earth Foundation",
+    "title": "Private Seed Access",
+    "description1": "Only 100 qualified individuals will be pre-approved to join the Foundation Full Seat round.",
+    "description2": "Gain direct access to ecosystem earnings, lifetime governance rights, and multi-decade blockchain rewards — including a special pre-launch offer at a limited price.",
+    "button": "Apply Now"
+  },
   "access-criteria": {
     "title": "Access Criteria",
     "description": "To qualify, applicants must meet the following:",
@@ -9,5 +16,34 @@
       "Willing to sign an NDA and complete identity verification",
       "Once closed, seats will never be offered again at this price"
     ]
+  },
+  "form": {
+    "title": "Application Form",
+    "subtitle": "PrivateSeed Application – Foundation Full Seat",
+    "subtitle_note": "(Pre-Approval)",
+    "placeholders": {
+      "fullName": "Full Name",
+      "email": "Email Address",
+      "contact": "Phone / Telegram",
+      "country": "Country of Residence",
+      "linkedin": "LinkedIn or Personal Website",
+      "capital": "Estimated Capital Commitment ($5K–$1M+)",
+      "experience": "Experience in Web3, Investing, or Strategic Partnerships",
+      "value": "What value can you add to our Foundation and ecosystem?",
+      "whyJoin": "Why are you interested in the DeepRoots Foundation?"
+    },
+    "kyc": "Are you able to pass KYC & NDA requirements? (Yes / No)",
+    "signature": "Signature of Interest",
+    "consent": "I agree to be contacted under confidentiality",
+    "submit": "Submit Application",
+    "note_title": "Note:",
+    "note_line1": "Applications are reviewed within 3–5 business days. All submissions are strictly confidential.",
+    "note_line2": "As a PrivateSeed applicant, you may qualify for:",
+    "note_points": {
+      "discount": "⚡ Major token discounts",
+      "access": "🔒 Exclusive product access",
+      "profit": "🏛️ Long-term profit-sharing through the DeepRoots ecosystem"
+    },
+    "note_line3": "This is a once-in-a-lifetime opportunity to become part of the foundation layer of <1>DeWorld</1> — before it goes public."
   }
 }

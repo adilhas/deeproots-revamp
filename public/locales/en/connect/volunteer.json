@@ -59,5 +59,32 @@
       "Host local DeepRoots meetups",
       "Share DeepRoots at universities or dev hubs"
     ]
+  },
+  "form": {
+    "title": "Apply to Volunteer",
+    "subtitle": "We review applications weekly and onboard volunteers into private channels. All roles are remote, flexible, and part of the mission to decentralize the internet.",
+    "fullName": "Full Name",
+    "email": "Email Address",
+    "telegram": "Telegram Username / Contact",
+    "telegram_format": "Format: @yourusername",
+    "country": "Country",
+    "timezone": "Time Zone",
+    "timezone_note": "Where are you based?",
+    "languages": "Languages You Speak",
+    "roles": "What roles are you interested in?",
+    "hours": "How many hours/week can you contribute?",
+    "whyJoin": "Why do you want to join the DeepRoots Volunteer Program?",
+    "whatValue": "What value can you bring to the ecosystem?",
+    "experience": "Have you been involved in any Web3, DAO, or community project before?",
+    "yes": "Yes",
+    "no": "No",
+    "shortText": "Short Text",
+    "shortText_note": "Optional",
+    "portfolio": "Portfolio / Socials",
+    "portfolio_note": "Enter Link (LinkedIn, Twitter, GitHub, or past work)",
+    "consent": "I understand this is a volunteer role and agree to be contacted by the DeepRoots.earth team.",
+    "submit": "Submit Application",
+    "note_label": "Note:",
+    "note_message": "Submissions are reviewed weekly. All data is confidential."
   }
 }
