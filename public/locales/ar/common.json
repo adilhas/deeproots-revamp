@@ -84,5 +84,70 @@
         "description": "انضم إلى مجتمع اليوتيوب حيث نشارك معلومات حول نظام Deep Roots البيئي."
       }
     }
+  },
+  "footer": {
+    "RootAcademy": {
+      "_title": "RootAcademy",
+      "WhatIsDeepRoot": "ما هو Deep Root؟",
+      "WhatIsDRC": "ما هو dRC؟",
+      "WhatIsFullseat": "ما هو Fullseat؟",
+      "Whitepaper": "الورقة البيضاء",
+      "WhatIsWeb3": "ما هو Web3؟",
+      "Tokenomics": "الرموز الاقتصادية",
+      "RoadMap": "خارطة الطريق"
+    },
+    "RootLab": {
+      "_title": "RootLab",
+      "DeepRootsNetwork": "شبكة DeepRoots",
+      "Documentation": "الوثائق",
+      "SmartContract": "العقد الذكي",
+      "GasFee": "رسوم الغاز",
+      "DevTools": "أدوات المطورين",
+      "DeVote": "DeVote",
+      "RootOpiaReward": "نظام مكافآت RootOpia"
+    },
+    "DeWorld": {
+      "_title": "DeWorld",
+      "AddressWallet": "The Address Wallet",
+      "TeleXcoin": "TeleXcoin",
+      "ShareValue": "Share Value",
+      "InnoFi": "InnoFi",
+      "InnoLaunch": "Inno Launch",
+      "MetaFabric": "Meta Fabric",
+      "GiveFi": "Give Fi",
+      "Saxophone": "Saxophone",
+      "OceanBazaar": "Ocean Bazaar",
+      "CopyMe": "CopyMe",
+      "Rootopia": "Rootopia",
+      "Foundation": "Foundation",
+      "InnoFarm": "Inno Farm",
+      "DeepAssets": "Deep Assets",
+      "RootChat": "Root Chat"
+    },
+    "RootIdentity": {
+      "_title": "RootIdentity",
+      "WhoWeAre": "من نحن",
+      "ContactUs": "تواصل معنا",
+      "WhatIsSeeding": "ما هو Seeding؟",
+      "FoundationFullSeat": "Foundation Full Seat",
+      "RootScan": "Root Scan"
+    },
+    "RootConnect": {
+      "_title": "RootConnect",
+      "PrivateSeedAccess": "الوصول الخاص للتمويل الأولي",
+      "Socials": "وسائل التواصل",
+      "Events": "اللقاءات والفعاليات",
+      "Career": "الوظائف",
+      "VolunteerProgram": "برنامج التطوع",
+      "Hackathons": "الهاكاثونات"
+    },
+    "OurStory": "قصتنا",
+    "BrandAssets": "أصول العلامة التجارية",
+    "CodeOfHonor": "مدونة الشرف",
+    "PrivacyPolicy": "سياسة الخصوصية",
+    "TermsOfUse": "شروط الاستخدام",
+    "CookiePolicy": "سياسة ملفات تعريف الارتباط",
+    "PublicRelations": "العلاقات العامة",
+    "Disclaimer": "إخلاء المسؤولية"
   }
 }

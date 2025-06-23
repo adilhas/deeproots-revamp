@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "titleLine1": "Our Voice - Our Vision",
+    "titleLine2": "Shared with the World",
+    "description": "Deep Roots is not just a platform — it's a movement with a message. We welcome authentic conversations, real storytelling, and bold voices.",
+    "imageAlt": "Public Relations at Deep Roots"
+  },
+  "offers": {
+    "title": "What We Offer",
+    "items": {
+      "official": "Official statements and ecosystem updates",
+      "interviews": "Interviews and founder quotes",
+      "mediaKits": "Media kits and product releases",
+      "events": "Speaking opportunities and event invites",
+      "background": "Background on DeWorld, dRC, and the 14-product ecosystem"
+    }
+  },
+  "topics": {
+    "title": "Topics We Speak On",
+    "items": {
+      "decentralization": "Decentralization and ownership",
+      "ai_web3": "AI + Web3 integration",
+      "financial": "Financial access and tokenized economies",
+      "privacy": "Privacy and digital rights",
+      "gamefi": "GameFi, NFTs, and cultural design",
+      "longterm": "Building for long-term value, not hype"
+    }
+  },
+  "press_kit": {
+    "title": "Press & Media Kit",
+    "items": [
+      "Brand Logos",
+      "Project Overview",
+      "Product One-Pagers",
+      "High-Res Images",
+      "Contact Sheet"
+    ]
+  },
+  "contact": {
+    "title": "Contact Public Relations",
+    "description": "Have a press request, interview inquiry, or media opportunity?"
+  }
+}

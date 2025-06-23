@@ -5,6 +5,8 @@ import PROffers from '@/components/public_relations_page/PROffers';
 import TopicsWeSpeak from '@/components/public_relations_page/TopicsWeSpeak';
 import PressKit from '@/components/public_relations_page/PressKit';
 import PRContactSection from '@/components/public_relations_page/PRContactSection';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const PublicRelationsPage = () => {
   return (
@@ -31,3 +33,13 @@ const PublicRelationsPage = () => {
 };
 
 export default PublicRelationsPage;
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'en', [
+        'public_relations',
+        'common',
+      ])),
+    },
+  };
+};

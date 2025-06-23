@@ -84,5 +84,70 @@
         "description": "Join the Youtube community as we share about Deep Roots ecosystem"
       }
     }
+  },
+  "footer": {
+    "RootAcademy": {
+      "_title": "RootAcademy",
+      "WhatIsDeepRoot": "What is Deep Root?",
+      "WhatIsDRC": "What is dRC?",
+      "WhatIsFullseat": "What is Fullseat?",
+      "Whitepaper": "Whitepaper",
+      "WhatIsWeb3": "What is Web3?",
+      "Tokenomics": "Tokenomics",
+      "RoadMap": "RoadMap"
+    },
+    "RootLab": {
+      "_title": "RootLab",
+      "DeepRootsNetwork": "DeepRoots Network",
+      "Documentation": "Documentation",
+      "SmartContract": "Smart Contract",
+      "GasFee": "Gas Fee",
+      "DevTools": "Developer Tools",
+      "DeVote": "DeVote",
+      "RootOpiaReward": "RootOpia Reward System"
+    },
+    "DeWorld": {
+      "_title": "DeWorld",
+      "AddressWallet": "The Address Wallet",
+      "TeleXcoin": "TeleXcoin",
+      "ShareValue": "Share Value",
+      "InnoFi": "InnoFi",
+      "InnoLaunch": "Inno Launch",
+      "MetaFabric": "Meta Fabric",
+      "GiveFi": "Give Fi",
+      "Saxophone": "Saxophone",
+      "OceanBazaar": "Ocean Bazaar",
+      "CopyMe": "CopyMe",
+      "Rootopia": "Rootopia",
+      "Foundation": "Foundation",
+      "InnoFarm": "Inno Farm",
+      "DeepAssets": "Deep Assets",
+      "RootChat": "Root Chat"
+    },
+    "RootIdentity": {
+      "_title": "RootIdentity",
+      "WhoWeAre": "Who we are",
+      "ContactUs": "Contact Us",
+      "WhatIsSeeding": "What is Seeding?",
+      "FoundationFullSeat": "Foundation Full Seat",
+      "RootScan": "Root Scan"
+    },
+    "RootConnect": {
+      "_title": "RootConnect",
+      "PrivateSeedAccess": "Private Seed Access",
+      "Socials": "Socials",
+      "Events": "Meet Ups & Events",
+      "Career": "Career",
+      "VolunteerProgram": "Volunteer Program",
+      "Hackathons": "Hackathons"
+    },
+    "OurStory": "Our Story",
+    "BrandAssets": "Brand Assets",
+    "CodeOfHonor": "Code of Honor",
+    "PrivacyPolicy": "Privacy Policy",
+    "TermsOfUse": "Terms of Use",
+    "CookiePolicy": "Cookie Policy",
+    "PublicRelations": "Public Relations",
+    "Disclaimer": "Disclaimer"
   }
 }

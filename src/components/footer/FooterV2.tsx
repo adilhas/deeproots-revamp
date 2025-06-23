@@ -1,13 +1,15 @@
 'use client';
 
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { footerLinksV3 } from '@/constants/footerLinksV2';
+import { useTranslation } from 'react-i18next';
 import { socialLinks } from '@/constants/socialLinksData';
+import { getfooterLinks } from '@/constants/footerLinksV2';
 
 export default function Footer() {
-  const { locale } = useRouter();
+  const { t, i18n } = useTranslation('common');
+  const lang = i18n.language;
+  const footerLinksV3 = getfooterLinks(t);
 
   return (
     <footer className="dark:bg-primary-dark bg-[#D2D5DB] text-[#1C1C1C] dark:text-[#F0F0F0] px-6 py-12">
@@ -48,11 +50,15 @@ export default function Footer() {
               } w-max mx-auto`}
             >
               <Link
-                href={`/${locale}${section.link}`}
-                className={`font-semibold mb-4 font-orbitron text-[#1F2937] cursor-pointer dark:text-white flex flex-col justify-center items-start hover:text-[${section.hoverColor}] gap-2 ${section.hoverColor}`}
+                href={`/${lang}${section.link}`}
+                className={`font-semibold mb-8 font-orbitron text-[#1F2937] cursor-pointer dark:text-white flex flex-col justify-center items-start gap-2 ${section.hoverColor} ${section.title === 'DeWorld' ? 'w-full' : 'w-max'}`}
               >
                 <div className="mx-auto">{section.icon}</div>
-                <div className="mx-auto">{section.title}</div>
+                <div
+                  className={`${section.title === 'DeWorld' ? 'mx-auto' : ''}`}
+                >
+                  {section.title}
+                </div>
               </Link>
               <ul
                 className={`${
@@ -74,7 +80,7 @@ export default function Footer() {
                       </a>
                     ) : (
                       <Link
-                        href={`/${locale}${link.href}`}
+                        href={`/${lang}${link.href}`}
                         className={`text-sm hover:underline ${section.hoverColor}`}
                       >
                         {link.label}
@@ -89,20 +95,34 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="text-center pt-20">
-          <Link href={`/${locale}/`}>
+          <Link href={`/${lang}/`}>
             <div className="flex justify-center items-center">
-              <h3 className="text-xl font-bold font-orbitron bg-gradient-to-r from-[#ad1aaf] bg-clip-text text-transparent to-[#0085a8] mb-2">
+              <h3 className="text-xl font-bold font-orbitron bg-gradient-to-r from-[#ad1aaf] to-[#0085a8] bg-clip-text text-transparent mb-2">
                 DeepQuest (Quiz Hub)
               </h3>
             </div>
           </Link>
-          <p className="text-sm dark:text-gray-400 mx-2">
-            <Link href={`/${locale}/our-story`}>Our Story</Link> - Brands Assets
-            - <Link href={`/${locale}/code-of-honor`}>Code of Honor</Link> -
-            Privacy Policy - Term of Use -{' '}
-            <Link href={`/${locale}/cookie-policy`}>Cookie Policy</Link> -{' '}
-            <Link href={`/${locale}/public-relations`}>Public Relations</Link> -
-            Disclaimer
+          <p className="text-sm dark:text-gray-400 mx-2 flex flex-wrap justify-center gap-x-2 gap-y-1">
+            <Link href={`/${lang}/our-story`} className="hover:underline">
+              {t('footer.OurStory')}
+            </Link>
+            -<span>{t('footer.BrandAssets')}</span>-
+            <Link href={`/${lang}/code-of-honor`} className="hover:underline">
+              {t('footer.CodeOfHonor')}
+            </Link>
+            -<span>{t('footer.PrivacyPolicy')}</span>-
+            <span>{t('footer.TermsOfUse')}</span>-
+            <Link href={`/${lang}/cookie-policy`} className="hover:underline">
+              {t('footer.CookiePolicy')}
+            </Link>
+            -
+            <Link
+              href={`/${lang}/public-relations`}
+              className="hover:underline"
+            >
+              {t('footer.PublicRelations')}
+            </Link>
+            -<span>{t('footer.Disclaimer')}</span>
           </p>
         </div>
       </div>
