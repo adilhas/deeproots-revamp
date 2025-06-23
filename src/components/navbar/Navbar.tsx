@@ -9,6 +9,7 @@ import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import DeWorldAllProducts from './DeWorldAllProducts';
 import SettingDropdown from './SettingDropdown';
+import LanguageDropdown from './LanguageDropdown';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -40,6 +41,7 @@ export default function Navbar() {
           <Logo />
           <DesktopMenu onHover={setActiveMenu} />
           <div className="flex items-center gap-4">
+            <LanguageDropdown />
             {/* <DarkModeToggle /> */}
             <Image
               src="/copyme-logo.png"

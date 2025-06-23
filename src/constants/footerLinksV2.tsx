@@ -145,6 +145,7 @@ export const footerLinksV3 = [
     icon: <Link color="#FFB501" size={20} />,
     link: '/connect',
     links: [
+      { label: 'Private Seed Access', href: '/connect/private-seed' },
       { label: 'Socials', href: '#' },
       { label: 'Meet Ups & Events', href: '/connect/events' },
       { label: 'Career', href: '#' },

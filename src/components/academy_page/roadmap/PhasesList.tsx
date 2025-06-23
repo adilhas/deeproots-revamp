@@ -7,31 +7,31 @@ const phaseStyles = [
     bg: 'bg-[#E9D5FF]',
     border: 'border-[#C084FC]',
     titleBg: 'bg-[#F3E8FF] border-[#C084FC]',
-    y: 'lg:translate-y-[100px]',
+    y: 'lg:translate-y-[10px]',
   },
   {
     bg: 'bg-[#D1E9FF]',
     border: 'border-[#53B1FD]',
     titleBg: 'bg-[#EFF8FF] border-[#84CAFF]',
-    y: 'lg:translate-y-[300px]',
+    y: 'lg:translate-y-[110px]',
   },
   {
     bg: 'bg-[#BBF7D0]',
     border: 'border-[#34D399]',
     titleBg: 'bg-[#D1FAE5] border-[#34D399]',
-    y: 'lg:translate-y-[300px]',
+    y: 'lg:translate-y-[110px]',
   },
   {
     bg: 'bg-[#FBCFE8]',
     border: 'border-[#8F8F8F]',
     titleBg: 'bg-[#FFE3F2] border-[#F472B6]',
-    y: 'lg:translate-y-[400px]',
+    y: 'lg:translate-y-[100px]',
   },
   {
     bg: 'bg-[#FED7AA]',
     border: 'border-[#8F8F8F]',
     titleBg: 'bg-[#FFEDD5] border-[#FB923C]',
-    y: 'lg:translate-y-[600px]',
+    y: 'lg:translate-y-[200px]',
   },
 ];
 
@@ -68,7 +68,8 @@ const PhasesList: React.FC = () => {
             return (
               <PhaseCard
                 key={phaseNum}
-                className={`${styles.bg} border ${styles.border} my-8 lg:my-20 ${styles.y}`}
+                className={`${styles.bg} my-8 lg:my-20 ${styles.y}`}
+                innerContainerClassname={`border-1 ${styles.border} `}
                 titleContainerClassname={styles.titleBg}
                 phase={data.phase}
                 title={data.title}

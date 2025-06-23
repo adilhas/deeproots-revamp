@@ -7,7 +7,6 @@ const SocialLinks = () => {
   const { isDark } = useThemeContext();
   const { t } = useTranslation('common');
   const socialLinks = getSocialLinksData(t);
-  console.log(socialLinks);
   return (
     <section className="py-20 px-4 bg-[#D2D5DB] dark:bg-primary-dark">
       <div className="max-w-[1200px] mx-auto text-center">

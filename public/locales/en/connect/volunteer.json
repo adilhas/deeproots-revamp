@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "title1": "Volunteer Program –",
+    "title2": "Join the Movement",
+    "description1": "DeepRoots.earth is built by people like you - visionaries, supporters, and doers.",
+    "description2": "We're opening the gates to a global Volunteer Program where you can contribute directly to the future of DeWorld.",
+    "button": "Apply Now"
+  },
+  "who-we-looking": {
+    "title": "Who We’re Looking For",
+    "description1": "We welcome passionate contributors from all backgrounds:",
+    "qualities": {
+      "moderator": {
+        "title": "Community Moderators",
+        "description": "Telegram, X, Reddit, Discord"
+      },
+      "translator": {
+        "title": "translator",
+        "description": "English ↔ Arabic, French, Spanish, Chinese"
+      },
+      "web3": {
+        "title": "Web3 Writers & Content Creators",
+        "description": ""
+      },
+      "designer": {
+        "title": "Designers, Meme Creators, and Motion Artists",
+        "description": ""
+      },
+      "educator": {
+        "title": "Educators, Event Hosts",
+        "description": ""
+      },
+      "tester": {
+        "title": "Beta Tester",
+        "description": "Test Launches on DeepRoots Ecosystem"
+      }
+    },
+    "description2": "No coding experience required. If you're aligned with the mission, you're qualified."
+  },
+  "you-receive": {
+    "title": "What You’ll Receive",
+    "description": "We welcome passionate contributors from all backgrounds:",
+    "benefits": [
+      "Recognition on the official site",
+      "Priority access to token drops, events, and Foundation invites",
+      "Monthly dRC-based reward pool",
+      "Private Discord/Telegram volunteer hub",
+      "Opportunity to grow into official ambassador or ecosystem role"
+    ]
+  },
+  "way-contribute": {
+    "title": "Ways to Contribute",
+    "description": "We welcome contribution in a every field, demography and niche",
+    "benefits": [
+      "Moderate our community channels",
+      "Translate ecosystem updates",
+      "Create explainer videos, social threads, or memes",
+      "Help beta test RootOpia or The Address Wallet",
+      "Host local DeepRoots meetups",
+      "Share DeepRoots at universities or dev hubs"
+    ]
+  }
+}
