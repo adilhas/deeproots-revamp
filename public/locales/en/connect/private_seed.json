@@ -83,5 +83,18 @@
       "question": "What is the vesting period?",
       "answer": "All PrivateSeed tokens follow a custom vesting schedule outlined in your agreement."
     }
+  },
+  "access_benefits": {
+    "heading": "What You Gain as a PrivateSeed Contributor",
+    "top": [
+      "High-Net-Worth Individual (HNWI) or Strategic Partner",
+      "",
+      "Background in Blockchain, Technology, Capital, or Strategic Innovation"
+    ],
+    "bottom": [
+      "Willing to sign an NDA and complete identity verification",
+      "Pre-Qualified 100 Seats Only for this round",
+      "Capital Range: $5,000 – $1,000,000"
+    ]
   }
 }

@@ -284,7 +284,7 @@ export const getfooterLinks = (t: TFunction) => [
       },
       { label: t('footer.RootConnect.Socials'), href: '#' },
       { label: t('footer.RootConnect.Events'), href: '/connect/events' },
-      { label: t('footer.RootConnect.Career'), href: '#' },
+      { label: t('footer.RootConnect.Career'), href: '/connect/career' },
       {
         label: t('footer.RootConnect.VolunteerProgram'),
         href: '/connect/volunteer',

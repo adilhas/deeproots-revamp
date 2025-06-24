@@ -50,7 +50,6 @@ export default function Footer() {
               } w-max mx-auto`}
             >
               <div
-                // href={`/${lang}${section.link}`}
                 className={`font-semibold mb-8 font-orbitron text-[#1F2937] cursor-pointer dark:text-white flex flex-col justify-center items-start gap-2 ${section.hoverColor} ${section.title === 'DeWorld' ? 'w-full' : 'w-max'}`}
               >
                 <div className="mx-auto">{section.icon}</div>
