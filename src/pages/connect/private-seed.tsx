@@ -6,7 +6,7 @@ import AppLayout from '@/Shared/AppLayout';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
-// import AccessBenefits from '../../components/connect/private_seed/AccessBenefits';
+import AccessBenefits from '../../components/connect/private_seed/AccessBenefits';
 import AccessPerks from '../../components/connect/private_seed/AccessPerks';
 import PrivateSeedFAQs from '@/components/connect/private_seed/PrivateSeedFAQs';
 
@@ -30,7 +30,7 @@ export default function Volunteer() {
           <div className="max-w-[1200px] mx-auto px-3">
             <PrivateSeedHero />
             <AccessCriteria />
-            {/* <AccessBenefits /> */}
+            <AccessBenefits />
             <PrivateSeedForm />
             <AccessPerks />
             <PrivateSeedFAQs />

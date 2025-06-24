@@ -49,8 +49,8 @@ export default function Footer() {
                 section.title === 'DeWorld' ? 'col-span-2' : 'mx-2 md:mx-0'
               } w-max mx-auto`}
             >
-              <Link
-                href={`/${lang}${section.link}`}
+              <div
+                // href={`/${lang}${section.link}`}
                 className={`font-semibold mb-8 font-orbitron text-[#1F2937] cursor-pointer dark:text-white flex flex-col justify-center items-start gap-2 ${section.hoverColor} ${section.title === 'DeWorld' ? 'w-full' : 'w-max'}`}
               >
                 <div className="mx-auto">{section.icon}</div>
@@ -59,7 +59,7 @@ export default function Footer() {
                 >
                   {section.title}
                 </div>
-              </Link>
+              </div>
               <ul
                 className={`${
                   section.title === 'DeWorld'
