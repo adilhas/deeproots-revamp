@@ -15,7 +15,7 @@ export default function Logo() {
         />
       </div>
       <h3
-        className={`${isArabic ? 'pr-3' : 'pl-3'} self-center hidden sm:block font-bold text-md md:text-2xl  bg-gradient-to-r from-gradient-from to-gradient-to  dark:bg-gradient-to-r dark:from-[#AD1AAF] dark:via-[#0085a8] to-inherit[#0085a8] dark:to-neutral-500 bg-clip-text font-orbitron text-transparent`}
+        className={`${isArabic ? 'pr-3' : 'pl-3'} self-center hidden sm:block font-bold text-md md:text-2xl  bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text font-orbitron text-transparent`}
       >
         <Link href="/">DEEPROOTS</Link>
       </h3>

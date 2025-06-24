@@ -29,7 +29,7 @@ const LanguageDropdown = () => {
       </div>
       <ul
         tabIndex={0}
-        className="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-sm"
+        className="dropdown-content menu bg-primary-light dark:bg-primary-dark rounded-box z-10 w-52 p-2 shadow-sm"
       >
         {languages.map((lang) => (
           <li

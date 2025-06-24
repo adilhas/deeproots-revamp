@@ -1,13 +1,13 @@
 {
   "hero": {
-    "badge": "Exclusive Entry for High-Net-Worth Contributors to the DeepRoots.earth Foundation",
-    "title": "Private Seed Access",
-    "description1": "Only 100 qualified individuals will be pre-approved to join the Foundation Full Seat round.",
-    "description2": "Gain direct access to ecosystem earnings, lifetime governance rights, and multi-decade blockchain rewards — including a special pre-launch offer at a limited price.",
+    "badge": "Become one of 100 early visionaries shaping the future of DeWorld",
+    "title": "PrivateSeed Access",
+    "description": "Join a private round for high-net-worth contributors. Lifetime governance, exclusive ecosystem rewards, and token discounts before launch",
+    "features": ["NDA Secured", "Global Access", "Launching in 90 Days "],
     "button": "Apply Now"
   },
   "access-criteria": {
-    "title": "Access Criteria",
+    "title": "Access Criteria – Who Can Join",
     "description": "To qualify, applicants must meet the following:",
     "criteria": [
       "High-Net-Worth Individual (HNWI) or Strategic Partner",
@@ -19,7 +19,7 @@
   },
   "form": {
     "title": "Application Form",
-    "subtitle": "PrivateSeed Application – Foundation Full Seat",
+    "subtitle": "Foundation Full Seat",
     "subtitle_note": "(Pre-Approval)",
     "placeholders": {
       "fullName": "Full Name",
@@ -45,5 +45,43 @@
       "profit": "🏛️ Long-term profit-sharing through the DeepRoots ecosystem"
     },
     "note_line3": "This is a once-in-a-lifetime opportunity to become part of the foundation layer of <1>DeWorld</1> — before it goes public."
+  },
+  "accessPerks": {
+    "heading": {
+      "part1": "Exclusive Perks for ",
+      "highlight": "$10K+",
+      "part2": " Contributors"
+    },
+    "subheading": "Invest $10K or more and get:",
+    "earlyAccessTitle": "Full early access to:",
+    "callDescription": "Secure a private 15-minute strategy call with the Founder — uncover insider vision, align on high-impact contribution, and explore long-term collaboration at the core of DeWorld.",
+    "note1": "Exclusively available to accepted $10K+ contributors.",
+    "note2": "Calls are scheduled in Dubai Time (GMT+4).",
+    "products": {
+      "TheAddress": "The Address",
+      "TeleXcoin": "TeleXcoin",
+      "OceanBazaar": "Ocean Bazaar",
+      "Foundation": "Foundation"
+    }
+  },
+  "faqs": {
+    "heading": "FAQs",
+    "subheading": "Invest $10K or more and get:",
+    "q1": {
+      "question": "When will the blockchain launch?",
+      "answer": "Within 90 days including wallet, DEX, and key ecosystem apps."
+    },
+    "q2": {
+      "question": "How do I know if I’m accepted?",
+      "answer": "You’ll receive a personal approval email within 3–5 business days."
+    },
+    "q3": {
+      "question": "Can I increase my allocation later?",
+      "answer": "Yes, but only if seats are still available priority goes to early contributors."
+    },
+    "q4": {
+      "question": "What is the vesting period?",
+      "answer": "All PrivateSeed tokens follow a custom vesting schedule outlined in your agreement."
+    }
   }
 }

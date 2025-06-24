@@ -104,7 +104,10 @@
       "GasFee": "رسوم الغاز",
       "DevTools": "أدوات المطورين",
       "DeVote": "DeVote",
-      "RootOpiaReward": "نظام مكافآت RootOpia"
+      "RootOpiaReward": "نظام مكافآت RootOpia",
+      "SecurityBugBounty": "الأمان ومكافآت اكتشاف الثغرات",
+      "DecentralizedWorld": "عالم لا مركزي",
+      "Ecosystem": "النظام البيئي"
     },
     "DeWorld": {
       "_title": "DeWorld",

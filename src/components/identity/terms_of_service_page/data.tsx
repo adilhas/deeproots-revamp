@@ -6,7 +6,7 @@ interface ITermItem {
   title: string;
   items: string[];
 }
-
+// TODO remove this file
 export const termSections: ITermItem[] = [
   {
     icon: <CheckCircle2 className="w-6 h-6 text-green-500" />,

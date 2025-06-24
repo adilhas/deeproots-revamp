@@ -1,8 +1,13 @@
+'use client';
+
+import { useTranslation } from 'react-i18next';
 import { Lock } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 
 const DataPrivacy = () => {
+  const { t } = useTranslation('identity/terms_of_service');
+
   return (
     <section className="bg-gray-50 dark:bg-gray-800/50 p-8 rounded-2xl border border-gray-200 dark:border-gray-700">
       <div className="flex flex-col md:flex-row gap-8 items-center">
@@ -11,15 +16,15 @@ const DataPrivacy = () => {
         </div>
         <div>
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-            Your Data & Privacy
+            {t('dataPrivacy.title')}
           </h2>
           <p className="text-gray-700 dark:text-gray-300 mb-4">
-            We believe in privacy by design. For more info, visit our{' '}
+            {t('dataPrivacy.description.part1')}{' '}
             <Link
               href="/identity/privacy-policy"
               className="text-[#0085a8] dark:text-[#ad1aaf] hover:underline"
             >
-              Privacy Policy
+              {t('dataPrivacy.description.link')}
             </Link>
             .
           </p>

@@ -7,6 +7,8 @@ import PrivacyDoes from '@/components/identity/privacy_policy_page/PrivacyDoes';
 import PrivacyDataHandling from '@/components/identity/privacy_policy_page/PrivacyDataHandling';
 import PhilosopySection from '@/components/identity/privacy_policy_page/PhilosopySection';
 import ContactSection from '@/components/identity/privacy_policy_page/ContactSection';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const PrivacyPolicyPage = () => {
   return (
@@ -37,3 +39,13 @@ const PrivacyPolicyPage = () => {
 };
 
 export default PrivacyPolicyPage;
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'en', [
+        'identity/privacy_policy',
+        'common',
+      ])),
+    },
+  };
+};

@@ -1,7 +1,11 @@
+'use client';
+
 import { Key } from 'lucide-react';
-import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const PhilosopySection = () => {
+  const { t } = useTranslation('identity/privacy_policy');
+
   return (
     <section className="bg-gradient-to-r from-[#0085a8]/10 to-[#ad1aaf]/10 dark:from-[#0085a8]/20 dark:to-[#ad1aaf]/20 p-8 rounded-2xl border border-[#0085a8]/30 dark:border-[#ad1aaf]/30">
       <div className="flex flex-col md:flex-row gap-8 items-center">
@@ -10,12 +14,10 @@ const PhilosopySection = () => {
         </div>
         <div>
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-            No Secrets. No Surveillance.
+            {t('philosophy.title')}
           </h2>
           <p className="text-gray-700 dark:text-gray-300">
-            We&apos;re building DeWorld — a digital space where you&apos;re not
-            the product. Your privacy is baked into the roots of the platform,
-            not added later.
+            {t('philosophy.description')}
           </p>
         </div>
       </div>

@@ -27,8 +27,8 @@ export default function Footer() {
               height={60}
               className="cursor-pointer w-10 h-10 md:w-14 md:h-14 rounded-full mr-5"
             />
-            <h2 className="md:text-3xl w-fit text-2xl font-orbitron font-bold bg-gradient-to-r from-gradient-from to-gradient-to dark:to-neutral-500 bg-clip-text text-transparent">
-              Deep Roots
+            <h2 className="md:text-3xl w-fit text-2xl font-orbitron font-bold bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text text-transparent">
+              DEEPROOTS
             </h2>
           </div>
           <div className="flex flex-row gap-4 items-center text-xl">
@@ -110,8 +110,21 @@ export default function Footer() {
             <Link href={`/${lang}/code-of-honor`} className="hover:underline">
               {t('footer.CodeOfHonor')}
             </Link>
-            -<span>{t('footer.PrivacyPolicy')}</span>-
-            <span>{t('footer.TermsOfUse')}</span>-
+            -
+            <Link
+              href={`/${lang}/identity/privacy-policy`}
+              className="hover:underline"
+            >
+              {t('footer.PrivacyPolicy')}
+            </Link>
+            -
+            <Link
+              href={`/${lang}/identity/terms-of-service`}
+              className="hover:underline"
+            >
+              {t('footer.TermsOfUse')}
+            </Link>
+            -
             <Link href={`/${lang}/cookie-policy`} className="hover:underline">
               {t('footer.CookiePolicy')}
             </Link>

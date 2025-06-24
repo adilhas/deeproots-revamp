@@ -104,7 +104,10 @@
       "GasFee": "Gas Fee",
       "DevTools": "Developer Tools",
       "DeVote": "DeVote",
-      "RootOpiaReward": "RootOpia Reward System"
+      "RootOpiaReward": "RootOpia Reward System",
+      "SecurityBugBounty": "Security & Bug Bounty",
+      "DecentralizedWorld": "Decentralized World",
+      "Ecosystem": "Ecosystem"
     },
     "DeWorld": {
       "_title": "DeWorld",

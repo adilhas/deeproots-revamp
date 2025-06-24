@@ -1,7 +1,12 @@
+'use client';
+
 import { BookOpen } from 'lucide-react';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const TermsWelcomeSection = () => {
+  const { t } = useTranslation('identity/terms_of_service');
+
   return (
     <section className="bg-gray-50 dark:bg-gray-800/50 p-8 rounded-2xl border border-gray-200 dark:border-gray-700">
       <div className="flex flex-col md:flex-row gap-8 items-center">
@@ -10,12 +15,10 @@ const TermsWelcomeSection = () => {
         </div>
         <div>
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-            Welcome to Deep Roots
+            {t('welcome.title')}
           </h2>
           <p className="text-gray-700 dark:text-gray-300">
-            By using any product, platform, or service built within the Deep
-            Roots ecosystem (including DeWorld, dApps, wallets, and websites),
-            you agree to these Terms of Service.
+            {t('welcome.description')}
           </p>
         </div>
       </div>

@@ -1,7 +1,10 @@
+import { useThemeContext } from '@/context/ThemeContext';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
+import CountdownTimer from './CountDownTimer';
 
 const Hero = () => {
+  const { isDark } = useThemeContext();
   const { t } = useTranslation('landing_page');
   const title = t('hero-section.title');
   const [firstWord, ...rest] = title.split(' ');
@@ -12,13 +15,67 @@ const Hero = () => {
         className=" pt-[70px] px-8 md:pt-[88px] lg:pt-[95px] dark:bg-primary-dark dark:text-white flex justify-center z-10 relative flex-col lg:scale-x-105 items-center"
       >
         <div className="w-full max-w-[1200px] py-10 md:py-20  px-3">
-          <h2 className="text-3xl md:text-6xl font-semibold font-orbitron w-fit text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
-            {firstWord}
-            <br />
-            {rest.join(' ')}
-          </h2>
+          <div className="flex flex-col lg:flex-row items-center justify-between">
+            <div>
+              <h2 className="text-3xl md:text-6xl font-semibold font-orbitron w-fit text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
+                {firstWord}
+                <br />
+                {rest.join(' ')}
+              </h2>
+              <p className="max-w-[500px] mb-10">
+                {t('hero-section.subtitle')}
+              </p>
+            </div>
+            <div className="mt-32 lg:mt-0">
+              <div className="relative w-[450px] h-[252px] translate-y-[-40px] overflow-visible">
+                {/* Background eclipse */}
+                <Image
+                  width={1000}
+                  height={1000}
+                  alt="eclipse"
+                  className="scale-150 absolute top-[-35%] lg:top-[70%] lg:-translate-y-1/2 lg:left-[-150px] z-0 pointer-events-none"
+                  src={`${isDark ? '/landing/eclipse-dark.png' : '/landing/eclipse-light.png'}`}
+                  priority
+                />
 
-          <p className="max-w-[500px] mb-10">{t('hero-section.subtitle')}</p>
+                {/* Card background */}
+                <Image
+                  src={`${isDark ? '/landing/private-seed-card-bg-dark.png' : '/landing/private-seed-card-bg-light.png'}`}
+                  alt="private seed card"
+                  fill
+                  className="rounded-xl object-cover z-10"
+                  priority
+                />
+
+                {/* Text content */}
+                <div className="absolute inset-0 z-20 flex items-center justify-center text-center max-w-[350px] mx-auto">
+                  <div className="translate-y-[25px]">
+                    <div className="flex justify-end mx-2 translate-y-[-10px]">
+                      <span className="bg-[#FFD5B71A] py-1 px-2 rounded-lg font-semibold text-xs">
+                        Limited Seat
+                      </span>
+                    </div>
+                    <div className="text-lg font-semibold font-orbitron dark:text-white text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
+                      Private Seed Access
+                    </div>
+                    <div className="text-xs">
+                      {/* Become one of 100 early visionaries shaping the future of
+                      DeWorld */}
+                      {t('hero-section.private_access.description')}
+                    </div>
+                    <div className="flex flex-row scale-x-[108%] justify-between items-center mt-6 mx-2 bg-[#E9E9E9] text-black dark:bg-[#161616] dark:text-white px-2 py-1 rounded-xl translate-y-[-2px]">
+                      <div className="">
+                        <CountdownTimer />
+                      </div>
+                      <button className="btn text-sm btn-sm bg-gradient-to-r from-gradient-from to-gradient-to dark:from-[#696969] dark:to-[#696969] border-0">
+                        Apply Now
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div className="relative w-full h-[334px] md:h-[628px] mt-4">
             <Image

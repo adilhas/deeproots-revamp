@@ -52,7 +52,7 @@ button {
   animation: spin-custom 3s infinite ease-in-out;
 }
 
-.custom-inward-corner::after {
+/* .custom-inward-corner::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -65,6 +65,21 @@ button {
     #242424 15px
   );
   pointer-events: none;
+} */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
 }
 
 .hide-scrollbar {

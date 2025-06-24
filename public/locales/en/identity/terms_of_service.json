@@ -1,0 +1,60 @@
+{
+  "hero": {
+    "title": {
+      "line1": "We Are the Terms",
+      "line2": "We Are the Trust."
+    },
+    "subtitle": "Simple, fair, and human terms for using Deep Roots.",
+    "alt": "Terms of Service - Deep Roots"
+  },
+  "welcome": {
+    "title": "Welcome to Deep Roots",
+    "description": "By using any product, platform, or service built within the Deep Roots ecosystem (including DeWorld, dApps, wallets, and websites), you agree to these Terms of Service."
+  },
+  "terms": {
+    "youCanExpect": {
+      "title": "What You Can Expect from Us",
+      "items": [
+        "Access to decentralized tools designed to empower you",
+        "Transparent communication and open updates",
+        "Secure, permissionless infrastructure",
+        "No hidden fees, trackers, or control mechanisms",
+        "A commitment to innovation and user ownership"
+      ]
+    },
+    "weExpectFromYou": {
+      "title": "What We Expect from You",
+      "items": [
+        "Use Deep Roots services respectfully and legally",
+        "Don't exploit the network or other users",
+        "Don't reverse-engineer or copy protected logic or code",
+        "Respect the decentralized spirit — no spam, scams, or manipulation",
+        "Understand that blockchain actions are final and non-reversible"
+      ]
+    },
+    "disclaimers": {
+      "title": "Important Disclaimers",
+      "items": [
+        "We don't offer financial or legal advice",
+        "All blockchain transactions are at your own risk",
+        "Smart contract performance is subject to on-chain limitations",
+        "Features and services may evolve without notice"
+      ]
+    }
+  },
+  "dataPrivacy": {
+    "title": "Your Data & Privacy",
+    "description": {
+      "part1": "We believe in privacy by design. For more info, visit our",
+      "link": "Privacy Policy"
+    }
+  },
+  "contact": {
+    "title": "Questions?",
+    "description": "Reach out to us anytime:"
+  },
+  "finalNote": {
+    "title": "Final Note",
+    "description": "Deep Roots is more than a service — it's a movement. By joining, you're part of something bigger. Use it wisely. Grow with it wildly."
+  }
+}

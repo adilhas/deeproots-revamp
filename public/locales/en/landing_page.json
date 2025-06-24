@@ -4,7 +4,10 @@
     "subtitle": "From impossible to possible - A platform for innovative DeWorld Apps on the First Truly Dynamic Blockchain Network.",
     "hello": " HELLO FUTURE BY DEEP ROOTS",
     "paragraph": "From impossible to possible - A platform for innovative DeWorld Apps on the First Truly Dynamic Blockchain Network.",
-    "btnContent": "Join the Movement"
+    "btnContent": "Join the Movement",
+    "private_access": {
+      "description": "Become one of 100 early visionaries shaping the future of DeWorld"
+    }
   },
   "features": {
     "address_wallet": {

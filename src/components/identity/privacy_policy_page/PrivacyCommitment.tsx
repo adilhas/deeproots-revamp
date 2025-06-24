@@ -1,6 +1,11 @@
+'use client';
+
 import { Lock } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const PrivacyCommitment = () => {
+  const { t } = useTranslation('identity/privacy_policy');
+
   return (
     <section className="bg-gray-50 dark:bg-gray-800/50 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm">
       <div className="flex flex-col md:flex-row gap-8 items-center">
@@ -9,11 +14,10 @@ const PrivacyCommitment = () => {
         </div>
         <div>
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-            Our Commitment to You
+            {t('commitment.title')}
           </h2>
           <p className="text-gray-700 dark:text-gray-300">
-            We don&apos;t just talk about decentralization — we build it into
-            how we collect, store, and protect your data.
+            {t('commitment.description')}
           </p>
         </div>
       </div>

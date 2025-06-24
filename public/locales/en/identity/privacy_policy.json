@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "titleLine1": "We Are the Privacy",
+    "titleLine2": "We Are the Protection",
+    "description": "At Deep Roots, privacy is not a feature — it's a right.",
+    "imageAlt": "Privacy Policy - Deep Roots"
+  },
+  "commitment": {
+    "title": "Our Commitment to You",
+    "description": "We don't just talk about decentralization — we build it into how we collect, store, and protect your data."
+  },
+  "dont": {
+    "title": "What We Don't Do",
+    "track": "We don't track your behavior",
+    "sell": "We don't sell your data",
+    "store": "We don't store personal information without your consent",
+    "thirdParty": "We don't allow third-party tracking on our core products"
+  },
+  "do": {
+    "title": "What We Do",
+    "store": "Store only what's needed — and only if you allow it",
+    "encrypt": "Use encrypted systems across all platforms",
+    "anonymous": "Offer anonymous or wallet-based access wherever possible",
+    "manage": "Let you manage your own data through decentralized identity (DID) tools",
+    "ai": "Use AI responsibly — with transparency, not intrusion"
+  },
+  "data": {
+    "title": "How Your Data Is Handled",
+    "encryption": "End-to-end encryption",
+    "metadata": "Minimal metadata",
+    "optionalLogin": "Optional login across platforms",
+    "openSource": "Open-source audits and smart contract transparency",
+    "did": "Future DID and self-sovereign profile integration"
+  },
+  "philosophy": {
+    "title": "No Secrets. No Surveillance.",
+    "description": "We're building DeWorld — a digital space where you're not the product. Your privacy is baked into the roots of the platform, not added later."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "For any questions or concerns about privacy:"
+  }
+}

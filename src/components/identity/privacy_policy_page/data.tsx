@@ -5,7 +5,7 @@ interface IPrivacyItem {
   icon: ReactNode;
   text: string;
 }
-
+// TODO remove this file
 export const dontDoList: IPrivacyItem[] = [
   {
     icon: <X className="w-5 h-5 text-red-500" />,

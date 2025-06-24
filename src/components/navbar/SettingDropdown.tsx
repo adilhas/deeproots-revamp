@@ -66,7 +66,7 @@ const SettingDropdown = () => {
           <Link href="/cookie-policy">Cookie Policy</Link>
         </li>
         <li>
-          <Link href="#">Terms of Use</Link>
+          <Link href="/identity/terms-of-service">Terms of Use</Link>
         </li>
         <li>
           <Link href="/public-relations">Public Relations</Link>
