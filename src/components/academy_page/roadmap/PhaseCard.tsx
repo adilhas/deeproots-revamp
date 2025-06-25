@@ -29,7 +29,7 @@ export default function PhaseCard({
   return (
     <div
       className={clsx(
-        ' py-8 px-2 rounded-2xl shadow-md w-full max-w-3xl mx-auto text-[#3F3F3F] border-3',
+        `py-8 px-2 rounded-2xl shadow-md w-full max-w-3xl mx-auto text-[#3F3F3F] ${innerContainerClassname}`,
         className
       )}
     >

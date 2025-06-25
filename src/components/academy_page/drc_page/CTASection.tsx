@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
 const CTASection = () => {
@@ -13,9 +14,11 @@ const CTASection = () => {
         <p className="text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto text-lg">
           {t('cta.description')}
         </p>
-        <button className="bg-gradient-to-r to-[#0085a8] from-[#ad1aaf] text-white font-bold py-4 px-12 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center mx-auto">
-          {t('cta.button')} <ArrowRight className="ml-2 w-5 h-5" />
-        </button>
+        <Link className="w-fit" href="/connect/private-seed">
+          <button className="bg-gradient-to-r to-[#0085a8] from-[#ad1aaf] text-white font-bold py-4 px-12 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center mx-auto">
+            {t('cta.button')} <ArrowRight className="ml-2 w-5 h-5" />
+          </button>
+        </Link>
       </div>
     </section>
   );

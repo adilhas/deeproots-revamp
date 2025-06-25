@@ -1,6 +1,8 @@
 import DeWorldExosystemList from '@/components/deworld/ecosystem/DeWorldEcosystemList';
 import Filter from '@/components/deworld/ecosystem/Filter';
 import AppLayout from '@/Shared/AppLayout';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 import React from 'react';
 
@@ -33,3 +35,13 @@ const DeworldEcosystemPage = () => {
 };
 
 export default DeworldEcosystemPage;
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'en', [
+        'landing_page',
+        'common',
+      ])),
+    },
+  };
+};

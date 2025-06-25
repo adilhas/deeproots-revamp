@@ -5,6 +5,7 @@ import { ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import React from 'react';
+import Link from 'next/link';
 
 const styleData = [
   {
@@ -87,10 +88,13 @@ const WhatAreWeBuilding = () => {
           <p className="text-[#737373] dark:text-[#F8FAFC] my-4">
             {t('whatWeAreBuilding.extra.description')}
           </p>
-          <div className="flex flex-row justify-between items-center">
+          <Link
+            href="/deworld/ecosystem"
+            className="flex flex-row justify-between items-center"
+          >
             {t('whatWeAreBuilding.extra.cta')}{' '}
             <ChevronRight className="w-5 h-5" />
-          </div>
+          </Link>
         </div>
       </div>
     </div>

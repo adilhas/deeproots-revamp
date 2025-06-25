@@ -6,6 +6,7 @@ import CTAGlowButton from '@/Shared/CTAGlowButton';
 import { useThemeContext } from '@/context/ThemeContext';
 import { useTranslation } from 'react-i18next';
 import useLocaleDirection from '@/hooks/useLocaleDirection';
+import Link from 'next/link';
 
 const DRCDesktop = () => {
   const { isDark } = useThemeContext();
@@ -56,13 +57,15 @@ const DRCDesktop = () => {
               {t('drc.built_for_use')}
             </div>
             <div className="mt-5">
-              <CTAGlowButton className="text-xl mx-2">
-                {/* {t('drc.cta_seed_now')} */}
-                Seed Now
-              </CTAGlowButton>
-              <button className="px-3 border border-[#BFAAFB] text-[#303030] dark:text-white dark:border-white py-[8px] rounded-3xl ml-2">
+              <Link href={'/connect/private-seed'} className="w-fit">
+                <CTAGlowButton className="text-xl mx-2">Seed Now</CTAGlowButton>
+              </Link>
+              <Link
+                href={'/academy/drc'}
+                className="px-3 border border-[#BFAAFB] text-[#303030] dark:text-white dark:border-white py-[8px] rounded-3xl ml-2"
+              >
                 {t('drc.cta_learn_more')}
-              </button>
+              </Link>
             </div>
           </div>
 

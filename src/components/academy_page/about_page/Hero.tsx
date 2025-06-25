@@ -19,7 +19,7 @@ const Hero = () => {
               </span>
             </div>
           </h1>
-          <p className="text-xl md:text-3xl dark:text-gray-300 max-w-2xl mx-auto mt-6 leading-relaxed">
+          <p className="text-xl md:text-3xl text-black dark:text-gray-300 max-w-2xl mx-auto mt-6 leading-relaxed">
             {t('hero.subtitle.line1')}
             <span className="block mt-1 text-[#ad1aaf] font-medium">
               {t('hero.subtitle.line2')}

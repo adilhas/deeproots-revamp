@@ -1,4 +1,4 @@
-import { Sparkles, ArrowRight } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 
@@ -54,10 +54,10 @@ const OurStoryHero = () => {
           </div>
 
           {/* CTA Button */}
-          <button className="mt-10 flex items-center bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 hover:opacity-90">
+          {/* <button className="mt-10 flex items-center bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 hover:opacity-90">
             {t('hero.cta')}
             <ArrowRight size={18} className="ml-2" />
-          </button>
+          </button> */}
         </div>
       </div>
 

@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -29,12 +30,14 @@ const PrivateSeedHero = () => {
           </h1>
         </div>
         <div className="text-center ">
-          <button
-            className="mt-8 bg-[#C2410C] w-fit text-white px-6 py-3 mb-4 rounded-2xl text-lg font-semibold font-orbitron hover:opacity-90 shadow-md"
-            style={{ boxShadow: `0px 12px 20px 0px #0000008C` }}
-          >
-              {t('hero.button')}
-          </button>
+          <Link href={'/connect/private-seed/#access-form'} className="w-fit">
+            <button
+              className="mt-8 bg-[#C2410C] w-fit text-white px-6 py-3 mb-4 rounded-2xl text-lg font-semibold font-orbitron hover:opacity-90 shadow-md"
+              style={{ boxShadow: `0px 12px 20px 0px #0000008C` }}
+            >
+                {t('hero.button')}
+            </button>
+          </Link>
         </div>
       </div>
       <div className="relative w-full mx-auto my-10 overflow-hidden bg-white dark:bg-[#303030] py-2 max-w-[800px]">

@@ -23,77 +23,79 @@ const rewards = [
 
 const RootopiaRewards = () => {
   return (
-    <section className="max-w-7xl mx-auto px-4 py-16">
-      <h2 className="text-3xl md:text-4xl font-bold mb-12 bg-gradient-to-r from-gradient-from to-gradient-to w-fit mx-auto text-center bg-clip-text text-transparent">
-        Rootopia Rewards
-      </h2>
+    <section className=" mx-auto px-4 py-16 dark:bg-[#303030]">
+      <div className="max-w-[1200px] mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 bg-gradient-to-r from-gradient-from to-gradient-to w-fit mx-auto text-center bg-clip-text text-transparent">
+          Rootopia Rewards
+        </h2>
 
-      <div className="flex flex-col lg:flex-row items-center gap-6">
-        <div className="flex flex-col gap-4 w-full lg:w-1/2">
-          {/* Row 1 */}
-          <div className="flex flex-col lg:flex-row gap-4 ">
-            <div className="flex-[1.2] bg-gray-100 p-6 rounded-2xl flex flex-col items-center text-center shadow-md">
-              <Image
-                src={rewards[0].icon}
-                alt={rewards[0].label}
-                width={164}
-                height={164}
-                className="mb-4 lg:w-[164px] lg:h-[164px] w-20"
-              />
-              <p className="font-semibold whitespace-pre-line text-2xl">
-                {rewards[0].label}
-              </p>
+        <div className="flex flex-col lg:flex-row items-center gap-6">
+          <div className="flex flex-col gap-4 w-full lg:w-1/2">
+            {/* Row 1 */}
+            <div className="flex flex-col lg:flex-row gap-4 ">
+              <div className="flex-[1.2] bg-gray-100 dark:bg-[#3F3F3F] p-6 rounded-2xl flex flex-col items-center text-center shadow-md">
+                <Image
+                  src={rewards[0].icon}
+                  alt={rewards[0].label}
+                  width={164}
+                  height={164}
+                  className="mb-4 lg:w-[164px] lg:h-[164px] w-20"
+                />
+                <p className="font-semibold whitespace-pre-line text-2xl">
+                  {rewards[0].label}
+                </p>
+              </div>
+              <div className="flex-[0.8] bg-gray-100 dark:bg-[#3F3F3F] p-6 rounded-2xl flex flex-col items-center text-center shadow-md">
+                <Image
+                  src={rewards[1].icon}
+                  alt={rewards[1].label}
+                  width={164}
+                  height={164}
+                  className="mb-4 lg:w-[164px] lg:h-[164px] w-20"
+                />
+                <p className="font-semibold whitespace-pre-line text-2xl">
+                  {rewards[1].label}
+                </p>
+              </div>
             </div>
-            <div className="flex-[0.8] bg-gray-100 p-6 rounded-2xl flex flex-col items-center text-center shadow-md">
-              <Image
-                src={rewards[1].icon}
-                alt={rewards[1].label}
-                width={164}
-                height={164}
-                className="mb-4 lg:w-[164px] lg:h-[164px] w-20"
-              />
-              <p className="font-semibold whitespace-pre-line text-2xl">
-                {rewards[1].label}
-              </p>
+
+            {/* Row 2 */}
+            <div className="flex flex-col lg:flex-row gap-4">
+              <div className="flex-[0.8] bg-gray-100 dark:bg-[#3F3F3F] p-6 rounded-2xl flex flex-col items-center text-center shadow-md">
+                <Image
+                  src={rewards[2].icon}
+                  alt={rewards[2].label}
+                  width={164}
+                  height={164}
+                  className="mb-4 lg:w-[164px] lg:h-[164px] w-20"
+                />
+                <p className="font-semibold whitespace-pre-line text-2xl">
+                  {rewards[2].label}
+                </p>
+              </div>
+              <div className="flex-[1.2] bg-gray-100 dark:bg-[#3F3F3F] p-6 rounded-2xl flex flex-col items-center text-center shadow-md">
+                <Image
+                  src={rewards[3].icon}
+                  alt={rewards[3].label}
+                  width={164}
+                  height={164}
+                  className="mb-4 lg:w-[164px] lg:h-[164px] w-20"
+                />
+                <p className="font-semibold whitespace-pre-line text-2xl">
+                  {rewards[3].label}
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* Row 2 */}
-          <div className="flex flex-col lg:flex-row gap-4">
-            <div className="flex-[0.8] bg-gray-100 p-6 rounded-2xl flex flex-col items-center text-center shadow-md">
-              <Image
-                src={rewards[2].icon}
-                alt={rewards[2].label}
-                width={164}
-                height={164}
-                className="mb-4 lg:w-[164px] lg:h-[164px] w-20"
-              />
-              <p className="font-semibold whitespace-pre-line text-2xl">
-                {rewards[2].label}
-              </p>
-            </div>
-            <div className="flex-[1.2] bg-gray-100 p-6 rounded-2xl flex flex-col items-center text-center shadow-md">
-              <Image
-                src={rewards[3].icon}
-                alt={rewards[3].label}
-                width={164}
-                height={164}
-                className="mb-4 lg:w-[164px] lg:h-[164px] w-20"
-              />
-              <p className="font-semibold whitespace-pre-line text-2xl">
-                {rewards[3].label}
-              </p>
-            </div>
+          <div className="relative w-full h-[609px] lg:w-[473px] lg:h-[609px]">
+            <Image
+              src="/academy/this-is-rootopia.png"
+              alt="Rootopia Poster"
+              fill
+              className="rounded-3xl shadow-lg object-cover object-bottom"
+            />
           </div>
-        </div>
-
-        <div className="relative w-full h-[609px] lg:w-[473px] lg:h-[609px]">
-          <Image
-            src="/academy/this-is-rootopia.png"
-            alt="Rootopia Poster"
-            fill
-            className="rounded-3xl shadow-lg object-cover object-bottom"
-          />
         </div>
       </div>
     </section>

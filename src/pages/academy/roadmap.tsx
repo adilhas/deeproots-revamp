@@ -32,6 +32,7 @@ export default function Roadmap() {
               priority
               className="object-contain object-top-left"
             />
+            <div className="absolute top-[-20px] w-[300px] h-[100px] bg-primary-dark blur-sm  pointer-events-none z-0 hidden dark:inline-block  " />
           </div>
 
           <PhasesList />

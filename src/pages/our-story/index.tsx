@@ -12,7 +12,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 const StoryPage = () => {
   return (
     <AppLayout>
-      <div className="min-h-screen bg-neutral-300 dark:bg-primary-dark">
+      <div className="min-h-screen bg-neutral-300 dark:bg-primary-dark px-3">
         <Head>
           <title>Our Story - Deep Roots</title>
           <meta

@@ -35,7 +35,7 @@ const VolunteerForm = () => {
   };
 
   return (
-    <section className="max-w-2xl mx-auto px-4 py-16">
+    <section id="volunteer-form" className="max-w-2xl mx-auto px-4 py-16">
       <h1 className="text-3xl mb-6 font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-gradient-from to-gradient-to w-fit mx-auto font-orbitron">
         {t('form.title')}
       </h1>

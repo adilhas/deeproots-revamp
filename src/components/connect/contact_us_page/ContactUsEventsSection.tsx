@@ -8,7 +8,7 @@ const ContactUsEventsSection = () => {
     <div className="bg-gradient-to-br from-[#0085a8]/10 to-[#ad1aaf]/20 p-8 rounded-2xl border border-[#0085a8]/30 shadow-xl">
       <div className="flex items-center mb-6">
         <Calendar className="w-8 h-8 text-[#ad1aaf] mx-3" />
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+        <h2 className=" text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
           {t('contactUsEvents.heading')}
         </h2>
       </div>

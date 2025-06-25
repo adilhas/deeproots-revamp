@@ -16,7 +16,7 @@ const BenefitsMobileView = () => {
   }) as string[];
 
   return (
-    <div className="inline-block lg:hidden mx-auto w-full">
+    <div className="inline-block lg:hidden mx-auto w-full text-center">
       <div>
         {benefitsTop.map((item, i) => (
           <BenefitCard key={`top-${i}`} className="max-w-[400px] mx-auto my-6">

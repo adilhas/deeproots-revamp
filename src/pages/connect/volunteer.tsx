@@ -8,6 +8,7 @@ import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
 export default function Volunteer() {
@@ -41,9 +42,14 @@ export default function Volunteer() {
                 <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-3xl mx-auto lg:mx-0">
                   {t('hero.description2')}
                 </p>
-                <button className="bg-gradient-to-r font-orbitron from-[#0085a8] to-[#ad1aaf] text-white font-semibold py-3 px-8 rounded-2xl text-lg shadow-md hover:shadow-lg transition-all">
-                  {t('hero.button')}
-                </button>
+                <Link
+                  className="w-fit"
+                  href={'/connect/volunteer#volunteer-form'}
+                >
+                  <button className="bg-gradient-to-r font-orbitron from-[#0085a8] to-[#ad1aaf] text-white font-semibold py-3 px-8 rounded-2xl text-lg shadow-md hover:shadow-lg transition-all">
+                    {t('hero.button')}
+                  </button>
+                </Link>
               </div>
               <div className="w-full lg:w-1/2">
                 <div className="rounded-4xl max-h-[503px]  shadow-lg overflow-hidden">
@@ -64,8 +70,8 @@ export default function Volunteer() {
               <VolunteerForm />
             </div>
           </div>
-          <SocialLinks />
         </section>
+        <SocialLinks />
       </AppLayout>
     </>
   );

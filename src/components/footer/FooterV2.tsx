@@ -7,8 +7,7 @@ import { socialLinks } from '@/constants/socialLinksData';
 import { getfooterLinks } from '@/constants/footerLinksV2';
 
 export default function Footer() {
-  const { t, i18n } = useTranslation('common');
-  const lang = i18n.language;
+  const { t } = useTranslation('common');
   const footerLinksV3 = getfooterLinks(t);
 
   return (
@@ -50,11 +49,11 @@ export default function Footer() {
               } w-max mx-auto`}
             >
               <div
-                className={`font-semibold mb-8 font-orbitron text-[#1F2937] cursor-pointer dark:text-white flex flex-col justify-center items-start gap-2 ${section.hoverColor} ${section.title === 'DeWorld' ? 'w-full' : 'w-max'}`}
+                className={`font-semibolb font-orbitron text-[#1F2937] cursor-pointer dark:text-white flex flex-col justify-center items-start gap-2 ${section.hoverColor} ${section.title === 'DeWorld' ? 'w-full mb-4' : 'w-max mb-8'}`}
               >
                 <div className="mx-auto">{section.icon}</div>
                 <div
-                  className={`${section.title === 'DeWorld' ? 'mx-auto' : ''}`}
+                  className={`${section.title === 'DeWorld' ? 'mx-auto text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text text-2xl font-bold' : ''}`}
                 >
                   {section.title}
                 </div>
@@ -62,7 +61,7 @@ export default function Footer() {
               <ul
                 className={`${
                   section.title === 'DeWorld'
-                    ? 'grid grid-cols-2 gap-x-8 gap-y-3 p-5 rounded-2xl bg-[#FAFAFA] dark:bg-[#252525] border border-[#CBD5E1] dark:border-[#334155]'
+                    ? 'grid grid-cols-2  gap-x-8 gap-y-3 p-5 rounded-2xl bg-[#FAFAFA] dark:bg-[#252525] border border-[#CBD5E1] dark:border-[#334155]'
                     : 'space-y-2'
                 } text-[#4B5563] dark:text-[#F1F5F9]`}
               >
@@ -79,7 +78,7 @@ export default function Footer() {
                       </a>
                     ) : (
                       <Link
-                        href={`/${lang}${link.href}`}
+                        href={`${link.href}`}
                         className={`text-sm hover:underline ${section.hoverColor}`}
                       >
                         {link.label}
@@ -94,7 +93,7 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="text-center pt-20">
-          <Link href={`/${lang}/`}>
+          <Link href={`/`}>
             <div className="flex justify-center items-center">
               <h3 className="text-xl font-bold font-orbitron bg-gradient-to-r from-[#ad1aaf] to-[#0085a8] bg-clip-text text-transparent mb-2">
                 DeepQuest (Quiz Hub)
@@ -102,39 +101,33 @@ export default function Footer() {
             </div>
           </Link>
           <p className="text-sm dark:text-gray-400 mx-2 flex flex-wrap justify-center gap-x-2 gap-y-1">
-            <Link href={`/${lang}/our-story`} className="hover:underline">
+            <Link href={`/our-story`} className="hover:underline">
               {t('footer.OurStory')}
             </Link>
             -<span>{t('footer.BrandAssets')}</span>-
-            <Link href={`/${lang}/code-of-honor`} className="hover:underline">
+            <Link href={`/code-of-honor`} className="hover:underline">
               {t('footer.CodeOfHonor')}
             </Link>
             -
-            <Link
-              href={`/${lang}/identity/privacy-policy`}
-              className="hover:underline"
-            >
+            <Link href={`/identity/privacy-policy`} className="hover:underline">
               {t('footer.PrivacyPolicy')}
             </Link>
             -
             <Link
-              href={`/${lang}/identity/terms-of-service`}
+              href={`/identity/terms-of-service`}
               className="hover:underline"
             >
               {t('footer.TermsOfUse')}
             </Link>
             -
-            <Link href={`/${lang}/cookie-policy`} className="hover:underline">
+            <Link href={`/cookie-policy`} className="hover:underline">
               {t('footer.CookiePolicy')}
             </Link>
             -
-            <Link
-              href={`/${lang}/public-relations`}
-              className="hover:underline"
-            >
+            <Link href={`/public-relations`} className="hover:underline">
               {t('footer.PublicRelations')}
             </Link>
-            -<Link href={`/${lang}/disclaimer`}>{t('footer.Disclaimer')}</Link>
+            -<Link href={`/disclaimer`}>{t('footer.Disclaimer')}</Link>
           </p>
         </div>
       </div>

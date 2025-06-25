@@ -2,6 +2,7 @@ import { useThemeContext } from '@/context/ThemeContext';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import CountdownTimer from './CountDownTimer';
+import Link from 'next/link';
 
 const Hero = () => {
   const { isDark } = useThemeContext();
@@ -27,13 +28,13 @@ const Hero = () => {
               </p>
             </div>
             <div className="mt-32 lg:mt-0">
-              <div className="relative w-[450px] h-[252px] translate-y-[-40px] overflow-visible">
+              <div className="relative scale-80 md:scale-100 w-[450px] h-[252px] translate-y-[-40px] overflow-visible">
                 {/* Background eclipse */}
                 <Image
                   width={1000}
                   height={1000}
                   alt="eclipse"
-                  className="scale-150 absolute top-[-35%] lg:top-[70%] lg:-translate-y-1/2 lg:left-[-150px] z-0 pointer-events-none"
+                  className="scale-150  absolute top-[-35%] lg:top-[70%] lg:-translate-y-1/2 lg:left-[-150px] z-0 pointer-events-none"
                   src={`${isDark ? '/landing/eclipse-dark.png' : '/landing/eclipse-light.png'}`}
                   priority
                 />
@@ -67,9 +68,12 @@ const Hero = () => {
                       <div className="">
                         <CountdownTimer />
                       </div>
-                      <button className="btn text-sm btn-sm bg-gradient-to-r from-gradient-from to-gradient-to dark:from-[#696969] dark:to-[#696969] border-0">
+                      <Link
+                        href="/connect/private-seed"
+                        className="btn text-sm btn-sm bg-gradient-to-r from-gradient-from to-gradient-to dark:from-[#696969] dark:to-[#696969] border-0"
+                      >
                         Apply Now
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -96,9 +100,12 @@ const Hero = () => {
           {t('hero-section.paragraph')}
         </div>
 
-        <button className="mx-auto cursor-pointer px-6 font-orbitron py-3 bg-gradient-to-r from-[#9E2CA9] to-[#3B82A4] text-center relative font-bold hover:bg-gradient-to-l  transition-all hover:delay-1000 hover:ease-in-out text-white rounded-2xl  text-lg">
+        <Link
+          href="/connect/private-seed"
+          className="mx-auto cursor-pointer px-6 font-orbitron py-3 bg-gradient-to-r from-[#9E2CA9] to-[#3B82A4] text-center relative font-bold hover:bg-gradient-to-l  transition-all hover:delay-1000 hover:ease-in-out text-white rounded-2xl  text-lg"
+        >
           {t('hero-section.btnContent')}
-        </button>
+        </Link>
       </div>
     </>
   );

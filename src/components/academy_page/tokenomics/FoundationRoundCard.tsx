@@ -9,7 +9,7 @@ export type FoundationRoundType = {
 
 const FoundationRoundCard = ({ data }: { data: FoundationRoundType }) => {
   return (
-    <div className="flex bg-[#E9E9E9] p-6 rounded-3xl dark-[#303030] flex-col h-full justify-between">
+    <div className="flex bg-[#E9E9E9] p-6 rounded-3xl dark:bg-[#303030] flex-col h-full justify-between">
       <p className="text-sm text-[#8F8F8F] font-semibold">{data.round}</p>
       <h3 className="text-xl font-bold bg-gradient-to-r from-gradient-from to-gradient-to w-fit bg-clip-text text-transparent mb-4">
         {data.title}

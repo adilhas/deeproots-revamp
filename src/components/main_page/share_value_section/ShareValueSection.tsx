@@ -83,8 +83,8 @@ const ShareValueSection = () => {
             ))}
           </div>
 
-          <Link href="https://sharevalue.earth/" passHref>
-            <button className="mt-8 py-4 px-7 w-1/3 font-orbitron font-bold text-lg text-neutral-200 bg-gradient-to-r from-[#E07C76] to-[#52b797] hover:text-neutral-900 rounded-lg">
+          <Link href="https://sharevalue.earth/" passHref className="w-fit">
+            <button className="mt-8 py-4 px-7 w-fit font-orbitron font-bold text-lg text-neutral-200 bg-gradient-to-r from-[#E07C76] to-[#52b797] hover:text-neutral-900 rounded-lg">
               {t('share_value_section.button')}
             </button>
           </Link>

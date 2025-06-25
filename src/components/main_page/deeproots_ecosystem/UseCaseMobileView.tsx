@@ -25,12 +25,12 @@ const UseCaseMobileView = () => {
           <div className="text-3xl  w-fit mx-auto text-center font-orbitron font-[600] text-transparent bg-gradient-to-r darkfrom-gradient-from darkto-gradient-to from-gradient-from-light to-gradient-to-light bg-clip-text">
             {t('deeproots_ecosystem.use_case')}
           </div>
-          <div className="flex my-8 justify-center flex-row gap-4">
-            <ul className="flex flex-col w-max gap-y-2 lg:gap-y-5 text-center text-sm md:text-md xl:text-lg font-orbitron text-[#404040] dark:text-[#F1F5F9]">
+          <div className="flex my-8 justify-evenly flex-row gap-4">
+            <ul className="flex flex-col w-max gap-y-6 lg:gap-y-5 text-center text-sm md:text-md xl:text-lg font-orbitron text-[#404040] dark:text-[#F1F5F9]">
               {Data1.map((item, index) => (
                 <li
                   key={index}
-                  className="py-2 lg:py-2.5 px-4 rounded-2xl bg-[#D4D4D4] dark:bg-[#212121] "
+                  className="py-3 px-4 rounded-2xl bg-[#D4D4D4] dark:bg-[#212121] "
                   style={{
                     boxShadow: isDark
                       ? '0px 15px 13.4px 0px #0303036E'
@@ -41,11 +41,11 @@ const UseCaseMobileView = () => {
                 </li>
               ))}
             </ul>
-            <ul className="flex flex-col w-max gap-y-2 lg:gap-y-5 text-center text-sm md:text-md xl:text-lg font-orbitron text-[#404040] dark:text-[#F1F5F9]">
+            <ul className="flex flex-col w-max gap-y-6 lg:gap-y-5 text-center text-sm md:text-md xl:text-lg font-orbitron text-[#404040] dark:text-[#F1F5F9]">
               {Data2.map((item, index) => (
                 <li
                   key={index}
-                  className="py-2 lg:py-2.5 px-4 rounded-2xl bg-[#D4D4D4] dark:bg-[#212121] "
+                  className="py-3 px-4 rounded-2xl bg-[#D4D4D4] dark:bg-[#212121] "
                   style={{
                     boxShadow: isDark
                       ? '0px 15px 13.4px 0px #0303036E'

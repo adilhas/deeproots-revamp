@@ -41,8 +41,10 @@ const SeedingSoon = () => {
       <div className="flex flex-col md:flex-row items-center w-full gap-2 mx-auto justify-between">
         {steps.map((text, index) => (
           <React.Fragment key={index}>
-            <div className="bg-[#F1F1F1] dark:bg-[#525252] w-[300px] h-[130px] border border-[#D4D4D4] dark:border-[#737373] p-6 rounded-3xl">
-              <div className="mb-4">{stepIcons[index]}</div>
+            <div className="bg-[#F1F1F1] dark:bg-[#525252] text-center md:text-start w-[300px] h-[130px] border border-[#D4D4D4] dark:border-[#737373] p-6 rounded-3xl">
+              <div className="mb-4 w-fit md:w-full mx-auto">
+                {stepIcons[index]}
+              </div>
               <p className="text-[#737373] dark:text-[#F8FAFC]">{text}</p>
             </div>
             {index < steps.length - 1 && (

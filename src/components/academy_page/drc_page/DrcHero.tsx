@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -27,9 +28,12 @@ const DrcHero = () => {
           />
         </div>
       </div>
-      <button className="bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+      <Link
+        href="/connect/private-seed"
+        className="bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+      >
         {t('hero.button')}
-      </button>
+      </Link>
     </div>
   );
 };

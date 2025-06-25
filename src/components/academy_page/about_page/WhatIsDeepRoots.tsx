@@ -9,11 +9,11 @@ const WhatIsDeepRoots = () => {
 
   return (
     <section className="mb-24 w-full max-w-7xl mx-auto">
-      <div className="flex items-center mb-12">
+      <div className="flex flex-col gap-2 md:flex-row items-center mb-12">
         <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#0085a8]/20 to-[#ad1aaf]/20 flex items-center justify-center mx-6 shadow-lg">
           <span className="text-4xl">🌍</span>
         </div>
-        <h2 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#0085a8] via-[#0085a8] to-[#ad1aaf]">
+        <h2 className=" text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#0085a8] via-[#0085a8] to-[#ad1aaf]">
           {t('what_is_deep_roots.title')}
         </h2>
       </div>

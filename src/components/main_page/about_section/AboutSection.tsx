@@ -6,11 +6,11 @@ import { useTranslation } from 'react-i18next';
 const aboutItems = [
   { title: 'story', link: '/our-story' },
   { title: 'about', link: '/academy/about' },
-  { title: 'deworld', link: '/' },
+  { title: 'deworld', link: '/deworld/ecosystem' },
   { title: 'drc', link: '/academy/drc' },
-  { title: 'foundation', link: '/' },
+  { title: 'foundation', link: '/seeding/foundation' },
   { title: 'whitepaper', link: '/' },
-  { title: 'roadmap', link: '/' },
+  { title: 'roadmap', link: '/academy/roadmap' },
 ];
 const AboutSection: React.FC = () => {
   const { t } = useTranslation('landing_page');

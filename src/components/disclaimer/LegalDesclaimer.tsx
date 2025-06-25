@@ -73,7 +73,7 @@ const sections = [
 
 const LegalDisclaimerPage = () => {
   return (
-    <section className="max-w-5xl mx-auto px-4 py-12 text-xl">
+    <section className="max-w-5xl mx-auto px-4 py-12 text-xl md:text-lg">
       <DisclaimerHeader />
 
       <p className="my-10">

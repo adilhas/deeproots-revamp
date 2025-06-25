@@ -22,7 +22,7 @@ const TokenomicsUtility = () => {
   ];
 
   return (
-    <section>
+    <section className="py-16">
       <div className="relative mx-auto">
         {/* Desktop Background */}
         <Image
@@ -45,15 +45,15 @@ const TokenomicsUtility = () => {
           width={1469}
           src={
             isDark
-              ? '/academy/utility-bg-mob-light.png'
+              ? '/academy/utility-bg-mob-dark.png'
               : '/academy/utility-bg-mob-light.png'
           }
           alt="background-mobile"
-          className="inline-block md:hidden w-full mx-auto "
+          className="inline-block md:hidden w-full mx-auto scale-y-110 sm:scale-y-100"
         />
         <div className="absolute top-[20%] md:top-[25%] md:left-[50px] left-1/2 -translate-x-1/2 w-full md:-translate-0">
           <div className="w-full md:w-fit text-center md:text-left z-10">
-            <h1 className=" text-2xl md:text-xl lg:text-4xl leading-tight font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] md:text-nowrap w-fit mx-auto">
+            <h1 className=" text-3xl md:text-2xl lg:text-4xl leading-tight font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] md:text-nowrap w-fit mx-auto">
               REAL UTILITY
             </h1>
 
@@ -76,6 +76,7 @@ const TokenomicsUtility = () => {
                       : '/connect/access-benefit-card.png'
                   }
                   alt="card background"
+                  className="scale-x-90 sm:scale-x-100 "
                 />
 
                 <div className="absolute top-[45%] text-center left-1/2 -translate-x-1/2 text-md md:text-xs lg:text-lg w-[87%]">

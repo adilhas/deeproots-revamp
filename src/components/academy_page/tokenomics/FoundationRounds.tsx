@@ -78,7 +78,7 @@ const FoundationRounds = () => {
         </div>
 
         <div className="flex flex-row justify-center md:justify-end w-full translate-y-[-28px] ">
-          <div className="bg-purple-100 text-sm mt-6 px-4 py-2 rounded-b-xl inline-block  md:mr-8 w-[295px]">
+          <div className="bg-purple-100 dark:bg-[#581C87] text-sm mt-6 px-4 py-2 rounded-b-xl inline-block  md:mr-8 w-[295px]">
             <span className="font-semibold">Access Types</span> <br />
             Invite-Only, Builder Approval, Governance-Based
           </div>

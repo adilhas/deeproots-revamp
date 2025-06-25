@@ -234,7 +234,10 @@ export const getfooterLinks = (t: TFunction) => [
         href: 'https://www.oceanbazaar.earth',
       },
       { label: t('footer.DeWorld.CopyMe'), href: '#' },
-      { label: t('footer.DeWorld.Rootopia'), href: '#' },
+      {
+        label: t('footer.DeWorld.Rootopia'),
+        href: 'https://www.rootopia.earth',
+      },
       { label: t('footer.DeWorld.Foundation'), href: '/lab/foundation-seats' },
       {
         label: t('footer.DeWorld.InnoFarm'),
@@ -288,7 +291,7 @@ export const getfooterLinks = (t: TFunction) => [
         label: t('footer.RootConnect.PrivateSeedAccess'),
         href: '/connect/private-seed',
       },
-      { label: t('footer.RootConnect.Socials'), href: '#' },
+      { label: t('footer.RootConnect.Socials'), href: '/#social-links' },
       { label: t('footer.RootConnect.Events'), href: '/connect/events' },
       { label: t('footer.RootConnect.Career'), href: '/connect/career' },
       {

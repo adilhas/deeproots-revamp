@@ -20,7 +20,7 @@ const PrivateSeedForm = () => {
     whyJoin: '',
     whyFoundation: '',
     canPassKyc: '',
-    signature: false,
+    // signature: false,
     confidentiality: false,
   });
 
@@ -41,7 +41,7 @@ const PrivateSeedForm = () => {
   };
 
   return (
-    <section className=" mx-auto  py-16">
+    <section id="access-form" className=" mx-auto  py-16">
       <div className="p-[2px] mb-6 mt-2 md:shadow-[0px_12px_21px_0px_#0000002B] md:bg-gradient-to-r from-gradient-from to-gradient-to rounded-xl w-fit mx-auto">
         <div className="bg-[#E9E9E9] dark:bg-[#161616] rounded-xl px-4 py-1">
           <h1 className="text-3xl mb-2 font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-gradient-from to-gradient-to font-orbitron">
@@ -143,7 +143,7 @@ const PrivateSeedForm = () => {
             </div>
           </div>
 
-          <label className="flex items-start gap-2 text-sm">
+          {/* <label className="flex items-start gap-2 text-sm">
             <input
               name="signature"
               checked={formData.signature}
@@ -152,7 +152,7 @@ const PrivateSeedForm = () => {
               className="checkbox bg-white text-black"
             />
             <span>{t('form.signature')}</span>
-          </label>
+          </label> */}
 
           <label className="flex items-start gap-2 text-sm">
             <input

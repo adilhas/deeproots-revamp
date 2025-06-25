@@ -12,7 +12,7 @@ export default function AboutAcademy() {
   return (
     <>
       <Head>
-        <title>Deep Roots | DeWorld</title>
+        <title>DEEPROOTS | DeWorld</title>
         <meta
           name="description"
           content="We Are the Next. We Are the DeWorld. Discover Deep Roots – a bold decentralized movement reshaping the internet."
@@ -20,7 +20,7 @@ export default function AboutAcademy() {
       </Head>
 
       <AppLayout>
-        <main className="relative w-full overflow-x-hidden max-w-[100vw] z-10 dark:bg-primary-dark">
+        <main className="relative w-full overflow-x-hidden max-w-[100vw] z-10 bg-neutral-300 dark:bg-primary-dark text-gray-900 dark:text-gray-100">
           <Hero />
 
           <div className="w-full px-4 sm:px-6 lg:px-8 py-20">

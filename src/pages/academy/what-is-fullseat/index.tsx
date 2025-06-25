@@ -9,6 +9,7 @@ import { ChevronRight, Home } from 'lucide-react';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { PiOfficeChair } from 'react-icons/pi';
@@ -49,7 +50,7 @@ const WhatIsFullSeatPage = () => {
           <p className="my-4 text-[#737373] dark:text-[#F1F5F9]">
             {t('fullseat.intro.description')}
           </p>
-          <div className="text-2xl text-center font-orbitron font-semibold flex md:flex-row items-center gap-2 mx-auto w-fit my-20">
+          <div className="text-2xl text-center font-orbitron font-semibold flex flex-col md:flex-row items-center gap-2 mx-auto w-fit my-20">
             <div className="line-through text-[#696969]">
               {t('fullseat.quote.strike')}
             </div>
@@ -79,7 +80,7 @@ const WhatIsFullSeatPage = () => {
           </div>
           <HowToClaimFullSeat />
           <WhoIsThisFor />
-          <div className="flex flex-row items-center text-2xl font-semibold font-orbitron justify-around gap-2 w-full mx-auto my-8">
+          <div className="flex flex-col md:flex-row items-center text-2xl font-semibold font-orbitron justify-around gap-2 w-full mx-auto my-8">
             <div className="text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text w-fit">
               {t('fullseat.flow.step1')}
             </div>
@@ -101,9 +102,12 @@ const WhatIsFullSeatPage = () => {
             <div className="w-fit">{t('fullseat.flow.step3')}</div>
           </div>
           <div className="w-full flex justify-center mt-20">
-            <button className="bg-gradient-to-r from-gradient-from to-gradient-to w-fit mx-auto text-center rounded-2xl text-2xl text-white py-2 px-4 font-orbitron">
+            <Link
+              href="/connect/private-seed"
+              className="bg-gradient-to-r from-gradient-from to-gradient-to w-fit mx-auto text-center rounded-2xl text-2xl text-white py-2 px-4 font-orbitron"
+            >
               {t('fullseat.cta.button')}
-            </button>
+            </Link>
           </div>
         </div>
         <LearnMore />

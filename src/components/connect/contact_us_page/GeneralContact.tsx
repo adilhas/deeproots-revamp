@@ -7,7 +7,7 @@ const GeneralContact = () => {
     <div className="bg-white/30 dark:bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-[#00c6ff] dark:border-gray-700 shadow-xl">
       <div className="flex items-center mb-6">
         <Mail className="w-8 h-8 text-[#00c6ff] mx-3" />
-        <h2 className="text-3xl font-bold text-primary-dark dark:text-white">
+        <h2 className="text-xl md:text-3xl font-bold text-primary-dark dark:text-white">
           {t('generalContact.heading')}{' '}
         </h2>
       </div>

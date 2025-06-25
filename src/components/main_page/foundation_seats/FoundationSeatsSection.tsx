@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { Clock3, Gamepad2, PiggyBank, Users, Wand } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import Link from 'next/link';
 
 const icons = [
   <Wand key="wand" size={30} className="text-[#0085a5]" />,
@@ -79,10 +80,11 @@ const FoundationSeatsSection = () => {
               )
             )}
           </div>
-
-          <button className=" text-white font-bold w-fit hover:scale-105  bg-[#0085a8] px-6 font-orbitron py-3 text-center  transition-all hover:ease-in-out rounded-lg text-lg">
-            {t('foundation.cta')}
-          </button>
+          <Link href={'/seeding/foundation'}>
+            <button className=" text-white font-bold w-fit hover:scale-105  bg-[#0085a8] px-6 font-orbitron py-3 text-center  transition-all hover:ease-in-out rounded-lg text-lg">
+              {t('foundation.cta')}
+            </button>
+          </Link>
         </div>
       </div>
     </section>

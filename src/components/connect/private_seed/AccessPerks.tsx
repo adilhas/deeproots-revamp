@@ -9,18 +9,23 @@ const AccessPerks = () => {
 
   const accessToData = [
     {
+      id: 'address',
       name: t('accessPerks.products.TheAddress'),
       icon: '/deworld/products_icons/the-address-light.svg',
     },
     {
+      id: 'telexcoin',
       name: t('accessPerks.products.TeleXcoin'),
       icon: '/deworld/products_icons/telexcoin-light.svg',
     },
     {
+      id: 'oceanbazaar',
+
       name: t('accessPerks.products.OceanBazaar'),
       icon: '/deworld/products_icons/ocean-bazaar-light.svg',
     },
     {
+      id: 'foundation',
       name: t('accessPerks.products.Foundation'),
       icon: '/deworld/products_icons/foundation-light.svg',
     },
@@ -50,8 +55,8 @@ const AccessPerks = () => {
               className="gap-3 bg-white dark:bg-[#303030] min-h-[132px] rounded-4xl flex flex-col justify-center items-center"
             >
               <Image
-                width={32}
-                height={32}
+                width={40}
+                height={40}
                 src={access.icon}
                 alt={access.name}
               />

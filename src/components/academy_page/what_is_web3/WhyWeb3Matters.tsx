@@ -36,7 +36,7 @@ const WhyWeb3Matters = () => {
         {items.map((item, index) => (
           <div
             key={index}
-            className={`${bgStyles[index].bgColor} border ${bgStyles[index].borderColor} rounded-3xl min-h-[145px] text-center p-4`}
+            className={`${bgStyles[index].bgColor} border ${bgStyles[index].borderColor} rounded-3xl min-h-[145px] text-center flex flex-col items-center justify-center p-4`}
           >
             <h3 className="font-semibold text-lg">{item.title}</h3>
             <p className="text-[#737373] dark:text-[#F8FAFC]">

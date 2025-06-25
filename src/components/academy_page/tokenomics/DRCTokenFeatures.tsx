@@ -65,7 +65,7 @@ const DRCTokenFeatures = () => {
   ];
 
   return (
-    <div className="my-20">
+    <div className="my-20 max-w-[1200px] px-3 mx-auto">
       <h2 className="text-3xl md:text-4xl font-bold mb-12 bg-gradient-to-r from-gradient-from to-gradient-to w-fit mx-auto text-center bg-clip-text text-transparent">
         dRC TOKEN TRUST FEATURES
       </h2>
