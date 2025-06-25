@@ -134,7 +134,7 @@ export default function Footer() {
             >
               {t('footer.PublicRelations')}
             </Link>
-            -<span>{t('footer.Disclaimer')}</span>
+            -<Link href={`/${lang}/disclaimer`}>{t('footer.Disclaimer')}</Link>
           </p>
         </div>
       </div>

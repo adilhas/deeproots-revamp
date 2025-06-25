@@ -71,7 +71,7 @@ export const footerLinksV3 = [
       { label: 'What is Fullseat?', href: '/academy/what-is-fullseat' },
       { label: 'Whitepaper', href: '#' },
       { label: 'What is Web3?', href: '/academy/what-is-web3' },
-      { label: 'Tokenomics', href: '' },
+      { label: 'Tokenomics', href: '/academy/tokenomics' },
       { label: 'RoadMap', href: '/academy/roadmap' },
     ],
     hoverColor: 'hover:text-[#04B95F]',
@@ -162,7 +162,10 @@ export const getfooterLinks = (t: TFunction) => [
         label: t('footer.RootAcademy.WhatIsWeb3'),
         href: '/academy/what-is-web3',
       },
-      { label: t('footer.RootAcademy.Tokenomics'), href: '' },
+      {
+        label: t('footer.RootAcademy.Tokenomics'),
+        href: '/academy/tokenomics',
+      },
       { label: t('footer.RootAcademy.RoadMap'), href: '/academy/roadmap' },
     ],
     hoverColor: 'hover:text-[#04B95F]',
@@ -176,7 +179,10 @@ export const getfooterLinks = (t: TFunction) => [
         label: t('footer.RootLab.DeepRootsNetwork'),
         href: '/lab/deeproots-network',
       },
-      { label: t('footer.RootLab.SecurityBugBounty'), href: '#' },
+      {
+        label: t('footer.RootLab.SecurityBugBounty'),
+        href: '/lab/security-bug-bounty',
+      },
 
       // { label: t('footer.RootLab.Documentation'), href: '#' },
       { label: t('footer.RootLab.SmartContract'), href: '/lab/smart-contract' },
