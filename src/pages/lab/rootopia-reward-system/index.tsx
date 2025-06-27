@@ -1,7 +1,7 @@
-import Footer from '@/components/footer/FooterV2';
 import BattleGamePlayReward from '@/components/lab/rootopia_rewards/BattleGamePlayReward';
 import MagicBoxSystem from '@/components/lab/rootopia_rewards/MagicBoxSystem';
 import ReferralReward from '@/components/lab/rootopia_rewards/ReferralReward';
+import RootopiaFooter from '@/components/lab/rootopia_rewards/RootopiaFooter';
 import RootopiaGallery from '@/components/lab/rootopia_rewards/RootopiaGallery';
 import RRHero from '@/components/lab/rootopia_rewards/RRHero';
 import SeedingRewards from '@/components/lab/rootopia_rewards/SeedingRewards';
@@ -33,7 +33,7 @@ const RootopiaRewardSystemPage = () => {
         className="bg-[#361E03] dark:bg-[#361E03]"
         socialCardClassName="bg-[#4E2B04]"
       />
-      <Footer className="bg-[#361E03]" />
+      <RootopiaFooter />
     </>
   );
 };
