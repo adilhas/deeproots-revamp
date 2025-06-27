@@ -26,8 +26,8 @@ const SeedingRewards = () => {
   const { isAbove } = useBreakpoint();
   return (
     <div className=" text-[#421A00] bg-[#9F7124] relative px-3 overflow-x-hidden">
-      <div className="relative max-w-[1200px] mx-auto py-16">
-        <div className="z-10 w-full relative pt-20 md:pt-0 py-20">
+      <div className="relative max-w-[1200px] mx-auto pt-16">
+        <div className="z-10 w-full relative pt-20 md:pt-8">
           <div className="absolute top-[-30px] left-[-30px] md:left-0 w-[200px] md:w-[300px] h-[200px] md:h-[300px] z-0">
             <Image
               src="/lab/seeding-bg-obj1.png"
@@ -76,7 +76,7 @@ const SeedingRewards = () => {
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-y-10 lg:grid-cols-4 gap-x-2 md:gap-x-6 w-full max-w-[1200px] mx-auto  -translate-y-0 md:-translate-y-[30px] mt-10 md:mt-0">
+        <div className="grid grid-cols-1 gap-y-10 lg:grid-cols-4 gap-x-2 md:gap-x-6 w-full max-w-[1200px] mx-auto  -translate-y-0 lg:-translate-y-[60px] mt-10 md:mt-0">
           {rewards.map((reward, index) => (
             <div
               key={index}
@@ -98,13 +98,13 @@ const SeedingRewards = () => {
             </div>
           ))}
         </div>
-        <div className="my-16 w-fit mx-auto">
+        <div className="my-16 w-full mx-auto">
           <Image
             src="/lab/elf.png"
-            width={1000}
+            width={1200}
             height={1000}
             alt="rootopia rewards"
-            className="border-[29px] border-[#401A00]"
+            className="border-[29px] border-[#401A00] w-full"
           />
         </div>
       </div>

@@ -10,7 +10,7 @@ const MagicBoxSystem = () => {
   ];
 
   return (
-    <div className=" relative overflow-hidden  bg-[url('/lab/magic-box-bg.png')] bg-center overflow-y-visible">
+    <div className=" relative overflow-hidden  bg-[url('/lab/magic-box-bg.png')] bg-cover md:bg-contain bg-bottom-left md:bg-center overflow-y-visible">
       <div className="relative max-w-[1200px] mx-auto px-2 pb-[200px] md:pb-0 py-16 bg-cover min-h-[800px] ">
         {/* Background Image */}
         <div className="absolute  top-0 md:top-auto md:bottom-0 left-0 w-[300px] md:w-[200px] h-[350px] md:h-[750px] lg:w-[500px] z-0">

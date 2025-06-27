@@ -32,7 +32,7 @@ const RootopiaGallery = () => {
   };
 
   return (
-    <div className="py-16">
+    <div className="py-16 overflow-x-hidden">
       <div className="max-w-[1200px] mx-auto px-2">
         {/* Heading */}
         <div className="mb-8">
@@ -86,12 +86,12 @@ const RootopiaGallery = () => {
         </div>
 
         {/* Thumbnails */}
-        <div className="flex justify-center flex-wrap gap-4">
+        <div className="grid grid-cols-8 gap-2">
           {galleryImages.map((img, index) => (
             <div
               key={index}
               onClick={() => setSelectedIndex(index)}
-              className={`relative w-[100px] h-[70px] cursor-pointer rounded-md overflow-hidden border-2 ${
+              className={`relative w-full aspect-[10/7] cursor-pointer rounded-md overflow-hidden border-2 ${
                 selectedIndex === index
                   ? 'border-yellow-500'
                   : 'border-transparent'
