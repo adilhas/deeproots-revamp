@@ -30,7 +30,7 @@ export const whyRootopiaPoints = [
 const WhyRootopiaMatters = () => {
   return (
     <div className="relative  bg-[#9F7124] text-[#471C00] overflow-x-hidden overflow-y-visible">
-      <div className="relative pb-[400px] md:pb-0 max-w-[1200px] mx-auto">
+      <div className="relative pb-[400px] md:pb-30 max-w-[1200px] mx-auto">
         <div className="absolute top-0 left-0 w-[100px] md:w-[300px] h-[500px]  blur-3xl opacity-30 pointer-events-none z-[0]" />
 
         {/* Image On Top of Glow */}
@@ -51,13 +51,13 @@ const WhyRootopiaMatters = () => {
           />
         </div>
         <div className="py-16">
-          <h2 className="text-center text-4xl font-semibold z-10  p-3 w-fit mx-auto">
+          <h2 className="text-center text-4xl font-semibold z-10  pt-3 w-fit mx-auto">
             Why Rootopia Rewards Matter
           </h2>
-          <div className="max-w-[700px] mx-auto my-10">
+          <div className="max-w-[700px] mx-auto mb-7 mt-3">
             <ImageBanner
               src="/lab/why-rootopia-bg.png"
-              className="md:h-fit h-[500px] w-fit px-3 text-center hidden md:block"
+              className="md:h-fit h-[500px] w-fit px-3  text-center hidden md:block"
             >
               <div className="flex flex-col gap-6 items-start justify-start">
                 {whyRootopiaPoints.map((point, index) => (
@@ -94,7 +94,7 @@ const WhyRootopiaMatters = () => {
             </ImageBanner>
           </div>
         </div>
-        <div className="absolute bottom-[0px] md:bottom-[0] right-[-140px] md:right-[60px] w-[600px] h-[600px] md:w-[200px] lg:w-[300px] md:h-[500px]  z-0">
+        <div className="absolute bottom-[0px] md:bottom-[0] right-[-140px] md:right-[60px] w-[600px] h-[600px] md:w-[200px] lg:w-[350px] md:h-[550px]  z-0">
           <div className="absolute bottom-0 right-[-10px] w-[200px] md:w-[300px] h-[500px] bg-[#C37317] blur-3xl opacity-30 pointer-events-none z-0" />
 
           <Image
