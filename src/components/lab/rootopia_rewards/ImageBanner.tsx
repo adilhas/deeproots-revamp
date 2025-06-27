@@ -12,6 +12,7 @@ interface ImageBannerProps {
   className?: string;
   children?: React.ReactNode;
   childClassName?: string;
+  imageClassName?: string;
 }
 
 const ImageBanner: React.FC<ImageBannerProps> = ({
@@ -22,6 +23,7 @@ const ImageBanner: React.FC<ImageBannerProps> = ({
   className = '',
   children,
   childClassName,
+  imageClassName,
 }) => {
   const containsJustify = (className?: string) =>
     className?.includes('justify-');
@@ -34,7 +36,7 @@ const ImageBanner: React.FC<ImageBannerProps> = ({
         width={width}
         height={height}
         unoptimized
-        className="w-full h-full object-fill"
+        className={clsx('w-full h-full object-fill', imageClassName)}
       />
       {children && (
         <div

@@ -39,8 +39,9 @@ export default function Navbar({ navContainerClassName }: NavbarProps) {
   return (
     <header
       className={clsx(
-        navContainerClassName,
-        `px-2 shadow-sm fixed top-0 z-50 bg-neutral-300 dark:bg-primary-dark text-[#4B5563] dark:text-neutral-200 w-full`
+        'px-2 fixed top-0 z-50 bg-neutral-300 dark:bg-primary-dark text-[#4B5563] dark:text-neutral-200 w-full',
+        !navContainerClassName?.includes('shadow-') && 'shadow-sm',
+        navContainerClassName
       )}
     >
       <div className="" onMouseLeave={() => setActiveMenu(null)}>

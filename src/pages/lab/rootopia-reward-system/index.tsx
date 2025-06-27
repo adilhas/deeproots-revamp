@@ -16,7 +16,7 @@ import React from 'react';
 const RootopiaRewardSystemPage = () => {
   return (
     <>
-      <Navbar navContainerClassName="bg-transparent dark:bg-transparent" />
+      <Navbar navContainerClassName="bg-transparent dark:bg-transparent shadow-none" />
       <main className="bg-[#371e03] text-white font-ed-garamond w-full">
         <section className="mx-w-[1200px] mx-auto text-[#DD9717]">
           <RRHero />
