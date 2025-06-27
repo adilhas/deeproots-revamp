@@ -87,7 +87,10 @@ export const footerLinksV3 = [
       { label: 'Gas Fee', href: '/lab/gas-fees' },
       { label: 'Developer Tools', href: '' },
       { label: 'DeVote', href: '#' },
-      { label: 'RootOpia Reward System', href: '#' },
+      {
+        label: 'RootOpia Reward System',
+        href: '/academy/rootopia-reward-system',
+      },
     ],
     hoverColor: 'hover:text-[#1B75FF]',
   },
@@ -194,7 +197,10 @@ export const getfooterLinks = (t: TFunction) => [
       },
       // { label: t('footer.RootLab.DeVote'), href: '#' },
       { label: t('footer.RootLab.Ecosystem'), href: '/academy' },
-      { label: t('footer.RootLab.RootOpiaReward'), href: '#' },
+      {
+        label: t('footer.RootLab.RootOpiaReward'),
+        href: '/lab/rootopia-reward-system',
+      },
     ],
     hoverColor: 'hover:text-[#1B75FF]',
   },

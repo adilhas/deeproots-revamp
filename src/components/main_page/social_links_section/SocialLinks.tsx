@@ -1,16 +1,27 @@
 import { getSocialLinksData } from '@/constants/socialLinksData';
 import { useThemeContext } from '@/context/ThemeContext';
+import clsx from 'clsx';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-const SocialLinks = () => {
+interface SocialLinksProps {
+  className?: string;
+  socialCardClassName?: string;
+}
+
+const SocialLinks = ({ className, socialCardClassName }: SocialLinksProps) => {
   const { isDark } = useThemeContext();
   const { t } = useTranslation('common');
   const socialLinks = getSocialLinksData(t);
   return (
     <section
       id="social-links"
-      className="py-20 px-4 bg-[#D2D5DB] dark:bg-primary-dark"
+      className={clsx(
+        'py-20 px-4',
+        className?.includes('bg-')
+          ? className
+          : 'bg-[#D2D5DB] dark:bg-primary-dark'
+      )}
     >
       <div className="max-w-[1200px] mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl font-bold font-orbitron bg-gradient-to-r from-[#9E2CA9] to-[#3B82A4] w-fit mx-auto text-transparent bg-clip-text">
@@ -37,7 +48,12 @@ const SocialLinks = () => {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-start bg-white dark:bg-[#1F2937] rounded-2xl p-5  transition-all duration-300"
+              className={clsx(
+                socialCardClassName?.includes('bg-')
+                  ? socialCardClassName
+                  : 'bg-white dark:bg-[#1F2937]',
+                'flex flex-col items-start rounded-2xl p-5  transition-all duration-300'
+              )}
               style={{ boxShadow: `0px 12px 24px 0px #0000001A` }}
             >
               <div className="flex items-center justify-between space-x-2 text-lg font-semibold w-full">

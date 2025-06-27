@@ -10,8 +10,13 @@ import Image from 'next/image';
 import DeWorldAllProducts from './DeWorldAllProducts';
 import SettingDropdown from './SettingDropdown';
 import LanguageDropdown from './LanguageDropdown';
+import clsx from 'clsx';
 
-export default function Navbar() {
+interface NavbarProps {
+  navContainerClassName?: string;
+}
+
+export default function Navbar({ navContainerClassName }: NavbarProps) {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [expandedMobileItems, setExpandedMobileItems] = useState<
@@ -32,11 +37,13 @@ export default function Navbar() {
   };
 
   return (
-    <header className="px-2 shadow-sm fixed top-0 z-50 bg-neutral-300 dark:bg-primary-dark text-[#4B5563] dark:text-neutral-200 w-full">
-      <div
-        className="bg-neutral-300 dark:bg-primary-dark dark:text-neutral-200"
-        onMouseLeave={() => setActiveMenu(null)}
-      >
+    <header
+      className={clsx(
+        navContainerClassName,
+        `px-2 shadow-sm fixed top-0 z-50 bg-neutral-300 dark:bg-primary-dark text-[#4B5563] dark:text-neutral-200 w-full`
+      )}
+    >
+      <div className="" onMouseLeave={() => setActiveMenu(null)}>
         <nav className="flex justify-between items-center font-orbitron lg:px-2 py-4">
           <Logo />
           <DesktopMenu onHover={setActiveMenu} />

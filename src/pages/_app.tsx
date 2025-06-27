@@ -22,7 +22,7 @@ const MyApp = ({
     <SessionProvider session={session}>
       <ThemeProvider>
         <Head>
-          <title>DeepRoots</title>
+          <title>DEEPROOTS</title>
           <link rel="icon" href="/landing/logo.png" />
         </Head>
         {isPublic ? (

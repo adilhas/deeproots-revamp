@@ -5,13 +5,23 @@ import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { socialLinks } from '@/constants/socialLinksData';
 import { getfooterLinks } from '@/constants/footerLinksV2';
+import clsx from 'clsx';
 
-export default function Footer() {
+interface FooterProps {
+  className?: string;
+}
+
+export default function Footer({ className }: FooterProps) {
   const { t } = useTranslation('common');
   const footerLinksV3 = getfooterLinks(t);
 
   return (
-    <footer className="dark:bg-primary-dark bg-[#D2D5DB] text-[#1C1C1C] dark:text-[#F0F0F0] px-6 py-12">
+    <footer
+      className={clsx(
+        ' dark:bg-primary-dark bg-[#D2D5DB] text-[#1C1C1C] dark:text-[#F0F0F0] px-6 py-12',
+        className
+      )}
+    >
       <div className="max-w-[1200px] mx-auto">
         {/* Logo & Socials */}
         <div className="flex flex-col gap-8 md:flex-row w-full mb-10 justify-between items-center">
@@ -93,7 +103,7 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="text-center pt-20">
-          <Link href={`/`}>
+          <Link href={`/deepquest`}>
             <div className="flex justify-center items-center">
               <h3 className="text-xl font-bold font-orbitron bg-gradient-to-r from-[#ad1aaf] to-[#0085a8] bg-clip-text text-transparent mb-2">
                 DeepQuest (Quiz Hub)
