@@ -8,7 +8,7 @@ import PhilosopySection from '@/components/identity/privacy_policy_page/Philosop
 import ContactSection from '@/components/identity/privacy_policy_page/ContactSection';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 
 const PrivacyPolicyPage = () => {
   return (

@@ -8,7 +8,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import AccessBenefits from '../../components/connect/private_seed/AccessBenefits';
 import AccessPerks from '../../components/connect/private_seed/AccessPerks';
 import PrivateSeedFAQs from '@/components/connect/private_seed/PrivateSeedFAQs';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 
 export default function Volunteer() {
   return (

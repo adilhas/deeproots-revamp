@@ -8,7 +8,7 @@ import HackathonCulture from '@/components/lab/internal_hackathon_page/Hackathon
 import HackathonCTA from '@/components/lab/internal_hackathon_page/HackathonCTA';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 
 const HackathonPage = () => {
   return (

@@ -8,7 +8,7 @@ import WhatIsdRCSection from '@/components/main_page/what_is_dRC/WhatIsdRCSectio
 import DeepRootsEcosystemSection from '@/components/main_page/deeproots_ecosystem/DeepRootsEcosystemSection';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import type { GetStaticProps, NextPage } from 'next';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 
 // 🚀 Lazy-loaded components
 const AddressWallet = dynamic(

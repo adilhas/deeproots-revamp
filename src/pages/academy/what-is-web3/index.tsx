@@ -4,7 +4,7 @@ import WebEvolution from '@/components/academy_page/what_is_web3/WebEvolution';
 import WhyWeb3Matters from '@/components/academy_page/what_is_web3/WhyWeb3Matters';
 import SocialLinks from '@/components/main_page/social_links_section/SocialLinks';
 import AppLayout from '@/Shared/AppLayout';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 import { ChevronRight, Home } from 'lucide-react';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';

@@ -1,7 +1,7 @@
 import PhasesList from '@/components/academy_page/roadmap/PhasesList';
 import useLocaleDirection from '@/hooks/useLocaleDirection';
 import AppLayout from '@/Shared/AppLayout';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Image from 'next/image';

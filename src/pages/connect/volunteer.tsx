@@ -4,7 +4,7 @@ import WhatWeArelooking from '@/components/connect/volunteer/WhatWeArelooking';
 import WhatYouReceive from '@/components/connect/volunteer/WhatYouReceive';
 import SocialLinks from '@/components/main_page/social_links_section/SocialLinks';
 import AppLayout from '@/Shared/AppLayout';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Image from 'next/image';

@@ -5,7 +5,7 @@ import SmartContractHighlights from '@/components/academy_page/smart_contract_pa
 import SmartContractCTA from '@/components/academy_page/smart_contract_page/SmartContractCTA';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 
 const SmartContractsPage = () => {
   return (

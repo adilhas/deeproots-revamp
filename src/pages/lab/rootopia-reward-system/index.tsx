@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 import Navbar from '@/components/navbar/Navbar';
 import SocialLinks from '@/components/main_page/social_links_section/SocialLinks';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import React from 'react';

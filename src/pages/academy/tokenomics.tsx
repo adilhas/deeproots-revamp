@@ -7,7 +7,7 @@ import TokenomicsUtility from '@/components/academy_page/tokenomics/TokenomicsUt
 import TokenTotalSupply from '@/components/academy_page/tokenomics/TokenTotalSupply';
 import SocialLinks from '@/components/main_page/social_links_section/SocialLinks';
 import AppLayout from '@/Shared/AppLayout';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 import { Link } from 'lucide-react';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';

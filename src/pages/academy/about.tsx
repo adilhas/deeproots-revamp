@@ -6,7 +6,7 @@ import JoinUs from '@/components/academy_page/about_page/JoinUs';
 import AppLayout from '@/Shared/AppLayout';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 
 export default function AboutAcademy() {
   return (

@@ -7,7 +7,7 @@ import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import React from 'react';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 
 const FoundationPage = () => {
   const { t } = useTranslation('seeding/foundation');

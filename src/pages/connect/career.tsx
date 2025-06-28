@@ -4,7 +4,7 @@ import WhoWeHire from '@/components/connect/career/WhoWeHire';
 import WhyDeepRoots from '@/components/connect/career/WhyDeepRoots';
 import SocialLinks from '@/components/main_page/social_links_section/SocialLinks';
 import AppLayout from '@/Shared/AppLayout';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 import { Mail } from 'lucide-react';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';

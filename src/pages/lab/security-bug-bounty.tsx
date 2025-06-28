@@ -5,7 +5,7 @@ import SBBHero from '@/components/lab/security_bug_bounty/SBBHero';
 import WhatYouCanTest from '@/components/lab/security_bug_bounty/WhatYouCanTest';
 import SocialLinks from '@/components/main_page/social_links_section/SocialLinks';
 import AppLayout from '@/Shared/AppLayout';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 

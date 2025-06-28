@@ -5,7 +5,7 @@ import PrivateNetwork from '@/components/deworld/deworld_network_page/PrivateNet
 import DeworldNetworkCTA from '@/components/deworld/deworld_network_page/DeworldNetworkCTA';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 
 const NetworkPage = () => {
   return (

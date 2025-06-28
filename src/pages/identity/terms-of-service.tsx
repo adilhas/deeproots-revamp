@@ -7,7 +7,7 @@ import TermsContactSection from '@/components/identity/terms_of_service_page/Ter
 import TermsFinalNote from '@/components/identity/terms_of_service_page/TermsFinalNote';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 
 const TermsOfServicePage = () => {
   return (

@@ -6,7 +6,7 @@ import ContactUsEventsSection from '@/components/connect/contact_us_page/Contact
 import ContactUsCTA from '@/components/connect/contact_us_page/ContactUsCTA';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 
 const ContactPage = () => {
   return (

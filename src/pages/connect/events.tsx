@@ -6,7 +6,7 @@ import EventsRegistrationForm from '@/components/connect/events_page/EventsRegis
 import SuccessMessage from '@/components/connect/events_page/SuccessMessage';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 
 const EventsPage = () => {
   const { formData } = useEventForm();

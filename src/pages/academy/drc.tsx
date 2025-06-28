@@ -7,7 +7,7 @@ import TokenomicsSection from '@/components/academy_page/drc_page/TokenomicsSect
 import CTASection from '@/components/academy_page/drc_page/CTASection';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 
 const DRCPage = () => {
   return (

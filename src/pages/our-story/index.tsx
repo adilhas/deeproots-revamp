@@ -7,7 +7,7 @@ import OurProducts from '@/components/our_story_page/OurProducts';
 import OurStoryCTA from '@/components/our_story_page/OurStoryCTA';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 
 const StoryPage = () => {
   return (

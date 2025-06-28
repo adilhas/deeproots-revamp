@@ -6,7 +6,7 @@ import PressKit from '@/components/public_relations_page/PressKit';
 import PRContactSection from '@/components/public_relations_page/PRContactSection';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 
 const PublicRelationsPage = () => {
   return (

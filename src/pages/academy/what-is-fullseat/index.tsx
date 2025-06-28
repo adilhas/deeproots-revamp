@@ -5,7 +5,7 @@ import WhoIsThisFor from '@/components/academy_page/what-is-fullbeat/WhoIsThisFo
 import SocialLinks from '@/components/main_page/social_links_section/SocialLinks';
 import useLocaleDirection from '@/hooks/useLocaleDirection';
 import AppLayout from '@/Shared/AppLayout';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 import { ChevronRight, Home } from 'lucide-react';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';

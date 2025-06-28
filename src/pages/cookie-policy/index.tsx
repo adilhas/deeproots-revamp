@@ -8,7 +8,7 @@ import CookieCommitment from '@/components/cookie_policy_page/CookieCommitment';
 import CookieContact from '@/components/cookie_policy_page/CookieContact';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 
 const CookiePolicyPage = () => {
   return (

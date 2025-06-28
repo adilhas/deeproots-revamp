@@ -5,7 +5,7 @@ import COHPrinciple from '@/components/code_of_honor/COHPrinciple';
 import COHPledge from '@/components/code_of_honor/COHPledge';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Seo from '@/Shared/SEO';
+import Seo from '@/Shared/Seo';
 
 const CodeOfHonorPage = () => {
   return (
