@@ -30,7 +30,7 @@ export default function Footer({ className }: FooterProps) {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <Image
-              src="/landing/logo.png"
+              src="/landing/logo-big.png"
               alt="logo-footer"
               width={60}
               height={60}

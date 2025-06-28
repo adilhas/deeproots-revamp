@@ -47,14 +47,12 @@ const AccessBenefits = () => {
           className="inline-block md:hidden"
         />
 
-        {/* Content Over Background */}
         <div className="absolute top-[23%] md:top-[30%] w-full flex flex-col justify-start gap-0 md:gap-10">
           {/* Mobile Heading */}
           <div className="font-orbitron my-1 md:hidden inline-block text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text w-fit mx-auto text-xl text-center max-w-[250px] font-semibold">
             {heading}
           </div>
 
-          {/* Top Cards */}
           <div className="flex flex-col gap-4 md:gap-0 md:flex-row items-center w-[85%] justify-between mx-auto">
             {topBenefits.map((item, index) => (
               <div
@@ -87,7 +85,6 @@ const AccessBenefits = () => {
             {heading}
           </div>
 
-          {/* Bottom Cards */}
           <div className="flex flex-col gap-5 md:gap-0 md:flex-row items-center w-[85%] justify-between mx-auto">
             {bottomBenefits.map((item, index) => (
               <div key={index} className="relative">

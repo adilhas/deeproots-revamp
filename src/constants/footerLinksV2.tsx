@@ -160,7 +160,10 @@ export const getfooterLinks = (t: TFunction) => [
         label: t('footer.RootAcademy.WhatIsFullseat'),
         href: '/academy/what-is-fullseat',
       },
-      { label: t('footer.RootAcademy.Whitepaper'), href: '#' },
+      {
+        label: t('footer.RootAcademy.Whitepaper'),
+        href: '/deeproots-whitepaper.pdf',
+      },
       {
         label: t('footer.RootAcademy.WhatIsWeb3'),
         href: '/academy/what-is-web3',
