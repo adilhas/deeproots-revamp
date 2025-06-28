@@ -10,7 +10,6 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import type { GetStaticProps, NextPage } from 'next';
 import Seo from '@/Shared/Seo';
 
-// 🚀 Lazy-loaded components
 const AddressWallet = dynamic(
   () => import('@/components/main_page/address_wallet_section/AddressWallet')
 );
