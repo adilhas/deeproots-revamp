@@ -29,16 +29,45 @@ import DeepRootsEcosystemSection from '@/components/main_page/deeproots_ecosyste
 import CopyMeSection from '@/components/main_page/copy_me_section/CopyMeSection';
 import FooterV2 from '@/components/footer/FooterV2';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import type { GetStaticProps } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 
-export default function Home() {
+const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>DeepRoots</title>
-        <meta name="description" content="description" />
+        <title>
+          DeepRoots - Built for freedom. Designed for transparency. Rooted in
+          purpose.
+        </title>
+        <meta
+          name="description"
+          content="From impossible to possible - A platform for innovative DeWorld Apps on the First Truly Dynamic Blockchain Network."
+        />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://deeproots.earth/" />
+
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="DeepRoots – DeWorld Apps on a Dynamic Blockchain Network"
+        />
+        <meta
+          property="og:description"
+          content="From impossible to possible – explore DeepRoots, the platform for innovative DeWorld Apps on the First Truly Dynamic Blockchain Network."
+        />
+        <meta property="og:url" content="https://deeproots.earth/" />
+        <meta property="og:image" content="/landing/logo.png" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="DeepRoots – DeWorld Apps on a Dynamic Blockchain Network"
+        />
+        <meta
+          name="twitter:description"
+          content="From impossible to possible – a platform for innovative DeWorld Apps on the First Truly Dynamic Blockchain Network."
+        />
+        <meta name="twitter:image" content="/landing/logo.png" />
       </Head>
       <div className="overflow-x-hidden relative  bg-primary-light dark:bg-primary-dark text-[#404040] dark:text-neutral-200">
         <Navbar />
@@ -78,8 +107,9 @@ export default function Home() {
       </div>
     </>
   );
-}
+};
 
+export default Home;
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {

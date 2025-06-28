@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
 const PodcastSection = () => {
@@ -49,11 +48,15 @@ const PodcastSection = () => {
 
             <p className="">{t('podcast_section.description')}</p>
 
-            <Link href="https://saxophone.earth/">
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://saxophone.earth/"
+            >
               <button className="hover:scale-105 bg-[#4B210A] font-orbitron text-white py-3 px-6 rounded-lg shadow-lg transition duration-300">
                 {t('podcast_section.cta')}
               </button>
-            </Link>
+            </a>
           </div>
         </div>
       </section>

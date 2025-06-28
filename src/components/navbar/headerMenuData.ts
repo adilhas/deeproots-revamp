@@ -43,9 +43,9 @@ export const getMenuSectionData = (t: TFunction): MenuSection[] => [
     link: '#',
     subitems: [
       {
-        title: t('header_menu.rootlab.smartContract'),
-        description: t('header_menu.rootlab.smartContract_desc'),
-        link: '/academy/smart-contract',
+        title: 'DeepRoots Network',
+        description: 'Two complementary layers powering the ecosystem',
+        link: '/lab/deeproots-network',
       },
       // {
       //   title: t('header_menu.rootlab.developerTools'),
@@ -58,6 +58,11 @@ export const getMenuSectionData = (t: TFunction): MenuSection[] => [
         link: '/lab/security-bug-bounty',
       },
       {
+        title: t('header_menu.rootlab.smartContract'),
+        description: t('header_menu.rootlab.smartContract_desc'),
+        link: '/academy/smart-contract',
+      },
+      {
         title: t('header_menu.rootlab.gasFee'),
         description: t('header_menu.rootlab.gasFee_desc'),
         link: '/academy/gas-fees',
@@ -67,6 +72,12 @@ export const getMenuSectionData = (t: TFunction): MenuSection[] => [
       //   description: t('header_menu.rootlab.documentation_desc'),
       //   link: '',
       // },
+      {
+        title: 'DECENTRALIZED World',
+        description:
+          'Explore a connected world of decentralized products, services, and tools, all rooted in innovation and trust.',
+        link: '/deworld/ecosystem',
+      },
       {
         title: 'Ecosystem',
         description: 'Master the DeepRoots Ecosystem',
@@ -148,7 +159,7 @@ export const getMenuSectionData = (t: TFunction): MenuSection[] => [
       {
         title: t('header_menu.rootConnect.career'),
         description: t('header_menu.rootConnect.career_desc'),
-        link: '/career',
+        link: '/connect/career',
       },
     ],
   },

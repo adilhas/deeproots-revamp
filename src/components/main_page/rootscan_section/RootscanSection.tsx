@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
 export default function RootscanSection() {
@@ -60,11 +59,15 @@ export default function RootscanSection() {
             </ul>
 
             <div className="mt-3 w-fit">
-              <Link href="https://rootscan.earth" rel="noopener noreferrer">
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://rootscan.earth"
+              >
                 <button className="px-6 hover:scale-105 py-3 text-lg font-medium rounded-full bg-gradient-to-r from-yellow-500 to-green-500 text-black hover:from-yellow-400 hover:to-green-400 transition">
                   {t('rootscan.cta')}
                 </button>
-              </Link>
+              </a>
             </div>
           </div>
 

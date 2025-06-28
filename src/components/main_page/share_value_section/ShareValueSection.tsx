@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import React from 'react';
-import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
 import {
@@ -83,11 +82,16 @@ const ShareValueSection = () => {
             ))}
           </div>
 
-          <Link href="https://sharevalue.earth/" passHref className="w-fit">
-            <button className="mt-8 py-4 px-7 w-fit font-orbitron font-bold text-lg text-neutral-200 bg-gradient-to-r from-[#E07C76] to-[#52b797] hover:text-neutral-900 rounded-lg">
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://sharevalue.earth/"
+            className="w-fit"
+          >
+            <button className="mt-8 py-4 px-7 w-fit font-orbitron font-bold text-lg text-neutral-200 bg-gradient-to-r from-[#E07C76] to-[#52b797] hover:scale-105 rounded-lg">
               {t('share_value_section.button')}
             </button>
-          </Link>
+          </a>
         </div>
       </div>
     </main>

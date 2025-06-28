@@ -19,7 +19,7 @@ export default function MobileMenu({
 
   return (
     <div
-      className={`max-w-screen overflow-hidden xl:hidden absolute top-[100%] left-0 w-full z-40 bg-neutral-300 dark:bg-primary-dark shadow-lg border-t border-gray-200 dark:border-gray-700 transform transition-transform duration-300 overflow-y-auto  ${
+      className={`text-[#4B5563] dark:text-neutral-200 max-w-screen overflow-hidden xl:hidden absolute top-[100%] left-0 w-full z-40 bg-neutral-300 dark:bg-primary-dark shadow-lg border-t border-gray-200 dark:border-gray-700 transform transition-transform duration-300 overflow-y-auto  ${
         isOpen ? 'translate-x-0' : '-translate-x-full'
       }`}
     >

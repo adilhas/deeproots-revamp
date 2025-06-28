@@ -16,7 +16,7 @@ import React from 'react';
 const RootopiaRewardSystemPage = () => {
   return (
     <>
-      <Navbar navContainerClassName="bg-transparent dark:bg-transparent shadow-none" />
+      <Navbar navContainerClassName="bg-transparent dark:bg-transparent shadow-none text-neutral-200 dark:text-neutral-200" />
       <main className="bg-[#371e03] text-white font-ed-garamond w-full">
         <section className="mx-w-[1200px] mx-auto text-[#DD9717]">
           <RRHero />
@@ -29,10 +29,7 @@ const RootopiaRewardSystemPage = () => {
           <RootopiaGallery />
         </section>
       </main>
-      <SocialLinks
-        className="bg-[#361E03] dark:bg-[#361E03]"
-        socialCardClassName="bg-[#4E2B04]"
-      />
+      <SocialLinks variant="rootopia" />
       <RootopiaFooter />
     </>
   );

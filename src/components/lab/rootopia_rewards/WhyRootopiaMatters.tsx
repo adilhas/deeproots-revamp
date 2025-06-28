@@ -30,11 +30,13 @@ export const whyRootopiaPoints = [
 const WhyRootopiaMatters = () => {
   return (
     <div className="relative  bg-[#9F7124] text-[#471C00] overflow-x-hidden overflow-y-visible">
-      <div className="relative pb-[400px] md:pb-30 max-w-[1200px] mx-auto">
+      <div className="relative pb-[400px] md:pb-40 max-w-[1200px] mx-auto">
         <div className="absolute top-0 left-0 w-[100px] md:w-[300px] h-[500px]  blur-3xl opacity-30 pointer-events-none z-[0]" />
 
         {/* Image On Top of Glow */}
-        <div className="absolute top-0 left-0 w-[200px] md:w-[300px] h-[200px] md:h-[200px] z-[5]">
+        <div className="absolute top-0 left-0 w-[200px] md:w-[400px] h-[200px] md:h-[400px] z-0">
+          <div className="absolute top-0 left-[-20px] w-[200px] md:w-[500px] h-[600px] md:h-[400px] bg-[#c6b599] blur-3xl opacity-30 pointer-events-none z-0" />
+
           <Image
             src="/lab/why-rootopia-obj2.png"
             alt="magic box"
@@ -42,7 +44,7 @@ const WhyRootopiaMatters = () => {
             className="object-contain object-top-left"
           />
         </div>
-        <div className="absolute bottom-0 left-0 w-[500px] md:w-[500px] h-[500px] md:h-[400px] z-0">
+        <div className="absolute bottom-0 left-0 w-[500px] md:w-[600px] h-[500px] md:h-[400px] z-0">
           <Image
             src="/lab/why-rootopia-obj3.png"
             alt="magic box"

@@ -1,17 +1,7 @@
 import { ChevronRight, RocketIcon } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
-// const fundingRounds = [
-//   'First Round (InnoFi Funding).',
-//   'Private Foundation Round.',
-//   'External HNWI Investor Access.',
-//   'Community Deep Roots Referral System.',
-//   'Public Launch ON TeleXcoin DEX.',
-//   'Empowering Innovation.',
-// ];
 
 const InnolaunchSection = () => {
   const { t } = useTranslation('landing_page');
@@ -64,12 +54,16 @@ const InnolaunchSection = () => {
               </div>
             ))}
           </div>
-          <Link href="https://innolaunch.earth/">
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://innolaunch.earth/"
+          >
             <button className="py-3 font-bold mt-5 font-sans text-neutral-200 text-lg px-5 bg-[#f68082] hover:scale-105 rounded-lg flex justify-center items-center">
               {t('innolaunch_section.button')}
               <ChevronRight />
             </button>
-          </Link>
+          </a>
         </div>
       </div>
     </section>

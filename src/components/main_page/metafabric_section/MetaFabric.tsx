@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import {
   ShoppingCart,
   Paintbrush,
@@ -74,11 +73,15 @@ const MetaFabricSection = () => {
             ))}
           </ul>
 
-          <Link href="https://metafabric.earth/">
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://metafabric.earth/"
+          >
             <button className="mt-6 px-6 py-2 bg-gradient-to-l from-[#EE49FC] to-[#32d8fd] text-white rounded-lg  font-bold hover:scale-105 transition">
               {t('metafabric_section.button')}
             </button>
-          </Link>
+          </a>
         </div>
       </div>
     </section>

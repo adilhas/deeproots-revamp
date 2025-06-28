@@ -91,14 +91,17 @@ const Telexcoin = () => {
 
             {/* CTA Button */}
             <div className="flex justify-center lg:mt-6 items-center flex-col md:flex-row">
-              <button
+              <a
+                href={'https://www.telexcoin.earth/'}
+                rel="noopener noreferrer"
+                target="_blank"
                 className="mt-6 font-bold lg:mt-10 bg-gradient-to-r border from-[#0085a8] via-[#ad1]/60 dark:via-[#ad1]/70 dark:to-amber-600 to-amber-600 mr-6 px-6 font-orbitron py-3 text-center hover:bg-none hover:border dark:border-[#0085a8] border-[#0085a8] dark:hover:text-[#0085a8] transition-all hover:ease-in-out rounded-lg text-lg tracking-wider"
                 style={{
                   boxShadow: `${isDark ? '0px 15px 31px 0px #000000' : '0px 8px 28px 0px #605644A3'}`,
                 }}
               >
                 {t('telexcoin.cta')}
-              </button>
+              </a>
             </div>
           </div>
         </div>

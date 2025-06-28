@@ -18,7 +18,7 @@ export default function RootopiaFooter({ className }: FooterProps) {
   return (
     <footer
       className={clsx(
-        ' bg-[#361E03] dark:bg-[#361E03] text-[#1C1C1C]  px-6 py-12',
+        ' bg-[#361E03] dark:bg-[#361E03]   px-6 py-12',
         className
       )}
     >
@@ -59,7 +59,7 @@ export default function RootopiaFooter({ className }: FooterProps) {
               } w-max mx-auto`}
             >
               <div
-                className={`font-semibolb font-orbitron text-[#1F2937] cursor-pointer dark:text-white flex flex-col justify-center items-start gap-2 ${section.hoverColor} ${section.title === 'DeWorld' ? 'w-full mb-4' : 'w-max mb-8'}`}
+                className={`font-semibolb font-orbitron  cursor-pointer dark:text-white flex flex-col justify-center items-start gap-2 ${section.hoverColor} ${section.title === 'DeWorld' ? 'w-full mb-4' : 'w-max mb-8'}`}
               >
                 <div className="mx-auto">{section.icon}</div>
                 <div
@@ -73,7 +73,7 @@ export default function RootopiaFooter({ className }: FooterProps) {
                   section.title === 'DeWorld'
                     ? 'grid grid-cols-2  gap-x-8 gap-y-3 p-5 rounded-2xl bg-[#4A2804] border border-[#6F523D]'
                     : 'space-y-2'
-                } text-[#4B5563] dark:text-[#F1F5F9]`}
+                } text-[#F1F5F9]`}
               >
                 {section.links.map((link, idx) => (
                   <li key={`${link.label}-${idx}`}>
@@ -102,7 +102,7 @@ export default function RootopiaFooter({ className }: FooterProps) {
         </div>
 
         {/* Bottom Section */}
-        <div className="text-center pt-20">
+        <div className="text-center pt-20 text-[#F1F5F9]">
           <Link href={`/deepquest`}>
             <div className="flex justify-center items-center">
               <h3 className="text-xl font-bold font-orbitron bg-gradient-to-r from-[#ad1aaf] to-[#0085a8] bg-clip-text text-transparent mb-2">
@@ -110,7 +110,7 @@ export default function RootopiaFooter({ className }: FooterProps) {
               </h3>
             </div>
           </Link>
-          <p className="text-sm dark:text-gray-400 mx-2 flex flex-wrap justify-center gap-x-2 gap-y-1">
+          <p className="text-sm  mx-2 flex flex-wrap justify-center gap-x-2 gap-y-1">
             <Link href={`/our-story`} className="hover:underline">
               {t('footer.OurStory')}
             </Link>

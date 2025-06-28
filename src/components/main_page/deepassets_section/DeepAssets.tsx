@@ -1,7 +1,6 @@
 import React from 'react';
 import DiamondIcon from './DiamondIcon';
 import Image from 'next/image';
-import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -62,12 +61,16 @@ const DeepAssets = () => {
               <p>{t('deepAssets.description')}</p>
             </div>
 
-            <Link href="https://deepassets.earth/">
-              <button className="py-3 font-sans text-neutral-200 text-lg px-5 bg-gradient-to-r from-[#3D81A4] dark:to-[#EF8F35] to-[#3D81A4] rounded-lg flex justify-center items-center">
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://deepassets.earth/"
+            >
+              <button className="py-3 font-sans hover:scale-105 text-neutral-200 text-lg px-5 bg-gradient-to-r from-[#3D81A4] dark:to-[#EF8F35] to-[#3D81A4] rounded-lg flex justify-center items-center">
                 {t('deepAssets.button')}
                 <ChevronRight />
               </button>
-            </Link>
+            </a>
           </div>
 
           {/* Desktop Image and Background Blur */}

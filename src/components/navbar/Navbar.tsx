@@ -39,8 +39,11 @@ export default function Navbar({ navContainerClassName }: NavbarProps) {
   return (
     <header
       className={clsx(
-        'px-2 fixed top-0 z-50 bg-neutral-300 dark:bg-primary-dark text-[#4B5563] dark:text-neutral-200 w-full',
+        'px-2 fixed top-0 z-50 bg-neutral-300 dark:bg-primary-dark w-full',
         !navContainerClassName?.includes('shadow-') && 'shadow-sm',
+        !navContainerClassName?.includes('text-') &&
+          'text-[#4B5563] dark:text-neutral-200',
+
         navContainerClassName
       )}
     >
@@ -50,7 +53,6 @@ export default function Navbar({ navContainerClassName }: NavbarProps) {
           <DesktopMenu onHover={setActiveMenu} />
           <div className="flex items-center gap-4">
             <LanguageDropdown />
-            {/* <DarkModeToggle /> */}
             <Image
               src="/copyme-logo.png"
               alt="copy me"
@@ -59,7 +61,6 @@ export default function Navbar({ navContainerClassName }: NavbarProps) {
             />
             <DeWorldAllProducts />
 
-            {/* <SettingModal /> */}
             <SettingDropdown />
 
             {isMobileMenuOpen ? (

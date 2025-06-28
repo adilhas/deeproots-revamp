@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { ShoppingCart, Upload, Wallet, Clock, ShieldCheck } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -79,11 +78,14 @@ export default function OceanBazaarSection() {
             </ul>
 
             <div className="flex justify-start mt-6 ">
-              <button className="text-neutral-800 px-6 py-2 bg-gradient-to-r from-[#1bc1ff] to-[#fead46] rounded-lg hover:scale-105 font-bold transition">
-                <Link href="http://oceanbazaar.earth/">
-                  {t('ocean_bazaar_section.button')}
-                </Link>
-              </button>
+              <a
+                href={'https://www.oceanbazaar.earth/'}
+                rel="noopener noreferrer"
+                target="_blank"
+                className="text-neutral-800 px-6 py-2 bg-gradient-to-r from-[#1bc1ff] to-[#fead46] rounded-lg hover:scale-105 font-bold transition"
+              >
+                {t('ocean_bazaar_section.button')}
+              </a>
             </div>
           </div>
 

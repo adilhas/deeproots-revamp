@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import {
   Network,
   Bot,
@@ -47,7 +46,7 @@ export default function InnofarmSection() {
             {t('innofarm_section.subtitle')}
           </div>
 
-          <div className="space-y-4 text-gray-700 dark:text-gray-300 text-base lg:text-lg">
+          <div className="space-y-5 text-gray-700 dark:text-gray-300 text-base lg:text-lg">
             {features.map((feature, index) => (
               <div key={feature.title}>
                 <h3 className="font-semibold text-gray-900 dark:text-white flex items-center gap-2">
@@ -57,11 +56,14 @@ export default function InnofarmSection() {
               </div>
             ))}
 
-            <button className="text-white font-orbitron mt-6 px-6 py-2 bg-gradient-to-l   from-[#FF8120] to-[#00903D] rounded-lg hover:scale-105  font-bold  transition">
-              <Link href="https://innofarm.earth/">
-                {t('innofarm_section.button')}
-              </Link>
-            </button>
+            <a
+              href={'https://www.innofarm.earth/'}
+              rel="noopener noreferrer"
+              target="_blank"
+              className="text-white py-3 font-orbitron mt-8 px-6  bg-gradient-to-l   from-[#FF8120] to-[#00903D] rounded-lg hover:scale-105  font-bold  transition"
+            >
+              {t('innofarm_section.button')}
+            </a>
           </div>
         </div>
         {/* Desktop Image - 60vw width */}

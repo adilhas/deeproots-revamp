@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
 const icons = [
@@ -67,11 +66,15 @@ const RootChatSection = () => {
             ))}
           </ul>
 
-          <Link href={'https://rootchat.earth/'}>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href={'https://rootchat.earth/'}
+          >
             <button className="hover:scale-105 mt-8 px-6 py-3 bg-gradient-to-r from-[#AD80FD] to-[#C6B6F2] text-black  font-bold rounded-lg hover:opacity-90 transition">
               Explore RootChat
             </button>
-          </Link>
+          </a>
         </div>
 
         {/* Desktop Image (Only shows on desktop) */}

@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useThemeContext } from '@/context/ThemeContext';
 import { useTranslation } from 'react-i18next';
 const Data = [
@@ -32,7 +31,6 @@ const RootopiaRace = () => {
 
       <div className="relative w-full z-10 max-w-[1200px] mx-auto px-5 py-10">
         <div className="absolute bottom-[-100px] right-[-100px] w-[200px] md:w-[500px] h-[200px] lg:h-[500px] bg-[#F08135] dark:bg-[#5E400C] blur-3xl opacity-50 dark:opacity-40 pointer-events-none rounded-full z-0" />
-        {/* <div className="flex justify-center flex-row items-center w-full"></div> */}
 
         <div className="flex justify-center lg:gap-5 flex-col lg:flex-row rounded-2xl items-center">
           <div className="w-full lg:inline-block hidden max-w-[500px] lg:w-1/2 ">
@@ -103,11 +101,15 @@ const RootopiaRace = () => {
               </div>
             </ul>
 
-            <Link href={'https://rootopia.earth/'}>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href={'https://rootopia.earth/'}
+            >
               <button className="bg-gradient-to-b from-[#B44601] to-[#853401] rounded-2xl border-[#EE8A08] text-[#FEA500] cursor-pointer  lg:mt-10  px-6 font-serif font-[600] py-3 text-center border-3  transition-all hover:ease-in-out text-lg">
                 {t('rootopia.cta')}
               </button>
-            </Link>
+            </a>
           </div>
         </div>
 

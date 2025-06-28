@@ -72,14 +72,17 @@ const AddressWallet = () => {
               </p>
             </div>
             <div className="flex justify-center lg:mt-6 items-center flex-col lg:flex-row">
-              <button
-                className="text-white mt-6 font-bold lg:mt-10 bg-gradient-to-r from-[#0085a8] to-orange-400 mr-6 px-6 font-orbitron py-3 text-center hover:bg-none hover:border-2 dark:border-[#0085a8] border-[#0085a8] dark:hover:text-[#0085a8] transition-all hover:ease-in-out rounded-lg text-lg tracking-wider"
+              <a
+                href={'https://www.theaddress.earth/'}
+                rel="noopener noreferrer"
+                target="_blank"
+                className="text-white mt-6 font-bold lg:mt-10 bg-gradient-to-r from-[#0085a8] to-orange-400 mr-6 px-6 font-orbitron py-3 text-center  dark:border-[#0085a8] border-[#0085a8] hover:scale-105 transition-all hover:ease-in-out rounded-lg text-lg tracking-wider"
                 style={{
                   boxShadow: `${isDark ? '0px 15px 31px 0px #000000' : '0px 8px 28px 0px #6D5D3F'}`,
                 }}
               >
                 {t('address_wallet.button')}
-              </button>
+              </a>
             </div>
           </div>
 

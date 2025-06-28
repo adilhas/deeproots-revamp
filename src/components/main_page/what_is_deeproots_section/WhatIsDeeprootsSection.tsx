@@ -5,6 +5,7 @@ import DeepRootsCard from './FeatureCard';
 import { useThemeContext } from '@/context/ThemeContext';
 import { useTranslation } from 'react-i18next';
 import useLocaleDirection from '@/hooks/useLocaleDirection';
+import Link from 'next/link';
 
 const WhatIsDeeprootsSection = () => {
   const { isDark } = useThemeContext();
@@ -82,17 +83,14 @@ const WhatIsDeeprootsSection = () => {
       </div>
       <div className="w-full mt-8">
         <div className="text-center text-lg  md:text-3xl my-4 text-[#4B5563] dark:text-white">
-          {/* A New Foundation for the <br className="block md:hidden" />{' '}
-          <span className="text-transparent font-[600] bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
-            Decentralized
-          </span>{' '}
-          World */}
           {t('what_is_deeproots_section.subtitle')}
         </div>
-        <button className="block mx-auto cursor-pointer w-fit px-6 font-orbitron py-3 bg-gradient-to-r from-[#9E2CA9] to-[#3B82A4] text-center font-bold hover:bg-gradient-to-l transition-all hover:delay-1000 hover:ease-in-out text-white rounded-2xl text-lg">
-          {/* Learn More */}
+        <Link
+          href={'/academy/about'}
+          className="block mx-auto cursor-pointer w-fit px-6 font-orbitron py-3 bg-gradient-to-r from-[#9E2CA9] to-[#3B82A4] text-center font-bold hover:bg-gradient-to-l transition-all hover:delay-1000 hover:ease-in-out text-white rounded-2xl text-lg"
+        >
           {t('what_is_deeproots_section.button')}
-        </button>
+        </Link>
       </div>
     </div>
   );
