@@ -1,7 +1,7 @@
 'use client';
 
 import { Shield, Check } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
 
 interface IPrivacyItem {

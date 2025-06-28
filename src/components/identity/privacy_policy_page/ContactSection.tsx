@@ -1,7 +1,7 @@
 'use client';
 
 import { Mail } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const ContactSection = () => {
   const { t } = useTranslation('identity/privacy_policy');

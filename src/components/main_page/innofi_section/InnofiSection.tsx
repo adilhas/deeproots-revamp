@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import { JSX } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 interface FeatureItem {
   icon: JSX.Element;

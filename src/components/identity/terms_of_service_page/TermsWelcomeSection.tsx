@@ -2,7 +2,7 @@
 
 import { BookOpen } from 'lucide-react';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const TermsWelcomeSection = () => {
   const { t } = useTranslation('identity/terms_of_service');

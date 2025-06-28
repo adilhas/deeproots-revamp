@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const JoinUs = () => {
   const { t } = useTranslation('academy/about');

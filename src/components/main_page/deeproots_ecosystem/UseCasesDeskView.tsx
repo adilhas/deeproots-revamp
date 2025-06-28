@@ -5,7 +5,7 @@ import LeftCurvedShape from './LeftCurveShape';
 import Image from 'next/image';
 import RightCurveShape from './RightCurveShape';
 import { Data1, Data2 } from '@/constants/dRCUsecasesData';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import useLocaleDirection from '@/hooks/useLocaleDirection';
 
 const UseCasesDeskView = () => {

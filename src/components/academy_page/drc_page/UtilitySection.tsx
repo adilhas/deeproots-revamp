@@ -1,6 +1,6 @@
 import { Settings } from 'lucide-react';
 import { getDrcUtilities } from './constant';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const UtilitySection = () => {
   const { t } = useTranslation('academy/drc');

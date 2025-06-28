@@ -1,6 +1,6 @@
 import { DoorClosed, Fingerprint, Star } from 'lucide-react';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import { PiLightbulb, PiMoneyWavy } from 'react-icons/pi';
 
 const AccessCriteria = () => {

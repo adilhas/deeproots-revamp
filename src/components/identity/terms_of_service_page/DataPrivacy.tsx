@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import { Lock } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';

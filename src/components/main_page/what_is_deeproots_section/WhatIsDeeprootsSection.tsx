@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 import DeepRootsCard from './FeatureCard';
 import { useThemeContext } from '@/context/ThemeContext';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import useLocaleDirection from '@/hooks/useLocaleDirection';
 import Link from 'next/link';
 

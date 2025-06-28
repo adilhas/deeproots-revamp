@@ -1,6 +1,6 @@
 import { useThemeContext } from '@/context/ThemeContext';
 import Image from 'next/image';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const Telexcoin = () => {
   const { isDark } = useThemeContext();
@@ -66,9 +66,9 @@ const Telexcoin = () => {
                   height={25}
                 />
               </div>
-              <p className="lg:w-[500px] font-sans md:w-[70vw]">
+              <div className="lg:w-[500px] font-sans md:w-[70vw]">
                 <span className="text-lg">{t('telexcoin.seedGrow')}</span>
-              </p>
+              </div>
             </div>
 
             {/* Description */}
@@ -77,7 +77,7 @@ const Telexcoin = () => {
             </p>
 
             {/* Another Icon with Text */}
-            <p className="font-sans mt-2 flex items-start lg:w-[500px] md:w-[70vw]">
+            <div className="font-sans mt-2 flex items-start lg:w-[500px] md:w-[70vw]">
               <div className="inline-block pt-1">
                 <Image
                   src={`/landing/${isDark ? 'fire-hub-dark.svg' : 'fire-hub.svg'}`}
@@ -87,7 +87,7 @@ const Telexcoin = () => {
                 />
               </div>
               <span className="text-lg ml-2">{t('telexcoin.hub')}</span>
-            </p>
+            </div>
 
             {/* CTA Button */}
             <div className="flex justify-center lg:mt-6 items-center flex-col md:flex-row">

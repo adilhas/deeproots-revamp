@@ -1,6 +1,6 @@
 import { Cpu } from 'lucide-react';
 import { Shield, User, Gift, EyeOff, Link, Zap } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const highlightsIcon = [
   {

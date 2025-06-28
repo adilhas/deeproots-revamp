@@ -6,7 +6,7 @@ import {
   BadgeCheck,
   GraduationCap,
 } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const icons = [
   <Network key="network" size={30} className="text-[#E06643]" />,

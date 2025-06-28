@@ -1,6 +1,6 @@
 import { Wand2 } from 'lucide-react';
 import Image from 'next/image';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const CopyMeSection = () => {
   const { t } = useTranslation('landing_page');
@@ -46,10 +46,10 @@ const CopyMeSection = () => {
               {t('copyme_section.subtitle2')}
             </h2>
 
-            <p className="my-8 z-10 dark:text-[#F1F5F9] text-[#334155]">
+            <div className="my-8 z-10 dark:text-[#F1F5F9] text-[#334155]">
               <div className="mb-2">{t('copyme_section.description1')}</div>
               {t('copyme_section.description2')}
-            </p>
+            </div>
 
             <button className="hover:scale-105 flex flex-row gap-2 bg-gradient-to-r from-[#8D9FFF] to-[#A4D1FF] font-[600] font-orbitron text-white py-3 px-6 rounded-lg shadow-lg transition duration-300">
               {t('copyme_section.cta')} <Wand2 />

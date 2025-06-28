@@ -7,7 +7,7 @@ import {
   Smartphone,
   Sparkles,
 } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const icons = [
   <ShoppingCart className="text-blue-500 w-12 h-12 mr-3" key="cart" />,

@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { useThemeContext } from '@/context/ThemeContext';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 const Data = [
   { icon: 'rootopia-daily-reward', title: 'Daily Rewards' },
   {

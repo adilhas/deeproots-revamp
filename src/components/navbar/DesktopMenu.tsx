@@ -1,6 +1,6 @@
 import { ChevronDown } from 'lucide-react';
 import { getMenuSectionData } from './headerMenuData';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 type Props = {
   onHover: (menuName: string) => void;

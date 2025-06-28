@@ -1,5 +1,5 @@
 import { CheckCircle, Landmark } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const FoundationSection = () => {
   const { t } = useTranslation('academy/drc');

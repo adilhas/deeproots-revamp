@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import { Mail } from 'lucide-react';
 
 const TermsContactSection = () => {

@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import { MenuItem, MenuSection } from './types';
 import Link from 'next/link';
 import { getMenuSectionData } from './headerMenuData';

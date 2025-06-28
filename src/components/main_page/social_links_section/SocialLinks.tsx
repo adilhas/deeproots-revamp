@@ -2,7 +2,7 @@ import { getSocialLinksData } from '@/constants/socialLinksData';
 import { useThemeContext } from '@/context/ThemeContext';
 import clsx from 'clsx';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 interface SocialLinksProps {
   className?: string;

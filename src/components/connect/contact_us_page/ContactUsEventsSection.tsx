@@ -1,6 +1,6 @@
 import { ArrowRight, Calendar, Globe, Users, Zap } from 'lucide-react';
 import Link from 'next/link';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const ContactUsEventsSection = () => {
   const { t } = useTranslation('identity/contact_us');

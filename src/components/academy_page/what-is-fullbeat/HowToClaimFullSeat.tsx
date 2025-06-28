@@ -4,7 +4,7 @@ import { Lock } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
 import { PiBank, PiOfficeChair, PiPuzzlePiece } from 'react-icons/pi';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import useLocaleDirection from '@/hooks/useLocaleDirection';
 
 const HowToClaimFullSeat = () => {

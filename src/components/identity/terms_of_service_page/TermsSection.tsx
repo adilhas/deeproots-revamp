@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import { ReactNode } from 'react';
 import { CheckCircle2, Compass, AlertTriangle } from 'lucide-react';
 

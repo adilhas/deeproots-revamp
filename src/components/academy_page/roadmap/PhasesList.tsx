@@ -1,6 +1,6 @@
 import React from 'react';
 import PhaseCard from './PhaseCard';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const phaseStyles = [
   {

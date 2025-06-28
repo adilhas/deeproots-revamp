@@ -1,7 +1,7 @@
 import { useThemeContext } from '@/context/ThemeContext';
 import useLocaleDirection from '@/hooks/useLocaleDirection';
 import Image from 'next/image';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 export default function CryptoFlowSection() {
   const { isDark } = useThemeContext();

@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const AccessPerks = () => {
   const { t } = useTranslation('connect/private_seed');

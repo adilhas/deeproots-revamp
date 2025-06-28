@@ -4,7 +4,7 @@ import Image from 'next/image';
 import TotalSupply from './TotalSupply';
 import CTAGlowButton from '@/Shared/CTAGlowButton';
 import { useThemeContext } from '@/context/ThemeContext';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import useLocaleDirection from '@/hooks/useLocaleDirection';
 import Link from 'next/link';
 

@@ -2,7 +2,7 @@ import { Data1, Data2 } from '@/constants/dRCUsecasesData';
 import Image from 'next/image';
 import React from 'react';
 import { useThemeContext } from '@/context/ThemeContext';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const UseCaseMobileView = () => {
   const { isDark } = useThemeContext();

@@ -4,7 +4,7 @@ import AppLayout from '@/Shared/AppLayout';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import { IoMdFunnel } from 'react-icons/io';
 
 export default function Academy() {

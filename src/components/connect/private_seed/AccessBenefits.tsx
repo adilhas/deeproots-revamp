@@ -2,7 +2,7 @@
 
 import { useThemeContext } from '@/context/ThemeContext';
 import Image from 'next/image';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const AccessBenefits = () => {
   const { isDark } = useThemeContext();

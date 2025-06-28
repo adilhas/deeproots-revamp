@@ -8,7 +8,7 @@ import {
   PiPlant,
   PiUserPlusLight,
 } from 'react-icons/pi';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import { JSX } from 'react';
 
 interface FullSeatFeaturesType {

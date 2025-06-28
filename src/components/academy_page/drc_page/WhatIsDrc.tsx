@@ -1,5 +1,5 @@
 import { Zap } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const WhatIsDrc = () => {
   const { t } = useTranslation('academy/drc');

@@ -1,7 +1,7 @@
 import { getTotalSupplyData } from '@/constants/totalSuppyData';
 import { useThemeContext } from '@/context/ThemeContext';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const TotalSupply: React.FC = () => {
   const { isDark } = useThemeContext();

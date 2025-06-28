@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Mail, Phone } from 'lucide-react';
 import { PiMapPinArea, PiUser, PiUserCircleCheck } from 'react-icons/pi';
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslation, Trans } from 'next-i18next';
 
 const PrivateSeedForm = () => {
   const { t } = useTranslation('connect/private_seed');

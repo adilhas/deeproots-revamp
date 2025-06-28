@@ -2,7 +2,7 @@
 
 import { Mail, User, MapPin, Globe, Bell } from 'lucide-react';
 import useEventForm from './useEventForm';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 export interface InterestOption {
   key: keyof Interests;
   labelKey: string;

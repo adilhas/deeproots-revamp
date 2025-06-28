@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const SmartContractHero = () => {
   const { t } = useTranslation('lab/smart_contract');

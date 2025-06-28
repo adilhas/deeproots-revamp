@@ -1,6 +1,6 @@
 import { Star } from 'lucide-react';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import { BsIncognito } from 'react-icons/bs';
 import { PiCoins, PiMedal, PiWaves } from 'react-icons/pi';
 

@@ -2,7 +2,7 @@
 
 import { Lock, Shield, User, Key, Code } from 'lucide-react';
 import { ReactNode } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 interface IPrivacyItem {
   icon: ReactNode;

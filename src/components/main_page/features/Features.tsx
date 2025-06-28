@@ -1,6 +1,6 @@
 import { getFeaturesCardItems } from '@/constants/featuresSectionData';
 import { useThemeContext } from '@/context/ThemeContext';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const Features = () => {
   const { isDark } = useThemeContext();

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 export default function RootscanSection() {
   const { t } = useTranslation('landing_page');

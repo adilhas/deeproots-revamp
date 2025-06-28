@@ -2,7 +2,7 @@ import React from 'react';
 import DiamondIcon from './DiamondIcon';
 import Image from 'next/image';
 import { ChevronRight } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 interface FeatureItem {
   title: string;

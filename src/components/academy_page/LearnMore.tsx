@@ -3,7 +3,7 @@
 import React from 'react';
 import TopicCard from './TopicCard';
 import { useThemeContext } from '@/context/ThemeContext';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const LearnMore = () => {
   const { isDark } = useThemeContext();

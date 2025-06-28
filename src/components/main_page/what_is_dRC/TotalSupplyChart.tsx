@@ -1,6 +1,6 @@
 import { getTotalSupplyData } from '@/constants/totalSuppyData';
 import React, { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import { PieChart, Pie, Cell } from 'recharts';
 
 interface TotalSupplyChartProps {

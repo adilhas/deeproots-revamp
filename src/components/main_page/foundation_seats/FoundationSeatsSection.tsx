@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Clock3, Gamepad2, PiggyBank, Users, Wand } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 
 const icons = [

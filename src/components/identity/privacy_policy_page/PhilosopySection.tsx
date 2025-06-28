@@ -1,7 +1,7 @@
 'use client';
 
 import { Key } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 const PhilosopySection = () => {
   const { t } = useTranslation('identity/privacy_policy');
