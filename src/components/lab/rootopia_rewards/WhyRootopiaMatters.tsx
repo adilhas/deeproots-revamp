@@ -68,7 +68,7 @@ const WhyRootopiaMatters = () => {
                     className="flex flex-col items-start gap-2 px-2"
                   >
                     <point.icon className="w-8 h-8 text-[#52BE66] mt-1" />
-                    <div className="text-lg md:text-2xl text-[#080300]">
+                    <div className="text-md md:text-2xl text-[#080300]">
                       {point.text}
                     </div>
                   </div>
@@ -87,7 +87,7 @@ const WhyRootopiaMatters = () => {
                     className="flex flex-col items-start gap-y-2 px-2"
                   >
                     <point.icon className="w-8 h-8 text-[#52BE66] mt-1" />
-                    <div className="text-lg font-semibold md:text-2xl text-[#080300] w-fit text-start">
+                    <div className="text-md font-semibold md:text-2xl text-[#080300] w-fit text-start">
                       {point.text}
                     </div>
                   </div>

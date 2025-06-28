@@ -49,10 +49,10 @@ const SeedingRewards = () => {
               src={`${isAbove('md') ? '/lab/seeding-reward-bg.png' : '/lab/seeding-reward-bg-mob.png'}`}
               className="max-w-[280px] md:max-w-none md:w-[500px] lg:w-[700px] h-[350px] md:h-[200px] relative"
             >
-              <h1 className="text-3xl lg:text-4xl font-extrabold leading-tight">
+              <h1 className="text-2xl lg:text-4xl font-extrabold leading-tight">
                 Play. Seed. Refer. Conquer. Earn.
               </h1>
-              <p className="text-md sm:text-lg mt-2 px-4">
+              <p className="text-md  mt-2 px-4">
                 RootOpia is more than a game — it’s a decentralized reward
                 universe. Every seed, referral, battle, or level-up unlocks
                 value across the DeepRoots economy.

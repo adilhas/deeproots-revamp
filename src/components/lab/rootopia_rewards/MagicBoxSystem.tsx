@@ -55,7 +55,7 @@ const MagicBoxSystem = () => {
                 <ImageBanner
                   src={`/lab/${index % 2 === 0 ? 'magic-green-box.png' : 'magic-red-box.png'}`}
                   key={item}
-                  className="px-3 text-lg md:text-2xl relative  overflow-visible text-[#FFAE24]"
+                  className="px-3 text-md md:text-2xl relative  overflow-visible text-[#FFAE24]"
                 >
                   {item}
                   {/* Only first item shows cloud */}

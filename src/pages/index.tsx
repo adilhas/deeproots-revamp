@@ -56,7 +56,10 @@ const Home: NextPage = () => {
           content="From impossible to possible – explore DeepRoots, the platform for innovative DeWorld Apps on the First Truly Dynamic Blockchain Network."
         />
         <meta property="og:url" content="https://deeproots.earth/" />
-        <meta property="og:image" content="/landing/logo.png" />
+        <meta
+          property="og:image"
+          content="https://deeproots.earth/landing/logo.png"
+        />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -67,7 +70,10 @@ const Home: NextPage = () => {
           name="twitter:description"
           content="From impossible to possible – a platform for innovative DeWorld Apps on the First Truly Dynamic Blockchain Network."
         />
-        <meta name="twitter:image" content="/landing/logo.png" />
+        <meta
+          name="twitter:image"
+          content="https://deeproots.earth/landing/logo.png"
+        />
       </Head>
       <div className="overflow-x-hidden relative  bg-primary-light dark:bg-primary-dark text-[#404040] dark:text-neutral-200">
         <Navbar />

@@ -42,7 +42,7 @@ const RRHero = () => {
           />
 
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center md:px-5">
-            <h1 className="text-[#DD9D15] text-3xl md:text-5xl font-bold leading-tight">
+            <h1 className="text-[#DD9D15] text-2xl md:text-5xl font-bold leading-tight">
               The First Full Web3 2D <br className="hidden md:inline-block" />{' '}
               Animated GameFi Experience
             </h1>
