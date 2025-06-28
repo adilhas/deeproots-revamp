@@ -5,8 +5,11 @@ import Link from 'next/link';
 import HeroPrivateSeedAccess from './HeroPrivateSeedAccess';
 
 const Hero = () => {
-  const { t } = useTranslation('landing_page');
+  const { t, ready } = useTranslation('landing_page');
   const title = t('hero-section.title');
+  if (!ready) {
+    return <div>Loading...</div>; // Or a skeleton loader
+  }
   const [firstWord, ...rest] = title.split(' ');
   return (
     <>

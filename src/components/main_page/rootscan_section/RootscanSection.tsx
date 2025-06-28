@@ -3,10 +3,12 @@ import { useTranslation } from 'react-i18next';
 
 export default function RootscanSection() {
   const { t } = useTranslation('landing_page');
-  const features = t('rootscan.features', { returnObjects: true }) as {
-    title: string;
-    description: string;
-  }[];
+  const rawFeatures = t('rootscan.features', { returnObjects: true });
+  const features: { title: string; description: string }[] = Array.isArray(
+    rawFeatures
+  )
+    ? (rawFeatures as { title: string; description: string }[])
+    : [];
   return (
     <section className="bg-[#BC965A] dark:bg-primary-dark relative overflow-hidden">
       <div className="absolute top-[-100px] right-[-100px] lg:right-[10%] w-[250px] lg:w-[500px] h-[300px] bg-[#677950] blur-[80px] opacity-60 pointer-events-none z-0 dark:hidden" />

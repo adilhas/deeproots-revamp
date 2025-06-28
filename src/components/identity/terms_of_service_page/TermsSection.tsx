@@ -13,23 +13,37 @@ interface ITermItem {
 const TermsSection = () => {
   const { t } = useTranslation('identity/terms_of_service');
 
+  const youCanExpectItems = t('terms.youCanExpect.items', {
+    returnObjects: true,
+  });
+  const weExpectFromYouItems = t('terms.weExpectFromYou.items', {
+    returnObjects: true,
+  });
+  const disclaimersItems = t('terms.disclaimers.items', {
+    returnObjects: true,
+  });
+
   const termSections: ITermItem[] = [
     {
       icon: <CheckCircle2 className="w-6 h-6 text-green-500" />,
       title: t('terms.youCanExpect.title'),
-      items: t('terms.youCanExpect.items', { returnObjects: true }) as string[],
+      items: Array.isArray(youCanExpectItems)
+        ? (youCanExpectItems as string[])
+        : [],
     },
     {
       icon: <Compass className="w-6 h-6 text-blue-500" />,
       title: t('terms.weExpectFromYou.title'),
-      items: t('terms.weExpectFromYou.items', {
-        returnObjects: true,
-      }) as string[],
+      items: Array.isArray(weExpectFromYouItems)
+        ? (weExpectFromYouItems as string[])
+        : [],
     },
     {
       icon: <AlertTriangle className="w-6 h-6 text-yellow-500" />,
       title: t('terms.disclaimers.title'),
-      items: t('terms.disclaimers.items', { returnObjects: true }) as string[],
+      items: Array.isArray(disclaimersItems)
+        ? (disclaimersItems as string[])
+        : [],
     },
   ];
 

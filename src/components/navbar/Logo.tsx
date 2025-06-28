@@ -1,24 +1,27 @@
-import useLocaleDirection from '@/hooks/useLocaleDirection';
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Logo() {
-  const { isArabic } = useLocaleDirection();
   return (
-    <Link href={'/'} className="text-2xl font-bold flex justify-between">
-      <div className="w-10 h-10 md:w-16 md:h-16 overflow-hidden relative">
+    <div className="text-2xl font-bold flex justify-between">
+      <Link
+        href="/"
+        className="w-10 h-10 md:w-16 md:h-16 relative overflow-hidden"
+      >
         <Image
           alt="logo"
           src="/landing/logo-big.png"
           fill
           className="object-contain"
         />
-      </div>
-      <h3
-        className={`${isArabic ? 'pr-3' : 'pl-3'} self-center hidden sm:block font-bold text-md md:text-2xl  bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text font-orbitron text-transparent`}
-      >
-        <Link href="/">DEEPROOTS</Link>
-      </h3>
-    </Link>
+      </Link>
+      <Link href="/">
+        <h3 className="self-center hidden sm:block font-bold text-md md:text-2xl bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text font-orbitron text-transparent">
+          DEEPROOTS
+        </h3>
+      </Link>
+    </div>
   );
 }

@@ -5,9 +5,13 @@ import { useTranslation } from 'react-i18next';
 
 const InnolaunchSection = () => {
   const { t } = useTranslation('landing_page');
-  const fundingRounds = t('innolaunch_section.funding_rounds', {
+  const rawFundingRounds = t('innolaunch_section.funding_rounds', {
     returnObjects: true,
-  }) as string[];
+  });
+  const fundingRounds: string[] = Array.isArray(rawFundingRounds)
+    ? (rawFundingRounds as string[])
+    : [];
+
   return (
     <section className="relative py-16 bg-[#82A3AA] dark:bg-transparent overflow-hidden">
       <div className="absolute top-[-100px] left-[-100px] w-[100px] md:w-[300px] h-[500px] bg-[#CA544F] blur-3xl opacity-60 pointer-events-none z-0 dark:hidden" />

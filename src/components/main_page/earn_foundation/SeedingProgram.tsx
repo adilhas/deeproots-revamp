@@ -5,9 +5,11 @@ import useLocaleDirection from '@/hooks/useLocaleDirection';
 
 const SeedingProgram = () => {
   const { t } = useTranslation('landing_page');
-  const benefits = t('seeding_program.benefits', {
-    returnObjects: true,
-  }) as string[];
+  const rawBenefits = t('seeding_program.benefits', { returnObjects: true });
+  const benefits: string[] = Array.isArray(rawBenefits)
+    ? (rawBenefits as string[])
+    : [];
+
   useLocaleDirection();
 
   return (

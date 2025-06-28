@@ -24,10 +24,12 @@ const icons = [
 const COHPrinciple = () => {
   const { t } = useTranslation('code_of_honor');
   const { isArabic } = useLocaleDirection();
-  const principles = t('principles', { returnObjects: true }) as {
-    title: string;
-    description: string;
-  }[];
+  const rawPrinciples = t('principles', { returnObjects: true });
+  const principles: { title: string; description: string }[] = Array.isArray(
+    rawPrinciples
+  )
+    ? (rawPrinciples as { title: string; description: string }[])
+    : [];
 
   return (
     <section className="mb-20">

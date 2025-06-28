@@ -8,15 +8,20 @@ import { useTranslation } from 'next-i18next';
 const BenefitsGridDeskView = () => {
   const { t } = useTranslation('seeding/foundation');
 
-  const benefitsData1 = t('desk-benefits.col1', {
-    returnObjects: true,
-  }) as string[];
-  const benefitsData2 = t('desk-benefits.col2', {
-    returnObjects: true,
-  }) as string[];
-  const benefitsData3 = t('desk-benefits.col3', {
-    returnObjects: true,
-  }) as string[];
+  const rawBenefitsData1 = t('desk-benefits.col1', { returnObjects: true });
+  const benefitsData1: string[] = Array.isArray(rawBenefitsData1)
+    ? (rawBenefitsData1 as string[])
+    : [];
+
+  const rawBenefitsData2 = t('desk-benefits.col2', { returnObjects: true });
+  const benefitsData2: string[] = Array.isArray(rawBenefitsData2)
+    ? (rawBenefitsData2 as string[])
+    : [];
+
+  const rawBenefitsData3 = t('desk-benefits.col3', { returnObjects: true });
+  const benefitsData3: string[] = Array.isArray(rawBenefitsData3)
+    ? (rawBenefitsData3 as string[])
+    : [];
 
   return (
     <div className="text-[#4B5563] dark:text-[#F1F5F9] text-center lg:inline-block hidden">

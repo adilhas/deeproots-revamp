@@ -12,9 +12,12 @@ export const privateFeatureIcons = [
 
 const PrivateNetwork = () => {
   const { t } = useTranslation('lab/network');
-  const features = t('network.privateNetwork.features', {
+  const rawFeatures = t('network.privateNetwork.features', {
     returnObjects: true,
-  }) as string[];
+  });
+  const features: string[] = Array.isArray(rawFeatures)
+    ? (rawFeatures as string[])
+    : [];
 
   return (
     <div className="bg-purple-50/50 dark:bg-purple-900/10 p-8 rounded-2xl border border-purple-200 dark:border-purple-900/30 shadow-sm">

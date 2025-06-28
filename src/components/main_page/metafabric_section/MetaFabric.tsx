@@ -20,12 +20,13 @@ const icons = [
 const MetaFabricSection = () => {
   const { t } = useTranslation('landing_page');
 
-  const features = t('metafabric_section.features', {
-    returnObjects: true,
-  }) as {
-    title: string;
-    description: string;
-  }[];
+  const rawFeatures = t('metafabric_section.features', { returnObjects: true });
+  const features: { title: string; description: string }[] = Array.isArray(
+    rawFeatures
+  )
+    ? (rawFeatures as { title: string; description: string }[])
+    : [];
+
   return (
     <section className=" bg-[#B0C9D3] dark:bg-primary-dark relative overflow-hidden">
       <div className="absolute top-[0px] lg:right-[-100px] w-[100%] md:w-[300px] h-[40%] lg:h-[400px] bg-[#928FFD] blur-3xl opacity-60 pointer-events-none z-0 dark:hidden" />

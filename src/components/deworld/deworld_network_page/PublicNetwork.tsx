@@ -19,9 +19,12 @@ export const publicFeaturesIcons = [
 ];
 const PublicNetwork = () => {
   const { t } = useTranslation('lab/network');
-  const publicFeatures = t('network.publicNetwork.features', {
+  const rawPublicFeatures = t('network.publicNetwork.features', {
     returnObjects: true,
-  }) as string[];
+  });
+  const publicFeatures: string[] = Array.isArray(rawPublicFeatures)
+    ? (rawPublicFeatures as string[])
+    : [];
 
   return (
     <div className="bg-blue-50/50 dark:bg-blue-900/10 p-8 rounded-2xl border border-blue-200 dark:border-blue-900/30 shadow-sm">

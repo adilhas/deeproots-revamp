@@ -20,9 +20,12 @@ interface WaysToContributeType {
 const WaysToContribute = () => {
   const { t } = useTranslation('connect/volunteer');
   const { isDark } = useThemeContext();
-  const waysToContributeData = t('way-contribute.benefits', {
+  const rawWaysToContributeData = t('way-contribute.benefits', {
     returnObjects: true,
-  }) as string[];
+  });
+  const waysToContributeData: string[] = Array.isArray(rawWaysToContributeData)
+    ? (rawWaysToContributeData as string[])
+    : [];
 
   const weAreLooking: WaysToContributeType[] = [
     {

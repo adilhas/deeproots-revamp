@@ -8,12 +8,18 @@ const AccessBenefits = () => {
   const { isDark } = useThemeContext();
   const { t } = useTranslation('connect/private_seed');
 
-  const topBenefits = t('access_benefits.top', {
+  const rawTopBenefits = t('access_benefits.top', { returnObjects: true });
+  const topBenefits: string[] = Array.isArray(rawTopBenefits)
+    ? (rawTopBenefits as string[])
+    : [];
+
+  const rawBottomBenefits = t('access_benefits.bottom', {
     returnObjects: true,
-  }) as string[];
-  const bottomBenefits = t('access_benefits.bottom', {
-    returnObjects: true,
-  }) as string[];
+  });
+  const bottomBenefits: string[] = Array.isArray(rawBottomBenefits)
+    ? (rawBottomBenefits as string[])
+    : [];
+
   const heading = t('access_benefits.heading');
 
   return (

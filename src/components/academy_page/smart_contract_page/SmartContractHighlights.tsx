@@ -25,10 +25,13 @@ const highlightsIcon = [
 
 const SmartContractHighlights = () => {
   const { t } = useTranslation('lab/smart_contract');
-  const highlights = t('highlights', { returnObjects: true }) as {
-    title: string;
-    description: string;
-  }[];
+  const rawHighlights = t('highlights', { returnObjects: true });
+  const highlights: { title: string; description: string }[] = Array.isArray(
+    rawHighlights
+  )
+    ? (rawHighlights as { title: string; description: string }[])
+    : [];
+
   return (
     <section className="bg-gray-50 dark:bg-gray-900 backdrop-blur-sm p-6 sm:p-10 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-xl">
       <div className="flex flex-col sm:flex-row items-start mb-6">

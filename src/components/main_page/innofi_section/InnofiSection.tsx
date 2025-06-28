@@ -28,9 +28,13 @@ const iconComponents = [
 const InnofiSection = () => {
   const { isDark } = useThemeContext();
   const { t } = useTranslation('landing_page');
-  const innofiFeatures = t('innofi_section.features', {
+  const rawInnofiFeatures = t('innofi_section.features', {
     returnObjects: true,
-  }) as FeatureItem[];
+  });
+  const innofiFeatures: FeatureItem[] = Array.isArray(rawInnofiFeatures)
+    ? (rawInnofiFeatures as FeatureItem[])
+    : [];
+
   return (
     <section className="bg-[#FDFDF1] dark:bg-primary-dark py-28 px-6 md:px-16 w-full relative overflow-hidden">
       <div className="absolute top-0 left-0 w-[100px] md:w-[300px] h-[500px] bg-[#C37692] blur-3xl opacity-30 pointer-events-none z-0 dark:hidden" />

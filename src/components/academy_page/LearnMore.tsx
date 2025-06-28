@@ -9,10 +9,12 @@ const LearnMore = () => {
   const { isDark } = useThemeContext();
   const { t } = useTranslation('learn_more');
 
-  const topics = t('learnMore.topics', { returnObjects: true }) as {
-    name: string;
-    description: string;
-  }[];
+  const rawTopics = t('learnMore.topics', { returnObjects: true });
+  const topics: { name: string; description: string }[] = Array.isArray(
+    rawTopics
+  )
+    ? (rawTopics as { name: string; description: string }[])
+    : [];
 
   const colors = [
     {

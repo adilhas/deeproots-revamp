@@ -38,10 +38,12 @@ const cardStyles = [
 
 const OurCorePrinciple = () => {
   const { t } = useTranslation('academy/web3');
-  const items = t('web3.principles.items', { returnObjects: true }) as {
-    title: string;
-    description: string;
-  }[];
+  const rawItems = t('web3.principles.items', { returnObjects: true });
+  const items: { title: string; description: string }[] = Array.isArray(
+    rawItems
+  )
+    ? (rawItems as { title: string; description: string }[])
+    : [];
 
   return (
     <div className="my-20">

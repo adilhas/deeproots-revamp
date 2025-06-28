@@ -6,10 +6,13 @@ const icons = [Wallet, Smartphone, Rocket, Eye, BadgeCheck];
 
 export default function GivefiSection() {
   const { t } = useTranslation('landing_page');
-  const features = t('givefi_section.features', { returnObjects: true }) as {
-    title: string;
-    description: string;
-  }[];
+  const rawFeatures = t('givefi_section.features', { returnObjects: true });
+  const features: { title: string; description: string }[] = Array.isArray(
+    rawFeatures
+  )
+    ? (rawFeatures as { title: string; description: string }[])
+    : [];
+
   return (
     <section className="bg-[#C6E3D5] dark:bg-primary-dark relative overflow-hidden bg-gradient-to-br from-[#F5EDFF] to-[#B8D0FF] dark:from-primary-dark dark:to-primary-dark">
       <div className="absolute inset-0 z-0 pointer-events-none">

@@ -4,7 +4,8 @@ import { useTranslation } from 'react-i18next';
 
 const TokenomicsSection = () => {
   const { t } = useTranslation('academy/drc');
-  const specs = t('tokenomics.specs', { returnObjects: true }) as string[];
+  const rawSpecs = t('tokenomics.specs', { returnObjects: true });
+  const specs: string[] = Array.isArray(rawSpecs) ? (rawSpecs as string[]) : [];
   return (
     <section className="bg-gray-100 dark:bg-gray-800/50 backdrop-blur-sm px-4 sm:px-6 py-8 rounded-2xl border border-gray-300 dark:border-gray-700 shadow-xl">
       <div className="flex flex-col sm:flex-row items-start mb-6">

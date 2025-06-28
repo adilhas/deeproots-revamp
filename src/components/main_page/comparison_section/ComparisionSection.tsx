@@ -38,22 +38,25 @@ const decentralizedIcons = [
 
 const ComparisonSection = () => {
   const { t } = useTranslation('landing_page');
-  const centralizedFeatures = (
-    t('comparison.centralized-features', {
-      returnObjects: true,
-    }) as string[]
-  ).map((label, i) => ({
-    icon: centralizedIcons[i],
-    label,
-  }));
-  const decentralizedFeatures = (
-    t('comparison.decentralized-features', {
-      returnObjects: true,
-    }) as string[]
-  ).map((label, i) => ({
-    icon: decentralizedIcons[i],
-    label,
-  }));
+  const rawCentralized = t('comparison.centralized-features', {
+    returnObjects: true,
+  });
+  const centralizedFeatures = Array.isArray(rawCentralized)
+    ? rawCentralized.map((label, i) => ({
+        icon: centralizedIcons[i],
+        label,
+      }))
+    : [];
+
+  const rawDecentralized = t('comparison.decentralized-features', {
+    returnObjects: true,
+  });
+  const decentralizedFeatures = Array.isArray(rawDecentralized)
+    ? rawDecentralized.map((label, i) => ({
+        icon: decentralizedIcons[i],
+        label,
+      }))
+    : [];
 
   return (
     <section className="bg-[#BFBFBF] dark:bg-[#1D1D21]">

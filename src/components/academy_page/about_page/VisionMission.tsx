@@ -6,12 +6,19 @@ import { useTranslation } from 'react-i18next';
 const VisionMission = () => {
   const { t } = useTranslation('academy/about');
 
-  const visionItems = t('vision_mission.vision.items', {
+  const rawVisionItems = t('vision_mission.vision.items', {
     returnObjects: true,
-  }) as string[];
-  const missionItems = t('vision_mission.mission.items', {
+  });
+  const visionItems: string[] = Array.isArray(rawVisionItems)
+    ? (rawVisionItems as string[])
+    : [];
+
+  const rawMissionItems = t('vision_mission.mission.items', {
     returnObjects: true,
-  }) as string[];
+  });
+  const missionItems: string[] = Array.isArray(rawMissionItems)
+    ? (rawMissionItems as string[])
+    : [];
 
   return (
     <section className="mb-24 w-full max-w-7xl mx-auto">

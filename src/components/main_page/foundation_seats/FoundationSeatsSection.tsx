@@ -17,9 +17,10 @@ interface Feature {
 }
 const FoundationSeatsSection = () => {
   const { t } = useTranslation('landing_page');
-  const features = t('foundation.features', {
-    returnObjects: true,
-  }) as Feature[];
+  const rawFeatures = t('foundation.features', { returnObjects: true });
+  const features: Feature[] = Array.isArray(rawFeatures)
+    ? (rawFeatures as Feature[])
+    : [];
 
   const foundationSeatsFeatures = features.map((feature, idx) => ({
     icon: icons[idx],

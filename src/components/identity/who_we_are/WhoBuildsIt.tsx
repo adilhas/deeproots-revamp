@@ -11,7 +11,8 @@ import { useTranslation } from 'next-i18next';
 
 const WhoBuildsIt = () => {
   const { t } = useTranslation('identity/who_we_are');
-  const items = t('whoBuildsIt.items', { returnObjects: true }) as string[];
+  const rawItems = t('whoBuildsIt.items', { returnObjects: true });
+  const items: string[] = Array.isArray(rawItems) ? (rawItems as string[]) : [];
 
   const icons = [
     <PiCodeBlock

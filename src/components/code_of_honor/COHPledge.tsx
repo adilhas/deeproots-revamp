@@ -11,7 +11,10 @@ const icons = [
 
 const COHPledge = () => {
   const { t } = useTranslation('code_of_honor');
-  const pledges = t('pledges.items', { returnObjects: true }) as string[];
+  const rawPledges = t('pledges.items', { returnObjects: true });
+  const pledges: string[] = Array.isArray(rawPledges)
+    ? (rawPledges as string[])
+    : [];
 
   return (
     <section className="mb-20 bg-gradient-to-br from-[#0085a8]/10 to-[#ad1aaf]/10 dark:from-[#0085a8]/20 dark:to-[#ad1aaf]/20 p-8 rounded-2xl border border-[#0085a8]/30 dark:border-[#ad1aaf]/30">

@@ -6,9 +6,11 @@ import { PiCoins, PiMedal, PiWaves } from 'react-icons/pi';
 
 const WhatYouReceive = () => {
   const { t } = useTranslation('connect/volunteer');
-  const youReceive = t('you-receive.benefits', {
-    returnObjects: true,
-  }) as string[];
+  const rawYouReceive = t('you-receive.benefits', { returnObjects: true });
+  const youReceive: string[] = Array.isArray(rawYouReceive)
+    ? (rawYouReceive as string[])
+    : [];
+
   const benefitsIcons = [Star, PiCoins, PiWaves, BsIncognito, PiMedal];
   return (
     <div>

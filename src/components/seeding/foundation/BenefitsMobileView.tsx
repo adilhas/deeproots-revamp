@@ -8,12 +8,17 @@ import { useTranslation } from 'next-i18next';
 const BenefitsMobileView = () => {
   const { t } = useTranslation('seeding/foundation');
 
-  const benefitsTop = t('mobile_benefits.top', {
+  const rawBenefitsTop = t('mobile_benefits.top', { returnObjects: true });
+  const benefitsTop: string[] = Array.isArray(rawBenefitsTop)
+    ? (rawBenefitsTop as string[])
+    : [];
+
+  const rawBenefitsBottom = t('mobile_benefits.bottom', {
     returnObjects: true,
-  }) as string[];
-  const benefitsBottom = t('mobile_benefits.bottom', {
-    returnObjects: true,
-  }) as string[];
+  });
+  const benefitsBottom: string[] = Array.isArray(rawBenefitsBottom)
+    ? (rawBenefitsBottom as string[])
+    : [];
 
   return (
     <div className="inline-block lg:hidden mx-auto w-full text-center">

@@ -43,9 +43,10 @@ const iconBgMap = [
 
 const GasFeesUtility = () => {
   const { t } = useTranslation('lab/gas_fees');
-  const sections = t('gasFeesUtility.sections', {
-    returnObjects: true,
-  }) as UtilitySection[];
+  const rawSections = t('gasFeesUtility.sections', { returnObjects: true });
+  const sections: UtilitySection[] = Array.isArray(rawSections)
+    ? (rawSections as UtilitySection[])
+    : [];
 
   return (
     <div className="space-y-12">

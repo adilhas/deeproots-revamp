@@ -58,10 +58,12 @@ const styles = [
 
 const SeedingBenefits = () => {
   const { t } = useTranslation('identity/what_is_seeding');
-  const items = t('benefits.items', { returnObjects: true }) as {
-    title: string;
-    description: string;
-  }[];
+  const rawItems = t('benefits.items', { returnObjects: true });
+  const items: { title: string; description: string }[] = Array.isArray(
+    rawItems
+  )
+    ? (rawItems as { title: string; description: string }[])
+    : [];
 
   return (
     <div className="my-20">

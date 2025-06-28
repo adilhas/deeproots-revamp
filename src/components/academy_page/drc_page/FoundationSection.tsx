@@ -4,9 +4,11 @@ import { useTranslation } from 'react-i18next';
 const FoundationSection = () => {
   const { t } = useTranslation('academy/drc');
 
-  const benefits = t('foundation.benefits', {
-    returnObjects: true,
-  }) as string[];
+  const rawBenefits = t('foundation.benefits', { returnObjects: true });
+  const benefits: string[] = Array.isArray(rawBenefits)
+    ? (rawBenefits as string[])
+    : [];
+
   return (
     <section className="bg-gray-100 dark:bg-gray-800/50 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-gray-300 dark:border-gray-700 shadow-xl">
       <div className="flex flex-col sm:flex-row items-start mb-6">

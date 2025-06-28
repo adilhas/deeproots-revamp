@@ -11,9 +11,12 @@ interface FeatureItem {
 
 const DeepAssets = () => {
   const { t } = useTranslation('landing_page');
-  const deepAssetsFeatures = t('deepAssets.features', {
+  const rawDeepAssetsFeatures = t('deepAssets.features', {
     returnObjects: true,
-  }) as FeatureItem[];
+  });
+  const deepAssetsFeatures: FeatureItem[] = Array.isArray(rawDeepAssetsFeatures)
+    ? (rawDeepAssetsFeatures as FeatureItem[])
+    : [];
 
   return (
     <main className="relative bg-[#FBF2E7] dark:bg-primary-dark px-5 py-20">

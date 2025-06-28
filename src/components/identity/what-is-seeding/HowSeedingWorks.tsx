@@ -5,10 +5,12 @@ import { useTranslation } from 'next-i18next';
 
 const HowSeedingWorks = () => {
   const { t } = useTranslation('identity/what_is_seeding');
-  const items = t('how_works.items', { returnObjects: true }) as {
-    title: string;
-    description: string;
-  }[];
+  const rawItems = t('how_works.items', { returnObjects: true });
+  const items: { title: string; description: string }[] = Array.isArray(
+    rawItems
+  )
+    ? (rawItems as { title: string; description: string }[])
+    : [];
 
   const bgColorClasses = [
     'bg-[#F1F1F1] dark:bg-[#525252] border-[#D4D4D4] dark:border-[#737373]',

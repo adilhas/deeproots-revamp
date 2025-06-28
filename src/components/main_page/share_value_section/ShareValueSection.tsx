@@ -27,12 +27,14 @@ const icons = [
 ];
 const ShareValueSection = () => {
   const { t } = useTranslation('landing_page');
-  const features = t('share_value_section.features', {
+  const rawFeatures = t('share_value_section.features', {
     returnObjects: true,
-  }) as {
-    title: string;
-    description: string;
-  }[];
+  });
+  const features: { title: string; description: string }[] = Array.isArray(
+    rawFeatures
+  )
+    ? (rawFeatures as { title: string; description: string }[])
+    : [];
 
   return (
     <main className="py-16 p-6 md:p-10 bg-[#E8F4D4] dark:bg-primary-dark relative">

@@ -18,10 +18,12 @@ const icons = [
 
 export default function InnofarmSection() {
   const { t } = useTranslation('landing_page');
-  const features = t('innofarm_section.features', { returnObjects: true }) as {
-    title: string;
-    description: string;
-  }[];
+  const rawFeatures = t('innofarm_section.features', { returnObjects: true });
+  const features: { title: string; description: string }[] = Array.isArray(
+    rawFeatures
+  )
+    ? (rawFeatures as { title: string; description: string }[])
+    : [];
 
   return (
     <section className="bg-[#C6E3D5] dark:bg-primary-dark relative overflow-hidden">

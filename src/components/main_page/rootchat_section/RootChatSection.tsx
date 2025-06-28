@@ -15,9 +15,10 @@ interface Feature {
 
 const RootChatSection = () => {
   const { t } = useTranslation('landing_page');
-  const translatedFeatures = t('rootchat.features', {
-    returnObjects: true,
-  }) as Feature[];
+  const rawFeatures = t('rootchat.features', { returnObjects: true });
+  const translatedFeatures: Feature[] = Array.isArray(rawFeatures)
+    ? (rawFeatures as Feature[])
+    : [];
 
   const features = translatedFeatures.map((feature, idx) => ({
     icon: icons[idx],

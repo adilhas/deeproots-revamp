@@ -11,9 +11,10 @@ import Link from 'next/link';
 const DRCDesktop = () => {
   const { isDark } = useThemeContext();
   const { t } = useTranslation('landing_page');
-  const tokenFeatures: string[] = t('drc.features', {
-    returnObjects: true,
-  }) as string[];
+  const rawFeatures = t('drc.features', { returnObjects: true });
+
+  const tokenFeatures: string[] = Array.isArray(rawFeatures) ? rawFeatures : [];
+
   const { isArabic } = useLocaleDirection();
 
   return (

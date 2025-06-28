@@ -24,10 +24,12 @@ const bgStyles = [
 
 const WhyWeb3Matters = () => {
   const { t } = useTranslation('academy/web3');
-  const items = t('web3.whyWeb3.items', { returnObjects: true }) as {
-    title: string;
-    description: string;
-  }[];
+  const rawItems = t('web3.whyWeb3.items', { returnObjects: true });
+  const items: { title: string; description: string }[] = Array.isArray(
+    rawItems
+  )
+    ? (rawItems as { title: string; description: string }[])
+    : [];
 
   return (
     <div className="my-20">

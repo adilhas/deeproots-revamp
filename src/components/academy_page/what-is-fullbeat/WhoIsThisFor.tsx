@@ -5,7 +5,10 @@ import { useTranslation } from 'react-i18next';
 
 const WhoIsThisFor = () => {
   const { t } = useTranslation('academy/what_is_fullseat');
-  const points = t('fullseat.who.points', { returnObjects: true }) as string[];
+  const rawPoints = t('fullseat.who.points', { returnObjects: true });
+  const points: string[] = Array.isArray(rawPoints)
+    ? (rawPoints as string[])
+    : [];
 
   const cardStyles = [
     {

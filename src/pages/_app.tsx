@@ -7,6 +7,7 @@ import Head from 'next/head';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { appWithTranslation } from 'next-i18next';
 import useLocaleDirection from '@/hooks/useLocaleDirection';
+import nextI18NextConfig from '../../next-i18next.config';
 
 const publicRoutes = ['/auth/signin'];
 
@@ -26,16 +27,16 @@ const MyApp = ({
           <link rel="icon" href="/landing/logo.png" />
         </Head>
         <Component {...pageProps} />
-        {isPublic ? (
+        {/* {isPublic ? (
           <Component {...pageProps} />
         ) : (
           <AuthGuard>
             <Component {...pageProps} />
           </AuthGuard>
-        )}
+        )} */}
       </ThemeProvider>
     </SessionProvider>
   );
 };
 
-export default appWithTranslation(MyApp);
+export default appWithTranslation(MyApp, nextI18NextConfig);

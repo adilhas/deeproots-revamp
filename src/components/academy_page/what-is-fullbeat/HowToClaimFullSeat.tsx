@@ -10,7 +10,8 @@ import useLocaleDirection from '@/hooks/useLocaleDirection';
 const HowToClaimFullSeat = () => {
   const { t } = useTranslation('academy/what_is_fullseat');
   const { isArabic } = useLocaleDirection();
-  const steps = t('fullseat.claim.steps', { returnObjects: true }) as string[];
+  const rawSteps = t('fullseat.claim.steps', { returnObjects: true });
+  const steps: string[] = Array.isArray(rawSteps) ? (rawSteps as string[]) : [];
 
   const icons = [PiBank, Lock, PiOfficeChair];
 

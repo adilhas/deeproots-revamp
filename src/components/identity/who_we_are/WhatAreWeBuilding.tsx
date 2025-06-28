@@ -38,10 +38,12 @@ const WhatAreWeBuilding = () => {
   const { isDark } = useThemeContext();
   const { t } = useTranslation('identity/who_we_are');
 
-  const items = t('whatWeAreBuilding.items', { returnObjects: true }) as {
-    title: string;
-    description: string;
-  }[];
+  const rawItems = t('whatWeAreBuilding.items', { returnObjects: true });
+  const items: { title: string; description: string }[] = Array.isArray(
+    rawItems
+  )
+    ? (rawItems as { title: string; description: string }[])
+    : [];
 
   return (
     <div className="my-20">

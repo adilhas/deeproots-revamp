@@ -24,7 +24,10 @@ const Data = [
 const RootopiaRace = () => {
   const { isDark } = useThemeContext();
   const { t } = useTranslation('landing_page');
-  const features = t('rootopia.features', { returnObjects: true }) as string[];
+  const rawFeatures = t('rootopia.features', { returnObjects: true });
+  const features: string[] = Array.isArray(rawFeatures)
+    ? (rawFeatures as string[])
+    : [];
   return (
     <section className="bg-[#F3D390] dark:bg-primary-dark relative overflow-hidden">
       <div className="absolute top-[-100px] right-[-100px] lg:right-[20%] dark:right-[0px] w-[250px] lg:w-[500px] h-[300px] bg-[#145412] dark:bg-[#60420C] blur-[80px] opacity-40 dark:opacity-40 pointer-events-none z-0" />

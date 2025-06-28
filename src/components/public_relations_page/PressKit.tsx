@@ -7,9 +7,10 @@ import { Box } from 'lucide-react';
 const PressKit = () => {
   const { t } = useTranslation('public_relations');
 
-  const pressKitData = t('press_kit.items', {
-    returnObjects: true,
-  }) as string[];
+  const rawPressKitData = t('press_kit.items', { returnObjects: true });
+  const pressKitData: string[] = Array.isArray(rawPressKitData)
+    ? (rawPressKitData as string[])
+    : [];
 
   return (
     <section className="mb-16">

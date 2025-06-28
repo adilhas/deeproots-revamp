@@ -30,7 +30,8 @@ const SeedingSoon = () => {
     />,
   ];
 
-  const steps = t('seedingSoon.steps', { returnObjects: true }) as string[];
+  const rawSteps = t('seedingSoon.steps', { returnObjects: true });
+  const steps: string[] = Array.isArray(rawSteps) ? (rawSteps as string[]) : [];
 
   return (
     <div className="my-20">

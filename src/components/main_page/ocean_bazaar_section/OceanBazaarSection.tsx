@@ -16,12 +16,15 @@ const icons = [
 
 export default function OceanBazaarSection() {
   const { t } = useTranslation('landing_page');
-  const features = t('ocean_bazaar_section.features', {
+  const rawFeatures = t('ocean_bazaar_section.features', {
     returnObjects: true,
-  }) as {
-    title: string;
-    description: string;
-  }[];
+  });
+  const features: { title: string; description: string }[] = Array.isArray(
+    rawFeatures
+  )
+    ? (rawFeatures as { title: string; description: string }[])
+    : [];
+
   return (
     <section className="bg-[#D4FFFE] dark:bg-primary-dark relative overflow-hidden">
       <div className="absolute top-[-100px] right-[-100px] w-[300px] h-[500px] bg-[#0A4764] blur-3xl opacity-30 pointer-events-none z-0 dark:inline-block lg:dark:hidden" />

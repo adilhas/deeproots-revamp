@@ -5,10 +5,12 @@ import { useTranslation } from 'next-i18next';
 
 const WhySeedingMatters = () => {
   const { t } = useTranslation('identity/what_is_seeding');
-  const items = t('why_matters.items', { returnObjects: true }) as {
-    title: string;
-    description: string;
-  }[];
+  const rawItems = t('why_matters.items', { returnObjects: true });
+  const items: { title: string; description: string }[] = Array.isArray(
+    rawItems
+  )
+    ? (rawItems as { title: string; description: string }[])
+    : [];
 
   return (
     <div className="my-20">

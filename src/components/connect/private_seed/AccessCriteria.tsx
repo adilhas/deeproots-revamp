@@ -5,9 +5,13 @@ import { PiLightbulb, PiMoneyWavy } from 'react-icons/pi';
 
 const AccessCriteria = () => {
   const { t } = useTranslation('connect/private_seed');
-  const accessCriteria = t('access-criteria.criteria', {
+  const rawAccessCriteria = t('access-criteria.criteria', {
     returnObjects: true,
-  }) as string[];
+  });
+  const accessCriteria: string[] = Array.isArray(rawAccessCriteria)
+    ? (rawAccessCriteria as string[])
+    : [];
+
   const benefitsIcons = [
     Star,
     PiMoneyWavy,

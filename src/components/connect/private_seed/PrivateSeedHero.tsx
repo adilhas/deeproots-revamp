@@ -7,7 +7,10 @@ import { useTranslation } from 'react-i18next';
 
 const PrivateSeedHero = () => {
   const { t } = useTranslation('connect/private_seed');
-  const features = t('hero.features', { returnObjects: true }) as string[];
+  const rawFeatures = t('hero.features', { returnObjects: true });
+  const features: string[] = Array.isArray(rawFeatures)
+    ? (rawFeatures as string[])
+    : [];
   const featuresIcons = ['🔒', '🌐', '📈'];
   return (
     <div className="relative w-full min-h-screen rounded-3xl overflow-hidden">
