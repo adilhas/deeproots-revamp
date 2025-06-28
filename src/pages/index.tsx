@@ -7,7 +7,7 @@ import EarnFoundationSection from '@/components/main_page/earn_foundation/EarnFo
 import WhatIsdRCSection from '@/components/main_page/what_is_dRC/WhatIsdRCSection';
 import DeepRootsEcosystemSection from '@/components/main_page/deeproots_ecosystem/DeepRootsEcosystemSection';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import type { GetStaticProps, NextPage } from 'next';
+import type { GetStaticProps } from 'next';
 import Seo from '@/Shared/Seo';
 
 const AddressWallet = dynamic(
@@ -75,7 +75,7 @@ const SocialLinks = dynamic(
 );
 const FooterV2 = dynamic(() => import('@/components/footer/FooterV2'));
 
-const Home: NextPage = () => {
+const Home = () => {
   return (
     <>
       <Seo />
