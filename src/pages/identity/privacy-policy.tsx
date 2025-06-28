@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import AppLayout from '@/Shared/AppLayout';
 import PrivacyHero from '@/components/identity/privacy_policy_page/PrivacyHero';
 import PrivacyCommitment from '@/components/identity/privacy_policy_page/PrivacyCommitment';
@@ -9,18 +8,16 @@ import PhilosopySection from '@/components/identity/privacy_policy_page/Philosop
 import ContactSection from '@/components/identity/privacy_policy_page/ContactSection';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Seo from '@/Shared/SEO';
 
 const PrivacyPolicyPage = () => {
   return (
     <AppLayout>
       <div className="min-h-screen bg-neutral-300 dark:bg-primary-dark transition-colors duration-300">
-        <Head>
-          <title>Privacy Policy - Deep Roots</title>
-          <meta
-            name="description"
-            content="Our commitment to protecting your privacy and data in DeWorld."
-          />
-        </Head>
+        <Seo
+          title="Privacy Policy - DEEPROOTS"
+          description="Our commitment to protecting your privacy and data in DeWorld"
+        />
 
         <div className="max-w-5xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
           <PrivacyHero />

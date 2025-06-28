@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Hero from '@/components/academy_page/about_page/Hero';
 import WhatIsDeepRoots from '@/components/academy_page/about_page/WhatIsDeepRoots';
 import VisionMission from '@/components/academy_page/about_page/VisionMission';
@@ -7,17 +6,12 @@ import JoinUs from '@/components/academy_page/about_page/JoinUs';
 import AppLayout from '@/Shared/AppLayout';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Seo from '@/Shared/SEO';
 
 export default function AboutAcademy() {
   return (
     <>
-      <Head>
-        <title>DEEPROOTS | DeWorld</title>
-        <meta
-          name="description"
-          content="We Are the Next. We Are the DeWorld. Discover Deep Roots – a bold decentralized movement reshaping the internet."
-        />
-      </Head>
+      <Seo />
 
       <AppLayout>
         <main className="relative w-full overflow-x-hidden max-w-[100vw] z-10 bg-neutral-300 dark:bg-primary-dark text-gray-900 dark:text-gray-100">

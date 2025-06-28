@@ -4,6 +4,7 @@ import WebEvolution from '@/components/academy_page/what_is_web3/WebEvolution';
 import WhyWeb3Matters from '@/components/academy_page/what_is_web3/WhyWeb3Matters';
 import SocialLinks from '@/components/main_page/social_links_section/SocialLinks';
 import AppLayout from '@/Shared/AppLayout';
+import Seo from '@/Shared/SEO';
 import { ChevronRight, Home } from 'lucide-react';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -15,6 +16,10 @@ const Web3Page = () => {
   const { t } = useTranslation('academy/web3');
   return (
     <AppLayout className="bg-white dark:bg-[#303030] text-on-primary dark:text-on-primary-dark">
+      <Seo
+        title="What is Web3"
+        description="Web3 puts power in the hands of users and Deep Roots is building the foundation to make it real."
+      />
       <section className="min-h-screen">
         <div className="max-w-[1200px] mx-auto py-10 px-3">
           <div className="flex flex-row justify-start gap-1 my-10 text-md items-center text-[#737373] dark:text-[#F1F5F9]">

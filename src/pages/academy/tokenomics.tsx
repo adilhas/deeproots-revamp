@@ -7,6 +7,7 @@ import TokenomicsUtility from '@/components/academy_page/tokenomics/TokenomicsUt
 import TokenTotalSupply from '@/components/academy_page/tokenomics/TokenTotalSupply';
 import SocialLinks from '@/components/main_page/social_links_section/SocialLinks';
 import AppLayout from '@/Shared/AppLayout';
+import Seo from '@/Shared/SEO';
 import { Link } from 'lucide-react';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -16,6 +17,10 @@ import { PiChartLineUp, PiCirclesFour } from 'react-icons/pi';
 const TokenomicsPage = () => {
   return (
     <AppLayout>
+      <Seo
+        title="TOKENOMICS – DEEP ROOTS (dRC)"
+        description="Built for Generations. Designed to Empower."
+      />
       <div className="relative pt-16 bg-primary-light dark:bg-primary-dark text-[#404040] dark:text-neutral-200">
         <div className="pb-16 px-2 sm:px-6 lg:px-8 max-w-[1200px] mx-auto z-10">
           <TokenomicsHero />

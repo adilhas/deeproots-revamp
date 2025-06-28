@@ -1,9 +1,9 @@
 import PhasesList from '@/components/academy_page/roadmap/PhasesList';
 import useLocaleDirection from '@/hooks/useLocaleDirection';
 import AppLayout from '@/Shared/AppLayout';
+import Seo from '@/Shared/SEO';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Head from 'next/head';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 
@@ -13,12 +13,7 @@ export default function Roadmap() {
 
   return (
     <>
-      <Head>
-        <title>roadmap</title>
-        <meta name="description" content="description" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://deeproots.earth/academy/roadmap" />
-      </Head>
+      <Seo title="DEEPROOTS - roadmap" description="Our Roadmap 2025–2027" />
 
       <AppLayout className="bg-primary-light dark:bg-primary-dark relative ">
         <div className="relative min-h-screen text-[#404040] dark:text-neutral-200 w-full overflow-hidden">

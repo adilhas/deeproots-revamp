@@ -4,9 +4,9 @@ import WhatWeArelooking from '@/components/connect/volunteer/WhatWeArelooking';
 import WhatYouReceive from '@/components/connect/volunteer/WhatYouReceive';
 import SocialLinks from '@/components/main_page/social_links_section/SocialLinks';
 import AppLayout from '@/Shared/AppLayout';
+import Seo from '@/Shared/SEO';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
@@ -15,18 +15,11 @@ export default function Volunteer() {
   const { t } = useTranslation('connect/volunteer');
   return (
     <>
-      <Head>
-        <title>Volunteer</title>
-        <meta
-          name="description"
-          content="We're opening the gates to a global Volunteer Program where you can contribute directly to the future of DeWorld."
-        />
-        <meta name="robots" content="index, follow" />
-        <link
-          rel="canonical"
-          href="https://deeproots.earth/connect/volunteer"
-        />
-      </Head>
+      <Seo
+        title="Volunteer Program – Join the Movement"
+        description={`We're opening the gates to a global Volunteer Program where you can contribute directly to the future of DeWorld.`}
+      />
+
       <AppLayout>
         <section className="py-16 bg-primary-light dark:bg-primary-dark text-[#696969] dark:text-[#F1F5F9]">
           <div className="mb-16 px-2 sm:px-6 lg:px-8 max-w-[1200px] mx-auto ">

@@ -4,6 +4,7 @@ import WhoWeHire from '@/components/connect/career/WhoWeHire';
 import WhyDeepRoots from '@/components/connect/career/WhyDeepRoots';
 import SocialLinks from '@/components/main_page/social_links_section/SocialLinks';
 import AppLayout from '@/Shared/AppLayout';
+import Seo from '@/Shared/SEO';
 import { Mail } from 'lucide-react';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -12,6 +13,10 @@ import React from 'react';
 const CareerPage = () => {
   return (
     <AppLayout>
+      <Seo
+        title="Careers at DEEPROOTS"
+        description="Join the Movement. Build DeWorld. Shape the Future."
+      />
       <div className="min-h-screen bg-primary-light dark:bg-primary-dark text-[#696969] dark:text-[#F1F5F9]">
         <div className="py-16 max-w-[1200px] mx-auto px-3">
           <CareerHero />

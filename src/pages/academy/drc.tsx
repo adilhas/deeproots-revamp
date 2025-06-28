@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import AppLayout from '@/Shared/AppLayout';
 import DrcHero from '@/components/academy_page/drc_page/DrcHero';
 import WhatIsDrc from '@/components/academy_page/drc_page/WhatIsDrc';
@@ -8,18 +7,16 @@ import TokenomicsSection from '@/components/academy_page/drc_page/TokenomicsSect
 import CTASection from '@/components/academy_page/drc_page/CTASection';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
+import Seo from '@/Shared/SEO';
 
 const DRCPage = () => {
   return (
     <AppLayout>
       <div className="min-h-screen bg-white dark:bg-primary-dark py-16 px-4 sm:px-6 lg:px-8 text-gray-900 dark:text-gray-100">
-        <Head>
-          <title>dRC - The Native Currency of Deep Roots</title>
-          <meta
-            name="description"
-            content="dRC powers everything in Deep Roots ecosystem: transactions, rewards, governance, staking, referrals, NFT economies, and more."
-          />
-        </Head>
+        <Seo
+          title="dRC - The Native Currency of Deep Roots"
+          description="dRC powers everything in Deep Roots ecosystem: transactions, rewards, governance, staking, referrals, NFT economies, and more."
+        />
 
         <div className="max-w-5xl mx-auto">
           <DrcHero />

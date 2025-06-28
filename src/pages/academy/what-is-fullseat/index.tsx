@@ -5,6 +5,7 @@ import WhoIsThisFor from '@/components/academy_page/what-is-fullbeat/WhoIsThisFo
 import SocialLinks from '@/components/main_page/social_links_section/SocialLinks';
 import useLocaleDirection from '@/hooks/useLocaleDirection';
 import AppLayout from '@/Shared/AppLayout';
+import Seo from '@/Shared/SEO';
 import { ChevronRight, Home } from 'lucide-react';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -20,6 +21,7 @@ const WhatIsFullSeatPage = () => {
 
   return (
     <AppLayout className="bg-white dark:bg-[#303030]">
+      <Seo title="Full Seat - an exclusive position in the Deep Roots Foundation" />
       <section className="min-h-screen text-[#696969] dark:text-[#F1F5F9]">
         <div className="max-w-[1200px] mx-auto py-10 px-3">
           <div className="flex flex-row justify-start gap-1 my-10 text-md items-center text-[#737373] dark:text-[#F1F5F9]">

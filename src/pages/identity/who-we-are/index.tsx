@@ -6,6 +6,7 @@ import WhoBuildsIt from '@/components/identity/who_we_are/WhoBuildsIt';
 import SocialLinks from '@/components/main_page/social_links_section/SocialLinks';
 import useLocaleDirection from '@/hooks/useLocaleDirection';
 import AppLayout from '@/Shared/AppLayout';
+import Seo from '@/Shared/SEO';
 import { ChevronRight, Home } from 'lucide-react';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -18,6 +19,10 @@ const WhoWeArePage = () => {
   const { isArabic } = useLocaleDirection();
   return (
     <AppLayout className="bg-white dark:bg-[#303030] text-on-primary dark:text-on-primary-dark">
+      <Seo
+        title="Who We Are"
+        description="We are not a company. We are not a brand. We are a movement."
+      />
       <section className="min-h-screen text-[#737373] dark:text-[#F1F5F9]">
         <div className="max-w-[1200px] mx-auto py-10 px-3">
           <div className="flex flex-row justify-start gap-1 my-10 text-md items-center ">

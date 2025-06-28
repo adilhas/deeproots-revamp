@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import AppLayout from '@/Shared/AppLayout';
 import DeworldNetworkHero from '@/components/deworld/deworld_network_page/DeworldNetworkHero';
 import PublicNetwork from '@/components/deworld/deworld_network_page/PublicNetwork';
@@ -6,18 +5,16 @@ import PrivateNetwork from '@/components/deworld/deworld_network_page/PrivateNet
 import DeworldNetworkCTA from '@/components/deworld/deworld_network_page/DeworldNetworkCTA';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Seo from '@/Shared/SEO';
 
 const NetworkPage = () => {
   return (
     <AppLayout>
       <div className="min-h-screen bg-neutral-300 dark:bg-primary-dark transition-colors duration-300">
-        <Head>
-          <title>DeWorld Networks - Public & Private</title>
-          <meta
-            name="description"
-            content="Compare DeWorld's public and private blockchain networks."
-          />
-        </Head>
+        <Seo
+          title="DeWorld Networks - Public & Private"
+          description={`Compare DeWorld's public and private blockchain networks.`}
+        />
 
         <div className="max-w-6xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
           <DeworldNetworkHero />

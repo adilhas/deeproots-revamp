@@ -5,26 +5,19 @@ import SocialLinks from '@/components/main_page/social_links_section/SocialLinks
 import AppLayout from '@/Shared/AppLayout';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Head from 'next/head';
 import AccessBenefits from '../../components/connect/private_seed/AccessBenefits';
 import AccessPerks from '../../components/connect/private_seed/AccessPerks';
 import PrivateSeedFAQs from '@/components/connect/private_seed/PrivateSeedFAQs';
+import Seo from '@/Shared/SEO';
 
 export default function Volunteer() {
   return (
     <>
-      <Head>
-        <title>Private Seed</title>
-        <meta
-          name="description"
-          content="Only 100 qualified individuals will be pre-approved to join the Foundation Full Seat round."
-        />
-        <meta name="robots" content="index, follow" />
-        <link
-          rel="canonical"
-          href="https://deeproots.earth/connect/volunteer"
-        />
-      </Head>
+      <Seo
+        title="Private Seed Access"
+        description="Only 100 qualified individuals will be pre-approved to join the Foundation Full Seat round."
+      />
+
       <AppLayout>
         <section className="py-16 bg-primary-light dark:bg-primary-dark text-[#696969] dark:text-[#F1F5F9]">
           <div className="max-w-[1200px] mx-auto px-3">

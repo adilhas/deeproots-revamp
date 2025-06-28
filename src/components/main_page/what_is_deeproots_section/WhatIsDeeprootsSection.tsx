@@ -36,6 +36,7 @@ const WhatIsDeeprootsSection = () => {
         <div className="relative shrink-0">
           <Image
             src="/landing/logo-big.png"
+            priority
             alt="dRC"
             width={150}
             height={150}
