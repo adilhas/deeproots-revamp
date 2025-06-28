@@ -6,57 +6,57 @@ export const DeWorldProductsData = [
   },
   {
     name: 'The Address',
-    link: '',
+    link: 'https://www.theaddress.earth',
     icon: '/deworld/products_icons/the-address-light.svg',
   },
   {
     name: 'TeleXcoin',
-    link: '',
+    link: 'https://www.telexcoin.earth',
     icon: '/deworld/products_icons/telexcoin-light.svg',
   },
   {
     name: 'Share Value',
-    link: '',
+    link: 'https://www.sharevalue.earth',
     icon: '/deworld/products_icons/share-value-light.svg',
   },
   {
     name: 'Innofi',
-    link: '',
+    link: 'https://www.innofi.earth',
     icon: '/deworld/products_icons/innofi-light.svg',
   },
   {
     name: 'Innolaunch',
-    link: '',
+    link: 'https://www.innolaunch.earth',
     icon: '/deworld/products_icons/innolaunch-light.svg',
   },
   {
     name: 'Meta Fabric',
-    link: '',
+    link: 'https://www.metafabric.earth',
     icon: '/deworld/products_icons/metafabric-light.svg',
   },
   {
     name: 'GiveFi',
-    link: '',
+    link: 'https://www.givefi.earth',
     icon: '/deworld/products_icons/givefi-light.svg',
   },
   {
     name: 'Saxophone',
-    link: '',
+    link: 'https://www.saxophone.earth',
     icon: '/deworld/products_icons/saxophone-light.svg',
   },
   {
     name: 'Ocean Bazaar',
-    link: '',
+    link: 'https://www.oceanbazaar.earth',
     icon: '/deworld/products_icons/ocean-bazaar-light.svg',
   },
   {
     name: 'RootScan',
-    link: '',
+    link: 'https://www.rootscan.earth',
     icon: '/deworld/products_icons/rootscan-light.svg',
   },
   {
     name: 'Rootopia',
-    link: '',
+    link: 'https://www.rootopia.earth',
     icon: '/deworld/products_icons/rootopia-light.svg',
   },
   {
@@ -66,17 +66,17 @@ export const DeWorldProductsData = [
   },
   {
     name: 'Root Chat',
-    link: '',
+    link: 'https://www.rootchat.earth',
     icon: '/deworld/products_icons/rootchat-light.svg',
   },
   {
     name: 'Innofarm',
-    link: '',
+    link: 'https://www.innofarm.earth',
     icon: '/deworld/products_icons/innofarm-light.svg',
   },
   {
     name: 'Deep Assets',
-    link: '',
+    link: 'https://www.deepassets.earth',
     icon: '/deworld/products_icons/deep-assets-light.svg',
   },
 ];

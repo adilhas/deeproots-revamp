@@ -4,6 +4,11 @@ import nextI18NextConfig from './next-i18next.config.js';
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   ...nextI18NextConfig,
+  optimizeFonts: true,
+  compress: true,
+  images: {
+    unoptimized: false,
+  },
 };
 
 export default nextConfig;

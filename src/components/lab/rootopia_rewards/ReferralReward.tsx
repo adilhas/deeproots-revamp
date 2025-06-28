@@ -33,8 +33,8 @@ const rewardsData = [
 const ReferralReward = () => {
   return (
     <div className=" bg-[#9F7124] px-3 relative overflow-x-hidden">
-      <div className="max-w-[1200px] mx-auto relative pb-[130px] md:pb-0">
-        <div className="absolute top-[30px] left-0 w-[300px] md:w-[400px] h-[200px] md:h-[300px] z-0">
+      <div className="max-w-[1200px] mx-auto relative pb-[130px] md:pb-0 pt-20">
+        <div className="absolute top-[0px] left-[-60px] w-[300px] md:w-[400px] h-[200px] md:h-[300px] z-0">
           <Image
             src="/lab/referral-reward-obj1.png"
             alt="magic box"

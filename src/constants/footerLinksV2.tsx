@@ -6,147 +6,6 @@ import {
   Fingerprint,
 } from 'lucide-react';
 import { TFunction } from 'next-i18next';
-export const footerLinksV2 = {
-  DeWorld: [
-    { label: 'The Address Wallet', href: 'https://www.theaddress.earth' },
-    { label: 'TeleXcoin', href: 'https://www.telexcoin.earth' },
-    { label: 'Share Value', href: 'https://www.sharevalue.earth' },
-    { label: 'InnoFi', href: 'https://www.innofi.earth' },
-    { label: 'Inno Launch', href: 'https://www.innolaunch.earth' },
-    { label: 'Meta Fabric', href: 'https://www.metafabric.earth' },
-    { label: 'Give Fi', href: 'https://www.givefi.earth' },
-    { label: 'Saxophone', href: 'https://www.saxophone.earth' },
-    { label: 'Ocean Bazaar', href: 'https://www.oceanbazaar.earth' },
-    { label: 'CopyMe', href: '#' },
-    { label: 'Rootopia', href: '#' },
-    { label: 'Foundation', href: '/lab/foundation-seats' },
-    { label: 'Inno Farm', href: 'https://www.innofarm.earth' },
-    { label: 'Deep Assets', href: 'https://www.deepassets.earth' },
-    { label: 'Root Chat', href: 'https://www.rootchat.earth' },
-  ],
-  Technology: [
-    { label: 'Private Network', href: '/deworld/deworld-network' },
-    { label: 'Public Network', href: '/deworld/deworld-network' },
-    { label: 'Root Scan', href: 'https://www.rootscan.earth' },
-    { label: 'AI Tools', href: '/academy/ai-tools' },
-    { label: 'Documentation', href: '#' },
-    { label: 'Seeding', href: '/deworld/seeding' },
-    { label: 'Developer', href: '#' },
-    { label: 'Smart Contract', href: '/academy/smart-contract' },
-  ],
-  Learn: [
-    { label: 'What is Deep Root?', href: '/academy/about' },
-    { label: 'What is $dRC?', href: '/academy/drc' },
-    { label: 'Whitepaper', href: '#' },
-    { label: 'Gas Fee on Deep Root', href: '/academy/gas-fees' },
-    { label: 'What is Seeding?', href: '/deworld/seeding' },
-    { label: 'RoadMap', href: '/academy/roadmap' },
-  ],
-  Company: [
-    { label: 'Who we are', href: '/connect/contact-us' },
-    { label: 'Our Story', href: '#' },
-    { label: 'Career', href: '#' },
-    { label: 'Contact Us', href: '/connect/contact-us' },
-    { label: 'Code of Honour', href: '#' },
-    { label: 'Privacy Policy', href: '/identity/privacy-policy' },
-    { label: 'Terms of Service', href: '/identity/terms-of-service' },
-  ],
-  Community: [
-    { label: 'Socials', href: '#' },
-    { label: 'Meet Ups & Events', href: '/connect/events' },
-    { label: 'Volunteer Program', href: '/connect/volunteer' },
-    { label: 'Hackathons', href: '/lab/internal-hackathon' },
-  ],
-};
-
-// TODO replace footerLinksV3 wit getFooterLinks and then remove footerLinksV3
-export const footerLinksV3 = [
-  {
-    title: 'RootAcademy',
-    icon: <GraduationCap color="#04B95F" size={24} />,
-    link: '/academy',
-    links: [
-      { label: 'What is Deep Root?', href: '/academy/about' },
-      { label: 'What is dRC?', href: '/academy/drc' },
-      { label: 'What is Fullseat?', href: '/academy/what-is-fullseat' },
-      { label: 'Whitepaper', href: '#' },
-      { label: 'What is Web3?', href: '/academy/what-is-web3' },
-      { label: 'Tokenomics', href: '/academy/tokenomics' },
-      { label: 'RoadMap', href: '/academy/roadmap' },
-    ],
-    hoverColor: 'hover:text-[#04B95F]',
-  },
-  {
-    title: 'RootLab',
-    icon: <FlaskConical color="#1B75FF" size={20} />,
-    link: '/lab',
-    links: [
-      { label: 'DeepRoots Network', href: '/lab/deeproots-network' },
-      { label: 'Documentation', href: '#' },
-      { label: 'Smart Contract', href: '/lab/smart-contract' },
-      { label: 'Gas Fee', href: '/lab/gas-fees' },
-      { label: 'Developer Tools', href: '' },
-      { label: 'DeVote', href: '#' },
-      {
-        label: 'RootOpia Reward System',
-        href: '/academy/rootopia-reward-system',
-      },
-    ],
-    hoverColor: 'hover:text-[#1B75FF]',
-  },
-
-  {
-    title: 'DeWorld',
-    icon: <Globe color="#9F2BA9" size={20} />,
-    link: '/deworld/ecosystem',
-    links: [
-      { label: 'The Address Wallet', href: 'https://www.theaddress.earth' },
-      { label: 'TeleXcoin', href: 'https://www.telexcoin.earth' },
-      { label: 'Share Value', href: 'https://www.sharevalue.earth' },
-      { label: 'InnoFi', href: 'https://www.innofi.earth' },
-      { label: 'Inno Launch', href: 'https://www.innolaunch.earth' },
-      { label: 'Meta Fabric', href: 'https://www.metafabric.earth' },
-      { label: 'Give Fi', href: 'https://www.givefi.earth' },
-      { label: 'Saxophone', href: 'https://www.saxophone.earth' },
-      { label: 'Ocean Bazaar', href: 'https://www.oceanbazaar.earth' },
-      { label: 'CopyMe', href: '#' },
-      { label: 'Rootopia', href: '#' },
-      { label: 'Foundation', href: '/lab/foundation-seats' },
-      { label: 'Inno Farm', href: 'https://www.innofarm.earth' },
-      { label: 'Deep Assets', href: 'https://www.deepassets.earth' },
-      { label: 'Root Chat', href: 'https://www.rootchat.earth' },
-    ],
-
-    hoverColor: 'hover:text-[#9F2BA9]',
-  },
-  {
-    title: 'RootIdentity',
-    icon: <Fingerprint color="#FF635D" size={20} />,
-    link: '/identity',
-    links: [
-      { label: 'Who we are', href: '/identity/who-we-are' },
-      { label: 'Contact Us', href: '/identity/contact-us' },
-      { label: 'What is Seeding?', href: '/identity/what-is-seeding' },
-      { label: 'Foundation Full Seat', href: '/seeding/foundation' },
-      { label: 'Root Scan', href: 'https://www.rootscan.earth' },
-    ],
-    hoverColor: 'hover:text-[#FF635D]',
-  },
-  {
-    title: 'RootConnect',
-    icon: <Link color="#FFB501" size={20} />,
-    link: '/connect',
-    links: [
-      { label: 'Private Seed Access', href: '/connect/private-seed' },
-      { label: 'Socials', href: '#' },
-      { label: 'Meet Ups & Events', href: '/connect/events' },
-      { label: 'Career', href: '#' },
-      { label: 'Volunteer Program', href: '/connect/volunteer' },
-      { label: 'Hackathons', href: '/connect/internal-hackathon' },
-    ],
-    hoverColor: 'hover:text-[#FFB501]',
-  },
-];
 
 export const getfooterLinks = (t: TFunction) => [
   {
@@ -190,15 +49,12 @@ export const getfooterLinks = (t: TFunction) => [
         href: '/lab/security-bug-bounty',
       },
 
-      // { label: t('footer.RootLab.Documentation'), href: '#' },
       { label: t('footer.RootLab.SmartContract'), href: '/lab/smart-contract' },
       { label: t('footer.RootLab.GasFee'), href: '/lab/gas-fees' },
-      // { label: t('footer.RootLab.DevTools'), href: '' },
       {
         label: t('footer.RootLab.DecentralizedWorld'),
         href: '/deworld/ecosystem',
       },
-      // { label: t('footer.RootLab.DeVote'), href: '#' },
       { label: t('footer.RootLab.Ecosystem'), href: '/academy' },
       {
         label: t('footer.RootLab.RootOpiaReward'),

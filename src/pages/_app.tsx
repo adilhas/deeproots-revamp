@@ -25,6 +25,7 @@ const MyApp = ({
           <title>DEEPROOTS</title>
           <link rel="icon" href="/landing/logo.png" />
         </Head>
+        <Component {...pageProps} />
         {isPublic ? (
           <Component {...pageProps} />
         ) : (

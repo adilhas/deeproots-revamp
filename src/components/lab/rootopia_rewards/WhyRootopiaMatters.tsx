@@ -33,7 +33,6 @@ const WhyRootopiaMatters = () => {
       <div className="relative pb-[400px] md:pb-40 max-w-[1200px] mx-auto">
         <div className="absolute top-0 left-0 w-[100px] md:w-[300px] h-[500px]  blur-3xl opacity-30 pointer-events-none z-[0]" />
 
-        {/* Image On Top of Glow */}
         <div className="absolute top-0 left-0 w-[200px] md:w-[400px] h-[200px] md:h-[400px] z-0">
           <div className="absolute top-0 left-[-20px] w-[200px] md:w-[500px] h-[600px] md:h-[400px] bg-[#c6b599] blur-3xl opacity-30 pointer-events-none z-0" />
 

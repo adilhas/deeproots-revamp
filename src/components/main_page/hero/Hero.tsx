@@ -2,12 +2,7 @@ import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 
-import dynamic from 'next/dynamic';
-
-const HeroPrivateSeedAccess = dynamic(() => import('./HeroPrivateSeedAccess'), {
-  ssr: false,
-  loading: () => null,
-});
+import HeroPrivateSeedAccess from './HeroPrivateSeedAccess';
 
 const Hero = () => {
   const { t } = useTranslation('landing_page');

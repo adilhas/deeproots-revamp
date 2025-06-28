@@ -84,7 +84,7 @@ const SettingDropdown = () => {
 
       {isOpen && (
         <ul
-          className="absolute right-0 mt-2 menu bg-white dark:bg-[#232323] rounded-3xl z-10 p-2 shadow-sm"
+          className="fixed right-0 mt-2 menu bg-white dark:bg-[#232323] rounded-3xl z-10 p-2 shadow-sm"
           style={{
             boxShadow: `0px 12px 42px -4px #14171A1F, 0px 8px 18px -6px #14171A1F`,
             minWidth: '260px',

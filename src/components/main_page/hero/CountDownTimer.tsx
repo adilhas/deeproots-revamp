@@ -10,7 +10,7 @@ export default function CountdownTimer() {
 
   useEffect(() => {
     const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 20);
+    targetDate.setDate(0);
 
     const interval = setInterval(() => {
       const now = new Date();

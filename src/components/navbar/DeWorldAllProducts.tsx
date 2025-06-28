@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import React, { useState, useRef, useEffect } from 'react';
 import { DeWorldProductsData } from './DeWorldProductsData';
-import Link from 'next/link';
 import { useThemeContext } from '@/context/ThemeContext';
 import useLocaleDirection from '@/hooks/useLocaleDirection';
 
@@ -79,10 +78,9 @@ const DeWorldAllProducts = () => {
       >
         <Image src="/menu-logo-dark.png" alt="menu" width={30} height={30} />
       </button>
-
       {isOpen && (
         <div
-          className={`absolute translate-x-[120px] md:translate-x-0 p-3 ${
+          className={`fixed p-3 ${
             isArabic ? 'left-0' : 'right-0'
           } mt-2 w-[98vw] max-w-[354px] max-h-[400px] overflow-y-auto rounded-3xl bg-white dark:bg-[#1D1D1D] shadow-xl`}
           onMouseEnter={handleMouseEnterDropdown}
@@ -107,7 +105,9 @@ const DeWorldAllProducts = () => {
 
               <div className="grid grid-cols-3 sm:grid-cols-3 gap-3 p-2">
                 {DeWorldProductsData.map((product) => (
-                  <Link
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
                     key={product.name}
                     href={product.link || '#'}
                     className="flex flex-col items-center justify-center text-center hover:bg-gray-100 dark:hover:bg-[#2c2c2c] p-2 rounded-xl transition bg-white dark:bg-[#1D1D1D]"
@@ -126,7 +126,7 @@ const DeWorldAllProducts = () => {
                     <span className="text-[12px] mt-1 text-[#4B5563] dark:text-[#F8FAFC]">
                       {product.name}
                     </span>
-                  </Link>
+                  </a>
                 ))}
                 <div
                   className="flex flex-col col-span-2 items-center justify-center text-center p-2 rounded-xl transition bg-white dark:bg-[#1D1D1D]"
