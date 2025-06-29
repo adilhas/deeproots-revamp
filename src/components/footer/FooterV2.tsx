@@ -114,7 +114,11 @@ export default function Footer({ className }: FooterProps) {
             <Link href={`/our-story`} className="hover:underline">
               {t('footer.OurStory')}
             </Link>
-            -<span>{t('footer.BrandAssets')}</span>-
+            -
+            <Link href={'/brand-assets'} className="hover:underline">
+              {t('footer.BrandAssets')}
+            </Link>
+            -
             <Link href={`/code-of-honor`} className="hover:underline">
               {t('footer.CodeOfHonor')}
             </Link>
