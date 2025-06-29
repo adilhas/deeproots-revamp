@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Logo() {
   return (
-    <div className="text-2xl font-bold flex justify-between">
+    <div className="text-2xl font-bold flex flex-row items-center gap-2 justify-between">
       <Link
         href="/"
         className="w-10 h-10 md:w-16 md:h-16 relative overflow-hidden"
