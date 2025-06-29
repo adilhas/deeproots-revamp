@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://deeproots-revamp.vercel.app',
+  siteUrl: 'https://www.deeproots.earth',
   generateRobotsTxt: true,
   sitemapSize: 7000,
   changefreq: 'daily',
