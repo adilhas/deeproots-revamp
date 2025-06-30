@@ -19,7 +19,11 @@ class MyDocument extends Document {
     const locale = this.props.__NEXT_DATA__.locale || 'en';
 
     return (
-      <Html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+      <Html
+        lang={locale}
+        data-theme="dark"
+        dir={locale === 'ar' ? 'rtl' : 'ltr'}
+      >
         <Head>
           <link
             href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap"
