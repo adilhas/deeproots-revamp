@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { FaTwitter, FaDiscord, FaXTwitter } from 'react-icons/fa6';
 import { useThemeContext } from '@/context/ThemeContext';
+import Link from 'next/link';
 
 interface DeWorldCardProps {
   name: string;
@@ -11,6 +12,7 @@ interface DeWorldCardProps {
   projectLink: string;
   darkIcon: string;
   lightIcon: string;
+  url: string;
 }
 
 const iconMap = {
@@ -27,6 +29,7 @@ const DeWorldCard: React.FC<DeWorldCardProps> = ({
   projectLink,
   darkIcon,
   lightIcon,
+  url,
 }) => {
   const { isDark } = useThemeContext();
 
@@ -78,9 +81,23 @@ const DeWorldCard: React.FC<DeWorldCardProps> = ({
 
       {/* Spacer above the button */}
       <div className="mt-6">
-        <button className="btn-outline w-full text-[#4B5563] dark:text-[#E2E8F0]">
-          {projectLink}
-        </button>
+        {url?.startsWith('http') ? (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-outline w-full text-[#4B5563] dark:text-[#E2E8F0] inline-block text-center"
+          >
+            {projectLink}
+          </a>
+        ) : (
+          <Link
+            href={url || '#'}
+            className="btn-outline w-full text-[#4B5563] dark:text-[#E2E8F0] inline-block text-center"
+          >
+            {projectLink}
+          </Link>
+        )}
       </div>
     </div>
   );
