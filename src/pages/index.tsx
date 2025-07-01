@@ -9,6 +9,7 @@ import DeepRootsEcosystemSection from '@/components/main_page/deeproots_ecosyste
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import type { GetStaticProps } from 'next';
 import Seo from '@/Shared/Seo';
+import Head from 'next/head';
 
 const AddressWallet = dynamic(
   () => import('@/components/main_page/address_wallet_section/AddressWallet')
@@ -79,6 +80,28 @@ const Home = () => {
   return (
     <>
       <Seo />
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'http://schema.org',
+              '@type': 'Organization',
+              name: 'Deep Roots',
+              url: 'https://www.deeproots.earth',
+              logo: 'https://www.deeproots.earth/landing/logo.png',
+              sameAs: [
+                'https://twitter.com/DeepRoots_earth',
+                'https://www.youtube.com/@DeepRoots',
+                'https://t.me/DeepRootsCommunity',
+                'https://reddit.com/r/DeepRoots',
+                'https://discord.gg/DeepRoots',
+                'https://www.tiktok.com/@DeepRoots',
+              ],
+            }),
+          }}
+        />
+      </Head>
       <div className="overflow-x-hidden relative bg-primary-light dark:bg-primary-dark text-[#404040] dark:text-neutral-200">
         <Navbar />
         <Hero />

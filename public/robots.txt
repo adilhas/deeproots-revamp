@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://deeproots-revamp.vercel.app
+Host: https://www.deeproots.earth
 
 # Sitemaps
-Sitemap: https://deeproots-revamp.vercel.app/sitemap.xml
+Sitemap: https://www.deeproots.earth/sitemap.xml
