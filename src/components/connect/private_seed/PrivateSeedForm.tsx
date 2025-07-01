@@ -111,7 +111,7 @@ const PrivateSeedForm = () => {
             );
           })}
 
-          {['experience', 'value', 'whyJoin', 'whyFoundation'].map((field) => (
+          {['experience', 'value', 'whyJoin'].map((field) => (
             <textarea
               key={field}
               name={field}
