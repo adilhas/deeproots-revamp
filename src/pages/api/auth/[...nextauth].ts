@@ -11,8 +11,8 @@ export const authOptions = {
       },
       async authorize(credentials) {
         if (
-          credentials?.username === 'Deeproots' &&
-          credentials?.password === 'DeWorld deeproots'
+          credentials?.username === 'admin' &&
+          credentials?.password === 'pass12345'
         ) {
           return { id: '1', name: 'Admin' };
         }

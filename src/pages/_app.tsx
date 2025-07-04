@@ -4,17 +4,23 @@ import Head from 'next/head';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { appWithTranslation } from 'next-i18next';
 import useLocaleDirection from '@/hooks/useLocaleDirection';
+import { SessionProvider } from 'next-auth/react';
 
-const MyApp = ({ Component, pageProps: { ...pageProps } }: AppProps) => {
+const MyApp = ({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps) => {
   useLocaleDirection();
   return (
-    <ThemeProvider>
-      <Head>
-        <title>DEEPROOTS</title>
-        <link rel="icon" href="/landing/logo.png" />
-      </Head>
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <SessionProvider session={session}>
+      <ThemeProvider>
+        <Head>
+          <title>DEEPROOTS</title>
+          <link rel="icon" href="/landing/logo.png" />
+        </Head>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </SessionProvider>
   );
 };
 

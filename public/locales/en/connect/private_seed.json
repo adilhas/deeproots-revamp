@@ -24,17 +24,17 @@
     "placeholders": {
       "fullName": "Full Name",
       "email": "Email Address",
-      "contact": "Phone / Telegram",
+      "contact": "Telegram or WhatsApp (Optional)",
       "country": "Country of Residence",
-      "linkedin": "LinkedIn or Personal Website",
+      "linkedin": "LinkedIn / Github / Company Website (Optional but necessary)",
       "capital": "Estimated Capital Commitment ($5K–$1M+)",
       "experience": "Experience in Web3, Investing, or Strategic Partnerships",
-      "value": "What value can you add to our Foundation and ecosystem?",
-      "whyJoin": "Why are you interested in the DeepRoots Foundation?"
+      "value": "What unique value can you contribute to the DEEPROOTS Foundation or Ecosystem? (Experience, resources, skills, network, capital, etc.)",
+      "whyJoin": "Why are you personally or professionally interested in joining the DEEPROOTS mission? (Tell us what resonates with you about our vision.)"
     },
-    "kyc": "Are you able to pass KYC & NDA requirements? (Yes / No)",
+    "kyc": "Are you able to pass KYC & NDA requirements?",
     "signature": "Signature of Interest",
-    "consent": "I agree to be contacted under confidentiality",
+    "consent": "Do you agree to be contacted under a confidentiality clause?",
     "submit": "Submit Application",
     "note_title": "Note:",
     "note_line1": "Applications are reviewed within 3–5 business days. All submissions are strictly confidential.",
