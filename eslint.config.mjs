@@ -16,10 +16,18 @@ const eslintConfig = [
     'plugin:prettier/recommended'
   ),
   {
+    ignores: ['node_modules', '.next', 'out', 'prisma', 'src/generated/**'],
+  },
+  {
     rules: {
       'prettier/prettier': [
         'error',
         {
+          semi: true,
+          singleQuote: true,
+          printWidth: 80,
+          tabWidth: 2,
+          trailingComma: 'es5',
           endOfLine: 'auto',
         },
       ],
