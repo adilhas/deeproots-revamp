@@ -174,7 +174,7 @@ export const DeWorldEcosysData = [
       { name: 'X', link: '' },
     ],
     projectLink: 'Explore',
-    url: '#',
+    url: 'https://copyme.earth/',
     darkIcon: '/deworld/ecosystem_icons/copyme-dark.png',
     lightIcon: '/deworld/ecosystem_icons/copyme-light.png',
     isLaunch: true,

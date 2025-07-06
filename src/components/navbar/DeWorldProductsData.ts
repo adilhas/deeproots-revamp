@@ -1,7 +1,7 @@
 export const DeWorldProductsData = [
   {
     name: 'CopyMe',
-    link: '',
+    link: 'https://copyme.earth/',
     icon: '/deworld/products_icons/copyme-light.svg',
   },
   {

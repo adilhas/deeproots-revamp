@@ -53,12 +53,18 @@ export default function Navbar({ navContainerClassName }: NavbarProps) {
           <DesktopMenu onHover={setActiveMenu} />
           <div className="flex items-center gap-4">
             <LanguageDropdown />
-            <Image
-              src="/copyme-logo.png"
-              alt="copy me"
-              width={25}
-              height={25}
-            />
+            <a
+              href="https://copyme.earth/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/copyme-logo.png"
+                alt="copy me"
+                width={25}
+                height={25}
+              />
+            </a>
             <DeWorldAllProducts />
 
             <SettingDropdown />

@@ -50,10 +50,15 @@ const CopyMeSection = () => {
               <div className="mb-2">{t('copyme_section.description1')}</div>
               {t('copyme_section.description2')}
             </div>
-
-            <button className="hover:scale-105 flex flex-row gap-2 bg-gradient-to-r from-[#8D9FFF] to-[#A4D1FF] font-[600] font-orbitron text-white py-3 px-6 rounded-lg shadow-lg transition duration-300">
-              {t('copyme_section.cta')} <Wand2 />
-            </button>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://copyme.earth/"
+            >
+              <button className="hover:scale-105 flex flex-row gap-2 bg-gradient-to-r from-[#8D9FFF] to-[#A4D1FF] font-[600] font-orbitron text-white py-3 px-6 rounded-lg shadow-lg transition duration-300">
+                {t('copyme_section.cta')} <Wand2 />
+              </button>
+            </a>
           </div>
 
           {/* Desktop Image */}

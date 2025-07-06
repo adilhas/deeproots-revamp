@@ -98,7 +98,7 @@ export const getfooterLinks = (t: TFunction) => [
         label: t('footer.DeWorld.OceanBazaar'),
         href: 'https://www.oceanbazaar.earth',
       },
-      { label: t('footer.DeWorld.CopyMe'), href: '#' },
+      { label: t('footer.DeWorld.CopyMe'), href: 'https://copyme.earth/' },
       {
         label: t('footer.DeWorld.Rootopia'),
         href: 'https://www.rootopia.earth',
