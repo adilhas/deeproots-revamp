@@ -2,7 +2,7 @@ import AppLayout from '@/Shared/AppLayout';
 import SmartContractHero from '@/components/academy_page/smart_contract_page/SmartContractHero';
 import SmartContractOverview from '@/components/academy_page/smart_contract_page/SmartContractOverview';
 import SmartContractHighlights from '@/components/academy_page/smart_contract_page/SmartContractHighlights';
-import SmartContractCTA from '@/components/academy_page/smart_contract_page/SmartContractCTA';
+// import SmartContractCTA from '@/components/academy_page/smart_contract_page/SmartContractCTA';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Seo from '@/Shared/Seo';
@@ -21,7 +21,7 @@ const SmartContractsPage = () => {
           <div className="space-y-12">
             <SmartContractOverview />
             <SmartContractHighlights />
-            <SmartContractCTA />
+            {/* <SmartContractCTA /> */}
           </div>
         </div>
       </div>

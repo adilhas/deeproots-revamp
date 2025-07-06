@@ -37,14 +37,14 @@
     "consent": "Do you agree to be contacted under a confidentiality clause?",
     "submit": "Submit Application",
     "note_title": "Note:",
-    "note_line1": "Applications are reviewed within 3–5 business days. All submissions are strictly confidential.",
+    "note_line1": "Applications are reviewed within 1–2 business days. All submissions are strictly confidential.",
     "note_line2": "As a PrivateSeed applicant, you may qualify for:",
     "note_points": {
       "discount": "⚡ Major token discounts",
       "access": "🔒 Exclusive product access",
       "profit": "🏛️ Long-term profit-sharing through the DeepRoots ecosystem"
     },
-    "note_line3": "This is a once-in-a-lifetime opportunity to become part of the foundation layer of <1>DeWorld</1> — before it goes public."
+    "note_line3": "This is a once-in-a-lifetime opportunity to become part of the foundation layer of DeWorld — before it goes public."
   },
   "accessPerks": {
     "heading": {
@@ -54,6 +54,7 @@
     },
     "subheading": "Invest $10K or more and get:",
     "earlyAccessTitle": "Full early access to:",
+    "founderCircleTitle": "Founder’s Circle Bonus",
     "callDescription": "Secure a private 15-minute strategy call with the Founder — uncover insider vision, align on high-impact contribution, and explore long-term collaboration at the core of DeWorld.",
     "note1": "Exclusively available to accepted $10K+ contributors.",
     "note2": "Calls are scheduled in Dubai Time (GMT+4).",

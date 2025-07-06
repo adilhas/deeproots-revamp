@@ -1,14 +1,15 @@
+'use client';
 import React from 'react';
-import { Trans, useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'next-i18next';
 
 const NoteSection = () => {
   const { t } = useTranslation('connect/private_seed');
 
   return (
-    <div className="rounded-[10px] mt-10 mx-auto bg-[#F5FAFF] dark:bg-[#194185] border border-[#36BFFA] dark:border-[#36BFFA] px-4 py-3 shadow-sm max-w-md">
-      <p className="text-sm text-[#3B82F6] dark:text-[#BFDBFE] font-semibold mb-1">
+    <div className="rounded-[10px] mt-10 mx-auto bg-white dark:bg-[#0E0E0E] border border-[#A1A1A1] dark:border-[#3F3F3F] px-4 py-3 shadow-sm max-w-[996px]">
+      <div className="text-sm text-[#3B82F6] dark:text-[#BFDBFE] font-semibold mb-1">
         {t('form.note_title')}
-      </p>
+      </div>
       <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">
         {t('form.note_line1')}
       </p>

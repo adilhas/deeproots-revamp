@@ -82,7 +82,7 @@ const DeWorldAllProducts = () => {
         <div
           className={`fixed p-3 ${
             isArabic ? 'left-0' : 'right-0'
-          } mt-2 w-[98vw] max-w-[354px] max-h-[400px] overflow-y-auto rounded-3xl bg-white dark:bg-[#1D1D1D] shadow-xl`}
+          } mt-2 w-[98vw] max-w-[400px] max-h-[400px] overflow-y-auto rounded-3xl bg-white dark:bg-[#1D1D1D] shadow-xl`}
           onMouseEnter={handleMouseEnterDropdown}
           onMouseLeave={handleMouseLeaveDropdown}
         >
@@ -129,14 +129,20 @@ const DeWorldAllProducts = () => {
                   </a>
                 ))}
                 <div
-                  className="flex flex-col col-span-2 items-center justify-center text-center p-2 rounded-xl transition bg-white dark:bg-[#1D1D1D]"
+                  className="flex flex-col items-center justify-center text-center hover:bg-gray-100 dark:hover:bg-[#2c2c2c] p-2 rounded-xl transition bg-white dark:bg-[#1D1D1D]"
                   style={{
                     boxShadow: isDark
                       ? '0px 4px 8px 0px #000000'
                       : '0px 4px 8px 0px #0000001A',
                   }}
                 >
-                  <span className="text-lg mt-1 text-transparent bg-gradient-to-r font-orbitron font-semibold from-gradient-from to-gradient-to bg-clip-text">
+                  <Image
+                    src={'/deworld/products_icons/deeproots-light.svg'}
+                    alt={'DEEPROOTS'}
+                    width={42}
+                    height={42}
+                  />
+                  <span className="text-[10px]  mt-1 text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text font-orbitron">
                     DEEPROOTS
                   </span>
                 </div>

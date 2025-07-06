@@ -103,7 +103,7 @@ export const getfooterLinks = (t: TFunction) => [
         label: t('footer.DeWorld.Rootopia'),
         href: 'https://www.rootopia.earth',
       },
-      { label: t('footer.DeWorld.Foundation'), href: '/lab/foundation-seats' },
+      { label: t('footer.DeWorld.Foundation'), href: '/seeding/foundation' },
       {
         label: t('footer.DeWorld.InnoFarm'),
         href: 'https://www.innofarm.earth',
@@ -115,6 +115,10 @@ export const getfooterLinks = (t: TFunction) => [
       {
         label: t('footer.DeWorld.RootChat'),
         href: 'https://www.rootchat.earth',
+      },
+      {
+        label: 'RootCore',
+        href: 'https://www.rootcore.earth',
       },
     ],
     hoverColor: 'hover:text-[#9F2BA9]',

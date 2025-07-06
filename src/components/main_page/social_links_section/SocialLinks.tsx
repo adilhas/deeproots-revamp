@@ -53,7 +53,7 @@ const SocialLinks = ({
         </p>
       </div>
 
-      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 max-w-[1400px] gap-6 mx-auto">
         {socialLinks.map(
           ({
             name,
@@ -77,7 +77,7 @@ const SocialLinks = ({
               )}
               style={{ boxShadow: `0px 12px 24px 0px #0000001A` }}
             >
-              <div className="flex items-center justify-between space-x-2 text-lg font-semibold w-full">
+              <div className="text-lg font-semibold w-full">
                 <div className="flex flex-row items-center gap-3">
                   <div className={` ${currentVariant.iconBg} p-2 rounded-xl`}>
                     <Icon
@@ -92,17 +92,21 @@ const SocialLinks = ({
                       }}
                     />
                   </div>
-                  <span
-                    className="text-lg font-orbitron"
-                    style={{
-                      color:
-                        isDark || variant === 'rootopia' ? '#fff' : brandColor,
-                    }}
-                  >
-                    {name}
-                  </span>
+                  <div>
+                    <div
+                      className="text-lg font-orbitron"
+                      style={{
+                        color:
+                          isDark || variant === 'rootopia'
+                            ? '#fff'
+                            : brandColor,
+                      }}
+                    >
+                      {name}
+                    </div>
+                    <div className="text-sm text-gray-500">{username}</div>
+                  </div>
                 </div>
-                <span className="text-sm text-gray-500">{username}</span>
               </div>
               <p className={`${currentVariant.subTextColor} text-sm mt-3`}>
                 {description}

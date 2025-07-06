@@ -79,7 +79,7 @@ const RootChatSection = () => {
         </div>
 
         {/* Desktop Image (Only shows on desktop) */}
-        <div className="hidden lg:block lg:w-1/2 mx-auto p-8">
+        <div className="hidden lg:block lg:w-1/2 mx-auto p-8 z-10">
           <Image
             src="/landing/rootchat.png"
             alt="RootChat Desktop"

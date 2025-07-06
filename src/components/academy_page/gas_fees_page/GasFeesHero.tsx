@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react';
+// import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 
@@ -31,9 +31,9 @@ const GasFeesHero = () => {
           />
         </div>
       </div>
-      <button className="bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center mx-auto">
+      {/* <button className="bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center mx-auto">
         {t('gasFeesHero.button')} <ArrowRight className="ml-2 w-5 h-5" />
-      </button>
+      </button> */}
     </div>
   );
 };

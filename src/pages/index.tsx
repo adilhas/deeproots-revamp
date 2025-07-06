@@ -59,6 +59,9 @@ const ComparisonSection = dynamic(
 const FoundationSeatsSection = dynamic(
   () => import('@/components/main_page/foundation_seats/FoundationSeatsSection')
 );
+const RootCoreSection = dynamic(
+  () => import('@/components/main_page/rootcore_section/RootCoreSection')
+);
 const RootChatSection = dynamic(
   () => import('@/components/main_page/rootchat_section/RootChatSection')
 );
@@ -128,6 +131,7 @@ const Home = () => {
         <RootscanSection />
         <ComparisonSection />
         <FoundationSeatsSection />
+        <RootCoreSection />
         <RootChatSection />
         <PodcastSection />
         <div className="overflow-hidden">

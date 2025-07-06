@@ -92,7 +92,7 @@ const SettingDropdown = () => {
           onMouseEnter={handleMouseEnterDropdown}
           onMouseLeave={handleMouseLeaveDropdown}
         >
-          <li>
+          {/* <li>
             <div className="w-fit mx-auto">
               <Image
                 src="/profile-pic.jpg"
@@ -102,7 +102,7 @@ const SettingDropdown = () => {
                 className="rounded-full mx-auto"
               />
             </div>
-          </li>
+          </li> */}
 
           <li>
             <div

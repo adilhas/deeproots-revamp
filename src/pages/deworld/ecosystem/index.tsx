@@ -1,5 +1,5 @@
 import DeWorldExosystemList from '@/components/deworld/ecosystem/DeWorldEcosystemList';
-import Filter from '@/components/deworld/ecosystem/Filter';
+// import Filter from '@/components/deworld/ecosystem/Filter';
 import AppLayout from '@/Shared/AppLayout';
 import Seo from '@/Shared/Seo';
 import { GetStaticProps } from 'next';
@@ -24,9 +24,7 @@ const DeworldEcosystemPage = () => {
             tools, all rooted in innovation and trust.
           </p>
         </div>
-        <div>
-          <Filter />
-        </div>
+        <div>{/* <Filter /> */}</div>
         <div>
           <DeWorldExosystemList />
         </div>

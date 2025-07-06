@@ -42,9 +42,14 @@ export default function Footer({ className }: FooterProps) {
           </div>
           <div className="flex flex-row gap-4 items-center text-xl">
             {socialLinks.map(({ Icon, name, href }) => (
-              <Link href={href} key={name}>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={href}
+                key={name}
+              >
                 <Icon />
-              </Link>
+              </a>
             ))}
           </div>
         </div>

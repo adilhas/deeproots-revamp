@@ -14,8 +14,8 @@ const HeroPrivateSeedAccess = () => {
         width={1000}
         height={1000}
         alt="eclipse"
-        className="scale-150  absolute top-[-35%] lg:top-[70%] lg:-translate-y-1/2 lg:left-[-150px] z-0 pointer-events-none"
-        src={`${isDark ? '/landing/eclipse-dark.png' : '/landing/eclipse-light.png'}`}
+        className="scale-150  absolute top-[-35%] lg:top-[70%] lg:-translate-y-1/2 lg:left-[-160px] lg:scale-x-[143%] z-0 pointer-events-none"
+        src={`${isDark ? '/landing/eclipse-dark.png' : '/landing/eclipse-light-v2.png'}`}
         priority
       />
 

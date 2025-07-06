@@ -15,7 +15,7 @@
       "description": "Register now, Manage assets, build wealth."
     },
     "get_drc_token": {
-      "title": "Get dRC Token (Deeproots Coin):",
+      "title": "Get dRC Token (DEEPROOTS Coin):",
       "description": "Limited Supply, Distributed Over 41 Years - Here to Stay."
     },
     "telexcoin": {
@@ -558,12 +558,12 @@
     "title": "ABOUT DEEPROOTS",
     "items": {
       "story": "Deeproot's Story",
-      "about": "What is DeepRoots?",
+      "about": "What is DEEPROOTS?",
       "deworld": "What is deWorld?",
       "drc": "What is dRC Native Currency",
-      "foundation": "Deeproots Foundation Seats",
-      "whitepaper": "DeepRoots Whitepaper",
-      "roadmap": "DeepRoots Roadmap"
+      "foundation": "DEEPROOTS Foundation Seats",
+      "whitepaper": "DEEPROOTS Whitepaper",
+      "roadmap": "DEEPROOTS Roadmap"
     }
   }
 }

@@ -6,6 +6,8 @@ import {
   SiDiscord,
   SiTiktok,
   SiYoutube,
+  SiLinkedin,
+  SiInstagram,
 } from 'react-icons/si';
 
 export const socialLinks = [
@@ -66,6 +68,26 @@ export const socialLinks = [
     Icon: SiYoutube,
     brandColor: '#000000',
     iconColor: '#FF0000', // YouTube's actual red icon color
+  },
+  {
+    name: 'LinkedIn',
+    username: '@deep-roots',
+    description:
+      'Join the conversation and explore updates from the Deep Roots ecosystem on LinkedIn.',
+    href: 'https://www.linkedin.com/in/deep-roots-566185249/',
+    Icon: SiLinkedin,
+    brandColor: '#0077B5',
+    iconColor: '#0077B5',
+  },
+  {
+    name: 'Instagram',
+    username: '@deeprootsearth',
+    description:
+      'Get a closer look at the Deep Roots ecosystem, here on Instagram',
+    href: 'https://www.instagram.com/deeprootsearth/',
+    Icon: SiInstagram,
+    brandColor: '#000000',
+    iconColor: '#fd016c',
   },
 ];
 
@@ -129,5 +151,25 @@ export const getSocialLinksData = (t: TFunction) => [
     iconColor: '#FF0000',
     title: t('social.links.youTube.title'),
     description: t('social.links.youTube.description'),
+  },
+  {
+    name: 'LinkedIn',
+    username: '@deep-roots-566185249',
+    description:
+      'Join the conversation and explore updates from the Deep Roots ecosystem on LinkedIn.',
+    href: 'https://www.linkedin.com/in/deep-roots-566185249/',
+    Icon: SiLinkedin,
+    brandColor: '#0077B5',
+    iconColor: '#0077B5',
+  },
+  {
+    name: 'Instagram',
+    username: '@deeprootsearth',
+    description:
+      'Get a closer look at the Deep Roots ecosystem, here on Instagram',
+    href: 'https://www.instagram.com/deeprootsearth/',
+    Icon: SiInstagram,
+    brandColor: '#000000',
+    iconColor: '#fd016c',
   },
 ];

@@ -70,7 +70,7 @@ const AccessPerks = () => {
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-1/2 flex flex-col justify-between h-full md:min-h-[422px]">
             <div className="text-[#F82CFF] text-3xl font-semibold">
-              {t('accessPerks.earlyAccessTitle')}
+              {t('accessPerks.founderCircleTitle')}
             </div>
             <div>{t('accessPerks.callDescription')}</div>
             <div>

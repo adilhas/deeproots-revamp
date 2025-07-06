@@ -79,4 +79,9 @@ export const DeWorldProductsData = [
     link: 'https://www.deepassets.earth',
     icon: '/deworld/products_icons/deep-assets-light.svg',
   },
+  {
+    name: 'RootCore',
+    link: 'https://www.rootcore.earth',
+    icon: '/deworld/products_icons/root-core-light.svg',
+  },
 ];

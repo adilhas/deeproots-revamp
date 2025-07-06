@@ -5,7 +5,7 @@ import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
-import { IoMdFunnel } from 'react-icons/io';
+// import { IoMdFunnel } from 'react-icons/io';
 
 export default function Academy() {
   const { t } = useTranslation('academy/common');
@@ -32,7 +32,7 @@ export default function Academy() {
               </p>
             </div>
             <div className="flex flex-row w-full md:justify-end">
-              <div className="flex flex-row w-full md:w-fit gap-1 items-center">
+              {/* <div className="flex flex-row w-full md:w-fit gap-1 items-center">
                 <div className="relative w-full  md:max-w-md">
                   <input
                     type="text"
@@ -44,7 +44,7 @@ export default function Academy() {
                 <div className=" bg-white dark:bg-[#2F2F31] h-[37px] w-10 flex items-center justify-center rounded-lg border dark:border-[#2F2F31] border-[#FFFFFF]">
                   <IoMdFunnel className="w-5 h-5 text-gray-700 dark:text-gray-300" />
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="py-8">
               {academyTopicsData.map((data) => (

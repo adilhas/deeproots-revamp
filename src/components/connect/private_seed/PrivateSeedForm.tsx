@@ -2,35 +2,72 @@
 
 import { JSX, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { parsePhoneNumberFromString } from 'libphonenumber-js';
 import { Globe, Mail, Phone } from 'lucide-react';
 import { PiCurrencyDollarSimple, PiMapPinArea, PiUser } from 'react-icons/pi';
 import { useTranslation } from 'next-i18next';
 import { useThemeContext } from '@/context/ThemeContext';
 import NoteSection from './NoteSection';
+import SubmitSuccessModal from './SubmitSuccessModal';
 
-interface PrivateSeedFormData {
-  fullName: string;
-  email: string;
-  contact: string;
-  country: string;
-  linkedin: string;
-  capital: string;
-  value: string;
-  whyJoin: string;
-  canPassKyc: 'Yes' | 'No';
-  indvOrOrg: 'Ind' | 'Org';
-  confidentiality: boolean;
-  acknowledgement: boolean;
-}
+const PrivateSeedSchema = z.object({
+  fullName: z.string().min(1, 'Full name is required'),
+  email: z.string().email('Invalid email'),
+  contact: z.string().refine(
+    (val) => {
+      const phone = parsePhoneNumberFromString(val);
+      return phone?.isValid() ?? false;
+    },
+    { message: 'Invalid phone number. Use format +1234567890' }
+  ),
+  country: z.string().min(1, 'Country is required'),
+  linkedin: z.string().url('Invalid URL').optional().or(z.literal('')),
+  capital: z.enum(
+    ['$5k', '$10k', '$20k', '$25k', '$50k', '$100k', '$250k', '$500k', '$1M+'],
+    {
+      errorMap: () => ({
+        message: 'Please select a valid investment amount (min $5k)',
+      }),
+    }
+  ),
+  value: z.string().min(1, 'This field is required'),
+  whyJoin: z.string().min(1, 'This field is required'),
+  canPassKyc: z.enum(['Yes', 'No'], {
+    errorMap: () => ({ message: 'This field is required' }),
+  }),
+  indvOrOrg: z.enum(['Ind', 'Org'], {
+    errorMap: () => ({ message: 'This field is required' }),
+  }),
+  confidentiality: z.literal(true, {
+    errorMap: () => ({ message: 'You must agree to the confidentiality' }),
+  }),
+  acknowledgement: z.literal(true, {
+    errorMap: () => ({ message: 'You must acknowledge the terms' }),
+  }),
+});
+
+type PrivateSeedFormData = z.infer<typeof PrivateSeedSchema>;
 type FieldKey = keyof PrivateSeedFormData;
 
 const PrivateSeedForm = () => {
   const { t } = useTranslation('connect/private_seed');
   const { isDark } = useThemeContext();
 
-  const { register, handleSubmit, setValue, reset, watch } =
-    useForm<PrivateSeedFormData>();
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    reset,
+    watch,
+    formState: { errors },
+  } = useForm<PrivateSeedFormData>({
+    resolver: zodResolver(PrivateSeedSchema),
+  });
+
   const [submitting, setSubmitting] = useState(false);
+  const selectedCapital = watch('capital');
 
   const onSubmit = async (data: PrivateSeedFormData) => {
     setSubmitting(true);
@@ -42,7 +79,11 @@ const PrivateSeedForm = () => {
       });
 
       if (response.ok) {
-        alert('Form submitted successfully!');
+        (
+          document.getElementById(
+            'form_success_submit_modal'
+          ) as HTMLDialogElement
+        )?.showModal();
         reset();
       } else {
         alert('Failed to submit form.');
@@ -54,7 +95,17 @@ const PrivateSeedForm = () => {
       setSubmitting(false);
     }
   };
-  const selectedCapital = watch('capital');
+  const capitalOptions = [
+    '$5k',
+    '$10k',
+    '$20k',
+    '$25k',
+    '$50k',
+    '$100k',
+    '$250k',
+    '$500k',
+    '$1M+',
+  ] as const;
 
   return (
     <section id="access-form" className="mx-auto py-16">
@@ -78,7 +129,6 @@ const PrivateSeedForm = () => {
           onSubmit={handleSubmit(onSubmit)}
           className="space-y-7 w-full mx-auto max-w-[700px]"
         >
-          {/* Inputs */}
           {(
             [
               {
@@ -108,23 +158,26 @@ const PrivateSeedForm = () => {
               },
             ] as { name: FieldKey; icon: JSX.Element; type: string }[]
           ).map(({ name, icon, type }) => (
-            <label
-              key={name}
-              className="input border-0 bg-white dark:bg-[#303030] flex items-center gap-2 rounded-full w-full"
-              style={{ boxShadow: `0px 4px 20px 0px #00000073` }}
-            >
-              {icon}
-              <input
-                {...(register(name),
-                {
-                  required: !['contact', 'linkedin'].includes(name),
-                })}
-                name={name}
-                type={type}
-                className="grow bg-transparent"
-                placeholder={t(`form.placeholders.${name}`)}
-              />
-            </label>
+            <div key={name}>
+              <label
+                className="input border-0 bg-white dark:bg-[#303030] flex items-center gap-2 rounded-full w-full"
+                style={{ boxShadow: `0px 4px 20px 0px #00000073` }}
+              >
+                {icon}
+                <input
+                  {...register(name)}
+                  name={name}
+                  type={type}
+                  className="grow bg-transparent"
+                  placeholder={t(`form.placeholders.${name}`)}
+                />
+              </label>
+              {errors[name] && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors[name]?.message as string}
+                </p>
+              )}
+            </div>
           ))}
 
           {/* Capital Selector */}
@@ -145,23 +198,18 @@ const PrivateSeedForm = () => {
                 backdropFilter: `blur(40px)`,
               }}
             >
-              {[
-                '$5k',
-                '$10k',
-                '$20k',
-                '$25k',
-                '$50k',
-                '$100k',
-                '$250k',
-                '$500k',
-                '$1M+',
-              ].map((val, index, array) => (
+              {capitalOptions.map((val, index, array) => (
                 <div key={index} className="flex items-center">
                   <span
-                    className={`cursor-pointer  ${
+                    className={`cursor-pointer ${
                       selectedCapital === val ? 'underline' : 'hover:underline'
                     }`}
-                    onClick={() => setValue('capital', val)}
+                    onClick={() =>
+                      setValue('capital', val, {
+                        shouldValidate: true,
+                        shouldDirty: true,
+                      })
+                    }
                   >
                     {val}
                   </span>
@@ -171,17 +219,28 @@ const PrivateSeedForm = () => {
                 </div>
               ))}
             </div>
+            {errors.capital && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.capital.message}
+              </p>
+            )}
           </div>
 
           {/* Textareas */}
           {(['value', 'whyJoin'] as FieldKey[]).map((field) => (
-            <textarea
-              key={field}
-              {...(register(field), { required: true })}
-              className="textarea textarea-bordered bg-white border-0 dark:bg-[#303030] w-full rounded-xl"
-              placeholder={t(`form.placeholders.${field}`)}
-              style={{ boxShadow: `0px 4px 20px 0px #00000073` }}
-            />
+            <div key={field}>
+              <textarea
+                {...register(field)}
+                className="textarea textarea-bordered bg-white border-0 dark:bg-[#303030] w-full rounded-xl"
+                placeholder={t(`form.placeholders.${field}`)}
+                style={{ boxShadow: `0px 4px 20px 0px #00000073` }}
+              />
+              {errors[field] && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors[field]?.message}
+                </p>
+              )}
+            </div>
           ))}
 
           {/* KYC */}
@@ -196,13 +255,18 @@ const PrivateSeedForm = () => {
                   <input
                     type="radio"
                     value={val}
-                    {...(register('canPassKyc'), { required: true })}
+                    {...register('canPassKyc')}
                     className="radio radio-sm"
                   />
                   <span>{val}</span>
                 </label>
               ))}
             </div>
+            {errors.canPassKyc && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.canPassKyc.message}
+              </p>
+            )}
           </div>
 
           {/* Individual or Org */}
@@ -219,29 +283,39 @@ const PrivateSeedForm = () => {
                   <input
                     type="radio"
                     value={val}
-                    {...(register('indvOrOrg'), { required: true })}
+                    {...register('indvOrOrg')}
                     className="radio radio-sm"
                   />
                   <span>{val}</span>
                 </label>
               ))}
             </div>
+            {errors.indvOrOrg && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.indvOrOrg.message}
+              </p>
+            )}
           </div>
 
           {/* Checkboxes */}
           <label className="flex items-start gap-2 text-sm">
             <input
               type="checkbox"
-              {...(register('confidentiality'), { required: true })}
+              {...register('confidentiality')}
               className="checkbox bg-white text-black"
             />
             <span>{t('form.consent')}</span>
           </label>
+          {errors.confidentiality && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.confidentiality.message}
+            </p>
+          )}
 
           <label className="flex items-start gap-2 text-sm">
             <input
               type="checkbox"
-              {...register('acknowledgement', { required: true })}
+              {...register('acknowledgement')}
               className="checkbox bg-white text-black"
             />
             <span>
@@ -251,6 +325,11 @@ const PrivateSeedForm = () => {
               full access may require additional KYC and NDA steps.
             </span>
           </label>
+          {errors.acknowledgement && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.acknowledgement.message}
+            </p>
+          )}
 
           <div className="w-full flex justify-center">
             <button
@@ -262,6 +341,7 @@ const PrivateSeedForm = () => {
             </button>
           </div>
         </form>
+        <SubmitSuccessModal />
       </div>
 
       {/* Note Section */}
