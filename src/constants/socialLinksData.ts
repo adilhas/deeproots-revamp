@@ -72,8 +72,7 @@ export const socialLinks = [
   {
     name: 'LinkedIn',
     username: '@deep-roots',
-    description:
-      'Join the conversation and explore updates from the Deep Roots ecosystem on LinkedIn.',
+    description: 'See our professional updates & growth.',
     href: 'https://www.linkedin.com/in/deep-roots-566185249/',
     Icon: SiLinkedin,
     brandColor: '#0077B5',
@@ -82,12 +81,11 @@ export const socialLinks = [
   {
     name: 'Instagram',
     username: '@deeprootsearth',
-    description:
-      'Get a closer look at the Deep Roots ecosystem, here on Instagram',
+    description: 'Discover our journey & community visuals.',
     href: 'https://www.instagram.com/deeprootsearth/',
     Icon: SiInstagram,
     brandColor: '#000000',
-    iconColor: '#fd016c',
+    iconColor: '#000000',
   },
 ];
 
@@ -168,6 +166,6 @@ export const getSocialLinksData = (t: TFunction) => [
     href: 'https://www.instagram.com/deeprootsearth/',
     Icon: SiInstagram,
     brandColor: '#000000',
-    iconColor: '#fd016c',
+    iconColor: '#000000',
   },
 ];
