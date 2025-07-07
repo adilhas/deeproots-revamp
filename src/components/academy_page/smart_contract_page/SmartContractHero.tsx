@@ -28,9 +28,9 @@ const SmartContractHero = () => {
           <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-3xl mx-auto lg:mx-0">
             {t('hero.description')}
           </p>
-          <button className="bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] text-white font-bold py-3 px-8 rounded-full text-lg shadow-md hover:shadow-lg transition-all">
+          {/* <button className="bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] text-white font-bold py-3 px-8 rounded-full text-lg shadow-md hover:shadow-lg transition-all">
             {t('hero.button')}
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
