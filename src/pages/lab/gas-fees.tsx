@@ -12,7 +12,7 @@ const GasFeesPage = () => {
       <div className="min-h-screen bg-neutral-300 dark:bg-primary-dark py-16 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
         <Seo
           title="Gas Fees - Powering DeWorld for Everyone"
-          description="Deep Roots offers fixed 0.01 gas fees - affordable, predictable, and fair for all users."
+          description="DEEPROOTS offers fixed 0.01 gas fees - affordable, predictable, and fair for all users."
         />
 
         <div className="max-w-5xl mx-auto">

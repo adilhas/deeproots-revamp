@@ -6,7 +6,7 @@ const TokenSupplyOverview = () => {
     <section className="mb-12">
       <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
         <Wallet className="w-8 h-8 text-[#0085a8] mr-3" />
-        Deep Roots Token Supply Overview
+        DEEPROOTS Token Supply Overview
       </h2>
       <div className="overflow-x-auto bg-white dark:bg-gray-800/50 p-6 rounded-2xl border border-gray-200 dark:border-gray-700">
         {/* Table layout for medium screens and up */}

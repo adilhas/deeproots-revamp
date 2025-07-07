@@ -14,7 +14,7 @@ const products = [
   'RootScan.earth – Blockchain Explorer',
   'RootChat – Decentralized Messaging',
   'CopyMe AI Agent',
-  'DeepRoots.earth – Main Ecosystem Interface',
+  'DEEPROOTS.earth – Main Ecosystem Interface',
 ];
 
 const ProductList = () => (

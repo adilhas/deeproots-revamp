@@ -28,7 +28,7 @@ const DefiHero = () => {
             We Are the Flow <br /> We Are the Freedom
           </h1>
           <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 max-w-xl mx-auto lg:mx-0 mb-8">
-            In Deep Roots, DeFi is about giving people real control over their
+            In DEEPROOTS, DeFi is about giving people real control over their
             value, income, and opportunity.
           </p>
           <button className="bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] text-white font-bold py-4 px-8 rounded-full text-lg shadow-md hover:shadow-xl transition-all duration-300 flex items-center gap-2 mx-auto lg:mx-0 group">

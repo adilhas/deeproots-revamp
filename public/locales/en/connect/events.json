@@ -6,7 +6,7 @@
   },
   "intro": {
     "title": "Events & Meetups",
-    "description": "Big updates. Bold ideas. Real energy. Deep Roots events are your chance to connect, learn, and grow with the community."
+    "description": "Big updates. Bold ideas. Real energy. DEEPROOTS events are your chance to connect, learn, and grow with the community."
   },
   "form": {
     "title": "Get Invited",
@@ -30,7 +30,7 @@
     "submit": "Submit & Get Notified",
     "success-message": {
       "title": "You're in!",
-      "description": "Thank you for registering! We'll send you exclusive invites and updates for upcoming Deep Roots events."
+      "description": "Thank you for registering! We'll send you exclusive invites and updates for upcoming DEEPROOTS events."
     }
   }
 }

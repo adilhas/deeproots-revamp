@@ -13,8 +13,8 @@ const ContactPage = () => {
     <AppLayout>
       <div className="min-h-screen bg-neutral-300 dark:bg-primary-dark py-16 px-4 sm:px-6 lg:px-8">
         <Seo
-          title="What is Seeding? - Seeding is the Deep Roots way to grow, not just invest."
-          description="Seeding is the Deep Roots way to grow, not just invest. It’s how users plant value into the ecosystem and earn real rewards in return."
+          title="What is Seeding? - Seeding is the DEEPROOTS way to grow, not just invest."
+          description="Seeding is the DEEPROOTS way to grow, not just invest. It’s how users plant value into the ecosystem and earn real rewards in return."
         />
 
         <div className="max-w-5xl mx-auto relative z-10">

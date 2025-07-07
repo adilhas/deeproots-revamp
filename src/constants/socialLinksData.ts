@@ -63,7 +63,7 @@ export const socialLinks = [
     name: 'YouTube',
     username: '@DeepRoots',
     description:
-      'Join the YouTube community as we share about Deep Roots ecosystem',
+      'Join the YouTube community as we share about DEEPROOTS ecosystem',
     href: 'https://www.youtube.com/@DeepRoots',
     Icon: SiYoutube,
     brandColor: '#000000',

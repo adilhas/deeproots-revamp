@@ -43,7 +43,7 @@ export const getMenuSectionData = (t: TFunction): MenuSection[] => [
     link: '#',
     subitems: [
       {
-        title: 'DeepRoots Network',
+        title: 'DEEPROOTS Network',
         description: 'Two complementary layers powering the ecosystem',
         link: '/lab/deeproots-network',
       },

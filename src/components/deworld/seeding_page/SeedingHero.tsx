@@ -8,7 +8,7 @@ const SeedingHero = () => {
       </h1>
       <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
         Join the core of the movement. This is your chance to claim a Foundation
-        Seat in the Deep Roots Project — before the world catches up.
+        Seat in the DEEPROOTS Project — before the world catches up.
       </p>
       <div className="rounded-xl border-4 border-[#0085a8]/30 shadow-lg shadow-[#ad1aaf]/20 overflow-hidden">
         <Image

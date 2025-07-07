@@ -11,7 +11,7 @@ const UseCases = () => {
     <div className="flex justify-center items-center flex-col my-20">
       <div className="inline-block">
         <h1 className="font-extrabold mx-5 text-2xl mb-14 leading-[40px] lg:text-start lg:text-3xl my-5 lg:leading-normal bg-gradient-to-r from-[#0085a8] to-[#ad1] bg-clip-text font-orbitron text-transparent">
-          DeepRoots Use Cases - Game-Changing Internet
+          DEEPROOTS Use Cases - Game-Changing Internet
         </h1>
       </div>
 

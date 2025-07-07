@@ -1,8 +1,8 @@
 {
   "hero-section": {
     "title": "Decentralization From the Roots",
-    "subtitle": "Built for freedom. Designed for transparency. Rooted in purpose. Powered by high speed, low fees, and limitless innovation. This is the Deep Roots Blockchain.",
-    "hello": " HELLO FUTURE BY DEEP ROOTS",
+    "subtitle": "Built for freedom. Designed for transparency. Rooted in purpose. Powered by high speed, low fees, and limitless innovation. This is the DEEPROOTS Blockchain.",
+    "hello": " HELLO FUTURE BY DEEPROOTS",
     "paragraph": "From impossible to possible - A platform for innovative DeWorld Apps on the First Truly Dynamic Blockchain Network.",
     "btnContent": "Join the Movement",
     "private_access": {
@@ -23,12 +23,12 @@
       "description": "Join and grow the future of trading."
     },
     "deeproots_network": {
-      "title": "DeepRoots Network.",
+      "title": "DEEPROOTS Network.",
       "description": "The First Truly Dynamic, Scalable, and Borderless Blockchain."
     }
   },
   "what_is_deeproots_section": {
-    "title": "What is Deep Roots?",
+    "title": "What is DEEPROOTS?",
     "from_world": "From World",
     "to_deworld": "To DeWorld",
     "subtitle": "A New Foundation for the Decentralized World",
@@ -36,7 +36,7 @@
     "deeproots_cards": {
       "card_1": {
         "title": "A Movement, Not Just a Blockchain",
-        "text": "Deep Roots represents a shift from centralized systems to open, decentralized collaboration empowering people, not platforms."
+        "text": "DEEPROOTS represents a shift from centralized systems to open, decentralized collaboration empowering people, not platforms."
       },
       "card_2": {
         "title": "DeWorld: The Decentralized Internet",
@@ -44,7 +44,7 @@
       },
       "card_3": {
         "title": "Built for Impact",
-        "text": "Deep Roots powers 20+ real Web3 products across DeFi, GameFi, identity, education, and more delivering real-world utility and global access."
+        "text": "DEEPROOTS powers 20+ real Web3 products across DeFi, GameFi, identity, education, and more delivering real-world utility and global access."
       },
       "card_4": {
         "title": "Vision-Driven Ecosystem",
@@ -55,13 +55,13 @@
   "earn_foundation": {
     "title": "Earn a Foundation Seat",
     "subtitle_1": "Become a founding force in DeWorld.",
-    "subtitle_2": "Foundation Seat holders earn a percentage of every project built on Deep Roots."
+    "subtitle_2": "Foundation Seat holders earn a percentage of every project built on DEEPROOTS."
   },
   "seeding_program": {
     "title": "Seeding Program",
-    "description": "The official gateway to long-term ownership in the Deep Roots Blockchain. Lock your dRC tokens for 365 days and unlock:",
+    "description": "The official gateway to long-term ownership in the DEEPROOTS Blockchain. Lock your dRC tokens for 365 days and unlock:",
     "benefits": [
-      "Full Seat in the Deep Roots Foundation",
+      "Full Seat in the DEEPROOTS Foundation",
       "12% Guaranteed APY",
       "Lifetime Share in All Ecosystem Projects",
       "Premium Access to CopyMe AI",
@@ -121,7 +121,7 @@
     }
   },
   "deeproots_ecosystem": {
-    "title": "DeepRoots Ecosystem",
+    "title": "DEEPROOTS Ecosystem",
     "subtitle": "From World to DeWorld",
     "use_case": "Usecases"
   },
@@ -145,7 +145,7 @@
   "deepAssets": {
     "title": "Deep Assets",
     "subtitle": "Transforming Real-World Assets into Digital Value.",
-    "description": "The DeepRoots Protocol makes real-world assets smarter, safer, and more accessible.",
+    "description": "The DEEPROOTS Protocol makes real-world assets smarter, safer, and more accessible.",
     "button": "Explore",
     "features": [
       {
@@ -171,7 +171,7 @@
     ]
   },
   "use_case_section": {
-    "title": "DeepRoots Use Cases - Game-Changing Internet",
+    "title": "DEEPROOTS Use Cases - Game-Changing Internet",
     "usecases": {
       "high_freq": {
         "title": "High-Frequency Trading & DEX",
@@ -303,13 +303,13 @@
   },
   "innolaunch_section": {
     "title": "InnoLaunch",
-    "subtitle": "Empowering DeWorld Projects on the Deep Roots Blockchain.",
+    "subtitle": "Empowering DeWorld Projects on the DEEPROOTS Blockchain.",
     "button": "Launch",
     "funding_rounds": [
       "First Round (InnoFi Funding).",
       "Private Foundation Round.",
       "External HNWI Investor Access.",
-      "Community Deep Roots Referral System.",
+      "Community DEEPROOTS Referral System.",
       "Public Launch ON TeleXcoin DEX.",
       "Empowering Innovation."
     ]
@@ -451,7 +451,7 @@
   },
   "rootscan": {
     "title": "RootScan",
-    "subtitle": "Deep Roots Blockchain Explorer",
+    "subtitle": "DEEPROOTS Blockchain Explorer",
     "features": [
       {
         "title": "Track Every Transaction",
@@ -463,7 +463,7 @@
       },
       {
         "title": "Secure & Private",
-        "description": "Built on Deep Roots Blockchain with performance, transparency, and privacy in mind."
+        "description": "Built on DEEPROOTS Blockchain with performance, transparency, and privacy in mind."
       }
     ],
     "cta": "Explore RootScan"
@@ -543,7 +543,7 @@
   "podcast_section": {
     "title": "Our Podcast",
     "subtitle": "Saxophone Live Podcast For Blockchain Insights",
-    "description": "Explore Deep Roots and the future of blockchain and DeWorld. Join us to shape the future, gain exclusive insights, collaborate with innovators, and be part of the community.",
+    "description": "Explore DEEPROOTS and the future of blockchain and DeWorld. Join us to shape the future, gain exclusive insights, collaborate with innovators, and be part of the community.",
     "cta": "Join the Conversation"
   },
   "copyme_section": {

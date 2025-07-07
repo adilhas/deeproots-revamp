@@ -9,9 +9,9 @@ type SeoProps = {
 };
 
 const defaultMeta = {
-  title: 'Deep Roots | We Are the DeWorld — A Movement from the Roots',
+  title: 'DEEPROOTS | We Are the DeWorld — A Movement from the Roots',
   description:
-    'Deep Roots blockchain powers DeWorld with 20+ Web3 tools for DeFi, NFTs, AI, education, business, GameFi, and nonprofits — built for freedom and global impact',
+    'DEEPROOTS blockchain powers DeWorld with 20+ Web3 tools for DeFi, NFTs, AI, education, business, GameFi, and nonprofits — built for freedom and global impact',
   image: 'https://deeproots.earth/landing/logo.png',
   url: 'https://deeproots.earth/',
 };
@@ -36,10 +36,10 @@ const Seo = ({ title, description, image, url, noIndex }: SeoProps) => {
       <link rel="canonical" href={meta.url} />
 
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="Deep Roots Project" />
+      <meta property="og:title" content="DEEPROOTS Project" />
       <meta
         property="og:description"
-        content="Explore DeWorld: Your gateway to Web3, powered by Deep Roots Blockchain"
+        content="Explore DeWorld: Your gateway to Web3, powered by DEEPROOTS Blockchain"
       />
       <meta property="og:url" content="https://deeproots.earth" />
       <meta

@@ -1,10 +1,10 @@
 {
   "header_menu": {
     "rootAcademy": {
-      "whatIsDeepRoots": "What is Deep Roots?",
-      "whatIsDeepRoots_desc": "Deep Roots is not just a blockchain. It's a movement.",
+      "whatIsDeepRoots": "What is DEEPROOTS?",
+      "whatIsDeepRoots_desc": "DEEPROOTS is not just a blockchain. It's a movement.",
       "whatIsFullseat": "What is fullseat?",
-      "whatIsFullseat_desc": "Be the first of 20 to earn Full seat in the Deep Roots Ecosystem.",
+      "whatIsFullseat_desc": "Be the first of 20 to earn Full seat in the DEEPROOTS Ecosystem.",
       "whatIsDrc": "What is dRC (Native Currency)?",
       "whatIsDrc_desc": "The foundational layer of DeWorld",
       "whitePaper": "White Paper",
@@ -20,7 +20,7 @@
       "developerTools": "Developer Tools",
       "developerTools_desc": "Explore Developer Tools",
       "gasFee": "Gas Fee",
-      "gasFee_desc": "In Deep Roots, gas fees aren't a barrier — they're a gateway to affordable blockchain access.",
+      "gasFee_desc": "In DEEPROOTS, gas fees aren't a barrier — they're a gateway to affordable blockchain access.",
       "documentation": "Documentation",
       "documentation_desc": "Explore Documentation"
     },
@@ -36,28 +36,28 @@
     },
     "rootIdentity": {
       "whoWeAre": "Who We Are",
-      "whoWeAre_desc": "We are Deep Roots. And our story is still being written.",
+      "whoWeAre_desc": "We are DEEPROOTS. And our story is still being written.",
       "whatIsSeeding": "What is Seeding?",
       "whatIsSeeding_desc": "Join the core of the movement. This is your chance to claim a Foundation Seat.",
       "foundationFullSeat": "Foundation Full Seat",
       "foundationFullSeat_desc": "Seeding Event Starting soon.",
       "rootScan": "RootScan",
-      "rootScan_desc": "Deep Roots Blockchain Explorer"
+      "rootScan_desc": "DEEPROOTS Blockchain Explorer"
     },
     "rootConnect": {
       "socialMedia": "Social Media",
       "socialMedia_desc": "Be part of the team with creativity and collaboration.",
       "eventsAndMeetups": "Events & Meetups",
-      "eventsAndMeetups_desc": "Deep Roots events are your chance to connect, learn, and grow with the community.",
+      "eventsAndMeetups_desc": "DEEPROOTS events are your chance to connect, learn, and grow with the community.",
       "volunteerProgram": "Volunteer Program",
       "volunteerProgram_desc": "Explore Volunteer program",
       "career": "Career",
-      "career_desc": "Join the DeepRoots journey and help build the decentralized future."
+      "career_desc": "Join the DEEPROOTS journey and help build the decentralized future."
     }
   },
   "social": {
-    "title": "Join the Deep Roots Community",
-    "subtitle": "Engage with the DeepRoots community on your favorite platforms.",
+    "title": "Join the DEEPROOTS Community",
+    "subtitle": "Engage with the DEEPROOTS community on your favorite platforms.",
     "links": {
       "x": {
         "title": "X",
@@ -81,7 +81,7 @@
       },
       "youTube": {
         "title": "YouTube",
-        "description": "Join the Youtube community as we share about Deep Roots ecosystem"
+        "description": "Join the Youtube community as we share about DEEPROOTS ecosystem"
       }
     }
   },
@@ -98,7 +98,7 @@
     },
     "RootLab": {
       "_title": "RootLab",
-      "DeepRootsNetwork": "DeepRoots Network",
+      "DeepRootsNetwork": "DEEPROOTS Network",
       "Documentation": "Documentation",
       "SmartContract": "Smart Contract",
       "GasFee": "Gas Fee",

@@ -87,7 +87,7 @@ export const UtilityData = [
     icon: <Leaf className="w-8 h-8 text-[#ad1aaf]" />,
     title: 'Built for the Future',
     body: [
-      'While other chains compete over gas mechanics, Deep Roots keeps it simple, stable, and user-first.',
+      'While other chains compete over gas mechanics, DEEPROOTS keeps it simple, stable, and user-first.',
       'You focus on creating. We keep it moving.',
     ],
     iconBg: 'bg-[#ad1aaf]/10',

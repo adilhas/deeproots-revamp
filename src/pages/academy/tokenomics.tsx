@@ -48,7 +48,7 @@ const TokenomicsPage = () => {
                 <div className="flex flex-row items-center gap-3">
                   <PiCirclesFour className="w-8 h-8 text-[#F43F42] dark:text-[#FB7173]" />
                   <div className="text-xl">
-                    Built on Deep Roots Blockchain (PoZ + EVM)
+                    Built on DEEPROOTS Blockchain (PoZ + EVM)
                   </div>
                 </div>
                 <div className="flex flex-row items-center gap-3">

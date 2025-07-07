@@ -13,7 +13,7 @@ const SmartContractsPage = () => {
       <div className="min-h-screen bg-neutral-200 dark:bg-primary-dark py-16 px-4 sm:px-6 lg:px-8">
         <Seo
           title="Smart Contracts - The Code That Powers DeWorld"
-          description="Smart Contracts - The Code That Powers DeWorldDeep Roots smart contracts are self-executing agreements of trust designed to protect, empower, and scale a decentralized world."
+          description="Smart Contracts - The Code That Powers DeWorldDEEPROOTS smart contracts are self-executing agreements of trust designed to protect, empower, and scale a decentralized world."
         />
 
         <div className="max-w-6xl mx-auto">

@@ -1,11 +1,11 @@
 {
   "hero": {
     "title": "Simple, Transparent, and Respectful",
-    "imageAlt": "Cookie Policy - Deep Roots"
+    "imageAlt": "Cookie Policy - DEEPROOTS"
   },
   "intro": {
     "title": "Our Cookie Policy",
-    "description": "At Deep Roots, we believe in privacy by design — not intrusive tracking. We use cookies sparingly, only where they improve your experience or help us protect the platform."
+    "description": "At DEEPROOTS, we believe in privacy by design — not intrusive tracking. We use cookies sparingly, only where they improve your experience or help us protect the platform."
   },
   "uses": {
     "title": "What We Use Cookies For",
@@ -31,7 +31,7 @@
     "title": "Our Commitment",
     "essentialOnly": "Essential cookies only by default",
     "consentRequired": "Optional cookies require consent",
-    "dataStays": "All data stays within Deep Roots"
+    "dataStays": "All data stays within DEEPROOTS"
   },
   "contact": {
     "title": "Questions?",

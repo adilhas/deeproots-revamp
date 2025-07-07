@@ -58,7 +58,7 @@ export const footerLinks: IFooter[] = [
     icon: <GraduationCap color="#34D399" size={44} />,
     link: '/academy',
     links: [
-      { label: 'What is Deep Roots?', href: '/academy/about' },
+      { label: 'What is DEEPROOTS?', href: '/academy/about' },
       { label: 'What is dRC (Native Currency)?', href: '/academy/drc' },
       { label: 'White Paper', href: '#' },
       { label: 'Learn & Earn – ShareValue', href: 'https://sharevalue.earth' },
@@ -93,7 +93,7 @@ export const footerLinks: IFooter[] = [
     icon: <Globe color="#ad1aaf" size={44} />,
     link: '/dewrold',
     links: [
-      { label: 'Deep Roots Foundation', href: '#' },
+      { label: 'DEEPROOTS Foundation', href: '#' },
       { label: 'The Address Wallet', href: 'https://theaddress.earth' },
       { label: 'Telexcoin DEX', href: 'https://telexcoin.earth' },
       { label: 'RootScan Explorer', href: 'https://rootscan.earth' },

@@ -14,8 +14,8 @@ const DRCPage = () => {
     <AppLayout>
       <div className="min-h-screen bg-white dark:bg-primary-dark py-16 px-4 sm:px-6 lg:px-8 text-gray-900 dark:text-gray-100">
         <Seo
-          title="dRC - The Native Currency of Deep Roots"
-          description="dRC powers everything in Deep Roots ecosystem: transactions, rewards, governance, staking, referrals, NFT economies, and more."
+          title="dRC - The Native Currency of DEEPROOTS"
+          description="dRC powers everything in DEEPROOTS ecosystem: transactions, rewards, governance, staking, referrals, NFT economies, and more."
         />
 
         <div className="max-w-5xl mx-auto">

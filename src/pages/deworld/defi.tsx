@@ -15,7 +15,7 @@ const DeFiPage = () => {
           <title>DeFi - Finance Without Borders</title>
           <meta
             name="description"
-            content="Deep Roots DeFi gives you real control over your value, income, and opportunity."
+            content="DEEPROOTS DeFi gives you real control over your value, income, and opportunity."
           />
         </Head>
 

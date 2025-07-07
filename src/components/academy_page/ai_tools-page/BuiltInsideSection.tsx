@@ -13,7 +13,7 @@ const BuiltInsideSection = () => {
             Built Inside DeWorld
           </h2>
           <p className="text-gray-700 dark:text-gray-300 mb-4">
-            You&apos;ll find AI helping across every layer of Deep Roots:
+            You&apos;ll find AI helping across every layer of DEEPROOTS:
           </p>
           <div className="grid sm:grid-cols-2 gap-3">
             {BuiltInsideData.map((item) => (

@@ -24,7 +24,7 @@ const AiToolsHero = () => {
             </h1>
 
             <p className="text-xl text-gray-700 dark:text-gray-300 max-w-lg mx-auto md:mx-0">
-              In Deep Roots, AI isn&apos;t just a feature — it&apos;s a core
+              In DEEPROOTS, AI isn&apos;t just a feature — it&apos;s a core
               force behind how we learn, build, grow, and connect.
             </p>
           </div>
@@ -36,7 +36,7 @@ const AiToolsHero = () => {
               <div className="rounded-2xl border-4 border-[#0085a8]/30 shadow-xl shadow-[#ad1aaf]/20 overflow-hidden bg-white dark:bg-gray-800 transform hover:scale-[1.02] transition-transform duration-500 relative z-10">
                 <Image
                   src="/academy/ai-tools.png"
-                  alt="AI Tools - Deep Roots"
+                  alt="AI Tools - DEEPROOTS"
                   width={600}
                   height={400}
                   className="object-cover"

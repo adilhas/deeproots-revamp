@@ -21,7 +21,7 @@ const WhatIsFullSeatPage = () => {
 
   return (
     <AppLayout className="bg-white dark:bg-[#303030]">
-      <Seo title="Full Seat - an exclusive position in the Deep Roots Foundation" />
+      <Seo title="Full Seat - an exclusive position in the DEEPROOTS Foundation" />
       <section className="min-h-screen text-[#696969] dark:text-[#F1F5F9]">
         <div className="max-w-[1200px] mx-auto py-10 px-3">
           <div className="flex flex-row justify-start gap-1 my-10 text-md items-center text-[#737373] dark:text-[#F1F5F9]">

@@ -11,7 +11,7 @@ const SmartContractHero = () => {
           <div className="rounded-xl border-4 border-[#0085a8]/30 shadow-lg shadow-[#ad1aaf]/20 overflow-hidden">
             <Image
               src="/academy/smart-contract.jpeg"
-              alt="Smart Contracts - Deep Roots"
+              alt="Smart Contracts - DEEPROOTS"
               width={600}
               height={400}
               className="object-cover w-full h-auto"

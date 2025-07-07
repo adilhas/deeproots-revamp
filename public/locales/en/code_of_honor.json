@@ -2,8 +2,8 @@
   "hero": {
     "line1": "Our Roots Run Deep",
     "line2": "So Does Our Honor",
-    "description": "Deep Roots is more than a blockchain. It's a movement built on purpose, people, and principles.",
-    "imageAlt": "Deep Roots Code of Honor"
+    "description": "DEEPROOTS is more than a blockchain. It's a movement built on purpose, people, and principles.",
+    "imageAlt": "DEEPROOTS Code of Honor"
   },
   "intro": {
     "title": "Code of Honor",
@@ -53,7 +53,7 @@
   },
   "final_section": {
     "title": "If You Build Here, You Share This Code",
-    "description": "Anyone who builds on Deep Roots is part of this code. It's not enforced by rules — it's led by example.",
+    "description": "Anyone who builds on DEEPROOTS is part of this code. It's not enforced by rules — it's led by example.",
     "button": "Join the Movement"
   }
 }

@@ -80,7 +80,7 @@ export default function CryptoFlowSection() {
               boxShadow: `0px 6px 14px 0px ${isDark ? '#000000' : '#0000001F'}`,
             }}
           >
-            <h2 className="text-xl font-bold">DeepRoots (dRC)</h2>
+            <h2 className="text-xl font-bold">DEEPROOTS (dRC)</h2>
           </div>
         </div>
       </div>

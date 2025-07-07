@@ -17,9 +17,9 @@ const QuizIntro = ({ onStart }: Props) => {
         <h1 className="text-4xl font-bold mb-2 font-orbitron">
           DEEPQUEST – Quiz Hub
         </h1>
-        <p className="text-lg">Deep Roots Knowledge Center</p>
+        <p className="text-lg">DEEPROOTS Knowledge Center</p>
         <p className="text-lg mb-6">
-          A gateway to test your knowledge of Web3, Deep Roots, and the future.
+          A gateway to test your knowledge of Web3, DEEPROOTS, and the future.
         </p>
         <button
           onClick={onStart}

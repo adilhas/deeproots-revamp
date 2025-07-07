@@ -2,9 +2,9 @@
   "gasFeesHero": {
     "title_access": "We Are the Access",
     "title_fair_cost": "We Are the Fair Cost",
-    "description": "In Deep Roots, gas fees aren't a barrier — they're a gateway to affordable blockchain access.",
+    "description": "In DEEPROOTS, gas fees aren't a barrier — they're a gateway to affordable blockchain access.",
     "button": "Learn About Transactions",
-    "image_alt": "Gas Fees - Deep Roots"
+    "image_alt": "Gas Fees - DEEPROOTS"
   },
   "gasFeesUtility": {
     "sections": [
@@ -53,7 +53,7 @@
       {
         "title": "Built for the Future",
         "body": [
-          "While other chains compete over gas mechanics, Deep Roots keeps it simple, stable, and user-first.",
+          "While other chains compete over gas mechanics, DEEPROOTS keeps it simple, stable, and user-first.",
           "You focus on creating. We keep it moving."
         ]
       },

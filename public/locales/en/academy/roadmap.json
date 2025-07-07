@@ -10,7 +10,7 @@
         "timeline": "Q2–Q3 2025",
         "items": [
           "Launch deeproots.earth – the digital gateway to DeWorld",
-          "Deploy DeepRoots Blockchain Architecture (custom consensus, EVM-compatible)",
+          "Deploy DEEPROOTS Blockchain Architecture (custom consensus, EVM-compatible)",
           "Open global Community Channels (Discord, X, Telegram)",
           "Release the Tokenomics Manifesto - the blueprint of $dRC",
           "Preview the Seeding Engine – a new way to earn & grow",
@@ -74,7 +74,7 @@
     },
     "techNote": {
       "title": "Tech Access Note",
-      "description": "Deep Roots will operate in closed development mode until 2027. In Year 3, we will open full documentation, SDKs, and dev tools to empower builders across the ecosystem once the foundation is fully established, audited, and secured."
+      "description": "DEEPROOTS will operate in closed development mode until 2027. In Year 3, we will open full documentation, SDKs, and dev tools to empower builders across the ecosystem once the foundation is fully established, audited, and secured."
     }
   }
 }

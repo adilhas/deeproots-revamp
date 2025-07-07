@@ -13,7 +13,7 @@ export default function Academy() {
   return (
     <>
       <Head>
-        <title>DeepRoots</title>
+        <title>DEEPROOTS</title>
         <meta name="description" content="description" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://deeproots.earth/academy/about" />

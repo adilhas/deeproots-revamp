@@ -15,7 +15,7 @@ const AIToolsPage = () => {
           <title>AI Tools - Powering the Mind of DeWorld</title>
           <meta
             name="description"
-            content="Deep Roots AI tools boost creativity, simplify tasks, and enhance every layer of the ecosystem."
+            content="DEEPROOTS AI tools boost creativity, simplify tasks, and enhance every layer of the ecosystem."
           />
         </Head>
 

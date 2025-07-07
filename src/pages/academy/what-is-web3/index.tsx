@@ -18,7 +18,7 @@ const Web3Page = () => {
     <AppLayout className="bg-white dark:bg-[#303030] text-on-primary dark:text-on-primary-dark">
       <Seo
         title="What is Web3"
-        description="Web3 puts power in the hands of users and Deep Roots is building the foundation to make it real."
+        description="Web3 puts power in the hands of users and DEEPROOTS is building the foundation to make it real."
       />
       <section className="min-h-screen">
         <div className="max-w-[1200px] mx-auto py-10 px-3">

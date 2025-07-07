@@ -17,7 +17,7 @@ const EventsHeroSection = () => {
         <div className="rounded-xl border-4 border-[#0085a8]/30 shadow-lg shadow-[#ad1aaf]/20 overflow-hidden">
           <Image
             src="/connect/events-meetups.jpeg"
-            alt="Deep Roots Events & Meetups"
+            alt="DEEPROOTS Events & Meetups"
             width={800}
             height={450}
             className="object-cover"

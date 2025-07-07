@@ -8,7 +8,7 @@ const DrcHero = () => {
   return (
     <div className="text-center mb-16">
       {/* <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] sm:text-6xl lg:text-7xl mb-6 leading-tight">
-        The Pulse of Deep Roots
+        The Pulse of DEEPROOTS
       </h1> */}
       <h1
         className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] sm:text-6xl lg:text-7xl mb-6 leading-tight"
@@ -21,7 +21,7 @@ const DrcHero = () => {
         <div className="rounded-full border-4 border-blue-400/30 shadow-lg shadow-purple-500/20">
           <Image
             src="/academy/drc.png"
-            alt="dRC - Deep Roots Currency"
+            alt="dRC - DEEPROOTS Currency"
             width={220}
             height={220}
             className="rounded-full"

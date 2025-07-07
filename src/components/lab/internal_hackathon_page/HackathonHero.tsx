@@ -17,7 +17,7 @@ const HackathonHero = () => {
         <div className="rounded-xl border-4 border-[#0085a8]/30 shadow-lg shadow-[#ad1aaf]/20 overflow-hidden bg-white dark:bg-gray-800">
           <Image
             src="/lab/internal-hackathon.jpeg"
-            alt="Deep Roots Internal Hackathon"
+            alt="DEEPROOTS Internal Hackathon"
             width={800}
             height={450}
             className="object-cover"

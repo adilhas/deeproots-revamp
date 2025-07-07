@@ -14,8 +14,8 @@ const TermsOfServicePage = () => {
     <AppLayout>
       <div className="min-h-screen bg-neutral-300 dark:bg-primary-dark transition-colors duration-300">
         <Seo
-          title="Terms of Service - Deep Roots"
-          description="Terms governing your use of Deep Roots products and services."
+          title="Terms of Service - DEEPROOTS"
+          description="Terms governing your use of DEEPROOTS products and services."
         />
 
         <div className="max-w-5xl mx-auto py-16 px-4 sm:px-6 lg:px-8">

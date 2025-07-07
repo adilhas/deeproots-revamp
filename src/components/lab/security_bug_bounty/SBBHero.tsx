@@ -15,10 +15,10 @@ const SBBHero = () => {
           Security & Bug <br /> Bounty Program
         </h1>
         <div className="text-lg sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#0085a8] to-[#ad1aaf]  mb-8 max-w-3xl mx-auto lg:mx-0">
-          - Help Secure Deep Roots
+          - Help Secure DEEPROOTS
         </div>
         <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-3xl mx-auto lg:mx-0">
-          Deep Roots is built to last and we invite you to help us make it
+          DEEPROOTS is built to last and we invite you to help us make it
           stronger. If you find a vulnerability, we&apos;ll reward you for
           reporting it responsibly.
         </p>

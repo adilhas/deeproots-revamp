@@ -23,7 +23,7 @@ const GasFeesHero = () => {
         <div className="rounded-xl border-4 border-[#0085a8]/30 shadow-lg shadow-[#ad1aaf]/20 overflow-hidden ring-1 ring-gray-200 dark:ring-0">
           <Image
             src="/academy/gas-fees.jpeg"
-            alt="Gas Fees - Deep Roots"
+            alt="Gas Fees - DEEPROOTS"
             width={600}
             height={400}
             className="object-cover"

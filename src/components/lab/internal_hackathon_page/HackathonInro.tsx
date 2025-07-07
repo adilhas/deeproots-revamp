@@ -12,7 +12,7 @@ const HackathonInro = () => {
             Internal Hackathon — Where Ideas Take Root
           </h2>
           <div className="space-y-4 text-gray-700 dark:text-gray-300">
-            <p>The Deep Roots Internal Hackathon isn’t just a coding event</p>
+            <p>The DEEPROOTS Internal Hackathon isn’t just a coding event</p>
             <p>
               In just 48 hours, we turn sparks into systems. No pitch decks. No
               panels. Just people building what matters.

@@ -12,12 +12,12 @@ export interface Quiz {
 export const quizzes: Quiz[] = [
   {
     id: 'ecosystem',
-    title: 'Quiz 1 – Deep Roots Ecosystem',
+    title: 'Quiz 1 – DEEPROOTS Ecosystem',
     subtitle:
       'Test your knowledge of the movement reshaping the digital world.',
     questions: [
       {
-        question: 'What is Deep Roots?',
+        question: 'What is DEEPROOTS?',
         options: [
           'A farming project',
           'A blockchain ecosystem',
@@ -31,7 +31,7 @@ export const quizzes: Quiz[] = [
         options: [
           'A smart contract',
           'A decentralized chatroom',
-          'The Deep Roots token',
+          'The DEEPROOTS token',
           'RootOpia item',
         ],
         correct: 2,
@@ -41,13 +41,13 @@ export const quizzes: Quiz[] = [
         options: [
           'A video game',
           'A DeFi protocol',
-          'The decentralized platform of Deep Roots',
+          'The decentralized platform of DEEPROOTS',
           'NFT store',
         ],
         correct: 2,
       },
       {
-        question: 'What is seeding in Deep Roots?',
+        question: 'What is seeding in DEEPROOTS?',
         options: [
           'Growing plants',
           'Token staking for rewards',
@@ -60,19 +60,19 @@ export const quizzes: Quiz[] = [
         question: 'What is meant by Full Seat Foundation?',
         options: [
           'Voting seat in parliament',
-          'Deep Roots board-level access + rewards',
+          'DEEPROOTS board-level access + rewards',
           'Discord role',
           'NFT',
         ],
         correct: 1,
       },
       {
-        question: 'How many core products are in the Deep Roots ecosystem?',
+        question: 'How many core products are in the DEEPROOTS ecosystem?',
         options: ['5', '10', '14', '20'],
         correct: 2,
       },
       {
-        question: 'What is the name of the Deep Roots wallet?',
+        question: 'What is the name of the DEEPROOTS wallet?',
         options: ['RootWallet', 'Web3Bag', 'The Address', 'DEXBase'],
         correct: 2,
       },
@@ -87,7 +87,7 @@ export const quizzes: Quiz[] = [
         correct: 1,
       },
       {
-        question: 'What is the main domain for Deep Roots?',
+        question: 'What is the main domain for DEEPROOTS?',
         options: [
           'deeproots.xyz',
           'deeworld.com',
@@ -115,7 +115,7 @@ export const quizzes: Quiz[] = [
         correct: 2,
       },
       {
-        question: 'What type of consensus does Deep Roots use?',
+        question: 'What type of consensus does DEEPROOTS use?',
         options: ['PoW', 'PoS', 'PoZ', 'dPoS'],
         correct: 2,
       },
@@ -149,10 +149,10 @@ export const quizzes: Quiz[] = [
   {
     id: 'seeding-tokenomics',
     title: 'Quiz 3 – Seeding & Tokenomics',
-    subtitle: 'Test your knowledge of Deep Roots token economics and rewards.',
+    subtitle: 'Test your knowledge of DEEPROOTS token economics and rewards.',
     questions: [
       {
-        question: 'What’s the name of Deep Roots’ token?',
+        question: 'What’s the name of DEEPROOTS’ token?',
         options: ['DRT', 'dRC', 'ROOT', 'SEED'],
         correct: 1,
       },
@@ -235,10 +235,10 @@ export const quizzes: Quiz[] = [
     id: 'privacy-decentralization',
     title: 'Quiz 5 – Privacy, Security & Decentralization',
     subtitle:
-      'Understand how Deep Roots protects users and promotes decentralized power.',
+      'Understand how DEEPROOTS protects users and promotes decentralized power.',
     questions: [
       {
-        question: 'What’s Deep Roots’ privacy commitment?',
+        question: 'What’s DEEPROOTS’ privacy commitment?',
         options: [
           'Sell data to partners',
           'Use invasive cookies',
@@ -278,7 +278,7 @@ export const quizzes: Quiz[] = [
         correct: 2,
       },
       {
-        question: 'What tool tracks all on-chain data in Deep Roots?',
+        question: 'What tool tracks all on-chain data in DEEPROOTS?',
         options: ['DeepVault', 'MetaTrack', 'RootScan', 'TokenSpy'],
         correct: 2,
       },

@@ -17,7 +17,7 @@ const ContactUsHero = () => {
         <div className="rounded-xl border-4 border-[#00c6ff]/30 shadow-lg shadow-[#ad1aaf]/20 overflow-hidden bg-gradient-to-br from-[#00c6ff]/10 to-[#ad1aaf]/10">
           <Image
             src="/connect/contact-us.jpeg"
-            alt="Contact Deep Roots"
+            alt="Contact DEEPROOTS"
             width={800}
             height={450}
             className="object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-500"

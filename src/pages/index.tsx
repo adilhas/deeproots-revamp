@@ -90,7 +90,7 @@ const Home = () => {
             __html: JSON.stringify({
               '@context': 'http://schema.org',
               '@type': 'Organization',
-              name: 'Deep Roots',
+              name: 'DEEPROOTS',
               url: 'https://www.deeproots.earth',
               logo: 'https://www.deeproots.earth/landing/logo.png',
               sameAs: [

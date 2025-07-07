@@ -25,7 +25,7 @@
     }
   },
   "what_is_deeproots_section": {
-    "title": "Qu'est-ce que Deep Roots ?",
+    "title": "Qu'est-ce que DEEPROOTS ?",
     "from_world": "Du Monde",
     "to_deworld": "Au DeWorld",
     "subtitle": "Une nouvelle fondation pour le monde décentralisé",
@@ -33,7 +33,7 @@
     "deeproots_cards": {
       "card_1": {
         "title": "Un mouvement, pas seulement une blockchain",
-        "text": "Deep Roots représente une transition des systèmes centralisés vers une collaboration ouverte et décentralisée qui donne le pouvoir aux personnes, pas aux plateformes."
+        "text": "DEEPROOTS représente une transition des systèmes centralisés vers une collaboration ouverte et décentralisée qui donne le pouvoir aux personnes, pas aux plateformes."
       },
       "card_2": {
         "title": "DeWorld : L'Internet Décentralisé",
@@ -41,7 +41,7 @@
       },
       "card_3": {
         "title": "Conçu pour l’impact",
-        "text": "Deep Roots alimente plus de 20 véritables produits Web3 dans les domaines de la DeFi, du GameFi, de l'identité, de l'éducation, et plus encore, offrant une utilité concrète et un accès mondial."
+        "text": "DEEPROOTS alimente plus de 20 véritables produits Web3 dans les domaines de la DeFi, du GameFi, de l'identité, de l'éducation, et plus encore, offrant une utilité concrète et un accès mondial."
       },
       "card_4": {
         "title": "Un écosystème guidé par une vision",
@@ -52,13 +52,13 @@
   "earn_foundation": {
     "title": "Obtenez un siège à la Fondation",
     "subtitle_1": "Devenez une force fondatrice de DeWorld.",
-    "subtitle_2": "Les détenteurs d’un siège à la Fondation reçoivent un pourcentage de chaque projet construit sur Deep Roots."
+    "subtitle_2": "Les détenteurs d’un siège à la Fondation reçoivent un pourcentage de chaque projet construit sur DEEPROOTS."
   },
   "seeding_program": {
     "title": "Programme de Semis",
-    "description": "La passerelle officielle vers une propriété à long terme dans la blockchain Deep Roots. Bloquez vos jetons dRC pendant 365 jours et débloquez :",
+    "description": "La passerelle officielle vers une propriété à long terme dans la blockchain DEEPROOTS. Bloquez vos jetons dRC pendant 365 jours et débloquez :",
     "benefits": [
-      "Siège complet à la Fondation Deep Roots",
+      "Siège complet à la Fondation DEEPROOTS",
       "APY garanti de 12 %",
       "Part à vie dans tous les projets de l'écosystème",
       "Accès premium à CopyMe AI",
@@ -300,13 +300,13 @@
   },
   "innolaunch_section": {
     "title": "InnoLaunch",
-    "subtitle": "Autonomiser les projets DeWorld sur la blockchain Deep Roots.",
+    "subtitle": "Autonomiser les projets DeWorld sur la blockchain DEEPROOTS.",
     "button": "Lancer",
     "funding_rounds": [
       "Première Phase (Financement InnoFi).",
       "Phase de Fondation Privée.",
       "Accès aux Investisseurs Privés Externes.",
-      "Système de Parrainage Deep Roots Communautaire.",
+      "Système de Parrainage DEEPROOTS Communautaire.",
       "Lancement Public sur le DEX TeleXcoin.",
       "Favoriser l’Innovation."
     ]
@@ -448,7 +448,7 @@
   },
   "rootscan": {
     "title": "RootScan",
-    "subtitle": "Explorateur de la Blockchain Deep Roots",
+    "subtitle": "Explorateur de la Blockchain DEEPROOTS",
     "features": [
       {
         "title": "Suivez Chaque Transaction",
@@ -460,7 +460,7 @@
       },
       {
         "title": "Sécurisé & Privé",
-        "description": "Construit sur la blockchain Deep Roots avec performance, transparence et confidentialité en tête."
+        "description": "Construit sur la blockchain DEEPROOTS avec performance, transparence et confidentialité en tête."
       }
     ],
     "cta": "Explorer RootScan"
@@ -540,7 +540,7 @@
   "podcast_section": {
     "title": "Notre Podcast",
     "subtitle": "Podcast en Direct au Saxophone sur la Blockchain",
-    "description": "Explorez Deep Roots et l'avenir de la blockchain et de DeWorld. Rejoignez-nous pour façonner le futur, obtenir des informations exclusives, collaborer avec des innovateurs et faire partie de la communauté.",
+    "description": "Explorez DEEPROOTS et l'avenir de la blockchain et de DeWorld. Rejoignez-nous pour façonner le futur, obtenir des informations exclusives, collaborer avec des innovateurs et faire partie de la communauté.",
     "cta": "Rejoignez la Conversation"
   },
   "copyme_section": {

@@ -55,7 +55,7 @@ const SeedingRewards = () => {
               <p className="text-md  mt-2 px-4">
                 RootOpia is more than a game — it’s a decentralized reward
                 universe. Every seed, referral, battle, or level-up unlocks
-                value across the DeepRoots economy.
+                value across the DEEPROOTS economy.
               </p>
             </ImageBanner>
           </div>

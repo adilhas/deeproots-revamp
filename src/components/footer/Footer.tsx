@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
           className="cursor-pointer w-10 h-10 md:w-14 md:h-14 rounded-full mr-5 shadow-[2px_2px_5px_#ad1aaf,-2px_-2px_5px_#0085a8] dark:shadow-[2px_2px_2px_#0085a8,-2px_-2px_2px_#ad1aaf]"
         />
         <h2 className="md:text-3xl text-2xl font-orbitron font-bold bg-gradient-to-r from-[#0F172A] via-[#0F172A] to-[#0F172A] dark:bg-gradient-to-r dark:from-[#AD1AAF] dark:via-[#0085a8] dark:to-neutral-500 bg-clip-text text-transparent">
-          <Link href="/">Deep Roots</Link>
+          <Link href="/">DEEPROOTS</Link>
         </h2>
       </div>
       <div className="relative grid grid-cols-1 w-full  mt-8 md:ml-12 md:grid-cols-3 lg:grid-cols-5 items-start justify-center gap-8">

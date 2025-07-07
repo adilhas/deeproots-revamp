@@ -45,7 +45,7 @@ const WhatIsDeepRoots = () => {
           <div className="relative h-full overflow-hidden rounded-2xl shadow-2xl">
             <Image
               src="/academy/about-deeproots.jpeg"
-              alt="Deep Roots Team"
+              alt="DEEPROOTS Team"
               width={1200}
               height={675}
               className="w-full h-full object-cover transform group-hover:scale-105 transition duration-700 ease-out"

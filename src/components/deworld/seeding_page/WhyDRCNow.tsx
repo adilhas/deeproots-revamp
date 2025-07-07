@@ -9,7 +9,7 @@ const WhyDRCNow = () => {
       </h2>
       <div className="grid md:grid-cols-2 gap-6">
         {[
-          'Lifetime Rewards from every project built on Deep Roots',
+          'Lifetime Rewards from every project built on DEEPROOTS',
           '12% Passive Income (APY) + WarpAround layered earnings',
           '365-Day Referral Program – multi-level income system',
           'Full Ecosystem Access – staking, launchpad, NFTs, DEX, GameFi',

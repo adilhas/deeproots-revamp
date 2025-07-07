@@ -10,7 +10,7 @@ const DisclaimerPage = () => {
     <AppLayout>
       <Seo
         title="Legal Disclaimer - DEEPROOTS BLOCKCHAIN"
-        description="This legal disclaimer applies to all users, contributors, participants, and partners engaging with the Deep Roots Blockchain, its digital assets (including dRC tokens), and all Web3 products and services within the DeWorld Ecosystem."
+        description="This legal disclaimer applies to all users, contributors, participants, and partners engaging with the DEEPROOTS Blockchain, its digital assets (including dRC tokens), and all Web3 products and services within the DeWorld Ecosystem."
       />
       <div className="min-h-screen bg-white dark:bg-primary-dark text-[#303030] dark:text-[#F8FAFC]">
         <LegalDisclaimer />

@@ -62,7 +62,7 @@ export const DeWorldEcosysData = [
   {
     name: 'InnoLaunch',
     category: 'Label',
-    description: 'Empowering DeWorld Projects on the Deep Roots Blockchain.',
+    description: 'Empowering DeWorld Projects on the DEEPROOTS Blockchain.',
     socialLinks: [
       { name: 'twitter', link: '' },
       { name: 'discord', link: '' },
@@ -77,7 +77,7 @@ export const DeWorldEcosysData = [
   {
     name: 'Ocean Bazaar',
     category: 'Label',
-    description: 'Deep Roots NFT Marketplace. Buy. Sell. Auction',
+    description: 'DEEPROOTS NFT Marketplace. Buy. Sell. Auction',
     socialLinks: [
       { name: 'twitter', link: '' },
       { name: 'discord', link: '' },
@@ -92,7 +92,7 @@ export const DeWorldEcosysData = [
   {
     name: 'Foundation',
     category: 'Label',
-    description: 'Earn from Every Project Built on the Deep Roots Blockchain',
+    description: 'Earn from Every Project Built on the DEEPROOTS Blockchain',
     socialLinks: [
       { name: 'twitter', link: '' },
       { name: 'discord', link: '' },
@@ -122,7 +122,7 @@ export const DeWorldEcosysData = [
   {
     name: 'RootScan',
     category: 'Label',
-    description: 'Deep Roots Blockchain Explorer',
+    description: 'DEEPROOTS Blockchain Explorer',
     socialLinks: [
       { name: 'twitter', link: '' },
       { name: 'discord', link: '' },

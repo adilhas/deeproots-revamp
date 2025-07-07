@@ -10,7 +10,7 @@ const sections = [
     icon: '🚫',
     title: 'NO INVESTMENT OR FINANCIAL ADVICE',
     content:
-      'All content, documentation, smart contracts, or communications provided by Deep Roots are strictly for informational and educational purposes. Nothing on this platform constitutes financial, investment, legal, or tax advice.',
+      'All content, documentation, smart contracts, or communications provided by DEEPROOTS are strictly for informational and educational purposes. Nothing on this platform constitutes financial, investment, legal, or tax advice.',
   },
   {
     icon: '🔏',
@@ -59,7 +59,7 @@ const sections = [
         <li>
           You understand the risks of blockchain and decentralized systems.
         </li>
-        <li>You waive Deep Roots from related liability.</li>
+        <li>You waive DEEPROOTS from related liability.</li>
       </ul>
     ),
   },
@@ -78,15 +78,14 @@ const LegalDisclaimerPage = () => {
 
       <p className="my-10">
         This legal disclaimer applies to all users, contributors, participants,
-        and partners engaging with the Deep Roots Blockchain, its digital assets
+        and partners engaging with the DEEPROOTS Blockchain, its digital assets
         (including dRC tokens), and all Web3 products and services within the
         DeWorld Ecosystem.
       </p>
 
       <p className="my-10">
         <strong>
-          Deep Roots Blockchain Ecosystem is operated by DEEPROOTS BLOCKCHAIN
-          LLC
+          DEEPROOTS Blockchain Ecosystem is operated by DEEPROOTS BLOCKCHAIN LLC
         </strong>
         , a limited liability company registered in the State of Wyoming, United
         States.
@@ -101,7 +100,7 @@ const LegalDisclaimerPage = () => {
 
       <p className="mb-6">
         And all associated dApps, smart contracts, services, and interfaces
-        owned or operated under the Deep Roots Project.
+        owned or operated under the DEEPROOTS Project.
       </p>
 
       {sections.map((section, i) => (

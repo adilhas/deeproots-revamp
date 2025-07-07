@@ -4,12 +4,12 @@
       "line1": "We Are the Terms",
       "line2": "We Are the Trust."
     },
-    "subtitle": "Simple, fair, and human terms for using Deep Roots.",
-    "alt": "Terms of Service - Deep Roots"
+    "subtitle": "Simple, fair, and human terms for using DEEPROOTS.",
+    "alt": "Terms of Service - DEEPROOTS"
   },
   "welcome": {
-    "title": "Welcome to Deep Roots",
-    "description": "By using any product, platform, or service built within the Deep Roots ecosystem (including DeWorld, dApps, wallets, and websites), you agree to these Terms of Service."
+    "title": "Welcome to DEEPROOTS",
+    "description": "By using any product, platform, or service built within the DEEPROOTS ecosystem (including DeWorld, dApps, wallets, and websites), you agree to these Terms of Service."
   },
   "terms": {
     "youCanExpect": {
@@ -25,7 +25,7 @@
     "weExpectFromYou": {
       "title": "What We Expect from You",
       "items": [
-        "Use Deep Roots services respectfully and legally",
+        "Use DEEPROOTS services respectfully and legally",
         "Don't exploit the network or other users",
         "Don't reverse-engineer or copy protected logic or code",
         "Respect the decentralized spirit — no spam, scams, or manipulation",
@@ -55,6 +55,6 @@
   },
   "finalNote": {
     "title": "Final Note",
-    "description": "Deep Roots is more than a service — it's a movement. By joining, you're part of something bigger. Use it wisely. Grow with it wildly."
+    "description": "DEEPROOTS is more than a service — it's a movement. By joining, you're part of something bigger. Use it wisely. Grow with it wildly."
   }
 }

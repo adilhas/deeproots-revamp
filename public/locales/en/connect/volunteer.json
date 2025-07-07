@@ -2,7 +2,7 @@
   "hero": {
     "title1": "Volunteer Program –",
     "title2": "Join the Movement",
-    "description1": "DeepRoots.earth is built by people like you - visionaries, supporters, and doers.",
+    "description1": "deeproots.earth is built by people like you - visionaries, supporters, and doers.",
     "description2": "We're opening the gates to a global Volunteer Program where you can contribute directly to the future of DeWorld.",
     "button": "Apply Now"
   },
@@ -32,7 +32,7 @@
       },
       "tester": {
         "title": "Beta Tester",
-        "description": "Test Launches on DeepRoots Ecosystem"
+        "description": "Test Launches on DEEPROOTS Ecosystem"
       }
     },
     "description2": "No coding experience required. If you're aligned with the mission, you're qualified."
@@ -56,8 +56,8 @@
       "Translate ecosystem updates",
       "Create explainer videos, social threads, or memes",
       "Help beta test RootOpia or The Address Wallet",
-      "Host local DeepRoots meetups",
-      "Share DeepRoots at universities or dev hubs"
+      "Host local DEEPROOTS meetups",
+      "Share DEEPROOTS at universities or dev hubs"
     ]
   },
   "form": {
@@ -73,7 +73,7 @@
     "languages": "Languages You Speak",
     "roles": "What roles are you interested in?",
     "hours": "How many hours/week can you contribute?",
-    "whyJoin": "Why do you want to join the DeepRoots Volunteer Program?",
+    "whyJoin": "Why do you want to join the DEEPROOTS Volunteer Program?",
     "whatValue": "What value can you bring to the ecosystem?",
     "experience": "Have you been involved in any Web3, DAO, or community project before?",
     "yes": "Yes",
@@ -82,7 +82,7 @@
     "shortText_note": "Optional",
     "portfolio": "Portfolio / Socials",
     "portfolio_note": "Enter Link (LinkedIn, Twitter, GitHub, or past work)",
-    "consent": "I understand this is a volunteer role and agree to be contacted by the DeepRoots.earth team.",
+    "consent": "I understand this is a volunteer role and agree to be contacted by the DEEPROOTS.earth team.",
     "submit": "Submit Application",
     "note_label": "Note:",
     "note_message": "Submissions are reviewed weekly. All data is confidential."

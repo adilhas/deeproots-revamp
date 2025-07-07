@@ -15,7 +15,7 @@ const StoryPage = () => {
       <div className="min-h-screen bg-neutral-300 dark:bg-primary-dark px-3">
         <Seo
           title="Our Story - DEEPROOTS"
-          description="The story of Deep Roots - from vision to movement."
+          description="The story of DEEPROOTS - from vision to movement."
         />
 
         <OurStoryHero />

@@ -15,8 +15,8 @@ const FoundationPage = () => {
   return (
     <>
       <Seo
-        title="Full Seat Of DeepRoots Foundation"
-        description="Be the first of 20 to earn Full seat in the Deep Roots Ecosystem. This is a one time opportunity to become a long-term Foundation Member"
+        title="Full Seat Of DEEPROOTS Foundation"
+        description="Be the first of 20 to earn Full seat in the DEEPROOTS Ecosystem. This is a one time opportunity to become a long-term Foundation Member"
       />
       <AppLayout className="bg-primary-light dark:bg-primary-dark text-[#404040] dark:text-neutral-200">
         <div className="max-w-[1200px] mx-auto py-16 px-3">

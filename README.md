@@ -1,6 +1,6 @@
-# Deep Roots — Launching Soon Page
+# DEEPROOTS — Launching Soon Page
 
-This is the **Deep Roots Site**.
+This is the **DEEPROOTS Site**.
 
 ## 🔧 Tech Stack
 
@@ -15,7 +15,7 @@ This is the **Deep Roots Site**.
 ## 🗂️ Repository Structure
 
 ```
-/Deep Roots
+/DEEPROOTS
 |
 ├── src/
 |    ├──pages/
@@ -141,4 +141,4 @@ NEXTAUTH_URL=http://localhost:3000
 
 ## 📄 License
 
-MIT © 2025 Deep Roots
+MIT © 2025 DEEPROOTS
