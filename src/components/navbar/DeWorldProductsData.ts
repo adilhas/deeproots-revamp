@@ -61,7 +61,7 @@ export const DeWorldProductsData = [
   },
   {
     name: 'Foundation',
-    link: '',
+    link: '/seeding/foundation',
     icon: '/deworld/products_icons/foundation-light.svg',
   },
   {

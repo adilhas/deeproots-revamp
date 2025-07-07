@@ -99,7 +99,7 @@ export const DeWorldEcosysData = [
       { name: 'X', link: '' },
     ],
     projectLink: 'Explore',
-    url: '/lab/foundation-seats',
+    url: '/seeding/foundation',
     darkIcon: '/deworld/ecosystem_icons/foundation-dark.png',
     lightIcon: '/deworld/ecosystem_icons/foundation-light.png',
     isLaunch: true,

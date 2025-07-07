@@ -24,12 +24,12 @@ export const getMenuSectionData = (t: TFunction): MenuSection[] => [
       {
         title: t('header_menu.rootAcademy.whitePaper'),
         description: t('header_menu.rootAcademy.whitePaper_desc'),
-        link: '/academy/whitepaper',
+        link: '/deeproots-whitepaper.pdf',
       },
       {
         title: t('header_menu.rootAcademy.tokenomics'),
         description: t('header_menu.rootAcademy.tokenomics_desc'),
-        link: '',
+        link: '/academy/tokenomics',
       },
       {
         title: t('header_menu.rootAcademy.roadmap'),
@@ -60,12 +60,12 @@ export const getMenuSectionData = (t: TFunction): MenuSection[] => [
       {
         title: t('header_menu.rootlab.smartContract'),
         description: t('header_menu.rootlab.smartContract_desc'),
-        link: '/academy/smart-contract',
+        link: '/lab/smart-contract',
       },
       {
         title: t('header_menu.rootlab.gasFee'),
         description: t('header_menu.rootlab.gasFee_desc'),
-        link: '/academy/gas-fees',
+        link: '/lab/gas-fees',
       },
       // {
       //   title: t('header_menu.rootlab.documentation'),
@@ -144,7 +144,7 @@ export const getMenuSectionData = (t: TFunction): MenuSection[] => [
       {
         title: t('header_menu.rootConnect.socialMedia'),
         description: t('header_menu.rootConnect.socialMedia_desc'),
-        link: '#',
+        link: '/#social-links',
       },
       {
         title: t('header_menu.rootConnect.eventsAndMeetups'),

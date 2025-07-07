@@ -36,7 +36,7 @@ const PrivateSeedFAQs = () => {
       <h2 className="text-4xl text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text w-fit mx-auto font-orbitron font-bold">
         {t('faqs.heading')}
       </h2>
-      <div className="text-center mt-4 text-2xl">{t('faqs.subheading')}</div>
+      {/* <div className="text-center mt-4 text-2xl">{t('faqs.subheading')}</div> */}
       <div>
         {faqs.map((faq, index) => {
           const isOpen = openIndex === index;

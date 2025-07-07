@@ -48,7 +48,7 @@ const VolunteerForm = () => {
         {(['fullName', 'email', 'telegram'] as const).map((name) => (
           <label
             key={name}
-            className="input input-bordered bg-white dark:bg-[#303030] flex items-center gap-2 rounded-full w-full"
+            className="input input-bordered bg-white dark:bg-[#303030] flex items-center gap-2 rounded-full w-full "
           >
             {name === 'fullName' ? (
               <PiUser />
@@ -63,7 +63,7 @@ const VolunteerForm = () => {
               onChange={handleInput}
               type={name === 'email' ? 'email' : 'text'}
               placeholder={t(`form.${name}`)}
-              className="grow bg-transparent"
+              className="grow bg-transparent placeholder-[#525252] dark:placeholder-[#F1F5F9]"
             />
           </label>
         ))}
@@ -139,7 +139,7 @@ const VolunteerForm = () => {
             name={field}
             value={formData[field]}
             onChange={handleInput}
-            className="textarea textarea-bordered bg-white dark:bg-[#303030] w-full rounded-xl"
+            className="textarea textarea-bordered bg-white dark:bg-[#303030] w-full rounded-xl placeholder-[#525252] dark:placeholder-[#F1F5F9]"
             placeholder={t(`form.${field}`)}
           />
         ))}
@@ -182,7 +182,7 @@ const VolunteerForm = () => {
               onChange={handleInput}
               type="text"
               placeholder={t(`form.${field}`)}
-              className="input input-bordered bg-white dark:bg-[#303030] w-full rounded-full"
+              className="input input-bordered bg-white dark:bg-[#303030] w-full rounded-full placeholder-[#525252] dark:placeholder-[#F1F5F9]"
             />
             <p className="text-xs text-gray-400 ml-2">
               {t(`form.${field}_note`)}
@@ -197,7 +197,7 @@ const VolunteerForm = () => {
             checked={formData.consent}
             onChange={handleInput}
             type="checkbox"
-            className="checkbox bg-white text-black"
+            className="checkbox bg-white text-black placeholder-[#525252] dark:placeholder-[#F1F5F9]"
           />
           <span>{t('form.consent')}</span>
         </label>

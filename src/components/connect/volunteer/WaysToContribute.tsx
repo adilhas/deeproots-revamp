@@ -30,41 +30,41 @@ const WaysToContribute = () => {
   const weAreLooking: WaysToContributeType[] = [
     {
       icon: (
-        <PiUsersFour className="w-5 h-5 text-[#1F2937] dark:text-[#D4D4D4]" />
+        <PiUsersFour className="w-6 h-6 text-[#1F2937] dark:text-[#D4D4D4]" />
       ),
       bgColor: 'bg-[#F1F1F1] dark:bg-[#525252]',
       borderColor: 'border-[#D4D4D4] dark:border-[#737373]',
     },
     {
       icon: (
-        <MdOutlineTranslate className="w-5 h-5 text-[#1570EF] dark:text-[#84CAFF]" />
+        <MdOutlineTranslate className="w-6 h-6 text-[#1570EF] dark:text-[#84CAFF]" />
       ),
       bgColor: 'bg-[#EFF8FF] dark:bg-[#194185]',
       borderColor: 'border-[#B2DDFF] dark:border-[#2E90FA]',
     },
     {
       icon: (
-        <PiPenNibLight className="w-5 h-5 text-[#9333EA] dark:text-[#D8B4FE]" />
+        <PiPenNibLight className="w-6 h-6 text-[#9333EA] dark:text-[#D8B4FE]" />
       ),
       bgColor: 'bg-[#F3E8FF] dark:bg-[#581C87]',
       borderColor: 'border-[#C084FC] dark:border-[#C084FC]',
     },
     {
       icon: (
-        <PiPaintBrushLight className="w-5 h-5 text-[#EA580C] dark:text-[#FDBA74]" />
+        <PiPaintBrushLight className="w-6 h-6 text-[#EA580C] dark:text-[#FDBA74]" />
       ),
       bgColor: 'bg-[#FFEDD5] dark:bg-[#7C2D12]',
       borderColor: 'border-[#FB923C] dark:border-[#FB923C]',
     },
     {
       icon: (
-        <PiGraduationCapBold className="w-5 h-5 text-[#DB2777] dark:text-[#F9A8D4]" />
+        <PiGraduationCapBold className="w-6 h-6 text-[#DB2777] dark:text-[#F9A8D4]" />
       ),
       bgColor: 'bg-[#FFE3F2] dark:bg-[#831843]',
       borderColor: 'border-[#F472B6] dark:border-[#F472B6]',
     },
     {
-      icon: <PiGameController className="w-5 h-5" />,
+      icon: <PiGameController className="w-6 h-6" />,
       bgColor: 'bg-[#D1FAE5] dark:bg-[#064E3B]',
       borderColor: 'border-[#34D399] dark:border-[#34D399]',
     },

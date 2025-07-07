@@ -21,22 +21,26 @@ const LearnMore = () => {
       cardBg: '#C7D2FE',
       cardDarkBg: '#312E81',
       image: '/academy/what-is-deeproots.png',
+      url: '/academy/about',
     },
     {
       cardBg: '#FED7AA',
       cardDarkBg: '#7C2D12',
       image: '/academy/what-is-drc.png',
+      url: '/academy/drc',
     },
     {
       cardBg: '#E9D5FF',
       cardDarkBg: '#581C87',
       image: '/academy/what-is-deeproots.png',
+      url: '/lab/gas-fees',
     },
-    {
-      cardBg: '#C7D2FE',
-      cardDarkBg: '#312E81',
-      image: '/academy/what-is-deeproots.png',
-    },
+    // {
+    //   cardBg: '#C7D2FE',
+    //   cardDarkBg: '#312E81',
+    //   image: '/academy/what-is-deeproots.png',
+    //   url: '/academy/about',
+    // },
   ];
 
   return (
@@ -55,7 +59,7 @@ const LearnMore = () => {
                 name={topic.name}
                 description={topic.description}
                 image={colors[index]?.image || ''}
-                url={'#'}
+                url={colors[index]?.url}
                 className="h-full dark:text-[#F8FAFC]"
                 titleClassName="dark:text-[#F8FAFC] text-[#303030]"
                 style={{

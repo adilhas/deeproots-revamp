@@ -302,7 +302,7 @@ const PrivateSeedForm = () => {
             <input
               type="checkbox"
               {...register('confidentiality')}
-              className="checkbox bg-white text-black"
+              className="checkbox bg-white text-black checked:bg-green-500"
             />
             <span>{t('form.consent')}</span>
           </label>
@@ -316,7 +316,7 @@ const PrivateSeedForm = () => {
             <input
               type="checkbox"
               {...register('acknowledgement')}
-              className="checkbox bg-white text-black"
+              className="checkbox bg-white text-black checked:bg-green-500"
             />
             <span>
               I acknowledge that the information I provide will be treated under

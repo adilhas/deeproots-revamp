@@ -55,8 +55,8 @@ const AccessPerks = () => {
               className="gap-3 bg-white dark:bg-[#303030] min-h-[132px] rounded-4xl flex flex-col justify-center items-center"
             >
               <Image
-                width={40}
-                height={40}
+                width={54}
+                height={54}
                 src={access.icon}
                 alt={access.name}
               />
