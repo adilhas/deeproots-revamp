@@ -84,7 +84,7 @@ const SettingDropdown = () => {
 
       {isOpen && (
         <ul
-          className="fixed w-[307px] right-0 mt-2 menu bg-white dark:bg-[#232323] rounded-3xl z-10 p-2 shadow-sm"
+          className="fixed max-w-[307px] w-full right-0 mt-2 menu bg-white dark:bg-[#232323] rounded-3xl z-10 p-2 shadow-sm"
           style={{
             boxShadow: `0px 12px 42px -4px #14171A1F, 0px 8px 18px -6px #14171A1F`,
             minWidth: '260px',
@@ -137,7 +137,7 @@ const SettingDropdown = () => {
               <ArrowLeftRight size={16} />
             </div>
           </li>
-
+          <hr className="my-2 text-[#CBD5E1] dark:text-[#334155]" />
           <li>
             <Link href="/identity/privacy-policy">Privacy Policy</Link>
           </li>

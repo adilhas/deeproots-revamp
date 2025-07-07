@@ -82,7 +82,7 @@ const DeWorldAllProducts = () => {
         <div
           className={`fixed p-3 ${
             isArabic ? 'left-0' : 'right-0'
-          } mt-2 w-[98vw] max-w-[400px] max-h-[400px] overflow-y-auto rounded-3xl bg-white dark:bg-[#1D1D1D] shadow-xl`}
+          } mt-2 w-[98vw] max-w-[400px] max-h-[70vh] overflow-y-auto rounded-3xl bg-white dark:bg-[#1D1D1D] shadow-xl`}
           onMouseEnter={handleMouseEnterDropdown}
           onMouseLeave={handleMouseLeaveDropdown}
         >
