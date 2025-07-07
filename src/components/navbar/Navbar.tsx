@@ -6,11 +6,11 @@ import DesktopMenu from './DesktopMenu';
 import MobileMenu from './MobileMenu';
 import Submenu from './Submenu';
 import { Menu, X } from 'lucide-react';
-import Image from 'next/image';
 import DeWorldAllProducts from './DeWorldAllProducts';
 import SettingDropdown from './SettingDropdown';
-import LanguageDropdown from './LanguageDropdown';
+// import LanguageDropdown from './LanguageDropdown';
 import clsx from 'clsx';
+import CopyMeDropdown from './CopyMeDropdown';
 
 interface NavbarProps {
   navContainerClassName?: string;
@@ -52,19 +52,15 @@ export default function Navbar({ navContainerClassName }: NavbarProps) {
           <Logo />
           <DesktopMenu onHover={setActiveMenu} />
           <div className="flex items-center gap-4">
-            <LanguageDropdown />
-            <a
-              href="https://copyme.earth/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src="/copyme-logo.png"
-                alt="copy me"
-                width={25}
-                height={25}
-              />
-            </a>
+            {/* <LanguageDropdown /> */}
+
+            {/* <Image
+              src="/copyme-logo.png"
+              alt="copy me"
+              width={35}
+              height={35}
+            /> */}
+            <CopyMeDropdown />
             <DeWorldAllProducts />
 
             <SettingDropdown />

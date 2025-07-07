@@ -1,7 +1,7 @@
 'use client';
 
 import { useThemeContext } from '@/context/ThemeContext';
-import { ArrowLeftRight, Moon, Sun } from 'lucide-react';
+import { ArrowLeftRight, Globe, Moon, Sun } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
@@ -74,17 +74,17 @@ const SettingDropdown = () => {
         }}
       >
         <Image
-          src="/profile-pic.jpg"
+          src="/profile-pic.png"
           alt="profile"
-          width={30}
-          height={30}
-          className="rounded-full"
+          width={35}
+          height={35}
+          className=""
         />
       </div>
 
       {isOpen && (
         <ul
-          className="fixed right-0 mt-2 menu bg-white dark:bg-[#232323] rounded-3xl z-10 p-2 shadow-sm"
+          className="fixed w-[307px] right-0 mt-2 menu bg-white dark:bg-[#232323] rounded-3xl z-10 p-2 shadow-sm"
           style={{
             boxShadow: `0px 12px 42px -4px #14171A1F, 0px 8px 18px -6px #14171A1F`,
             minWidth: '260px',
@@ -92,18 +92,33 @@ const SettingDropdown = () => {
           onMouseEnter={handleMouseEnterDropdown}
           onMouseLeave={handleMouseLeaveDropdown}
         >
-          {/* <li>
+          <li className="w-fit h-fit mx-auto  pointer-events-none hover:scale-100 hover:opacity-100">
             <div className="w-fit mx-auto">
               <Image
-                src="/profile-pic.jpg"
+                src="/profile-pic.png"
                 alt="profile"
                 width={88}
                 height={88}
-                className="rounded-full mx-auto"
+                className="mx-auto  pointer-events-none hover:scale-100 hover:opacity-100"
               />
             </div>
-          </li> */}
+          </li>
 
+          <li className="pointer-events-none hover:scale-100 hover:opacity-100">
+            <div
+              className="flex items-center justify-between px-2 py-2 rounded min-w-[250px] cursor-pointer"
+              onClick={toggleTheme}
+            >
+              <div className="flex items-center gap-2">
+                <Globe size={16} />
+
+                <span className="text-sm">Language • English</span>
+              </div>
+              <div className="bg-[#FFFAEB] dark:bg-[#78350F] rounded-2xl border border-[#F97316] dark:border-[#F97316] dark:text-[#F59E0B] text-[#B54708] px-2 text-[12px]">
+                Live in V2
+              </div>
+            </div>
+          </li>
           <li>
             <div
               className="flex items-center justify-between px-2 py-2 rounded min-w-[250px] cursor-pointer"

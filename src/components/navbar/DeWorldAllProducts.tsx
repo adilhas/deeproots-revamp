@@ -76,7 +76,7 @@ const DeWorldAllProducts = () => {
           setHasEnteredDropdown(false);
         }}
       >
-        <Image src="/menu-logo-dark.png" alt="menu" width={30} height={30} />
+        <Image src="/menu-logo-dark.png" alt="menu" width={35} height={35} />
       </button>
       {isOpen && (
         <div
