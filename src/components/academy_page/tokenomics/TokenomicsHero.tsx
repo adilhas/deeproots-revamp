@@ -10,8 +10,9 @@ const TokenomicsHero = () => {
         <div className="absolute top-[130px] left-[60%] -translate-x-1/2 w-[200px] md:w-[500px] h-[500px] bg-[#FDEF62] dark:bg-[#8E5F00] blur-3xl opacity-50 dark:opacity-30  pointer-events-none rounded-full z-0 " />
       </div>
       <div className="w-full lg:w-1/2 lg:text-left z-10">
-        <h1 className="text-4xl sm:text-5xl leading-tight lg:text-6xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] md:text-nowrap">
-          TOKENOMICS – <br /> DEEP ROOTS (dRC)
+        <h1 className="text-4xl sm:text-5xl leading-tight lg:text-6xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#0085a8] to-[#ad1aaf]">
+          TOKENOMICS – <br /> <span className="font-orbitron">DEEPROOTS</span>{' '}
+          (dRC)
         </h1>
 
         <p className="text-lg sm:text-2xl mt-4 font-semibold text-[#303030] dark:text-gray-300 mb-8 max-w-4xl mx-auto lg:mx-0">

@@ -18,7 +18,7 @@ const TokenomicsPage = () => {
   return (
     <AppLayout>
       <Seo
-        title="TOKENOMICS – DEEP ROOTS (dRC)"
+        title="TOKENOMICS – DEEPROOTS (dRC)"
         description="Built for Generations. Designed to Empower."
       />
       <div className="relative pt-16 bg-primary-light dark:bg-primary-dark text-[#404040] dark:text-neutral-200">
