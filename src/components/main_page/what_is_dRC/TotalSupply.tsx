@@ -10,13 +10,13 @@ const TotalSupply: React.FC = () => {
   return (
     <>
       <div className="w-full max-w-[350px] h-full">
-        <div className="flex flex-col gap-[16px] w-full">
+        <div className="flex flex-col gap-[16px] w-full min-h-[41px]">
           {totalSupplyData.map((item) => (
             <div
               key={item.name}
               className="flex items-center justify-between rounded-[18px] px-[16px] py-[5px] bg-[#F2F2F2] dark:bg-[rgba(36,36,48,0.7)]"
               style={{
-                boxShadow: `${isDark ? `0px 8px 16px 0px #0F172A05,0px 4px 8px 0px #0F172A08,inset 0px 0px 20px 0px #433E57,2px 2px 20px 0px ${item.color}` : `0px 8px 16px 0px #0F172A05,0px 4px 8px 0px #0F172A08,inset 0px 0px 20px 0px #F9BDFF,2px 2px 20px 0px ${item.color}`}`,
+                boxShadow: `${isDark ? `0px 8px 16px 0px #0F172A05,0px 4px 8px 0px #0F172A08,inset 0px 0px 20px 0px #433E57,2px 2px 20px 0px ${item.color}` : `0px 8px 16px 0px #0F172A05,0px 4px 8px 0px #0F172A08,inset 0px 0px 20px 0px ${item.innerShadowColor},2px 2px 20px 0px ${item.color}`}`,
               }}
             >
               <div className="flex items-center gap-[10px]">

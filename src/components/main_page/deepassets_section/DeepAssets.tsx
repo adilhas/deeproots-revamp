@@ -26,7 +26,7 @@ const DeepAssets = () => {
         <div className="absolute bottom-[-50px] mix-blend-color-dodge right-[10%] w-[300px] h-[200px] rounded-full blur-3xl opacity-40 pointer-events-none z-0 hidden dark:block bg-[#DA6A6D]" />
         <div className="flex justify-center items-center relative z-10">
           <div className="flex justify-start  w-full lg:mr-16 items-start flex-col z-20">
-            <div className="font-extrabold w-fit leading-normal text-4xl mb-3 bg-gradient-to-r from-[#0085a8] to-orange-800 bg-clip-text font-orbitron text-transparent">
+            <div className="font-extrabold w-fit  leading-normal text-4xl mb-6 bg-gradient-to-r from-[#0085a8] to-orange-800 bg-clip-text font-orbitron text-transparent">
               {t('deepAssets.title')}
             </div>
 
@@ -44,32 +44,34 @@ const DeepAssets = () => {
 
             {/* Text Content */}
             <div className="flex items-start justify-center flex-col">
-              <div className="font-orbitron font-[600] dark:text-[#F1F5F9] text-[#1F2937] w-fit leading-normal text-xl mb-3 ">
+              <div className="font-orbitron font-[600] mb-6 dark:text-[#F1F5F9] text-[#1F2937] w-fit leading-normal text-xl">
                 {t('deepAssets.subtitle')}
               </div>
-              {deepAssetsFeatures.map(({ title, description }, index) => (
-                <div key={index} className="flex items-center my-1">
-                  <div className="inline-block">
-                    <DiamondIcon />
+              <div className="flex flex-col gap-4">
+                {deepAssetsFeatures.map(({ title, description }, index) => (
+                  <div key={index} className="flex items-center my-1">
+                    <div className="inline-block">
+                      <DiamondIcon />
+                    </div>
+                    <p className="lg:w-[500px] font-sans md:w-[70vw]">
+                      <span className="font-orbitron font-bold">{title}</span>{' '}
+                      {description}
+                    </p>
                   </div>
-                  <p className="lg:w-[500px] font-sans md:w-[70vw]">
-                    <span className="font-orbitron font-bold">{title}</span>{' '}
-                    {description}
-                  </p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
-            <div className="mt-4 mb-6 font-sans">
+            {/* <div className="mt-4 mb-6 font-sans">
               <p>{t('deepAssets.description')}</p>
-            </div>
+            </div> */}
 
             <a
               rel="noopener noreferrer"
               target="_blank"
               href="https://deepassets.earth/"
             >
-              <button className="py-3 font-sans hover:scale-105 text-neutral-200 text-lg px-5 bg-gradient-to-r from-[#3D81A4] dark:to-[#EF8F35] to-[#3D81A4] rounded-lg flex justify-center items-center">
+              <button className="py-3 shadow-[0px_8px_28px_0px_#605644A3] dark:shadow-[0px_15px_31px_0px_#000000] font-sans mt-8 hover:scale-105 text-neutral-200 text-lg px-5 bg-gradient-to-r from-[#3D81A4] dark:to-[#EF8F35] to-[#3D81A4] rounded-lg flex justify-center items-center">
                 {t('deepAssets.button')}
                 <ChevronRight />
               </button>

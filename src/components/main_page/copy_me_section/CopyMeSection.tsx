@@ -41,13 +41,13 @@ const CopyMeSection = () => {
                 className="w-full h-auto"
               />
             </div>
-            <h2 className="text-3xl w-fit font-orbitron font-semibold bg-gradient-to-r from-[#887FFF] via-[#9F5FFF] to-[#86A1FF] dark:from-[#fff] dark:via-[#AE86F1] dark:to-[#50D0FF] text-transparent bg-clip-text">
+            <h2 className="text-4xl w-fit font-orbitron font-semibold bg-gradient-to-r from-[#887FFF] via-[#9F5FFF] to-[#86A1FF] dark:from-[#fff] dark:via-[#AE86F1] dark:to-[#50D0FF] text-transparent bg-clip-text">
               {t('copyme_section.subtitle1')} <br />{' '}
               {t('copyme_section.subtitle2')}
             </h2>
 
-            <div className="my-8 z-10 dark:text-[#F1F5F9] text-[#334155]">
-              <div className="mb-2">{t('copyme_section.description1')}</div>
+            <div className="my-8 z-10 text-xl dark:text-[#F1F5F9] text-[#334155]">
+              <div className="mb-2 ">{t('copyme_section.description1')}</div>
               {t('copyme_section.description2')}
             </div>
             <a

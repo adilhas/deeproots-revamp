@@ -27,7 +27,7 @@ const PodcastSection = () => {
           </div>
 
           <div className=" space-y-10 justify-evenly flex flex-col lg:w-1/2 lg:pr-9 relative z-10">
-            <h2 className="text-3xl w-fit font-orbitron font-semibold bg-gradient-to-r from-[#B9620F] to-[#391D07] dark:from-[#CA9968] dark:to-[#D76306] text-transparent bg-clip-text">
+            <h2 className="text-[40px] leading-tight w-fit font-orbitron font-semibold bg-gradient-to-r from-[#B9620F] to-[#391D07] dark:from-[#CA9968] dark:to-[#D76306] text-transparent bg-clip-text">
               {t('podcast_section.subtitle')}
             </h2>
 
@@ -46,7 +46,7 @@ const PodcastSection = () => {
               />
             </div>
 
-            <p className="">{t('podcast_section.description')}</p>
+            <p className="text-lg">{t('podcast_section.description')}</p>
 
             <a
               rel="noopener noreferrer"

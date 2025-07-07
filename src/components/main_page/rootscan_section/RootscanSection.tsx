@@ -13,7 +13,8 @@ export default function RootscanSection() {
     <section className="bg-[#BC965A] dark:bg-primary-dark relative overflow-hidden">
       <div className="absolute top-[-100px] right-[-100px] lg:right-[10%] w-[250px] lg:w-[500px] h-[300px] bg-[#677950] blur-[80px] opacity-60 pointer-events-none z-0 dark:hidden" />
       <div className="absolute bottom-[-100px] right-[-100px] w-[500px] h-[200px] lg:h-[500px] bg-[#5F7044] dark:bg-[#364128] blur-3xl opacity-50 dark:opacity-60 lg:dark:opacity-40 pointer-events-none rounded-full z-0" />
-      <div className="absolute top-[-100px] left-[-100px] w-[100px] md:w-[600px] h-[70%] bg-[#533518] dark:bg-[#2e1908] blur-3xl opacity-60 pointer-events-none z-0" />
+      <div className="absolute top-[-100px] left-[-100px] w-[100px] md:w-[40%] h-[100%] bg-[#2E1401] dark:bg-[#2e1908] rounded-br-full blur-3xl opacity-40 pointer-events-none z-0" />
+      <div className="absolute bottom-[0px] left-[20%]  w-[250px] lg:w-[500px] h-[300px] bg-[#BD7B18] blur-[80px] opacity-60 pointer-events-none z-0 dark:hidden" />
 
       <div className="relative z-10 w-full x-20 max-w-[1200px] mx-auto px-10 py-16 lg:py-24">
         <div className="lg:text-left max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -28,7 +29,7 @@ export default function RootscanSection() {
                 <Image
                   src="/landing/rootscan-v2.png"
                   alt="Rootscan Landing"
-                  className="rounded-xl shadow-lg"
+                  className="rounded-4xl shadow-lg"
                   width={800}
                   height={500}
                   layout="responsive"
@@ -66,7 +67,7 @@ export default function RootscanSection() {
                 target="_blank"
                 href="https://rootscan.earth"
               >
-                <button className="px-6 hover:scale-105 py-3 text-lg font-medium rounded-full bg-gradient-to-r from-yellow-500 to-green-500 text-black hover:from-yellow-400 hover:to-green-400 transition">
+                <button className="px-6 font-orbitron hover:scale-105 py-3 text-lg font-medium rounded-full bg-gradient-to-r from-yellow-500 to-green-500 text-black hover:from-yellow-400 hover:to-green-400 transition">
                   {t('rootscan.cta')}
                 </button>
               </a>
@@ -80,7 +81,7 @@ export default function RootscanSection() {
             <Image
               src="/landing/rootscan-v2.png"
               alt="Rootscan Landing"
-              className="rounded-xl shadow-lg relative z-10"
+              className="rounded-4xl shadow-lg relative z-10"
               width={1200}
               height={800}
               layout="responsive"

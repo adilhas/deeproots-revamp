@@ -31,7 +31,7 @@ const FoundationSeatsSection = () => {
     <section className="bg-[#D5CFE0] dark:bg-primary-dark relative overflow-hidden">
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[350px] border-r-[350px] border-t-[500px] border-l-transparent border-r-transparent border-t-[#6A432C] opacity-20 blur-3xl pointer-events-none z-30 hidden dark:block" />
 
-      <div className="w-full  max-w-[1200px] mx-auto py-20 px-6 md:px-16 flex flex-col lg:flex-row items-center gap-10 relative">
+      <div className="w-full  max-w-[1200px] mx-auto py-20 px-6 md:px-16 flex flex-col lg:flex-row items-center gap-x-20 relative">
         <div className="w-full hidden lg:inline-block lg:w-1/2 aspect-square h-full  relative">
           <Image
             src="/landing/foundation-seats.jpeg"
@@ -73,7 +73,7 @@ const FoundationSeatsSection = () => {
                         {title}
                       </h3>
                     </div>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    <p className="text-gray-600 dark:text-gray-300 text-lg">
                       {description}
                     </p>
                   </div>

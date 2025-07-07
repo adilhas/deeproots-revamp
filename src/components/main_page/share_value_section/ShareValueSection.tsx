@@ -41,7 +41,7 @@ const ShareValueSection = () => {
       <div className="absolute top-0 bg-[#47866F] left-0 w-[100px] md:w-[500px] h-[300px] blur-3xl opacity-60 pointer-events-none z-10 dark:hidden" />
       <div className="absolute bottom-[-10px] bg-[#E88874] right-[-100px] w-[200px] md:w-[500px] h-[300px] blur-3xl opacity-50 pointer-events-none rounded-full z-10 dark:hidden" />
 
-      <div className="max-w-[1200px] mx-auto flex flex-col xl:flex-row items-start xl:items-center justify-center">
+      <div className="max-w-[1200px] mx-auto flex flex-col xl:flex-row items-start xl:items-center justify-center gap-x-8">
         <div className="flex flex-col xl:hidden">
           <h1 className="font-extrabold w-fit text-2xl xl:text-4xl font-orbitron bg-gradient-to-r from-[#E07C76] to-[#52b797] bg-clip-text text-transparent">
             {t('share_value_section.title')}

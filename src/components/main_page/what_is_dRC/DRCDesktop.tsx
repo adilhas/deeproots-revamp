@@ -46,7 +46,11 @@ const DRCDesktop = () => {
           alt="drc token"
           width={250}
           height={250}
-          className={isArabic ? 'translate-x-[13px]' : ''}
+          className={
+            isArabic
+              ? 'translate-x-[13px]'
+              : 'translate-x-0 lg:translate-x-[-9%]'
+          }
         />
       </div>
       <div className="h-[580px] relative">
@@ -73,11 +77,11 @@ const DRCDesktop = () => {
           <div
             className={`flex flex-col justify-center my-2 h-full ${isArabic ? 'min-w-[280px]' : ''}`}
           >
-            <ul className="space-y-[23px] h-full justify-start flex flex-col text-center text-2xl font-orbitron text-[#5C5F62] dark:text-[#94A3B8]">
+            <ul className="space-y-[26px] h-full w-[301px] justify-start flex flex-col text-center text-2xl font-orbitron text-[#5C5F62] dark:text-[#94A3B8]">
               {tokenFeatures.map((item, index) => (
                 <li
                   key={index}
-                  className="py-[8px] px-8 rounded-2xl bg-[#EBEBEB] dark:bg-[#212121]"
+                  className="py-[10px] px-8 rounded-2xl bg-[#EBEBEB] dark:bg-[#212121]"
                   style={{
                     boxShadow: isDark
                       ? '0px 15px 31px 0px #000000'

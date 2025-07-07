@@ -84,7 +84,12 @@ const WhatIsDeeprootsSection = () => {
       </div>
       <div className="w-full mt-8">
         <div className="text-center text-lg  md:text-3xl my-4 text-[#4B5563] dark:text-white">
-          {t('what_is_deeproots_section.subtitle')}
+          {/* {t('what_is_deeproots_section.subtitle')} */}A New Foundation for
+          the{' '}
+          <span className="text-transparent whitespace-nowrap bg-gradient-to-r font-semibold from-gradient-from to-gradient-to bg-clip-text">
+            Decentralized
+          </span>{' '}
+          World
         </div>
         <Link
           href={'/academy/about'}

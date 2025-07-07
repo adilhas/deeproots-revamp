@@ -31,12 +31,12 @@ const HeroPrivateSeedAccess = () => {
       {/* Text content */}
       <div className="absolute inset-0 z-20 flex items-center justify-center  text-center max-w-[350px] mx-auto">
         <div className="translate-y-[25px]">
-          <div className="flex justify-end mx-2 translate-y-[-10px]">
+          <div className="flex justify-end mx-2 translate-y-[-6px]">
             <span className="bg-[#FFD5B71A] py-1 px-2 rounded-lg font-semibold text-xs">
               Limited Seat
             </span>
           </div>
-          <div className="text-lg font-semibold font-orbitron dark:text-white text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
+          <div className="text-2xl font-semibold mb-1 font-orbitron dark:text-white text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
             Private Seed Access
           </div>
           <div className="text-xs px-3">
@@ -49,9 +49,10 @@ const HeroPrivateSeedAccess = () => {
             </div>
             <Link
               href="/connect/private-seed"
-              className="btn text-sm flex flex-row items-center gap-2 btn-sm bg-gradient-to-r from-gradient-from to-gradient-to dark:from-[#696969] dark:to-[#696969] border-0"
+              className="btn flex flex-row font-semibold items-center gap-1 text-xl bg-gradient-to-r from-gradient-from to-gradient-to dark:from-[#696969] dark:to-[#696969] border-0"
             >
-              Apply Now <PiRocketLaunch className="w-4 h-4 text-[#ff92fbe7]" />
+              Apply Now{' '}
+              <PiRocketLaunch className="w-5 h-5 text-white dark:text-[#ff92fbe7]" />
             </Link>
           </div>
         </div>

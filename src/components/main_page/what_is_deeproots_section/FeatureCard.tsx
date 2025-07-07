@@ -11,7 +11,7 @@ const DeepRootsCard = ({ icon, title, text }: CardProps) => {
   const { isDark } = useThemeContext();
   return (
     <div
-      className="bg-gradient-to-r from-[#AD1AAF] via-[#0085a8] to-neutral-500 dark:to-neutral-500 bg-clip-text text-transparent rounded-2xl  p-6 text-center flex flex-col items-center max-w-[300px] w-full"
+      className="bg-gradient-to-r from-gradient-from-light to-gradient-to-light dark:from-gradient-from dark:to-gradient-to  bg-clip-text text-transparent rounded-3xl  py-8 px-6 text-center flex flex-col items-center max-w-[300px] w-full"
       style={{
         boxShadow: `0px 15px 31px 0px ${isDark ? '#000000' : '#CCCCCC'}`,
       }}

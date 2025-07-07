@@ -31,7 +31,7 @@ const AboutSection: React.FC = () => {
         {aboutItems.map((item, index) => (
           <div
             key={index}
-            className="border border-[#0085a8] rounded-lg cursor-pointer hover:scale-105 transition-all"
+            className="border w-full max-w-[580px] mx-auto border-[#0085a8] rounded-lg cursor-pointer hover:scale-105 transition-all"
           >
             <Link href={item.link}>
               <button

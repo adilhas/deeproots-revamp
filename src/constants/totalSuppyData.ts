@@ -75,6 +75,7 @@ export const getTotalSupplyData = (t: TFunction) => [
     value: 60,
     color: '#9E2CA9',
     dot: '#9E2CA9',
+    innerShadowColor: '#F9BDFF',
     amount: '60M',
   },
   {
@@ -84,16 +85,9 @@ export const getTotalSupplyData = (t: TFunction) => [
     value: 20,
     color: '#3B82A4',
     dot: '#3B82A4',
+    innerShadowColor: '#BDEAFF',
+
     amount: '20M',
-  },
-  {
-    key: 'seed',
-    name: t('drc.total-supply.seed.name'),
-    desc: t('drc.total-supply.seed.desc'),
-    value: 4,
-    color: '#F29C0C',
-    dot: '#F29C0C',
-    amount: '4M',
   },
   {
     key: 'dev',
@@ -102,7 +96,31 @@ export const getTotalSupplyData = (t: TFunction) => [
     value: 6,
     color: '#F03F5E',
     dot: '#F03F5E',
+    innerShadowColor: '#FF96A8',
+
     amount: '6M',
+  },
+  {
+    key: 'seed',
+    name: t('drc.total-supply.seed.name'),
+    desc: t('drc.total-supply.seed.desc'),
+    value: 4,
+    color: '#F29C0C',
+    dot: '#F29C0C',
+    innerShadowColor: '#FFE19A',
+
+    amount: '4M',
+  },
+  {
+    key: 'ai',
+    name: t('drc.total-supply.ai.name'),
+    desc: t('drc.total-supply.ai.desc'),
+    value: 4,
+    color: '#AB7FF8',
+    dot: '#AB7FF8',
+    innerShadowColor: '#C09CFF',
+
+    amount: '4M',
   },
   {
     key: 'community',
@@ -111,6 +129,8 @@ export const getTotalSupplyData = (t: TFunction) => [
     value: 2,
     color: '#D3D3D4',
     dot: '#D3D3D4',
+    innerShadowColor: '#C9C9C9',
+
     amount: '2M',
   },
   {
@@ -120,17 +140,11 @@ export const getTotalSupplyData = (t: TFunction) => [
     value: 2,
     color: '#389EA5',
     dot: '#389EA5',
+    innerShadowColor: '#99FAFF',
+
     amount: '2M',
   },
-  {
-    key: 'ai',
-    name: t('drc.total-supply.ai.name'),
-    desc: t('drc.total-supply.ai.desc'),
-    value: 4,
-    color: '#AB7FF8',
-    dot: '#AB7FF8',
-    amount: '4M',
-  },
+
   {
     key: 'reserved',
     name: t('drc.total-supply.reserved.name'),
@@ -138,6 +152,8 @@ export const getTotalSupplyData = (t: TFunction) => [
     value: 2,
     color: '#FA7E02',
     dot: '#FA7E02',
+    innerShadowColor: '#FFCE9D',
+
     amount: '2M',
   },
 ];

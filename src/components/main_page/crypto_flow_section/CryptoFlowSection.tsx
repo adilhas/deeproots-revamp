@@ -71,7 +71,7 @@ export default function CryptoFlowSection() {
 
         {/* DeepRoots */}
         <div className="flex flex-col items-center relative">
-          <div className="text-xl font-glorio mb-4 xl:mb-0 xl:absolute top-[-40px]">
+          <div className="text-xl font-glorio  mb-4 xl:mb-0 xl:absolute top-[-40px]">
             {t('crypto_flow_section.new_mission')}
           </div>
           <div
@@ -80,7 +80,7 @@ export default function CryptoFlowSection() {
               boxShadow: `0px 6px 14px 0px ${isDark ? '#000000' : '#0000001F'}`,
             }}
           >
-            <h2 className="text-xl font-bold">DEEPROOTS (dRC)</h2>
+            <h2 className="text-xl font-bold font-orbitron">DEEPROOTS (dRC)</h2>
           </div>
         </div>
       </div>

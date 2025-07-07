@@ -37,7 +37,9 @@ const InnofiSection = () => {
 
   return (
     <section className="bg-[#FDFDF1] dark:bg-primary-dark py-28 px-6 md:px-16 w-full relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-[100px] md:w-[300px] h-[500px] bg-[#C37692] blur-3xl opacity-30 pointer-events-none z-0 dark:hidden" />
+      <div className="absolute top-0 left-0 w-[100px] md:w-[300px] h-[500px] bg-[#C37692] blur-3xl opacity-50 pointer-events-none z-0 dark:hidden" />
+      <div className="absolute bottom-0 left-0 w-[100px] md:w-[300px] h-[200px] bg-[#DC6C95] blur-3xl opacity-30 pointer-events-none z-0 dark:hidden" />
+
       <div className="absolute bottom-[-100px] right-[-100px] w-[200px] md:w-[500px] h-[500px] bg-[#79D9F8] blur-3xl opacity-50 dark:opacity-20 pointer-events-none rounded-full z-0 " />
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[350px] border-r-[350px] border-t-[500px] border-l-transparent border-r-transparent border-t-[#C37692] opacity-20 blur-3xl pointer-events-none z-30 hidden dark:block" />
 

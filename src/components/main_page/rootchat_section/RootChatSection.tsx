@@ -60,9 +60,11 @@ const RootChatSection = () => {
                     width={28}
                     height={28}
                   />
-                  <span className="font-semibold text-md">{title}</span>
+                  <span className="font-semibold text-lg">{title}</span>
                 </div>
-                <p className="text-neutral-700 dark:text-neutral-300">{text}</p>
+                <p className="text-neutral-700 dark:text-neutral-300 text-lg">
+                  {text}
+                </p>
               </li>
             ))}
           </ul>

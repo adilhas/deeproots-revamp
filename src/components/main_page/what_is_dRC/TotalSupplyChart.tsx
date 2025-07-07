@@ -33,7 +33,7 @@ const TotalSupplyChart: React.FC<TotalSupplyChartProps> = ({
   };
 
   return (
-    <div className="relative flex items-center justify-center w-[330px] h-[200px]">
+    <div className="relative flex items-center justify-center w-[330px] h-[269px]">
       {showGradient && (
         <div
           className="absolute top-1/2 left-1/2 pointer-events-none"
@@ -51,7 +51,7 @@ const TotalSupplyChart: React.FC<TotalSupplyChartProps> = ({
       )}
 
       {mounted && (
-        <PieChart width={200} height={200} style={{ zIndex: 1 }}>
+        <PieChart width={269} height={269} style={{ zIndex: 1 }}>
           <Pie
             data={totalSupplyData}
             cx="50%"
@@ -78,12 +78,12 @@ const TotalSupplyChart: React.FC<TotalSupplyChartProps> = ({
           <span className="text-[12px] dark:text-[#A1A1AA] font-[400]">
             Total Supply
           </span>
-          <span className="text-[48px] font-[700] dark:text-[white] leading-[56px]">
+          <span className="text-5xl font-[700] dark:text-[white] leading-[56px]">
             100M
           </span>
-          <span className="text-[12px] dark:text-[#A1A1AA] font-[400]">
+          {/* <span className="text-[12px] dark:text-[#A1A1AA] font-[400]">
             Total dRC minted
-          </span>
+          </span> */}
         </div>
       </div>
     </div>

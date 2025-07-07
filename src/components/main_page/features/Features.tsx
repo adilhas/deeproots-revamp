@@ -9,7 +9,7 @@ const Features = () => {
   const features = getFeaturesCardItems(t);
 
   return (
-    <main className="relative py-10 md:py-20 flex flex-col items-center dark:bg-[#161616] bg-[#e8e8e9] w-full">
+    <main className="relative mx-auto py-10 md:py-20 flex flex-col items-center dark:bg-[#161616] bg-[#e8e8e9] w-full">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl px-4 w-fit">
         {features.map((card, index) => (
           <div key={index} className="flex items-center space-x-4 p-4">

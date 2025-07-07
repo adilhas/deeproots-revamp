@@ -64,11 +64,13 @@ const RootCoreSection = () => {
               <li key={title} className="flex flex-col items-start gap-1">
                 <div className="flex items-center gap-3">
                   <Icon className="w-8 h-8 text-[#0977E6] dark:text-[#2090FF]" />
-                  <span className="font-semibold text-md text-[#CE3325] dark:text-[#FC8B81] font-orbitron">
+                  <span className="font-semibold text-lg text-[#CE3325] dark:text-[#FC8B81] font-orbitron">
                     {title}
                   </span>
                 </div>
-                <p className="text-[#20507E] dark:text-[#E0EAF6]">{text}</p>
+                <p className="text-[#20507E] dark:text-[#E0EAF6] text-lg">
+                  {text}
+                </p>
               </li>
             ))}
           </ul>

@@ -8,7 +8,7 @@ const AddressWallet = () => {
   return (
     <main className="bg-[#D4D4D4] dark:bg-primary-dark">
       <div className="w-full  max-w-[1200px] mx-auto  py-20 relative lg:px-10 px-5">
-        <div className="flex flex-col lg:flex-row items-stretch  gap-2 w-full">
+        <div className="flex flex-col lg:flex-row items-stretch  gap-2 gap-x-5 w-full">
           <div className="flex justify-between w-full lg:w-1/2   lg:ml-10  lg:text-start items-start flex-col">
             <div className="inline-block">
               <div style={{ opacity: 1, transform: 'none' }}>
