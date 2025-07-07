@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
 
 const Hero = () => {
   const { t } = useTranslation('academy/about');
@@ -29,9 +30,12 @@ const Hero = () => {
 
         <div className="mt-12 relative group inline-block">
           <div className="absolute -inset-1 bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] rounded-full blur-md opacity-70 group-hover:opacity-100 transition duration-300"></div>
-          <button className="relative px-8 py-4 bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] text-white rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105">
+          <Link
+            href={'/connect/private-seed'}
+            className="relative px-8 py-4 bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] text-white rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105"
+          >
             {t('hero.cta')}
-          </button>
+          </Link>
         </div>
       </div>
     </section>
