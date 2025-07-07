@@ -4,25 +4,117 @@ const ProcessSteps = () => (
   <div className="mt-8 bg-[#252525] p-4 md:p-6 rounded-xl">
     <h3 className="text-lg font-bold mb-4">Process</h3>
     <ol className="space-y-4 text-sm">
-      {[...Array(7)].map((_, i) => (
-        <li
-          key={i}
-          className="flex flex-col md:flex-row md:items-center justify-between gap-2"
-        >
-          <div>
-            <div className="font-medium mb-1">{i + 1}. Step Title Here</div>
-            <div className="text-gray-400">
-              Description and possible subpoints (e.g.,{' '}
-              <em>company deck, KYC, proof of funds</em>)
-            </div>
+      <li className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+        <div>
+          <div className="font-medium mb-1">Application Received</div>
+          <div className="text-gray-400">
+            KYC, Entity Type, Confidentiality Agreement Checked
           </div>
-          <div className="flex gap-2">
-            <div className="w-3 h-3 bg-green-500 rounded-full" />
-            <div className="w-3 h-3 bg-yellow-500 rounded-full" />
-            <div className="w-3 h-3 bg-red-500 rounded-full" />
+        </div>
+        <div className="flex gap-2">
+          <div className="w-3 h-3 bg-green-500 rounded-full" />
+          <div className="w-3 h-3 bg-yellow-500 rounded-full" />
+          <div className="w-3 h-3 bg-red-500 rounded-full" />
+        </div>
+      </li>
+      <li className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+        <div>
+          <div className="font-medium mb-1">Approved by the founder</div>
+        </div>
+        <div className="flex gap-2">
+          <div className="w-3 h-3 bg-green-500 rounded-full" />
+          <div className="w-3 h-3 bg-yellow-500 rounded-full" />
+          <div className="w-3 h-3 bg-red-500 rounded-full" />
+        </div>
+      </li>
+      <li className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+        <div>
+          <div className="font-medium mb-1">Due Diligence Package</div>
+          <div className="text-gray-400">
+            <ul>
+              <li>
+                Package Submitted by Seeder (Company deck, proof of funds,
+                project alignment).
+              </li>
+              <li>
+                KYC & NDA Sent to Seeder (Auto-trigger from CRM or backend email
+                tool)
+              </li>
+            </ul>
           </div>
-        </li>
-      ))}
+        </div>
+        <div className="flex gap-2">
+          <div className="w-3 h-3 bg-green-500 rounded-full" />
+          <div className="w-3 h-3 bg-yellow-500 rounded-full" />
+          <div className="w-3 h-3 bg-red-500 rounded-full" />
+        </div>
+      </li>
+      <li className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+        <div>
+          <div className="font-medium mb-1">Compliance Check</div>
+          <div className="text-gray-400">
+            <ul>
+              <li>NDA Received</li>
+              <li>
+                KYC Verified (Tick after backend uploads docs or AML/KYC review)
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="flex gap-2">
+          <div className="w-3 h-3 bg-green-500 rounded-full" />
+          <div className="w-3 h-3 bg-yellow-500 rounded-full" />
+          <div className="w-3 h-3 bg-red-500 rounded-full" />
+        </div>
+      </li>
+      <li className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+        <div>
+          <div className="font-medium mb-1">
+            Final Confirmation (Approved/Denied)
+          </div>
+          <div className="text-gray-400">
+            <ul>
+              <li>Founder Approved</li>
+              <li>
+                Request Founder Call (If skipped earlier or second round){' '}
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="flex gap-2">
+          <div className="w-3 h-3 bg-green-500 rounded-full" />
+          <div className="w-3 h-3 bg-yellow-500 rounded-full" />
+          <div className="w-3 h-3 bg-red-500 rounded-full" />
+        </div>
+      </li>
+      <li className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+        <div>
+          <div className="font-medium mb-1">
+            Capital transfer (Copy of wallet transaction)
+          </div>
+        </div>
+        <div className="flex gap-2">
+          <div className="w-3 h-3 bg-green-500 rounded-full" />
+          <div className="w-3 h-3 bg-yellow-500 rounded-full" />
+          <div className="w-3 h-3 bg-red-500 rounded-full" />
+        </div>
+      </li>
+      <li className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+        <div>
+          <div className="font-medium mb-1">Access Granted</div>
+          <div className="text-gray-400">
+            <ul>
+              <li>Whitelist Added</li>
+              <li>Welcome Email with Dashboard Credentials </li>
+            </ul>
+          </div>
+        </div>
+        <div className="flex gap-2">
+          <div className="w-3 h-3 bg-green-500 rounded-full" />
+          <div className="w-3 h-3 bg-yellow-500 rounded-full" />
+          <div className="w-3 h-3 bg-red-500 rounded-full" />
+        </div>
+      </li>
     </ol>
 
     <div className="mt-6 flex gap-4 justify-end">
