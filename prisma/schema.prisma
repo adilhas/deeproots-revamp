@@ -28,8 +28,28 @@ model PrivateSeedSubmission {
   indvOrOrg         String
   confidentiality   Boolean
   acknowledgement   Boolean
-   disclosureTerm    Boolean   // ✅ Newly added
-  nonUsCitizen      Boolean 
+  disclosureTerm    Boolean
+  nonUsCitizen      Boolean
   applicationStatus String   @default("Received")
   createdAt         DateTime @default(now())
+
+  seederUser        SeederUser? @relation(name: "ApplicationToUser")
+}
+
+model SeederAccountToken {
+  id         String   @id @default(cuid())
+  email      String
+  token      String   @unique
+  expiresAt  DateTime
+  used       Boolean  @default(false)
+  createdAt  DateTime @default(now())
+}
+
+model SeederUser {
+  id                 String   @id @default(cuid())
+  email              String   @unique
+  passwordHash       String
+  application        PrivateSeedSubmission @relation(name: "ApplicationToUser", fields: [applicationId], references: [id])
+  applicationId      String   @unique
+  createdAt          DateTime @default(now())
 }

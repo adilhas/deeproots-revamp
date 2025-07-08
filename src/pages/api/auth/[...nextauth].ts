@@ -1,5 +1,7 @@
 import NextAuth, { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import { prisma } from '@/lib/prisma';
+import bcrypt from 'bcryptjs';
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -8,24 +10,41 @@ export const authOptions: NextAuthOptions = {
       credentials: {
         username: { label: 'Username or Email', type: 'text' },
         password: { label: 'Password', type: 'password' },
-        role: { label: 'Role', type: 'text' },
       },
       async authorize(credentials) {
-        const { username, password, role } = credentials || {};
+        const { username, password } = credentials || {};
 
-        if (role === 'admin') {
-          if (username === 'admin' && password === 'pass12345') {
-            return { id: '1', name: 'Admin', role: 'admin' };
-          }
+        if (!username || !password) return null;
+
+        // Admin user
+        if (username === 'admin@deeproots.earth' && password === 'pass12345') {
+          return {
+            id: '1',
+            name: 'Admin',
+            email: username,
+            role: 'admin',
+          };
         }
 
-        if (role === 'seeder') {
-          if (username === 'seeder@example.com' && password === 'seed12345') {
-            return { id: '2', name: 'Seeder', role: 'seeder', email: username };
-          }
-        }
+        // Seeder user
+        const seeder = await prisma.seederUser.findUnique({
+          where: { email: username },
+          include: {
+            application: true, // optional if you want more info later
+          },
+        });
 
-        return null;
+        if (!seeder) return null;
+
+        const isValid = await bcrypt.compare(password, seeder.passwordHash);
+        if (!isValid) return null;
+
+        return {
+          id: seeder.id,
+          name: seeder.application?.fullName || 'Seeder', // fallback if no name
+          email: seeder.email,
+          role: 'seeder',
+        }; // Invalid credentials
       },
     }),
   ],

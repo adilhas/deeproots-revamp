@@ -9,6 +9,7 @@ export async function middleware(req: NextRequest) {
   const isPublicPath =
     pathname.startsWith('/admin/login') ||
     pathname.startsWith('/seeder/login') ||
+    pathname.startsWith('/seeder/create-account') ||
     pathname.startsWith('/_next') ||
     pathname.startsWith('/favicon') ||
     pathname.startsWith('/api');
