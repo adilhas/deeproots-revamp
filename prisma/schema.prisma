@@ -24,10 +24,12 @@ model PrivateSeedSubmission {
   capital           String
   value             String
   whyJoin           String
-  canPassKyc        String
+  canPassKyc        Boolean
   indvOrOrg         String
   confidentiality   Boolean
   acknowledgement   Boolean
+   disclosureTerm    Boolean   // ✅ Newly added
+  nonUsCitizen      Boolean 
   applicationStatus String   @default("Received")
   createdAt         DateTime @default(now())
 }

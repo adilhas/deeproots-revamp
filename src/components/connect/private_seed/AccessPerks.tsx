@@ -41,7 +41,7 @@ const AccessPerks = () => {
           </span>
           {t('accessPerks.heading.part2')}
         </h2>
-        <div className="text-center">{t('accessPerks.subheading')}</div>
+        {/* <div className="text-center">{t('accessPerks.subheading')}</div> */}
       </div>
 
       <div className="my-16">

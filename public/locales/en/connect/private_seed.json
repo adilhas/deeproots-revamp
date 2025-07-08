@@ -10,11 +10,11 @@
     "title": "Access Criteria – Who Can Join",
     "description": "To qualify, applicants must meet the following:",
     "criteria": [
-      "High-Net-Worth Individual (HNWI) or Strategic Partner",
-      "Capital Allocation Range: $5,000 – $1,000,000",
+      "Experienced Contributor or Strategic Partner",
+      "Contribution Range: $5,000 to $1,000,000 for Ecosystem Access",
       "Background in Blockchain, Technology, Capital, or Strategic Innovation",
-      "Willing to sign an NDA and complete identity verification",
-      "Once closed, seats will never be offered again at this price"
+      "Willing to sign NDA and complete identity verification",
+      "Seats are limited and may not be available under current terms later"
     ]
   },
   "form": {
@@ -35,16 +35,16 @@
     "kyc": "Are you able to pass KYC & NDA requirements?",
     "signature": "Signature of Interest",
     "consent": "Do you agree to be contacted under a confidentiality clause?",
-    "submit": "Submit Application",
+    "submit": "Secure my foundation Seat",
     "note_title": "Note:",
     "note_line1": "Applications are reviewed within 1–2 business days. All submissions are strictly confidential.",
     "note_line2": "As a PrivateSeed applicant, you may qualify for:",
     "note_points": {
-      "discount": "⚡ Major token discounts",
-      "access": "🔒 Exclusive product access",
-      "profit": "🏛️ Long-term profit-sharing through the DEEPROOTS ecosystem"
+      "discount": "️Special contribution tiers with ecosystem access",
+      "access": "Early access to exclusive products and features",
+      "profit": "Participation in long-term ecosystem engagement programs"
     },
-    "note_line3": "This is a once-in-a-lifetime opportunity to become part of the foundation layer of DeWorld — before it goes public."
+    "note_line3": "This is a unique opportunity to participate in the foundational community layer of DeWorld — prior to public access."
   },
   "accessPerks": {
     "heading": {
@@ -55,8 +55,8 @@
     "subheading": "Invest $10K or more and get:",
     "earlyAccessTitle": "Full early access to:",
     "founderCircleTitle": "Founder’s Circle Bonus",
-    "callDescription": "Secure a private 15-minute strategy call with the Founder — uncover insider vision, align on high-impact contribution, and explore long-term collaboration at the core of DeWorld.",
-    "note1": "Exclusively available to accepted $10K+ contributors.",
+    "callDescription": "Participate in a private 15-minute community call with the Founder, share ideas, discuss ecosystem participation, and explore long-term community collaboration within DeWorld.",
+    "note1": "Available only to accepted contributors of $10K or more.",
     "note2": "Calls are scheduled in Dubai Time (GMT+4).",
     "products": {
       "TheAddress": "The Address",
@@ -74,28 +74,32 @@
     },
     "q2": {
       "question": "How do I know if I’m accepted?",
-      "answer": "You’ll receive a personal approval email within 3–5 business days."
+      "answer": "You’ll receive an official email within 48 hours."
     },
     "q3": {
       "question": "Can I increase my allocation later?",
-      "answer": "Yes, but only if seats are still available priority goes to early contributors."
+      "answer": "Yes, if additional seats are available at that time."
     },
     "q4": {
       "question": "What is the vesting period?",
       "answer": "All PrivateSeed tokens follow a custom vesting schedule outlined in your agreement."
+    },
+    "q5": {
+      "question": "What if I miss the Private Seed?",
+      "answer": "You will be added to our official waiting list for future opportunities."
     }
   },
   "access_benefits": {
     "heading": "What You Gain as a PrivateSeed Contributor",
     "top": [
-      "Token Discounts (pre-public pricing)",
+      "Priority Token Access (before public release)",
       "",
-      "Lifetime Foundation Governance"
+      "Lifetime Foundation Participation Rights"
     ],
     "bottom": [
       "Early Product Access (Wallet, DEX, GameFi)",
       "Genesis Contributor Circle (100 seats)",
-      "Ecosystem Growth Share"
+      "Ecosystem Participation Rewards"
     ]
   }
 }

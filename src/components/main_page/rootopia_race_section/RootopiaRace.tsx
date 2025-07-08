@@ -97,8 +97,9 @@ const RootopiaRace = () => {
                 <div>
                   {t('rootopia.starting-pool.label')} <br />
                   <span className="text-xl font-bold">
-                    $1,000,000 - $20,000,000 <br />
-                    {t('rootopia.starting-pool.ending')}
+                    $1M to $10M
+                    {/* <br />
+                    {t('rootopia.starting-pool.ending')} */}
                   </span>
                 </div>
               </div>

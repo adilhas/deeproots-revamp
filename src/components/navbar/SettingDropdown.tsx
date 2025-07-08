@@ -150,6 +150,12 @@ const SettingDropdown = () => {
           <li>
             <Link href="/public-relations">Public Relations</Link>
           </li>
+          <li>
+            <Link href="/dashboard">Root Admin Login</Link>
+          </li>
+          <li>
+            <Link href={'/foundation-member'}>Foundation Member</Link>
+          </li>
         </ul>
       )}
     </div>

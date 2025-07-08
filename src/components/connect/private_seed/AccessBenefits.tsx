@@ -60,30 +60,38 @@ const AccessBenefits = () => {
           </div>
 
           <div className="flex flex-col gap-4 md:gap-0 md:flex-row items-center w-[85%] justify-between mx-auto">
-            {topBenefits.map((item, index) => (
-              <div
-                key={index}
-                className={`relative ${item === '' ? 'hidden md:inline-block' : ''}`}
-              >
-                <Image
-                  priority
-                  height={311}
-                  width={350}
-                  src={
-                    isDark
-                      ? '/connect/access-benefit-card-dark.png'
-                      : '/connect/access-benefit-card.png'
-                  }
-                  alt="card background"
-                  className={item === '' ? 'opacity-0' : ''}
-                />
-                {item && (
-                  <div className="absolute top-[45%] text-center left-1/2 -translate-x-1/2 text-md md:text-xs lg:text-lg w-[87%]">
-                    {item}
-                  </div>
-                )}
-              </div>
-            ))}
+            {topBenefits.map((item, index) => {
+              const formatted = item.replace(
+                /\s*\((.*?)\)/g,
+                (_, match) => `<br />(${match})`
+              );
+
+              return (
+                <div
+                  key={index}
+                  className={`relative ${item === '' ? 'hidden md:inline-block' : ''}`}
+                >
+                  <Image
+                    priority
+                    height={311}
+                    width={350}
+                    src={
+                      isDark
+                        ? '/connect/access-benefit-card-dark.png'
+                        : '/connect/access-benefit-card.png'
+                    }
+                    alt="card background"
+                    className={item === '' ? 'opacity-0' : ''}
+                  />
+                  {item && (
+                    <div
+                      className="absolute top-[45%] text-center left-1/2 -translate-x-1/2 text-md md:text-xs lg:text-lg w-[87%]"
+                      dangerouslySetInnerHTML={{ __html: formatted }}
+                    />
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           {/* Desktop Heading */}
@@ -92,24 +100,32 @@ const AccessBenefits = () => {
           </div>
 
           <div className="flex flex-col gap-5 md:gap-0 md:flex-row items-center w-[85%] justify-between mx-auto">
-            {bottomBenefits.map((item, index) => (
-              <div key={index} className="relative">
-                <Image
-                  priority
-                  height={311}
-                  width={350}
-                  src={
-                    isDark
-                      ? '/connect/access-benefit-card-dark.png'
-                      : '/connect/access-benefit-card.png'
-                  }
-                  alt="card background"
-                />
-                <div className="absolute top-[45%] text-center left-1/2 -translate-x-1/2 text-md md:text-xs lg:text-lg w-[87%]">
-                  {item}
+            {bottomBenefits.map((item, index) => {
+              const formatted = item.replace(
+                /\s*\((.*?)\)/g,
+                (_, match) => `<br />(${match})`
+              );
+
+              return (
+                <div key={index} className="relative">
+                  <Image
+                    priority
+                    height={311}
+                    width={350}
+                    src={
+                      isDark
+                        ? '/connect/access-benefit-card-dark.png'
+                        : '/connect/access-benefit-card.png'
+                    }
+                    alt="card background"
+                  />
+                  <div
+                    className="absolute top-[45%] text-center left-1/2 -translate-x-1/2 text-md md:text-xs lg:text-lg w-[87%]"
+                    dangerouslySetInnerHTML={{ __html: formatted }}
+                  />
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

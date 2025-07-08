@@ -148,6 +148,10 @@ export const getfooterLinks = (t: TFunction) => [
         label: t('footer.RootIdentity.RootScan'),
         href: 'https://www.rootscan.earth',
       },
+      {
+        label: 'Root Admin',
+        href: '/dashboard',
+      },
     ],
     hoverColor: 'hover:text-[#FF635D]',
   },
@@ -170,6 +174,10 @@ export const getfooterLinks = (t: TFunction) => [
       {
         label: t('footer.RootConnect.Hackathons'),
         href: '/connect/internal-hackathon',
+      },
+      {
+        label: 'Foundation Member',
+        href: '',
       },
     ],
     hoverColor: 'hover:text-[#FFB501]',

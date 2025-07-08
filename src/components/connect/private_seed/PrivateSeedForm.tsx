@@ -1,6 +1,6 @@
 'use client';
 
-import { JSX, useState } from 'react';
+import React, { JSX, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -24,18 +24,17 @@ const PrivateSeedSchema = z.object({
   ),
   country: z.string().min(1, 'Country is required'),
   linkedin: z.string().url('Invalid URL').optional().or(z.literal('')),
-  capital: z.enum(
-    ['$5k', '$10k', '$20k', '$25k', '$50k', '$100k', '$250k', '$500k', '$1M+'],
-    {
-      errorMap: () => ({
-        message: 'Please select a valid investment amount (min $5k)',
-      }),
-    }
-  ),
+  capital: z
+    .number({
+      required_error: 'Capital is required',
+      invalid_type_error: 'Capital must be a number',
+    })
+    .min(5000, { message: 'Minimum capital is $5k' }),
+
   value: z.string().min(1, 'This field is required'),
   whyJoin: z.string().min(1, 'This field is required'),
-  canPassKyc: z.enum(['Yes', 'No'], {
-    errorMap: () => ({ message: 'This field is required' }),
+  canPassKyc: z.literal(true, {
+    errorMap: () => ({ message: 'You must agree to pass KYC' }),
   }),
   indvOrOrg: z.enum(['Ind', 'Org'], {
     errorMap: () => ({ message: 'This field is required' }),
@@ -46,6 +45,12 @@ const PrivateSeedSchema = z.object({
   acknowledgement: z.literal(true, {
     errorMap: () => ({ message: 'You must acknowledge the terms' }),
   }),
+  disclosureTerm: z.literal(true, {
+    errorMap: () => ({ message: 'You must agree disclosure terms' }),
+  }),
+  nonUsCitizen: z.literal(true, {
+    errorMap: () => ({ message: 'You must be non US citizen' }),
+  }),
 });
 
 type PrivateSeedFormData = z.infer<typeof PrivateSeedSchema>;
@@ -54,6 +59,7 @@ type FieldKey = keyof PrivateSeedFormData;
 const PrivateSeedForm = () => {
   const { t } = useTranslation('connect/private_seed');
   const { isDark } = useThemeContext();
+  const [customCapital, setCustomCapital] = useState('');
 
   const {
     register,
@@ -96,16 +102,17 @@ const PrivateSeedForm = () => {
     }
   };
   const capitalOptions = [
-    '$5k',
-    '$10k',
-    '$20k',
-    '$25k',
-    '$50k',
-    '$100k',
-    '$250k',
-    '$500k',
-    '$1M+',
+    { label: '$5k', value: 5000 },
+    { label: '$10k', value: 10000 },
+    { label: '$20k', value: 20000 },
+    { label: '$25k', value: 25000 },
+    { label: '$50k', value: 50000 },
+    { label: '$100k', value: 100000 },
+    { label: '$250k', value: 250000 },
+    { label: '$500k', value: 500000 },
+    { label: '$1M+', value: 1000000 },
   ] as const;
+  // const values = watch(); // watch all fields
 
   return (
     <section id="access-form" className="mx-auto py-16">
@@ -127,7 +134,7 @@ const PrivateSeedForm = () => {
       >
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="space-y-7 w-full mx-auto max-w-[700px]"
+          className="space-y-7 w-full mx-auto max-w-[750px]"
         >
           {(
             [
@@ -182,15 +189,35 @@ const PrivateSeedForm = () => {
 
           {/* Capital Selector */}
           <div
-            className="border-0 bg-white dark:bg-[#303030] gap-2 rounded-2xl w-full py-3 px-4"
+            className="border-0 bg-white dark:bg-[#303030] gap-2 rounded-2xl w-full py-3 px-4 "
             style={{ boxShadow: `0px 4px 20px 0px #00000073` }}
           >
-            <div className="flex items-center">
-              <PiCurrencyDollarSimple className="w-5 h-5" />
-              <div>{t(`form.placeholders.capital`)}</div>
+            <div className="flex flex-col items-start gap-y-2 lg:items-center lg:flex-row w-full justify-between">
+              <div>
+                <div className="flex items-center">
+                  <PiCurrencyDollarSimple className="w-5 h-5" />
+                  <div>{t(`form.placeholders.capital`)}</div>
+                </div>
+              </div>
+              <div>
+                <input
+                  type="number"
+                  className="grow border border-[#D4D4D4] text-sm dark:border-gray-300 px-3 py-2 rounded-xl placeholder-[#525252] dark:placeholder-gray-300"
+                  placeholder={'Custom Amount'}
+                  value={customCapital}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setCustomCapital(value);
+                    setValue('capital', Number(value), {
+                      shouldValidate: true,
+                      shouldDirty: true,
+                    });
+                  }}
+                />
+              </div>
             </div>
             <div
-              className="flex flex-wrap gap-3 text-white w-fit mx-auto justify-start px-6 my-3 py-4 bg-gradient-to-r from-[#AD1AAF] to-[#0085A8] dark:from-[#26252E] dark:to-[#26252E] rounded-lg"
+              className="flex w-full flex-wrap gap-1 text-white mx-auto  justify-between px-2 my-3 py-4 bg-gradient-to-r from-[#AD1AAF] to-[#0085A8] dark:from-[#26252E] dark:to-[#26252E] rounded-lg"
               style={{
                 boxShadow: isDark
                   ? `0px 8px 16px 0px #0F172A05,0px 4px 8px 0px #0F172A08,0px 0px 20px 0px #433E57 inset,10px 10px 30px 0px #000000B2`
@@ -198,25 +225,32 @@ const PrivateSeedForm = () => {
                 backdropFilter: `blur(40px)`,
               }}
             >
-              {capitalOptions.map((val, index, array) => (
-                <div key={index} className="flex items-center">
-                  <span
-                    className={`cursor-pointer ${
-                      selectedCapital === val ? 'underline' : 'hover:underline'
+              {capitalOptions.map(({ label, value }, index, array) => (
+                <React.Fragment key={value}>
+                  <div
+                    className={`flex items-center cursor-pointer px-2 rounded-md ${
+                      selectedCapital === value
+                        ? 'bg-[#FFFFFF] text-black'
+                        : 'hover:bg-[#FFFFFF] hover:text-black'
                     }`}
-                    onClick={() =>
-                      setValue('capital', val, {
+                    onClick={() => {
+                      setCustomCapital('');
+                      setValue('capital', value, {
                         shouldValidate: true,
                         shouldDirty: true,
-                      })
-                    }
+                      });
+                    }}
                   >
-                    {val}
-                  </span>
+                    {label}
+                  </div>
+
+                  {/* Add separator only between items */}
                   {index !== array.length - 1 && (
-                    <span className="mx-2 text-[#EB8787]">|</span>
+                    <div className="text-[#EB8787] mx-[1px] select-none w-fit">
+                      |
+                    </div>
                   )}
-                </div>
+                </React.Fragment>
               ))}
             </div>
             {errors.capital && (
@@ -243,36 +277,10 @@ const PrivateSeedForm = () => {
             </div>
           ))}
 
-          {/* KYC */}
-          <div>
-            <p className="text-sm font-medium mb-2">{t('form.kyc')}</p>
-            <div className="flex gap-6">
-              {(['Yes', 'No'] as const).map((val) => (
-                <label
-                  key={val}
-                  className="flex items-center gap-2 cursor-pointer"
-                >
-                  <input
-                    type="radio"
-                    value={val}
-                    {...register('canPassKyc')}
-                    className="radio radio-sm"
-                  />
-                  <span>{val}</span>
-                </label>
-              ))}
-            </div>
-            {errors.canPassKyc && (
-              <p className="text-red-500 text-sm mt-1">
-                {errors.canPassKyc.message}
-              </p>
-            )}
-          </div>
-
           {/* Individual or Org */}
           <div>
             <p className="text-sm font-medium mb-2">
-              Are you applying as an individual or organization?
+              Are you applying as an Individual or Organization?
             </p>
             <div className="flex gap-6">
               {(['Ind', 'Org'] as const).map((val) => (
@@ -304,11 +312,28 @@ const PrivateSeedForm = () => {
               {...register('confidentiality')}
               className="checkbox bg-white text-black checked:bg-green-500"
             />
-            <span>{t('form.consent')}</span>
+            <span>I agree to be contacted under a confidentiality clause.</span>
           </label>
           {errors.confidentiality && (
             <p className="text-red-500 text-sm mt-1">
               {errors.confidentiality.message}
+            </p>
+          )}
+
+          <label className="flex items-start gap-2 text-sm">
+            <input
+              type="checkbox"
+              {...register('canPassKyc')}
+              className="checkbox bg-white text-black checked:bg-green-500"
+            />
+            <span>
+              I confirm my willingness to complete KYC and sign the NDA if
+              required.
+            </span>
+          </label>
+          {errors.canPassKyc && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.canPassKyc.message}
             </p>
           )}
 
@@ -331,11 +356,46 @@ const PrivateSeedForm = () => {
             </p>
           )}
 
+          <label className="flex items-start gap-2 text-sm">
+            <input
+              type="checkbox"
+              {...register('disclosureTerm')}
+              className="checkbox bg-white text-black checked:bg-green-500"
+            />
+            <span>
+              I agree not to share or disclose any project-related information
+              without written consent. I understand that full access may require
+              KYC and NDA completion.
+            </span>
+          </label>
+          {errors.disclosureTerm && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.disclosureTerm.message}
+            </p>
+          )}
+          <label className="flex items-start gap-2 text-sm">
+            <input
+              type="checkbox"
+              {...register('nonUsCitizen')}
+              className="checkbox bg-white text-black checked:bg-green-500"
+            />
+            <span>
+              I confirm I am not a U.S. citizen, resident, or under U.S.
+              jurisdiction. Participation is not available to U.S. persons or
+              entities.
+            </span>
+          </label>
+          {errors.nonUsCitizen && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.nonUsCitizen.message}
+            </p>
+          )}
+
           <div className="w-full flex justify-center">
             <button
               type="submit"
               disabled={submitting}
-              className="py-3 px-2 w-fit mx-auto text-lg font-orbitron rounded-xl text-white border-none bg-gradient-to-r from-gradient-from to-gradient-to hover:opacity-90 shadow-md"
+              className="py-3 px-3 font-semibold w-fit mx-auto text-lg font-orbitron rounded-xl text-white border-none bg-gradient-to-r from-gradient-from to-gradient-to hover:opacity-90 shadow-md"
             >
               {submitting ? 'Submitting...' : t('form.submit')}
             </button>

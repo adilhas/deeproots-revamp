@@ -29,6 +29,10 @@ const PrivateSeedFAQs = () => {
       question: t('faqs.q4.question'),
       answer: t('faqs.q4.answer'),
     },
+    {
+      question: t('faqs.q5.question'),
+      answer: t('faqs.q5.answer'),
+    },
   ];
 
   return (

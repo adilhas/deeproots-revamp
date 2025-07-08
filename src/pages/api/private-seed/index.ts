@@ -20,6 +20,8 @@ export default async function handler(
         indvOrOrg,
         confidentiality,
         acknowledgement,
+        disclosureTerm, // ✅ NEW
+        nonUsCitizen,
       } = req.body;
 
       if (
@@ -32,7 +34,9 @@ export default async function handler(
         !value ||
         !whyJoin ||
         !canPassKyc ||
-        !indvOrOrg
+        !indvOrOrg ||
+        disclosureTerm === undefined ||
+        nonUsCitizen === undefined
       ) {
         return res.status(400).json({ message: 'Missing required fields' });
       }
@@ -44,13 +48,15 @@ export default async function handler(
           contact,
           country,
           website: linkedin,
-          capital,
+          capital: String(capital),
           value,
           whyJoin,
           canPassKyc,
           indvOrOrg,
           confidentiality: Boolean(confidentiality),
           acknowledgement: Boolean(acknowledgement),
+          disclosureTerm: Boolean(disclosureTerm),
+          nonUsCitizen: Boolean(nonUsCitizen),
         },
       });
 

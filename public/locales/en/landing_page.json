@@ -12,15 +12,15 @@
   "features": {
     "address_wallet": {
       "title": "The Address Wallet",
-      "description": "Register now, Manage assets, build wealth."
+      "description": "Register now to manage your digital assets and access ecosystem tools."
     },
     "get_drc_token": {
       "title": "Get dRC Token (DEEPROOTS Coin):",
-      "description": "Limited Supply, Distributed Over 41 Years - Here to Stay."
+      "description": "Limited Supply, Distributed Over 41 Years — Designed for Deworld Ecosystem."
     },
     "telexcoin": {
       "title": "TelexCoin:",
-      "description": "Join and grow the future of trading."
+      "description": "Join and unlock access to decentralized exchange features."
     },
     "deeproots_network": {
       "title": "DEEPROOTS Network.",
@@ -53,23 +53,23 @@
     }
   },
   "earn_foundation": {
-    "title": "Earn a Foundation Seat",
-    "subtitle_1": "Become a founding force in DeWorld.",
-    "subtitle_2": "Foundation Seat holders earn a percentage of every project built on DEEPROOTS."
+    "title": "Secure a Foundation Seat",
+    "subtitle_1": "Become a Founding Member in DeWorld.",
+    "subtitle_2": "Foundation Seat holders unlock exclusive rights and shared utilities across all DEEPROOTS ecosystem projects."
   },
   "seeding_program": {
     "title": "Seeding Program",
     "description": "The official gateway to long-term ownership in the DEEPROOTS Blockchain. Lock your dRC tokens for 365 days and unlock:",
     "benefits": [
-      "Full Seat in the DEEPROOTS Foundation",
-      "12% Guaranteed APY",
-      "Lifetime Share in All Ecosystem Projects",
+      "Full Access Seat in the DEEPROOTS Foundation",
+      "12% Seeding Reward — Auto-Distributed During Seeding Round",
+      "Lifetime Ecosystem Participation Rights",
       "Premium Access to CopyMe AI",
-      "Whitelist for Grants, IDOs & Launches",
-      "Full Access to RootOpia GameFi (Seeding, Battle, Leaderboards)",
-      "Access to 16+ Web3 Products"
+      "Whitelist Access for Grants, IDOs, and Launches",
+      "Unlock Access to 20+ Web3 Products",
+      "Full Access to RootOpia GameFi (Seeding, Battle, Leaderboards)"
     ],
-    "closing_text": "Own your seat. Shape the future. Earn forever."
+    "closing_text": "Own Your Seat. Unlock Future Opportunities. Shape DeWorld."
   },
   "drc": {
     "heading": "What is dRC?",
@@ -127,46 +127,46 @@
   },
   "address_wallet": {
     "title": "THE ADDRESS WALLET",
-    "subtitle": "Warp Around Wealth - 21 Layers of Dynamic Finance.",
-    "startEarning": "Start Earning Today!",
-    "description": "More Than a Wallet, It's an Earning Machine. Activate & Begin Your Journey to wealth!",
-    "features": "Manage Asset | SEED | FOUNDATION | Referral | Gaming & More.",
+    "subtitle": "Your Gateway to Strategic Access — 21 Integrated Layers of Web3 Utility.",
+    "startEarning": "Unlock Full Access. Activate On-Chain Ecosystem Rewards. Navigate the DEEPROOTS Ecosystem with Confidence.",
+    "description": "More than a Wallet — It’s the Core Infrastructure Hub for DeWorld:",
+    "features": "Assets | SEED | FOUNDATION | Referral | Gaming & Beyond.",
     "button": "Manage Asset"
   },
   "telexcoin": {
     "title": "TeleXcoin DeX",
-    "subtitle": "Unlock the future of Finance",
-    "access": "Get Early Access to dRC Tokens!",
-    "seedGrow": "Seed, Earn, and Grow",
-    "features": "Pool Liquidity | Exclusive Podcast | FOUNDATION | Shared Rewards.",
-    "hub": "The Hub for Trading, Strategies, & Connection.",
+    "subtitle": "Unlock the Future of Decentralized Access",
+    "access": "Get Early Access to dRC Tokens",
+    "seedGrow": "Join Seeding & Ecosystem Activities",
+    "features": "Pool Liquidity | Exclusive Podcasts | Foundation Access | Community Rewards",
+    "hub": "The Hub for Trading Tools, Strategies & Connections",
     "cta": "JOIN & EARN"
   },
   "deepAssets": {
     "title": "Deep Assets",
-    "subtitle": "Transforming Real-World Assets into Digital Value.",
+    "subtitle": "Turning Real-World Assets into Secure Digital Power",
     "description": "The DEEPROOTS Protocol makes real-world assets smarter, safer, and more accessible.",
     "button": "Explore",
     "features": [
       {
-        "title": "Tokenization",
-        "description": "Convert real-world value into digital ownership."
+        "title": "Tokenization:",
+        "description": "Digitally Represent Physical Assets."
       },
       {
-        "title": "DeFi Access",
-        "description": "Unlock global financial."
+        "title": "Decentralized Access:",
+        "description": "Connect to Blockchain Ecosystems."
       },
       {
-        "title": "Secure Transactions",
+        "title": "Institutional Security:",
         "description": "Powering real estate, supply transaction."
       },
       {
-        "title": "Transparency & Trust",
-        "description": "Ensure authenticity in every transaction."
+        "title": "Verified Transparency:",
+        "description": "Track Every Transfer."
       },
       {
-        "title": "Digital Identity",
-        "description": "Secure, verifiable records for a trusted future"
+        "title": "Digital Identity:",
+        "description": "Lock in Verified Ownership Records"
       }
     ]
   },
@@ -179,7 +179,7 @@
       },
       "asset_token": {
         "title": "Asset Tokenization",
-        "description": "Trade fractional real-world assets."
+        "description": "Unlock digital access to real-world items."
       },
       "low_cost": {
         "title": "Low-Cost Transactions",
@@ -293,7 +293,7 @@
       },
       {
         "title": "Transparency & Control",
-        "description": "Manage investments and influence project outcomes with full transparency."
+        "description": "Manage contributions and support project outcomes transparently."
       },
       {
         "title": "Secure Wallet Integration",
@@ -308,7 +308,7 @@
     "funding_rounds": [
       "First Round (InnoFi Funding).",
       "Private Foundation Round.",
-      "External HNWI Investor Access.",
+      "External HNWI Contributor Access.",
       "Community DEEPROOTS Referral System.",
       "Public Launch ON TeleXcoin DEX.",
       "Empowering Innovation."
@@ -444,7 +444,7 @@
       "Battle for Glory"
     ],
     "starting-pool": {
-      "label": "Starting pool:",
+      "label": "Starting Prize Pool: in Digital Game Rewards.",
       "ending": "This... is... RootOpia."
     },
     "cta": "PLAY NOW"
@@ -495,12 +495,12 @@
     "heading": "THE FOUNDATION SEATS",
     "features": [
       {
-        "title": "Earn from Every Project",
-        "description": "Get a percentage of all new projects."
+        "title": "Full Ecosystem Project Rewards",
+        "description": "Access shared rewards from every new project."
       },
       {
-        "title": "Passive Rewards (12%)",
-        "description": "Automatically earn ecosystem rewards."
+        "title": "12% Seeding Reward",
+        "description": "Receive on-chain rewards During  the Seeding round."
       },
       {
         "title": "Referral Rewards",
