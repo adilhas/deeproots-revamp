@@ -17,7 +17,7 @@ datasource db {
 model PrivateSeedSubmission {
   id                String   @id @default(cuid())
   fullName          String
-  email             String
+  email             String   @unique
   contact           String
   country           String
   website           String
@@ -38,7 +38,7 @@ model PrivateSeedSubmission {
 
 model SeederAccountToken {
   id         String   @id @default(cuid())
-  email      String
+  email      String   
   token      String   @unique
   expiresAt  DateTime
   used       Boolean  @default(false)

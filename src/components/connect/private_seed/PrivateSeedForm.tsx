@@ -92,7 +92,8 @@ const PrivateSeedForm = () => {
         )?.showModal();
         reset();
       } else {
-        alert('Failed to submit form.');
+        const errorData = await response.json();
+        alert(errorData.message || 'Failed to submit form.');
       }
     } catch (error) {
       console.error('Submission error:', error);

@@ -53,6 +53,15 @@ export default async function handler(
       ) {
         return res.status(400).json({ message: 'Missing required fields' });
       }
+      const existingSubmission = await prisma.privateSeedSubmission.findUnique({
+        where: { email },
+      });
+
+      if (existingSubmission) {
+        return res.status(400).json({
+          message: 'An application with this email has already been submitted.',
+        });
+      }
 
       // ✅ Create application
       const submission = await prisma.privateSeedSubmission.create({
