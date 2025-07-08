@@ -75,7 +75,7 @@ export const DeWorldProductsData = [
     icon: '/deworld/products_icons/innofarm-light.svg',
   },
   {
-    name: 'Deep Assets',
+    name: 'DeepAssets',
     link: 'https://www.deepassets.earth',
     icon: '/deworld/products_icons/deep-assets-light.svg',
   },
