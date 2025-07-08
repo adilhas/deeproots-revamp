@@ -20,8 +20,8 @@ const SubmitSuccessModal = () => {
               Request submitted!
             </h3>
             <p className=" text-sm my-6">
-              Thank you. Your application is now under review.We'll notify you
-              within 1-2 business days.
+              Thank you. Your application is now under review.We&apos;ll notify
+              you within 1-2 business days.
             </p>
 
             <p className=" text-sm mb-4">

@@ -1,7 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import React, { useState } from 'react';
 import ApplicationStatusInfo from '@/components/dashboard/ApplicationStatusInfo';
 import PageHeader from '@/components/dashboard/applications_details/PageHeader';
 import ApplicantSummaryCard from '@/components/dashboard/applications_details/ApplicantSummaryCard';
@@ -30,7 +29,7 @@ type Submission = {
 };
 
 const ApplicationDetailsPage = () => {
-  const [submission, setSubmission] = useState<Submission>({
+  const [submission] = useState<Submission>({
     id: 'cmct0gfrw0001vokcz8mw327z',
     fullName: 'mike',
     email: 'test@test.com',
