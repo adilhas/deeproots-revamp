@@ -1,9 +1,9 @@
-import ApplicationStatusInfo from '@/components/dashboard/ApplicationStatusInfo';
-import ApplicationTable from '@/components/dashboard/ApplicationTable';
+import ApplicationStatusInfo from '@/components/admin/ApplicationStatusInfo';
+import ApplicationTable from '@/components/admin/ApplicationTable';
 import Image from 'next/image';
 import React from 'react';
 
-const DashboardPage = () => {
+const Applications = () => {
   return (
     <div className="min-h-screen bg-[#17151A]">
       <div className="max-w-[1200px] mx-auto">
@@ -23,4 +23,4 @@ const DashboardPage = () => {
   );
 };
 
-export default DashboardPage;
+export default Applications;

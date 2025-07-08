@@ -2,27 +2,50 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 
-const protectedRoutes = ['/dashboard'];
-
 export async function middleware(req: NextRequest) {
-  console.log('Middleware triggered for:', req.nextUrl.pathname);
-  const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
-
   const { pathname } = req.nextUrl;
 
-  const isProtected = protectedRoutes.some((route) =>
-    pathname.startsWith(route)
-  );
-  console.log('Token exists:', !!token);
+  // Allow public access to these paths
+  const isPublicPath =
+    pathname.startsWith('/admin/login') ||
+    pathname.startsWith('/seeder/login') ||
+    pathname.startsWith('/_next') ||
+    pathname.startsWith('/favicon') ||
+    pathname.startsWith('/api');
 
-  if (isProtected && !token) {
-    const signInUrl = new URL('/auth/signin', req.url);
-    signInUrl.searchParams.set('callbackUrl', pathname);
-    return NextResponse.redirect(signInUrl);
+  if (isPublicPath) {
+    return NextResponse.next();
+  }
+
+  // Get session token from NextAuth
+  const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
+
+  // If user is not logged in, redirect to respective login page
+  if (!token) {
+    if (pathname.startsWith('/admin')) {
+      const loginUrl = new URL('/admin/login', req.url);
+      loginUrl.searchParams.set('callbackUrl', pathname);
+      return NextResponse.redirect(loginUrl);
+    }
+
+    if (pathname.startsWith('/seeder')) {
+      const loginUrl = new URL('/seeder/login', req.url);
+      loginUrl.searchParams.set('callbackUrl', pathname);
+      return NextResponse.redirect(loginUrl);
+    }
+  }
+
+  // If logged in but role doesn't match the route, redirect to correct login
+  if (token?.role === 'seeder' && pathname.startsWith('/admin')) {
+    return NextResponse.redirect(new URL('/admin/login', req.url));
+  }
+
+  if (token?.role === 'admin' && pathname.startsWith('/seeder')) {
+    return NextResponse.redirect(new URL('/seeder/login', req.url));
   }
 
   return NextResponse.next();
 }
 export const config = {
-  matcher: ['/dashboard/:path*'],
+  matcher: ['/admin/:path*', '/seeder/:path*'],
 };

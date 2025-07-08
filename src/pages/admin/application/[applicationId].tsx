@@ -2,12 +2,12 @@
 
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import ApplicationStatusInfo from '@/components/dashboard/ApplicationStatusInfo';
-import PageHeader from '@/components/dashboard/applications_details/PageHeader';
-import ApplicantSummaryCard from '@/components/dashboard/applications_details/ApplicantSummaryCard';
-import ApplicationAnswers from '@/components/dashboard/applications_details/ApplicationAnswers';
-import ApplicationSummaryTable from '@/components/dashboard/applications_details/ApplicationSummaryTable';
-import ProcessSteps from '@/components/dashboard/applications_details/ProcessSteps';
+import ApplicationStatusInfo from '@/components/admin/ApplicationStatusInfo';
+import PageHeader from '@/components/admin/applications_details/PageHeader';
+import ApplicantSummaryCard from '@/components/admin/applications_details/ApplicantSummaryCard';
+import ApplicationAnswers from '@/components/admin/applications_details/ApplicationAnswers';
+import ApplicationSummaryTable from '@/components/admin/applications_details/ApplicationSummaryTable';
+import ProcessSteps from '@/components/admin/applications_details/ProcessSteps';
 
 type Submission = {
   id: string;

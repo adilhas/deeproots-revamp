@@ -81,7 +81,10 @@ const ApplicationTable = () => {
                     ></div>
                   </td>
                   <td>
-                    <Link href={`/dashboard/${item.id}`} className="underline">
+                    <Link
+                      href={`/admin/application/${item.id}`}
+                      className="underline"
+                    >
                       View
                     </Link>
                   </td>

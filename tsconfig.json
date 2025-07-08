@@ -15,14 +15,16 @@
     "incremental": true,
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "typeRoots": ["./src/types", "./node_modules/@types"]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "src/styles/tailwind.config.ts",
-    "src/pages/disclaimer"
+    "src/pages/disclaimer",
+    "types"
   ],
   "exclude": ["node_modules"]
 }
