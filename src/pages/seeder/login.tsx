@@ -1,10 +1,28 @@
-import { signIn } from 'next-auth/react';
-import { useState } from 'react';
+import { X } from 'lucide-react';
+import { signIn, useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 export default function SeederLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [showLogin, setShowLogin] = useState(false);
+
+  const router = useRouter();
+
+  const { status, data: user } = useSession();
+
+  useEffect(() => {
+    if (status === 'authenticated') {
+      router.push('/seeder/dashboard');
+    }
+  }, [status, router]);
+
+  if (status === 'authenticated') {
+    return null;
+  }
+  console.log('data', user);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,39 +42,76 @@ export default function SeederLogin() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black">
-      <div className="bg-white rounded-2xl shadow-lg p-8 w-full max-w-md">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
-          Seeder Login
-        </h2>
+    <div
+      className={`relative w-full h-screen bg-cover bg-center bg-[url("/landing/deeproots-banner-mobile.png")] md:bg-[url("/landing/deeproots-banner.webp")]`}
+    >
+      {/* Top-right Login Button */}
+      <button
+        onClick={() => setShowLogin(true)}
+        className="absolute text-sm md:text-md top-3 right-3 lg:top-10 lg:right-15 px-6 py-2 bg-gradient-to-r from-[#AD1AAF] via-[#A34BF0] to-[#0085a8] text-white rounded-4xl hover:bg-gradient-to-r hover:from-[#AD1AAF] hover:via-[#933BE0] hover:to-[#0085a8] transition-all z-10 hover:scale-105 font-bold border-2 border-[#FFFFFF30] hover:border-[#FFFFFF60] shadow-[0_0_15px_0_rgba(91,72,255,0.5)] hover:shadow-[0_0_20px_0_rgba(91,72,255,0.7)]"
+      >
+        Login
+      </button>
 
-        {error && <div className="text-red-500 text-center mb-4">{error}</div>}
+      {/* Modal */}
+      {showLogin && (
+        <>
+          {/* Modal Overlay */}
+          <div
+            className="fixed inset-0  bg-opacity-60 z-40"
+            onClick={() => setShowLogin(false)}
+          ></div>
 
-        <form onSubmit={handleLogin} className="space-y-4">
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-4 py-2 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
-            required
-          />
-          <button
-            type="submit"
-            className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg font-semibold"
-          >
-            Sign In
-          </button>
-        </form>
-      </div>
+          {/* Modal Content */}
+          <div className="fixed z-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[80%] md:w-full max-w-xl p-4 md:p-8 bg-gray-800/70 backdrop-blur-lg border border-white/10 rounded-2xl shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] transition-transform duration-300 hover:scale-[1.01]">
+            {/* Close button in top-right */}
+            <button
+              onClick={() => setShowLogin(false)}
+              className="absolute top-1 right-1 md:inline-block hidden font-extrabold m-4 text-white hover:text-gray-300"
+              aria-label="Close login modal"
+            >
+              <X className="w-5 h-5" size={44} />
+            </button>
+
+            <div className="flex flex-col items-center">
+              <h2 className="md:text-4xl text-lg sm:text-2xl font-bold bg-gradient-to-bl from-[#ad1aaf] to-[#0085a8] bg-clip-text text-transparent font-orbitron mb-4">
+                FOUNDATION LOGIN
+              </h2>
+
+              {error && (
+                <p className="text-red-500 mb-4 text-center">{error}</p>
+              )}
+
+              <form className="w-full" onSubmit={handleLogin}>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="p-2 md:p-3 mb-4 w-full rounded-lg bg-neutral-700 text-white border border-neutral-600 focus:border-purple-500 focus:outline-none"
+                />
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  className="p-2 md:p-3 mb-4 w-full rounded-lg bg-neutral-700 text-white border border-neutral-600 focus:border-purple-500 focus:outline-none"
+                />
+                <button
+                  type="submit"
+                  className="cursor-pointer text-white p-2 md:p-3 rounded-lg bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] w-full hover:from-[#007693] hover:to-[#9c179e] transition-all"
+                >
+                  Login
+                </button>
+              </form>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }

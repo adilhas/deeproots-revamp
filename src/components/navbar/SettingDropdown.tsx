@@ -154,7 +154,7 @@ const SettingDropdown = () => {
             <Link href="/admin/login">Root Admin Login</Link>
           </li>
           <li>
-            <Link href={'/seeder/login'}>Foundation Member</Link>
+            <Link href={'/seeder/login'}>Foundation Login</Link>
           </li>
         </ul>
       )}
