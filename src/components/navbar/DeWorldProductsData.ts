@@ -81,7 +81,7 @@ export const DeWorldProductsData = [
   },
   {
     name: 'RootCore',
-    link: 'https://www.rootcore.earth',
+    link: 'https://www.rootcore.help/',
     icon: '/deworld/products_icons/root-core-light.svg',
   },
 ];

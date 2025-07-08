@@ -118,7 +118,7 @@ export const getfooterLinks = (t: TFunction) => [
       },
       {
         label: 'RootCore',
-        href: 'https://www.rootcore.earth',
+        href: 'https://www.rootcore.help/',
       },
     ],
     hoverColor: 'hover:text-[#9F2BA9]',

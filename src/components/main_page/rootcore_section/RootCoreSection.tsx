@@ -78,7 +78,7 @@ const RootCoreSection = () => {
           <a
             rel="noopener noreferrer"
             target="_blank"
-            href={'https://rootcore.earth/'}
+            href={'https://www.rootcore.help/'}
           >
             <button
               className="hover:scale-105 mt-8 px-6 py-3 bg-gradient-to-r from-[#FCAAA7] to-[#0977E6] dark:from-[#CF748D] dark:to-[#8D4A40] font-bold rounded-lg text-white transition"
