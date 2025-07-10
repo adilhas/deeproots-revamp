@@ -1,22 +1,21 @@
-import { getTotalSupplyData } from '@/constants/totalSuppyData';
+import { totalSupplyData } from '@/constants/totalSuppyData';
 import React, { useEffect, useState } from 'react';
-import { useTranslation } from 'next-i18next';
 import { PieChart, Pie, Cell } from 'recharts';
 
 interface TotalSupplyChartProps {
-  showGradient?: boolean; // optional prop to control the gradient
+  showGradient?: boolean;
+  theme?: 'light' | 'dark'; // Optional theme override
 }
 
 const TotalSupplyChart: React.FC<TotalSupplyChartProps> = ({
   showGradient = true,
+  theme,
 }) => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
-  const { t } = useTranslation('landing_page');
-  const totalSupplyData = getTotalSupplyData(t);
 
   const generateConicGradient = (data: typeof totalSupplyData) => {
     const total = data.reduce((sum, item) => sum + item.value, 0);
@@ -31,6 +30,9 @@ const TotalSupplyChart: React.FC<TotalSupplyChartProps> = ({
       })
       .join(', ')})`;
   };
+
+  const isDark = theme === 'dark';
+  const isLight = theme === 'light';
 
   return (
     <div className="relative flex items-center justify-center w-[330px] h-[269px]">
@@ -74,16 +76,31 @@ const TotalSupplyChart: React.FC<TotalSupplyChartProps> = ({
         className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center"
         style={{ zIndex: 2 }}
       >
-        <div className="w-[170px] h-[170px] rounded-full bg-[#EBEBEB] dark:bg-[#1E1E2D] flex flex-col items-center justify-center">
-          <span className="text-[12px] dark:text-[#A1A1AA] font-[400]">
+        <div
+          className={`w-[170px] h-[170px] rounded-full flex flex-col items-center justify-center
+            ${!theme ? 'bg-[#EBEBEB] dark:bg-[#1E1E2D]' : ''}
+            ${isDark ? 'bg-[#1E1E2D]' : ''}
+            ${isLight ? 'bg-[#EBEBEB]' : ''}
+          `}
+        >
+          <span
+            className={`text-[12px] font-[400]
+              ${!theme ? 'dark:text-[#A1A1AA]' : ''}
+              ${isDark ? 'text-[#A1A1AA]' : ''}
+              ${isLight ? 'text-[#6B7280]' : ''}
+            `}
+          >
             Total Supply
           </span>
-          <span className="text-5xl font-[700] dark:text-[white] leading-[56px]">
+          <span
+            className={`text-5xl font-[700] leading-[56px]
+              ${!theme ? 'dark:text-white' : ''}
+              ${isDark ? 'text-white' : ''}
+              ${isLight ? 'text-black' : ''}
+            `}
+          >
             100M
           </span>
-          {/* <span className="text-[12px] dark:text-[#A1A1AA] font-[400]">
-            Total dRC minted
-          </span> */}
         </div>
       </div>
     </div>

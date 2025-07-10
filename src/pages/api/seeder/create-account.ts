@@ -6,8 +6,9 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method !== 'POST')
+  if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
+  }
 
   const { token, email, password, confirmPassword } = req.body;
 
@@ -20,7 +21,7 @@ export default async function handler(
   }
 
   try {
-    // ✅ Step 1: Check if token is valid
+    // Step 1: Validate token
     const tokenRecord = await prisma.seederAccountToken.findUnique({
       where: { token },
     });
@@ -33,40 +34,35 @@ export default async function handler(
       return res.status(400).json({ error: 'Invalid or expired token' });
     }
 
-    // ✅ Step 2: Verify email matches token
+    // Step 2: Email should match token
     if (tokenRecord.email !== email) {
       return res.status(400).json({ error: 'Email does not match token' });
     }
 
-    // ✅ Step 3: Check if user already exists
-    const existingUser = await prisma.seederUser.findUnique({
-      where: { email },
-    });
-    if (existingUser) {
-      return res.status(400).json({ error: 'User already exists' });
-    }
-
-    // ✅ Step 4: Find the original application
-    const application = await prisma.privateSeedSubmission.findFirst({
+    // Step 3: Find matching PrivateSeedSubmission
+    const submission = await prisma.privateSeedSubmission.findUnique({
       where: { email },
     });
 
-    if (!application) {
+    if (!submission) {
       return res.status(400).json({ error: 'Application not found' });
     }
 
-    // ✅ Step 5: Create the SeederUser
+    if (submission.passwordHash) {
+      return res.status(400).json({ error: 'Account already created' });
+    }
+
+    // Step 4: Hash and store password
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    await prisma.seederUser.create({
+    await prisma.privateSeedSubmission.update({
+      where: { email },
       data: {
-        email,
         passwordHash: hashedPassword,
-        applicationId: application.id,
       },
     });
 
-    // ✅ Step 6: Mark token as used
+    // Step 5: Mark token as used
     await prisma.seederAccountToken.update({
       where: { token },
       data: { used: true },

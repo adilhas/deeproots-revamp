@@ -1,15 +1,14 @@
+import StatusDot from '@/Shared/StatusDot';
 import { statusColorMap } from '@/utils/statusColor';
 import React from 'react';
 
 const ApplicationStatusInfo = () => {
   return (
-    <div className="flex flex-row items-center gap-4 flex-wrap">
-      {Object.entries(statusColorMap).map(([status, color]) => (
+    <div className="flex flex-row items-center gap-6 flex-wrap py-4 text-xl">
+      <div>Application Status Legend:</div>
+      {Object.keys(statusColorMap).map((status) => (
         <div key={status} className="flex flex-row items-center gap-2">
-          <div
-            className="w-2 h-2 rounded-full"
-            style={{ backgroundColor: color }}
-          ></div>
+          <StatusDot status={status as keyof typeof statusColorMap} />
           <span>{status}</span>
         </div>
       ))}

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ProcessSteps = () => (
-  <div className="mt-8 bg-[#252525] p-4 md:p-6 rounded-xl">
+  <div className="mt-8 bg-white text-[#525252] p-4 md:p-6 rounded-xl">
     <h3 className="text-lg font-bold mb-4">Process</h3>
     <ol className="space-y-4 text-sm">
       <li className="flex flex-col md:flex-row md:items-center justify-between gap-2">

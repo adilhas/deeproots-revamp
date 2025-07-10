@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
   output   = "../src/generated/prisma"
@@ -14,42 +8,62 @@ datasource db {
   url      = env("NEXT_DATABASE_URL")
 }
 
+enum KycDocumentType {
+  PASSPORT
+  PROOF_OF_ADDRESS
+  SELFIE_WITH_NOTE
+  BUSINESS_LICENSE
+  COMPANY_ADDRESS
+  AUTHORIZATION_LETTER
+  REP_ID_SELFIE
+}
+
 model PrivateSeedSubmission {
   id                String   @id @default(cuid())
   fullName          String
   email             String   @unique
+  passwordHash      String?   
   contact           String
   country           String
   website           String
   capital           String
   value             String
   whyJoin           String
-  canPassKyc        Boolean
   indvOrOrg         String
-  confidentiality   Boolean
-  acknowledgement   Boolean
-  disclosureTerm    Boolean
-  nonUsCitizen      Boolean
-  applicationStatus String   @default("Received")
+  applicationStatus String   @default("received")
+  preApproval       String   @default("not-submitted")
+  dealRoomOpen      Boolean  @default(false)
   createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
 
-  seederUser        SeederUser? @relation(name: "ApplicationToUser")
+  kycDocuments      KycDocument[]
+  ndaSubmission     NdaSubmission?
 }
 
 model SeederAccountToken {
-  id         String   @id @default(cuid())
-  email      String   
-  token      String   @unique
-  expiresAt  DateTime
-  used       Boolean  @default(false)
-  createdAt  DateTime @default(now())
+  id        String   @id @default(cuid())
+  email     String
+  token     String   @unique
+  expiresAt DateTime
+  used      Boolean  @default(false)
+  createdAt DateTime @default(now())
 }
 
-model SeederUser {
-  id                 String   @id @default(cuid())
-  email              String   @unique
-  passwordHash       String
-  application        PrivateSeedSubmission @relation(name: "ApplicationToUser", fields: [applicationId], references: [id])
-  applicationId      String   @unique
-  createdAt          DateTime @default(now())
+
+model KycDocument {
+  id        String                 @id @default(cuid())
+  type      KycDocumentType
+  url       String
+  userId    String
+  user      PrivateSeedSubmission @relation(fields: [userId], references: [id])
+  createdAt DateTime              @default(now())
+}
+
+model NdaSubmission {
+  id             String                 @id @default(cuid())
+  userId         String                 @unique
+  user           PrivateSeedSubmission @relation(fields: [userId], references: [id])
+  typedSignature String
+  signatureImage String
+  acceptedAt     DateTime              @default(now())
 }

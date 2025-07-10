@@ -2,36 +2,15 @@
 
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import ApplicationStatusInfo from '@/components/admin/ApplicationStatusInfo';
-import PageHeader from '@/components/admin/applications_details/PageHeader';
-import ApplicantSummaryCard from '@/components/admin/applications_details/ApplicantSummaryCard';
-import ApplicationAnswers from '@/components/admin/applications_details/ApplicationAnswers';
-import ApplicationSummaryTable from '@/components/admin/applications_details/ApplicationSummaryTable';
-import ProcessSteps from '@/components/admin/applications_details/ProcessSteps';
-
-type Submission = {
-  id: string;
-  fullName: string;
-  email: string;
-  contact: string;
-  country: string;
-  website: string;
-  capital: string;
-  value: string;
-  whyJoin: string;
-  canPassKyc: boolean;
-  indvOrOrg: string;
-  confidentiality: boolean;
-  acknowledgement: boolean;
-  applicationStatus: string;
-  createdAt: string;
-};
+import ApplicationDetails from '@/Shared/Application/ApplicationDetails';
+import { useApplication } from '@/context/ApplicationContext';
 
 const ApplicationDetailsPage = () => {
   const router = useRouter();
   const { applicationId } = router.query;
 
-  const [submission, setSubmission] = useState<Submission | null>(null);
+  const { application, setApplication } = useApplication();
+
   const [loading, setLoading] = useState(true);
 
   const fetchSubmissionById = async (id: string) => {
@@ -51,14 +30,14 @@ const ApplicationDetailsPage = () => {
     const fetchData = async () => {
       setLoading(true);
       const data = await fetchSubmissionById(applicationId);
-      setSubmission(data);
+      setApplication(data);
       setLoading(false);
     };
 
     fetchData();
   }, [applicationId]);
 
-  console.log('-->', submission);
+  console.log('-->', application);
   if (loading) {
     return (
       <div className="flex justify-center items-center h-40">
@@ -67,7 +46,7 @@ const ApplicationDetailsPage = () => {
     );
   }
 
-  if (!submission) {
+  if (!application) {
     return (
       <div className="text-center text-red-500 py-10">
         Submission not found.
@@ -75,18 +54,7 @@ const ApplicationDetailsPage = () => {
     );
   }
 
-  return (
-    <div className="bg-[#17151A] min-h-screen">
-      <div className="p-6 max-w-[1200px] mx-auto">
-        <PageHeader />
-        <ApplicationStatusInfo />
-        <ApplicantSummaryCard submission={submission} />
-        <ApplicationAnswers submission={submission} />
-        <ApplicationSummaryTable submission={submission} />
-        <ProcessSteps />
-      </div>
-    </div>
-  );
+  return <ApplicationDetails application={application} />;
 };
 
 export default ApplicationDetailsPage;

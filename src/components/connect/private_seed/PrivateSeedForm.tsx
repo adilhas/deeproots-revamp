@@ -284,18 +284,35 @@ const PrivateSeedForm = () => {
               Are you applying as an Individual or Organization?
             </p>
             <div className="flex gap-6">
-              {(['Ind', 'Org'] as const).map((val) => (
+              {(
+                [
+                  {
+                    key: 'Ind',
+                    title: 'Individual (Personal Contribution)',
+                    subtitle: '(Personal applicant applying for themselves.)',
+                  },
+                  {
+                    key: 'Org',
+                    title: 'Organization (Company / Group Contribution)',
+                    subtitle:
+                      '(Applying on behalf of a company or organization.)',
+                  },
+                ] as const
+              ).map((val) => (
                 <label
-                  key={val}
+                  key={val.key}
                   className="flex items-center gap-2 cursor-pointer"
                 >
                   <input
                     type="radio"
-                    value={val}
+                    value={val.key}
                     {...register('indvOrOrg')}
                     className="radio radio-sm"
                   />
-                  <span>{val}</span>
+                  <div>
+                    <div>{val.title}</div>
+                    <div className="text-xs italic">{val.subtitle}</div>
+                  </div>
                 </label>
               ))}
             </div>

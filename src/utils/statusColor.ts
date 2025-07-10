@@ -1,9 +1,9 @@
 export const statusColorMap: Record<
-  'Received' | 'Under Review' | 'Approved' | 'Declined',
+  'received' | 'under-review' | 'approved' | 'declined',
   string
 > = {
-  Received: '#67B1FB',
-  'Under Review': '#F2C35E',
-  Approved: '#71FF8F',
-  Declined: '#E78181',
+  received: '#67B1FB',
+  'under-review': '#F2C35E',
+  approved: '#71FF8F',
+  declined: '#E78181',
 };

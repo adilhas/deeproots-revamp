@@ -8,7 +8,7 @@ export const authOptions: NextAuthOptions = {
     CredentialsProvider({
       name: 'Credentials',
       credentials: {
-        username: { label: 'Username or Email', type: 'text' },
+        username: { label: 'Email', type: 'text' },
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
@@ -16,7 +16,6 @@ export const authOptions: NextAuthOptions = {
 
         if (!username || !password) return null;
 
-        // Admin user
         if (username === 'admin@deeproots.earth' && password === 'pass12345') {
           return {
             id: '1',
@@ -26,25 +25,22 @@ export const authOptions: NextAuthOptions = {
           };
         }
 
-        // Seeder user
-        const seeder = await prisma.seederUser.findUnique({
+        const seeder = await prisma.privateSeedSubmission.findUnique({
           where: { email: username },
-          include: {
-            application: true, // optional if you want more info later
-          },
         });
 
-        if (!seeder) return null;
+        if (!seeder || !seeder.passwordHash) return null;
 
         const isValid = await bcrypt.compare(password, seeder.passwordHash);
         if (!isValid) return null;
 
         return {
           id: seeder.id,
-          name: seeder.application?.fullName || 'Seeder', // fallback if no name
+          name: seeder.fullName || 'Seeder',
           email: seeder.email,
           role: 'seeder',
-        }; // Invalid credentials
+          applicationId: seeder.id,
+        };
       },
     }),
   ],
@@ -55,6 +51,7 @@ export const authOptions: NextAuthOptions = {
         token.id = user.id;
         token.name = user.name;
         token.email = user.email;
+        token.applicationId = user.applicationId;
       }
       return token;
     },
@@ -63,7 +60,8 @@ export const authOptions: NextAuthOptions = {
         session.user.role = token.role!;
         session.user.id = token.id!;
         session.user.name = token.name!;
-        session.user.email = token.email;
+        session.user.email = token.email!;
+        session.user.applicationId = token.applicationId!;
       }
       return session;
     },

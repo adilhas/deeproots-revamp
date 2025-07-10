@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/context/ThemeContext';
 import { appWithTranslation } from 'next-i18next';
 import useLocaleDirection from '@/hooks/useLocaleDirection';
 import { SessionProvider } from 'next-auth/react';
+import { ApplicationProvider } from '@/context/ApplicationContext';
 
 const MyApp = ({
   Component,
@@ -14,11 +15,13 @@ const MyApp = ({
   return (
     <SessionProvider session={session}>
       <ThemeProvider>
-        <Head>
-          <title>DEEPROOTS</title>
-          <link rel="icon" href="/landing/logo.png" />
-        </Head>
-        <Component {...pageProps} />
+        <ApplicationProvider>
+          <Head>
+            <title>DEEPROOTS</title>
+            <link rel="icon" href="/landing/logo.png" />
+          </Head>
+          <Component {...pageProps} />
+        </ApplicationProvider>
       </ThemeProvider>
     </SessionProvider>
   );

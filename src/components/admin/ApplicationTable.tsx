@@ -1,5 +1,6 @@
 'use client';
-import { statusColorMap } from '@/utils/statusColor';
+import StatusDot from '@/Shared/StatusDot';
+import { StatusType } from '@/types/application';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
@@ -51,48 +52,45 @@ const ApplicationTable = () => {
           No applications found.
         </div>
       ) : (
-        <table className="table w-full rounded-2xl shadow">
-          <thead className="bg-[#252525] rounded-2xl">
-            <tr>
-              <th>Date</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Seed Amount</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {submissions.map((item) => {
-              const bgColor =
-                statusColorMap[
-                  item.applicationStatus as keyof typeof statusColorMap
-                ];
-              return (
-                <tr key={item.id} className="border-b border-[#3F3F3F]">
-                  <td>{new Date(item.createdAt).toLocaleDateString()}</td>
-                  <td>{item.fullName}</td>
-                  <td>{item.email}</td>
-                  <td>{item.capital}</td>
-                  <td>
-                    <div
-                      className={`w-3 h-3 rounded-full`}
-                      style={{ backgroundColor: bgColor }}
-                    ></div>
-                  </td>
-                  <td>
-                    <Link
-                      href={`/admin/application/${item.id}`}
-                      className="underline"
-                    >
-                      View
-                    </Link>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        <div className="p-3 bg-white rounded-2xl">
+          <table className="table w-full rounded-2xl ">
+            <thead className="bg-[#E9E9E9] rounded-2xl text-[#303030]">
+              <tr className="rounded-2xl">
+                <th className="rounded-l-2xl">Date</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Seed Amount</th>
+                <th>Status</th>
+                <th className="rounded-r-2xl">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {submissions.map((item) => {
+                return (
+                  <tr key={item.id} className="border-b border-[#d5d4d5]">
+                    <td>{new Date(item.createdAt).toLocaleDateString()}</td>
+                    <td>{item.fullName}</td>
+                    <td>{item.email}</td>
+                    <td>{item.capital}</td>
+                    <td>
+                      <StatusDot
+                        status={item.applicationStatus as StatusType}
+                      />
+                    </td>
+                    <td>
+                      <Link
+                        href={`/admin/application/${item.id}`}
+                        className="underline"
+                      >
+                        View Details
+                      </Link>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );

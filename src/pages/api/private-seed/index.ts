@@ -29,12 +29,7 @@ export default async function handler(
         capital,
         value,
         whyJoin,
-        canPassKyc,
         indvOrOrg,
-        confidentiality,
-        acknowledgement,
-        disclosureTerm,
-        nonUsCitizen,
       } = req.body;
 
       if (
@@ -46,10 +41,7 @@ export default async function handler(
         !capital ||
         !value ||
         !whyJoin ||
-        !canPassKyc ||
-        !indvOrOrg ||
-        disclosureTerm === undefined ||
-        nonUsCitizen === undefined
+        !indvOrOrg
       ) {
         return res.status(400).json({ message: 'Missing required fields' });
       }
@@ -74,12 +66,7 @@ export default async function handler(
           capital: String(capital),
           value,
           whyJoin,
-          canPassKyc,
           indvOrOrg,
-          confidentiality: Boolean(confidentiality),
-          acknowledgement: Boolean(acknowledgement),
-          disclosureTerm: Boolean(disclosureTerm),
-          nonUsCitizen: Boolean(nonUsCitizen),
         },
       });
 

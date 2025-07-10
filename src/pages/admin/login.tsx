@@ -1,13 +1,15 @@
-import { X } from 'lucide-react';
+import { Eye, EyeOff, Mail } from 'lucide-react';
 import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { HiOutlineKey } from 'react-icons/hi2';
 
 export default function AdminLogin() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [showLogin, setShowLogin] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
   const router = useRouter();
 
   const { status, data: session } = useSession();
@@ -45,69 +47,91 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="relative w-full h-screen bg-cover bg-center bg-[url('/landing/deeproots-banner-mobile.png')] md:bg-[url('/landing/deeproots-banner.webp')]">
-      <button
-        onClick={() => setShowLogin(true)}
-        className="absolute text-sm md:text-md top-3 right-3 lg:top-10 lg:right-15 px-6 py-2 bg-gradient-to-r from-[#AD1AAF] via-[#A34BF0] to-[#0085a8] text-white rounded-4xl hover:scale-105 font-bold border-2 border-[#FFFFFF30] hover:border-[#FFFFFF60] shadow-[0_0_15px_0_rgba(91,72,255,0.5)] hover:shadow-[0_0_20px_0_rgba(91,72,255,0.7)]"
-      >
-        Login
-      </button>
+    <div className="min-h-screen bg-[#F2F2F2] flex flex-col ">
+      {/* Header */}
+      <header className="w-full px-6 py-4 bg-gradient-to-r from-gradient-from to-gradient-to flex items-center justify-between">
+        <div className="flex flex-row justify-between max-w-[1200px] mx-auto w-full items-center gap-3">
+          <div className="flex items-center space-x-2">
+            <span className="text-white font-semibold text-lg font-orbitron">
+              DEEPROOTS
+            </span>
+            <span className="bg-white text-purple-600 font-medium text-xs px-3 py-1 rounded-full">
+              Pre seed
+            </span>
+          </div>
+        </div>
+      </header>
 
-      {showLogin && (
-        <>
-          <div
-            className="fixed inset-0 bg-opacity-60 z-40"
-            onClick={() => setShowLogin(false)}
-          ></div>
+      {/* Login Card */}
+      <div className="flex flex-1 items-center justify-center mx-4">
+        <div className="bg-white rounded-2xl p-8 w-full max-w-md shadow-md">
+          <h2 className="text-center text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-gradient-from to-gradient-to w-fit mx-auto mb-6">
+            Sign into your Dashboard
+          </h2>
 
-          <div className="fixed z-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[80%] md:w-full max-w-xl p-4 md:p-8 bg-gray-800/70 backdrop-blur-lg border border-white/10 rounded-2xl shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] transition-transform duration-300 hover:scale-[1.01]">
+          {error && <p className="text-red-600 text-sm mb-4">{error}</p>}
+
+          <form onSubmit={handleLogin} className="space-y-4">
+            {/* Email Input */}
+            <div className="relative">
+              <Mail
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"
+                size={18}
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+                className="w-full pl-10 pr-4 py-2 text-gray-700 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400 placeholder-gray-600"
+              />
+            </div>
+
+            {/* Password Input */}
+            <div className="relative">
+              <HiOutlineKey
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"
+                size={18}
+              />
+
+              <input
+                type={showPassword ? 'text' : 'password'}
+                name="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="w-full text-gray-700 pl-10 pr-10 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400 placeholder-gray-600"
+              />
+              <button
+                type="button"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600"
+                onClick={() => setShowPassword((prev) => !prev)}
+              >
+                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              </button>
+            </div>
+
+            {/* Submit */}
             <button
-              onClick={() => setShowLogin(false)}
-              className="absolute top-1 right-1 md:inline-block hidden font-extrabold m-4 text-white hover:text-gray-300"
-              aria-label="Close login modal"
+              type="submit"
+              className="w-full py-2 mt-4 md:mt-[20vh] rounded-xl bg-gradient-to-r from-gradient-from to-gradient-to text-white font-medium"
             >
-              <X className="w-5 h-5" />
+              Sign in
             </button>
+          </form>
 
-            <div className="flex flex-col items-center">
-              <h2 className="md:text-4xl text-lg sm:text-2xl font-bold bg-gradient-to-bl from-[#ad1aaf] to-[#0085a8] bg-clip-text text-transparent font-orbitron mb-4">
-                ADMIN LOGIN
-              </h2>
-
-              {error && (
-                <p className="text-red-500 mb-4 text-center">{error}</p>
-              )}
-
-              <form className="w-full" onSubmit={handleLogin}>
-                <input
-                  type="email"
-                  name="Email"
-                  placeholder="Email"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  required
-                  className="p-2 md:p-3 mb-4 w-full rounded-lg bg-neutral-700 text-white border border-neutral-600 focus:border-purple-500 focus:outline-none"
-                />
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  className="p-2 md:p-3 mb-4 w-full rounded-lg bg-neutral-700 text-white border border-neutral-600 focus:border-purple-500 focus:outline-none"
-                />
-                <button
-                  type="submit"
-                  className="cursor-pointer text-white p-2 md:p-3 rounded-lg bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] w-full hover:from-[#007693] hover:to-[#9c179e] transition-all"
-                >
-                  Login
-                </button>
-              </form>
+          {/* Bottom Links */}
+          <div className="mt-4 text-sm text-center text-gray-600 flex flex-wrap items-center justify-between">
+            <div>Can’t access your account?</div>
+            <div className="text-blue-600 font-medium hover:underline">
+              Forgot password?
             </div>
           </div>
-        </>
-      )}
+        </div>
+      </div>
     </div>
   );
 }
