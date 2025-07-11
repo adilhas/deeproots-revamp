@@ -125,7 +125,7 @@ export default async function handler(
       return res.status(200).json(submissions);
     } catch (error) {
       console.error('Error fetching submissions:', error);
-      return res.status(500).json({ message: 'Internal Server Error' });
+      return res.status(500).json({ message: 'Internal Server Error', error });
     }
   }
 
