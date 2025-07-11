@@ -9,15 +9,16 @@ const PreApprovalSubmitted = () => {
   const { data: session } = useSession();
   return (
     <div className=" text-center w-fit mx-auto">
-      {session?.user.role === 'seeder' && (
-        <div className="my-10">
-          <div>Submitted!</div>
-          <div>
-            You’ve successfully submitted, Stay tuned to your email to know if
-            your submission is Approved or Rejected.
+      {session?.user.role === 'seeder' &&
+        application?.preApproval === 'under-review' && (
+          <div className="my-10">
+            <div>Submitted!</div>
+            <div>
+              You’ve successfully submitted, Stay tuned to your email to know if
+              your submission is Approved or Rejected.
+            </div>
           </div>
-        </div>
-      )}
+        )}
       <div>
         <div className="max-w-4xl mx-auto pt-6 border border-[#A1A1A1] rounded-2xl">
           {/* Header */}
