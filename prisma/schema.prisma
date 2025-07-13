@@ -1,29 +1,18 @@
 generator client {
-  provider = "prisma-client-js"
-     binaryTargets = ["native", "debian-openssl-3.0.x"]
-
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("NEXT_DATABASE_URL")
-}
-
-enum KycDocumentType {
-  PASSPORT
-  PROOF_OF_ADDRESS
-  SELFIE_WITH_NOTE
-  BUSINESS_LICENSE
-  COMPANY_ADDRESS
-  AUTHORIZATION_LETTER
-  REP_ID_SELFIE
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model PrivateSeedSubmission {
-  id                String  @id @default(cuid())
+  id                String          @id @default(cuid())
   fullName          String
-  email             String  @unique
-  passwordHash      String?
+  email             String          @unique
   contact           String
   country           String
   website           String
@@ -31,17 +20,16 @@ model PrivateSeedSubmission {
   value             String
   whyJoin           String
   indvOrOrg         String
-  applicationStatus String  @default("received")
-  preApproval       String  @default("not-submitted")
-  dealRoomOpen      Boolean @default(false)
-  dealRoom          String  @default("not-submitted")
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  kycDocuments   KycDocument[]
-  ndaSubmission  NdaSubmission?
-  paymentDetails PaymentDetails?
+  applicationStatus String          @default("received")
+  createdAt         DateTime        @default(now())
+  dealRoomOpen      Boolean         @default(false)
+  preApproval       String          @default("not-submitted")
+  updatedAt         DateTime        @updatedAt
+  passwordHash      String?
+  dealRoom          String          @default("not-submitted")
+  kycDocuments      KycDocument[]
+  ndaSubmission     NdaSubmission?
+  paymentDetails    PaymentDetails?
 }
 
 model PaymentDetails {
@@ -49,13 +37,13 @@ model PaymentDetails {
   amountSent      String
   transactionLink String
   paymentImage    String
-  receiptUrl      String?
-  declineReason   String?
-  paymentStatus   String                @default("not-submitted")
   submissionId    String                @unique
-  submission      PrivateSeedSubmission @relation(fields: [submissionId], references: [id])
   updatedAt       DateTime              @updatedAt
   createdAt       DateTime              @default(now())
+  declineReason   String?
+  paymentStatus   String                @default("not-submitted")
+  receiptUrl      String?
+  submission      PrivateSeedSubmission @relation(fields: [submissionId], references: [id])
 }
 
 model SeederAccountToken {
@@ -72,15 +60,25 @@ model KycDocument {
   type      KycDocumentType
   url       String
   userId    String
-  user      PrivateSeedSubmission @relation(fields: [userId], references: [id])
   createdAt DateTime              @default(now())
+  user      PrivateSeedSubmission @relation(fields: [userId], references: [id])
 }
 
 model NdaSubmission {
   id             String                @id @default(cuid())
   userId         String                @unique
-  user           PrivateSeedSubmission @relation(fields: [userId], references: [id])
   typedSignature String
   signatureImage String
   acceptedAt     DateTime              @default(now())
+  user           PrivateSeedSubmission @relation(fields: [userId], references: [id])
+}
+
+enum KycDocumentType {
+  PASSPORT
+  PROOF_OF_ADDRESS
+  SELFIE_WITH_NOTE
+  BUSINESS_LICENSE
+  COMPANY_ADDRESS
+  AUTHORIZATION_LETTER
+  REP_ID_SELFIE
 }
