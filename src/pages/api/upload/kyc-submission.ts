@@ -2,7 +2,6 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { IncomingForm } from 'formidable';
 import fs from 'fs/promises';
 import { v4 as uuidv4 } from 'uuid';
-import { supabase } from '@/lib/supabase';
 import { prisma } from '@/lib/prisma';
 import { KycDocumentType } from '@/generated/prisma';
 
@@ -32,14 +31,15 @@ const parseForm = (req: NextApiRequest) =>
   });
 
 import type { File } from 'formidable';
+import { supabaseAdmin } from '@/lib/supabaseAdmin';
 
 const uploadFileToSupabase = async (file: File, folder: string) => {
   const buffer = await fs.readFile(file.filepath);
   const fileExt = file.originalFilename?.split('.').pop() || 'pdf';
   const fileName = `${folder}/${uuidv4()}.${fileExt}`; // e.g., 'kyc/user-1234/abc.png'
 
-  const { error } = await supabase.storage
-    .from('deeproots-upload') // ✅ Bucket name
+  const { error } = await supabaseAdmin.storage
+    .from('deeproots-upload') // Bucket name
     .upload(fileName, buffer, {
       contentType: file.mimetype || 'application/octet-stream',
       upsert: true, // optional, avoids duplicate uploads

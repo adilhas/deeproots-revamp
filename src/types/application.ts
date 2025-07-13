@@ -18,6 +18,8 @@ export type ApplicationDataType = {
   preApproval: StatusType;
   ndaSubmission?: NdaSubmissionType;
   kycDocuments?: KycDocumentType[];
+  paymentDetails?: PaymentDetailsType;
+  dealRoom: StatusType;
 };
 
 export type StatusType =
@@ -50,4 +52,17 @@ export type KycDocumentType = {
   url: string;
   userId: string;
   createdAt: string;
+};
+
+export type PaymentDetailsType = {
+  id: string;
+  amountSent: string;
+  transactionLink: string;
+  paymentImage: string;
+  submissionId: string;
+  updatedAt: string;
+  createdAt: string;
+  receiptUrl: string;
+  declineReason: string;
+  paymentStatus: string;
 };

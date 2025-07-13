@@ -19,10 +19,10 @@ enum KycDocumentType {
 }
 
 model PrivateSeedSubmission {
-  id                String   @id @default(cuid())
+  id                String  @id @default(cuid())
   fullName          String
-  email             String   @unique
-  passwordHash      String?   
+  email             String  @unique
+  passwordHash      String?
   contact           String
   country           String
   website           String
@@ -30,14 +30,31 @@ model PrivateSeedSubmission {
   value             String
   whyJoin           String
   indvOrOrg         String
-  applicationStatus String   @default("received")
-  preApproval       String   @default("not-submitted")
-  dealRoomOpen      Boolean  @default(false)
-  createdAt         DateTime @default(now())
-  updatedAt         DateTime @updatedAt
+  applicationStatus String  @default("received")
+  preApproval       String  @default("not-submitted")
+  dealRoomOpen      Boolean @default(false)
+  dealRoom          String  @default("not-submitted")
 
-  kycDocuments      KycDocument[]
-  ndaSubmission     NdaSubmission?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  kycDocuments   KycDocument[]
+  ndaSubmission  NdaSubmission?
+  paymentDetails PaymentDetails?
+}
+
+model PaymentDetails {
+  id              String                @id @default(cuid())
+  amountSent      String
+  transactionLink String
+  paymentImage    String
+  receiptUrl      String?
+  declineReason   String?
+  paymentStatus   String                @default("not-submitted")
+  submissionId    String                @unique
+  submission      PrivateSeedSubmission @relation(fields: [submissionId], references: [id])
+  updatedAt       DateTime              @updatedAt
+  createdAt       DateTime              @default(now())
 }
 
 model SeederAccountToken {
@@ -49,9 +66,8 @@ model SeederAccountToken {
   createdAt DateTime @default(now())
 }
 
-
 model KycDocument {
-  id        String                 @id @default(cuid())
+  id        String                @id @default(cuid())
   type      KycDocumentType
   url       String
   userId    String
@@ -60,8 +76,8 @@ model KycDocument {
 }
 
 model NdaSubmission {
-  id             String                 @id @default(cuid())
-  userId         String                 @unique
+  id             String                @id @default(cuid())
+  userId         String                @unique
   user           PrivateSeedSubmission @relation(fields: [userId], references: [id])
   typedSignature String
   signatureImage String

@@ -37,7 +37,7 @@ const AdminDashboardTab: React.FC<AdminDashboardProps> = ({
       title: 'Deal Room',
       description: 'Sign NDA Submit relvant Documents',
       date: '20 August 2025',
-      status: application?.dealRoomOpen ? 'opened' : 'locked',
+      status: application?.dealRoom,
       tabName: 'deal-room',
     },
   ];

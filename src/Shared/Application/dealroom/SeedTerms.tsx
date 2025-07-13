@@ -1,36 +1,34 @@
 import React from 'react';
 
-const DealSummary = () => {
+const SeedTerms = () => {
   const dealData = [
     {
-      label: 'Your Private Allocation',
-      value: 'xxx dRC',
+      label: 'Contribution Amount',
+      value: '$ [Amount]',
     },
     {
-      label: 'Exclusive Seed Price',
-      value: '$10/dRC',
+      label: 'Foundation Token Access Rate',
+      value: '$0/dRC (Exclusive Rate)',
     },
     {
-      label: 'Reserved Until',
-      value: '16th July, 2025 22:00 UTC',
+      label: 'Seeding Duration',
+      value: '12 Months (Fixed Term)',
     },
     {
-      label: 'Investment Range',
-      value: (
-        <>
-          <span className="text-gray-600">Minimum</span> $[Amount]
-          <span className="text-gray-600 mx-2">–</span>
-          <span className="text-gray-600">Maximum</span> $[Amount]
-        </>
-      ),
+      label: 'Annual On-Chain Reward Rate',
+      value: '12% (Auto-Compounded, if applicable)',
+    },
+    {
+      label: 'Accepted Currencies',
+      value: 'USDT / USDC (Stablecoins Only)',
     },
   ];
 
   return (
     <div className="mx-auto my-8 bg-white rounded-3xl border border-[#D4D4D4]">
       <div className="text-center p-4 bg-[#E9E9E9]">
-        <h1 className="text-2xl font-bold bg-gradient-to-r from-gradient-from to-gradient-to w-fit mx-auto bg-clip-text text-transparent">
-          Deal Summary
+        <h1 className="text-2xl font-semibold bg-gradient-to-r from-gradient-from to-gradient-to w-fit mx-auto bg-clip-text text-transparent">
+          Exclusive Private Seed Terms
         </h1>
       </div>
 
@@ -49,11 +47,8 @@ const DealSummary = () => {
           ))}
         </div>
       </div>
-      <div>
-        <div>Wallet Information</div>
-      </div>
     </div>
   );
 };
 
-export default DealSummary;
+export default SeedTerms;

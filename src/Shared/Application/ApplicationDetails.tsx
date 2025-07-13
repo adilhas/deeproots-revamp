@@ -11,6 +11,7 @@ import { Globe, Mail, Phone } from 'lucide-react';
 import { PiMapPinArea, PiUser } from 'react-icons/pi';
 import AdminDashboardTab from './AdminDashboardTab';
 import StatusDot from '../StatusDot';
+import AdminDealRoom from './AdminDealRoomTab';
 
 interface ApplicationDetailsProps {
   application: ApplicationDataType;
@@ -143,6 +144,9 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
               {tab.label === 'Pre-Approval' && (
                 <StatusDot status={application.preApproval as StatusType} />
               )}
+              {tab.label === 'Deal Room' && (
+                <StatusDot status={application.dealRoom as StatusType} />
+              )}
 
               {tab.label}
             </button>
@@ -166,7 +170,12 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
           />
         )}
         {currentTab === 'pre-approval' && <PreApprovalTab />}
-        {currentTab === 'deal-room' && <DealRoomTab />}
+        {currentTab === 'deal-room' &&
+          (session?.user?.role === 'admin' ? (
+            <AdminDealRoom />
+          ) : (
+            <DealRoomTab />
+          ))}
       </div>
     </div>
   );

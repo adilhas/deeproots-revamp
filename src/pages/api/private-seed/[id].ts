@@ -19,7 +19,11 @@ export default async function handler(
     try {
       const submission = await prisma.privateSeedSubmission.findUnique({
         where: { id: id as string },
-        include: { kycDocuments: true, ndaSubmission: true },
+        include: {
+          kycDocuments: true,
+          ndaSubmission: true,
+          paymentDetails: true,
+        },
       });
 
       if (!submission) {
@@ -63,7 +67,11 @@ export default async function handler(
       const updated = await prisma.privateSeedSubmission.update({
         where: { id },
         data: dataToUpdate,
-        include: { kycDocuments: true, ndaSubmission: true },
+        include: {
+          kycDocuments: true,
+          ndaSubmission: true,
+          paymentDetails: true,
+        },
       });
 
       return res.status(200).json(updated);
