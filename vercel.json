@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/**/*.ts": {
+    "api/**/*.[jt]s": {
       "includeFiles": ["prisma/**", "src/generated/prisma/**"]
     }
   }
