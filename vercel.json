@@ -1,9 +1,0 @@
-{
-  "build": {
-    "env": {
-      "NEXT_DATABASE_URL": "@next_database_url"
-    }
-  },
-  "functions": {},
-  "files": ["prisma/schema.prisma", "src/generated/prisma"]
-}

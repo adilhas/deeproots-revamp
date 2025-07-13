@@ -3,7 +3,7 @@ import { IncomingForm } from 'formidable';
 import fs from 'fs/promises';
 import { v4 as uuidv4 } from 'uuid';
 import { prisma } from '@/lib/prisma';
-import { KycDocumentType } from '@/generated/prisma';
+import { KycDocumentType } from '@prisma/client'; // ✅ built-in, Vercel-compatible
 
 export const config = {
   api: { bodyParser: false },
