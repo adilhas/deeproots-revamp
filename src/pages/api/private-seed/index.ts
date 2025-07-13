@@ -125,9 +125,18 @@ export default async function handler(
       return res.status(200).json(submissions);
     } catch (error) {
       console.error('Error fetching submissions:', error);
+      let errorInfo = {};
+      if (error && typeof error === 'object') {
+        errorInfo = {
+          name: (error as { name?: string }).name,
+          clientVersion: (error as { clientVersion?: string }).clientVersion,
+          message: (error as { message?: string }).message,
+          stack: (error as { stack?: string }).stack,
+        };
+      }
       return res.status(500).json({
         message: 'Internal Server Error',
-        error,
+        error: errorInfo,
         dbEnv: process.env.NEXT_DATABASE_URL,
       });
     }
