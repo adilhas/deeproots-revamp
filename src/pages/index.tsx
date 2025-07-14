@@ -10,6 +10,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import type { GetStaticProps } from 'next';
 import Seo from '@/Shared/Seo';
 import Head from 'next/head';
+import FounderNote from '@/components/academy_page/about_page/FounderNote';
 
 const AddressWallet = dynamic(
   () => import('@/components/main_page/address_wallet_section/AddressWallet')
@@ -138,6 +139,7 @@ const Home = () => {
           <CopyMeSection />
           <AboutSection />
         </div>
+        <FounderNote />
         <SocialLinks />
         <FooterV2 />
       </div>
@@ -152,6 +154,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     props: {
       ...(await serverSideTranslations(locale ?? 'en', [
         'landing_page',
+        'academy/about',
         'common',
       ])),
     },

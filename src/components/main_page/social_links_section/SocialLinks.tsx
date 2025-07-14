@@ -53,7 +53,7 @@ const SocialLinks = ({
         </p>
       </div>
 
-      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 max-w-[1400px] gap-6 mx-auto">
+      <div className="mt-10 grid grid-cols-1  lg:grid-cols-3 max-w-[1200px] gap-6 mx-auto">
         {socialLinks.map(
           ({
             name,
@@ -73,7 +73,7 @@ const SocialLinks = ({
                 socialCardClassName?.includes('bg-')
                   ? socialCardClassName
                   : currentVariant.cardBg,
-                'flex flex-col items-start rounded-2xl p-5 transition-all duration-300'
+                'flex flex-col items-start rounded-2xl p-5 transition-all duration-300 w-full max-w-[350px] md:max-w-none mx-auto'
               )}
               style={{ boxShadow: `0px 12px 24px 0px #0000001A` }}
             >

@@ -17,6 +17,10 @@
   --font-ed-garamond: 'Ed Garamond', serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @keyframes fade-in {
   to {
     opacity: 1;
