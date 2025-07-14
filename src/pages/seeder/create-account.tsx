@@ -54,6 +54,9 @@ export default function CreateAccountPage() {
       toast.error(data.error);
     } else {
       setSuccess(true);
+      if (success) {
+        return;
+      }
       toast.success('Account created successfully! Redirecting...');
       router.push('/seeder/login');
     }
