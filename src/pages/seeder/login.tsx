@@ -2,15 +2,17 @@
 
 import { Mail, Eye, EyeOff } from 'lucide-react';
 import { signIn, useSession } from 'next-auth/react';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { HiOutlineKey } from 'react-icons/hi2';
+import { toast } from 'react-toastify';
 
 export default function SeederLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const router = useRouter();
   const { status, data: session } = useSession();
@@ -28,6 +30,8 @@ export default function SeederLogin() {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+
     const res = await signIn('credentials', {
       redirect: false,
       username: email,
@@ -37,25 +41,32 @@ export default function SeederLogin() {
     if (res?.ok) {
       window.location.href = '/seeder/dashboard';
     } else {
-      setError('Invalid seeder credentials');
+      toast.error('Invalid seeder credentials');
+      setLoading(false);
     }
   };
 
   return (
     <div className="min-h-screen bg-[#F2F2F2] flex flex-col ">
       {/* Header */}
-      <header className="w-full px-6 py-4 bg-gradient-to-r from-gradient-from to-gradient-to flex items-center justify-between">
-        <div className="flex flex-row justify-between max-w-[1200px] mx-auto w-full items-center gap-3">
-          <div className="flex items-center space-x-2">
-            <span className="text-white font-semibold text-lg font-orbitron">
+      <div className=" py-3">
+        <div className="w-full max-w-[1200px] bg-[#DDDDDD] px-4 rounded-3xl mx-auto flex flex-row items-center justify-between py-3">
+          <div className="flex items-center gap-3">
+            <Image
+              src={'/dashboard/dashboard-logo.png'}
+              width={52}
+              height={52}
+              alt="dashboard logo"
+            />
+            <div className="text-2xl font-bold font-orbitron text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
               DEEPROOTS
-            </span>
-            <span className="bg-white text-purple-600 font-medium text-xs px-3 py-1 rounded-full">
+            </div>
+            <div className="text-xl bg-white/10 text-[#525252] border border-[#A1A1A1] px-3 py-1 flex items-center justify-center rounded-full font-semibold">
               Pre seed
-            </span>
+            </div>
           </div>
         </div>
-      </header>
+      </div>
 
       {/* Login Card */}
       <div className="flex flex-1 items-center justify-center mx-4">
@@ -64,7 +75,7 @@ export default function SeederLogin() {
             Sign into your Dashboard
           </h2>
 
-          {error && <p className="text-red-600 text-sm mb-4">{error}</p>}
+          {/* {error && <p className="text-red-600 text-sm mb-4">{error}</p>} */}
 
           <form onSubmit={handleLogin} className="space-y-4">
             {/* Email Input */}
@@ -112,9 +123,14 @@ export default function SeederLogin() {
             {/* Submit */}
             <button
               type="submit"
-              className="w-full py-2 mt-4 md:mt-[20vh] rounded-xl bg-gradient-to-r from-gradient-from to-gradient-to text-white font-medium"
+              disabled={loading}
+              className={`w-full py-2 mt-4 md:mt-[20vh] rounded-xl font-medium text-white transition-all duration-200 ${
+                loading
+                  ? 'bg-gray-400 cursor-not-allowed'
+                  : 'bg-gradient-to-r from-gradient-from to-gradient-to'
+              }`}
             >
-              Sign in
+              {loading ? 'Signing in...' : 'Sign in'}
             </button>
           </form>
 

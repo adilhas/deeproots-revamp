@@ -4,6 +4,15 @@ import fs from 'fs/promises';
 import { supabaseAdmin } from '@/lib/supabaseAdmin';
 import { v4 as uuidv4 } from 'uuid';
 import { prisma } from '@/lib/prisma';
+import nodemailer from 'nodemailer';
+
+const transporter = nodemailer.createTransport({
+  host: 'smtp.gmail.com',
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+});
 
 export const config = {
   api: {
@@ -95,6 +104,33 @@ export default async function handler(
       },
     });
 
+    const submission = await prisma.privateSeedSubmission.findUnique({
+      where: { id: submissionId },
+      select: {
+        fullName: true,
+        email: true,
+      },
+    });
+
+    if (!submission) {
+      return res.status(404).json({ message: 'Submission not found' });
+    }
+
+    const subject = 'Payment Approved – DeepRoots';
+    const text = `Hi ${submission.fullName},
+
+We’ve received your payment and your allocation has been approved.
+
+Thank you for securing your seat in DeepRoots!
+
+- DeepRoots Team`;
+
+    await transporter.sendMail({
+      from: `"DeepRoots" <${process.env.EMAIL_USER}>`,
+      to: submission.email,
+      subject,
+      text,
+    });
     return res.status(200).json({
       receiptUrl: updated.receiptUrl,
       paymentStatus: updated.paymentStatus,

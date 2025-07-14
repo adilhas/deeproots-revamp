@@ -1,4 +1,5 @@
 'use client';
+import AuthLoader from '@/components/AuthLoader';
 import { useApplication } from '@/context/ApplicationContext';
 import ApplicationDetails from '@/Shared/Application/ApplicationDetails';
 import { useSession } from 'next-auth/react';
@@ -32,16 +33,12 @@ export default function ContributorDashboard() {
   }, [session, status]);
 
   if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center text-gray-500">
-        Loading application...
-      </div>
-    );
+    return <AuthLoader />;
   }
 
   if (!application) {
     return (
-      <div className="min-h-screen flex items-center justify-center text-red-500">
+      <div className="min-h-screen text-4xl flex items-center justify-center text-red-500">
         Failed to load application data.
       </div>
     );

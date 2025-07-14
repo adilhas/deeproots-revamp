@@ -6,6 +6,8 @@ import { appWithTranslation } from 'next-i18next';
 import useLocaleDirection from '@/hooks/useLocaleDirection';
 import { SessionProvider } from 'next-auth/react';
 import { ApplicationProvider } from '@/context/ApplicationContext';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const MyApp = ({
   Component,
@@ -20,6 +22,7 @@ const MyApp = ({
             <title>DEEPROOTS</title>
             <link rel="icon" href="/landing/logo.png" />
           </Head>
+          <ToastContainer position="top-right" autoClose={3000} />
           <Component {...pageProps} />
         </ApplicationProvider>
       </ThemeProvider>

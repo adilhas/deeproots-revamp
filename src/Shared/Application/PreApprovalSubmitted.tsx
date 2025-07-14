@@ -3,6 +3,15 @@ import { useSession } from 'next-auth/react';
 import React from 'react';
 import PreApprovalApproveModal from './PreApprovalApproveModal';
 import PreAppovalDeclineModal from './PreApprovalDeclineModal';
+const documentTypeLabels: Record<string, string> = {
+  PASSPORT: 'Passport or National ID Card',
+  PROOF_OF_ADDRESS: 'Proof of Address',
+  SELFIE_WITH_NOTE: 'Selfie with ID + Handwritten Note',
+  BUSINESS_LICENSE: 'Business License',
+  COMPANY_ADDRESS: 'Company Address',
+  AUTHORIZATION_LETTER: 'Authorization Letter',
+  REP_ID_SELFIE: 'Representative ID with Selfie',
+};
 
 const PreApprovalSubmitted = () => {
   const { application } = useApplication();
@@ -12,8 +21,10 @@ const PreApprovalSubmitted = () => {
       {session?.user.role === 'seeder' &&
         application?.preApproval === 'under-review' && (
           <div className="my-10">
-            <div>Submitted!</div>
-            <div>
+            <div className=" w-fit mx-auto text-transparent bg-gradient-to-r from-gradient-from to-gradient-to text-2xl bg-clip-text font-semibold">
+              Submitted!
+            </div>
+            <div className="w-full max-w-[400px] mx-auto">
               You’ve successfully submitted, Stay tuned to your email to know if
               your submission is Approved or Rejected.
             </div>
@@ -31,21 +42,28 @@ const PreApprovalSubmitted = () => {
 
           <div className="space-y-6">
             <div className="prose p-3 rounded-b-2xl text-md bg-white text-gray-700 leading-relaxed">
-              <div className="flex flex-row items-center justify-between w-full">
+              <div className="flex flex-row mb-3 items-center justify-between w-full">
                 <div>NDA Agreement Status</div>
-                <div className="text-green-600">Agreed</div>
+                <div className="text-[#059669] bg-[#D1FAE5] py-1 px-2 rounded-4xl">
+                  Agreed
+                </div>
               </div>
               <hr />
               <div className="flex flex-row items-center justify-between w-full">
                 <div>Signature</div>
-                <div>{application?.ndaSubmission?.typedSignature}</div>
+                <div className="flex flex-col text-start">
+                  <div className="text-sm">Full Legal Name:</div>
+                  <div className="font-semibold text-black">
+                    {application?.ndaSubmission?.typedSignature}
+                  </div>
+                </div>
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
                   href={application?.ndaSubmission?.signatureImage}
                   className="underline"
                 >
-                  Signature
+                  View Signature
                 </a>
               </div>
             </div>
@@ -62,14 +80,23 @@ const PreApprovalSubmitted = () => {
           </div>
 
           <div className="space-y-6">
-            <div className="prose p-3 text-md bg-white text-gray-700 leading-relaxed">
+            <div
+              className={`prose p-3 text-md bg-white text-gray-700 leading-relaxed ${
+                session?.user.role === 'admin' &&
+                application?.preApproval === 'under-review'
+                  ? ''
+                  : 'rounded-b-2xl'
+              }`}
+            >
               {application?.kycDocuments &&
                 application?.kycDocuments.map((document) => (
                   <div
                     key={document.id}
-                    className="flex flex-row items-center justify-between w-full"
+                    className="flex flex-row items-center justify-between w-full my-3"
                   >
-                    <div>{document.type}</div>
+                    <div className="font-semibold text-lg text-black">
+                      {documentTypeLabels[document.type] || document.type}
+                    </div>
                     <a
                       target="_blank"
                       rel="noopener noreferrer"

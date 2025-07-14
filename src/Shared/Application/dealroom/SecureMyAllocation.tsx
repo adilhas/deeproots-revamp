@@ -4,10 +4,21 @@ import React, { useState } from 'react';
 import { Upload, Loader } from 'lucide-react';
 import WalletInfo from './WalletInfo';
 import { useApplication } from '@/context/ApplicationContext';
+import { z } from 'zod';
+import { toast } from 'react-toastify';
 
 interface SecureMyAllocationProps {
   disabled: boolean;
 }
+
+const paymentSchema = z.object({
+  amountSent: z.string().min(1, 'Amount is required'),
+  transactionLink: z.string().url('Must be a valid URL'),
+  screenshot: z.custom<File>((file) => file instanceof File, {
+    message: 'Screenshot file is required',
+  }),
+});
+
 const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
   const { application, setApplication } = useApplication();
   const [isOpen, setIsOpen] = useState(false);
@@ -15,6 +26,12 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
   const [transactionLink, setTransactionLink] = useState('');
   const [screenshot, setScreenshot] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const isFormValid = paymentSchema.safeParse({
+    amountSent,
+    transactionLink,
+    screenshot,
+  }).success;
 
   const handleOpen = () => {
     if (disabled) return;
@@ -50,7 +67,8 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
 
       if (!res.ok) {
         const data = await res.json();
-        throw new Error(data.error || 'Failed to upload payment');
+        console.error(data.error);
+        toast.error('Failed to upload payment');
       }
 
       const { payment } = await res.json();
@@ -64,10 +82,11 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
         };
       });
 
-      alert('Payment submitted successfully!');
+      toast.success('Payment submitted successfully!');
       setIsOpen(false);
     } catch (err) {
-      alert('Upload failed: ' + err);
+      console.error('Upload failed: ' + err);
+      toast.error('Upload failed');
     } finally {
       setIsSubmitting(false);
     }
@@ -78,7 +97,7 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
       <button
         onClick={handleOpen}
         disabled={disabled}
-        className="px-4 py-2 btn-success bg-gradient-to-r from-gradient-from to-gradient-to rounded-xl text-white font-semibold"
+        className="px-4 disabled:opacity-60 py-2 btn-success bg-gradient-to-r from-gradient-from to-gradient-to rounded-xl text-white font-semibold"
       >
         Approve
       </button>
@@ -110,7 +129,7 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
               <div className="mt-4 text-center flex w-full justify-between items-center font-semibold">
                 <div>Seed amount:</div>
                 <div className="text-gray-700 text-2xl font-orbitron">
-                  $1,000,000
+                  ${application?.capital}
                 </div>
               </div>
 
@@ -179,8 +198,8 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
 
                 <button
                   onClick={handleConfirm}
-                  disabled={isSubmitting}
-                  className={`px-4 py-2 text-sm rounded-md text-white flex items-center justify-center gap-2 ${
+                  disabled={isSubmitting || !isFormValid}
+                  className={`px-4 py-2 disabled:opacity-60 text-sm rounded-md text-white flex items-center justify-center gap-2 ${
                     isSubmitting
                       ? 'bg-gray-400 cursor-not-allowed'
                       : 'bg-green-600 hover:bg-green-700'

@@ -1,6 +1,16 @@
 import { prisma } from '@/lib/prisma';
 import { NextApiRequest, NextApiResponse } from 'next';
 
+import nodemailer from 'nodemailer';
+
+const transporter = nodemailer.createTransport({
+  host: 'smtp.gmail.com',
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+});
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -34,6 +44,36 @@ export default async function handler(
         paymentStatus: 'declined',
         declineReason,
       },
+    });
+
+    const submission = await prisma.privateSeedSubmission.findUnique({
+      where: { id: submissionId },
+      select: {
+        fullName: true,
+        email: true,
+      },
+    });
+
+    if (!submission) {
+      return res.status(404).json({ message: 'Submission not found' });
+    }
+
+    const subject = 'Payment Declined – DeepRoots';
+    const text = `Hi ${submission.fullName},
+
+Unfortunately, your payment has been declined.
+
+Reason: ${declineReason}
+
+Please reach out if you believe this was in error.
+
+- DeepRoots Team`;
+
+    await transporter.sendMail({
+      from: `"DeepRoots" <${process.env.EMAIL_USER}>`,
+      to: submission.email,
+      subject,
+      text,
     });
 
     return res.status(200).json({

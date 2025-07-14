@@ -1,5 +1,5 @@
 import React from 'react';
-import { Upload, Calendar } from 'lucide-react';
+import { Upload } from 'lucide-react';
 
 interface PAStep1Props {
   fullName: string;
@@ -31,7 +31,7 @@ const PAStep1: React.FC<PAStep1Props> = ({
     <div className="max-w-4xl mx-auto py-6 border border-[#A1A1A1] rounded-2xl">
       {/* Header */}
       <div className="text-center mb-8">
-        <h1 className="text-2xl font-semibold bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text text-transparent">
+        <h1 className="text-2xl font-semibold bg-gradient-to-r px-2 from-gradient-from to-gradient-to bg-clip-text text-transparent">
           Non-Disclosure Agreement & Simple Agreement for Future Tokens (SAFT)
         </h1>
       </div>
@@ -56,10 +56,12 @@ const PAStep1: React.FC<PAStep1Props> = ({
               </span>
             </label>
 
-            <div className="flex items-center gap-2 text-gray-600">
+            {/* <div className="flex items-center gap-2 text-gray-600">
               <Calendar size={18} />
-              <span className="font-medium">Date: July 7, 2025</span>
-            </div>
+              <span className="font-medium">
+                Date: {application?.createdAt}
+              </span>
+            </div> */}
           </div>
 
           {/* Signature Section */}
@@ -111,7 +113,9 @@ const PAStep1: React.FC<PAStep1Props> = ({
               <button
                 onClick={onContinue}
                 className="btn btn-primary bg-gradient-to-r from-gradient-from to-gradient-to border-0 text-white px-8 py-3 rounded-lg font-medium transition-all disabled:opacity-70"
-                disabled={!isChecked || !fullName.trim()}
+                disabled={
+                  !isChecked || !fullName.trim() || signatureFile === null
+                }
               >
                 Confirm & Continue
               </button>

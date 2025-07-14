@@ -12,6 +12,7 @@ import { PiMapPinArea, PiUser } from 'react-icons/pi';
 import AdminDashboardTab from './AdminDashboardTab';
 import StatusDot from '../StatusDot';
 import AdminDealRoom from './AdminDealRoomTab';
+import { formatCurrencyShort } from '@/utils/formatCapital';
 
 interface ApplicationDetailsProps {
   application: ApplicationDataType;
@@ -44,10 +45,10 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
               height={52}
               alt="dashboard logo"
             />
-            <div className="text-2xl font-bold font-orbitron text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
+            <div className="text-lg md:text-2xl font-bold font-orbitron text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
               DEEPROOTS
             </div>
-            <div className="text-xl bg-white/10 text-[#525252] border border-[#A1A1A1] px-3 py-1 flex items-center justify-center rounded-full font-semibold">
+            <div className="text-sm md:text-xl bg-white/10 text-[#525252] border border-[#A1A1A1] px-3 py-1 flex items-center justify-center rounded-full font-semibold">
               Pre seed
             </div>
           </div>
@@ -64,16 +65,42 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
         <ApplicationStatusInfo />
 
         {application && (
-          <div className="p-6 rounded-4xl bg-gradient-to-r from-gradient-from to-gradient-to text-white flex flex-col md:flex-row justify-between items-start">
-            <div>
-              <h2 className="text-4xl font-bold">{application.fullName}</h2>
-              <div className="text-xl flex items-center gap-2 my-4">
+          <div className="p-6 rounded-4xl bg-gradient-to-r from-[#AD1AAF] to-[#0085A8] border border-[#999100] text-white flex flex-col md:flex-row justify-between items-start">
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-y-3">
+              <h2 className="text-4xl font-bold col-span-1 md:col-span-2">
+                {application.fullName}
+              </h2>
+              <div className="text-xl flex items-center gap-2">
                 <div>
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>{application.email}</div>
               </div>
-              <div className="text-xl flex items-center gap-2 my-4">
+              <div className="text-xl flex items-center gap-2">
+                <div>
+                  <PiMapPinArea className="w-5 h-5" />
+                </div>
+                <div>{application.country}</div>
+              </div>
+              <div className="text-xl flex items-center gap-2">
+                <div>
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div>{application.contact}</div>
+              </div>
+              <div className="text-xl flex items-center gap-2">
+                <div>
+                  <Globe className="w-5 h-5" />
+                </div>
+                <a
+                  target="_blank"
+                  href={application.website}
+                  className="underline"
+                >
+                  {application.website}
+                </a>
+              </div>
+              <div className="text-xl flex items-center gap-2">
                 <div>
                   <PiUser className="w-5 h-5" />
                 </div>
@@ -84,27 +111,8 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
                 </div>
               </div>
             </div>
-            <div>
-              <div className="text-xl flex items-center gap-2 my-4">
-                <div>
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div>{application.contact}</div>
-              </div>
-              <div className="text-xl flex items-center gap-2 my-4">
-                <div>
-                  <PiMapPinArea className="w-5 h-5" />
-                </div>
-                <div>{application.country}</div>
-              </div>
-              <div className="text-xl flex items-center gap-2 my-4">
-                <div>
-                  <Globe className="w-5 h-5" />
-                </div>
-                <div>{application.website}</div>
-              </div>
-            </div>
-            <div className="text-start mt-6 md:mt-0">
+
+            <div className="text-start mt-6 md:mt-0 h-full flex flex-col justify-between">
               <div className="text-xl font-bold">
                 <div className="flex items-center gap-4">
                   {[
@@ -114,20 +122,20 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
                     { value: '38', label: 'Sec' },
                   ].map((item, idx) => (
                     <div key={idx} className="text-center">
-                      <div className="text-xl font-bold">{item.value}</div>
+                      <div className="text-4xl font-semibold">{item.value}</div>
                       <div className="text-xs">{item.label}</div>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="text-2xl font-bold mt-2">
-                ${application.capital}
+              <div className="text-5xl font-semibold mt-2 ">
+                ${formatCurrencyShort(Number(application.capital))}
               </div>
             </div>
           </div>
         )}
 
-        <div className="bg-white  my-6 p-2 rounded-full flex flex-row justify-between items-center gap-6 text-sm font-medium">
+        <div className="bg-white  my-6 p-2 rounded-2xl flex flex-col md:flex-row justify-between items-center gap-6 text-sm font-medium">
           {tabs.map((tab) => (
             <button
               key={tab.key}

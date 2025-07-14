@@ -1,5 +1,9 @@
+import { formatStatus } from '@/components/admin/ApplicationStatusInfo';
 import { useApplication } from '@/context/ApplicationContext';
+import { X, XCircle } from 'lucide-react';
 import React from 'react';
+import { FaMagnifyingGlass } from 'react-icons/fa6';
+import { PiCheckCircle } from 'react-icons/pi';
 interface DashboardItem {
   title: string;
   description: string;
@@ -50,7 +54,31 @@ const AdminDashboardTab: React.FC<AdminDashboardProps> = ({
         >
           <div className="flex items-center mb-3 flex-wrap justify-between">
             <div className="text-lg font-semibold">{data.title}</div>
-            <div>{data.status}</div>
+            {data.status === 'received' ? (
+              <div className="font-semibold bg-[#DBEAFE] items-center flex flex-row justify-between gap-2 text-[#2563EB] py-1 px-2 rounded-4xl">
+                <PiCheckCircle className="w-5 h-5" /> Received
+              </div>
+            ) : data.status === 'approved' ? (
+              <div className="font-semibold bg-[#D1FAE5] items-center flex flex-row justify-between gap-2 text-[#059669] py-1 px-2 rounded-4xl">
+                <PiCheckCircle className="w-5 h-5" /> Completed
+              </div>
+            ) : data.status === 'declined' ? (
+              <div className="font-semibold bg-[#FFE4E4] items-center flex flex-row justify-between gap-2 text-[#E11D20] py-1 px-2 rounded-4xl">
+                <XCircle className="w-5 h-5" /> Declined
+              </div>
+            ) : data.status === 'not-submitted' ? (
+              <div className="font-semibold bg-[#D4D4D4] items-center flex flex-row justify-between gap-2 text-[#525252] py-1 px-2 rounded-4xl">
+                <X className="w-5 h-5" /> Not Submitted
+              </div>
+            ) : data.status === 'under-review' ? (
+              <div className="font-semibold bg-[#FFF8C7] items-center flex flex-row justify-between gap-2 text-[#CA9D39] py-1 px-2 rounded-4xl">
+                <FaMagnifyingGlass className="w-5 h-5" /> Under Review
+              </div>
+            ) : (
+              <div className="font-semibold">
+                {formatStatus(data?.status ?? '')}
+              </div>
+            )}{' '}
           </div>
           <div className="flex items-center mb-3 flex-wrap justify-between">
             <div>{data.description}</div>

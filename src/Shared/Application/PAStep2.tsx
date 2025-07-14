@@ -3,6 +3,7 @@ import IndProofForm from './IndProofForm';
 import OrgProofForm from './OrgProofForm';
 import { useSession } from 'next-auth/react';
 import { useApplication } from '@/context/ApplicationContext';
+import { toast } from 'react-toastify';
 
 interface PAStep2Props {
   fullName: string;
@@ -17,20 +18,19 @@ const PAStep2: React.FC<PAStep2Props> = ({
   isChecked,
   activeTab,
 }) => {
-  // INDIVIDUAL files
   const [passportFile, setPassportFile] = useState<File | null>(null);
   const [proofOfAddressFile, setProofOfAddressFile] = useState<File | null>(
     null
   );
   const [selfieFile, setSelfieFile] = useState<File | null>(null);
 
-  // ORG files
   const [certificateFile, setCertificateFile] = useState<File | null>(null);
   const [orgProofFile, setOrgProofFile] = useState<File | null>(null);
   const [authLetterFile, setAuthLetterFile] = useState<File | null>(null);
   const [orgSelfieFile, setOrgSelfieFile] = useState<File | null>(null);
+  const [loading, setLoading] = useState(false);
 
-  const { application, setApplication } = useApplication();
+  const { setApplication } = useApplication();
 
   const { data: session } = useSession();
   const userId = session?.user?.id;
@@ -51,14 +51,14 @@ const PAStep2: React.FC<PAStep2Props> = ({
 
   const handleSubmit = async () => {
     if (!userId || !fullName.trim() || !isChecked) {
-      alert('Missing required NDA or user details');
+      toast.error('Missing required NDA or user details');
       return;
     }
 
     const formData = new FormData();
     formData.append('userId', userId);
     formData.append('fullName', fullName);
-    formData.append('ndaAccepted', 'true'); // for server check
+    formData.append('ndaAccepted', 'true');
 
     if (signatureFile) formData.append('signature', signatureFile);
 
@@ -76,16 +76,18 @@ const PAStep2: React.FC<PAStep2Props> = ({
     }
 
     try {
+      setLoading(true);
       const res = await fetch('/api/upload/kyc-submission', {
         method: 'POST',
         body: formData,
       });
 
       const result = await res.json();
-      if (!res.ok) throw new Error(result.message);
-
-      alert('Submission successful!');
-      console.log('result', result);
+      if (!res.ok) {
+        toast.error('Something went wrong');
+        return;
+      }
+      toast.success('Submission successful!');
       setApplication((prevState) => {
         if (!prevState) return prevState;
 
@@ -96,10 +98,11 @@ const PAStep2: React.FC<PAStep2Props> = ({
           preApproval: result.preApproval,
         };
       });
-      console.log('updated', application);
     } catch (err) {
       console.error(err);
-      alert(`Upload failed: ${(err as Error).message}`);
+      toast.error(`Upload failed: ${(err as Error).message}`);
+    } finally {
+      setLoading(false);
     }
   };
   return (
@@ -164,7 +167,17 @@ const PAStep2: React.FC<PAStep2Props> = ({
         </p>
         <button
           onClick={handleSubmit}
-          className="btn bg-gradient-to-r from-gradient-from to-gradient-to border-0 text-white px-8 py-3 rounded-lg font-medium transition-all"
+          disabled={
+            loading ||
+            (activeTab === 'individual' &&
+              (!passportFile || !proofOfAddressFile || !selfieFile)) ||
+            (activeTab === 'organization' &&
+              (!certificateFile ||
+                !orgProofFile ||
+                !authLetterFile ||
+                !orgSelfieFile))
+          }
+          className="btn bg-gradient-to-r disabled:opacity-65 from-gradient-from to-gradient-to border-0 text-white px-8 py-3 rounded-lg font-medium transition-all"
         >
           Submit
         </button>

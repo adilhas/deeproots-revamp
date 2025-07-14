@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import DealApprovalModal from './DealApprovalModa';
 import DealDeclineModal from './DealDeclineModal';
 import { FileUpload } from '../FileUpload';
+import { toast } from 'react-toastify';
 
 const PaymentDetails = () => {
   const { application, setApplication } = useApplication();
@@ -36,13 +37,21 @@ const PaymentDetails = () => {
       label: 'Payment Status',
       value: (
         <>
-          <span>
+          <span className="bg-[#BFDBFE] text-[#2563EB] py-1 px-2 rounded-4xl">
             User Paid{' '}
-            {application?.paymentDetails?.paymentStatus === 'approved' &&
-              ', Approved'}
-            {application?.paymentDetails?.paymentStatus === 'declined' &&
-              ', Rejected'}
-          </span>{' '}
+          </span>
+          {application?.paymentDetails?.paymentStatus === 'approved' && (
+            <span className="bg-[#BBF7D0] text-[#059669] py-1 px-2 rounded-4xl ml-1">
+              {' '}
+              Approved
+            </span>
+          )}
+          {application?.paymentDetails?.paymentStatus === 'declined' && (
+            <span className="bg-[#FECDCE] text-[#E11D20] py-1 px-2 rounded-4xl ml-1">
+              {' '}
+              Rejected
+            </span>
+          )}
         </>
       ),
     },
@@ -50,12 +59,12 @@ const PaymentDetails = () => {
 
   const handleConfirm = async () => {
     if (!receiptFile) {
-      alert('Please upload a receipt before submitting.');
+      toast.info('Please upload a receipt before submitting.');
       return;
     }
     const submissionId = application?.id;
     if (!submissionId) {
-      alert('Missing submission ID.');
+      toast.error('Missing submission ID.');
       return;
     }
 
@@ -70,12 +79,11 @@ const PaymentDetails = () => {
       });
 
       if (!res.ok) {
-        throw new Error('Upload failed');
+        toast.error('Receipt upload failed');
       }
 
       const data = await res.json();
 
-      console.log('✅ Upload successful:', data);
       setApplication((prevState) => {
         if (!prevState || !prevState.paymentDetails) return prevState;
 
@@ -92,19 +100,22 @@ const PaymentDetails = () => {
 
       setReceiptFile(null);
 
-      alert('file upload success');
+      toast.success('Payment Accepted successfully');
     } catch (err) {
       console.error('❌ Upload failed:', err);
-      alert('There was an error uploading the receipt.');
+      toast.error('There was an error uploading the receipt.');
     }
   };
 
-  const handleDecline = async () => {
-    if (!declineReason.trim()) return alert('Please enter a reason');
+  const handleDecline = async (): Promise<void> => {
+    if (!declineReason.trim()) {
+      toast.info('Please enter a decline reason');
+      return;
+    }
 
     const submissionId = application?.id;
     if (!submissionId) {
-      alert('Missing submission ID.');
+      toast.error('Missing submission ID.');
       return;
     }
 
@@ -116,7 +127,6 @@ const PaymentDetails = () => {
       });
 
       const data = await res.json();
-      console.log(data);
 
       setApplication((prevState) => {
         if (!prevState || !prevState.paymentDetails) return prevState;
@@ -131,10 +141,12 @@ const PaymentDetails = () => {
           },
         };
       });
+
       setDeclineOpen(false);
+      toast.success('Payment declined successfully');
     } catch (err) {
       console.error('❌ Decline request failed:', err);
-      alert('There was an error declining the payment.');
+      toast.error('There was an error declining the payment.');
     }
   };
 
@@ -156,7 +168,17 @@ const PaymentDetails = () => {
               <div className="text-[#525252] font-medium mb-2 sm:mb-0">
                 {item.label}
               </div>
-              <div className="text-gray-800 font-semibold">{item.value}</div>
+              {item.label === 'Transaction Hash' ? (
+                <a
+                  href={typeof item.value === 'string' ? item.value : undefined}
+                  target="_blank"
+                  className="text-gray-800 underline font-semibold"
+                >
+                  {item.value}
+                </a>
+              ) : (
+                <div className="text-gray-800 font-semibold">{item.value}</div>
+              )}
             </div>
           ))}
           {application?.paymentDetails?.paymentStatus === 'approved' && (
@@ -168,7 +190,7 @@ const PaymentDetails = () => {
               </div>
               <a
                 href={application?.paymentDetails?.receiptUrl}
-                className="text-gray-800 font-semibold max-w-[20vw] truncate underline"
+                className="text-gray-800  font-semibold max-w-[20vw] truncate underline"
                 target="_blank"
               >
                 View Receipt

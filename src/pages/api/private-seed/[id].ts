@@ -1,6 +1,15 @@
 import { Prisma } from '@prisma/client'; // ✅ Built-in, works on Vercel
 import { prisma } from '@/lib/prisma';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import nodemailer from 'nodemailer';
+
+const transporter = nodemailer.createTransport({
+  host: 'smtp.gmail.com',
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+});
 
 export default async function handler(
   req: NextApiRequest,
@@ -37,7 +46,7 @@ export default async function handler(
     }
   }
   if (method === 'PATCH') {
-    const { applicationStatus, preApproval } = req.body;
+    const { applicationStatus, preApproval, reason } = req.body;
 
     const dataToUpdate: Prisma.PrivateSeedSubmissionUpdateInput = {};
 
@@ -62,7 +71,6 @@ export default async function handler(
         .status(400)
         .json({ message: 'No valid fields provided for update' });
     }
-
     try {
       const updated = await prisma.privateSeedSubmission.update({
         where: { id },
@@ -73,6 +81,48 @@ export default async function handler(
           paymentDetails: true,
         },
       });
+
+      const { fullName: applicantName, email: applicantEmail } = updated;
+
+      if ('applicationStatus' in req.body) {
+        let subject = '';
+        let text = '';
+
+        if (applicationStatus === 'approved') {
+          subject = '🎉 Your Application Has Been Approved!';
+          text = `Hi ${applicantName},\n\nWe’re excited to inform you that your application has been approved successfully.\n\nThank you for your patience.\n\n- DeepRoots Team`;
+        } else {
+          subject = '❌ Your Application Has Been Declined';
+          text = `Hi ${applicantName},\n\nWe’re sorry to inform you that your application has been declined.\n\nReason: ${reason}\n\nThank you for your interest.\n\n- DeepRoots Team`;
+        }
+
+        await transporter.sendMail({
+          from: `"DeepRoots" <${process.env.EMAIL_USER}>`,
+          to: applicantEmail,
+          subject,
+          text,
+        });
+      }
+
+      if ('preApproval' in req.body) {
+        let subject = '';
+        let text = '';
+
+        if (preApproval === 'approved') {
+          subject = '✅ You Have Been Pre-Approved!';
+          text = `Hi ${applicantName},\n\nGreat news! You have been pre-approved for the next stage.\n\nWe’ll follow up shortly with further instructions.\n\n- DeepRoots Team`;
+        } else {
+          subject = '⚠️ Pre-Approval Declined';
+          text = `Hi ${applicantName},\n\nUnfortunately, your pre-approval request was declined.\n\nReason: ${reason}\n\nIf you have any questions, feel free to reach out.\n\n- DeepRoots Team`;
+        }
+
+        await transporter.sendMail({
+          from: `"DeepRoots" <${process.env.EMAIL_USER}>`,
+          to: applicantEmail,
+          subject,
+          text,
+        });
+      }
 
       return res.status(200).json(updated);
     } catch (error) {

@@ -9,8 +9,8 @@ import SeederTokenEmail from '@/emails/SeederTokenEmail';
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.EMAIL_USER, // e.g. your Gmail address
-    pass: process.env.EMAIL_PASS, // App-specific password or actual password
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
 });
 
@@ -137,7 +137,7 @@ export default async function handler(
       return res.status(500).json({
         message: 'Internal Server Error',
         error: errorInfo,
-        dbEnv: process.env.NEXT_DATABASE_URL,
+        dbEnv: process.env.DATABASE_URL,
       });
     }
   }

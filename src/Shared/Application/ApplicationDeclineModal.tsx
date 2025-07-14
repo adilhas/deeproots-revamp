@@ -2,6 +2,7 @@
 
 import { useApplication } from '@/context/ApplicationContext';
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const ApplicationDeclineModal = ({}) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,14 +27,17 @@ const ApplicationDeclineModal = ({}) => {
         }),
       });
 
-      if (!res.ok) throw new Error('Failed to decline application');
-
+      if (!res.ok) {
+        const errText = await res.text();
+        toast.error(errText || 'Failed to decline application.');
+        return;
+      }
       const updatedApp = await res.json();
       setApplication(updatedApp);
       setIsOpen(false);
     } catch (err) {
       console.error('Decline failed:', err);
-      alert('Something went wrong while declining the application.');
+      toast.error('Something went wrong while declining the application.');
     } finally {
       setReason('');
     }
@@ -74,7 +78,8 @@ const ApplicationDeclineModal = ({}) => {
                 </button>
                 <button
                   onClick={handleConfirm}
-                  className="px-4 py-2 text-sm rounded-md bg-red-600 text-white hover:bg-red-700"
+                  disabled={reason === ''}
+                  className="px-4 py-2 text-sm rounded-md disabled:bg-red-300 bg-red-600 text-white hover:bg-red-700"
                 >
                   Yes Reject
                 </button>
