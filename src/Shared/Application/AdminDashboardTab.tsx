@@ -7,7 +7,7 @@ import { PiCheckCircle } from 'react-icons/pi';
 interface DashboardItem {
   title: string;
   description: string;
-  date: string;
+  date: string | undefined;
   status: string | undefined;
   tabName: 'application' | 'pre-approval' | 'deal-room' | 'dashboard';
 }
@@ -26,7 +26,7 @@ const AdminDashboardTab: React.FC<AdminDashboardProps> = ({
       title: 'Application',
       description:
         'Register your interest to contribute to the DEEPROOTS Ecosystem and earn full seat as a private investor',
-      date: '16 August 2025',
+      date: application?.createdAt,
       status: application?.applicationStatus,
       tabName: 'application',
     },
@@ -82,7 +82,7 @@ const AdminDashboardTab: React.FC<AdminDashboardProps> = ({
           </div>
           <div className="flex items-center mb-3 flex-wrap justify-between">
             <div>{data.description}</div>
-            <div className="text-sm">{data.date}</div>
+            {/* <div className="text-sm">{data.date}</div> */}
           </div>
           <button
             onClick={() => setCurrentTab(data.tabName)}

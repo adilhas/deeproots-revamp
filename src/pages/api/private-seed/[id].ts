@@ -1,4 +1,4 @@
-import { Prisma } from '@prisma/client'; // ✅ Built-in, works on Vercel
+import { Prisma } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';

@@ -31,7 +31,9 @@ const PaymentDetails = () => {
     },
     {
       label: 'Payment Date',
-      value: application?.paymentDetails?.createdAt,
+      value: new Date(
+        application?.paymentDetails?.updatedAt ?? Date.now()
+      ).toLocaleDateString(),
     },
     {
       label: 'Payment Status',
