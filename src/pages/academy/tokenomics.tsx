@@ -25,7 +25,7 @@ const TokenomicsPage = () => {
     {
       icon: PiCirclesFour,
       color: '#F43F42',
-      text: 'Built on DEEPROOTS Blockchain (PoZ + EVM)',
+      text: 'Built on DEEPROOTS Blockchain (PoZ + DRVM)',
     },
     {
       icon: Link,
@@ -64,7 +64,7 @@ const TokenomicsPage = () => {
             <RootopiaRewards />
             <div className="py-16 max-w-[1200px] px-3 mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold  mb-12 bg-gradient-to-r from-gradient-from to-gradient-to w-fit mx-auto text-center bg-clip-text text-transparent">
-                Trade & Earn
+                Trade & Participate
               </h2>
               <div className="bg-[#E9E9E9] dark:border border-gray-500 flex flex-col gap-6 dark:bg-transparent max-w-[700px] mx-auto p-4 rounded-2xl">
                 {tradeAndEarnData.map(({ icon: Icon, color, text }, idx) => (
