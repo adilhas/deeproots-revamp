@@ -13,7 +13,7 @@ const TokenomicsUtility = () => {
     { title: 'Vote & Govern', description: 'On-chain governance rights' },
     {
       title: 'Access & Unlock',
-      description: 'Private sales, exclusive rewards',
+      description: 'Private seed, exclusive rewards',
     },
     {
       title: 'Fuel the Ecosystem',

@@ -116,7 +116,7 @@ const GasFeesUtility = () => {
                             key="amount"
                             className="text-xl font-bold text-[#0085a8]"
                           >
-                            0.01
+                            0.0002
                           </div>,
                           <Link key="link" />,
                           <Gem key="gem" />,

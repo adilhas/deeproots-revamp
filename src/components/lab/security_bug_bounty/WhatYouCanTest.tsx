@@ -11,7 +11,7 @@ import {
 
 const testData = [
   {
-    title: 'dRC Smart Contracts (staking, referrals, liquidity, etc.)',
+    title: 'dRC Smart Contracts (seeding, referrals, liquidity, etc.)',
     icon: <PiCoins className="w-8 h-8 text-[#10B981] dark:text-[#34D399]" />,
   },
   {

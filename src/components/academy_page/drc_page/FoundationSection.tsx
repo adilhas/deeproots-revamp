@@ -37,7 +37,7 @@ const FoundationSection = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
           {benefits.map((item, index) => (
-            <div key={index} className="flex items-start">
+            <div key={index} className="flex items-center">
               <div className="bg-green-100 dark:bg-green-500/10 p-1 rounded-full mr-3 mt-1 flex-shrink-0">
                 <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400" />
               </div>

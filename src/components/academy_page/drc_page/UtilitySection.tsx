@@ -16,9 +16,9 @@ const UtilitySection = () => {
         </h2>
       </div>
       <div className="pl-0 sm:pl-14">
-        <p className="text-gray-700 dark:text-gray-300 mb-6 text-base sm:text-lg leading-relaxed">
+        {/* <p className="text-gray-700 dark:text-gray-300 mb-6 text-base sm:text-lg leading-relaxed">
           {t('utilities.title')}
-        </p>
+        </p> */}
         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {drcUtilities.map((item) => (
             <div

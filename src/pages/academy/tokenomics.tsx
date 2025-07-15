@@ -12,9 +12,37 @@ import { Link } from 'lucide-react';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import React from 'react';
-import { PiChartLineUp, PiCirclesFour } from 'react-icons/pi';
+import { PiChartLineUp, PiCirclesFour, PiLockKeyOpen } from 'react-icons/pi';
+import { IoGitNetworkOutline } from 'react-icons/io5';
 
 const TokenomicsPage = () => {
+  const tradeAndEarnData = [
+    {
+      icon: PiChartLineUp,
+      color: '#10B981',
+      text: 'Live trading on TelexCoin DEX (USDT / USDC pairs)',
+    },
+    {
+      icon: PiCirclesFour,
+      color: '#F43F42',
+      text: 'Built on DEEPROOTS Blockchain (PoZ + EVM)',
+    },
+    {
+      icon: Link,
+      color: '#F97316',
+      text: 'Cross-chain connectivity with ETH, BSC, and more',
+    },
+    {
+      icon: IoGitNetworkOutline,
+      color: '#6366F1',
+      text: 'Fully decentralized swaps via smart contract logic',
+    },
+    {
+      icon: PiLockKeyOpen,
+      color: '#f3ae2f',
+      text: 'No custody — you control your assets',
+    },
+  ];
   return (
     <AppLayout>
       <Seo
@@ -39,22 +67,12 @@ const TokenomicsPage = () => {
                 Trade & Earn
               </h2>
               <div className="bg-[#E9E9E9] dark:border border-gray-500 flex flex-col gap-6 dark:bg-transparent max-w-[700px] mx-auto p-4 rounded-2xl">
-                <div className="flex flex-row items-start gap-3">
-                  <PiChartLineUp className="w-8 h-8 text-[#10B981] dark:text-[#34D399]" />
-                  <div className="text-xl">
-                    Live Trading on TelexCoin DEX (USDT / USDC pairs)
+                {tradeAndEarnData.map(({ icon: Icon, color, text }, idx) => (
+                  <div key={idx} className="flex flex-row items-start gap-3">
+                    <Icon className="w-8 h-8" style={{ color }} />
+                    <div className="text-xl">{text}</div>
                   </div>
-                </div>
-                <div className="flex flex-row items-center gap-3">
-                  <PiCirclesFour className="w-8 h-8 text-[#F43F42] dark:text-[#FB7173]" />
-                  <div className="text-xl">
-                    Built on DEEPROOTS Blockchain (PoZ + EVM)
-                  </div>
-                </div>
-                <div className="flex flex-row items-center gap-3">
-                  <Link className="w-8 h-8 text-[#F97316] dark:text-[#FB923C]" />
-                  <div className="text-xl">Connected to ETH, BSC, and more</div>
-                </div>
+                ))}
               </div>
             </div>
             <div className="py-16 max-w-[730px] px-3 mx-auto text-center">
@@ -62,13 +80,13 @@ const TokenomicsPage = () => {
                 LIQUIDITY LOCK – 40% COMMITMENT
               </h2>
               <div className=" text-lg md:text-2xl">
-                40% of total dRC supply is locked as protocol liquidity Ensures
-                long-term stability and prevents manipulation
+                40% of dRC supply is protocol-locked to maintain on-chain
+                stability and protect against market manipulation.
               </div>
             </div>
             <DRCTokenFeatures />
-            <h2 className="text-xl mx-auto max-w-[1200px] px-3 md:text-3xl font-bold mb-12 bg-gradient-to-r from-gradient-from to-gradient-to w-fit mx-auto text-center bg-clip-text text-transparent">
-              dRC is not hype. It’s fuel for DeWorld. Earn it. Stake it. Use it.
+            <h2 className="text-xl mx-auto max-w-[1200px] px-3 md:text-3xl font-bold mb-12 bg-gradient-to-r from-gradient-from to-gradient-to w-fit text-center bg-clip-text text-transparent">
+              dRC is not hype. It’s fuel for DeWorld. Earn it. Seed it. Use it.
               Govern with it.
             </h2>
           </div>

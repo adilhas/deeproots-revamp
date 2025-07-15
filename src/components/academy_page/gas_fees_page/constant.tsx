@@ -20,13 +20,13 @@ export const UtilityData = [
     title: 'Gas Fees — Powering DeWorld for Everyone',
     body: [
       'We believe access to the blockchain should be affordable, predictable, and fair.',
-      "That's why our gas fees are fixed at just 0.01 — no spikes, no surprises, no limits to what you can build or use.",
+      "That's why our gas fees are fixed at just 0.0002  — no spikes, no surprises, no limits to what you can build or use.",
     ],
     iconBg: 'bg-[#0085a8]/10',
   },
   {
     icon: <CircleDollarSign className="w-8 h-8 text-[#ad1aaf]" />,
-    title: 'Why 0.01 Matters',
+    title: 'Why 0.0002 Matters',
     grid: [
       {
         icon: <Coins className="w-6 h-6 text-[#0085a8]" />,
@@ -61,7 +61,7 @@ export const UtilityData = [
     title: 'How It Works',
     list: [
       {
-        icon: <div className="text-xl font-bold text-[#0085a8]">0.01</div>,
+        icon: <div className="text-xl font-bold text-[#0085a8]">0.0002</div>,
         text: 'Fixed per transaction',
       },
       {

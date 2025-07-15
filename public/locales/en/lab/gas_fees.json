@@ -12,11 +12,11 @@
         "title": "Gas Fees — Powering DeWorld for Everyone",
         "body": [
           "We believe access to the blockchain should be affordable, predictable, and fair.",
-          "That's why our gas fees are fixed at just 0.01 — no spikes, no surprises, no limits to what you can build or use."
+          "That's why our gas fees are fixed at just 0.0002 — no spikes, no surprises, no limits to what you can build or use."
         ]
       },
       {
-        "title": "Why 0.01 Matters",
+        "title": "Why 0.0002 Matters",
         "grid": [
           {
             "title": "Ultra Low-Cost",

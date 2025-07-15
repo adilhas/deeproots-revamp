@@ -19,7 +19,7 @@
       },
       {
         "title": "Staking & Seeding",
-        "desc": "Earn 12% APY, unlock Foundation rewards, and fuel the ecosystem."
+        "desc": "12% On-Chain Seeding Rewards, fueling the ecosystem."
       },
       {
         "title": "Governance",
@@ -41,18 +41,18 @@
   },
   "foundation": {
     "title": "The Foundation of dRC",
-    "description": "Holding dRC means more than just owning tokens—it means owning a stake in the Foundation, the heart of DEEPROOTS.",
-    "highlight": "Anyone who holds dRC becomes part of the Foundation by default.",
+    "description": "Holding dRC means more than just owning tokens — it connects you to protocol-based rewards, voting rights, and exclusive access within the Foundation at the heart of DEEPROOTS.",
+    "highlight": "Anyone holding dRC gains access to Foundation utilities and participation, as defined by protocol",
     "benefitsTitle": "Foundation Benefits:",
     "benefits": [
-      "High-Yield Passive Rewards",
+      "On-Chain Contribution Rewards",
       "Launchpad Share Allocation",
       "Foundation Voting Seats",
       "Multi-tier Referral Bonuses",
       "Enhanced GameFi Rewards",
       "Exclusive Ecosystem Access"
     ],
-    "finalNote": "Your tokens aren't just coins — they are keys to a powerful earning system and governance framework."
+    "finalNote": "Your tokens aren’t just coins — they’re keys to a powerful on-chain ecosystem and governance framework."
   },
   "tokenomics": {
     "title": "Built for Real Use – Not Just Trading",
@@ -60,10 +60,9 @@
     "specs": [
       "Total Supply: 100 million",
       "Distribution Period: 41 years",
-      "Initial Mint: 40%",
       "Rewards Pool: 60% controlled emission",
       "Deflationary: No inflation minting",
-      "Ecosystem Integration: 15+ products"
+      "Ecosystem Integration: 20+ products"
     ]
   },
   "cta": {
