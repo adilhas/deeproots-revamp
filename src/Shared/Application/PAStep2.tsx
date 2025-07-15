@@ -4,6 +4,7 @@ import OrgProofForm from './OrgProofForm';
 import { useSession } from 'next-auth/react';
 import { useApplication } from '@/context/ApplicationContext';
 import { toast } from 'react-toastify';
+import KycSubmissionModal from './KycSubmissionModal';
 
 interface PAStep2Props {
   fullName: string;
@@ -29,6 +30,7 @@ const PAStep2: React.FC<PAStep2Props> = ({
   const [authLetterFile, setAuthLetterFile] = useState<File | null>(null);
   const [orgSelfieFile, setOrgSelfieFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
 
   const { setApplication } = useApplication();
 
@@ -106,16 +108,16 @@ const PAStep2: React.FC<PAStep2Props> = ({
     }
   };
   return (
-    <div className="mx-auto py-6 mb-10 bg-[#E9E9E9] rounded-2xl border border-[#D4D4D4]">
+    <div className="mx-auto bg-[#E9E9E9] rounded-4xl border border-[#D4D4D4]">
       {/* Header */}
-      <div className="text-center mb-8 px-2">
-        <h1 className="text-2xl w-fit mx-auto font-semibold bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text text-transparent">
+      <div className="text-center px-2 py-4">
+        <h1 className="text-2xl w-fit mx-auto font-medium bg-gradient-to-r from-gradient-from2 to-gradient-to2 bg-clip-text text-transparent">
           KYC & Documentation
         </h1>
       </div>
 
       {/* Tabs */}
-      <div className="flex bg-white px-3 py-4">
+      <div className="flex bg-white px-3 py-4 border-y border-[#D4D4D4]">
         <button
           className={`flex-1 py-3 px-6 rounded-full font-medium transition-all ${
             activeTab === 'individual' ? 'bg-[#E9E9E9] text-black' : ''
@@ -160,12 +162,12 @@ const PAStep2: React.FC<PAStep2Props> = ({
       )}
 
       {/* Submit */}
-      <div className="flex px-3 bg-[#E9E9E9] flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-6 border-t">
-        <p className="text-gray-600 text-sm max-w-md">
+      <div className="flex px-4 py-4 bg-[#E9E9E9] flex-col sm:flex-row justify-between items-start sm:items-center gap-4 rounded-b-4xl">
+        <p className="text-lg text-[#696969] max-w-md">
           Ensure the right documents have been correctly uploaded before
           submitting.
         </p>
-        <button
+        {/* <button
           onClick={handleSubmit}
           disabled={
             loading ||
@@ -180,7 +182,23 @@ const PAStep2: React.FC<PAStep2Props> = ({
           className="btn bg-gradient-to-r disabled:opacity-65 from-gradient-from to-gradient-to border-0 text-white px-8 py-3 rounded-lg font-medium transition-all"
         >
           Submit
-        </button>
+        </button> */}
+        <KycSubmissionModal
+          disableSubmit={
+            loading ||
+            (activeTab === 'individual' &&
+              (!passportFile || !proofOfAddressFile || !selfieFile)) ||
+            (activeTab === 'organization' &&
+              (!certificateFile ||
+                !orgProofFile ||
+                !authLetterFile ||
+                !orgSelfieFile))
+          }
+          isOpen={showConfirmModal}
+          setIsOpen={setShowConfirmModal}
+          handleConfirm={handleSubmit}
+          loading={loading}
+        />
       </div>
     </div>
   );

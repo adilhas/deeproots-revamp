@@ -3,6 +3,7 @@ import ApplicationDeclineModal from './ApplicationDeclineModal';
 import ApplicationApproveModal from './ApplicationApproveModal';
 import { useSession } from 'next-auth/react';
 import { useApplication } from '@/context/ApplicationContext';
+import { formatDate } from '@/utils/formatDate';
 
 interface ApplicationTabType {
   valueYouCanGive: string;
@@ -21,30 +22,28 @@ const ApplicationTab = ({
   const { application } = useApplication();
   return (
     <div>
-      <div className="w-full bg-white p-4 rounded-2xl min-h-[220px] my-4">
+      <div className="w-full bg-white  p-4 rounded-2xl min-h-[220px] my-4">
         <div className="text-xl font-semibold">
           What unique value can you contribute to the DEEPROOTS Foundation or
           Ecosystem?
         </div>
-        <div className="mt-4 text-lg">{valueYouCanGive}</div>
+        <div className="mt-4 text-lg text-[#525252]">{valueYouCanGive}</div>
       </div>
       <div className="w-full bg-white p-4 rounded-2xl min-h-[220px] my-4">
         <div className="text-xl font-semibold">
           Why are you personally or professionally interested in joining the
           DEEPROOTS mission?
         </div>
-        <div className="mt-4 text-lg">{whyJoin}</div>
+        <div className="mt-4 text-lg text-[#525252]">{whyJoin}</div>
       </div>
       <div className="my-4">
-        <div>
-          Date Submitted: {new Date(dateSubmitted).toLocaleDateString()}
-        </div>
+        <div>Date Submitted: {formatDate(dateSubmitted)}</div>
       </div>
       <div>
         <div className="space-y-6">
           {/* Application Type */}
           <div className="space-y-4">
-            <h3 className="text-lg font-medium text-gray-900">
+            <h3 className="text-lg font-medium">
               Are you applying as an individual or organization?
             </h3>
             <div className="flex space-x-6">

@@ -1,14 +1,16 @@
-import { FileText, Upload, X } from 'lucide-react';
+import { FileText, X } from 'lucide-react';
+import { FiImage } from 'react-icons/fi';
 
 interface FileUploadProps {
   label: string;
-  description?: string;
+  description?: React.ReactNode;
   file: File | null;
   accept?: string;
   inputId: string;
   onUpload: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onRemove?: () => void;
   previewPDF?: boolean;
+  inputLabel?: string;
 }
 
 export const FileUpload: React.FC<FileUploadProps> = ({
@@ -19,23 +21,36 @@ export const FileUpload: React.FC<FileUploadProps> = ({
   inputId,
   onUpload,
   onRemove,
-  previewPDF = false,
+  inputLabel = 'Tap to upload',
+  previewPDF = true,
 }) => {
+  const isPDF = file?.type === 'application/pdf';
+
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
-      <div>
+    <div className="flex flex-wrap justify-between gap-6 items-center">
+      <div className="w-full md:w-1/2">
         <h3 className="text-lg font-semibold text-gray-800 mb-2">{label}</h3>
-        {description && <p className="text-gray-600 text-sm">{description}</p>}
+        {description && (
+          <div className="text-gray-600 text-sm">{description}</div>
+        )}
       </div>
 
-      <div className="relative">
+      <div className="relative w-full max-w-[437px]">
         {file && previewPDF ? (
           <div className="flex items-center justify-between bg-gray-50 p-4 rounded-lg border">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-red-600 rounded flex items-center justify-center relative">
-                <FileText size={16} className="text-white" />
+              <div
+                className={`w-10 h-10 rounded flex items-center justify-center relative ${
+                  isPDF ? 'bg-red-600' : 'bg-blue-600'
+                }`}
+              >
+                {isPDF ? (
+                  <FileText size={16} className="text-white mb-2" />
+                ) : (
+                  <FiImage size={16} className="text-white mb-2" />
+                )}
                 <span className="absolute bottom-0 text-xs text-white font-bold">
-                  PDF
+                  {isPDF ? 'PDF' : 'IMG'}
                 </span>
               </div>
               <div>
@@ -65,12 +80,17 @@ export const FileUpload: React.FC<FileUploadProps> = ({
             />
             <label
               htmlFor={inputId}
-              className="flex items-center justify-center gap-2 border-2 border-dashed border-gray-300 rounded-lg p-8 cursor-pointer hover:border-gray-400 transition-colors"
+              className="flex items-start text-center justify-center gap-2 border-2 border-dashed border-gray-300 rounded-lg py-3.5 px-4 cursor-pointer hover:border-gray-400 transition-colors"
             >
-              <Upload size={24} className="text-gray-400" />
-              <span className="text-gray-600">
-                {file ? file.name : 'Tap to Upload'}
-              </span>
+              <FiImage size={24} className="text-[#525252]" />
+              <div className="flex flex-col text-lg">
+                <div className="text-[#525252]">
+                  {file ? file.name : inputLabel}
+                </div>
+                <span className="text-[#696969]">
+                  {accept === `.pdf,image/*` ? 'PDF, JPG, PNG' : 'PNG/JPG'}
+                </span>
+              </div>
             </label>
           </>
         )}

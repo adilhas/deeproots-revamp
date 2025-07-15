@@ -5,7 +5,7 @@ import { signIn, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { HiOutlineKey } from 'react-icons/hi2';
+import { GrKey } from 'react-icons/gr';
 import { toast } from 'react-toastify';
 
 export default function SeederLogin() {
@@ -47,10 +47,10 @@ export default function SeederLogin() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F2F2F2] flex flex-col ">
+    <div className="min-h-screen font-archivo bg-[#F2F2F2] flex flex-col ">
       {/* Header */}
       <div className=" py-3">
-        <div className="w-full max-w-[1200px] bg-[#DDDDDD] px-4 rounded-3xl mx-auto flex flex-row items-center justify-between py-3">
+        <div className="w-full max-w-[1200px] bg-[#DDDDDD] px-4 rounded-2xl mx-auto flex flex-row items-center justify-between py-3">
           <div className="flex items-center gap-3">
             <Image
               src={'/dashboard/dashboard-logo.png'}
@@ -58,7 +58,7 @@ export default function SeederLogin() {
               height={52}
               alt="dashboard logo"
             />
-            <div className="text-2xl font-bold font-orbitron text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
+            <div className="text-2xl font-bold font-orbitron text-transparent bg-gradient-to-r from-gradient-from2 to-gradient-to2 bg-clip-text">
               DEEPROOTS
             </div>
             <div className="text-xl bg-white/10 text-[#525252] border border-[#A1A1A1] px-3 py-1 flex items-center justify-center rounded-full font-semibold">
@@ -70,14 +70,17 @@ export default function SeederLogin() {
 
       {/* Login Card */}
       <div className="flex flex-1 items-center justify-center mx-4">
-        <div className="bg-white rounded-2xl p-8 w-full max-w-md shadow-md">
-          <h2 className="text-center text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-gradient-from to-gradient-to w-fit mx-auto mb-6">
+        <div className="bg-white rounded-2xl p-8 w-full max-w-[588px] shadow-md">
+          <h2 className="text-center text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-gradient-from2 to-gradient-to2 w-fit mx-auto mb-6">
             Sign into your Dashboard
           </h2>
 
           {/* {error && <p className="text-red-600 text-sm mb-4">{error}</p>} */}
 
-          <form onSubmit={handleLogin} className="space-y-4">
+          <form
+            onSubmit={handleLogin}
+            className="space-y-4 max-w-[399px] mx-auto"
+          >
             {/* Email Input */}
             <div className="relative">
               <Mail
@@ -97,7 +100,7 @@ export default function SeederLogin() {
 
             {/* Password Input */}
             <div className="relative">
-              <HiOutlineKey
+              <GrKey
                 className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"
                 size={18}
               />
@@ -124,10 +127,10 @@ export default function SeederLogin() {
             <button
               type="submit"
               disabled={loading}
-              className={`w-full py-2 mt-4 md:mt-[20vh] rounded-xl font-medium text-white transition-all duration-200 ${
+              className={`w-full max-w-[434px] py-2 mt-4 md:mt-[20vh] rounded-xl font-medium text-white transition-all duration-200 ${
                 loading
                   ? 'bg-gray-400 cursor-not-allowed'
-                  : 'bg-gradient-to-r from-gradient-from to-gradient-to'
+                  : 'bg-gradient-to-r from-gradient-from2 to-gradient-to2'
               }`}
             >
               {loading ? 'Signing in...' : 'Sign in'}
@@ -135,7 +138,7 @@ export default function SeederLogin() {
           </form>
 
           {/* Bottom Links */}
-          <div className="mt-4 text-sm text-center text-gray-600 flex flex-wrap items-center justify-between">
+          <div className="mt-4 text-sm text-center w-full max-w-[474px] mx-auto text-gray-600 flex flex-wrap items-center justify-between">
             <div>Can’t access your account?</div>
             <div className="text-blue-600 font-medium hover:underline">
               Forgot password?

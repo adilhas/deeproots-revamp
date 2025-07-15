@@ -11,8 +11,8 @@ export function formatStatus(status: string): string {
 
 const ApplicationStatusInfo = () => {
   return (
-    <div className="flex flex-row items-center gap-6 flex-wrap py-4 text-xl">
-      <div>Application Status Legend:</div>
+    <div className="flex flex-row items-center gap-6 flex-wrap py-4 text-lg">
+      <div>Application Status Guide:</div>
       {Object.keys(statusColorMap).map((status) => (
         <div key={status} className="flex flex-row items-center gap-2">
           <StatusDot status={status as keyof typeof statusColorMap} />

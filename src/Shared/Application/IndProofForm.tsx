@@ -1,4 +1,3 @@
-import { Upload } from 'lucide-react';
 import { FileUpload } from './FileUpload';
 
 interface IndProofFormProps {
@@ -28,31 +27,34 @@ const IndProofForm: React.FC<IndProofFormProps> = ({
   removeFile,
 }) => {
   return (
-    <div className="space-y-8 px-3 bg-white py-4">
+    <div className="space-y-8 px-6 bg-white py-4">
       <FileUpload
         label="Passport or National ID Card"
-        description="Upload image"
+        inputLabel="Upload Image"
+        description="Upload Image"
         file={passportFile}
+        accept="image/*"
         inputId="passport-upload"
         onUpload={(e) => handleFileUpload(e, setPassportFile)}
+        onRemove={() => removeFile(setPassportFile)}
       />
+      <hr className="text-[#D4D4D4]" />
 
       <FileUpload
         label="Proof of Address"
         description="Submit a utility bill or bank statement with address."
         file={proofOfAddressFile}
+        inputLabel="Upload Document"
         inputId="proof-upload"
         accept=".pdf,image/*"
         previewPDF
         onUpload={(e) => handleFileUpload(e, setProofOfAddressFile)}
         onRemove={() => removeFile(setProofOfAddressFile)}
       />
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start py-3">
-        <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">
-            Selfie with ID + Handwritten Note
-          </h3>
+      <hr className="text-[#D4D4D4]" />
+      <FileUpload
+        label="Selfie with ID + Handwritten Note"
+        description={
           <div className="space-y-2 text-sm text-gray-600">
             <p>Handwritten note should show:</p>
             <p className="text-blue-600 font-medium">
@@ -60,26 +62,14 @@ const IndProofForm: React.FC<IndProofFormProps> = ({
               [Date].&quot;
             </p>
           </div>
-        </div>
-        <div className="relative">
-          <input
-            type="file"
-            accept="image/*"
-            onChange={(e) => handleFileUpload(e, setSelfieFile)}
-            className="hidden"
-            id="selfie-upload"
-          />
-          <label
-            htmlFor="selfie-upload"
-            className="flex items-center justify-center gap-2 border-2 border-dashed border-gray-300 rounded-lg p-8 cursor-pointer hover:border-gray-400 transition-colors"
-          >
-            <Upload size={24} className="text-gray-400" />
-            <span className="text-gray-600">
-              {selfieFile ? selfieFile.name : 'Tap to Upload'}
-            </span>
-          </label>
-        </div>
-      </div>
+        }
+        file={selfieFile}
+        inputLabel="Upload Document"
+        inputId="proof-upload"
+        accept=".pdf,image/*"
+        onUpload={(e) => handleFileUpload(e, setSelfieFile)}
+        onRemove={() => removeFile(setSelfieFile)}
+      />
     </div>
   );
 };

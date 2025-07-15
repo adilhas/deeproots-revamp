@@ -65,9 +65,9 @@ export default function CreateAccountPage() {
   if (loading) return <AuthLoader />;
 
   return (
-    <div className=" bg-[#EEEEEE] min-h-screen text-[#525252]">
+    <div className=" bg-[#EEEEEE] font-archivo min-h-screen text-[#525252]">
       <div className=" py-3">
-        <div className="w-full max-w-[1200px] bg-[#DDDDDD] px-4 rounded-3xl mx-auto flex flex-row items-center justify-between py-3">
+        <div className="w-full max-w-[1200px] bg-[#DDDDDD] px-4 rounded-2xl mx-auto flex flex-row items-center justify-between py-3">
           <div className="flex items-center gap-3">
             <Image
               src={'/dashboard/dashboard-logo.png'}
@@ -75,25 +75,28 @@ export default function CreateAccountPage() {
               height={52}
               alt="dashboard logo"
             />
-            <div className="text-2xl font-bold font-orbitron text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
+            <div className="text-2xl font-bold font-orbitron text-transparent bg-gradient-to-r from-gradient-from2 to-gradient-to2 bg-clip-text">
               DEEPROOTS
             </div>
-            <div className="text-xl bg-white/10 text-[#525252] border border-[#A1A1A1] px-3 py-1 flex items-center justify-center rounded-full font-semibold">
+            <div className="text-lg bg-[#FFFFFF29] text-[#525252] border border-[#A1A1A1] px-3 py-1 flex items-center justify-center rounded-full font-semibold">
               Pre seed
             </div>
           </div>
         </div>
       </div>
       <div className="max-w-[1200px] mx-auto mt-10">
-        <div className="w-full max-w-[474px] mx-auto bg-white p-6 rounded-2xl">
-          <h1 className="text-2xl font-semibold mb-4 text-center text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text w-fit mx-auto">
+        <div className="w-full max-w-[576px] mx-auto bg-white p-6 rounded-2xl">
+          <h1 className="text-3xl font-semibold mb-4 text-center text-transparent bg-gradient-to-r from-gradient-from2 to-gradient-to2 bg-clip-text w-full max-w-[451px] mx-auto">
             Welcome, You received an invite to access your dashboard
           </h1>
 
-          <h1 className="text-lg my-6 font-semibold mb-4 w-fit mx-auto text-center">
+          <h1 className="text-2xl text-[#525252] my-10 font-semibold w-fit mx-auto text-center">
             Sign up to continue
           </h1>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form
+            onSubmit={handleSubmit}
+            className="flex justify-center flex-col gap-y-4 w-full max-w-[474px] mx-auto"
+          >
             <div className="relative">
               <Mail className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
@@ -134,7 +137,7 @@ export default function CreateAccountPage() {
               <input
                 type={showConfirmPassword ? 'text' : 'password'}
                 className="w-full pl-10 pr-3 py-2 border border-[#D4D4D4] rounded-2xl"
-                placeholder="Enter password again"
+                placeholder="Enter Password Again"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
@@ -157,12 +160,12 @@ export default function CreateAccountPage() {
 
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-gradient-from to-gradient-to rounded-xl text-white py-2 hover:bg-blue-700"
+              className="w-full my-4 max-w-[399px] mx-auto bg-gradient-to-r from-gradient-from2 to-gradient-to2 rounded-xl text-white py-2 hover:bg-blue-700"
             >
               Create Account
             </button>
           </form>
-          <div className="w-full flex items-center justify-between mt-6">
+          <div className="w-full flex items-center justify-between mt-6 max-w-[474px] mx-auto">
             <div>Already Have account?</div>
             <Link href={'/seeder/login'} className="text-blue-500 underline">
               Sign In

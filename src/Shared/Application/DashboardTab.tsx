@@ -4,6 +4,7 @@ import { X, XCircle } from 'lucide-react';
 import React from 'react';
 import { FaMagnifyingGlass } from 'react-icons/fa6';
 import { PiCheckCircle } from 'react-icons/pi';
+import { formatDate } from '@/utils/formatDate';
 interface DashboardItem {
   title: string;
   description: string;
@@ -27,21 +28,21 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
       title: 'Application',
       description:
         'Register your interest to contribute to the DEEPROOTS Ecosystem and earn full seat as a private investor',
-      date: '16 August 2025',
+      date: formatDate(application.createdAt),
       status: application.applicationStatus,
       tabName: 'application',
     },
     {
       title: 'Pre-approval',
       description: 'Sign NDA Submit relvant Documents',
-      date: '20 August 2025',
+      date: formatDate(application.ndaSubmission?.acceptedAt ?? ''),
       status: application.preApproval,
       tabName: 'pre-approval',
     },
     {
       title: 'Deal Room',
       description: 'Sign NDA Submit relvant Documents',
-      date: '20 August 2025',
+      date: formatDate(application.paymentDetails?.updatedAt ?? ''),
       status: application.dealRoom,
       tabName: 'deal-room',
     },
@@ -81,7 +82,9 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
           </div>
           <div className="flex items-center mb-3 flex-wrap justify-between">
             <div>{data.description}</div>
-            {/* <div className="text-sm">{data.date}</div> */}
+            {data.status !== 'not-submitted' && (
+              <div className="text-sm">{data.date}</div>
+            )}
           </div>
           <button
             onClick={() => setCurrentTab(data.tabName)}

@@ -34,10 +34,10 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
   ] as const;
 
   return (
-    <div className="border min-h-screen bg-[#E7E7E7] text-gray-800 pb-10">
+    <div className="border min-h-screen font-archivo bg-[#E7E7E7] text-[#303030] pb-10">
       {/* Header */}
       <div className="bg-gradient-to-r py-3">
-        <div className="w-full max-w-[1200px] bg-[#DDDDDD] px-4 rounded-3xl mx-auto flex flex-row items-center justify-between py-3">
+        <div className="w-full max-w-[1200px] bg-[#DDDDDD] px-4 rounded-2xl mx-auto flex flex-row items-center justify-between py-3">
           <div className="flex items-center gap-3">
             <Image
               src={'/dashboard/dashboard-logo.png'}
@@ -45,10 +45,10 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
               height={52}
               alt="dashboard logo"
             />
-            <div className="text-lg md:text-2xl font-bold font-orbitron text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
+            <div className="text-lg md:text-2xl font-bold font-orbitron text-transparent bg-gradient-to-r from-gradient-from2 to-gradient-to2 bg-clip-text">
               DEEPROOTS
             </div>
-            <div className="text-sm md:text-xl bg-white/10 text-[#525252] border border-[#A1A1A1] px-3 py-1 flex items-center justify-center rounded-full font-semibold">
+            <div className="text-sm md:text-lg bg-[#FFFFFF29] text-[#525252] border border-[#A1A1A1] px-2 py-[2px] flex items-center justify-center rounded-full font-medium">
               Pre seed
             </div>
           </div>
@@ -127,7 +127,7 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
                     </div>
                   ))}
                 </div> */}
-                <div className="text-5xl font-semibold md:mt-10">
+                <div className="text-5xl font-semibold md:mt-[40%]">
                   ${formatCurrencyShort(Number(application.capital))}
                 </div>
               </div>
@@ -135,26 +135,38 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
           </div>
         )}
 
-        <div className="bg-white  my-6 p-2 rounded-2xl flex flex-col md:flex-row justify-between items-center gap-6 text-sm font-medium">
-          {tabs.map((tab) => (
+        <div className="bg-white  my-6 p-2 rounded-[64px] flex flex-col md:flex-row justify-between items-center gap-6 text-sm font-medium">
+          {tabs.map((tab, index) => (
             <button
               key={tab.key}
               onClick={() => setCurrentTab(tab.key)}
-              className={`p-2 rounded-2xl flex flex-row items-center justify-center gap-2 w-full text-xl ${
-                currentTab === tab.key ? 'bg-gray-300 font-semibold' : ''
+              className={`p-2 rounded-[64px] flex flex-row text-[#696969]  items-center justify-center gap-2 w-full text-xl ${
+                currentTab === tab.key
+                  ? 'bg-[#E9E9E9] font-semibold'
+                  : 'font-normal'
               }`}
             >
-              {tab.label === 'Application' && (
-                <StatusDot
-                  status={application.applicationStatus as StatusType}
-                />
-              )}
-              {tab.label === 'Pre-Approval' && (
-                <StatusDot status={application.preApproval as StatusType} />
-              )}
-              {tab.label === 'Deal Room' && (
-                <StatusDot status={application.dealRoom as StatusType} />
-              )}
+              {tab.label === 'Application' &&
+                (application.applicationStatus === 'not-submitted' ? (
+                  <span>{index}.</span>
+                ) : (
+                  <StatusDot
+                    status={application.applicationStatus as StatusType}
+                  />
+                ))}
+
+              {tab.label === 'Pre-Approval' &&
+                (application.preApproval === 'not-submitted' ? (
+                  <span>{index}.</span>
+                ) : (
+                  <StatusDot status={application.preApproval as StatusType} />
+                ))}
+              {tab.label === 'Deal Room' &&
+                (application.dealRoom === 'not-submitted' ? (
+                  <span>{index}.</span>
+                ) : (
+                  <StatusDot status={application.dealRoom as StatusType} />
+                ))}
 
               {tab.label}
             </button>

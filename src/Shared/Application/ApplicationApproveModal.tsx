@@ -51,7 +51,7 @@ const ApplicationApprovedModal = () => {
             </h2>
             <div className="p-3">
               <p className="text-sm text-gray-600 mb-2">
-                Are you sure you want to Approve this Application?
+                Are you sure all submissions are checked?
               </p>
 
               <div className="mt-6 flex justify-end space-x-3">
