@@ -3,18 +3,23 @@
 @custom-variant dark (&:where(.dark, .dark *));
 @theme {
   --color-primary-dark: #161616;
-  /* --color-primary-light: #e8e8e9; */
   --color-primary-light: #e9e9e9;
 
   --color-gradient-from: #9e2ca9;
+  --color-gradient-to: #3b82a4;
+
+  --color-gradient-from2: #ad1aaf;
+  --color-gradient-to2: #0085a8;
+
   --color-on-primary: #1c1c1c;
   --color-on-primary-dark: #f0f0f0;
-  --color-gradient-to: #3b82a4;
   --color-gradient-from-light: #eb32fd;
   --color-gradient-to-light: #37beff;
+
   --font-orbitron: 'Orbitron', 'sans-serif';
   --font-glorio: 'Gloria Hallelujah', cursive;
   --font-ed-garamond: 'Ed Garamond', serif;
+  --font-archivo: 'Archivo', serif;
 }
 
 html {

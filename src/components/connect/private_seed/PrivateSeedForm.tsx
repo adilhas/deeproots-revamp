@@ -130,7 +130,7 @@ const PrivateSeedForm = () => {
       </p>
 
       <div
-        className="md:bg-[#F1F1F1] px-2 rounded-4xl py-20 md:dark:bg-[#23232399] bg-center md:border border-[#CBD5E1] dark:border-[#334155]"
+        className="md:bg-[#F1F1F1] px-2 rounded-4xl py-20 md:dark:bg-[#23232399] bg-center bg-no-repeat md:border border-[#CBD5E1] dark:border-[#334155]"
         style={{ backgroundImage: "url('/connect/private-seed-form-bg.png')" }}
       >
         <form
@@ -283,7 +283,7 @@ const PrivateSeedForm = () => {
             <p className="text-sm font-medium mb-2">
               Are you applying as an Individual or Organization?
             </p>
-            <div className="flex gap-6">
+            <div className="flex flex-col md:flex-row gap-6">
               {(
                 [
                   {

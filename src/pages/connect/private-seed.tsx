@@ -9,6 +9,7 @@ import AccessBenefits from '../../components/connect/private_seed/AccessBenefits
 import AccessPerks from '../../components/connect/private_seed/AccessPerks';
 import PrivateSeedFAQs from '@/components/connect/private_seed/PrivateSeedFAQs';
 import Seo from '@/Shared/Seo';
+import SeedingTiers from '@/components/connect/private_seed/SeedingTiers';
 
 export default function Volunteer() {
   return (
@@ -19,11 +20,12 @@ export default function Volunteer() {
       />
 
       <AppLayout>
-        <section className="py-16 bg-primary-light dark:bg-primary-dark text-[#696969] dark:text-[#F1F5F9]">
+        <section className="py-16 font-archivo bg-primary-light dark:bg-primary-dark text-[#696969] dark:text-[#F1F5F9]">
           <div className="max-w-[1200px] mx-auto px-3">
             <PrivateSeedHero />
             <AccessCriteria />
             <AccessBenefits />
+            <SeedingTiers />
             <PrivateSeedForm />
             <AccessPerks />
             <PrivateSeedFAQs />

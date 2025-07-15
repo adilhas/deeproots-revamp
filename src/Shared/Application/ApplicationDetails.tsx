@@ -112,9 +112,9 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
               </div>
             </div>
 
-            <div className="text-start mt-6 md:mt-0 h-full flex flex-col justify-between">
-              <div className="text-xl font-bold">
-                <div className="flex items-center gap-4">
+            <div className="text-start mt-6 md:mt-0 h-full flex flex-col justify-center">
+              <div className="flex flex-col items-center justify-center h-full">
+                {/* <div className="flex items-center gap-4">
                   {[
                     { value: '02', label: 'Days' },
                     { value: '24', label: 'Hours' },
@@ -126,10 +126,10 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
                       <div className="text-xs">{item.label}</div>
                     </div>
                   ))}
+                </div> */}
+                <div className="text-5xl font-semibold md:mt-10">
+                  ${formatCurrencyShort(Number(application.capital))}
                 </div>
-              </div>
-              <div className="text-5xl font-semibold mt-2 ">
-                ${formatCurrencyShort(Number(application.capital))}
               </div>
             </div>
           </div>
