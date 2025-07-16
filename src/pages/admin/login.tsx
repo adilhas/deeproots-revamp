@@ -1,9 +1,9 @@
+import DashboardHeader from '@/Shared/Application/DashboardHeader';
 import { Eye, EyeOff, Mail } from 'lucide-react';
 import { signIn, useSession } from 'next-auth/react';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { HiOutlineKey } from 'react-icons/hi2';
+import { GrKey } from 'react-icons/gr';
 import { toast } from 'react-toastify';
 
 export default function AdminLogin() {
@@ -53,32 +53,20 @@ export default function AdminLogin() {
     <div className="min-h-screen bg-[#F2F2F2] flex flex-col ">
       {/* Header */}
       <div className=" py-3">
-        <div className="w-full max-w-[1200px] bg-[#DDDDDD] px-4 rounded-3xl mx-auto flex flex-row items-center justify-between py-3">
-          <div className="flex items-center gap-3">
-            <Image
-              src={'/dashboard/dashboard-logo.png'}
-              width={52}
-              height={52}
-              alt="dashboard logo"
-            />
-            <div className="text-2xl font-bold font-orbitron text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text">
-              DEEPROOTS
-            </div>
-            <div className="text-xl bg-white/10 text-[#525252] border border-[#A1A1A1] px-3 py-1 flex items-center justify-center rounded-full font-semibold">
-              Pre seed
-            </div>
-          </div>
-        </div>
+        <DashboardHeader label="Admin" />
       </div>
 
       {/* Login Card */}
-      <div className="flex flex-1 items-center justify-center mx-4">
-        <div className="bg-white rounded-2xl p-8 w-full max-w-md shadow-md">
-          <h2 className="text-center text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-gradient-from to-gradient-to w-fit mx-auto mb-6">
+      <div className="flex flex-1 items-start  justify-center mx-4">
+        <div className="bg-white rounded-3xl p-8 w-full max-w-[588px] mt-[3%] shadow-md">
+          <h2 className="text-center text-3xl leading-normal font-semibold text-transparent bg-clip-text bg-gradient-to-r from-gradient-from2 to-gradient-to2 w-fit mx-auto mb-6">
             Sign into your Dashboard
           </h2>
 
-          <form onSubmit={handleLogin} className="space-y-4">
+          <form
+            onSubmit={handleLogin}
+            className="space-y-4 w-full max-w-[399px] mx-auto"
+          >
             {/* Email Input */}
             <div className="relative">
               <Mail
@@ -98,7 +86,7 @@ export default function AdminLogin() {
 
             {/* Password Input */}
             <div className="relative">
-              <HiOutlineKey
+              <GrKey
                 className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"
                 size={18}
               />
@@ -128,7 +116,7 @@ export default function AdminLogin() {
               className={`w-full py-2 mt-4 md:mt-[20vh] rounded-xl font-medium text-white transition-all duration-200 ${
                 loading
                   ? 'bg-gray-400 cursor-not-allowed'
-                  : 'bg-gradient-to-r from-gradient-from to-gradient-to'
+                  : 'bg-gradient-to-r from-gradient-from2 to-gradient-to2'
               }`}
             >
               {loading ? (
@@ -143,9 +131,9 @@ export default function AdminLogin() {
           </form>
 
           {/* Bottom Links */}
-          <div className="mt-4 text-sm text-center text-gray-600 flex flex-wrap items-center justify-between">
+          <div className="mt-4 text-sm max-w-[474px] text-center text-[#525252] flex flex-wrap items-center justify-between">
             <div>Can’t access your account?</div>
-            <div className="text-blue-600 font-medium hover:underline">
+            <div className="text-[#2563EB] font-medium hover:underline">
               Forgot password?
             </div>
           </div>

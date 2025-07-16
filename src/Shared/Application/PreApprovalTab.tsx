@@ -11,7 +11,9 @@ const PreApprovalTab = () => {
     application?.preApproval === 'not-submitted' &&
     session?.user.role === 'admin'
   )
-    return <div className="text-center">Pre Approval not submitted yet</div>;
+    return (
+      <div className="text-center text-2xl">Pre Approval not submitted yet</div>
+    );
 
   if (application?.applicationStatus === 'approved') {
     return (
@@ -27,7 +29,7 @@ const PreApprovalTab = () => {
   }
 
   return (
-    <div className="text-center">
+    <div className="text-center text-2xl">
       Once the application is approved your Approval tab will be unlocked
     </div>
   );

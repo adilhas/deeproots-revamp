@@ -1,9 +1,12 @@
 import { useApplication } from '@/context/ApplicationContext';
 import React, { useState } from 'react';
-import DealApprovalModal from './DealApprovalModa';
+import DealApprovalModal from './DealApprovalModal';
 import DealDeclineModal from './DealDeclineModal';
-import { FileUpload } from '../FileUpload';
+// import { FileUpload } from '../FileUpload';
 import { toast } from 'react-toastify';
+import { formatDate, formateDateUTCTime } from '@/utils/formatDate';
+import ViewFileLink from '../ViewFileLink';
+import { FiImage } from 'react-icons/fi';
 
 const PaymentDetails = () => {
   const { application, setApplication } = useApplication();
@@ -11,29 +14,32 @@ const PaymentDetails = () => {
   const [declineReason, setDeclineReason] = useState('');
   const [declineOpen, setDeclineOpen] = useState(false);
   const [approveOpen, setApproveOpen] = useState(false);
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isDeclining, setIsDeclining] = useState(false);
   const handleUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0] || null;
     setReceiptFile(selectedFile);
   };
 
-  const handleRemove = () => {
-    setReceiptFile(null);
-  };
+  // const handleRemove = () => {
+  //   setReceiptFile(null);
+  // };
   const dealData = [
     {
       label: 'Amount Paid',
       value: `$${application?.paymentDetails?.amountSent}`,
     },
     {
-      label: 'Transaction Hash',
+      label: 'Transaction Link',
       value: application?.paymentDetails?.transactionLink,
     },
     {
       label: 'Payment Date',
-      value: new Date(
-        application?.paymentDetails?.updatedAt ?? Date.now()
-      ).toLocaleDateString(),
+      value: formatDate(application?.paymentDetails?.createdAt ?? ''),
+    },
+    {
+      label: 'Payment Screenshot',
+      value: application?.paymentDetails?.paymentImage,
     },
     {
       label: 'Payment Status',
@@ -69,6 +75,8 @@ const PaymentDetails = () => {
       toast.error('Missing submission ID.');
       return;
     }
+
+    setIsSubmitting(true);
 
     try {
       const formData = new FormData();
@@ -106,6 +114,8 @@ const PaymentDetails = () => {
     } catch (err) {
       console.error('❌ Upload failed:', err);
       toast.error('There was an error uploading the receipt.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -120,6 +130,7 @@ const PaymentDetails = () => {
       toast.error('Missing submission ID.');
       return;
     }
+    setIsDeclining(true);
 
     try {
       const res = await fetch('/api/payment/decline', {
@@ -149,6 +160,8 @@ const PaymentDetails = () => {
     } catch (err) {
       console.error('❌ Decline request failed:', err);
       toast.error('There was an error declining the payment.');
+    } finally {
+      setIsDeclining(false);
     }
   };
 
@@ -160,74 +173,147 @@ const PaymentDetails = () => {
         </h1>
       </div>
 
-      <div className="max-w-[600px] mx-auto px-2 py-4">
-        <div className="space-y-2">
+      <div className="max-w-[794px] mx-auto px-2 py-4">
+        <div className=" flex flex-col gap-y-3">
           {dealData.map((item, index) => (
             <div
               key={index}
-              className={`flex flex-col sm:flex-row justify-between items-start sm:items-center py-3 ${index !== dealData.length - 1 ? 'border-gray-100' : ''}`}
+              className={`flex flex-col sm:flex-row justify-between items-start gap-x-4 sm:items-center ${index !== dealData.length - 1 ? 'border-gray-100' : ''}`}
             >
-              <div className="text-[#525252] font-medium mb-2 sm:mb-0">
+              <div className="text-[#525252] font-medium sm:mb-0">
                 {item.label}
               </div>
-              {item.label === 'Transaction Hash' ? (
+              {item.label === 'Transaction Link' ? (
                 <a
                   href={typeof item.value === 'string' ? item.value : undefined}
                   target="_blank"
-                  className="text-gray-800 underline font-semibold"
+                  className="text-[#2563EB] underline font-semibold ml-4  truncate"
                 >
                   {item.value}
                 </a>
+              ) : item.label === 'Payment Screenshot' ? (
+                <div className="w-full max-w-[300px]">
+                  <ViewFileLink
+                    fileLink={typeof item.value === 'string' ? item.value : ''}
+                    fileName="screenshot"
+                  />
+                </div>
               ) : (
                 <div className="text-gray-800 font-semibold">{item.value}</div>
               )}
             </div>
           ))}
           {application?.paymentDetails?.paymentStatus === 'approved' && (
-            <div
-              className={`flex flex-col sm:flex-row justify-between items-start sm:items-center py-3`}
-            >
-              <div className="text-[#525252] font-medium mb-2 sm:mb-0">
-                Reciept
-              </div>
-              <a
-                href={application?.paymentDetails?.receiptUrl}
-                className="text-gray-800  font-semibold max-w-[20vw] truncate underline"
-                target="_blank"
+            <>
+              <div
+                className={`flex flex-col sm:flex-row justify-between items-start sm:items-center`}
               >
-                View Receipt
-              </a>
-            </div>
-          )}
-          {application?.paymentDetails?.paymentStatus === 'declined' && (
-            <div
-              className={`flex flex-col sm:flex-row justify-between items-start sm:items-center py-3`}
-            >
-              <div className="text-[#525252] font-medium mb-2 sm:mb-0">
-                Comment
+                <div className="text-[#525252] font-medium sm:mb-0">
+                  Approved Date
+                </div>
+                <a className="text-gray-800 font-semibold">
+                  {formateDateUTCTime(application?.paymentDetails?.updatedAt)}
+                </a>
               </div>
-              <a className="text-gray-800 font-semibold">
-                {application?.paymentDetails?.declineReason}
-              </a>
-            </div>
+              <div
+                className={`flex flex-col md:flex-row justify-between items-start sm:items-center`}
+              >
+                <div className="text-[#525252] font-medium sm:mb-0">
+                  Reciept
+                </div>
+                <div className="w-full max-w-[300px]">
+                  <ViewFileLink
+                    fileLink={application?.paymentDetails?.receiptUrl}
+                    fileName="receipt"
+                  />
+                </div>
+              </div>
+            </>
+          )}
+
+          {application?.paymentDetails?.paymentStatus === 'declined' && (
+            <>
+              <div
+                className={`flex flex-col sm:flex-row justify-between items-start sm:items-center`}
+              >
+                <div className="text-[#525252] font-medium sm:mb-0">
+                  Reject Date
+                </div>
+                <a className="text-gray-800 font-semibold">
+                  {formateDateUTCTime(application?.paymentDetails?.updatedAt)}
+                </a>
+              </div>
+              <div
+                className={`flex flex-col sm:flex-row justify-between items-start sm:items-center`}
+              >
+                <div className="text-[#525252] font-medium sm:mb-0">
+                  Comment
+                </div>
+                <a className="text-gray-800 font-semibold">
+                  {application?.paymentDetails?.declineReason}
+                </a>
+              </div>
+            </>
           )}
         </div>
       </div>
       {application?.paymentDetails?.paymentStatus === 'not-submitted' && (
-        <div className="text-center p-4 bg-[#E9E9E9] flec flex flex-row justify-between">
-          <FileUpload
-            label="Upload Receipt"
-            description=""
-            file={receiptFile}
-            inputId="receipt-upload"
-            accept=".pdf,image/*"
-            previewPDF
-            onUpload={handleUpload}
-            onRemove={handleRemove}
-          />
+        <div className="text-center p-4 bg-[#E9E9E9]  flex flex-col md:flex-row  justify-between w-full">
+          <div className="">
+            {/* <FileUpload
+              label="Upload Receipt"
+              description=""
+              file={receiptFile}
+              inputId="receipt-upload"
+              accept=".pdf,image/*"
+              previewPDF
+              onUpload={handleUpload}
+              onRemove={handleRemove}
+            /> */}
+            <div className="flex flex-row items-end justify-between w-full">
+              <div className="flex flex-row items-start gap-4 w-full">
+                <div className="text-[#696969] text-lg mt-2">
+                  Upload Receipt
+                </div>
+                <div className="relative">
+                  <input
+                    type="file"
+                    accept=".pdf,image/*"
+                    onChange={handleUpload}
+                    className="hidden"
+                    id="File-upload"
+                  />
+                  <label
+                    htmlFor="File-upload"
+                    className="flex items-start w-full md:w-[437px] justify-center gap-2 border-2 border-dashed border-gray-300 rounded-2xl py-4 cursor-pointer hover:border-gray-400 transition-colors"
+                  >
+                    <span className="">
+                      {receiptFile ? (
+                        receiptFile.name
+                      ) : (
+                        <div className="text-lg text-center">
+                          <div className="text-[#525252] text-lg flex items-center gap-2">
+                            <FiImage
+                              size={24}
+                              className="text-[#3F3F3F] font-semibold"
+                            />
+                            Upload File
+                          </div>
+                          <div className="text-[#696969] font-normal">
+                            PNG, JPG, PDF
+                          </div>
+                        </div>
+                      )}
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <div>
+          <div className="flex fle-col md:flex-row items-start">
             <DealDeclineModal
+              isSubmitting={isDeclining}
               isOpen={declineOpen}
               setIsOpen={setDeclineOpen}
               reason={declineReason}
@@ -235,6 +321,7 @@ const PaymentDetails = () => {
               handleConfirm={handleDecline}
             />
             <DealApprovalModal
+              isSubmitting={isSubmitting}
               isOpen={approveOpen}
               setIsOpen={setApproveOpen}
               handleConfirm={handleConfirm}

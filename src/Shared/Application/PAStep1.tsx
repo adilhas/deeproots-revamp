@@ -1,8 +1,10 @@
-import React from 'react';
-import { Calendar } from 'lucide-react';
+import { Calendar, Download } from 'lucide-react';
 import { useApplication } from '@/context/ApplicationContext';
 import { formatDate } from '@/utils/formatDate';
 import { FiImage } from 'react-icons/fi';
+import React, { useRef } from 'react';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import { AgreementPDF } from './AgreementPDF';
 
 interface PAStep1Props {
   fullName: string;
@@ -24,6 +26,8 @@ const PAStep1: React.FC<PAStep1Props> = ({
   onContinue,
 }) => {
   const { application } = useApplication();
+  const contentRef = useRef<HTMLDivElement>(null);
+
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
@@ -41,7 +45,15 @@ const PAStep1: React.FC<PAStep1Props> = ({
       </div>
 
       <div className="">
-        <div className="p-6 flex flex-col border-y border-[#A1A1A1] gap-y-2 text-lg h-[575px] overflow-y-scroll max-w-none bg-white text-gray-700 leading-relaxed">
+        <div
+          ref={contentRef}
+          className="p-6 flex flex-col border-y relative border-[#A1A1A1] gap-y-2 text-lg h-[575px] overflow-y-scroll max-w-none bg-white text-gray-700 leading-relaxed"
+          style={{
+            backgroundColor: '#ffffff',
+            color: '#000000',
+            WebkitBackgroundClip: 'initial',
+          }}
+        >
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
             eligendi consectetur tempore voluptates iusto. Deleniti laudantium
@@ -95,6 +107,32 @@ const PAStep1: React.FC<PAStep1Props> = ({
             voluptatem optio corrupti quisquam voluptates blanditiis amet
             molestiae libero?
           </p>
+          <div className="sticky bottom-0 right-0 w-full z-10 flex justify-end">
+            <PDFDownloadLink
+              document={
+                <AgreementPDF
+                  fullName={fullName}
+                  createdAt={application?.createdAt ?? new Date().toISOString()}
+                  signatureURL={
+                    signatureFile
+                      ? URL.createObjectURL(signatureFile)
+                      : undefined
+                  }
+                />
+              }
+              fileName="NDA_SAFT_Document.pdf"
+            >
+              {({ loading }) => (
+                <button
+                  className="flex items-center gap-3 bg-black text-white text-lg rounded-xl py-2 px-4 shadow-lg disabled:opacity-50"
+                  disabled={loading}
+                >
+                  <Download className="w-6 h-6" />
+                  {loading ? 'Preparing...' : 'Download Document'}
+                </button>
+              )}
+            </PDFDownloadLink>
+          </div>
         </div>
 
         {/* Agreement Section */}

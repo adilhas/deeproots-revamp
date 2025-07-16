@@ -19,6 +19,7 @@ export default function CreateAccountPage() {
   const [loading, setLoading] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     if (typeof token === 'string') {
@@ -36,29 +37,37 @@ export default function CreateAccountPage() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError('');
+    setSubmitting(true);
+
     if (password !== confirmPassword) {
       setError('Passwords do not match');
       toast.error('Passwords do not match');
+      setSubmitting(false);
       return;
     }
 
-    const res = await fetch('/api/seeder/create-account', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token, email, password, confirmPassword }),
-    });
+    try {
+      const res = await fetch('/api/seeder/create-account', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token, email, password, confirmPassword }),
+      });
 
-    const data = await res.json();
-    if (data.error) {
-      setError(data.error);
-      toast.error(data.error);
-    } else {
-      setSuccess(true);
-      if (success) {
-        return;
+      const data = await res.json();
+      if (data.error) {
+        setError(data.error);
+        toast.error(data.error);
+      } else {
+        setSuccess(true);
+        toast.success('Account created successfully! Redirecting...');
+        router.push('/seeder/login');
       }
-      toast.success('Account created successfully! Redirecting...');
-      router.push('/seeder/login');
+    } catch (err) {
+      setError('An unexpected error occurred');
+      console.error(success, err);
+      toast.error('An unexpected error occurred');
+    } finally {
+      setSubmitting(false);
     }
   }
 
@@ -160,9 +169,12 @@ export default function CreateAccountPage() {
 
             <button
               type="submit"
-              className="w-full my-4 max-w-[399px] mx-auto bg-gradient-to-r from-gradient-from2 to-gradient-to2 rounded-xl text-white py-2 hover:bg-blue-700"
+              disabled={submitting}
+              className={`w-full my-4 max-w-[399px] mx-auto bg-gradient-to-r from-gradient-from2 to-gradient-to2 rounded-xl text-white py-2 hover:bg-blue-700 ${
+                submitting ? 'opacity-50 cursor-not-allowed' : ''
+              }`}
             >
-              Create Account
+              {submitting ? 'Creating...' : 'Create Account'}
             </button>
           </form>
           <div className="w-full flex items-center justify-between mt-6 max-w-[474px] mx-auto">

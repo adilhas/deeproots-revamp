@@ -36,3 +36,18 @@ export function formatDate(isoDateStr: string): string {
 
   return `${month} ${getOrdinalSuffix(day)}, ${year}`;
 }
+export function formatTimeUTC(isoDateStr: string): string {
+  const date = new Date(isoDateStr);
+
+  const hours = date.getUTCHours().toString().padStart(2, '0');
+  const minutes = date.getUTCMinutes().toString().padStart(2, '0');
+
+  return `${hours}:${minutes} UTC`;
+}
+
+export function formateDateUTCTime(isoDateStr: string): string {
+  const date = formatDate(isoDateStr);
+  const time = formatTimeUTC(isoDateStr);
+
+  return `${date} ${time}`;
+}

@@ -6,8 +6,13 @@ interface SeedingTierCardProps {
   priceRange: string;
   imageSrc: string;
   features: string[];
-  isExclusive?: boolean;
   badgeLabel: string;
+  isDark?: boolean;
+  tierCardClass?: string;
+  lightGradientClass?: string;
+  darkGradientClass?: string;
+  title1Class?: string;
+  title2Class?: string;
 }
 
 const SeedingTierCard: React.FC<SeedingTierCardProps> = ({
@@ -15,29 +20,37 @@ const SeedingTierCard: React.FC<SeedingTierCardProps> = ({
   priceRange,
   imageSrc,
   features,
-  isExclusive = false,
   badgeLabel,
+  isDark = true,
+  tierCardClass,
+  title1Class,
+  title2Class,
 }) => {
+  const allowDark = isDark;
+
   return (
-    <div className="min-h-[500px] z-10 rounded-4xl p-3 w-full max-w-[368px] mx-auto border border-[#D4D4D4] dark:border-[#737373] bg-white dark:bg-[#303030]">
+    <div
+      className={`min-h-[500px] z-10 rounded-4xl p-3 w-full max-w-[368px] mx-auto border ${
+        allowDark
+          ? 'border-[#D4D4D4] dark:border-[#737373] bg-white dark:bg-[#303030]'
+          : 'border-[#D4D4D4] bg-white'
+      }`}
+    >
       <div
-        className={`${isExclusive ? 'bg-gradient-to-r from-gradient-from2 to-gradient-to2' : 'bg-[#F6F6F6] dark:bg-[#1C1D20]'} overflow-hidden border border-[#D4D4D4] dark:border-[#737373]  w-full h-[174px] rounded-[20px] p-3 relative`}
+        className={`overflow-hidden border w-full h-[174px] rounded-[20px] p-3 relative ${tierCardClass ?? ''}`}
       >
         <div className="relative z-10 h-full flex flex-col justify-between">
-          <div
-            className={`${isExclusive ? 'text-white' : 'text-[#696969] dark:text-[#F8FAFC]'} text-2xl font-medium dark:text-neutral-300`}
-          >
+          <div className={`text-2xl font-medium max-w-[90%] ${title1Class}`}>
             {tierName}
           </div>
-          <div
-            className={`${isExclusive ? 'text-white' : 'text-[#303030] dark:text-[#F8FAFC]'}  text-3xl font-semibold`}
-          >
+          <div className={`text-3xl font-semibold ${title2Class}`}>
             {priceRange}
           </div>
           <div className="bg-[#DBEAFE] text-[#2563EB] text-md rounded-[40px] w-fit py-1 px-2">
             {badgeLabel}
           </div>
         </div>
+        <div className="w-5 h-5 border border-[#A1A1A1] absolute top-3 right-3 rounded-full bg-white"></div>
         <Image
           src={imageSrc}
           width={115}
@@ -47,10 +60,18 @@ const SeedingTierCard: React.FC<SeedingTierCardProps> = ({
         />
       </div>
       <div className="mt-4 z-10">
-        <div className="text-[#525252] dark:text-[#F1F5F9] text-2xl z-10">
+        <div
+          className={`text-2xl z-10 ${
+            allowDark ? 'text-[#525252] dark:text-[#F1F5F9]' : 'text-[#525252]'
+          }`}
+        >
           Benefits
         </div>
-        <ul className="list-disc ml-6 mt-3 text-[#525252] dark:text-[#F1F5F9] text-xl z-10 space-y-[16px]">
+        <ul
+          className={`list-disc ml-6 mt-3 text-xl z-10 space-y-[16px] ${
+            allowDark ? 'text-[#525252] dark:text-[#F1F5F9]' : 'text-[#525252]'
+          }`}
+        >
           {features.map((feature, index) => (
             <li key={index}>{feature}</li>
           ))}

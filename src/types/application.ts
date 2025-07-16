@@ -13,13 +13,15 @@ export type ApplicationDataType = {
   indvOrOrg: string;
   confidentiality: boolean;
   acknowledgement: boolean;
-  applicationStatus: string;
+  applicationStatus: StatusType;
   createdAt: string;
   preApproval: StatusType;
   ndaSubmission?: NdaSubmissionType;
   kycDocuments?: KycDocumentType[];
   paymentDetails?: PaymentDetailsType;
   dealRoom: StatusType;
+  usdtAddress?: string;
+  usdcAddress?: string;
 };
 
 export type StatusType =

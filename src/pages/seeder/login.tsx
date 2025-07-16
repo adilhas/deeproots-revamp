@@ -1,8 +1,8 @@
 'use client';
 
+import DashboardHeader from '@/Shared/Application/DashboardHeader';
 import { Mail, Eye, EyeOff } from 'lucide-react';
 import { signIn, useSession } from 'next-auth/react';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { GrKey } from 'react-icons/gr';
@@ -49,29 +49,14 @@ export default function SeederLogin() {
   return (
     <div className="min-h-screen font-archivo bg-[#F2F2F2] flex flex-col ">
       {/* Header */}
-      <div className=" py-3">
-        <div className="w-full max-w-[1200px] bg-[#DDDDDD] px-4 rounded-2xl mx-auto flex flex-row items-center justify-between py-3">
-          <div className="flex items-center gap-3">
-            <Image
-              src={'/dashboard/dashboard-logo.png'}
-              width={52}
-              height={52}
-              alt="dashboard logo"
-            />
-            <div className="text-2xl font-bold font-orbitron text-transparent bg-gradient-to-r from-gradient-from2 to-gradient-to2 bg-clip-text">
-              DEEPROOTS
-            </div>
-            <div className="text-xl bg-white/10 text-[#525252] border border-[#A1A1A1] px-3 py-1 flex items-center justify-center rounded-full font-semibold">
-              Pre seed
-            </div>
-          </div>
-        </div>
+      <div className="py-3">
+        <DashboardHeader label="Pre seed" />
       </div>
 
       {/* Login Card */}
-      <div className="flex flex-1 items-center justify-center mx-4">
-        <div className="bg-white rounded-2xl p-8 w-full max-w-[588px] shadow-md">
-          <h2 className="text-center text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-gradient-from2 to-gradient-to2 w-fit mx-auto mb-6">
+      <div className="flex flex-1 items-start mt-10 justify-center mx-4">
+        <div className="bg-white rounded-2xl p-6 w-full max-w-[588px] ">
+          <h2 className="text-center text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-gradient-from2 to-gradient-to2 w-fit mx-auto mb-8">
             Sign into your Dashboard
           </h2>
 
@@ -79,7 +64,7 @@ export default function SeederLogin() {
 
           <form
             onSubmit={handleLogin}
-            className="space-y-4 max-w-[399px] mx-auto"
+            className="flex flex-col gap-y-4 max-w-[512px] mx-auto"
           >
             {/* Email Input */}
             <div className="relative">
@@ -127,10 +112,8 @@ export default function SeederLogin() {
             <button
               type="submit"
               disabled={loading}
-              className={`w-full max-w-[434px] py-2 mt-4 md:mt-[20vh] rounded-xl font-medium text-white transition-all duration-200 ${
-                loading
-                  ? 'bg-gray-400 cursor-not-allowed'
-                  : 'bg-gradient-to-r from-gradient-from2 to-gradient-to2'
+              className={`w-full bg-gradient-to-r from-gradient-from2 to-gradient-to2 max-w-[399px] mx-auto py-2 mt-16 rounded-xl font-medium text-white transition-all duration-200 ${
+                loading ? 'opacity-60 cursor-not-allowed' : ''
               }`}
             >
               {loading ? 'Signing in...' : 'Sign in'}

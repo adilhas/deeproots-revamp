@@ -15,6 +15,7 @@ const KycSubmissionModal: React.FC<KycSubmissionModalProps> = ({
   isOpen,
   setIsOpen,
   disableSubmit,
+  loading,
 }) => {
   const handleOpen = () => setIsOpen(true);
   const handleClose = () => {
@@ -32,7 +33,7 @@ const KycSubmissionModal: React.FC<KycSubmissionModalProps> = ({
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0  z-50 flex items-center text-center justify-center bg-black/10 bg-opacity-50">
+        <div className="fixed inset-0  z-50 flex items-center justify-center bg-black/10 bg-opacity-50">
           <div className="bg-white  h-[406px] flex gap-3 flex-col justify-between w-full rounded-2xl max-w-[532px] shadow-xl">
             <div className="text-xl font-semibold mb-4 p-3 flex flex-row justify-between rounded-t-2xl text-white text-center bg-gradient-to-r from-gradient-from to-gradient-to">
               <div></div>
@@ -42,12 +43,19 @@ const KycSubmissionModal: React.FC<KycSubmissionModalProps> = ({
               </button>
             </div>
             <div className="px-3">
-              <p className="text-2xl text-[#303030]">
-                Are you sure you want to submit your Pre-Approval information?
+              <p className="text-xl text-[#303030]">
+                Please review your information and uploaded documents before
+                proceeding.By clicking submit, you confirm that:
               </p>
-              <p className="text-lg  text-[#525252] w-full max-w-[389px] mx-auto mt-4">
-                Check to ensure all required documents are uploaded.
-              </p>
+              <ul className="text-lg list-disc ml-4  text-[#525252] w-full mx-auto mt-4">
+                <li>All information provided is accurate and complete</li>
+                <li>You agree to the Pre-Approval Terms & Conditions</li>
+                <li>
+                  You understand this submission is for non-investment
+                  participation only
+                </li>
+                <li>Seats are limited and not guaranteed</li>
+              </ul>
             </div>
             <div className="p-3">
               <div className="mt-6 flex flex-row justify-center items-center gap-3 space-x-3">
@@ -59,9 +67,10 @@ const KycSubmissionModal: React.FC<KycSubmissionModalProps> = ({
                 </button>
                 <button
                   onClick={handleConfirm}
+                  disabled={loading}
                   className="px-4 py-2 text-lg rounded-lg bg-gradient-to-r from-gradient-from2 w-full to-gradient-to2 text-white hover:bg-green-700"
                 >
-                  Yes, Submit
+                  {loading ? 'Submitting...' : 'Yes, Submit'}
                 </button>
               </div>
             </div>

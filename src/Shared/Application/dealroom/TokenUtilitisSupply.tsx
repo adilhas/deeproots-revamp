@@ -13,7 +13,7 @@ const Data = [
 ];
 const TokenUtilitisSupply = () => {
   return (
-    <div className="mx-auto my-8 bg-white rounded-3xl border border-[#D4D4D4]">
+    <div className="mx-auto my-8 bg-white rounded-4xl overflow-hidden border border-[#D4D4D4]">
       <div className="text-center p-4 bg-[#E9E9E9]">
         <h1 className="text-2xl font-bold bg-gradient-to-r from-gradient-from to-gradient-to w-fit mx-auto bg-clip-text text-transparent">
           Token Utilities & Total Supply

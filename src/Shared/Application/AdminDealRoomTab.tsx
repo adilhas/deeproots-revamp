@@ -2,8 +2,10 @@
 
 import React from 'react';
 import { useApplication } from '@/context/ApplicationContext';
-import SeedTerms from './dealroom/SeedTerms';
 import PaymentDetails from './dealroom/PaymentDetails';
+import SeederManagementNote from './SeederManagementNote';
+import ExclusiveSeedTerms from './dealroom/ExclusiveSeedTerms';
+import DealSummaryAdmin from './DealSummaryAdmin';
 
 const AdminDealRoom = () => {
   const { application } = useApplication();
@@ -12,11 +14,19 @@ const AdminDealRoom = () => {
   return (
     <div className="pb-8 text-[#525252]">
       {application?.dealRoom === 'not-submitted' ? (
-        <div className="text-center">Deal Room Not Submitted</div>
+        <div className="text-center text-2xl">Deal Room Not Submitted</div>
       ) : (
         <>
-          <SeedTerms />
+          {application?.dealRoom === 'approved' ||
+          application?.dealRoom === 'declined' ? (
+            <DealSummaryAdmin />
+          ) : (
+            <ExclusiveSeedTerms />
+          )}
           <PaymentDetails />
+          <div className="mt-8">
+            <SeederManagementNote />
+          </div>
         </>
       )}
     </div>

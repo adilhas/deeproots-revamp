@@ -15,6 +15,8 @@ const tierData = [
       'Standard Governance Rights (Across Ecosystem)',
       'RootOpia GameFi Boosts (In-Game Perks & Rewards)',
     ],
+    lightGradientClass: 'bg-gradient-to-b from-[#D5D5D5] to-[#6F6F6F]',
+    darkGradientClass: 'bg-gradient-to-b from-[#3A3A3A] to-[#1F1F1F]',
   },
   {
     tierName: 'Tier 2 - Core Foundation Seat',
@@ -31,6 +33,8 @@ const tierData = [
       'Preferred Queue for New Features & Tools',
       'Enhanced Referral Commission Tier',
     ],
+    lightGradientClass: 'bg-gradient-to-b from-[#FBD786] to-[#f7797d]',
+    darkGradientClass: 'bg-gradient-to-b from-[#4A1A0A] to-[#1B1B1B]',
   },
   {
     tierName: 'Tier 3 – Founder Seat',
@@ -46,6 +50,8 @@ const tierData = [
       'Founders Council Seat (Private Briefings, Roadmap Voting)',
       'Priority Role in Long-Term Ecosystem Expansion',
     ],
+    lightGradientClass: 'bg-gradient-to-b from-[#C2FFD8] to-[#465EFB]',
+    darkGradientClass: 'bg-gradient-to-b from-[#0F2027] to-[#203A43]',
   },
 ];
 
@@ -63,8 +69,9 @@ const SeedingTiers = () => {
             priceRange={tier.priceRange}
             imageSrc={tier.imageSrc}
             features={tier.features}
-            isExclusive={index === 2 ? true : false}
             badgeLabel={tier.badgeLabel}
+            lightGradientClass={tier.lightGradientClass}
+            darkGradientClass={tier.darkGradientClass}
           />
         ))}
       </div>

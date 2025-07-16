@@ -46,7 +46,8 @@ export default async function handler(
     }
   }
   if (method === 'PATCH') {
-    const { applicationStatus, preApproval, reason } = req.body;
+    const { applicationStatus, preApproval, reason, usdcAddress, usdtAddress } =
+      req.body;
 
     const dataToUpdate: Prisma.PrivateSeedSubmissionUpdateInput = {};
 
@@ -64,6 +65,14 @@ export default async function handler(
       }
 
       dataToUpdate.preApproval = preApproval;
+    }
+
+    if (usdtAddress !== undefined) {
+      dataToUpdate.usdtAddress = usdtAddress;
+    }
+
+    if (usdcAddress !== undefined) {
+      dataToUpdate.usdcAddress = usdcAddress;
     }
 
     if (Object.keys(dataToUpdate).length === 0) {

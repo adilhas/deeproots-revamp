@@ -6,13 +6,13 @@ import DashboardTab from './DashboardTab';
 import ApplicationTab from './ApplicationTab';
 import PreApprovalTab from './PreApprovalTab';
 import DealRoomTab from './DealRoomTab';
-import Image from 'next/image';
 import { Globe, Mail, Phone } from 'lucide-react';
 import { PiMapPinArea, PiUser } from 'react-icons/pi';
 import AdminDashboardTab from './AdminDashboardTab';
 import StatusDot from '../StatusDot';
 import AdminDealRoom from './AdminDealRoomTab';
 import { formatCurrencyShort } from '@/utils/formatCapital';
+import DashboardHeader from './DashboardHeader';
 
 interface ApplicationDetailsProps {
   application: ApplicationDataType;
@@ -37,28 +37,17 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
     <div className="border min-h-screen font-archivo bg-[#E7E7E7] text-[#303030] pb-10">
       {/* Header */}
       <div className="bg-gradient-to-r py-3">
-        <div className="w-full max-w-[1200px] bg-[#DDDDDD] px-4 rounded-2xl mx-auto flex flex-row items-center justify-between py-3">
-          <div className="flex items-center gap-3">
-            <Image
-              src={'/dashboard/dashboard-logo.png'}
-              width={52}
-              height={52}
-              alt="dashboard logo"
-            />
-            <div className="text-lg md:text-2xl font-bold font-orbitron text-transparent bg-gradient-to-r from-gradient-from2 to-gradient-to2 bg-clip-text">
-              DEEPROOTS
-            </div>
-            <div className="text-sm md:text-lg bg-[#FFFFFF29] text-[#525252] border border-[#A1A1A1] px-2 py-[2px] flex items-center justify-center rounded-full font-medium">
-              Pre seed
-            </div>
-          </div>
-          <button
-            className="text-lg text-black underline"
-            onClick={() => signOut()}
-          >
-            Log Out
-          </button>
-        </div>
+        <DashboardHeader
+          label="Pre seed"
+          onRight={
+            <button
+              className="text-lg text-[#696969] underline"
+              onClick={() => signOut()}
+            >
+              Log Out
+            </button>
+          }
+        />
       </div>
 
       <div className="max-w-[1200px] mx-auto px-3">
@@ -142,31 +131,31 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
               onClick={() => setCurrentTab(tab.key)}
               className={`p-2 rounded-[64px] flex flex-row text-[#696969]  items-center justify-center gap-2 w-full text-xl ${
                 currentTab === tab.key
-                  ? 'bg-[#E9E9E9] font-semibold'
+                  ? 'bg-[#E9E9E9] font-semibold border border-[#D4D4D4]'
                   : 'font-normal'
               }`}
             >
-              {tab.label === 'Application' &&
-                (application.applicationStatus === 'not-submitted' ? (
-                  <span>{index}.</span>
-                ) : (
+              {tab.label === 'Application' && (
+                <div className="flex items-center flex-row gap-2">
                   <StatusDot
                     status={application.applicationStatus as StatusType}
                   />
-                ))}
+                  {index}.
+                </div>
+              )}
 
-              {tab.label === 'Pre-Approval' &&
-                (application.preApproval === 'not-submitted' ? (
-                  <span>{index}.</span>
-                ) : (
+              {tab.label === 'Pre-Approval' && (
+                <div className="flex items-center flex-row gap-2">
                   <StatusDot status={application.preApproval as StatusType} />
-                ))}
-              {tab.label === 'Deal Room' &&
-                (application.dealRoom === 'not-submitted' ? (
-                  <span>{index}.</span>
-                ) : (
+                  {index}.
+                </div>
+              )}
+              {tab.label === 'Deal Room' && (
+                <div className="flex items-center flex-row gap-2">
                   <StatusDot status={application.dealRoom as StatusType} />
-                ))}
+                  {index}.
+                </div>
+              )}
 
               {tab.label}
             </button>

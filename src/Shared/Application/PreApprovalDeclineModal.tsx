@@ -1,11 +1,14 @@
 'use client';
 
 import { useApplication } from '@/context/ApplicationContext';
+import { X } from 'lucide-react';
 import React, { useState } from 'react';
 
 const PreAppovalDeclineModal = ({}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [reason, setReason] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const { setApplication, application } = useApplication();
   const handleOpen = () => setIsOpen(true);
   const handleClose = () => {
@@ -14,6 +17,7 @@ const PreAppovalDeclineModal = ({}) => {
   };
 
   const handleConfirm = async () => {
+    setIsSubmitting(true);
     try {
       const res = await fetch(`/api/private-seed/${application?.id}`, {
         method: 'PATCH',
@@ -35,6 +39,7 @@ const PreAppovalDeclineModal = ({}) => {
       console.error('Decline failed:', err);
       alert('Something went wrong while declining the application.');
     } finally {
+      setIsSubmitting(false);
       setReason('');
     }
   };
@@ -49,34 +54,44 @@ const PreAppovalDeclineModal = ({}) => {
       {/* Modal */}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center text-center justify-center bg-black/10 bg-opacity-50">
-          <div className="bg-white w-full rounded-2xl max-w-md shadow-xl">
-            <h2 className="text-xl font-semibold mb-4 p-3 rounded-t-2xl text-white text-center bg-gradient-to-r from-gradient-from to-gradient-to">
-              Decline Application
-            </h2>
+          <div className="bg-[#EEEEEE] border border-[#D4D4D4] w-full text-[#525252] rounded-4xl min-h-[466px] flex flex-col justify-between max-w-[532px] shadow-xl">
+            <div className=" flex flex-row justify-between items-center bg-gradient-to-r p-3 rounded-t-2xl from-gradient-from to-gradient-to">
+              <div></div>
+              <h2 className="text-3xl font-semibold  text-white text-center ">
+                Reject Approval
+              </h2>
+              <button
+                disabled={isSubmitting}
+                onClick={handleClose}
+                className="p-1 rounded-lg bg-white"
+              >
+                <X className="w-6 h-6 text-black" />
+              </button>
+            </div>
+            <p className="text-2xl max-w-[445px] w-full mx-auto">
+              Are you sure you want to decline this Application?
+            </p>
+            <textarea
+              className="w-full max-w-[484px] mx-auto border bg-white border-gray-300 rounded-3xl p-2 text-lg focus:outline-none focus:ring focus:ring-red-300 placeholder:text-[#525252] "
+              rows={4}
+              placeholder="Comment on Rejection"
+              value={reason}
+              onChange={(e) => setReason(e.target.value)}
+            />
             <div className="p-3">
-              <p className="text-sm text-gray-600 mb-2">
-                Are you sure you want to decline this Application?
-              </p>
-              <textarea
-                className="w-full border border-gray-300 rounded-md p-2 text-sm focus:outline-none focus:ring focus:ring-red-300"
-                rows={4}
-                placeholder="Enter reason..."
-                value={reason}
-                onChange={(e) => setReason(e.target.value)}
-              />
-
-              <div className="mt-6 flex justify-end space-x-3">
+              <div className="mt-6 flex flex-row justify-center space-x-3">
                 <button
                   onClick={handleClose}
-                  className="px-4 py-2 text-sm rounded-md border border-gray-300 bg-white hover:bg-gray-100"
+                  className="px-4 py-2 w-full text-lg rounded-md"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleConfirm}
-                  className="px-4 py-2 text-sm rounded-md bg-red-600 text-white hover:bg-red-700"
+                  disabled={isSubmitting}
+                  className="px-4 py-2 disabled:opacity-50 text-lg w-full rounded-md bg-[#F43F42] text-whites"
                 >
-                  Yes Reject
+                  {isSubmitting ? 'Rejecting...' : 'Yes Reject'}
                 </button>
               </div>
             </div>

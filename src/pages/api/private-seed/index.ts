@@ -113,14 +113,6 @@ export default async function handler(
     try {
       const submissions = await prisma.privateSeedSubmission.findMany({
         orderBy: { createdAt: 'desc' },
-        select: {
-          createdAt: true,
-          id: true,
-          fullName: true,
-          email: true,
-          capital: true,
-          applicationStatus: true,
-        },
       });
       return res.status(200).json(submissions);
     } catch (error) {

@@ -3,14 +3,20 @@
 import React, { useState } from 'react';
 import ExclusiveInvestorAdvantage from './dealroom/ExclusiveInvestorAdvantage';
 import { useApplication } from '@/context/ApplicationContext';
-import SeedTerms from './dealroom/SeedTerms';
-import DealPaymentInstructions from './dealroom/DealPaymentInstructions';
 import SecureMyAllocation from './dealroom/SecureMyAllocation';
 import { useSession } from 'next-auth/react';
+import TokenUtilitisSupply from './dealroom/TokenUtilitisSupply';
+import DealSummary from './dealroom/DealSummary';
+import DealFullSeatBenefits from './dealroom/DealFullSeatBenefits';
+import DealRoomSeedingTiers from './dealroom/DealRoomSeedTiers';
+import SeedTerms from './dealroom/SeedTerms';
+import DealRoomFAQs from './dealroom/DealRoomFAQs';
+import DealRoomSubmitted from './dealroom/DealRoomSubmitted';
 
 const DealRoomTab = () => {
   const { application } = useApplication();
   const { data: session } = useSession();
+
   const [acknowledged, setAcknowledged] = useState(
     application?.dealRoom === 'not-submitted' ? false : true
   );
@@ -22,94 +28,105 @@ const DealRoomTab = () => {
   );
 
   const allChecked = acknowledged && agreed && confirmed;
-  console.log(application);
+
+  if (application?.preApproval !== 'approved') {
+    return (
+      <div className="text-center text-2xl">
+        Deal Room will unlock after Pre-Approval is Approved
+      </div>
+    );
+  }
+
+  const isSeeder = session?.user.role === 'seeder';
+
+  // === DEAL ROOM SUBMITTED VIEW ===
+  if (application?.dealRoom === 'under-review' && isSeeder) {
+    return <DealRoomSubmitted />;
+  }
+
+  // === DEAL ROOM APPROVED SUCCESS MESSAGE ===
+  if (application?.dealRoom === 'approved' && isSeeder) {
+    return <DealRoomSubmitted />;
+  }
+  if (application?.dealRoom === 'declined' && isSeeder) {
+    return <DealRoomSubmitted />;
+  }
+
+  // === DEFAULT DEAL ROOM CONTENT ===
   return (
     <div className="pb-8 text-[#525252]">
-      {application?.preApproval === 'approved' ? (
-        <>
-          {application.dealRoom === 'under-review' &&
-            session?.user.role === 'seeder' && (
-              <div className="text-center">
-                <div className="bg-gradient-to-r w-fit mx-auto font-semibold text-transparent from-gradient-from to-gradient-to bg-clip-text text-3xl">
-                  You’ve made your contribution!
-                </div>
-                <div>
-                  You’ve completed your Seeding process, We will review your
-                  submission to verify payment and Approve it once verified.
-                </div>
-              </div>
-            )}
-          {application.dealRoom === 'approved' &&
-            session?.user.role === 'seeder' && (
-              <div className="bg-gradient-to-r w-fit mx-auto font-semibold text-transparent from-gradient-from to-gradient-to bg-clip-text text-3xl">
-                <div>Congratulations, Contribution Approved</div>
-                <div>You’ve successfully seeded on DeepRoots Blockchain</div>
-              </div>
-            )}
-          <SeedTerms />
-          <DealPaymentInstructions />
-          <ExclusiveInvestorAdvantage />
+      <DealSummary />
+      <DealFullSeatBenefits />
+      <TokenUtilitisSupply />
+      <ExclusiveInvestorAdvantage />
+      <DealRoomSeedingTiers />
+      <SeedTerms />
 
-          <div>
-            <div className="flex items-center space-x-2 my-2">
-              <input
-                type="checkbox"
-                id="acknowledge"
-                checked={acknowledged}
-                disabled={
-                  application?.dealRoom === 'not-submitted' ? false : true
-                }
-                onChange={(e) => setAcknowledged(e.target.checked)}
-                className="peer h-5 w-5 border-2 border-gray-400 bg-white rounded checked:bg-green-500"
-              />
-              <label htmlFor="acknowledge" className="text-gray-700">
-                I acknowledge this is a private, non-public participation
-                opportunity for ecosystem access only.
-              </label>
-            </div>
+      <div className="text-xl">
+        <div className="mb-6">
+          This Private Seed Deal Room is exclusively available to verified
+          Foundation Seeders. Confidentiality and discretion are expected.
+        </div>
 
-            <div className="flex items-center space-x-2 my-2">
-              <input
-                type="checkbox"
-                id="agreement"
-                checked={agreed}
-                disabled={
-                  application?.dealRoom === 'not-submitted' ? false : true
-                }
-                onChange={(e) => setAgreed(e.target.checked)}
-                className="peer h-5 w-5 border-2 border-gray-400 bg-white rounded checked:bg-green-500"
-              />
-              <label htmlFor="agreement" className="text-gray-700">
-                I agree to the Terms, Conditions, and Participation Guidelines
-                for this Foundation Seat application.
-              </label>
-            </div>
+        <div className="form-control my-2">
+          <label className="label cursor-pointer justify-start gap-3">
+            <input
+              type="checkbox"
+              id="acknowledge"
+              checked={acknowledged}
+              disabled={application?.dealRoom !== 'not-submitted'}
+              onChange={(e) => setAcknowledged(e.target.checked)}
+              className="checkbox checkbox-success bg-white"
+            />
+            <span className="label-text text-gray-700">
+              I acknowledge this is a private, non-public participation
+              opportunity for ecosystem access only.
+            </span>
+          </label>
+        </div>
 
-            <div className="flex items-center space-x-2 my-2">
-              <input
-                type="checkbox"
-                id="doc-submission"
-                checked={confirmed}
-                disabled={
-                  application?.dealRoom === 'not-submitted' ? false : true
-                }
-                onChange={(e) => setConfirmed(e.target.checked)}
-                className="peer h-5 w-5 border-2 border-gray-400 bg-white rounded checked:bg-green-500"
-              />
-              <label htmlFor="doc-submission" className="text-gray-700">
-                I confirm all submitted details are accurate and authorize this
-                submission for review.
-              </label>
-            </div>
+        <div className="form-control my-2">
+          <label className="label cursor-pointer justify-start gap-3">
+            <input
+              type="checkbox"
+              id="agreement"
+              checked={agreed}
+              disabled={application?.dealRoom !== 'not-submitted'}
+              onChange={(e) => setAgreed(e.target.checked)}
+              className="checkbox checkbox-success bg-white"
+            />
+            <span className="label-text text-gray-700">
+              I agree to the Terms, Conditions, and Participation Guidelines for
+              this Foundation Seat application.
+            </span>
+          </label>
+        </div>
 
-            {application.dealRoom === 'not-submitted' && (
-              <SecureMyAllocation disabled={!allChecked} />
-            )}
-          </div>
-        </>
-      ) : (
-        <div className="text-center">Please Complete KYC to open deal room</div>
-      )}
+        <div className="form-control my-2">
+          <label className="label cursor-pointer justify-start gap-3">
+            <input
+              type="checkbox"
+              id="doc-submission"
+              checked={confirmed}
+              disabled={application?.dealRoom !== 'not-submitted'}
+              onChange={(e) => setConfirmed(e.target.checked)}
+              className="checkbox checkbox-success bg-white"
+            />
+            <span className="label-text text-gray-700">
+              I confirm all submitted details are accurate and authorize this
+              submission for review.
+            </span>
+          </label>
+        </div>
+
+        {application?.dealRoom === 'not-submitted' && (
+          <SecureMyAllocation disabled={!allChecked} />
+        )}
+      </div>
+
+      <div className="py-16 mt-20">
+        <DealRoomFAQs />
+      </div>
     </div>
   );
 };

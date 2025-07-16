@@ -1,6 +1,7 @@
 'use client';
 
 import { useApplication } from '@/context/ApplicationContext';
+import { X } from 'lucide-react';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
@@ -53,33 +54,40 @@ const ApplicationDeclineModal = ({}) => {
       {/* Modal */}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center text-center justify-center bg-black/10 bg-opacity-50">
-          <div className="bg-white w-full rounded-2xl max-w-md shadow-xl">
-            <h2 className="text-xl font-semibold mb-4 p-3 rounded-t-2xl text-white text-center bg-gradient-to-r from-gradient-from to-gradient-to">
-              Decline Application
-            </h2>
-            <div className="p-3">
-              <p className="text-sm text-gray-600 mb-2">
-                Are you sure you want to decline this Application?
-              </p>
+          <div className="bg-[#EEEEEE] border border-[#D4D4D4] min-h-[406px] flex flex-col justify-between w-full rounded-2xl max-w-md shadow-xl">
+            <div className=" flex flex-row justify-between items-center bg-gradient-to-r p-3 rounded-t-2xl from-gradient-from to-gradient-to">
+              <div></div>
+              <h2 className="text-3xl font-semibold  text-white text-center ">
+                Decline Application
+              </h2>
+              <button onClick={handleClose} className="p-1 rounded-lg bg-white">
+                <X className="w-6 h-6 text-black" />
+              </button>
+            </div>
+            <p className="text-[#525252] text-2xl">
+              Are you sure you want to decline this Application?
+            </p>
+            <div className="p-5">
               <textarea
-                className="w-full border border-gray-300 rounded-md p-2 text-sm focus:outline-none focus:ring focus:ring-red-300"
+                className="w-full border bg-white border-gray-300 rounded-2xl p-2 text-sm focus:outline-none focus:ring focus:ring-red-300"
                 rows={4}
-                placeholder="Enter reason..."
+                placeholder="Comment on decline"
                 value={reason}
                 onChange={(e) => setReason(e.target.value)}
               />
-
+            </div>
+            <div className="p-3">
               <div className="mt-6 flex justify-end space-x-3">
                 <button
                   onClick={handleClose}
-                  className="px-4 py-2 text-sm rounded-md border border-gray-300 bg-white hover:bg-gray-100"
+                  className="px-4 py-2 w-full text-lg rounded-md hover:bg-gray-100"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleConfirm}
                   disabled={reason === ''}
-                  className="px-4 py-2 text-sm rounded-md disabled:bg-red-300 bg-red-600 text-white hover:bg-red-700"
+                  className="px-4 py-2 w-full text-lg rounded-md disabled:bg-red-300 bg-[#F43F42] text-white hover:bg-red-700"
                 >
                   Yes Reject
                 </button>

@@ -4,6 +4,7 @@ import ApplicationApproveModal from './ApplicationApproveModal';
 import { useSession } from 'next-auth/react';
 import { useApplication } from '@/context/ApplicationContext';
 import { formatDate } from '@/utils/formatDate';
+import SeederManagementNote from './SeederManagementNote';
 
 interface ApplicationTabType {
   valueYouCanGive: string;
@@ -21,25 +22,32 @@ const ApplicationTab = ({
   const { data: session } = useSession();
   const { application } = useApplication();
   return (
-    <div>
+    <div className="text-lg">
       <div className="w-full bg-white  p-4 rounded-2xl min-h-[220px] my-4">
-        <div className="text-xl font-semibold">
+        <div className="text-xl font-medium text-[#303030]">
           What unique value can you contribute to the DEEPROOTS Foundation or
           Ecosystem?
         </div>
-        <div className="mt-4 text-lg text-[#525252]">{valueYouCanGive}</div>
+        <div className="mt-4 text-lg text-[#525252] font-normal">
+          {valueYouCanGive}
+        </div>
       </div>
       <div className="w-full bg-white p-4 rounded-2xl min-h-[220px] my-4">
-        <div className="text-xl font-semibold">
+        <div className="text-xl font-medium text-[#303030]">
           Why are you personally or professionally interested in joining the
           DEEPROOTS mission?
         </div>
-        <div className="mt-4 text-lg text-[#525252]">{whyJoin}</div>
+        <div className="mt-4 text-lg text-[#525252] font-normal">{whyJoin}</div>
       </div>
-      <div className="my-4">
-        <div>Date Submitted: {formatDate(dateSubmitted)}</div>
+      <div className="my-4 text-[#525252]">
+        <div>
+          Date Submitted:
+          <span className="text-[#303030] ml-2">
+            {formatDate(dateSubmitted)}
+          </span>
+        </div>
       </div>
-      <div>
+      <div className="text-[#525252]">
         <div className="space-y-6">
           {/* Application Type */}
           <div className="space-y-4">
@@ -54,20 +62,20 @@ const ApplicationTab = ({
                   value="Ind"
                   checked={indOrOrg === 'Ind'}
                   disabled
-                  className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+                  className="radio radio-success disabled:opacity-100 disabled:bg-white"
                 />
-                <span className="ml-2 text-gray-700">Ind</span>
+                <span className="ml-2 text-md">Individual</span>
               </label>
               <label className="flex items-center cursor-not-allowed">
                 <input
                   type="radio"
                   name="applicationType"
                   value="Org"
-                  checked={indOrOrg !== 'Ind'} // fallback to Org
+                  checked={indOrOrg !== 'Ind'}
                   disabled
-                  className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+                  className="radio radio-success disabled:bg-white disabled:opacity-100"
                 />
-                <span className="ml-2 text-gray-700">Org</span>
+                <span className="ml-2 text-md">Organization</span>
               </label>
             </div>
           </div>
@@ -75,12 +83,12 @@ const ApplicationTab = ({
           {/* Checkboxes */}
           <div className="space-y-4">
             {/* Confidentiality Clause */}
-            <label className="flex items-start cursor-pointer">
+            <label className="flex items-start cursor-not-allowed">
               <input
                 type="checkbox"
-                checked={true}
+                checked
                 disabled
-                className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mt-1 flex-shrink-0"
+                className="checkbox checkbox-success disabled:bg-white disabled:opacity-100 mt-1"
               />
               <span className="ml-3 text-gray-700">
                 I agree to be contacted under a confidentiality clause.
@@ -88,12 +96,12 @@ const ApplicationTab = ({
             </label>
 
             {/* KYC and NDA Willingness */}
-            <label className="flex items-start cursor-pointer">
+            <label className="flex items-start cursor-not-allowed">
               <input
                 type="checkbox"
-                checked={true}
+                checked
                 disabled
-                className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mt-1 flex-shrink-0"
+                className="checkbox checkbox-success disabled:bg-white disabled:opacity-100 mt-1"
               />
               <span className="ml-3 text-gray-700">
                 I confirm my willingness to complete KYC and sign the NDA if
@@ -102,12 +110,12 @@ const ApplicationTab = ({
             </label>
 
             {/* Confidentiality Agreement */}
-            <label className="flex items-start cursor-pointer">
+            <label className="flex items-start cursor-not-allowed">
               <input
                 type="checkbox"
-                checked={true}
+                checked
                 disabled
-                className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mt-1 flex-shrink-0"
+                className="checkbox checkbox-success disabled:bg-white disabled:opacity-100 mt-1"
               />
               <span className="ml-3 text-gray-700">
                 I acknowledge that the information I provide will be treated
@@ -118,12 +126,12 @@ const ApplicationTab = ({
             </label>
 
             {/* Non-disclosure Agreement */}
-            <label className="flex items-start cursor-pointer">
+            <label className="flex items-start cursor-not-allowed">
               <input
                 type="checkbox"
-                checked={true}
+                checked
                 disabled
-                className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mt-1 flex-shrink-0"
+                className="checkbox checkbox-success disabled:bg-white disabled:opacity-100 mt-1"
               />
               <span className="ml-3 text-gray-700">
                 I agree not to share or disclose any project-related information
@@ -133,12 +141,12 @@ const ApplicationTab = ({
             </label>
 
             {/* Non-US Citizen */}
-            <label className="flex items-start cursor-pointer">
+            <label className="flex items-start cursor-not-allowed">
               <input
                 type="checkbox"
-                checked={true}
+                checked
                 disabled
-                className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mt-1 flex-shrink-0"
+                className="checkbox checkbox-success disabled:bg-white disabled:opacity-100 mt-1"
               />
               <span className="ml-3 text-gray-700">
                 I confirm I am NOT a U.S. citizen, resident, or under U.S.
@@ -151,11 +159,18 @@ const ApplicationTab = ({
       </div>
       {session?.user.role === 'admin' &&
         application?.applicationStatus === 'received' && (
-          <div className="my-3 flex flex-row items-center gap-3">
-            <ApplicationDeclineModal />
-            <ApplicationApproveModal />
-          </div>
+          <>
+            <div className="my-3 flex flex-row items-center gap-3">
+              <ApplicationDeclineModal />
+              <ApplicationApproveModal />
+            </div>
+          </>
         )}
+      {session?.user.role === 'admin' && (
+        <div className="mt-8">
+          <SeederManagementNote />
+        </div>
+      )}
     </div>
   );
 };

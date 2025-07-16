@@ -1,9 +1,9 @@
 import { formatStatus } from '@/components/admin/ApplicationStatusInfo';
 import { ApplicationDataType } from '@/types/application';
-import { X, XCircle } from 'lucide-react';
+import { XCircle } from 'lucide-react';
 import React from 'react';
 import { FaMagnifyingGlass } from 'react-icons/fa6';
-import { PiCheckCircle } from 'react-icons/pi';
+import { PiCheckCircle, PiLockSimple } from 'react-icons/pi';
 import { formatDate } from '@/utils/formatDate';
 interface DashboardItem {
   title: string;
@@ -27,7 +27,7 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
     {
       title: 'Application',
       description:
-        'Register your interest to contribute to the DEEPROOTS Ecosystem and earn full seat as a private investor',
+        'Register your interest to contribute to the DeepRoots ecosystem and request a private Seeder Seat.',
       date: formatDate(application.createdAt),
       status: application.applicationStatus,
       tabName: 'application',
@@ -48,14 +48,16 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
     },
   ];
   return (
-    <div>
-      {dashboardData.map((data) => (
+    <div className="flex flex-col gap-y-11">
+      {dashboardData.map((data, index) => (
         <div
           key={data.title}
-          className="bg-white text-black p-4 my-3 rounded-xl w-full"
+          className="bg-white text-black p-4 rounded-3xl w-full"
         >
           <div className="flex items-center mb-3 flex-wrap justify-between">
-            <div className="text-lg font-semibold">{data.title}</div>
+            <div className="text-2xl font-medium">
+              {index + 1}. {data.title}
+            </div>
             {data.status === 'received' ? (
               <div className="font-semibold bg-[#DBEAFE] items-center flex flex-row justify-between gap-2 text-[#2563EB] py-1 px-2 rounded-4xl">
                 <PiCheckCircle className="w-5 h-5" /> Received
@@ -70,7 +72,7 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
               </div>
             ) : data.status === 'not-submitted' ? (
               <div className="font-semibold bg-[#D4D4D4] items-center flex flex-row justify-between gap-2 text-[#525252] py-1 px-2 rounded-4xl">
-                <X className="w-5 h-5" /> Not Submitted
+                <PiLockSimple className="w-5 h-5" /> No Access
               </div>
             ) : data.status === 'under-review' ? (
               <div className="font-semibold bg-[#FFF8C7] items-center flex flex-row justify-between gap-2 text-[#CA9D39] py-1 px-2 rounded-4xl">
@@ -81,19 +83,81 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
             )}
           </div>
           <div className="flex items-center mb-3 flex-wrap justify-between">
-            <div>{data.description}</div>
+            <div className="text-[#525252] text-lg">{data.description}</div>
             {data.status !== 'not-submitted' && (
               <div className="text-sm">{data.date}</div>
             )}
           </div>
           <button
             onClick={() => setCurrentTab(data.tabName)}
-            className="bg-gradient-to-r font-semibold px-3 py-2 rounded-xl text-white from-gradient-from to-gradient-to"
+            className="bg-[#E9E9E9] font-semibold text-lg px-6 py-[10px] rounded-lg text-[#4B5563]"
           >
             View Details
           </button>
         </div>
       ))}
+      <div className="bg-white text-black p-4 rounded-3xl w-full">
+        <div className="flex items-center mb-3 flex-wrap justify-between">
+          <div className="flex flex-row items-center gap-2">
+            <div className="text-2xl font-medium">
+              Schedule call with Founder
+            </div>
+            <div className="bg-[#D1FAE5] py-1 px-4 text-[#059669] text-lg font-semibold rounded-4xl">
+              1 on 1
+            </div>
+          </div>
+          <div className="font-semibold bg-[#D4D4D4] items-center flex flex-row justify-between gap-2 text-[#525252] py-1 px-2 rounded-4xl">
+            <PiLockSimple className="w-5 h-5" /> No Access
+          </div>
+        </div>
+        <div className="flex items-center mb-3 flex-wrap justify-between">
+          <div className="text-[#525252] text-lg">
+            Have a 15 min call with founder to ask Questions and review live
+            products on DEEPROOTS
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col md:flex-row gap-y-11 gap-x-3">
+        <div className="bg-white text-black p-4 rounded-3xl w-full">
+          <div className="flex items-center mb-3 flex-wrap justify-between">
+            <div className="flex flex-row items-center gap-2">
+              <div className="text-2xl font-medium">Foundation seat</div>
+              <div className="bg-[#F3E8FF] py-1 px-4 text-[#9333EA] text-lg font-semibold rounded-4xl">
+                100 Seats
+              </div>
+            </div>
+            <div className="font-semibold bg-[#D4D4D4] items-center flex flex-row justify-between gap-2 text-[#525252] py-1 px-2 rounded-4xl">
+              <PiLockSimple className="w-5 h-5" /> No Access
+            </div>
+          </div>
+          <div className="flex items-center mb-3 flex-wrap justify-between">
+            <div className="text-[#525252] text-lg">
+              Secure your place in DEEPROOTS. <br />
+              Join the Deal Room for details.
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white text-black p-4 rounded-3xl w-full">
+          <div className="flex items-center mb-3 flex-wrap justify-between">
+            <div className="flex flex-row items-center gap-2">
+              <div className="text-2xl font-medium">Founder seat</div>
+              <div className="bg-[#FEF3C7] py-1 px-4 text-[#D97706] text-lg font-semibold rounded-4xl">
+                10 Seats
+              </div>
+            </div>
+            <div className="font-semibold bg-[#D4D4D4] items-center flex flex-row justify-between gap-2 text-[#525252] py-1 px-2 rounded-4xl">
+              <PiLockSimple className="w-5 h-5" /> No Access
+            </div>
+          </div>
+          <div className="flex items-center mb-3 flex-wrap justify-between">
+            <div className="text-[#525252] text-lg">
+              Elite access. Limited availability. <br />
+              Explore more inside the Deal Room.
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

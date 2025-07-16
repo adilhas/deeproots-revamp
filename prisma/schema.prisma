@@ -30,6 +30,8 @@ model PrivateSeedSubmission {
   kycDocuments      KycDocument[]
   ndaSubmission     NdaSubmission?
   paymentDetails    PaymentDetails?
+  usdtAddress       String?
+  usdcAddress       String?
 }
 
 model PaymentDetails {
@@ -38,7 +40,7 @@ model PaymentDetails {
   transactionLink String
   paymentImage    String
   submissionId    String                @unique
-  updatedAt       DateTime              @updatedAt
+  updatedAt       DateTime?             @updatedAt
   createdAt       DateTime              @default(now())
   declineReason   String?
   paymentStatus   String                @default("not-submitted")
@@ -70,6 +72,7 @@ model NdaSubmission {
   typedSignature String
   signatureImage String
   acceptedAt     DateTime              @default(now())
+  updatedAt      DateTime?             @updatedAt
   user           PrivateSeedSubmission @relation(fields: [userId], references: [id])
 }
 

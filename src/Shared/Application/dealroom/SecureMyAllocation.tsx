@@ -1,11 +1,13 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Upload, Loader } from 'lucide-react';
+import { Loader, X } from 'lucide-react';
 import WalletInfo from './WalletInfo';
 import { useApplication } from '@/context/ApplicationContext';
 import { z } from 'zod';
 import { toast } from 'react-toastify';
+import { PiCurrencyDollarSimple, PiLink } from 'react-icons/pi';
+import { FiImage } from 'react-icons/fi';
 
 interface SecureMyAllocationProps {
   disabled: boolean;
@@ -99,76 +101,99 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
         disabled={disabled}
         className="px-4 disabled:opacity-60 py-2 btn-success bg-gradient-to-r from-gradient-from to-gradient-to rounded-xl text-white font-semibold"
       >
-        Approve
+        Proceed to Secure My Seat
       </button>
 
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20">
-          <div className="bg-white w-full max-w-xl mx-4 md:mx-0 rounded-2xl shadow-xl">
-            <h2 className="text-xl font-semibold mb-4 p-4 rounded-t-2xl text-white bg-gradient-to-r from-gradient-from to-gradient-to">
-              Approve Application
-            </h2>
-
-            <div className="px-6 py-4 space-y-6">
-              <div className="text-gray-700 flex w-full justify-between items-center">
-                <div className="text-center text-xs font-semibold uppercase tracking-wider mb-1">
-                  Time to Secure your Seat
-                </div>
-                <div className="flex justify-center space-x-4 font-orbitron text-center">
-                  {['00', '00', '00', '00'].map((val, idx) => (
-                    <div key={idx}>
-                      <div className="text-xl font-bold">{val}</div>
-                      <div className="text-xs text-gray-500">
-                        {['Days', 'Hours', 'Mins', 'Secs'][idx]}
-                      </div>
+          <div className="bg-white w-full max-w-[772px] relative max-h-[90vh] overflow-y-auto mx-4 md:mx-0 rounded-2xl shadow-xl">
+            <div className="flex sticky top-0 justify-between items-center bg-gradient-to-r mb-4 p-4 rounded-t-2xl from-gradient-from to-gradient-to">
+              <h2 className="text-3xl  font-semibold  text-white ">
+                Secure my Allocation
+              </h2>
+              <X
+                className="w-6 h-6 text-white cursor-pointer"
+                onClick={handleClose}
+              />
+            </div>
+            <div className="p-4 text-[#525252]">
+              <div className="bg-[#F4F4F4] rounded-2xl py-4 px-6">
+                <div className="">
+                  <div className="flex w-full justify-between items-center">
+                    <div className="text-center text-lg font-semibold r mb-1">
+                      Time to Secure your Seat
                     </div>
-                  ))}
+                    <div className="flex justify-center space-x-4  text-center">
+                      {['00', '00', '00', '00'].map((val, idx) => (
+                        <div key={idx}>
+                          <div className="text-3xl font-bold font-orbitron">
+                            {val}
+                          </div>
+                          <div className="text-lg">
+                            {['Days', 'Hours', 'Mins', 'Secs'][idx]}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mt-4 text-center flex w-full justify-between items-center font-semibold">
+                    <div>Seed amount:</div>
+                    <div className="text-gray-700 text-2xl font-orbitron">
+                      ${application?.capital}
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div className="mt-4 text-center flex w-full justify-between items-center font-semibold">
-                <div>Seed amount:</div>
-                <div className="text-gray-700 text-2xl font-orbitron">
-                  ${application?.capital}
-                </div>
+              <div className="mt-6">
+                <h3 className="font-semibold text-2xl">Wallet Information</h3>
+                <WalletInfo
+                  layoutClass="flex-col md:flex-col"
+                  usdcAddress={application?.usdcAddress}
+                  usdtAddress={application?.usdtAddress}
+                />
               </div>
 
-              <div>
-                <h3 className="font-semibold text-sm text-gray-800">
-                  Wallet Information
-                </h3>
-                <WalletInfo />
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-sm text-gray-800">
-                  Payment Information
-                </h3>
+              <div className="mt-6">
+                <h3 className="font-semibold text-2xl"> Payment Information</h3>
                 <div className="space-y-3 mt-2">
-                  <input
-                    type="number"
-                    placeholder="Enter Amount Sent"
-                    className="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm"
-                    value={amountSent}
-                    onChange={(e) => setAmountSent(e.target.value)}
-                  />
-                  <input
-                    type="text"
-                    placeholder="Enter Transaction link"
-                    className="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm"
-                    value={transactionLink}
-                    onChange={(e) => setTransactionLink(e.target.value)}
-                  />
+                  <div className="relative w-full">
+                    <PiCurrencyDollarSimple className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
+                    <input
+                      type="number"
+                      placeholder="Enter Amount Sent"
+                      className="w-full border border-gray-300 rounded-3xl pl-10 pr-4 py-2 text-sm"
+                      value={amountSent}
+                      onChange={(e) => setAmountSent(e.target.value)}
+                    />
+                  </div>
 
-                  <div className="border border-dashed border-gray-400 p-4 rounded-lg text-center text-sm">
+                  {/* Transaction Link with icon */}
+                  <div className="relative w-full">
+                    <PiLink className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
+                    <input
+                      type="text"
+                      placeholder="Enter Transaction link"
+                      className="w-full border border-gray-300 rounded-3xl pl-10 pr-4 py-2 text-sm"
+                      value={transactionLink}
+                      onChange={(e) => setTransactionLink(e.target.value)}
+                    />
+                  </div>
+
+                  <div className="border border-dashed border-gray-400 p-4 rounded-2xl text-center text-sm">
                     <label
                       htmlFor="upload"
                       className="flex flex-col items-center justify-center cursor-pointer"
                     >
-                      <Upload size={20} />
-                      <p className="mt-2 font-medium">
-                        Upload Payment Screenshot
-                      </p>
+                      <div className="flex flex-row justify-center items-center gap-2">
+                        <div className="translate-y-[2px]">
+                          <FiImage size={24} />
+                        </div>
+                        <p className="mt-2 font-medium text-lg">
+                          Upload Payment Screenshot
+                        </p>
+                      </div>
                       <span className="text-xs text-gray-500">
                         PDF, JPG, PNG
                       </span>
@@ -187,22 +212,12 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
                 </div>
               </div>
 
-              <div className="flex justify-end space-x-3 pt-4 border-t">
-                <button
-                  onClick={handleClose}
-                  disabled={isSubmitting}
-                  className="px-4 py-2 text-sm rounded-md border border-gray-300 bg-white hover:bg-gray-100"
-                >
-                  Cancel
-                </button>
-
+              <div className="space-x-3 pt-4">
                 <button
                   onClick={handleConfirm}
                   disabled={isSubmitting || !isFormValid}
-                  className={`px-4 py-2 disabled:opacity-60 text-sm rounded-md text-white flex items-center justify-center gap-2 ${
-                    isSubmitting
-                      ? 'bg-gray-400 cursor-not-allowed'
-                      : 'bg-green-600 hover:bg-green-700'
+                  className={`px-4 bg-gradient-to-r w-full max-w-[202px] from-gradient-from2 to-gradient-to2 py-2 disabled:opacity-60 text-lg rounded-md text-white flex items-center justify-center gap-2 ${
+                    isSubmitting ? 'opacity-60' : ''
                   }`}
                 >
                   {isSubmitting && <Loader className="animate-spin w-4 h-4" />}

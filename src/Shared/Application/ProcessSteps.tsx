@@ -1,95 +1,107 @@
-// components/ProcessSteps.tsx
+import { useApplication } from '@/context/ApplicationContext';
 import React from 'react';
-const processSteps = [
-  {
-    title: 'Application Received',
-    description: 'KYC, Entity Type, Confidentiality Agreement Checked',
-  },
-  {
-    title: 'Approved by the founder',
-  },
-  {
-    title: 'Due Diligence Package',
-    description: (
-      <ul>
-        <li>
-          Package Submitted by Seeder (Company deck, proof of funds, project
-          alignment).
-        </li>
-        <li>
-          KYC & NDA Sent to Seeder (Auto-trigger from CRM or backend email tool)
-        </li>
-      </ul>
-    ),
-  },
-  {
-    title: 'Compliance Check',
-    description: (
-      <ul>
-        <li>NDA Received</li>
-        <li>
-          KYC Verified (Tick after backend uploads docs or AML/KYC review)
-        </li>
-      </ul>
-    ),
-  },
-  {
-    title: 'Final Confirmation (Approved/Denied)',
-    description: (
-      <ul>
-        <li>Founder Approved</li>
-        <li>Request Founder Call (If skipped earlier or second round)</li>
-      </ul>
-    ),
-  },
-  {
-    title: 'Capital transfer (Copy of wallet transaction)',
-  },
-  {
-    title: 'Access Granted',
-    description: (
-      <ul>
-        <li>Whitelist Added</li>
-        <li>Welcome Email with Dashboard Credentials</li>
-      </ul>
-    ),
-  },
-];
-const ProcessSteps = () => (
-  <div className="mt-8 bg-white text-[#525252] p-4 md:p-6 rounded-xl">
-    <h3 className="text-lg font-bold mb-4">Process</h3>
-    <ol className="space-y-4 text-sm">
-      {processSteps.map((step, index) => (
-        <li key={index} className="">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
-            <div className="flex flex-row items-start gap-3">
-              <div className="w-4 h-4 rounded-md bg-[#D9D9D9]"></div>
-              <div>
-                <div className="font-medium mb-1">
-                  {index + 1}. {step.title}
+import StatusDot from '../StatusDot';
+const ProcessSteps = () => {
+  const { application } = useApplication();
+
+  const processSteps = [
+    {
+      title: 'Application Received',
+      description: 'Seeder submits application.',
+      statusColor: '#4BE562',
+    },
+    {
+      title: 'Admin Approval',
+      description: 'Admin reviews & approves application.',
+      statusColor:
+        application?.applicationStatus === 'declined'
+          ? '#E78181'
+          : application?.applicationStatus !== 'approved'
+            ? '#D9D9D9'
+            : '#4BE562',
+    },
+    {
+      title: 'Pre-Approval Received',
+      description: 'Seeder submits KYC, NDA, SAFE docs.',
+      statusColor:
+        application?.preApproval === 'under-review' ? '#F4C560' : '#4BE562',
+    },
+    {
+      title: 'Admin Approval',
+      description: 'Admin reviews & approves Pre-Approval.',
+      statusColor:
+        application?.preApproval === 'approved'
+          ? '#4BE562'
+          : application?.preApproval === 'declined'
+            ? '#E78181'
+            : '#D9D9D9',
+    },
+    {
+      title: 'Deal Room Received',
+      description: 'Seeder accesses Deal Room, submits payment.',
+      statusColor:
+        application?.dealRoom !== 'not-submitted' ? '#4BE562' : '#D9D9D9',
+    },
+
+    {
+      title: 'Admin Final Approval',
+      description: 'Admin confirms full payment.',
+      statusColor:
+        application?.paymentDetails?.paymentStatus === 'approved'
+          ? '#4BE562'
+          : application?.paymentDetails?.paymentStatus === 'declined'
+            ? '#E78181'
+            : '#D9D9D9',
+    },
+    {
+      title: 'Welcome Onboard',
+      description: 'Admin sends welcome email & dashboard link.',
+      statusColor: '#D9D9D9',
+    },
+  ];
+  return (
+    <div className="mt-8 bg-white text-[#525252] p-4 md:p-6 rounded-xl">
+      <h3 className="text-lg font-bold pb-4 border-b border-[#D4D4D4] mb-4">
+        Process
+      </h3>
+      <ol className="space-y-4 text-xl">
+        {processSteps.map((step, index) => (
+          <li key={index} className="">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+              <div className="flex flex-row items-start gap-3">
+                <div
+                  className={`w-4 h-4 rounded-md mt-2`}
+                  style={{ background: step.statusColor }}
+                ></div>
+                <div>
+                  <div className="font-semibold mb-1">
+                    {index + 1}. {step.title}
+                  </div>
+                  {step.description && (
+                    <div className="font-normal text-lg">
+                      {step.description}
+                    </div>
+                  )}
                 </div>
-                {step.description && (
-                  <div className="text-gray-400">{step.description}</div>
-                )}
+              </div>
+              <div className="flex gap-2">
+                <StatusDot status="under-review" />
+                <StatusDot status="approved" />
+                <StatusDot status="declined" />
               </div>
             </div>
-            <div className="flex gap-2">
-              <div className="w-3 h-3 bg-yellow-500 rounded-full" />
-              <div className="w-3 h-3 bg-green-500 rounded-full" />
-              <div className="w-3 h-3 bg-red-500 rounded-full" />
-            </div>
-          </div>
-        </li>
-      ))}
-    </ol>
+          </li>
+        ))}
+      </ol>
 
-    {/* <div className="mt-6 flex gap-4 justify-end">
+      {/* <div className="mt-6 flex gap-4 justify-end">
       <button className="btn btn-sm bg-[#0383A8] text-white">
         Upload Document
       </button>
       <button className="btn btn-sm bg-[#6C43AD]">Package Document</button>
     </div> */}
-  </div>
-);
+    </div>
+  );
+};
 
 export default ProcessSteps;
