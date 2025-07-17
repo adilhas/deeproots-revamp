@@ -1,8 +1,11 @@
 import SeedingTierCard from '@/components/connect/private_seed/SeedingTierCard';
-import React from 'react';
+import { useApplication } from '@/context/ApplicationContext';
+import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const tierData = [
   {
+    tierCategory: 'tier-1',
     tierName: 'Tier 1- Foundation Seat',
     priceRange: '$5k - $9,999',
     imageSrc: '/connect/seeding-tier1-egg.png',
@@ -21,6 +24,8 @@ const tierData = [
     title2Class: 'text-[#303030]',
   },
   {
+    tierCategory: 'tier-2',
+
     tierName: 'Tier 2 - Core Foundation Seat',
     priceRange: '$10k - $99,999',
     imageSrc: '/connect/seeding-tier2-egg.png',
@@ -41,6 +46,7 @@ const tierData = [
     title2Class: 'text-white',
   },
   {
+    tierCategory: 'tier-3',
     tierName: 'Tier 3 – Founder Seat',
     priceRange: '$100k - $1M+',
     imageSrc: '/connect/seeding-tier3-egg.png',
@@ -62,14 +68,66 @@ const tierData = [
 ];
 
 const DealRoomSeedingTiers = () => {
+  const { setApplication, application } = useApplication();
+  const [selectedTier, setSelectedTier] = useState(
+    application?.seedTier === null ? '' : application?.seedTier
+  );
+  const [contriAmount, setContriAmount] = useState(
+    application?.contributionAmount === null
+      ? ''
+      : application?.contributionAmount
+  );
+  const [loading, setLoading] = useState(false);
+
+  const handleTeirSelect = (tierName: string) => {
+    setSelectedTier(tierName);
+  };
+
+  const submitContri = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch('/api/private-seed/update-contribution', {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          contributionAmount: contriAmount,
+          seedTier: selectedTier,
+          id: application?.id,
+        }),
+      });
+
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message || 'Submission failed');
+      setApplication((prevState) => {
+        if (!prevState) return prevState;
+        return {
+          ...prevState,
+          contributionAmount: data?.contriAmount,
+          seedTier: data?.selectedTier,
+        };
+      });
+      toast.success('Seed tier & contribution saved successfully!');
+    } catch (err) {
+      toast.error('Something went wrong!');
+      console.error('Submission error:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
+  console.log('ap', application);
+
   return (
     <div className="py-16 text-[#303030]">
       <h2 className=" font-semibold text-3xl mb-10">Select Seed Tier</h2>
       <div className="flex flex-col lg:flex-row justify-center gap-x-3 gap-y-6 mx-auto w-full">
-        {tierData.map((tier, index) => (
+        {tierData.map((tier) => (
           <SeedingTierCard
+            handleTeirSelect={() => handleTeirSelect(tier.tierCategory)}
+            key={tier.tierName}
+            isSelected={selectedTier === tier.tierCategory}
             isDark={false}
-            key={index}
             tierName={tier.tierName}
             priceRange={tier.priceRange}
             imageSrc={tier.imageSrc}
@@ -78,6 +136,20 @@ const DealRoomSeedingTiers = () => {
             badgeLabel={tier.badgeLabel}
             title1Class={tier.title1Class}
             title2Class={tier.title2Class}
+            benfitsTitle={
+              tier.tierName === 'Tier 3 – Founder Seat'
+                ? 'Exclusive Benefits'
+                : 'Benefits'
+            }
+            contriAmount={contriAmount}
+            setContriAmount={setContriAmount}
+            onSubmitAmount={() => submitContri()}
+            isLoading={loading}
+            disableSubmit={
+              loading ||
+              (application?.contributionAmount === contriAmount &&
+                application?.seedTier === selectedTier)
+            }
           />
         ))}
       </div>

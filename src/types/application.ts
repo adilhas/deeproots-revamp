@@ -22,6 +22,8 @@ export type ApplicationDataType = {
   dealRoom: StatusType;
   usdtAddress?: string;
   usdcAddress?: string;
+  contributionAmount?: string;
+  seedTier?: string;
 };
 
 export type StatusType =

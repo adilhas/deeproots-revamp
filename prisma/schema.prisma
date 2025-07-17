@@ -32,6 +32,8 @@ model PrivateSeedSubmission {
   paymentDetails    PaymentDetails?
   usdtAddress       String?
   usdcAddress       String?
+  contributionAmount String?
+  seedTier String?
 }
 
 model PaymentDetails {
