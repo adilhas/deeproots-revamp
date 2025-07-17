@@ -1,5 +1,4 @@
 import { useApplication } from '@/context/ApplicationContext';
-import { formatCurrencyShort } from '@/utils/formatCapital';
 import React from 'react';
 
 const DealSummary = () => {
@@ -7,15 +6,15 @@ const DealSummary = () => {
   const dealData = [
     {
       label: 'Your Capital Commitment',
-      value: `$ ${formatCurrencyShort(Number(application?.capital))}`,
+      value: `$ ${Number(application?.contributionAmount === null || '' ? 0 : application?.contributionAmount)}`,
     },
     {
-      label: 'Exclusive Seed Price',
-      value: '$5 per dRC',
+      label: 'Private Seed Price',
+      value: '$5/dRC (Exclusive Rate)',
     },
     {
       label: 'Your Total dRC',
-      value: `${Number(application?.capital) * 5} dRC`,
+      value: `${Number(application?.contributionAmount === null || '' ? 0 : application?.contributionAmount) / 5} dRC`,
     },
     {
       label: 'Reserved Time',

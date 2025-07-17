@@ -15,6 +15,13 @@ export default async function handler(
     return res.status(400).json({ message: 'Missing submission ID' });
   }
 
+  const numericAmount = Number(contributionAmount);
+  if (!contributionAmount || isNaN(numericAmount) || numericAmount <= 0) {
+    return res
+      .status(400)
+      .json({ message: 'Please enter a valid contribution amount' });
+  }
+
   try {
     const updatedSubmission = await prisma.privateSeedSubmission.update({
       where: { id },

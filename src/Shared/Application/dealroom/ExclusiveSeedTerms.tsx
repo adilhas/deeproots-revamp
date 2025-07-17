@@ -1,6 +1,5 @@
 import React from 'react';
 import WalletInfo from './WalletInfo';
-import { formatCurrencyShort } from '@/utils/formatCapital';
 import { useApplication } from '@/context/ApplicationContext';
 
 const ExclusiveSeedTerms = () => {
@@ -8,7 +7,7 @@ const ExclusiveSeedTerms = () => {
   const dealData = [
     {
       label: 'Contribution Amount',
-      value: `$ ${formatCurrencyShort(Number(application?.capital))}`,
+      value: `$ ${Number(application?.contributionAmount === null || '' ? 0 : application?.contributionAmount)}`,
     },
     {
       label: 'Foundation Token Access Rate',

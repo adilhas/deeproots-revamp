@@ -22,10 +22,12 @@ const tierData = [
       'bg-gradient-to-b from-[#D5D5D5] to-[#6F6F6F] border-[#D4D4D4] ',
     title1Class: 'text-[#696969]',
     title2Class: 'text-[#303030]',
+    blurHueElement: (
+      <div className="w-[45%] h-[30%]  rounded-l-full opacity-60  blur-lg  bg-[#0085A8] absolute bottom-0 right-[-20px]"></div>
+    ),
   },
   {
     tierCategory: 'tier-2',
-
     tierName: 'Tier 2 - Core Foundation Seat',
     priceRange: '$10k - $99,999',
     imageSrc: '/connect/seeding-tier2-egg.png',
@@ -44,6 +46,9 @@ const tierData = [
       'bg-gradient-to-b from-[#927C56] to-[#BE9C60] border-[#D4D4D4] ',
     title1Class: 'text-white',
     title2Class: 'text-white',
+    blurHueElement: (
+      <div className="w-[50%] h-[30%]  rounded-lt-full opacity-60  blur-lg  bg-[#511AAF] absolute bottom-[-20px] right-[-20px]"></div>
+    ),
   },
   {
     tierCategory: 'tier-3',
@@ -51,7 +56,6 @@ const tierData = [
     priceRange: '$100k - $1M+',
     imageSrc: '/connect/seeding-tier3-egg.png',
     badgeLabel: 'Limited to 10 Seats',
-
     features: [
       `Custom Multi-Sig Wallet (Founder's Label, Secure UI)`,
       'Lifetime Founder NFT Badge (Visible Across Ecosystem)',
@@ -60,10 +64,12 @@ const tierData = [
       'Founders Council Seat (Private Briefings, Roadmap Voting)',
       'Priority Role in Long-Term Ecosystem Expansion',
     ],
-    tierCardClass:
-      'bg-gradient-to-b from-[#AD1AAF] to-[#0085A8] border-[#D4D4D4] ',
+    tierCardClass: 'bg-[#0085A8] border-[#D4D4D4] ',
     title1Class: 'text-white',
     title2Class: 'text-white',
+    blurHueElement: (
+      <div className="w-[50%] h-[50%]  rounded-l-full opacity-60  blur-lg  bg-[#AD1AAF] absolute bottom-0 right-[-20px]"></div>
+    ),
   },
 ];
 
@@ -99,7 +105,10 @@ const DealRoomSeedingTiers = () => {
       });
 
       const data = await res.json();
-      if (!res.ok) throw new Error(data.message || 'Submission failed');
+      if (!res.ok) {
+        toast.error(data?.message || 'Submission failed');
+        return;
+      }
       setApplication((prevState) => {
         if (!prevState) return prevState;
         return {
@@ -150,6 +159,7 @@ const DealRoomSeedingTiers = () => {
               (application?.contributionAmount === contriAmount &&
                 application?.seedTier === selectedTier)
             }
+            blurHueElement={tier.blurHueElement}
           />
         ))}
       </div>

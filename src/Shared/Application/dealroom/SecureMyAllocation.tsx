@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Loader, X } from 'lucide-react';
-import WalletInfo from './WalletInfo';
+// import WalletInfo from './WalletInfo';
 import { useApplication } from '@/context/ApplicationContext';
 import { z } from 'zod';
 import { toast } from 'react-toastify';
@@ -146,14 +146,14 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
                 </div>
               </div>
 
-              <div className="mt-6">
+              {/* <div className="mt-6">
                 <h3 className="font-semibold text-2xl">Wallet Information</h3>
                 <WalletInfo
                   layoutClass="flex-col md:flex-col"
                   usdcAddress={application?.usdcAddress}
                   usdtAddress={application?.usdtAddress}
                 />
-              </div>
+              </div> */}
 
               <div className="mt-6">
                 <h3 className="font-semibold text-2xl"> Payment Information</h3>

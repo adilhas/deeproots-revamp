@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import { FaAngleRight } from 'react-icons/fa6';
 import { PiSpinner } from 'react-icons/pi';
+import { toast } from 'react-toastify';
 
 interface SeedingTierCardProps {
   tierName: string;
@@ -23,7 +24,26 @@ interface SeedingTierCardProps {
   onSubmitAmount?: () => void;
   isLoading?: boolean;
   disableSubmit?: boolean;
+  blurHueElement?: React.ReactNode;
 }
+
+const parsePriceRange = (priceRange: string): [number, number] => {
+  const cleaned = priceRange
+    .replace(/\$/g, '')
+    .replace(/,/g, '')
+    .replace(/k/gi, '000')
+    .replace(/m\+/i, '000000+') // turn "1M+" into "1000000+"
+    .split('-');
+
+  const min = parseInt(cleaned[0].trim());
+
+  // If second part includes '+', only enforce min
+  const max = cleaned[1]?.includes('+')
+    ? Infinity
+    : parseInt(cleaned[1].trim());
+
+  return [min, max];
+};
 
 const SeedingTierCard: React.FC<SeedingTierCardProps> = ({
   tierName,
@@ -43,8 +63,27 @@ const SeedingTierCard: React.FC<SeedingTierCardProps> = ({
   onSubmitAmount,
   isLoading = false,
   disableSubmit = false,
+  blurHueElement,
 }) => {
   const allowDark = isDark;
+
+  const handleValidatedSubmit = () => {
+    const [min, max] = parsePriceRange(priceRange);
+    const amountNum = parseFloat(contriAmount || '0');
+    if (isNaN(amountNum)) {
+      toast.error('Please enter a valid amount');
+      return;
+    }
+    if (amountNum < min || amountNum > max) {
+      toast.error(
+        max === Infinity
+          ? `Amount should be at least $${min.toLocaleString()}`
+          : `Amount must be between $${min.toLocaleString()} and $${max.toLocaleString()}`
+      );
+      return;
+    }
+    onSubmitAmount?.();
+  };
 
   return (
     <div
@@ -66,7 +105,7 @@ const SeedingTierCard: React.FC<SeedingTierCardProps> = ({
           <div
             className={`overflow-hidden border w-full h-[174px] rounded-[20px] p-3 relative ${tierCardClass ?? ''}`}
           >
-            <div className="relative z-10 h-full flex flex-col justify-between">
+            <div className="relative z-10 rounded-[20px] h-full flex flex-col justify-between">
               <div
                 className={`text-2xl font-medium max-w-[90%] ${title1Class}`}
               >
@@ -85,6 +124,7 @@ const SeedingTierCard: React.FC<SeedingTierCardProps> = ({
               className="radio absolute top-3 right-3 bg-white radio-primary checked:bg-white checked:text-[#7F56D9] checked:border-[#7F56D9]"
               checked={isSelected}
             />
+            {blurHueElement}
             <Image
               src={imageSrc}
               width={115}
@@ -127,7 +167,7 @@ const SeedingTierCard: React.FC<SeedingTierCardProps> = ({
                 className="input border border-[#D4D4D4] bg-white w-full placeholder:text-[#525252] text-lg rounded-4xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
               />
               <button
-                onClick={() => onSubmitAmount?.()}
+                onClick={handleValidatedSubmit}
                 disabled={disableSubmit}
                 className="bg-gradient-from2 text-white p-3 rounded-full disabled:opacity-50"
               >

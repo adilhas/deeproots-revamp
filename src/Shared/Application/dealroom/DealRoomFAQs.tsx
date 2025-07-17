@@ -12,29 +12,29 @@ const DealRoomFAQs = () => {
 
   const faqs = [
     {
-      question: 'When will the blockchain launch?',
+      question: 'When does the blockchain launch?',
       answer:
-        'A Foundation Seat with 12% on-chain rewards, governance rights, and private round access.',
+        'We’re already live with on-chain smart contracts and testnet functionality. Full mainnet deployment is scheduled during the campaign rollout phases.',
     },
     {
-      question: 'Is it secure and compliant?',
+      question: 'Is this secure and compliant?',
       answer:
-        'Yes, DEEPROOTS is U.S.-registered; funds go to verified multisig wallets.',
+        'Yes. DeepRoots is operated by a fully registered U.S. legal entity. All ecosystem contributions are handled via verified multisig wallets and follow strict compliance and access protocols.',
     },
     {
       question: 'What do I receive after contributing?',
       answer:
-        'A confirmation email, official receipt, and access to your private Seeder Dashboard.',
+        'You will receive a confirmation email, a secure seeding receipt, and access to your private Foundation Seeder Page. This page outlines your participation tier, ecosystem access rights, and includes real-time updates on blockchain timelines and connected Web3 products',
     },
     {
-      question: 'Can I increase my allocation later?',
+      question: 'Can I contribute more later?',
       answer:
-        'Yes, if seats are still available; early contributors get upgrade priority.',
+        'Yes — if Foundation Seats are still available. Early contributors receive priority access. A one-time option to refill your original seat may be granted, but seat upgrades are not permitted once confirmed.',
     },
     {
-      question: 'Why is this private?',
+      question: 'Why is this opportunity private?',
       answer:
-        'To protect the ecosystem and prioritize aligned, long-term participants.',
+        'To protect the integrity of the ecosystem, ensure alignment with long-term contributors, and preserve the governance structure of the DeepRoots network.',
     },
   ];
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import WalletInfo from './WalletInfo';
-import { formatCurrencyShort } from '@/utils/formatCapital';
 import { useApplication } from '@/context/ApplicationContext';
 
 const SeedTerms = () => {
@@ -8,15 +7,15 @@ const SeedTerms = () => {
   const dealData = [
     {
       label: 'Contribution Amount',
-      value: `$ ${formatCurrencyShort(Number(application?.capital))}`,
+      value: `$ ${Number(application?.contributionAmount === null || '' ? 0 : application?.contributionAmount)}`,
     },
     {
-      label: 'Token Price',
-      value: '$5/dRC',
+      label: 'Private Seed Price',
+      value: '$5/dRC (Exclusive Rate)',
     },
     {
       label: 'Total dRC',
-      value: `${Number(application?.capital) * 5} dRC`,
+      value: `${Number(application?.contributionAmount === null || '' ? 0 : application?.contributionAmount) / 5} dRC`,
     },
     {
       label: 'Seeding Terms',

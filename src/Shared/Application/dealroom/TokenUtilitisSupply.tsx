@@ -15,13 +15,13 @@ const TokenUtilitisSupply = () => {
   return (
     <div className="mx-auto my-8 bg-white rounded-4xl overflow-hidden border border-[#D4D4D4]">
       <div className="text-center p-4 bg-[#E9E9E9]">
-        <h1 className="text-2xl font-bold bg-gradient-to-r from-gradient-from to-gradient-to w-fit mx-auto bg-clip-text text-transparent">
+        <h1 className="text-3xl font-bold bg-gradient-to-r from-gradient-from to-gradient-to w-fit mx-auto bg-clip-text text-transparent">
           Token Utilities & Total Supply
         </h1>
       </div>
 
       <div className="max-w-[600px] mx-auto px-2 py-8">
-        <div className="mb-3 text-xl font-semibold text-center">
+        <div className="mb-3 text-3xl font-semibold text-center">
           dRC token wil be distributed <br /> over 41 years
         </div>
       </div>
@@ -40,7 +40,7 @@ const TokenUtilitisSupply = () => {
             height={250}
             className="mx-auto my-5"
           />
-          <ul className="max-w-[400px] mx-auto text-center text-lg text-[#5C5F62] mt-6  flex flex-col h-full justify-between gap-6 px-1 w-full">
+          <ul className="max-w-[400px] mx-auto text-center text-lg text-black font-semibold mt-6  flex flex-col h-full justify-between gap-6 px-1 w-full">
             {Data.map((item, index) => (
               <li key={index} className="py-2.5 px-8 rounded-2xl bg-[#EBEBEB]">
                 {item}
