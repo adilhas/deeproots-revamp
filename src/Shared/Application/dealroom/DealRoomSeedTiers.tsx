@@ -78,11 +78,7 @@ const DealRoomSeedingTiers = () => {
   const [selectedTier, setSelectedTier] = useState(
     application?.seedTier === null ? '' : application?.seedTier
   );
-  const [contriAmount, setContriAmount] = useState(
-    application?.contributionAmount === null
-      ? ''
-      : application?.contributionAmount
-  );
+  const [contriAmount, setContriAmount] = useState(application?.capital);
   const [loading, setLoading] = useState(false);
 
   const handleTeirSelect = (tierName: string) => {
@@ -98,7 +94,7 @@ const DealRoomSeedingTiers = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          contributionAmount: contriAmount,
+          capital: contriAmount,
           seedTier: selectedTier,
           id: application?.id,
         }),
@@ -113,11 +109,11 @@ const DealRoomSeedingTiers = () => {
         if (!prevState) return prevState;
         return {
           ...prevState,
-          contributionAmount: data?.contriAmount,
-          seedTier: data?.selectedTier,
+          capital: data?.capital,
+          seedTier: data?.seedTier,
         };
       });
-      toast.success('Seed tier & contribution saved successfully!');
+      toast.success('Contribution amount updated successfully!');
     } catch (err) {
       toast.error('Something went wrong!');
       console.error('Submission error:', err);
@@ -156,7 +152,7 @@ const DealRoomSeedingTiers = () => {
             isLoading={loading}
             disableSubmit={
               loading ||
-              (application?.contributionAmount === contriAmount &&
+              (application?.capital === contriAmount &&
                 application?.seedTier === selectedTier)
             }
             blurHueElement={tier.blurHueElement}

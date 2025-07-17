@@ -7,11 +7,18 @@ const ExclusiveSeedTerms = () => {
   const dealData = [
     {
       label: 'Contribution Amount',
-      value: `$ ${Number(application?.contributionAmount === null || '' ? 0 : application?.contributionAmount)}`,
+      value: `$ ${Number(application?.capital)}`,
     },
     {
       label: 'Foundation Token Access Rate',
-      value: '$5/dRC (Exclusive Rate)',
+      value: (
+        <div>
+          <span className="text-2xl text-[#3e3f3f] font-bold">$5</span>/dRC
+          <span className="text-2xl text-[#3e3f3f] font-bold">
+            (Exclusive Rate)
+          </span>
+        </div>
+      ),
     },
 
     {
@@ -52,7 +59,7 @@ const ExclusiveSeedTerms = () => {
         </div>
       </div>
       <div className="w-full max-w-[991px] mx-auto py-3 px-3">
-        <div className="text-2xl font-bold">Wallet Information</div>
+        <div className="text-2xl font-bold">Payment Wallet Information</div>
         <WalletInfo
           usdcAddress={application?.usdcAddress}
           usdtAddress={application?.usdtAddress}

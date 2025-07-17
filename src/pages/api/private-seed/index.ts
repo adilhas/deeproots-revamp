@@ -5,6 +5,7 @@ import { addHours } from 'date-fns';
 import nodemailer from 'nodemailer';
 import { render } from '@react-email/render';
 import SeederTokenEmail from '@/emails/SeederTokenEmail';
+import { getSeedTierFromCapital } from '@/lib/getSeedTierFromCapital';
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -54,6 +55,7 @@ export default async function handler(
           message: 'An application with this email has already been submitted.',
         });
       }
+      const seedTier = getSeedTierFromCapital(String(capital));
 
       // ✅ Create application
       const submission = await prisma.privateSeedSubmission.create({
@@ -67,6 +69,7 @@ export default async function handler(
           value,
           whyJoin,
           indvOrOrg,
+          seedTier,
         },
       });
 

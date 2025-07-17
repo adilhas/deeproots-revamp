@@ -5,7 +5,7 @@ import { useApplication } from '@/context/ApplicationContext';
 import PaymentDetails from './dealroom/PaymentDetails';
 import SeederManagementNote from './SeederManagementNote';
 import ExclusiveSeedTerms from './dealroom/ExclusiveSeedTerms';
-import DealSummaryAdmin from './DealSummaryAdmin';
+// import DealSummaryAdmin from './DealSummaryAdmin';
 
 const AdminDealRoom = () => {
   const { application } = useApplication();
@@ -17,12 +17,12 @@ const AdminDealRoom = () => {
         <div className="text-center text-2xl">Deal Room Not Submitted</div>
       ) : (
         <>
-          {application?.dealRoom === 'approved' ||
+          {/* {application?.dealRoom === 'approved' ||
           application?.dealRoom === 'declined' ? (
             <DealSummaryAdmin />
-          ) : (
-            <ExclusiveSeedTerms />
-          )}
+          ) : ( */}
+          <ExclusiveSeedTerms />
+          {/* )} */}
           <PaymentDetails />
           <div className="mt-8">
             <SeederManagementNote />

@@ -88,8 +88,8 @@ const PreAppovalDeclineModal = ({}) => {
                 </button>
                 <button
                   onClick={handleConfirm}
-                  disabled={isSubmitting}
-                  className="px-4 py-2 disabled:opacity-50 text-lg w-full rounded-md bg-[#F43F42] text-whites"
+                  disabled={isSubmitting || reason === ''}
+                  className="px-4 py-2 disabled:opacity-50 text-white text-lg w-full rounded-md bg-[#F43F42] text-whites"
                 >
                   {isSubmitting ? 'Rejecting...' : 'Yes Reject'}
                 </button>

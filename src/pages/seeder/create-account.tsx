@@ -146,7 +146,7 @@ export default function CreateAccountPage() {
               <input
                 type={showConfirmPassword ? 'text' : 'password'}
                 className="w-full pl-10 pr-3 py-2 border border-[#D4D4D4] rounded-2xl"
-                placeholder="Enter Password Again"
+                placeholder="Confirm Password Again"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required

@@ -6,15 +6,22 @@ const DealSummary = () => {
   const dealData = [
     {
       label: 'Your Capital Commitment',
-      value: `$ ${Number(application?.contributionAmount === null || '' ? 0 : application?.contributionAmount)}`,
+      value: `$ ${Number(application?.capital)}`,
     },
     {
       label: 'Private Seed Price',
-      value: '$5/dRC (Exclusive Rate)',
+      value: (
+        <div>
+          <span className="text-2xl text-[#3e3f3f] font-bold">$5</span>/dRC
+          <span className="text-2xl text-[#3e3f3f] font-bold">
+            (Exclusive Rate)
+          </span>
+        </div>
+      ),
     },
     {
       label: 'Your Total dRC',
-      value: `${Number(application?.contributionAmount === null || '' ? 0 : application?.contributionAmount) / 5} dRC`,
+      value: `${Number(application?.capital) / 5} dRC`,
     },
     {
       label: 'Reserved Time',

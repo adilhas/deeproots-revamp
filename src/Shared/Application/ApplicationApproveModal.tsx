@@ -3,16 +3,24 @@
 import { useApplication } from '@/context/ApplicationContext';
 import { X } from 'lucide-react';
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const ApplicationApprovedModal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { setApplication, application } = useApplication();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleOpen = () => setIsOpen(true);
   const handleClose = () => {
     setIsOpen(false);
   };
 
   const handleConfirm = async () => {
+    if (!application?.id) {
+      toast.error('Missing application ID.');
+      return;
+    }
+    setIsSubmitting(true);
     try {
       const res = await fetch(`/api/private-seed/${application?.id}`, {
         method: 'PATCH',
@@ -24,14 +32,20 @@ const ApplicationApprovedModal = () => {
         }),
       });
 
-      if (!res.ok) throw new Error('Failed to approve application');
-
+      if (!res.ok) {
+        toast.error('Failed to approve application');
+        console.error(res);
+        return;
+      }
       const updatedApp = await res.json();
       setApplication(updatedApp);
+      toast.success('Application approved successfully');
       setIsOpen(false);
     } catch (err) {
       console.error('Approval failed:', err);
-      alert('Something went wrong while approving the application.');
+      toast.error('Something went wrong while approving the application.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -52,7 +66,11 @@ const ApplicationApprovedModal = () => {
               <h2 className="text-3xl font-semibold  text-white text-center ">
                 Approve Application
               </h2>
-              <button onClick={handleClose} className="p-1 rounded-lg bg-white">
+              <button
+                onClick={handleClose}
+                disabled={isSubmitting}
+                className="p-1 rounded-lg bg-white"
+              >
                 <X className="w-6 h-6 text-black" />
               </button>
             </div>
@@ -63,15 +81,17 @@ const ApplicationApprovedModal = () => {
               <div className="mt-6 flex justify-end space-x-3">
                 <button
                   onClick={handleClose}
-                  className="px-4 py-2 w-full text-lg rounded-md text-[#E11D20] bg-white hover:bg-gray-100"
+                  disabled={isSubmitting}
+                  className="px-4 py-2 w-full text-lg rounded-md text-[#E11D20] hover:bg-gray-100"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleConfirm}
-                  className="px-4 py-2 w-full text-lg rounded-md bg-[#059669] text-white hover:bg-green-700"
+                  className="px-4 py-2 w-full text-lg disabled:opacity-60 rounded-md bg-[#059669] text-white hover:bg-green-700"
+                  disabled={isSubmitting}
                 >
-                  Yes Accept
+                  {isSubmitting ? 'Accepting...' : 'Yes Accept'}
                 </button>
               </div>
             </div>

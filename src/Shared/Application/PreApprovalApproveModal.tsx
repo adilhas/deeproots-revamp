@@ -3,6 +3,7 @@
 import { useApplication } from '@/context/ApplicationContext';
 import { X } from 'lucide-react';
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 interface IPreApprovalApproveModal {
   usdtAddress: string;
@@ -37,14 +38,17 @@ const PreApprovalApproveModal = ({
         }),
       });
 
-      if (!res.ok) throw new Error('Failed to approve application');
-
       const updatedApp = await res.json();
+      if (!res.ok) {
+        toast.error(updatedApp?.message || 'Failed to approve application.');
+        return;
+      }
       setApplication(updatedApp);
       setIsOpen(false);
+      toast.success('Pre-Approval approved successfully!');
     } catch (err) {
       console.error('Approval failed:', err);
-      alert('Something went wrong while approving the application.');
+      toast.error('Something went wrong while approving the application.');
     } finally {
       setIsSubmitting(false);
     }

@@ -40,7 +40,7 @@ const TokenUtilitisSupply = () => {
             height={250}
             className="mx-auto my-5"
           />
-          <ul className="max-w-[400px] mx-auto text-center text-lg text-black font-semibold mt-6  flex flex-col h-full justify-between gap-6 px-1 w-full">
+          <ul className="max-w-[400px] mx-auto text-center text-lg text-[#333232] font-semibold mt-6  flex flex-col h-full justify-between gap-6 px-1 w-full">
             {Data.map((item, index) => (
               <li key={index} className="py-2.5 px-8 rounded-2xl bg-[#EBEBEB]">
                 {item}

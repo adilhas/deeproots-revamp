@@ -4,7 +4,7 @@ import React from 'react';
 
 export function formatStatus(status: string): string {
   return status
-    .split('-')
+    ?.split('-')
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
 }

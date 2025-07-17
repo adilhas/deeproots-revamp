@@ -32,7 +32,7 @@ const DealRoomTab = () => {
   if (application?.preApproval !== 'approved') {
     return (
       <div className="text-center text-2xl">
-        Deal Room will unlock after Pre-Approval is Approved
+        Once the Pre-Approval step is appoved your next step will be unlocked
       </div>
     );
   }

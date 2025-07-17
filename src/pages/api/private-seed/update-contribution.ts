@@ -9,14 +9,14 @@ export default async function handler(
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  const { id, contributionAmount, seedTier } = req.body;
+  const { id, capital, seedTier } = req.body;
 
   if (!id) {
     return res.status(400).json({ message: 'Missing submission ID' });
   }
 
-  const numericAmount = Number(contributionAmount);
-  if (!contributionAmount || isNaN(numericAmount) || numericAmount <= 0) {
+  const numericAmount = Number(capital);
+  if (!capital || isNaN(numericAmount) || numericAmount <= 0) {
     return res
       .status(400)
       .json({ message: 'Please enter a valid contribution amount' });
@@ -26,12 +26,12 @@ export default async function handler(
     const updatedSubmission = await prisma.privateSeedSubmission.update({
       where: { id },
       data: {
-        contributionAmount,
+        capital,
         seedTier,
       },
       select: {
         id: true,
-        contributionAmount: true,
+        capital: true,
         seedTier: true,
       },
     });

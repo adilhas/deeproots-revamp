@@ -8,14 +8,17 @@ import { toast } from 'react-toastify';
 const ApplicationDeclineModal = ({}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [reason, setReason] = useState('');
+  const [loading, setLoading] = useState(false);
+
   const { setApplication, application } = useApplication();
   const handleOpen = () => setIsOpen(true);
   const handleClose = () => {
-    setIsOpen(false);
+    if (!loading) setIsOpen(false);
     setReason('');
   };
 
   const handleConfirm = async () => {
+    setLoading(true);
     try {
       const res = await fetch(`/api/private-seed/${application?.id}`, {
         method: 'PATCH',
@@ -40,6 +43,7 @@ const ApplicationDeclineModal = ({}) => {
       console.error('Decline failed:', err);
       toast.error('Something went wrong while declining the application.');
     } finally {
+      setLoading(false);
       setReason('');
     }
   };
@@ -80,16 +84,17 @@ const ApplicationDeclineModal = ({}) => {
               <div className="mt-6 flex justify-end space-x-3">
                 <button
                   onClick={handleClose}
+                  disabled={loading}
                   className="px-4 py-2 w-full text-lg rounded-md hover:bg-gray-100"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleConfirm}
-                  disabled={reason === ''}
+                  disabled={reason === '' || loading}
                   className="px-4 py-2 w-full text-lg rounded-md disabled:bg-red-300 bg-[#F43F42] text-white hover:bg-red-700"
                 >
-                  Yes Reject
+                  {loading ? 'Rejecting...' : 'Yes Reject'}{' '}
                 </button>
               </div>
             </div>

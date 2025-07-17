@@ -68,10 +68,16 @@ export default async function handler(
     }
 
     if (usdtAddress !== undefined) {
+      if (typeof usdtAddress !== 'string' || usdtAddress.trim() === '') {
+        return res.status(400).json({ message: 'usdtAddress cannot be empty' });
+      }
       dataToUpdate.usdtAddress = usdtAddress;
     }
 
     if (usdcAddress !== undefined) {
+      if (typeof usdcAddress !== 'string' || usdcAddress.trim() === '') {
+        return res.status(400).json({ message: 'usdcAddress cannot be empty' });
+      }
       dataToUpdate.usdcAddress = usdcAddress;
     }
 

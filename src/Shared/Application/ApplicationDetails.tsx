@@ -38,7 +38,7 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
       {/* Header */}
       <div className="bg-gradient-to-r py-3">
         <DashboardHeader
-          label="Pre seed"
+          label={session?.user.role === 'seeder' ? 'Pre seed' : 'Admin'}
           onRight={
             <button
               className="text-lg text-[#696969] underline"

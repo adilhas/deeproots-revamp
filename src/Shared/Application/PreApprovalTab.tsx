@@ -30,7 +30,7 @@ const PreApprovalTab = () => {
 
   return (
     <div className="text-center text-2xl">
-      Once the application is approved your Approval tab will be unlocked
+      Once the Application step is approved your next step will be unlocked
     </div>
   );
 };
