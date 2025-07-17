@@ -68,7 +68,7 @@ const KycSubmissionModal: React.FC<KycSubmissionModalProps> = ({
                 <button
                   onClick={handleConfirm}
                   disabled={loading}
-                  className="px-4 py-2 text-lg rounded-lg bg-gradient-to-r from-gradient-from2 w-full to-gradient-to2 text-white hover:bg-green-700"
+                  className="px-4 py-2 text-lg rounded-lg bg-gradient-to-r from-gradient-from2 w-full to-gradient-to2 text-white disabled:opacity-50"
                 >
                   {loading ? 'Submitting...' : 'Yes, Submit'}
                 </button>

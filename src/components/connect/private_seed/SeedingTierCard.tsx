@@ -63,7 +63,6 @@ const SeedingTierCard: React.FC<SeedingTierCardProps> = ({
   onSubmitAmount,
   isLoading = false,
   disableSubmit = false,
-  blurHueElement,
 }) => {
   const allowDark = isDark;
 
@@ -124,7 +123,6 @@ const SeedingTierCard: React.FC<SeedingTierCardProps> = ({
               className="radio absolute top-3 right-3 bg-white radio-primary checked:bg-white checked:text-[#7F56D9] checked:border-[#7F56D9]"
               checked={isSelected}
             />
-            {blurHueElement}
             <Image
               src={imageSrc}
               width={115}

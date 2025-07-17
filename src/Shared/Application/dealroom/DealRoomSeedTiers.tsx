@@ -19,12 +19,9 @@ const tierData = [
       'RootOpia GameFi Boosts (In-Game Perks & Rewards)',
     ],
     tierCardClass:
-      'bg-gradient-to-b from-[#D5D5D5] to-[#6F6F6F] border-[#D4D4D4] ',
+      'bg-[url(/dashboard/seedtier-1-hue.svg)] bg-[#D5D5D5] bg-bottom-right bg-no-repeat bg-cover bg-bottom- border-[#D4D4D4] ',
     title1Class: 'text-[#696969]',
     title2Class: 'text-[#303030]',
-    blurHueElement: (
-      <div className="w-[45%] h-[30%]  rounded-l-full opacity-60  blur-lg  bg-[#0085A8] absolute bottom-0 right-[-20px]"></div>
-    ),
   },
   {
     tierCategory: 'tier-2',
@@ -43,12 +40,9 @@ const tierData = [
       'Enhanced Referral Commission Tier',
     ],
     tierCardClass:
-      'bg-gradient-to-b from-[#927C56] to-[#BE9C60] border-[#D4D4D4] ',
+      'bg-[url(/dashboard/seedtier-2-hue.svg)] bg-[#6F6F6F00] bg-bottom-right bg-no-repeat bg-cover bg-bottom- border-[#D4D4D4] ',
     title1Class: 'text-white',
     title2Class: 'text-white',
-    blurHueElement: (
-      <div className="w-[50%] h-[30%]  rounded-lt-full opacity-60  blur-lg  bg-[#511AAF] absolute bottom-[-20px] right-[-20px]"></div>
-    ),
   },
   {
     tierCategory: 'tier-3',
@@ -64,12 +58,11 @@ const tierData = [
       'Founders Council Seat (Private Briefings, Roadmap Voting)',
       'Priority Role in Long-Term Ecosystem Expansion',
     ],
-    tierCardClass: 'bg-[#0085A8] border-[#D4D4D4] ',
+    tierCardClass:
+      'bg-[url(/dashboard/seedtier-3-hue.svg)] bg-[#6F6F6F00] bg-bottom-right bg-no-repeat bg-cover bg-bottom- border-[#D4D4D4] ',
+
     title1Class: 'text-white',
     title2Class: 'text-white',
-    blurHueElement: (
-      <div className="w-[50%] h-[50%]  rounded-l-full opacity-60  blur-lg  bg-[#AD1AAF] absolute bottom-0 right-[-20px]"></div>
-    ),
   },
 ];
 
@@ -155,7 +148,6 @@ const DealRoomSeedingTiers = () => {
               (application?.capital === contriAmount &&
                 application?.seedTier === selectedTier)
             }
-            blurHueElement={tier.blurHueElement}
           />
         ))}
       </div>

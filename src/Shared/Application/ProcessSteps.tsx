@@ -24,7 +24,11 @@ const ProcessSteps = () => {
       title: 'Pre-Approval Received',
       description: 'Seeder submits KYC, NDA, SAFE docs.',
       statusColor:
-        application?.preApproval === 'under-review' ? '#F4C560' : '#4BE562',
+        application?.preApproval === 'under-review'
+          ? '#F4C560'
+          : application?.preApproval === 'not-submitted'
+            ? '#D9D9D9'
+            : '#4BE562',
     },
     {
       title: 'Admin Approval',
