@@ -104,7 +104,7 @@ export default async function handler(
       return res.status(200).json({
         message: 'Form submitted successfully',
         submission,
-        link, // optional if you want to show it in frontend
+        link,
       });
     } catch (error) {
       console.error('Error saving form submission:', error);

@@ -24,6 +24,7 @@ export type ApplicationDataType = {
   usdcAddress?: string;
   contributionAmount?: string;
   seedTier?: string;
+  managementNotes?: ManagementNotesType[];
 };
 
 export type StatusType =
@@ -69,4 +70,12 @@ export type PaymentDetailsType = {
   receiptUrl: string;
   declineReason: string;
   paymentStatus: string;
+};
+
+export type ManagementNotesType = {
+  id: string;
+  note: string;
+  createdAt: string;
+  updatedAt: string;
+  submissionId: string;
 };

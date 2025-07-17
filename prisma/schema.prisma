@@ -10,30 +10,31 @@ datasource db {
 }
 
 model PrivateSeedSubmission {
-  id                String          @id @default(cuid())
-  fullName          String
-  email             String          @unique
-  contact           String
-  country           String
-  website           String
-  capital           String
-  value             String
-  whyJoin           String
-  indvOrOrg         String
-  applicationStatus String          @default("received")
-  createdAt         DateTime        @default(now())
-  dealRoomOpen      Boolean         @default(false)
-  preApproval       String          @default("not-submitted")
-  updatedAt         DateTime        @updatedAt
-  passwordHash      String?
-  dealRoom          String          @default("not-submitted")
-  kycDocuments      KycDocument[]
-  ndaSubmission     NdaSubmission?
-  paymentDetails    PaymentDetails?
-  usdtAddress       String?
-  usdcAddress       String?
+  id                 String            @id @default(cuid())
+  fullName           String
+  email              String            @unique
+  contact            String
+  country            String
+  website            String
+  capital            String
+  value              String
+  whyJoin            String
+  indvOrOrg          String
+  applicationStatus  String            @default("received")
+  createdAt          DateTime          @default(now())
+  dealRoomOpen       Boolean           @default(false)
+  preApproval        String            @default("not-submitted")
+  updatedAt          DateTime          @updatedAt
+  passwordHash       String?
+  dealRoom           String            @default("not-submitted")
+  kycDocuments       KycDocument[]
+  ndaSubmission      NdaSubmission?
+  paymentDetails     PaymentDetails?
+  usdtAddress        String?
+  usdcAddress        String?
   contributionAmount String?
-  seedTier String?
+  seedTier           String?
+  managementNotes    ManagementNotes[]
 }
 
 model PaymentDetails {
@@ -76,6 +77,17 @@ model NdaSubmission {
   acceptedAt     DateTime              @default(now())
   updatedAt      DateTime?             @updatedAt
   user           PrivateSeedSubmission @relation(fields: [userId], references: [id])
+}
+
+model ManagementNotes {
+  id           String                @id @default(cuid())
+  note         String
+  createdAt    DateTime              @default(now())
+  updatedAt    DateTime              @updatedAt
+  submissionId String
+  submission   PrivateSeedSubmission @relation(fields: [submissionId], references: [id])
+
+  @@index([submissionId])
 }
 
 enum KycDocumentType {

@@ -32,6 +32,7 @@ export default async function handler(
           kycDocuments: true,
           ndaSubmission: true,
           paymentDetails: true,
+          managementNotes: true,
         },
       });
 
