@@ -11,6 +11,12 @@ import { useThemeContext } from '@/context/ThemeContext';
 import NoteSection from './NoteSection';
 import SubmitSuccessModal from './SubmitSuccessModal';
 import { PrivateSeedSchema } from '@/schema/privateSeedSchema';
+import countries from 'i18n-iso-countries';
+import enLocale from 'i18n-iso-countries/langs/en.json';
+
+countries.registerLocale(enLocale); // Register English
+
+const countryNames = countries.getNames('en', { select: 'official' });
 
 type PrivateSeedFormData = z.infer<typeof PrivateSeedSchema>;
 type FieldKey = keyof PrivateSeedFormData;
@@ -19,6 +25,7 @@ const PrivateSeedForm = () => {
   const { t } = useTranslation('connect/private_seed');
   const { isDark } = useThemeContext();
   const [customCapital, setCustomCapital] = useState('');
+  const countryList = Object.entries(countryNames); // [['AF', 'Afghanistan'], ['AL', 'Albania'], ...]
 
   const {
     register,
@@ -113,11 +120,7 @@ const PrivateSeedForm = () => {
                 icon: <Phone className="w-6 h-6" />,
                 type: 'text',
               },
-              {
-                name: 'country',
-                icon: <PiMapPinArea className="w-6 h-6" />,
-                type: 'text',
-              },
+
               {
                 name: 'linkedin',
                 icon: <Globe className="w-6 h-6" />,
@@ -148,6 +151,38 @@ const PrivateSeedForm = () => {
               )}
             </div>
           ))}
+
+          <div>
+            {watch('country') && (
+              <p className="text-md text-[#525252] dark:text-[#F1F5F9] mb-2 px-4">
+                {t('form.placeholders.country')}
+              </p>
+            )}
+            <div className="">
+              <label className="relative  border-0 shadow-[0px_4px_20px_0px_#0000001A] dark:shadow-[0px_4px_20px_0px_#00000073] bg-white dark:bg-[#303030] p-3 flex items-center gap-2 rounded-full w-full">
+                <PiMapPinArea className="w-6 h-6" />
+                <select
+                  {...register('country')}
+                  className="select-md text-lg shadow-none bg-white dark:bg-[#303030] w-full border-none dark:text-[#F1F5F9] text-[#525252]  focus:outline-none"
+                >
+                  <option value="" disabled>
+                    {t('form.placeholders.country')}
+                  </option>
+                  {countryList.map(([code, name]) => (
+                    <option key={code} value={name}>
+                      {name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </div>
+
+            {errors.country && (
+              <p className="text-red-500 text-md mt-1">
+                {errors.country.message as string}
+              </p>
+            )}
+          </div>
 
           {/* Capital Selector */}
           <div className="border-0 shadow-[0px_4px_20px_0px_#0000001A] dark:shadow-[0px_4px_20px_0px_#00000073] bg-white dark:bg-[#303030] gap-2 rounded-2xl w-full py-3 px-4 ">
