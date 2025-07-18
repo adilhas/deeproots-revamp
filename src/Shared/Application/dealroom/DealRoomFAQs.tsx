@@ -51,10 +51,10 @@ const DealRoomFAQs = () => {
           return (
             <div
               key={index}
-              className="mt-6 p-[2px] rounded-xl bg-gradient-to-r from-gradient-from to-gradient-to mx-auto transition-all duration-300"
+              className={`mt-6 p-[2px] pb-[3px] rounded-[15px] ${isOpen ? 'bg-gradient-to-r' : 'bg-none'} from-gradient-from to-gradient-to mx-auto transition-all duration-300`}
             >
               <div
-                className="w-full py-2 px-3 rounded-xl bg-white  text-[#303030]  cursor-pointer"
+                className={`w-full py-2 px-3 rounded-xl ${isOpen ? 'bg-white' : 'bg-none'}  text-[#303030]  cursor-pointer`}
                 onClick={() => toggleFAQ(index)}
               >
                 <div className="font-medium flex flex-row justify-between items-center">

@@ -4,54 +4,13 @@ import React, { JSX, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { parsePhoneNumberFromString } from 'libphonenumber-js';
 import { Globe, Mail, Phone } from 'lucide-react';
 import { PiCurrencyDollarSimple, PiMapPinArea, PiUser } from 'react-icons/pi';
 import { useTranslation } from 'next-i18next';
 import { useThemeContext } from '@/context/ThemeContext';
 import NoteSection from './NoteSection';
 import SubmitSuccessModal from './SubmitSuccessModal';
-
-const PrivateSeedSchema = z.object({
-  fullName: z.string().min(1, 'Full name is required'),
-  email: z.string().email('Invalid email'),
-  contact: z.string().refine(
-    (val) => {
-      const phone = parsePhoneNumberFromString(val);
-      return phone?.isValid() ?? false;
-    },
-    { message: 'Invalid phone number. Use format +1234567890' }
-  ),
-  country: z.string().min(1, 'Country is required'),
-  linkedin: z.string().url('Invalid URL').optional().or(z.literal('')),
-  capital: z
-    .number({
-      required_error: 'Capital is required',
-      invalid_type_error: 'Capital must be a number',
-    })
-    .min(5000, { message: 'Minimum capital is $5k' }),
-
-  value: z.string().min(1, 'This field is required'),
-  whyJoin: z.string().min(1, 'This field is required'),
-  canPassKyc: z.literal(true, {
-    errorMap: () => ({ message: 'You must agree to pass KYC' }),
-  }),
-  indvOrOrg: z.enum(['Ind', 'Org'], {
-    errorMap: () => ({ message: 'This field is required' }),
-  }),
-  confidentiality: z.literal(true, {
-    errorMap: () => ({ message: 'You must agree to the confidentiality' }),
-  }),
-  acknowledgement: z.literal(true, {
-    errorMap: () => ({ message: 'You must acknowledge the terms' }),
-  }),
-  disclosureTerm: z.literal(true, {
-    errorMap: () => ({ message: 'You must agree disclosure terms' }),
-  }),
-  nonUsCitizen: z.literal(true, {
-    errorMap: () => ({ message: 'You must be non US citizen' }),
-  }),
-});
+import { PrivateSeedSchema } from '@/schema/privateSeedSchema';
 
 type PrivateSeedFormData = z.infer<typeof PrivateSeedSchema>;
 type FieldKey = keyof PrivateSeedFormData;
@@ -141,47 +100,49 @@ const PrivateSeedForm = () => {
             [
               {
                 name: 'fullName',
-                icon: <PiUser className="w-5 h-5" />,
+                icon: <PiUser className="w-6 h-6" />,
                 type: 'text',
               },
               {
                 name: 'email',
-                icon: <Mail className="w-5 h-5" />,
+                icon: <Mail className="w-6 h-6" />,
                 type: 'email',
               },
               {
                 name: 'contact',
-                icon: <Phone className="w-5 h-5" />,
+                icon: <Phone className="w-6 h-6" />,
                 type: 'text',
               },
               {
                 name: 'country',
-                icon: <PiMapPinArea className="w-5 h-5" />,
+                icon: <PiMapPinArea className="w-6 h-6" />,
                 type: 'text',
               },
               {
                 name: 'linkedin',
-                icon: <Globe className="w-5 h-5" />,
+                icon: <Globe className="w-6 h-6" />,
                 type: 'text',
               },
             ] as { name: FieldKey; icon: JSX.Element; type: string }[]
           ).map(({ name, icon, type }) => (
             <div key={name}>
-              <label
-                className="input border-0 bg-white dark:bg-[#303030] flex items-center gap-2 rounded-full w-full"
-                style={{ boxShadow: `0px 4px 20px 0px #00000073` }}
-              >
+              {watch(name) && (
+                <p className="text-md text-[#525252] dark:text-[#F1F5F9] mb-2 px-4">
+                  {t(`form.placeholders.${name}`)}
+                </p>
+              )}
+              <label className="input border-0 shadow-[0px_4px_20px_0px_#0000001A] dark:shadow-[0px_4px_20px_0px_#00000073] bg-white dark:bg-[#303030] p-3 flex items-center gap-2 rounded-full w-full">
                 {icon}
                 <input
                   {...register(name)}
                   name={name}
                   type={type}
-                  className="grow bg-transparent"
+                  className="grow bg-transparent py-3 dark:text-[#F1F5F9] text-[#525252] placeholder-[#525252] text-lg dark:placeholder-[#F1F5F9]"
                   placeholder={t(`form.placeholders.${name}`)}
                 />
               </label>
               {errors[name] && (
-                <p className="text-red-500 text-sm mt-1">
+                <p className="text-red-500 text-md mt-1">
                   {errors[name]?.message as string}
                 </p>
               )}
@@ -189,21 +150,18 @@ const PrivateSeedForm = () => {
           ))}
 
           {/* Capital Selector */}
-          <div
-            className="border-0 bg-white dark:bg-[#303030] gap-2 rounded-2xl w-full py-3 px-4 "
-            style={{ boxShadow: `0px 4px 20px 0px #00000073` }}
-          >
+          <div className="border-0 shadow-[0px_4px_20px_0px_#0000001A] dark:shadow-[0px_4px_20px_0px_#00000073] bg-white dark:bg-[#303030] gap-2 rounded-2xl w-full py-3 px-4 ">
             <div className="flex flex-col items-start gap-y-2 lg:items-center lg:flex-row w-full justify-between">
               <div>
-                <div className="flex items-center">
-                  <PiCurrencyDollarSimple className="w-5 h-5" />
+                <div className="flex items-center text-lg">
+                  <PiCurrencyDollarSimple className="w-6 h-6" />
                   <div>{t(`form.placeholders.capital`)}</div>
                 </div>
               </div>
               <div>
                 <input
                   type="number"
-                  className="grow border border-[#D4D4D4] text-sm dark:border-gray-300 px-3 py-2 rounded-xl placeholder-[#525252] dark:placeholder-gray-300"
+                  className="grow border  border-[#D4D4D4] text-sm dark:border-gray-300 px-3 py-2 rounded-xl placeholder-[#525252] dark:placeholder-gray-300"
                   placeholder={'Custom Amount'}
                   value={customCapital}
                   onChange={(e) => {
@@ -264,11 +222,16 @@ const PrivateSeedForm = () => {
           {/* Textareas */}
           {(['value', 'whyJoin'] as FieldKey[]).map((field) => (
             <div key={field}>
+              {watch(field) && (
+                <p className="text-md text-[#525252] dark:text-[#F1F5F9] mb-2 px-4">
+                  {t(`form.placeholders.${field}`)}
+                </p>
+              )}
               <textarea
                 {...register(field)}
-                className="textarea textarea-bordered bg-white border-0 dark:bg-[#303030] w-full rounded-xl"
+                rows={5}
+                className="textarea text-lg textarea-bordered p-3 shadow-[0px_4px_20px_0px_#0000001A] dark:shadow-[0px_4px_20px_0px_#00000073] bg-white border-0 dark:bg-[#303030] w-full rounded-xl"
                 placeholder={t(`form.placeholders.${field}`)}
-                style={{ boxShadow: `0px 4px 20px 0px #00000073` }}
               />
               {errors[field] && (
                 <p className="text-red-500 text-sm mt-1">

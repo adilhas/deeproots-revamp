@@ -1,8 +1,6 @@
 <svg width="376" height="174" viewBox="0 0 376 174" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g opacity="0.3">
 <rect width="376" height="174" fill="url(#paint0_linear_102_4941)"/>
 <rect width="376" height="174" fill="url(#paint1_radial_102_4941)"/>
-</g>
 <defs>
 <linearGradient id="paint0_linear_102_4941" x1="188" y1="0" x2="188" y2="229" gradientUnits="userSpaceOnUse">
 <stop stop-color="#D5D5D5"/>

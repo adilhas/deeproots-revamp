@@ -22,7 +22,7 @@ const TokenomicsUtility = () => {
   ];
 
   return (
-    <section className="py-16">
+    <section className="pb-16">
       <div className="relative mx-auto">
         {/* Desktop Background */}
         <Image
@@ -51,7 +51,7 @@ const TokenomicsUtility = () => {
           alt="background-mobile"
           className="inline-block md:hidden w-full mx-auto scale-y-110 sm:scale-y-100"
         />
-        <div className="absolute top-[20%] md:top-[25%] md:left-[50px] left-1/2 -translate-x-1/2 w-full md:-translate-0">
+        <div className="absolute top-[20%] md:top-[38%] md:left-[50px] left-1/2 -translate-x-1/2 w-full md:-translate-0">
           <div className="w-full md:w-fit text-center md:text-left z-10">
             <h1 className=" text-3xl md:text-2xl lg:text-4xl leading-tight font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#0085a8] to-[#ad1aaf] md:text-nowrap w-fit mx-auto">
               REAL UTILITY
@@ -62,7 +62,7 @@ const TokenomicsUtility = () => {
             </p>
           </div>
         </div>
-        <div className="absolute top-[25%] md:top-[45%] w-full  gap-0 md:gap-10">
+        <div className="absolute top-[25%] md:top-[49%] w-full  gap-0 md:gap-10">
           <div className="grid grid-cols-1 w-fit md:grid-cols-3 gap-4 md:gap-0 md:flex-row items-center md:w-[85%] justify-between mx-auto">
             {tokenomicsUitility.map((item, index) => (
               <div key={index} className={`relative }`}>
@@ -79,7 +79,7 @@ const TokenomicsUtility = () => {
                   className="scale-x-90 sm:scale-x-100 "
                 />
 
-                <div className="absolute top-[45%] text-center left-1/2 -translate-x-1/2 text-md md:text-xs lg:text-lg w-[87%]">
+                <div className="absolute top-[50%] text-center left-1/2 -translate-x-1/2 text-md md:text-xs lg:text-lg w-[87%]">
                   <div className="font-semibold">{item.title}</div>
                   <div>{item.description}</div>
                 </div>

@@ -15,22 +15,22 @@ const FoundationRoundCard = ({ data }: { data: FoundationRoundType }) => {
         {data.title}
       </h3>
       <div className="text-sm space-y-1 w-full ">
-        <p className="flex flex-row gap-2 justify-between">
+        <div className="flex flex-row gap-2 justify-between">
           <div className="font-semibold">Allocation:</div>{' '}
           <div className="text-end">{data.allocation}</div>
-        </p>
-        <p className="flex flex-row gap-2 justify-between">
+        </div>
+        <div className="flex flex-row gap-2 justify-between">
           <div className="font-semibold">Discount:</div>{' '}
           <div className="text-end">{data.discount}</div>
-        </p>
-        <p className="flex flex-row gap-2 justify-between">
+        </div>
+        <div className="flex flex-row gap-2 justify-between">
           <div className="font-semibold">Access:</div>{' '}
           <div className="text-end">{data.access}</div>
-        </p>
-        <p className="flex flex-row gap-2 justify-between">
+        </div>
+        <div className="flex flex-row gap-2 justify-between">
           <div className="font-semibold">Who it&apos;s for:</div>{' '}
           <div className="text-end">{data.who}</div>
-        </p>
+        </div>
       </div>
     </div>
   );

@@ -12,8 +12,6 @@ interface SeedingTierCardProps {
   badgeLabel: string;
   isDark?: boolean;
   tierCardClass?: string;
-  lightGradientClass?: string;
-  darkGradientClass?: string;
   title1Class?: string;
   title2Class?: string;
   isSelected?: boolean;
@@ -86,7 +84,7 @@ const SeedingTierCard: React.FC<SeedingTierCardProps> = ({
 
   return (
     <div
-      className={`p-[3px] rounded-4xl  transition-all ${
+      className={`p-[3.5px] pb-[4px] rounded-[36px]  transition-all ${
         isSelected
           ? 'bg-gradient-to-r from-gradient-from2 to-gradient-to2'
           : 'bg-transparent'

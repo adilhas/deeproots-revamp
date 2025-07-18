@@ -37,7 +37,7 @@ const PrivateSeedFAQs = () => {
 
   return (
     <div>
-      <h2 className="text-4xl text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text w-fit mx-auto font-orbitron font-bold">
+      <h2 className="text-[36px] text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text w-fit mx-auto font-orbitron font-bold">
         {t('faqs.heading')}
       </h2>
       {/* <div className="text-center mt-4 text-2xl">{t('faqs.subheading')}</div> */}
@@ -48,10 +48,10 @@ const PrivateSeedFAQs = () => {
           return (
             <div
               key={index}
-              className="mt-6 p-[2px] rounded-xl bg-gradient-to-r from-gradient-from to-gradient-to max-w-[600px] mx-auto transition-all duration-300"
+              className={`mt-6 p-[2px] rounded-xl ${isOpen ? 'bg-gradient-to-r' : 'bg-none'} from-gradient-from to-gradient-to max-w-[600px] mx-auto transition-all duration-300`}
             >
               <div
-                className="w-full py-2 px-3 rounded-xl bg-white dark:bg-[#1C1C1C] text-[#303030] dark:text-[#F8FAFC] cursor-pointer"
+                className={`w-full py-2 px-3 rounded-xl ${isOpen ? 'bg-white dark:bg-[#1C1C1C]' : 'bg-none'} text-[#303030] dark:text-[#F8FAFC] cursor-pointer`}
                 onClick={() => toggleFAQ(index)}
               >
                 <div className="font-medium flex flex-row justify-between items-center">

@@ -6,7 +6,7 @@ import { Loader, X } from 'lucide-react';
 import { useApplication } from '@/context/ApplicationContext';
 import { z } from 'zod';
 import { toast } from 'react-toastify';
-import { PiCurrencyDollarSimple, PiLink } from 'react-icons/pi';
+import { PiLink } from 'react-icons/pi';
 import { FiImage } from 'react-icons/fi';
 
 interface SecureMyAllocationProps {
@@ -24,7 +24,7 @@ const paymentSchema = z.object({
 const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
   const { application, setApplication } = useApplication();
   const [isOpen, setIsOpen] = useState(false);
-  const [amountSent, setAmountSent] = useState('');
+  const [amountSent] = useState(application?.capital);
   const [transactionLink, setTransactionLink] = useState('');
   const [screenshot, setScreenshot] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -158,7 +158,7 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
               <div className="mt-6">
                 <h3 className="font-semibold text-2xl"> Payment Information</h3>
                 <div className="space-y-3 mt-2">
-                  <div className="relative w-full">
+                  {/* <div className="relative w-full">
                     <PiCurrencyDollarSimple className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
                     <input
                       type="number"
@@ -167,7 +167,7 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
                       value={amountSent}
                       onChange={(e) => setAmountSent(e.target.value)}
                     />
-                  </div>
+                  </div> */}
 
                   {/* Transaction Link with icon */}
                   <div className="relative w-full">

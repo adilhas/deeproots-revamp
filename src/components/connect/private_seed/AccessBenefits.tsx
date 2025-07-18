@@ -24,7 +24,7 @@ const AccessBenefits = () => {
 
   return (
     <section>
-      <div className="relative">
+      <div className="relative font-archivo">
         {/* Desktop Background */}
         <Image
           priority
@@ -53,7 +53,7 @@ const AccessBenefits = () => {
           className="inline-block md:hidden"
         />
 
-        <div className="absolute top-[23%] md:top-[30%] w-full flex flex-col justify-start gap-0 md:gap-10">
+        <div className="absolute top-[23%] md:top-[37%] w-full flex flex-col justify-start gap-0 md:gap-10">
           {/* Mobile Heading */}
           <div className="font-orbitron my-1 md:hidden inline-block text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text w-fit mx-auto text-xl text-center max-w-[250px] font-semibold">
             {heading}
@@ -85,7 +85,7 @@ const AccessBenefits = () => {
                   />
                   {item && (
                     <div
-                      className="absolute top-[45%] text-center left-1/2 -translate-x-1/2 text-md md:text-xs lg:text-lg w-[87%]"
+                      className="absolute top-[50%] text-center left-1/2 -translate-x-1/2 text-md md:text-xs lg:text-lg w-[87%]"
                       dangerouslySetInnerHTML={{ __html: formatted }}
                     />
                   )}
@@ -120,7 +120,7 @@ const AccessBenefits = () => {
                     alt="card background"
                   />
                   <div
-                    className="absolute top-[45%] text-center left-1/2 -translate-x-1/2 text-md md:text-xs lg:text-lg w-[87%]"
+                    className="absolute top-[50%] text-center left-1/2 -translate-x-1/2 text-md md:text-xs lg:text-lg w-[87%]"
                     dangerouslySetInnerHTML={{ __html: formatted }}
                   />
                 </div>
