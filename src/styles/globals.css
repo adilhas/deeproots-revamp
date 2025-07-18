@@ -64,19 +64,27 @@ button {
   animation: spin-custom 3s infinite ease-in-out;
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+.marquee-wrapper {
+  overflow: hidden;
+  position: relative;
 }
 
-.marquee {
-  display: inline-block;
-  white-space: nowrap;
-  animation: marquee 30s linear infinite;
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .hide-scrollbar {

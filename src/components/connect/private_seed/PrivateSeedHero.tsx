@@ -45,10 +45,13 @@ const PrivateSeedHero = () => {
       </div>
       <div className="relative w-full mx-auto my-10 overflow-hidden bg-white dark:bg-[#303030] py-2 max-w-[800px]">
         <div className="absolute left-0 top-0 h-full w-12 z-10 bg-gradient-to-r from-primary-light dark:from-primary-dark via-transparent to-transparent pointer-events-none" />
-        <div className="absolute right-0 top-0 h-full w-12 z-10 bg-gradient-to-l dark:from-primary-dark from-primary-light via-transparent to-transparent pointer-events-none" />
+        <div className="absolute right-0 top-0 h-full w-12 z-10 bg-gradient-to-l from-primary-light dark:from-primary-dark via-transparent to-transparent pointer-events-none" />
 
-        <div className="marquee text-lg font-medium whitespace-nowrap w-fit">
-          {t('hero.description')}
+        <div className="marquee-wrapper">
+          <div className="marquee-track text-lg font-medium whitespace-nowrap">
+            <span className="mr-20">{t('hero.description')}</span>
+            <span className="mr-20">{t('hero.description')}</span>
+          </div>
         </div>
       </div>
 
