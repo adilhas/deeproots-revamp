@@ -47,7 +47,7 @@ const SubmittedPaymentDetails = () => {
                 <a
                   href={typeof item.value === 'string' ? item.value : undefined}
                   target="_blank"
-                  className="text-[#2563EB] underline font-semibold my-4 max-w-[60%] truncate"
+                  className="text-[#2563EB] underline font-semibold mb-4 md:my-4 max-w-[60%] truncate"
                 >
                   {item.value}
                 </a>
@@ -59,7 +59,7 @@ const SubmittedPaymentDetails = () => {
                   />
                 </div>
               ) : (
-                <div className="text-gray-800 font-semibold my-4">
+                <div className="text-gray-800 font-semibold mb-4 md:my-4">
                   {item.value}
                 </div>
               )}

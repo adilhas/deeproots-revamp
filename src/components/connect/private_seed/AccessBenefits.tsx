@@ -53,7 +53,7 @@ const AccessBenefits = () => {
           className="inline-block md:hidden"
         />
 
-        <div className="absolute top-[23%] md:top-[37%] w-full flex flex-col justify-start gap-0 md:gap-10">
+        <div className="absolute top-[23%] md:top-[40%] w-full flex flex-col justify-start gap-0 md:gap-10">
           {/* Mobile Heading */}
           <div className="font-orbitron my-1 md:hidden inline-block text-transparent bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text w-fit mx-auto text-xl text-center max-w-[250px] font-semibold">
             {heading}
@@ -77,8 +77,8 @@ const AccessBenefits = () => {
                     width={350}
                     src={
                       isDark
-                        ? '/connect/access-benefit-card-dark.png'
-                        : '/connect/access-benefit-card.png'
+                        ? '/connect/access-benefit-card-dark-v2.png'
+                        : '/connect/access-benefit-card-v2.png'
                     }
                     alt="card background"
                     className={item === '' ? 'opacity-0' : ''}
@@ -114,8 +114,8 @@ const AccessBenefits = () => {
                     width={350}
                     src={
                       isDark
-                        ? '/connect/access-benefit-card-dark.png'
-                        : '/connect/access-benefit-card.png'
+                        ? '/connect/access-benefit-card-dark-v2.png'
+                        : '/connect/access-benefit-card-v2.png'
                     }
                     alt="card background"
                   />

@@ -53,7 +53,7 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
       return;
     }
 
-    setIsSubmitting(true); // 👈 Start loader
+    setIsSubmitting(true);
 
     const formData = new FormData();
     formData.append('amountSent', amountSent);
@@ -119,7 +119,7 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
             <div className="p-4 text-[#525252]">
               <div className="bg-[#F4F4F4] rounded-2xl py-4 px-6">
                 <div className="">
-                  <div className="flex w-full justify-between items-center">
+                  <div className="flex flex-col md:flex-row w-full justify-between items-start md:items-center">
                     <div className="text-center text-lg font-semibold r mb-1">
                       Time to Secure your Seat
                     </div>
@@ -137,7 +137,7 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
                     </div>
                   </div>
 
-                  <div className="mt-4 text-center flex w-full justify-between items-center font-semibold">
+                  <div className="mt-4 text-center flex flex-col md:flex-row w-full justify-between items-start md:items-center font-semibold">
                     <div>Seed amount:</div>
                     <div className="text-gray-700 text-2xl font-orbitron">
                       ${application?.capital}
@@ -216,7 +216,7 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
                 <button
                   onClick={handleConfirm}
                   disabled={isSubmitting || !isFormValid}
-                  className={`px-4 bg-gradient-to-r w-full max-w-[202px] from-gradient-from2 to-gradient-to2 py-2 disabled:opacity-60 text-lg rounded-md text-white flex items-center justify-center gap-2 ${
+                  className={`px-4 bg-gradient-to-r w-full max-w-none md:max-w-[202px] from-gradient-from2 to-gradient-to2 py-2 disabled:opacity-60 text-lg rounded-md text-white flex items-center justify-center gap-2 ${
                     isSubmitting ? 'opacity-60' : ''
                   }`}
                 >

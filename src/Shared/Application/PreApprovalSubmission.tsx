@@ -52,9 +52,7 @@ const PreAprovalSubmission = () => {
           >
             Step - 2
           </div>
-          <div className="text-nowrap text-[#696969] text-lg">
-            KYC & Documentation
-          </div>
+          <div className="text-nowrap text-[#696969] text-lg">KYC & Docs</div>
         </div>
       </div>
 

@@ -66,13 +66,14 @@ const tierData = [
 
 const SeedingTiers = () => {
   return (
-    <div className="py-16 text-[#303030] dark:text-white">
+    <div className="py-16  text-[#303030] dark:text-white">
       <h2 className=" font-semibold text-3xl text-center mb-10">
         Seeding Tiers
       </h2>
       <div className="flex flex-col lg:flex-row justify-center gap-x-3 gap-y-6 mx-auto w-full">
         {tierData.map((tier, index) => (
           <SeedingTierCard
+            isSelectable={false}
             title1Class={tier.title1Class}
             title2Class={tier.title2Class}
             key={index}

@@ -88,12 +88,12 @@ const PreApprovalSubmitted = () => {
                   Agreed
                 </div>
               </div>
-              <hr />
-              <div className="flex flex-row items-center justify-between w-full">
+              <hr className="my-3" />
+              <div className="flex flex-col md:flex-row gap-y-2 items-start md:items-center justify-between w-full">
                 <div className="font-semibold text-xl text-[#303030]">
                   Signature
                 </div>
-                <div className="flex flex-col text-start">
+                <div className="flex flex-col gap-y-2 text-start">
                   <div className="text-lg">Full Legal Name</div>
                   <div className="font-semibold text-xl text-[#303030]">
                     {application?.ndaSubmission?.typedSignature}
@@ -103,11 +103,11 @@ const PreApprovalSubmitted = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   href={application?.ndaSubmission?.signatureImage}
-                  className="px-2 w-full max-w-[437px]"
+                  className=" px-2 w-full max-w-none md:max-w-[437px]"
                 >
                   {/* View Signature */}
                   <div
-                    className="flex flex-wrap justify-between w-full items-center gap-4 bg-white px-3 py-1 m-3 rounded-lg"
+                    className="flex flex-wrap justify-between w-full items-center gap-4 bg-white px-3 py-1 md:m-3 rounded-lg"
                     style={{ boxShadow: `0px 4px 9px 0px #00000012` }}
                   >
                     <div className="flex flex-row items-center">
@@ -153,7 +153,7 @@ const PreApprovalSubmitted = () => {
                 application?.kycDocuments.map((document, index) => (
                   <React.Fragment key={document.id}>
                     <div
-                      className={`flex flex-row items-center justify-between w-full my-3 ${
+                      className={`flex flex-col gap-y-4 md:flex-row items-start md:items-center justify-between w-full my-3 ${
                         index !== (application.kycDocuments?.length ?? 0) - 1
                           ? 'border-b border-[#D4D4D4]'
                           : ''
@@ -170,7 +170,7 @@ const PreApprovalSubmitted = () => {
                       >
                         {/* View Signature */}
                         <div
-                          className="flex flex-wrap justify-between w-full items-center gap-4 bg-white px-3 py-1 m-3 rounded-lg"
+                          className="flex flex-wrap justify-between w-full items-center gap-4 bg-white px-3 py-1 mb-4  md:m-3 rounded-lg"
                           style={{ boxShadow: `0px 4px 9px 0px #00000012` }}
                         >
                           <div className="flex flex-row items-center">

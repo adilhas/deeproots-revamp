@@ -19,11 +19,13 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({
           height={52}
           alt="dashboard logo"
         />
-        <div className="text-2xl font-medium font-orbitron text-transparent bg-gradient-to-r from-gradient-from2 to-gradient-to2 bg-clip-text">
-          DEEPROOTS
-        </div>
-        <div className="text-lg bg-[#FFFFFF29] text-[#525252] border border-[#A1A1A1] px-2 py-[2px] flex items-center justify-center rounded-2xl font-medium">
-          {label}
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-x-2">
+          <div className="text-xl md:text-2xl font-medium font-orbitron text-transparent bg-gradient-to-r from-gradient-from2 to-gradient-to2 bg-clip-text">
+            DEEPROOTS
+          </div>
+          <div className="text-sm md:text-lg bg-[#FFFFFF29] text-[#525252] border border-[#A1A1A1] px-2 py-[2px] flex items-center justify-center rounded-2xl font-medium">
+            {label}
+          </div>
         </div>
       </div>
       <div>{onRight}</div>

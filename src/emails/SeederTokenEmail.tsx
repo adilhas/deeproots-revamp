@@ -46,7 +46,7 @@ export default function SeederTokenEmail({
           </Text>
           <Text style={{ fontSize: '16px', marginBottom: '20px' }}>
             Please click the button below to create your Seeder account. This
-            link is valid for 1 hour only.
+            link is valid for 12 hour only.
           </Text>
           <Link
             href={link}

@@ -1,6 +1,5 @@
 import { ApplicationDataType } from '@/types/application';
 import React from 'react';
-import { PiLockSimple } from 'react-icons/pi';
 import { formatDate } from '@/utils/formatDate';
 import StatusBadge from './StatusBadge';
 interface DashboardItem {
@@ -51,6 +50,7 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
       tabName: 'deal-room',
     },
   ];
+  console.log(application);
   return (
     <div className="flex flex-col gap-y-11">
       {dashboardData.map((data, index) => (
@@ -66,7 +66,7 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
           </div>
           <div className="flex items-center mb-3 flex-wrap justify-between">
             <div className="text-[#525252] text-lg">{data.description}</div>
-            {data.status !== 'not-submitted' && (
+            {data.status !== 'not-submitted' && data.status !== 'no-access' && (
               <div className="text-sm">{data.date}</div>
             )}
           </div>
@@ -84,13 +84,11 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
             <div className="text-2xl font-medium">
               Schedule call with Founder
             </div>
-            <div className="bg-[#D1FAE5] py-1 px-4 text-[#059669] text-lg font-semibold rounded-4xl">
+            <div className="bg-[#D1FAE5] py-1 px-4 text-nowrap text-[#059669] text-lg font-semibold rounded-4xl">
               1 on 1
             </div>
           </div>
-          <div className="font-semibold bg-[#D4D4D4] items-center flex flex-row justify-between gap-2 text-[#525252] py-1 px-2 rounded-4xl">
-            <PiLockSimple className="w-5 h-5" /> No Access
-          </div>
+          <StatusBadge status="no-access" />
         </div>
         <div className="flex items-center mb-3 flex-wrap justify-between">
           <div className="text-[#525252] text-lg">
@@ -108,9 +106,7 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
                 100 Seats
               </div>
             </div>
-            <div className="font-semibold bg-[#D4D4D4] items-center flex flex-row justify-between gap-2 text-[#525252] py-1 px-2 rounded-4xl">
-              <PiLockSimple className="w-5 h-5" /> No Access
-            </div>
+            <StatusBadge status="no-access" />
           </div>
           <div className="flex items-center mb-3 flex-wrap justify-between">
             <div className="text-[#525252] text-lg">
@@ -128,9 +124,7 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
                 10 Seats
               </div>
             </div>
-            <div className="font-semibold bg-[#D4D4D4] items-center flex flex-row justify-between gap-2 text-[#525252] py-1 px-2 rounded-4xl">
-              <PiLockSimple className="w-5 h-5" /> No Access
-            </div>
+            <StatusBadge status="no-access" />
           </div>
           <div className="flex items-center mb-3 flex-wrap justify-between">
             <div className="text-[#525252] text-lg">

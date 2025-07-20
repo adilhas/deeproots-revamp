@@ -23,6 +23,7 @@ interface SeedingTierCardProps {
   isLoading?: boolean;
   disableSubmit?: boolean;
   blurHueElement?: React.ReactNode;
+  isSelectable?: boolean;
 }
 
 const parsePriceRange = (priceRange: string): [number, number] => {
@@ -61,6 +62,7 @@ const SeedingTierCard: React.FC<SeedingTierCardProps> = ({
   onSubmitAmount,
   isLoading = false,
   disableSubmit = false,
+  isSelectable = true,
 }) => {
   const allowDark = isDark;
 
@@ -84,7 +86,7 @@ const SeedingTierCard: React.FC<SeedingTierCardProps> = ({
 
   return (
     <div
-      className={`p-[3.5px] pb-[4px] rounded-[36px]  transition-all ${
+      className={`p-[3.5px] pb-[4px] rounded-[36px] w-fit mx-auto  transition-all ${
         isSelected
           ? 'bg-gradient-to-r from-gradient-from2 to-gradient-to2'
           : 'bg-transparent'
@@ -115,12 +117,14 @@ const SeedingTierCard: React.FC<SeedingTierCardProps> = ({
                 {badgeLabel}
               </div>
             </div>
-            <input
-              type="radio"
-              name="seed-tier-radio"
-              className="radio absolute top-3 right-3 bg-white radio-primary checked:bg-white checked:text-[#7F56D9] checked:border-[#7F56D9]"
-              checked={isSelected}
-            />
+            {isSelectable && (
+              <input
+                type="radio"
+                name="seed-tier-radio"
+                className="radio absolute top-3 right-3 bg-white radio-primary checked:bg-white checked:text-[#7F56D9] checked:border-[#7F56D9]"
+                checked={isSelected}
+              />
+            )}
             <Image
               src={imageSrc}
               width={115}

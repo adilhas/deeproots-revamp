@@ -163,7 +163,7 @@ const PAStep1: React.FC<PAStep1Props> = ({
           </div>
 
           {/* Signature Section */}
-          <div className="flex flex-row items-start gap-4 w-full">
+          <div className="flex flex-col  md:flex-row items-start gap-4 w-full">
             <div className="w-full max-w-[503px]">
               <label className="block text-lg w-full font-medium mb-3">
                 E-Signature (Enter full Legal name)
@@ -218,7 +218,7 @@ const PAStep1: React.FC<PAStep1Props> = ({
           <div className="w-full flex justify-end mt-8">
             <button
               onClick={onContinue}
-              className="w-full max-w-[236px] bg-gradient-to-r from-gradient-from2 to-gradient-to2 border-0 text-white px-6 py-[10px]  rounded-lg font-medium transition-all disabled:opacity-70"
+              className="w-full max-w-none md:max-w-[236px] bg-gradient-to-r from-gradient-from2 to-gradient-to2 border-0 text-white px-6 py-[10px]  rounded-lg font-medium transition-all disabled:opacity-70"
               disabled={
                 !isChecked || !fullName.trim() || signatureFile === null
               }

@@ -75,7 +75,7 @@ export default async function handler(
 
       // ✅ Generate token
       const token = crypto.randomBytes(32).toString('hex');
-      const expiresAt = addHours(new Date(), 1);
+      const expiresAt = addHours(new Date(), 12);
 
       await prisma.seederAccountToken.create({
         data: {

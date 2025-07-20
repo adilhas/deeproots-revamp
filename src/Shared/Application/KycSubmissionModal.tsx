@@ -33,8 +33,8 @@ const KycSubmissionModal: React.FC<KycSubmissionModalProps> = ({
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0  z-50 flex items-center justify-center bg-black/10 bg-opacity-50">
-          <div className="bg-white  h-[406px] flex gap-3 flex-col justify-between w-full rounded-2xl max-w-[532px] shadow-xl">
+        <div className="fixed inset-0 px-4 md:px-1  z-50 flex items-center justify-center bg-black/10 bg-opacity-50">
+          <div className="bg-white  min-h-[406px] flex gap-3 flex-col justify-between w-full rounded-2xl max-w-[532px] shadow-xl">
             <div className="text-xl font-semibold mb-4 p-3 flex flex-row justify-between rounded-t-2xl text-white text-center bg-gradient-to-r from-gradient-from to-gradient-to">
               <div></div>
               <h2>Verify Submission</h2>

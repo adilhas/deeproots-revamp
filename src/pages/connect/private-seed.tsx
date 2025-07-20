@@ -10,6 +10,7 @@ import AccessPerks from '../../components/connect/private_seed/AccessPerks';
 import PrivateSeedFAQs from '@/components/connect/private_seed/PrivateSeedFAQs';
 import Seo from '@/Shared/Seo';
 import SeedingTiers from '@/components/connect/private_seed/SeedingTiers';
+// import AccessBenefitsMobile from '@/components/connect/private_seed/AccessBenefitsMobile';
 
 export default function Volunteer() {
   return (
@@ -25,6 +26,7 @@ export default function Volunteer() {
             <PrivateSeedHero />
             <AccessCriteria />
             <AccessBenefits />
+            {/* <AccessBenefitsMobile /> */}
             <SeedingTiers />
             <PrivateSeedForm />
             <AccessPerks />

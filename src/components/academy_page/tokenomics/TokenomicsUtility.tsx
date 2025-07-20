@@ -62,7 +62,7 @@ const TokenomicsUtility = () => {
             </p>
           </div>
         </div>
-        <div className="absolute top-[25%] md:top-[49%] w-full  gap-0 md:gap-10">
+        <div className="absolute top-[25%] md:top-[55%] w-full  gap-0 md:gap-10">
           <div className="grid grid-cols-1 w-fit md:grid-cols-3 gap-4 md:gap-0 md:flex-row items-center md:w-[85%] justify-between mx-auto">
             {tokenomicsUitility.map((item, index) => (
               <div key={index} className={`relative }`}>
@@ -72,8 +72,8 @@ const TokenomicsUtility = () => {
                   width={350}
                   src={
                     isDark
-                      ? '/connect/access-benefit-card-dark.png'
-                      : '/connect/access-benefit-card.png'
+                      ? '/connect/access-benefit-card-dark-v2.png'
+                      : '/connect/access-benefit-card.png-v2'
                   }
                   alt="card background"
                   className="scale-x-90 sm:scale-x-100 "

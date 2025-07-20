@@ -124,12 +124,12 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
           </div>
         )}
 
-        <div className="bg-white  my-6 p-2 rounded-[64px] flex flex-col md:flex-row justify-between items-center gap-6 text-sm font-medium">
+        <div className="bg-white  my-6 p-2 rounded-4xl md:rounded-[64px] flex flex-col md:flex-row justify-between items-center gap-6 text-sm font-medium">
           {tabs.map((tab, index) => (
             <button
               key={tab.key}
               onClick={() => setCurrentTab(tab.key)}
-              className={`p-2 rounded-[64px] flex flex-row text-[#696969]  items-center justify-center gap-2 w-full text-xl ${
+              className={`p-2 rounded-[64px] flex flex-row text-[#696969]  items-center justify-start md:justify-center gap-2 w-full text-xl ${
                 currentTab === tab.key
                   ? 'bg-[#E9E9E9] font-semibold border border-[#D4D4D4]'
                   : 'font-normal'

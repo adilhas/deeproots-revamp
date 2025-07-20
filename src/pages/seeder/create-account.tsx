@@ -59,7 +59,7 @@ export default function CreateAccountPage() {
         toast.error(data.error);
       } else {
         setSuccess(true);
-        toast.success('Account created successfully! Redirecting...');
+        toast.success('Account created successfully!');
         router.push('/seeder/login');
       }
     } catch (err) {

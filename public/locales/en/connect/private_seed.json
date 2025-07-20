@@ -24,7 +24,7 @@
     "placeholders": {
       "fullName": "Full Name",
       "email": "Email Address",
-      "contact": "Telegram or WhatsApp (Optional)",
+      "contact": "Telegram or WhatsApp",
       "country": "Country of Residence",
       "linkedin": "LinkedIn / Github / Company Website (Optional but necessary)",
       "capital": "Estimated Capital Commitment ($5K–$1M+)",

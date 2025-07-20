@@ -63,9 +63,8 @@ export default async function handler(
     });
 
     // Step 5: Mark token as used
-    await prisma.seederAccountToken.update({
+    await prisma.seederAccountToken.delete({
       where: { token },
-      data: { used: true },
     });
 
     return res

@@ -41,7 +41,20 @@ const DealRoomTab = () => {
 
   // === DEAL ROOM SUBMITTED VIEW ===
   if (application?.dealRoom === 'under-review' && isSeeder) {
-    return <DealRoomSubmitted />;
+    return (
+      <div>
+        <div className="text-center">
+          <div className="bg-gradient-to-r w-fit mx-auto font-semibold text-transparent from-gradient-from to-gradient-to bg-clip-text text-3xl">
+            You’ve made your contribution!
+          </div>
+          <div className="w-full max-w-[524px] mx-auto mt-4 text-xl">
+            You’ve completed your Seeding process, We will review your
+            submission to verify payment and Approve it once verified.
+          </div>
+        </div>
+        <DealRoomSubmitted />;
+      </div>
+    );
   }
 
   // === DEAL ROOM APPROVED SUCCESS MESSAGE ===
@@ -78,10 +91,10 @@ const DealRoomTab = () => {
               onChange={(e) => setAcknowledged(e.target.checked)}
               className="checkbox checkbox-success bg-white"
             />
-            <span className="label-text text-gray-700">
+            <div className="label-text text-gray-700 text-wrap">
               I acknowledge this is a private, non-public participation
               opportunity for ecosystem access only.
-            </span>
+            </div>
           </label>
         </div>
 
@@ -95,10 +108,10 @@ const DealRoomTab = () => {
               onChange={(e) => setAgreed(e.target.checked)}
               className="checkbox checkbox-success bg-white"
             />
-            <span className="label-text text-gray-700">
+            <div className="label-text text-gray-700 text-wrap">
               I agree to the Terms, Conditions, and Participation Guidelines for
               this Foundation Seat application.
-            </span>
+            </div>
           </label>
         </div>
 
@@ -112,10 +125,10 @@ const DealRoomTab = () => {
               onChange={(e) => setConfirmed(e.target.checked)}
               className="checkbox checkbox-success bg-white"
             />
-            <span className="label-text text-gray-700">
+            <div className="label-text text-gray-700 text-wrap">
               I confirm all submitted details are accurate and authorize this
               submission for review.
-            </span>
+            </div>
           </label>
         </div>
 

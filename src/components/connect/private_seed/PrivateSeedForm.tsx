@@ -13,6 +13,7 @@ import SubmitSuccessModal from './SubmitSuccessModal';
 import { PrivateSeedSchema } from '@/schema/privateSeedSchema';
 import countries from 'i18n-iso-countries';
 import enLocale from 'i18n-iso-countries/langs/en.json';
+import { toast } from 'react-toastify';
 
 countries.registerLocale(enLocale); // Register English
 
@@ -25,8 +26,10 @@ const PrivateSeedForm = () => {
   const { t } = useTranslation('connect/private_seed');
   const { isDark } = useThemeContext();
   const [customCapital, setCustomCapital] = useState('');
-  const countryList = Object.entries(countryNames); // [['AF', 'Afghanistan'], ['AL', 'Albania'], ...]
-
+  const countryList = Object.entries(countryNames).filter(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    ([_, name]) => name !== 'United States of America'
+  );
   const {
     register,
     handleSubmit,
@@ -59,11 +62,11 @@ const PrivateSeedForm = () => {
         reset();
       } else {
         const errorData = await response.json();
-        alert(errorData.message || 'Failed to submit form.');
+        toast.error(errorData.message || 'Failed to submit form.');
       }
     } catch (error) {
       console.error('Submission error:', error);
-      alert('Something went wrong.');
+      toast.error('Something went wrong.');
     } finally {
       setSubmitting(false);
     }
@@ -163,6 +166,7 @@ const PrivateSeedForm = () => {
                 <PiMapPinArea className="w-6 h-6" />
                 <select
                   {...register('country')}
+                  defaultValue={''}
                   className="select-md text-lg shadow-none bg-white dark:bg-[#303030] w-full border-none dark:text-[#F1F5F9] text-[#525252]  focus:outline-none"
                 >
                   <option value="" disabled>
