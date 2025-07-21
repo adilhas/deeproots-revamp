@@ -1,7 +1,7 @@
 'use client';
 
 import DashboardHeader from '@/Shared/Application/DashboardHeader';
-import { Mail, Eye, EyeOff } from 'lucide-react';
+import { Mail, Eye, EyeOff, Loader } from 'lucide-react';
 import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -116,7 +116,13 @@ export default function SeederLogin() {
                 loading ? 'opacity-60 cursor-not-allowed' : ''
               }`}
             >
-              {loading ? 'Signing in...' : 'Sign in'}
+              {loading ? (
+                <div className="flex flex-row justify-center items-center gap-2">
+                  <Loader className="animate-spin w-5 h-5" /> Signing in...
+                </div>
+              ) : (
+                'Sign in'
+              )}
             </button>
           </form>
 

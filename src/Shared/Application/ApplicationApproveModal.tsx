@@ -1,7 +1,7 @@
 'use client';
 
 import { useApplication } from '@/context/ApplicationContext';
-import { X } from 'lucide-react';
+import { Loader, X } from 'lucide-react';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
@@ -91,7 +91,13 @@ const ApplicationApprovedModal = () => {
                   className="px-4 py-2 w-full text-lg disabled:opacity-60 rounded-md bg-[#059669] text-white hover:bg-green-700"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Accepting...' : 'Yes Accept'}
+                  {isSubmitting ? (
+                    <div className="flex flex-row justify-center items-center gap-2">
+                      <Loader className="animate-spin w-5 h-5" /> Approving...
+                    </div>
+                  ) : (
+                    'Yes Approve'
+                  )}
                 </button>
               </div>
             </div>

@@ -12,6 +12,8 @@ import DealRoomSeedingTiers from './dealroom/DealRoomSeedTiers';
 import SeedTerms from './dealroom/SeedTerms';
 import DealRoomFAQs from './dealroom/DealRoomFAQs';
 import DealRoomSubmitted from './dealroom/DealRoomSubmitted';
+import DealRoomCountdown from './dealroom/DealRoomCountdown';
+import { isPreApprovalTimeOut } from '@/utils/preApprovalUtils';
 
 const DealRoomTab = () => {
   const { application } = useApplication();
@@ -38,6 +40,22 @@ const DealRoomTab = () => {
   }
 
   const isSeeder = session?.user.role === 'seeder';
+  const isDealRoomExpired = isPreApprovalTimeOut(
+    application?.preApprovalUpdatedAt ?? ''
+  );
+
+  if (
+    isDealRoomExpired &&
+    application.paymentDetails?.paymentStatus !== 'approved' &&
+    application.paymentDetails?.paymentStatus !== 'declined'
+  ) {
+    return (
+      <div className="text-center text-2xl">
+        Access to this deal room expires if payment is not made within 24 hours
+        of Pre-Approval.
+      </div>
+    );
+  }
 
   // === DEAL ROOM SUBMITTED VIEW ===
   if (application?.dealRoom === 'under-review' && isSeeder) {
@@ -72,6 +90,7 @@ const DealRoomTab = () => {
       <DealFullSeatBenefits />
       <TokenUtilitisSupply />
       <ExclusiveInvestorAdvantage />
+      <DealRoomCountdown />
       <DealRoomSeedingTiers />
       <SeedTerms />
 

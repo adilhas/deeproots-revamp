@@ -15,6 +15,7 @@ export type ApplicationDataType = {
   acknowledgement: boolean;
   applicationStatus: StatusType;
   createdAt: string;
+  preApprovalUpdatedAt?: string;
   preApproval: StatusType;
   ndaSubmission?: NdaSubmissionType;
   kycDocuments?: KycDocumentType[];

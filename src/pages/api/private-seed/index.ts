@@ -2,18 +2,19 @@ import { prisma } from '@/lib/prisma';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import crypto from 'crypto';
 import { addHours } from 'date-fns';
-import nodemailer from 'nodemailer';
+// import nodemailer from 'nodemailer';
 import { render } from '@react-email/render';
 import SeederTokenEmail from '@/emails/SeederTokenEmail';
 import { getSeedTierFromCapital } from '@/lib/getSeedTierFromCapital';
+import { transporter } from '@/lib/mailer';
 
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+// const transporter = nodemailer.createTransport({
+//   service: 'gmail',
+//   auth: {
+//     user: process.env.EMAIL_USER,
+//     pass: process.env.EMAIL_PASS,
+//   },
+// });
 
 export default async function handler(
   req: NextApiRequest,
@@ -85,19 +86,15 @@ export default async function handler(
         },
       });
 
-      // ✅ Log the token link (for testing locally)
       const link = `${process.env.NEXTAUTH_URL}/seeder/create-account?token=${token}`;
-      console.log('🔗 Seeder Account Creation Link:', link);
-      // ✅ Render the HTML email
       const html = await render(SeederTokenEmail({ fullName, link }), {
         pretty: true,
       });
 
-      // ✅ Send email via Nodemailer
       await transporter.sendMail({
-        from: `"DeepRoots" <${process.env.EMAIL_USER}>`,
+        from: `Team DEEPROOTS`,
         to: email,
-        subject: 'Create Your Seeder Account - DeepRoots',
+        subject: 'Create Your Seeder Account - DEEPROOTS',
         html,
       });
 

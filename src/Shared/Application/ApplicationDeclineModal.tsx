@@ -1,7 +1,7 @@
 'use client';
 
 import { useApplication } from '@/context/ApplicationContext';
-import { X } from 'lucide-react';
+import { Loader, X } from 'lucide-react';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
@@ -94,7 +94,13 @@ const ApplicationDeclineModal = ({}) => {
                   disabled={reason === '' || loading}
                   className="px-4 py-2 w-full text-lg rounded-md disabled:bg-red-300 bg-[#F43F42] text-white hover:bg-red-700"
                 >
-                  {loading ? 'Rejecting...' : 'Yes Reject'}{' '}
+                  {loading ? (
+                    <div className="flex flex-row justify-center items-center gap-2">
+                      <Loader className="animate-spin w-5 h-5" /> Declining...
+                    </div>
+                  ) : (
+                    'Yes Decline'
+                  )}{' '}
                 </button>
               </div>
             </div>

@@ -1,7 +1,7 @@
+import { Loader } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
 import { FaAngleRight } from 'react-icons/fa6';
-import { PiSpinner } from 'react-icons/pi';
 import { toast } from 'react-toastify';
 
 interface SeedingTierCardProps {
@@ -172,9 +172,7 @@ const SeedingTierCard: React.FC<SeedingTierCardProps> = ({
                 className="bg-gradient-from2 text-white p-3 rounded-full disabled:opacity-50"
               >
                 {isLoading ? (
-                  <div className="loading-spinner">
-                    <PiSpinner className="w-4 h-4" />
-                  </div>
+                  <Loader className="animate-spin w-4 h-4" />
                 ) : (
                   <FaAngleRight className="w-4 h-4" />
                 )}

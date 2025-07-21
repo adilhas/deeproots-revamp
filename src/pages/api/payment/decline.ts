@@ -58,7 +58,7 @@ export default async function handler(
       return res.status(404).json({ message: 'Submission not found' });
     }
 
-    const subject = 'Payment Declined – DeepRoots';
+    const subject = 'Payment Declined – DEEPROOTS';
     const text = `Hi ${submission.fullName},
 
 Unfortunately, your payment has been declined.
@@ -67,10 +67,10 @@ Reason: ${declineReason}
 
 Please reach out if you believe this was in error.
 
-- DeepRoots Team`;
+- DEEPROOTS Team`;
 
     await transporter.sendMail({
-      from: `"DeepRoots" <${process.env.EMAIL_USER}>`,
+      from: `Team DEEPROOTS`,
       to: submission.email,
       subject,
       text,

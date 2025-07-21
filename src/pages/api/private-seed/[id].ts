@@ -1,15 +1,22 @@
 import { Prisma } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import nodemailer from 'nodemailer';
+// import nodemailer from 'nodemailer';
+import { render } from '@react-email/render';
+import ApplicationApproveEmail from '@/emails/ApplicationApprove';
+import ApplicationDeclineEmail from '@/emails/ApplicationDecline';
+import PreApprovalApproveEmail from '@/emails/PreApprovalApproveMail';
+import PreApprovalDeclineEmail from '@/emails/PreApprovalDecline';
+import { transporter } from '@/lib/mailer';
+import ImmediateDealRoomUpdate from '@/emails/ImmediateDealRoomUpdate';
 
-const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+// const transporter = nodemailer.createTransport({
+//   host: 'smtp.gmail.com',
+//   auth: {
+//     user: process.env.EMAIL_USER,
+//     pass: process.env.EMAIL_PASS,
+//   },
+// });
 
 export default async function handler(
   req: NextApiRequest,
@@ -66,6 +73,7 @@ export default async function handler(
       }
 
       dataToUpdate.preApproval = preApproval;
+      dataToUpdate.preApprovalUpdatedAt = new Date();
     }
 
     if (usdtAddress !== undefined) {
@@ -97,47 +105,112 @@ export default async function handler(
           paymentDetails: true,
         },
       });
+      // const updated = await prisma.privateSeedSubmission.findFirst({
+      //   where: { id },
+      //   include: {
+      //     kycDocuments: true,
+      //     ndaSubmission: true,
+      //     paymentDetails: true,
+      //   },
+      // });
 
       const { fullName: applicantName, email: applicantEmail } = updated;
 
       if ('applicationStatus' in req.body) {
         let subject = '';
         let text = '';
-
+        let html = await render(
+          ApplicationApproveEmail({
+            name: applicantName,
+            url: process.env.NEXTAUTH_URL || '',
+          }),
+          {
+            pretty: true,
+          }
+        );
         if (applicationStatus === 'approved') {
-          subject = '🎉 Your Application Has Been Approved!';
-          text = `Hi ${applicantName},\n\nWe’re excited to inform you that your application has been approved successfully.\n\nThank you for your patience.\n\n- DeepRoots Team`;
+          subject = 'Your Application Has Been Approved!';
+          text = `Hi ${applicantName},\n\nCongratulations—your application has been approved! Please log in to your dashboard now to complete the next steps and secure your Full Seat in the Foundation.\n\nThank you for your patience and welcome aboard.\n\n- DeepRoots Team`;
         } else {
-          subject = '❌ Your Application Has Been Declined';
+          html = await render(
+            ApplicationDeclineEmail({
+              name: applicantName,
+              reason,
+            }),
+            {
+              pretty: true,
+            }
+          );
+          subject = 'Your Application Has Been Declined';
           text = `Hi ${applicantName},\n\nWe’re sorry to inform you that your application has been declined.\n\nReason: ${reason}\n\nThank you for your interest.\n\n- DeepRoots Team`;
         }
 
         await transporter.sendMail({
-          from: `"DeepRoots" <${process.env.EMAIL_USER}>`,
+          from: `Team DEEPROOTS`,
           to: applicantEmail,
           subject,
           text,
+          html,
         });
       }
 
       if ('preApproval' in req.body) {
         let subject = '';
         let text = '';
+        let html = await render(
+          PreApprovalApproveEmail({
+            name: applicantName,
+            url: process.env.NEXTAUTH_URL || '',
+          }),
+          {
+            pretty: true,
+          }
+        );
+
+        const dealRoomHtml = await render(
+          ImmediateDealRoomUpdate({
+            name: applicantName,
+            url: process.env.NEXTAUTH_URL || '',
+          }),
+          {
+            pretty: true,
+          }
+        );
 
         if (preApproval === 'approved') {
-          subject = '✅ You Have Been Pre-Approved!';
+          subject = 'You Have Been Pre-Approved!';
           text = `Hi ${applicantName},\n\nCongratulations! You have been pre-approved for the next stage.\n\nYour Deal Room is now unlocked.\n\n- DeepRoots Team`;
         } else {
-          subject = '⚠️ Pre-Approval Declined';
+          html = await render(
+            PreApprovalDeclineEmail({
+              name: applicantName,
+              reason,
+            }),
+            {
+              pretty: true,
+            }
+          );
+          subject = 'Pre-Approval Declined';
           text = `Hi ${applicantName},\n\nUnfortunately, your pre-approval request was declined.\n\nReason: ${reason}\n\nIf you have any questions, feel free to reach out.\n\n- DeepRoots Team`;
         }
 
         await transporter.sendMail({
-          from: `"DeepRoots" <${process.env.EMAIL_USER}>`,
+          from: `Team DEEPROOTS`,
           to: applicantEmail,
           subject,
           text,
+          html,
         });
+
+        if (preApproval === 'approved') {
+          await transporter.sendMail({
+            from: `Team DeepRoots`,
+            to: applicantEmail,
+            subject: 'Action Needed: Your Foundation Seat is Waiting',
+            text: `Hi ${applicantName},\n\nYou’ve unlocked access to the DeepRoots Foundation Deal Room — but your submission is still incomplete. This is a private allocation, and your seat is currently held.\n\nTo secure your position, please complete your submission before the access window expires.\n\nReturn to Deal Room\n\n- DeepRoots Team`,
+            html: dealRoomHtml,
+          });
+        }
       }
 
       return res.status(200).json(updated);

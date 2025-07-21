@@ -119,7 +119,7 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
             <div className="p-4 text-[#525252]">
               <div className="bg-[#F4F4F4] rounded-2xl py-4 px-6">
                 <div className="">
-                  <div className="flex flex-col md:flex-row w-full justify-between items-start md:items-center">
+                  {/* <div className="flex flex-col md:flex-row w-full justify-between items-start md:items-center">
                     <div className="text-center text-lg font-semibold r mb-1">
                       Time to Secure your Seat
                     </div>
@@ -135,9 +135,9 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
                         </div>
                       ))}
                     </div>
-                  </div>
+                  </div> */}
 
-                  <div className="mt-4 text-center flex flex-col md:flex-row w-full justify-between items-start md:items-center font-semibold">
+                  <div className=" text-center flex flex-col md:flex-row w-full justify-between items-start md:items-center font-semibold">
                     <div>Seed amount:</div>
                     <div className="text-gray-700 text-2xl font-orbitron">
                       ${application?.capital}

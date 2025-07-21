@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { Eye, EyeOff, Mail } from 'lucide-react';
+import { Eye, EyeOff, Loader, Mail } from 'lucide-react';
 import { GrKey } from 'react-icons/gr';
 import Link from 'next/link';
 import { toast } from 'react-toastify';
@@ -159,7 +159,13 @@ export default function CreateAccountPage() {
                 submitting ? 'opacity-50 cursor-not-allowed' : ''
               }`}
             >
-              {submitting ? 'Creating...' : 'Create Account'}
+              {submitting ? (
+                <div className="flex flex-row justify-center items-center gap-2">
+                  <Loader className="animate-spin w-5 h-5" /> Creating...
+                </div>
+              ) : (
+                'Create Account'
+              )}
             </button>
           </form>
           <div className="w-full flex items-center justify-between mt-6 max-w-[474px] mx-auto">

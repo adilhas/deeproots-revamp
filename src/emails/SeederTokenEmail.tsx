@@ -19,7 +19,18 @@ export default function SeederTokenEmail({
 }: SeederTokenEmailProps) {
   return (
     <Html>
-      <Head />
+      <Head>
+        <style>
+          {`
+      @font-face {
+        font-family: 'Orbitron';
+        font-style: normal;
+        font-weight: 700;
+        src: url('https://fonts.gstatic.com/s/orbitron/v28/yMJRMIlzdpvBhQQL_Qq7dy5Gb-Y.woff2') format('woff2');
+      }
+    `}
+        </style>
+      </Head>{' '}
       <Preview>Complete your Seeder account setup</Preview>
       <Body
         style={{
@@ -42,18 +53,30 @@ export default function SeederTokenEmail({
               marginBottom: '10px',
             }}
           >
-            Welcome to DeepRoots, {fullName}!
+            Welcome to{' '}
+            <span
+              style={{
+                fontFamily: "'Orbitron', Arial",
+                fontWeight: 700,
+                display: 'inline-block',
+              }}
+            >
+              {' '}
+              DEEPROOTS
+            </span>
+            , {fullName}!
           </Text>
           <Text style={{ fontSize: '16px', marginBottom: '20px' }}>
-            Please click the button below to create your Seeder account. This
-            link is valid for 12 hour only.
+            Please click the button below to create your Seeder account.
+            {/* This
+            link is valid for 12 hour only. */}
           </Text>
           <Link
             href={link}
             style={{
               display: 'inline-block',
               padding: '12px 20px',
-              backgroundColor: '#0A6948',
+              backgroundColor: '#AD1AAF',
               color: '#ffffff',
               textDecoration: 'none',
               borderRadius: '6px',

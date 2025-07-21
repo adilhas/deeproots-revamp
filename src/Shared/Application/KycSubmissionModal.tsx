@@ -1,6 +1,6 @@
 'use client';
 
-import { X } from 'lucide-react';
+import { Loader, X } from 'lucide-react';
 import React from 'react';
 
 interface KycSubmissionModalProps {
@@ -70,7 +70,13 @@ const KycSubmissionModal: React.FC<KycSubmissionModalProps> = ({
                   disabled={loading}
                   className="px-4 py-2 text-lg rounded-lg bg-gradient-to-r from-gradient-from2 w-full to-gradient-to2 text-white disabled:opacity-50"
                 >
-                  {loading ? 'Submitting...' : 'Yes, Submit'}
+                  {loading ? (
+                    <div className="flex flex-row justify-center items-center gap-2">
+                      <Loader className="animate-spin w-5 h-5" /> Submitting...
+                    </div>
+                  ) : (
+                    'Yes, Submit'
+                  )}
                 </button>
               </div>
             </div>
