@@ -79,8 +79,8 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
         </div>
       ))}
       <div className="bg-white text-black p-4 rounded-3xl w-full">
-        <div className="flex items-center mb-3 flex-wrap justify-between">
-          <div className="flex flex-row items-center gap-2">
+        <div className="flex flex-col md:flex-row items-start md:items-center mb-3 gap-2 flex-wrap justify-between">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
             <div className="text-2xl font-medium">
               Schedule call with Founder
             </div>
@@ -99,8 +99,8 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
       </div>
       <div className="flex flex-col md:flex-row gap-y-11 gap-x-3">
         <div className="bg-white text-black p-4 rounded-3xl w-full">
-          <div className="flex items-center mb-3 flex-wrap justify-between">
-            <div className="flex flex-row items-center gap-2">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-2 mb-3 flex-wrap justify-between">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
               <div className="text-2xl font-medium">Foundation seat</div>
               <div className="bg-[#F3E8FF] py-1 px-4 text-[#9333EA] text-lg font-semibold rounded-4xl">
                 100 Seats
@@ -117,8 +117,8 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
         </div>
 
         <div className="bg-white text-black p-4 rounded-3xl w-full">
-          <div className="flex items-center mb-3 flex-wrap justify-between">
-            <div className="flex flex-row items-center gap-2">
+          <div className="flex flex-col md:flex-row items-start gap-2 md:items-center mb-3 flex-wrap justify-between">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
               <div className="text-2xl font-medium">Founder seat</div>
               <div className="bg-[#FEF3C7] py-1 px-4 text-[#D97706] text-lg font-semibold rounded-4xl">
                 10 Seats

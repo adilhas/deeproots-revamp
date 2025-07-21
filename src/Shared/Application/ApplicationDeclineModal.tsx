@@ -57,7 +57,7 @@ const ApplicationDeclineModal = ({}) => {
 
       {/* Modal */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center text-center justify-center bg-black/10 bg-opacity-50">
+        <div className="fixed inset-0 px-3 md:px-1 z-50 flex items-center text-center justify-center bg-black/10 bg-opacity-50">
           <div className="bg-[#EEEEEE] border border-[#D4D4D4] min-h-[406px] flex flex-col justify-between w-full rounded-2xl max-w-md shadow-xl">
             <div className=" flex flex-row justify-between items-center bg-gradient-to-r p-3 rounded-t-2xl from-gradient-from to-gradient-to">
               <div></div>

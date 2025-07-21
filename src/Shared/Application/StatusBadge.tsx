@@ -6,7 +6,7 @@ import { PiCheckCircle, PiLockSimple } from 'react-icons/pi';
 
 const StatusBadge = ({ status }: { status: string }) => {
   const commonClass =
-    'font-semibold items-center flex flex-row justify-between gap-2 py-1 px-2 rounded-4xl text-sm';
+    'font-semibold items-center flex flex-row justify-between gap-2 py-1 px-2 rounded-4xl text-lg';
   const variants: Record<string, JSX.Element> = {
     'no-access': (
       <div className={`${commonClass} bg-[#D4D4D4] text-[#525252]`}>

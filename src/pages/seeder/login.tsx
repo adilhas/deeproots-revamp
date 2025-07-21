@@ -49,7 +49,7 @@ export default function SeederLogin() {
   return (
     <div className="min-h-screen font-archivo bg-[#F2F2F2] flex flex-col ">
       {/* Header */}
-      <div className="py-3">
+      <div className="py-3 px-2 md:px-2">
         <DashboardHeader label="Pre seed" />
       </div>
 
@@ -121,12 +121,12 @@ export default function SeederLogin() {
           </form>
 
           {/* Bottom Links */}
-          <div className="mt-4 text-sm text-center w-full max-w-[474px] mx-auto text-gray-600 flex flex-wrap items-center justify-between">
+          {/* <div className="mt-4 text-sm text-center w-full max-w-[474px] mx-auto text-gray-600 flex flex-wrap items-center justify-between">
             <div>Can’t access your account?</div>
             <div className="text-blue-600 font-medium hover:underline">
               Forgot password?
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -26,7 +26,10 @@ const ApplicationDetailsPage = () => {
 
   useEffect(() => {
     if (!applicationId || typeof applicationId !== 'string') return;
-
+    if (application?.id === applicationId) {
+      setLoading(false); // already in context
+      return;
+    }
     const fetchData = async () => {
       setLoading(true);
       const data = await fetchSubmissionById(applicationId);

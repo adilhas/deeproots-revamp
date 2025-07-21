@@ -124,7 +124,7 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
           </div>
         )}
 
-        <div className="bg-white  my-6 p-2 rounded-4xl md:rounded-[64px] flex flex-col md:flex-row justify-between items-center gap-6 text-sm font-medium">
+        <div className="bg-white  my-6 p-2 rounded-4xl md:rounded-[64px] flex flex-col md:flex-row justify-between items-center gap-x-6 gap-y-2 text-sm font-medium">
           {tabs.map((tab, index) => (
             <button
               key={tab.key}

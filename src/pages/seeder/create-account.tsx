@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
 import { Eye, EyeOff, Mail } from 'lucide-react';
 import { GrKey } from 'react-icons/gr';
 import Link from 'next/link';
 import { toast } from 'react-toastify';
 import AuthLoader from '@/components/AuthLoader';
+import DashboardHeader from '@/Shared/Application/DashboardHeader';
 
 export default function CreateAccountPage() {
   const router = useRouter();
@@ -74,24 +74,9 @@ export default function CreateAccountPage() {
   if (loading) return <AuthLoader />;
 
   return (
-    <div className=" bg-[#EEEEEE] font-archivo min-h-screen text-[#525252]">
-      <div className=" py-3">
-        <div className="w-full max-w-[1200px] bg-[#DDDDDD] px-4 rounded-2xl mx-auto flex flex-row items-center justify-between py-3">
-          <div className="flex items-center gap-3">
-            <Image
-              src={'/dashboard/dashboard-logo.png'}
-              width={52}
-              height={52}
-              alt="dashboard logo"
-            />
-            <div className="text-2xl font-bold font-orbitron text-transparent bg-gradient-to-r from-gradient-from2 to-gradient-to2 bg-clip-text">
-              DEEPROOTS
-            </div>
-            <div className="text-lg bg-[#FFFFFF29] text-[#525252] border border-[#A1A1A1] px-3 py-1 flex items-center justify-center rounded-full font-semibold">
-              Pre seed
-            </div>
-          </div>
-        </div>
+    <div className="px-3 md:px-1 bg-[#EEEEEE] font-archivo min-h-screen text-[#525252]">
+      <div className="py-3">
+        <DashboardHeader label="Pre Seeder" />
       </div>
       <div className="max-w-[1200px] mx-auto mt-10">
         <div className="w-full max-w-[576px] mx-auto bg-white p-6 rounded-2xl">

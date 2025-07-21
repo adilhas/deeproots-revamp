@@ -88,7 +88,7 @@ const ProcessSteps = () => {
                   )}
                 </div>
               </div>
-              <div className="flex gap-2">
+              <div className="md:flex gap-2 hidden">
                 <StatusDot status="under-review" />
                 <StatusDot status="approved" />
                 <StatusDot status="declined" />

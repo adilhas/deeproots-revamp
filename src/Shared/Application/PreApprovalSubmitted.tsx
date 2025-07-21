@@ -170,7 +170,7 @@ const PreApprovalSubmitted = () => {
                       >
                         {/* View Signature */}
                         <div
-                          className="flex flex-wrap justify-between w-full items-center gap-4 bg-white px-3 py-1 mb-4  md:m-3 rounded-lg"
+                          className="flex flex-row justify-between w-full items-center gap-4 bg-white px-3 py-1 mb-4  md:m-3 rounded-lg"
                           style={{ boxShadow: `0px 4px 9px 0px #00000012` }}
                         >
                           <div className="flex flex-row items-center">

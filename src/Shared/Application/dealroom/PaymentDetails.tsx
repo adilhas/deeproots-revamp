@@ -187,7 +187,7 @@ const PaymentDetails = () => {
                 <a
                   href={typeof item.value === 'string' ? item.value : undefined}
                   target="_blank"
-                  className="text-[#2563EB] underline font-semibold ml-4  truncate"
+                  className="text-[#2563EB] underline font-semibold md:ml-4  truncate"
                 >
                   {item.value}
                 </a>
@@ -270,12 +270,12 @@ const PaymentDetails = () => {
               onUpload={handleUpload}
               onRemove={handleRemove}
             /> */}
-            <div className="flex flex-row items-end justify-between w-full">
-              <div className="flex flex-row items-start gap-4 w-full">
+            <div className="flex flex-col  md:flex-row items-end justify-between w-full">
+              <div className="flex flex-col md:flex-row items-start gap-4 w-full">
                 <div className="text-[#696969] text-lg mt-2">
                   Upload Receipt
                 </div>
-                <div className="relative">
+                <div className="relative w-full">
                   <input
                     type="file"
                     accept=".pdf,image/*"
@@ -311,7 +311,7 @@ const PaymentDetails = () => {
             </div>
           </div>
 
-          <div className="flex fle-col md:flex-row items-start">
+          <div className="flex flex-col md:flex-row items-start mt-4 md:mt-1">
             <DealDeclineModal
               isSubmitting={isDeclining}
               isOpen={declineOpen}

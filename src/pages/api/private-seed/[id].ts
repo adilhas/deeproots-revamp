@@ -126,7 +126,7 @@ export default async function handler(
 
         if (preApproval === 'approved') {
           subject = '✅ You Have Been Pre-Approved!';
-          text = `Hi ${applicantName},\n\nGreat news! You have been pre-approved for the next stage.\n\nWe’ll follow up shortly with further instructions.\n\n- DeepRoots Team`;
+          text = `Hi ${applicantName},\n\nCongratulations! You have been pre-approved for the next stage.\n\nYour Deal Room is now unlocked.\n\n- DeepRoots Team`;
         } else {
           subject = '⚠️ Pre-Approval Declined';
           text = `Hi ${applicantName},\n\nUnfortunately, your pre-approval request was declined.\n\nReason: ${reason}\n\nIf you have any questions, feel free to reach out.\n\n- DeepRoots Team`;

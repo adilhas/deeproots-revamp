@@ -128,7 +128,10 @@ const PAStep1: React.FC<PAStep1Props> = ({
                   disabled={loading}
                 >
                   <Download className="w-6 h-6" />
-                  {loading ? 'Preparing...' : 'Download Document'}
+                  <span className="hidden md:inline-block">
+                    {' '}
+                    {loading ? 'Preparing...' : 'Download Document'}
+                  </span>
                 </button>
               )}
             </PDFDownloadLink>
