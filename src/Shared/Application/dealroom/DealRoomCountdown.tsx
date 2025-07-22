@@ -1,16 +1,26 @@
+'use client';
+
 import { useApplication } from '@/context/ApplicationContext';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { toast } from 'react-toastify';
 
 const DealRoomCountdown = () => {
-  const { application } = useApplication();
+  const { application, setApplication } = useApplication();
 
-  const expiryTimestamp = application?.preApprovalUpdatedAt
-    ? new Date(application.preApprovalUpdatedAt).getTime() + 24 * 60 * 60 * 1000
-    : null;
+  // Store a fixed expiry timestamp (30 seconds for testing)
+  const expiryRef = useRef<number | null>(null);
+
+  if (!expiryRef.current && application?.preApprovalUpdatedAt) {
+    // expiryRef.current = new Date().getTime() + 30 * 1000; // 30 seconds countdown
+    expiryRef.current =
+      new Date(application.preApprovalUpdatedAt).getTime() +
+      24 * 60 * 60 * 1000;
+  }
 
   const getTimeLeft = () => {
-    if (!expiryTimestamp) return { hours: '00', mins: '00', secs: '00' };
-    const diff = Math.max(0, expiryTimestamp - Date.now());
+    const expiry = expiryRef.current;
+    if (!expiry) return { hours: '00', mins: '00', secs: '00' };
+    const diff = Math.max(0, expiry - Date.now());
     const hours = Math.floor(diff / (1000 * 60 * 60));
     const mins = Math.floor((diff / (1000 * 60)) % 60);
     const secs = Math.floor((diff / 1000) % 60);
@@ -23,16 +33,67 @@ const DealRoomCountdown = () => {
 
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
 
+  const handleDecline = async (): Promise<void> => {
+    const declineReason = 'Payment not submitted within time limit.';
+
+    const submissionId = application?.id;
+    if (!submissionId) {
+      toast.error('Missing submission ID.');
+      return;
+    }
+
+    try {
+      await fetch('/api/payment/decline', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          submissionId,
+          declineReason,
+          isDealRoomExpired: true,
+        }),
+      });
+
+      setApplication((prevState) => {
+        if (!prevState) return prevState;
+
+        return {
+          ...prevState,
+          dealRoom: 'declined',
+          isDealRoomExpired: true,
+        };
+      });
+
+      toast.info('Your time to submit payment is expired');
+    } catch (err) {
+      console.error('❌ Decline request failed:', err);
+      toast.error('There was an error declining the payment.');
+    }
+  };
+
   useEffect(() => {
-    if (!expiryTimestamp) {
+    if (!expiryRef.current) {
       setTimeLeft({ hours: '00', mins: '00', secs: '00' });
       return;
     }
+
     const timer = setInterval(() => {
-      setTimeLeft(getTimeLeft());
+      const currentTimeLeft = getTimeLeft();
+      setTimeLeft(currentTimeLeft);
+
+      if (
+        currentTimeLeft.hours === '00' &&
+        currentTimeLeft.mins === '00' &&
+        currentTimeLeft.secs === '00' &&
+        application?.dealRoom !== 'approved' &&
+        application?.dealRoom !== 'declined'
+      ) {
+        handleDecline();
+        clearInterval(timer);
+      }
     }, 1000);
+
     return () => clearInterval(timer);
-  }, [expiryTimestamp]);
+  }, []); // Empty dependency array ensures it runs only once
 
   return (
     <div className="mx-auto my-8 bg-white rounded-4xl overflow-hidden border border-[#D4D4D4]">
@@ -42,9 +103,9 @@ const DealRoomCountdown = () => {
         </h1>
       </div>
 
-      <div className=" text-[#525252] mx-auto px-2 py-4">
+      <div className="text-[#525252] mx-auto px-2 py-4">
         <div className="w-fit mx-auto justify-between items-start md:items-center">
-          <div className="flex justify-center space-x-4  text-center">
+          <div className="flex justify-center space-x-4 text-center">
             {[timeLeft.hours, timeLeft.mins, timeLeft.secs].map((val, idx) => (
               <div key={idx}>
                 <div className="text-3xl font-bold font-orbitron w-[2.5ch]">

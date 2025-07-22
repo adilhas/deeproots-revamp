@@ -7,6 +7,7 @@ import { render } from '@react-email/render';
 import SeederTokenEmail from '@/emails/SeederTokenEmail';
 import { getSeedTierFromCapital } from '@/lib/getSeedTierFromCapital';
 import { transporter } from '@/lib/mailer';
+import RequestSubmittedEmail from '@/emails/RequestSubmittedEmail';
 
 // const transporter = nodemailer.createTransport({
 //   service: 'gmail',
@@ -90,12 +91,22 @@ export default async function handler(
       const html = await render(SeederTokenEmail({ fullName, link }), {
         pretty: true,
       });
+      const WelcomeHtml = await render(RequestSubmittedEmail({ fullName }), {
+        pretty: true,
+      });
 
       await transporter.sendMail({
         from: `Team DEEPROOTS`,
         to: email,
         subject: 'Create Your Seeder Account - DEEPROOTS',
         html,
+      });
+
+      await transporter.sendMail({
+        from: `Team DEEPROOTS`,
+        to: email,
+        subject: 'Welcome To DEEPROOTS',
+        html: WelcomeHtml,
       });
 
       return res.status(200).json({

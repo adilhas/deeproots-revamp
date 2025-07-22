@@ -37,12 +37,23 @@ const PAStep2: React.FC<PAStep2Props> = ({
   const { data: session } = useSession();
   const userId = session?.user?.id;
 
+  const MAX_FILE_SIZE_MB = 5;
+  const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024;
+
   const handleFileUpload = (
     e: React.ChangeEvent<HTMLInputElement>,
     setter: React.Dispatch<React.SetStateAction<File | null>>
   ) => {
     const file = e.target.files?.[0];
-    if (file) setter(file);
+    if (file) {
+      if (file.size > MAX_FILE_SIZE_BYTES) {
+        toast.error(
+          `File "${file.name}" is too large! Maximum allowed size is ${MAX_FILE_SIZE_MB}MB.`
+        );
+        return; // Do not set the file if it's too big
+      }
+      setter(file);
+    }
   };
 
   const removeFile = (
@@ -52,6 +63,29 @@ const PAStep2: React.FC<PAStep2Props> = ({
   };
 
   const handleSubmit = async () => {
+    let totalSize = 0;
+    const files = [
+      signatureFile,
+      passportFile,
+      proofOfAddressFile,
+      selfieFile,
+      certificateFile,
+      orgProofFile,
+      authLetterFile,
+      orgSelfieFile,
+    ];
+
+    for (const file of files) {
+      if (file) totalSize += file.size;
+    }
+
+    if (totalSize > MAX_FILE_SIZE_BYTES) {
+      toast.error(
+        `Total files size exceeds the maximum allowed (${MAX_FILE_SIZE_BYTES}MB). Please remove some files.`
+      );
+      return;
+    }
+
     if (!userId || !fullName.trim() || !isChecked) {
       toast.error('Missing required NDA or user details');
       return;

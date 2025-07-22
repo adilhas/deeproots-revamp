@@ -20,7 +20,7 @@ export default async function handler(
   }
 
   try {
-    const { declineReason, submissionId } = req.body;
+    const { declineReason, submissionId, isDealRoomExpired } = req.body;
 
     if (!declineReason || typeof declineReason !== 'string') {
       return res.status(400).json({ message: 'Decline reason is required.' });
@@ -36,6 +36,7 @@ export default async function handler(
       where: { id: submissionId },
       data: {
         dealRoom: 'declined',
+        isDealRoomExpired: isDealRoomExpired ?? false,
       },
     });
     const updated = await prisma.paymentDetails.update({

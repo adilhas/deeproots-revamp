@@ -13,7 +13,6 @@ import SeedTerms from './dealroom/SeedTerms';
 import DealRoomFAQs from './dealroom/DealRoomFAQs';
 import DealRoomSubmitted from './dealroom/DealRoomSubmitted';
 import DealRoomCountdown from './dealroom/DealRoomCountdown';
-import { isPreApprovalTimeOut } from '@/utils/preApprovalUtils';
 
 const DealRoomTab = () => {
   const { application } = useApplication();
@@ -40,15 +39,8 @@ const DealRoomTab = () => {
   }
 
   const isSeeder = session?.user.role === 'seeder';
-  const isDealRoomExpired = isPreApprovalTimeOut(
-    application?.preApprovalUpdatedAt ?? ''
-  );
 
-  if (
-    isDealRoomExpired &&
-    application.paymentDetails?.paymentStatus !== 'approved' &&
-    application.paymentDetails?.paymentStatus !== 'declined'
-  ) {
+  if (application.isDealRoomExpired) {
     return (
       <div className="text-center text-2xl">
         Access to this deal room expires if payment is not made within 24 hours

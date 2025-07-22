@@ -51,7 +51,7 @@ export default function PreApprovalApproveEmail(props: {
           </div>{' '}
           <Text>Hi {name},</Text>
           <Text>
-            Congratulations—your Pre Approval step has been approved!{' '}
+            🎉 Congratulations — your application has been approved! <br />
             <a
               href={`${url}/seeder/login`}
               target="_blank"
@@ -59,10 +59,11 @@ export default function PreApprovalApproveEmail(props: {
             >
               Please log in to your dashboard
             </a>{' '}
-            now to complete the next steps and secure your Full Seat in the
-            Foundation. Thank you for your patience and welcome aboard.
+            to complete the next steps and secure your Full Seat in the
+            Foundation.
           </Text>
-          <Text>Team DEEPROOTS</Text>
+          <Text>Thank you for your patience — and welcome aboard!</Text>
+          <Text>- Team DEEPROOTS</Text>
         </Container>
       </Body>
     </Html>

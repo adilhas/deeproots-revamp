@@ -66,10 +66,10 @@ export default function SeederTokenEmail({
             </span>
             , {fullName}!
           </Text>
+
           <Text style={{ fontSize: '16px', marginBottom: '20px' }}>
-            Please click the button below to create your Seeder account.
-            {/* This
-            link is valid for 12 hour only. */}
+            Please click the button below to create your Full Foundation Seat
+            Account on the Deep Roots Foundation.
           </Text>
           <Link
             href={link}
@@ -85,6 +85,10 @@ export default function SeederTokenEmail({
           >
             Create Your Account
           </Link>
+          <Text style={{ fontSize: '16px', marginBottom: '20px' }}>
+            (This link will expire in 12 hours, so please complete your
+            registration as soon as possible.)
+          </Text>
           <Text style={{ fontSize: '14px', color: '#555', marginTop: '20px' }}>
             If you did not request this, you can safely ignore this email.
           </Text>

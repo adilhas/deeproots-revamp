@@ -38,6 +38,7 @@ model PrivateSeedSubmission {
   contributionAmount   String?
   seedTier             String?
   managementNotes      ManagementNotes[]
+  isDealRoomExpired    Boolean  @default(false)
 }
 
 model PaymentDetails {

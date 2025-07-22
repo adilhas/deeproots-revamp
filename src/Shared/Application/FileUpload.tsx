@@ -89,6 +89,8 @@ export const FileUpload: React.FC<FileUploadProps> = ({
                 </div>
                 <span className="text-[#696969]">
                   {accept === `.pdf,image/*` ? 'PDF, JPG, PNG' : 'PNG/JPG'}
+                  <br />{' '}
+                  <span className="text-sm">should be less than 5MB</span>
                 </span>
               </div>
             </label>

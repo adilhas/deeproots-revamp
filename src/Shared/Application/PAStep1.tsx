@@ -206,7 +206,10 @@ const PAStep1: React.FC<PAStep1Props> = ({
                               Upload Digital Signature
                             </div>
                             <div className="text-[#696969] font-normal">
-                              PNG / JPG
+                              PNG / JPG <br />{' '}
+                              <span className="text-sm">
+                                should be less than 5MB
+                              </span>
                             </div>
                           </div>
                         )}

@@ -26,6 +26,7 @@ export type ApplicationDataType = {
   contributionAmount?: string;
   seedTier?: string;
   managementNotes?: ManagementNotesType[];
+  isDealRoomExpired?: boolean;
 };
 
 export type StatusType =
