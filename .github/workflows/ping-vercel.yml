@@ -13,9 +13,9 @@ jobs:
 
     steps:
       - name: Ping Reminder Endpoint
-         run: |
+        run: |
           echo "🔁 Triggering deal room cron at $(date)"
-    
+
             if [ -z "${NEXTAUTH_URL}" ]; then
                 echo "❌ NEXTAUTH_URL is not set!"
                  exit 1
