@@ -11,10 +11,10 @@ import {
 } from '@react-email/components';
 
 export default function TwoHrsLeftDealRoom(props: {
-  name: string;
+  fullName: string;
   url: string;
 }) {
-  const { name, url } = props;
+  const { fullName, url } = props;
   return (
     <Html>
       <Head>
@@ -50,7 +50,7 @@ export default function TwoHrsLeftDealRoom(props: {
               DEEPROOTS
             </Heading>
           </div>{' '}
-          <Text>Hi {name},</Text>
+          <Text>Hi {fullName},</Text>
           <Text>
             This is your final reminder — your access to the DeepRoots
             Foundation Deal Room will expire in <strong>2 hours.</strong>

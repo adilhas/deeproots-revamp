@@ -88,7 +88,9 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
               1 on 1
             </div>
           </div>
-          <StatusBadge status="no-access" />
+          {application.dealRoom !== 'approved' && (
+            <StatusBadge status="no-access" />
+          )}
         </div>
         <div className="flex items-center mb-3 flex-wrap justify-between">
           <div className="text-[#525252] text-lg">
@@ -106,7 +108,9 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
                 100 Seats
               </div>
             </div>
-            <StatusBadge status="no-access" />
+            {application.dealRoom !== 'approved' && (
+              <StatusBadge status="no-access" />
+            )}
           </div>
           <div className="flex items-center mb-3 flex-wrap justify-between">
             <div className="text-[#525252] text-lg">
@@ -124,7 +128,9 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
                 10 Seats
               </div>
             </div>
-            <StatusBadge status="no-access" />
+            {application.dealRoom !== 'approved' && (
+              <StatusBadge status="no-access" />
+            )}
           </div>
           <div className="flex items-center mb-3 flex-wrap justify-between">
             <div className="text-[#525252] text-lg">

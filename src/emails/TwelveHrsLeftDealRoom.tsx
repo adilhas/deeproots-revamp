@@ -10,10 +10,10 @@ import {
 } from '@react-email/components';
 
 export default function TwelveHrsLeftDealRoom(props: {
-  name: string;
+  fullName: string;
   url: string;
 }) {
-  const { name, url } = props;
+  const { fullName, url } = props;
   return (
     <Html>
       <Head>
@@ -49,7 +49,7 @@ export default function TwelveHrsLeftDealRoom(props: {
               DEEPROOTS
             </Heading>
           </div>{' '}
-          <Text>Hi {name},</Text>
+          <Text>Hi {fullName},</Text>
           <Text>
             This is a friendly reminder — your access to the Foundation Deal
             Room will expire in 12 hours.

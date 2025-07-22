@@ -25,6 +25,8 @@ model PrivateSeedSubmission {
   dealRoomOpen         Boolean           @default(false)
   preApproval          String            @default("not-submitted")
   preApprovalUpdatedAt DateTime?
+  firstReminderSent  Boolean  @default(false)
+  secondReminderSent Boolean  @default(false)
   updatedAt            DateTime          @updatedAt
   passwordHash         String?
   dealRoom             String            @default("not-submitted")
