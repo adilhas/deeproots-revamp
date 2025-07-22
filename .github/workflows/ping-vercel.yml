@@ -9,7 +9,7 @@ jobs:
   ping-api:
     runs-on: ubuntu-latest
     env:
-      NEXTAUTH_URL: ${{ vars.NEXTAUTH_URL }}
+      NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
 
     steps:
       - name: Ping Reminder Endpoint
