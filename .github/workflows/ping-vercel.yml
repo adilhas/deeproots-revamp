@@ -2,7 +2,7 @@ name: Ping Reminder API Every 10 Minutes
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/01 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -14,5 +14,5 @@ jobs:
     steps:
       - name: Ping Reminder Endpoint
         run: |
-          echo "Triggering deal room cron..."
+          echo "Triggering deal room cron at %{http_code}" "${NEXTAUTH_URL}/api/seed/check-reminders"
           curl -s -o /dev/null -w "%{http_code}" "${NEXTAUTH_URL}/api/seed/check-reminders"
