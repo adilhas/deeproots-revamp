@@ -22,7 +22,7 @@ jobs:
             fi
 
           echo "🌐 Pinging: ${NEXTAUTH_URL}/api/seed/check-reminders"
-          STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "${NEXTAUTH_URL}/api/seed/check-reminders")
+          STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "${NEXTAUTH_URL}/api/private-seed/seed-reminders")
 
           echo "🔎 Received status code: $STATUS_CODE"
            if [ "$STATUS_CODE" -ne 200 ]; then
