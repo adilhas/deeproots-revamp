@@ -152,6 +152,10 @@ export const getfooterLinks = (t: TFunction) => [
         label: 'Root Admin',
         href: '/admin/login',
       },
+      {
+        label: 'Blogs',
+        href: '/blogs',
+      },
     ],
     hoverColor: 'hover:text-[#FF635D]',
   },
