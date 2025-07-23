@@ -40,10 +40,19 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
     setIsOpen(true);
   };
   const handleClose = () => setIsOpen(false);
-
+  const MAX_FILE_SIZE_MB = 5;
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
-      setScreenshot(e.target.files[0]);
+      const file = e.target.files[0];
+      const fileSizeMB = file.size / (1024 * 1024);
+
+      if (fileSizeMB > MAX_FILE_SIZE_MB) {
+        toast.info('File size exceeds 5MB. Please upload a smaller file.');
+        e.target.value = '';
+        return;
+      }
+
+      setScreenshot(file);
     }
   };
 

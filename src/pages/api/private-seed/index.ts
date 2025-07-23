@@ -2,20 +2,11 @@ import { prisma } from '@/lib/prisma';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import crypto from 'crypto';
 import { addHours } from 'date-fns';
-// import nodemailer from 'nodemailer';
 import { render } from '@react-email/render';
 import SeederTokenEmail from '@/emails/SeederTokenEmail';
 import { getSeedTierFromCapital } from '@/lib/getSeedTierFromCapital';
 import { transporter } from '@/lib/mailer';
 import RequestSubmittedEmail from '@/emails/RequestSubmittedEmail';
-
-// const transporter = nodemailer.createTransport({
-//   service: 'gmail',
-//   auth: {
-//     user: process.env.EMAIL_USER,
-//     pass: process.env.EMAIL_PASS,
-//   },
-// });
 
 export default async function handler(
   req: NextApiRequest,

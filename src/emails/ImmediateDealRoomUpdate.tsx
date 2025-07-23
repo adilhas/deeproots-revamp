@@ -52,12 +52,11 @@ export default function ImmediateDealRoomUpdate(props: {
           <Text>Hi {name},</Text>
           <Text>
             You’ve unlocked access to the DeepRoots Foundation Deal Room — but
-            your submission is still incomplete. This is a private allocation,
-            and your seat is currently held.{' '}
+            your submission is still incomplete.
           </Text>
           <Text>
-            To secure your position, please complete your submission before the
-            access window expires.
+            Your seat is currently held. Please complete your submission before
+            the access window expires.
           </Text>
           <Text>
             <a
@@ -68,7 +67,7 @@ export default function ImmediateDealRoomUpdate(props: {
               Return to Deal Room
             </a>{' '}
           </Text>
-          <Text>We’re here if you need support.</Text>
+          <Text>Need help? We’re here to support you.</Text>
           <Text>Team DEEPROOTS Foundation Team</Text>
         </Container>
       </Body>

@@ -82,7 +82,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
               htmlFor={inputId}
               className="flex items-start text-center justify-center gap-2 border-2 border-dashed border-gray-300 rounded-lg py-3.5 px-4 cursor-pointer hover:border-gray-400 transition-colors"
             >
-              <FiImage size={24} className="text-[#525252]" />
+              {/* <FiImage size={24} className="text-[#525252]" /> */}
               <div className="flex flex-col text-lg">
                 <div className="text-[#525252]">
                   {file ? file.name : inputLabel}

@@ -60,8 +60,9 @@ export default function ApplicationApproveEmail(props: {
               Please log in to your dashboard
             </a>{' '}
             now to complete the next steps and secure your Full Seat in the
-            Foundation. Thank you for your patience and welcome aboard.
+            Foundation.
           </Text>
+          <Text>Thank you for your patience and welcome aboard.</Text>
           <Text>Team DEEPROOTS</Text>
         </Container>
       </Body>

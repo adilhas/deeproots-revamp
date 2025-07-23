@@ -18,9 +18,22 @@ const PaymentDetails = () => {
   const [approveOpen, setApproveOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isDeclining, setIsDeclining] = useState(false);
+  const MAX_FILE_SIZE_MB = 5;
+
   const handleUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0] || null;
-    setReceiptFile(selectedFile);
+
+    if (selectedFile) {
+      const fileSizeMB = selectedFile.size / (1024 * 1024);
+
+      if (fileSizeMB > MAX_FILE_SIZE_MB) {
+        toast.info('File size exceeds 5MB. Please upload a smaller file.');
+        e.target.value = '';
+        return;
+      }
+
+      setReceiptFile(selectedFile);
+    }
   };
 
   // const handleRemove = () => {
@@ -168,7 +181,7 @@ const PaymentDetails = () => {
   };
 
   return (
-    <div className="mx-auto my-8 bg-white rounded-3xl border border-[#D4D4D4]">
+    <div className="mx-auto my-8 bg-white rounded-4xl overflow-hidden border border-[#D4D4D4]">
       <div className="text-center p-4 bg-[#E9E9E9]">
         <h1 className="text-2xl font-semibold bg-gradient-to-r from-gradient-from to-gradient-to w-fit mx-auto bg-clip-text text-transparent">
           Payment details

@@ -5,6 +5,7 @@ import { FiImage } from 'react-icons/fi';
 import React, { useRef } from 'react';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { AgreementPDF } from './AgreementPDF';
+import { toast } from 'react-toastify';
 
 interface PAStep1Props {
   fullName: string;
@@ -31,6 +32,12 @@ const PAStep1: React.FC<PAStep1Props> = ({
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
+      if (file.size > 5 * 1024 * 1024) {
+        toast.info('File size must be less than 5MB');
+        event.target.value = '';
+        setSignatureFile(null);
+        return;
+      }
       setSignatureFile(file);
     }
   };

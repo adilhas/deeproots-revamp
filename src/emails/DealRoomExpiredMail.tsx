@@ -54,7 +54,7 @@ export default function DealRoomExpiredMail(props: { fullName: string }) {
           <Text>
             If you have any questions or need assistance, we’re here to help.
           </Text>
-          <Text>Team DEEPROOTS Foundation Team</Text>
+          <Text>- Team DEEPROOTS Foundation Team</Text>
         </Container>
       </Body>
     </Html>

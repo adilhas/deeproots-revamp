@@ -50,7 +50,7 @@ const PAStep2: React.FC<PAStep2Props> = ({
         toast.error(
           `File "${file.name}" is too large! Maximum allowed size is ${MAX_FILE_SIZE_MB}MB.`
         );
-        return; // Do not set the file if it's too big
+        return;
       }
       setter(file);
     }

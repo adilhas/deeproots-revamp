@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import {
   Html,
   Head,
@@ -5,7 +6,7 @@ import {
   Body,
   Container,
   Text,
-  //   Link,
+  Link,
   Heading,
 } from '@react-email/components';
 
@@ -73,44 +74,60 @@ export default function RequestSubmittedEmail({
             👉 Please check your email now to create your Full Foundation Seat
             account and complete the next step.
           </Text>
-          {/* <Text style={{ fontSize: '16px', marginBottom: '20px' }}>
+          <Text style={{ fontSize: '16px', marginBottom: '20px' }}>
             Stay tuned to our socials and community channels.
-          </Text> */}
-
-          {/* <Link
-            href="https://x.com/DeepRoots_earth"
-            target="_blank"
-            rel="noopener noreferrer"
+          </Text>
+          <div
             style={{
-              display: 'inline-block',
-              width: 24,
-              height: 24,
-              marginRight: 10,
+              display: 'flex',
+              alignItems: 'center',
+              marginBottom: '20px',
+              gap: '10px',
             }}
           >
-            X
-          </Link>
-          <Link
-            href="https://www.linkedin.com/company/deeproots-earth/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: 'inline-block',
-              width: 24,
-              height: 24,
-              marginRight: 10,
-            }}
-          >
-            LinkedIn
-          </Link>
-          <Link
-            href="https://t.me/deeproots_official"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ display: 'inline-block', width: 24, height: 24 }}
-          >
-            Telegram
-          </Link> */}
+            <Link
+              href="https://x.com/DeepRoots_earth"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ marginRight: 10 }}
+            >
+              <img
+                src="http://about.x.com/content/dam/about-twitter/x/brand-toolkit/logo-black.png.twimg.1920.png"
+                alt="X (Twitter)"
+                width="24"
+                height="24"
+                style={{ display: 'inline-block' }}
+              />
+            </Link>
+            <Link
+              href="https://www.linkedin.com/company/deeproots-earth/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ marginRight: 10 }}
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                alt="LinkedIn"
+                width="24"
+                height="24"
+                style={{ display: 'inline-block' }}
+              />
+            </Link>
+            <Link
+              href="https://t.me/deeproots_official"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ marginRight: 10 }}
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"
+                alt="Telegram"
+                width="24"
+                height="24"
+                style={{ display: 'inline-block' }}
+              />
+            </Link>
+          </div>
           <Text style={{ fontSize: '14px', color: '#555', marginTop: '20px' }}>
             If you did not request this, you can safely ignore this email.
           </Text>
