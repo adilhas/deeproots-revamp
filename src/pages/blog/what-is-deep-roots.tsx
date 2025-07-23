@@ -1,5 +1,6 @@
 import AppLayout from '@/Shared/AppLayout';
 import BlogLayout from '@/Shared/BlogLayout';
+import Seo from '@/Shared/Seo';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Link from 'next/link';
@@ -8,6 +9,10 @@ import React from 'react';
 const WhatIsDeepRoots = () => {
   return (
     <AppLayout>
+      <Seo
+        title="What Is Deep Roots?"
+        description="The Movement Behind DeWorld and the Future of the Decentralized Internet"
+      />
       <div className="bg-[#E9E9E9] font-archivo dark:bg-[#1C1D20] text-[#525252] dark:text-[#F1F5F9] min-h-screen">
         <BlogLayout
           title="What Is Deep Roots?"
