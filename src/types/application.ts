@@ -80,4 +80,7 @@ export type ManagementNotesType = {
   createdAt: string;
   updatedAt: string;
   submissionId: string;
+  sender: SenderTypeEnum;
 };
+
+export type SenderTypeEnum = 'ADMIN' | 'SEEDER';

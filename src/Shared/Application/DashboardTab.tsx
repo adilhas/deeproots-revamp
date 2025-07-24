@@ -2,6 +2,7 @@ import { ApplicationDataType } from '@/types/application';
 import React from 'react';
 import { formatDate } from '@/utils/formatDate';
 import StatusBadge from './StatusBadge';
+import SeederManagementNote from './SeederManagementNote';
 interface DashboardItem {
   title: string;
   description: string;
@@ -140,6 +141,7 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
           </div>
         </div>
       </div>
+      <SeederManagementNote />
     </div>
   );
 };

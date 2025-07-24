@@ -2,6 +2,7 @@
 import AuthLoader from '@/components/AuthLoader';
 import { useApplication } from '@/context/ApplicationContext';
 import ApplicationDetails from '@/Shared/Application/ApplicationDetails';
+import SeederSeat from '@/Shared/Application/seeder_seat/SeederSeat';
 import { useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 
@@ -44,5 +45,9 @@ export default function ContributorDashboard() {
     );
   }
 
-  return <ApplicationDetails application={application} />;
+  return application.dealRoom === 'approved' ? (
+    <SeederSeat />
+  ) : (
+    <ApplicationDetails application={application} />
+  );
 }
