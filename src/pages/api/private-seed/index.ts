@@ -31,7 +31,6 @@ export default async function handler(
         !email ||
         !contact ||
         !country ||
-        !linkedin ||
         !capital ||
         !value ||
         !whyJoin ||
@@ -57,7 +56,7 @@ export default async function handler(
           email,
           contact,
           country,
-          website: linkedin,
+          website: linkedin || '',
           capital: String(capital),
           value,
           whyJoin,

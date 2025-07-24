@@ -32,14 +32,20 @@ const ApprovedSeederOverview = () => {
           </div>
           <div>{application?.contact}</div>
         </div>
-        <div className="text-xl flex items-center gap-2">
-          <div>
-            <Globe className="w-5 h-5" />
+        {application?.website && application?.website !== '' && (
+          <div className="text-xl flex items-center gap-2">
+            <div>
+              <Globe className="w-5 h-5" />
+            </div>
+            <a
+              target="_blank"
+              href={application?.website}
+              className="underline"
+            >
+              {application?.website}
+            </a>
           </div>
-          <a target="_blank" href={application?.website} className="underline">
-            {application?.website}
-          </a>
-        </div>
+        )}
         <div className="text-xl flex items-center gap-2">
           <div>
             <PiUser className="w-5 h-5" />

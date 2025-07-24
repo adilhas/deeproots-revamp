@@ -1,7 +1,6 @@
 import { Prisma } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
 import type { NextApiRequest, NextApiResponse } from 'next';
-// import nodemailer from 'nodemailer';
 import { render } from '@react-email/render';
 import ApplicationApproveEmail from '@/emails/ApplicationApprove';
 import ApplicationDeclineEmail from '@/emails/ApplicationDecline';
@@ -9,14 +8,6 @@ import PreApprovalApproveEmail from '@/emails/PreApprovalApproveMail';
 import PreApprovalDeclineEmail from '@/emails/PreApprovalDecline';
 import { transporter } from '@/lib/mailer';
 import ImmediateDealRoomUpdate from '@/emails/ImmediateDealRoomUpdate';
-
-// const transporter = nodemailer.createTransport({
-//   host: 'smtp.gmail.com',
-//   auth: {
-//     user: process.env.EMAIL_USER,
-//     pass: process.env.EMAIL_PASS,
-//   },
-// });
 
 export default async function handler(
   req: NextApiRequest,
@@ -39,7 +30,7 @@ export default async function handler(
           kycDocuments: true,
           ndaSubmission: true,
           paymentDetails: true,
-          managementNotes: true,
+          // managementNotes: true,
         },
       });
 
@@ -105,14 +96,6 @@ export default async function handler(
           paymentDetails: true,
         },
       });
-      // const updated = await prisma.privateSeedSubmission.findFirst({
-      //   where: { id },
-      //   include: {
-      //     kycDocuments: true,
-      //     ndaSubmission: true,
-      //     paymentDetails: true,
-      //   },
-      // });
 
       const { fullName: applicantName, email: applicantEmail } = updated;
 

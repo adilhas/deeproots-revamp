@@ -11,6 +11,13 @@ const AdminDealRoom = () => {
   const { application } = useApplication();
 
   console.log(application);
+  if (application?.isDealRoomExpired) {
+    return (
+      <div className="text-center text-2xl">
+        Seeder Did not submitted payment within time limit. Deal room expired.
+      </div>
+    );
+  }
   return (
     <div className="pb-8 text-[#525252]">
       {application?.dealRoom === 'not-submitted' ? (
