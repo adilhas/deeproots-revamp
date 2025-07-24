@@ -1,12 +1,12 @@
 import SocialLinks from '@/components/main_page/social_links_section/SocialLinks';
-import { ChevronRight } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import React, { ReactNode } from 'react';
 import { FaCaretLeft, FaCaretRight } from 'react-icons/fa6';
 
 interface IBlogLayout {
-  title: 'What Is Deep Roots?';
-  subtitle: 'The Movement Behind DeWorld and the Future of the Decentralized Internet';
+  title: string;
+  subtitle: string;
   children: ReactNode;
   date: string;
 }
@@ -15,13 +15,12 @@ const BlogLayout = ({ title, subtitle, children, date }: IBlogLayout) => {
   return (
     <>
       <div className="flex text-md font-sans items-center font-semibold flex-row justify-start gap-1 w-full max-w-[1199px] mx-auto px-2 py-8">
-        <Link href={'/blogs'} className="font-normal">
-          Blog
+        <Link
+          href={'/blogs'}
+          className="font-normal flex flex-row items-center gap-2 hover:underline"
+        >
+          <ArrowLeft className="w-5 h-5" /> Blog
         </Link>
-        <div>
-          <ChevronRight className="w-[18px] h-[18px]" />
-        </div>
-        <div className="text-[#A855F7]">{title}</div>
       </div>
       <div className="w-full max-w-[800px] mx-auto px-2">
         <div className="text-center pb-8 relative  border-2 border-[#d5d5d5] rounded-4xl">

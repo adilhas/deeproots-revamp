@@ -76,19 +76,19 @@ export const allBlogs = [
       'The Movement Behind DeWorld and the Future of the Decentralized Internet',
     description:
       'Discover Deep Roots — the decentralized blockchain and AI movement powering DeWorld. Join the future of open collaboration, privacy, and innovation.',
-    date: 'July 2025',
+    date: 'July 23, 2025',
     image: '/blog/blog-card-img.png',
     slug: 'what-is-deep-roots',
   },
-  // {
-  //   title: 'What is dRC?',
-  //   subtitle: 'The Pulse of Deep Roots and the Currency of DeWorld',
-  //   description:
-  //     'dRC is the native utility currency of Deep Roots — powering staking, governance, GameFi, and access to a decentralized ecosystem built to last generations.',
-  //   date: 'June 2025',
-  //   image: '/blog/blog-card-img.png',
-  //   slug: 'what-is-drc',
-  // },
+  {
+    title: 'What is dRC?',
+    subtitle: 'The Pulse of Deep Roots and the Currency of DeWorld',
+    description:
+      'dRC is the native utility currency of Deep Roots — powering staking, governance, GameFi, and access to a decentralized ecosystem built to last generations.',
+    date: 'July 24, 2025',
+    image: '/blog/blog-card-img.png',
+    slug: 'what-is-drc',
+  },
   // {
   //   title: 'What Is a Foundation Full Seat?',
   //   subtitle: 'Own the Movement. Seed the Future.',
