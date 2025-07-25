@@ -2,7 +2,7 @@ export const DeWorldEcosysData = [
   {
     name: 'The Address Wallet',
     category: 'Label',
-    description: 'Wrap Around Wealth – 21 Layers of Dynamic Finance.',
+    description: 'Explore 21 Layers of Digital Utility.',
     socialLinks: [
       { name: 'twitter', link: '' },
       { name: 'discord', link: '' },

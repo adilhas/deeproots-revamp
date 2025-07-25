@@ -89,15 +89,15 @@ export const allBlogs = [
     image: '/blog/blog-card-img.png',
     slug: 'what-is-drc',
   },
-  // {
-  //   title: 'What Is a Foundation Full Seat?',
-  //   subtitle: 'Own the Movement. Seed the Future.',
-  //   description:
-  //     'Foundation Full Seats offer exclusive access, on-chain rewards, and governance rights in the Deep Roots ecosystem. Learn how to claim your seat in DeWorld.',
-  //   date: 'June 2025',
-  //   image: '/blog/blog-card-img.png',
-  //   slug: 'what-is-a-foundation-full-seat',
-  // },
+  {
+    title: 'What Is a Foundation Full Seat?',
+    subtitle: 'Own the Movement. Seed the Future.',
+    description:
+      'Foundation Full Seats offer exclusive access, on-chain rewards, and governance rights in the Deep Roots ecosystem. Learn how to claim your seat in DeWorld.',
+    date: 'June 2025',
+    image: '/blog/blog-card-img.png',
+    slug: 'what-is-a-foundation-full-seat',
+  },
   // {
   //   title: 'What Is the PrivateSeed Access Round?',
   //   subtitle: 'Join the First 100 Visionaries of DeWorld',

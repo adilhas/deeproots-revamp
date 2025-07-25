@@ -69,6 +69,31 @@ const sections = [
     content:
       'Digital assets carry risk and volatility. Seek professional advice before participating.',
   },
+  {
+    icon: '🔴',
+    title: 'U.S. Participation Restriction',
+    content: (
+      <div>
+        <p className="mb-3">
+          Participation in any token-related activity, contribution round,
+          seeding campaign, or ecosystem access involving digital assets is
+          strictly prohibited for:
+        </p>
+        <ul className="list-disc pl-6 space-y-1 my-3">
+          <li>U.S. citizen or U.S. residents</li>
+          <li>
+            U.S.-registered entities (corporations, LLCs, partnerships, trusts)
+          </li>
+          <li>Any person or organization under U.S. jurisdiction</li>
+        </ul>
+        <p className="font-bold">No exceptions apply.</p>
+        <p className="mt-3">
+          Tokens are for <strong>utility access only</strong> — not for
+          investment, profit, or returns.
+        </p>
+      </div>
+    ),
+  },
 ];
 
 const LegalDisclaimerPage = () => {
