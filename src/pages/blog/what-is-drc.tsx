@@ -18,6 +18,7 @@ const WhatIsDRC = () => {
           title="What Is dRC?"
           subtitle="The Pulse of Deep Roots and the Currency of DeWorld"
           date="July 24, 2025"
+          slug="what-is-drc"
         >
           <div className="pb-8">
             <h3 className="text-[#303030] dark:text-[#F8FAFC] font-semibold text-2xl">

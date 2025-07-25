@@ -15,6 +15,7 @@ const WhatIsDeepRoots = () => {
       />
       <div className="bg-[#E9E9E9] font-archivo dark:bg-[#1C1D20] text-[#525252] dark:text-[#F1F5F9] min-h-screen">
         <BlogLayout
+          slug="what-is-deep-roots"
           title="What Is Deep Roots?"
           subtitle="The Movement Behind DeWorld and the Future of the Decentralized Internet"
           date="July 23, 2025"

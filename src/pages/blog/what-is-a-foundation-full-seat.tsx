@@ -15,6 +15,7 @@ const WhatIsDeepRoots = () => {
       />
       <div className="bg-[#E9E9E9] font-archivo dark:bg-[#1C1D20] text-[#525252] dark:text-[#F1F5F9] min-h-screen">
         <BlogLayout
+          slug="what-is-a-foundation-full-seat"
           title="What Is a Foundation Full Seat?"
           subtitle="Own the Movement. Seed the Future."
           date="July 25, 2025"

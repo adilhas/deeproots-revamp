@@ -1,17 +1,21 @@
+import ShareBlog from '@/components/blogs/ShareBlog';
 import SocialLinks from '@/components/main_page/social_links_section/SocialLinks';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
-import React, { ReactNode } from 'react';
-import { FaCaretLeft, FaCaretRight } from 'react-icons/fa6';
+import React, { ReactNode, useState } from 'react';
+import { FaShare } from 'react-icons/fa6';
 
 interface IBlogLayout {
   title: string;
   subtitle: string;
   children: ReactNode;
   date: string;
+  slug: string;
 }
 
-const BlogLayout = ({ title, subtitle, children, date }: IBlogLayout) => {
+const BlogLayout = ({ title, subtitle, children, date, slug }: IBlogLayout) => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <>
       <div className="flex text-md font-sans items-center font-semibold flex-row justify-start gap-1 w-full max-w-[1199px] mx-auto px-2 py-8">
@@ -32,12 +36,18 @@ const BlogLayout = ({ title, subtitle, children, date }: IBlogLayout) => {
             <h2 className="font-normal text-xl md:text-3xl max-w-[618px] mx-auto">
               {subtitle}
             </h2>
+            <div className="flex mt-6 flex-row justify-between items-center  gap-x-3  dark:text-[#F8FAFC] text-lg font-medium">
+              <div>{date}</div>
+              <button onClick={() => setShowModal(true)}>
+                <FaShare className="w-6 h-6" />
+              </button>
+            </div>
           </div>
-          <div className="absolute text-[#303030] flex flex-row justify-between items-center bg-[#E9E9E9] gap-x-3 p-0 m-0 dark:bg-[#1C1D20] dark:text-[#F8FAFC] text-lg font-medium bottom-[-15px] left-1/2 -translate-x-1/2">
-            <FaCaretLeft className="w-4 h-4 text-[#d5d5d5] translate-x-[-10px]" />
-            <div>{date}</div>
-            <FaCaretRight className="w-4 h-4 text-[#d5d5d5] translate-x-[10px]" />
-          </div>
+          <ShareBlog
+            shareUrl={`https://deeproots-revamp.vercel.app/blog/${slug}`}
+            isOpen={showModal}
+            onClose={() => setShowModal(false)}
+          />
         </div>
         <div className="mt-20">{children}</div>
       </div>
