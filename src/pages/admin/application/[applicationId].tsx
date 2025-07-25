@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import ApplicationDetails from '@/Shared/Application/ApplicationDetails';
 import { useApplication } from '@/context/ApplicationContext';
+import SeederSeat from '@/Shared/Application/seeder_seat/SeederSeat';
 
 const ApplicationDetailsPage = () => {
   const router = useRouter();
@@ -57,7 +58,11 @@ const ApplicationDetailsPage = () => {
     );
   }
 
-  return <ApplicationDetails application={application} />;
+  return application.dealRoom === 'approved' ? (
+    <SeederSeat />
+  ) : (
+    <ApplicationDetails application={application} />
+  );
 };
 
 export default ApplicationDetailsPage;

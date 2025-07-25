@@ -8,6 +8,7 @@ import SeederPerks from './SeederPerks';
 import SeederContactAccess from './SeederContactAccess';
 import SeederDocuments from './SeederDocuments';
 import TokenVesting from './TokenVesting';
+import SeederManagementNote from '../SeederManagementNote';
 
 const SeederSeat = () => {
   const { data: session } = useSession();
@@ -37,9 +38,10 @@ const SeederSeat = () => {
           <div>
             <SeederPerks />
             <SeederContactAccess />
-            <SeederDocuments />
           </div>
         </div>
+        <SeederManagementNote />
+        <SeederDocuments />
       </div>
     </div>
   );

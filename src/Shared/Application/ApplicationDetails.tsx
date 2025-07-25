@@ -13,6 +13,7 @@ import StatusDot from '../StatusDot';
 import AdminDealRoom from './AdminDealRoomTab';
 import { formatCurrencyShort } from '@/utils/formatCapital';
 import DashboardHeader from './DashboardHeader';
+import SeederNotification from './seeder_seat/SeederNotification';
 
 interface ApplicationDetailsProps {
   application: ApplicationDataType;
@@ -52,7 +53,6 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
 
       <div className="max-w-[1200px] mx-auto px-3">
         <ApplicationStatusInfo />
-
         {application && (
           <div className="p-6 rounded-4xl bg-gradient-to-r from-[#AD1AAF] to-[#0085A8] border border-[#999100] text-white flex flex-col md:flex-row justify-between items-start">
             <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-y-3">
@@ -125,6 +125,7 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
             </div>
           </div>
         )}
+        <SeederNotification />
 
         <div className="bg-white  my-6 p-2 rounded-4xl md:rounded-[64px] flex flex-col md:flex-row justify-between items-center gap-x-6 gap-y-2 text-sm font-medium">
           {tabs.map((tab, index) => (

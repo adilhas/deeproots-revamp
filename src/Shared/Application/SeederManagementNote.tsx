@@ -4,7 +4,6 @@ import { useApplication } from '@/context/ApplicationContext';
 import { useEffect, useState } from 'react';
 import { formatDistanceToNow } from 'date-fns';
 import { useSession } from 'next-auth/react';
-import { supabase } from '@/lib/supabase';
 import { ManagementNotesType } from '@/types/application';
 
 type NoteMessage = {
@@ -35,6 +34,7 @@ const NotificationCard = ({
   const [loading, setLoading] = useState(false);
   const { data: session } = useSession();
   const isAdmin = session?.user?.role === 'admin';
+  const { application } = useApplication();
 
   useEffect(() => {
     setMessages(initialMessages);
@@ -53,6 +53,7 @@ const NotificationCard = ({
           body: JSON.stringify({
             note: message.trim(),
             sender: isAdmin ? 'ADMIN' : 'SEEDER',
+            submissionId: application?.id,
           }),
         }
       );
@@ -78,43 +79,6 @@ const NotificationCard = ({
     }
   };
 
-  useEffect(() => {
-    const channel = supabase
-      .channel('realtime:managementnotes')
-      .on(
-        'postgres_changes',
-        {
-          event: 'INSERT',
-          schema: 'public',
-          table: 'managementnotes',
-        },
-        (payload) => {
-          console.log('📥 New Management Note Inserted!');
-          console.log('🌐 Payload:', payload);
-          console.log('📝 New Row Data:', payload.new);
-          const newNote = payload.new as ManagementNotesType;
-
-          if (newNote.submissionId !== submissionId) return;
-
-          const formattedNote: NoteMessage = {
-            note: newNote.note,
-            createdAt: newNote.createdAt,
-            sender: newNote.sender,
-          };
-
-          setMessages((prev) => [formattedNote, ...prev]);
-          onNewNote?.(formattedNote);
-        }
-      )
-      .subscribe((status) => {
-        console.log('🔁 Subscription status:', status);
-      });
-
-    return () => {
-      supabase.removeChannel(channel);
-    };
-  }, [submissionId]);
-
   const visibleMessages = filterBySender
     ? messages.filter((msg) => msg.sender === filterBySender)
     : messages;
@@ -128,6 +92,7 @@ const NotificationCard = ({
             <input
               type="text"
               placeholder="Enter Message"
+              maxLength={40}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               className="px-4 w-full py-2 rounded-full border border-gray-300 bg-white text-sm outline-none"
@@ -219,8 +184,8 @@ const SeederManagementNote = () => {
     <div
       className={`flex ${
         isAdmin
-          ? 'flex-col md:flex-row'
-          : 'flex-col-reverse md:flex-row-reverse'
+          ? 'flex-col lg:flex-row'
+          : 'flex-col-reverse lg:flex-row-reverse'
       } gap-6 justify-center items-start w-full`}
     >
       <NotificationCard

@@ -1,5 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { prisma } from '@/lib/prisma';
+import { render } from '@react-email/render';
+import CheckInboxMail from '@/emails/CheckInboxMail';
+import { transporter } from '@/lib/mailer';
 
 export default async function handler(
   req: NextApiRequest,
@@ -11,6 +14,14 @@ export default async function handler(
     return res
       .status(400)
       .json({ error: 'Invalid or missing submission ID in URL.' });
+  }
+
+  const seeder = await prisma.privateSeedSubmission.findUnique({
+    where: { id: id },
+  });
+
+  if (!seeder) {
+    return res.status(400).json({ error: 'Invalid submission ID.' });
   }
 
   try {
@@ -42,6 +53,33 @@ export default async function handler(
           submissionId: id,
         },
       });
+
+      await prisma.notification.create({
+        data: {
+          title: 'New Message',
+          message: note.trim(),
+          sender: sender,
+          submissionId: id,
+        },
+      });
+
+      const html = await render(
+        CheckInboxMail({
+          link: `${process.env.NEXTAUTH_URL}/seeder/dashboard`,
+        }),
+        {
+          pretty: true,
+        }
+      );
+
+      if (sender === 'ADMIN') {
+        await transporter.sendMail({
+          from: `Team DEEPROOTS`,
+          to: seeder?.email,
+          subject: 'New Notification on our dashboard',
+          html,
+        });
+      }
 
       return res.status(201).json(newNote);
     }

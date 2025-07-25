@@ -27,6 +27,7 @@ export type ApplicationDataType = {
   seedTier?: string;
   managementNotes?: ManagementNotesType[];
   isDealRoomExpired?: boolean;
+  notifications?: NotificationItemType[];
 };
 
 export type StatusType =
@@ -84,3 +85,22 @@ export type ManagementNotesType = {
 };
 
 export type SenderTypeEnum = 'ADMIN' | 'SEEDER';
+
+export type NotificationItemType = {
+  id: string;
+  title: string;
+  message: string;
+  type: NotificationType;
+  isRead: boolean;
+  createdAt: string;
+  updatedAt: string;
+  sender: SenderTypeEnum;
+  link?: string;
+};
+
+export enum NotificationType {
+  INFO = 'INFO',
+  WARNING = 'WARNING',
+  SUCCESS = 'SUCCESS',
+  ERROR = 'ERROR',
+}

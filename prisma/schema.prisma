@@ -39,6 +39,7 @@ model PrivateSeedSubmission {
   seedTier             String?
   managementNotes      ManagementNotes[]
   isDealRoomExpired    Boolean           @default(false)
+  notifications        Notification[]    
 }
 
 model PaymentDetails {
@@ -120,4 +121,25 @@ model Blog {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   tags      String[]
+}
+
+model Notification {
+  id              String                @id @default(cuid())
+   title           String
+  message         String
+  type            NotificationType      @default(INFO)
+  isRead          Boolean               @default(false)
+  createdAt       DateTime              @default(now())
+  updatedAt       DateTime              @updatedAt
+  submissionId    String?              
+  submission      PrivateSeedSubmission? @relation(fields: [submissionId], references: [id], onDelete: Cascade)
+  sender          SenderType            @default(ADMIN)
+  link            String?
+}
+
+enum NotificationType {
+  INFO
+  WARNING
+  SUCCESS
+  ERROR
 }

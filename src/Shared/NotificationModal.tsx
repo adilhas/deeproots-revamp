@@ -2,41 +2,42 @@
 
 import React from 'react';
 import { X } from 'lucide-react';
-
-interface Notification {
-  title: string;
-  description: string;
-  timeAgo: string;
-  read: boolean;
-}
-
-const notifications: Notification[] = [
-  {
-    title: 'Founders lounge meetup',
-    description:
-      'Founders ca coming up on 16th August, 2025. We wi cover the intent of Lorem ipsum dolor sit amet...',
-    timeAgo: '10 mins ago',
-    read: false,
-  },
-  {
-    title: 'Founders lounge meetup',
-    description:
-      'Founders ca coming up on 16th August, 2025. We wi cover the intent of Lorem ipsum dolor sit amet...',
-    timeAgo: '10 mins ago',
-    read: false,
-  },
-];
+import { NotificationItemType } from '@/types/application';
+import { formatDistanceToNow } from 'date-fns';
 
 interface NotificationModalProps {
   isOpen: boolean;
   onClose: () => void;
+  notifications: NotificationItemType[];
+  setNotifications: React.Dispatch<
+    React.SetStateAction<NotificationItemType[]>
+  >;
 }
 
 const NotificationModal: React.FC<NotificationModalProps> = ({
   isOpen,
   onClose,
+  notifications,
+  setNotifications,
 }) => {
   if (!isOpen) return null;
+  const markAsRead = async (id: string) => {
+    try {
+      await fetch('/api/notifications/read', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id }),
+      });
+
+      setNotifications((prev) =>
+        prev.map((notif) =>
+          notif.id === id ? { ...notif, isRead: true } : notif
+        )
+      );
+    } catch (err) {
+      console.error('Failed to mark notification as read', err);
+    }
+  };
 
   return (
     <div className="fixed inset-0 px-4 z-50 flex items-center justify-center bg-black/30">
@@ -63,34 +64,44 @@ const NotificationModal: React.FC<NotificationModalProps> = ({
           <h2 className="text-lg font-semibold text-gray-800">Notification</h2>
         </div>
 
-        {/* Notification List */}
         <div className="space-y-6 max-h-[60vh] overflow-y-auto pr-2">
-          {notifications.map((notif, index) => (
-            <div key={index} className="flex justify-between items-start">
-              <div className="flex items-start gap-2">
-                <span
-                  className={`w-2.5 h-2.5 rounded-full mt-1 ${
-                    notif.read ? 'bg-gray-300' : 'bg-blue-600'
-                  }`}
-                />
-                <div>
-                  <h3
-                    className={`text-sm font-semibold ${
-                      notif.read ? 'text-gray-500' : 'text-gray-800'
+          {notifications.length === 0 ? (
+            <div className="text-center">No Notifications</div>
+          ) : (
+            notifications &&
+            notifications.map((notif: NotificationItemType, index) => (
+              <div
+                key={index}
+                className="flex justify-between items-start cursor-pointer"
+                onClick={() => markAsRead(notif.id)}
+              >
+                <div className="flex items-start gap-2">
+                  <span
+                    className={`w-2.5 h-2.5 rounded-full mt-1 ${
+                      notif.isRead ? 'bg-gray-300' : 'bg-blue-600'
                     }`}
-                  >
-                    {notif.title}
-                  </h3>
-                  <p className="text-xs text-gray-500 mt-1 leading-snug">
-                    {notif.description}
-                  </p>
+                  />
+                  <div>
+                    <h3
+                      className={`text-sm font-semibold ${
+                        notif.isRead ? 'text-gray-500' : 'text-gray-800'
+                      }`}
+                    >
+                      {notif.title}
+                    </h3>
+                    <p className="text-xs text-gray-500 mt-1 leading-snug">
+                      {notif.message}
+                    </p>
+                  </div>
                 </div>
+                <span className="text-xs text-gray-400 whitespace-nowrap">
+                  {formatDistanceToNow(new Date(notif.createdAt), {
+                    addSuffix: true,
+                  })}
+                </span>
               </div>
-              <span className="text-xs text-gray-400 whitespace-nowrap">
-                {notif.timeAgo}
-              </span>
-            </div>
-          ))}
+            ))
+          )}
         </div>
       </div>
     </div>
