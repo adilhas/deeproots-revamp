@@ -14,7 +14,7 @@ const WhatIsDRC = () => {
       <Seo
         title="What Is dRC? The Pulse of Deep Roots and the Currency of DeWorld"
         description="dRC is the native utility currency of Deep Roots — powering staking, governance, GameFi, and access to a decentralized ecosystem built to last generations."
-        url={`https://deeproots-revamp.vercel.app/blog/${slug}`}
+        url={`https://deeproots.earth/blog/${slug}`}
       />
       <div className="bg-[#E9E9E9] font-archivo dark:bg-[#1C1D20] text-[#525252] dark:text-[#F1F5F9] min-h-screen">
         <BlogLayout

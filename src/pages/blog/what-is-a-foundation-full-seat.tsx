@@ -14,7 +14,7 @@ const WhatIsDeepRoots = () => {
       <Seo
         title="What Is a Foundation Full Seat? Own the Movement. Seed the Future."
         description="Foundation Full Seats offer exclusive access, on-chain rewards, and governance rights in the Deep Roots ecosystem. Learn how to claim your seat in DeWorld."
-        url={`https://deeproots-revamp.vercel.app/blog/${slug}`}
+        url={`https://deeproots.earth/blog/${slug}`}
       />
       <div className="bg-[#E9E9E9] font-archivo dark:bg-[#1C1D20] text-[#525252] dark:text-[#F1F5F9] min-h-screen">
         <BlogLayout

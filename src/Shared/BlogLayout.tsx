@@ -44,7 +44,7 @@ const BlogLayout = ({ title, subtitle, children, date, slug }: IBlogLayout) => {
             </div>
           </div>
           <ShareBlog
-            shareUrl={`https://deeproots-revamp.vercel.app/blog/${slug}`}
+            shareUrl={`https://deeproots.earth/blog/${slug}`}
             isOpen={showModal}
             onClose={() => setShowModal(false)}
           />

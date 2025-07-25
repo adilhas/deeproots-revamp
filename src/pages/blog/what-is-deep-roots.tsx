@@ -13,7 +13,7 @@ const WhatIsDeepRoots = () => {
       <Seo
         title="What Is Deep Roots? The Movement Behind DeWorld and the Future of the Decentralized Internet"
         description="Discover Deep Roots — the decentralized blockchain and AI movement powering DeWorld. Join the future of open collaboration, privacy, and innovation."
-        url={`https://deeproots-revamp.vercel.app/blog/${slug}`}
+        url={`https://deeproots.earth/blog/${slug}`}
       />
       <div className="bg-[#E9E9E9] font-archivo dark:bg-[#1C1D20] text-[#525252] dark:text-[#F1F5F9] min-h-screen">
         <BlogLayout
