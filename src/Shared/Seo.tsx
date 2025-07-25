@@ -36,12 +36,9 @@ const Seo = ({ title, description, image, url, noIndex }: SeoProps) => {
       <link rel="canonical" href={meta.url} />
 
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="DEEPROOTS Project" />
-      <meta
-        property="og:description"
-        content="Explore DeWorld: Your gateway to Web3, powered by DEEPROOTS Blockchain"
-      />
-      <meta property="og:url" content="https://deeproots.earth" />
+      <meta property="og:title" content={meta.title} />
+      <meta property="og:description" content={meta.description} />
+      <meta property="og:url" content={meta.url} />
       <meta
         property="og:image"
         content="https://www.deeproots.earth/landing/logo.png"

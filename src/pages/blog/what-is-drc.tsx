@@ -7,18 +7,21 @@ import Link from 'next/link';
 import React from 'react';
 
 const WhatIsDRC = () => {
+  const slug = 'what-is-drc';
+
   return (
     <AppLayout>
       <Seo
         title="What Is dRC? The Pulse of Deep Roots and the Currency of DeWorld"
         description="dRC is the native utility currency of Deep Roots — powering staking, governance, GameFi, and access to a decentralized ecosystem built to last generations."
+        url={`https://deeproots-revamp.vercel.app/blog/${slug}`}
       />
       <div className="bg-[#E9E9E9] font-archivo dark:bg-[#1C1D20] text-[#525252] dark:text-[#F1F5F9] min-h-screen">
         <BlogLayout
           title="What Is dRC?"
           subtitle="The Pulse of Deep Roots and the Currency of DeWorld"
           date="July 24, 2025"
-          slug="what-is-drc"
+          slug={slug}
         >
           <div className="pb-8">
             <h3 className="text-[#303030] dark:text-[#F8FAFC] font-semibold text-2xl">

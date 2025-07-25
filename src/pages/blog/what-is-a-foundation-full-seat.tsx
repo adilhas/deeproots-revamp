@@ -7,15 +7,18 @@ import Link from 'next/link';
 import React from 'react';
 
 const WhatIsDeepRoots = () => {
+  const slug = 'what-is-a-foundation-full-seat';
+
   return (
     <AppLayout>
       <Seo
         title="What Is a Foundation Full Seat? Own the Movement. Seed the Future."
         description="Foundation Full Seats offer exclusive access, on-chain rewards, and governance rights in the Deep Roots ecosystem. Learn how to claim your seat in DeWorld."
+        url={`https://deeproots-revamp.vercel.app/blog/${slug}`}
       />
       <div className="bg-[#E9E9E9] font-archivo dark:bg-[#1C1D20] text-[#525252] dark:text-[#F1F5F9] min-h-screen">
         <BlogLayout
-          slug="what-is-a-foundation-full-seat"
+          slug={slug}
           title="What Is a Foundation Full Seat?"
           subtitle="Own the Movement. Seed the Future."
           date="July 25, 2025"
