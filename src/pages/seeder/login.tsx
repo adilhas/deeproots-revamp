@@ -3,6 +3,7 @@
 import DashboardHeader from '@/Shared/Application/DashboardHeader';
 import { Mail, Eye, EyeOff, Loader } from 'lucide-react';
 import { signIn, useSession } from 'next-auth/react';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { GrKey } from 'react-icons/gr';
@@ -127,12 +128,15 @@ export default function SeederLogin() {
           </form>
 
           {/* Bottom Links */}
-          {/* <div className="mt-4 text-sm text-center w-full max-w-[474px] mx-auto text-gray-600 flex flex-wrap items-center justify-between">
+          <div className="mt-4 text-sm text-center w-full max-w-[474px] mx-auto text-gray-600 flex flex-wrap items-center justify-between">
             <div>Can’t access your account?</div>
-            <div className="text-blue-600 font-medium hover:underline">
+            <Link
+              href={'/seeder/forget-password'}
+              className="text-blue-600 font-medium hover:underline"
+            >
               Forgot password?
-            </div>
-          </div> */}
+            </Link>
+          </div>
         </div>
       </div>
     </div>

@@ -137,6 +137,15 @@ model Notification {
   link            String?
 }
 
+model PasswordResetToken {
+  id         String   @id @default(cuid())
+  token      String   @unique
+  email      String
+  used       Boolean  @default(false)
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+}
+
 enum NotificationType {
   INFO
   WARNING
