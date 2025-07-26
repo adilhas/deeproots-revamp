@@ -94,19 +94,19 @@ export const allBlogs = [
     subtitle: 'Own the Movement. Seed the Future.',
     description:
       'Foundation Full Seats offer exclusive access, on-chain rewards, and governance rights in the Deep Roots ecosystem. Learn how to claim your seat in DeWorld.',
-    date: 'June 2025',
+    date: 'July 25, 2025',
     image: '/blog/blog-card-img.png',
     slug: 'what-is-a-foundation-full-seat',
   },
-  // {
-  //   title: 'What Is the PrivateSeed Access Round?',
-  //   subtitle: 'Join the First 100 Visionaries of DeWorld',
-  //   description:
-  //     'Join the Deep Roots PrivateSeed Round: Limited seats, early ecosystem access, and long-term governance rights before public release. Apply for a Foundation Full Seat now.',
-  //   date: 'June 2025',
-  //   image: '/blog/blog-card-img.png',
-  //   slug: 'what-is-the-privateseed-access-round',
-  // },
+  {
+    title: 'What Is the PrivateSeed Access Round?',
+    subtitle: 'Join the First 100 Visionaries of DeWorld',
+    description:
+      'Join the Deep Roots PrivateSeed Round: Limited seats, early ecosystem access, and long-term governance rights before public release. Apply for a Foundation Full Seat now.',
+    date: 'July 26, 2025',
+    image: '/blog/blog-card-img.png',
+    slug: 'what-is-the-privateseed-access-round',
+  },
   // {
   //   title: 'dRC Tokenomics',
   //   subtitle: 'Native Currency Built to Last',

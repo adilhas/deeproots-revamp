@@ -1,13 +1,16 @@
+import { useThemeContext } from '@/context/ThemeContext';
 import AppLayout from '@/Shared/AppLayout';
 import BlogLayout from '@/Shared/BlogLayout';
 import Seo from '@/Shared/Seo';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
 const WhatIsDeepRoots = () => {
   const slug = 'what-is-a-foundation-full-seat';
+  const { isDark } = useThemeContext();
 
   return (
     <AppLayout>
@@ -24,206 +27,197 @@ const WhatIsDeepRoots = () => {
           date="July 25, 2025"
         >
           <div className="pb-8">
-            <h3 className="text-[#303030] dark:text-[#F8FAFC] font-semibold text-2xl">
-              Before the world enters DeWorld,{' '}
-              <strong>a few visionaries will help build it.</strong>
-            </h3>
             <p className="text-lg font-normal mt-6">
-              <strong>The PrivateSeed Access Round</strong> is your chance to
-              secure early participation in the Deep Roots Foundation with real
-              utility, governance access, and exclusive rewards.
+              In the Deep Roots ecosystem, some roles{' '}
+              <strong>go beyond participation</strong>, they help shape the
+              system itself. That’s what a <strong>Foundation Full Seat</strong>{' '}
+              is.
             </p>
             <p className="mt-6">
-              This isn’t a public offering. It’s a{' '}
-              <strong>curated contributor round</strong>, designed for
-              experienced builders, partners, and early believers in
-              decentralization.
+              It’s not just about access. It’s about{' '}
+              <strong>
+                ownership, early influence, and ecosystem-wide benefits{' '}
+              </strong>{' '}
+              secured by protocol and distributed on-chain.
             </p>
-            <ul className="list-disc ml-6 mt-6">
-              <li>NDA Secured</li>
-              <li>Global Participation</li>
-              <li>Launching in 90 Days</li>
-            </ul>
+            <p className="mt-6">
+              If dRC is the currency of DeWorld, the Full Seat is its{' '}
+              <strong>command center.</strong>
+            </p>
           </div>
           <div className="py-8">
             <h3 className="text-[#303030] dark:text-[#F8FAFC] font-semibold text-2xl">
-              What Is PrivateSeed?
+              🪑 What Is a Full Seat?
             </h3>
             <p className="text-lg font-normal mt-6">
-              PrivateSeed is the earliest access round for strategic
-              contributors to Deep Roots. Participants unlock:
+              A Foundation Full Seat is your exclusive position in the Deep
+              Roots Foundation designed for early supporters who believe in the
+              long-term power of decentralization
             </p>
-            <ul className="list-disc ml-6 mt-6">
-              <li>Foundation Full Seat Assignment</li>
-              <li>Early Ecosystem Access (Wallet, DEX, GameFi)</li>
-              <li>Governance Participation Rights</li>
-              <li>Priority Token Utility Before Public Release</li>
-            </ul>
+
             <p className="text-lg font-normal mt-6">
-              This round is strictly limited. Only 100 seats are available,
-              across three seeding tiers
+              Full Seat holders don’t just use the ecosystem, they help guide
+              it, earn from it, and unlock utilities across its 20+ Web3
+              platforms.
             </p>
-          </div>
-          <div className="py-8 text-lg font-normal">
-            <h3 className="text-[#303030] dark:text-[#F8FAFC] font-semibold text-2xl">
-              Access Criteria – Who Can Join?
-            </h3>
-
-            <p className="mt-6">To qualify for PrivateSeed, applicants must:</p>
-            <ul className="list-disc ml-6 mt-6">
-              <li>Be a proven contributor, builder, or strategic partner</li>
-              <li>Commit between $5,000 and $1,000,000 for ecosystem access</li>
-              <li>Have a background in blockchain, capital, or innovation</li>
-              <li>Agree to sign NDA and complete identity verification</li>
-              <li>
-                Not be a U.S. citizen, resident, or entity under U.S.
-                jurisdiction
-              </li>
-            </ul>
             <p className="mt-6">
-              🛑 Participation is not open to U.S. persons.
+              This is web3 done right: real access, smart contract rewards, and
+              meaningful participation.
             </p>
           </div>
           <div className="py-8 text-lg font-normal">
             <h3 className="text-[#303030] dark:text-[#F8FAFC] font-semibold text-2xl">
-              🪑 What You Gain as a PrivateSeed Contributor
+              What a Full Seat Gives You
             </h3>
 
-            <ul className="list-disc ml-6 mt-6">
-              <li>🪑Foundation Full Seat</li>
-              <li>🎮 RootOpia GameFi Boosts</li>
-              <li>🗳️ Governance Rights</li>
-              <li>🚀 Seeding Rewards (Up to 12% On-Chain)</li>
-              <li>🎁 Early Access to Wallet, DEX, NFT Marketplace</li>
-              <li>🧬 Genesis Contributor Circle</li>
-              <li>☎ Founder Strategy Call ($10K+ only)</li>
-            </ul>
-          </div>
-          <div className="py-8 text-lg font-normal">
-            <h3 className="text-[#303030] dark:text-[#F8FAFC] font-semibold text-2xl">
-              How to Apply
-            </h3>
-            <p className="mt-6">
-              Visit the Foundation Page and submit the pre-approval form:
-            </p>
-
-            <ul className="list-disc ml-6 mt-6">
-              <li>✅ Full Name & Contact</li>
-              <li>✅ Capital Commitment ($5K–$1M+)</li>
-              <li>✅ Individual or Organization</li>
-              <li>✅ Your Value to the Ecosystem</li>
-              <li>✅ NDA and KYC Agreement</li>
-            </ul>
-            <p className="mt-6">
-              🕓 Applications reviewed in 1–2 business days
-            </p>
-            <p>🤝 All submissions remain fully confidential</p>
-          </div>
-
-          <div className="py-8 text-lg font-normal">
-            <h3 className="text-[#303030] dark:text-[#F8FAFC] font-semibold text-2xl">
-              Exclusive Perks for $10K+ Contributors
-            </h3>
-
-            <p className="mt-6">If accepted, you’ll receive early access to:</p>
-
-            <ul className="list-disc ml-6 mt-6">
-              <li>
-                <a
-                  href="https://www.theaddress.earth/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline"
-                >
-                  <strong>The Address Wallet</strong>
-                </a>
+            <div className="mt-6">
+              <li className="text-[#303030] dark:text-[#F8FAFC] font-medium text-xl mt-4">
+                12% Seeding Rewards
               </li>
-              <li>
-                <a
-                  href="https://www.telexcoin.earth/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline"
-                >
-                  <strong>TelexCoin DEX</strong>
-                </a>
+              <p className="mt-2">
+                Lock dRC and earn <strong>12% on-chain protocol rewards</strong>{' '}
+                fully defined by smart contracts with transparent rules
+              </p>
+              <li className="text-[#303030] dark:text-[#F8FAFC] font-medium text-xl mt-4">
+                Referral Rewards
               </li>
-              <li>
-                <a
-                  href="https://www.oceanbazaar.earth/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline"
-                >
-                  <strong>Ocean Bazaar</strong>
-                </a>
+              <p className="mt-2">
+                Invite others and earn multi-tier rewards directly from the
+                ecosystem.
+              </p>
+              <li className="text-[#303030] dark:text-[#F8FAFC] font-medium text-xl mt-4">
+                Private Ecosystem Access
               </li>
-              <li>
+              <p className="mt-2">
+                Secure whitelist spots, unlock exclusive features, and
+                participate in <strong>limited utility drops.</strong>
+              </p>
+              <li className="text-[#303030] dark:text-[#F8FAFC] font-medium text-xl mt-4">
+                Governance Power
+              </li>
+              <p className="mt-2">
+                Shape platform decisions and join the future DAO by holding a
+                governance-backed Full Seat.
+              </p>
+              <li className="text-[#303030] dark:text-[#F8FAFC] font-medium text-xl mt-4">
+                RootOpia GameFi Benefits
+              </li>
+              <p className="mt-2">
+                Unlock boosted rewards and advantages inside{' '}
                 <a
-                  href="GameFi reimagined with purpose"
+                  href="https://www.rootopia.earth/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline"
                 >
                   <strong>RootOpia</strong>
                 </a>
-              </li>
-              <li>
-                <strong>Foundation Governance</strong>
-              </li>
-            </ul>
-            <p className="mt-6">
-              You’ll also be invited to a private 15-minute strategy call with
-              the Deep Roots Founder — to align your vision with DeWorld.
-            </p>
-            <p className="mt-6">Calls scheduled in Dubai Time (GMT+4)</p>
+                , the Deep Roots GameFi platform.
+              </p>
+            </div>
           </div>
           <div className="py-8 text-lg font-normal">
             <h3 className="text-[#303030] dark:text-[#F8FAFC] font-semibold text-2xl">
-              Why This Matters
+              Why Seats Are Limited
+            </h3>
+
+            <p className="mt-6">
+              Only a fixed number of Full Seats exist — and not every dApp or
+              project uses them. This ensures: Rare and valuable access
+              Decentralized distribution Community-first governance No
+              centralization of control Seats don’t inflate. They’re earned
+              through action and locked by protocol.
+            </p>
+
+            <ul className="list-disc ml-6 mt-6">
+              <li>Rare and valuable access</li>
+              <li>Decentralized distribution</li>
+              <li>Community-first governance</li>
+              <li>No centralization of control</li>
+            </ul>
+            <p className="mt-6">
+              Seats don’t inflate. They’re earned through action and locked by
+              protocol.
+            </p>
+          </div>
+          <div className="py-8 text-lg font-normal">
+            <h3 className="text-[#303030] dark:text-[#F8FAFC] font-semibold text-2xl">
+              How to Claim Your Full Seat
+            </h3>
+            <p className="mt-6">It starts with seeding. Here’s how:</p>
+
+            <ol className="list-decimal ml-6 mt-6">
+              <li>Join the Foundation Seeding Round</li>
+              <li>Lock your dRC tokens</li>
+              <li>
+                Get assigned a Full Seat with rewards and privileges based on
+                your round
+              </li>
+            </ol>
+            <Image
+              src={
+                isDark
+                  ? '/blog/full-seat-claim-dark.png'
+                  : '/blog/full-seat-claim.png'
+              }
+              width={792}
+              height={186}
+              className="w-full h-auto mt-6 hidden md:block"
+              alt="how to claim a foundation full seat "
+            />
+            <Image
+              src={
+                isDark
+                  ? '/blog/full-seat-claim-dark-mob.png'
+                  : '/blog/full-seat-claim-mob.png'
+              }
+              width={792}
+              height={186}
+              className="w-full h-auto mt-6 md:hidden block"
+              alt="how to claim a foundation full seat"
+            />
+            <p className="mt-6 font-bold">Earlier rounds = better benefits.</p>
+            <p>
+              Each round offers different access levels, discounts, and reward
+              multipliers.
+            </p>
+          </div>
+
+          <div className="py-8 text-lg font-normal">
+            <h3 className="text-[#303030] dark:text-[#F8FAFC] font-semibold text-2xl">
+              Who It’s For
             </h3>
 
             <p className="mt-6">This is your opportunity to:</p>
 
             <ul className="list-disc ml-6 mt-6">
-              <li>Join a limited pre-launch governance circle</li>
-              <li>Earn protocol-backed ecosystem rewards</li>
-              <li>Help shape the core infrastructure of DeWorld</li>
-              <li>Only 100 contributors will hold this title.</li>
+              <li>Long-term believers in decentralization</li>
+              <li>Early adopters of Deep Roots and DeWorld</li>
+              <li>Builders, validators, and core supporters</li>
+              <li>Contributors shaping a trustless digital world</li>
             </ul>
-            <p className="mt-6">Will you be one of them?</p>
+            <p className="mt-6">
+              If you&apos;re not here for the hype but for the roots, this seat
+              is yours.
+            </p>
           </div>
+
           <div className="py-8 text-lg font-normal">
             <h3 className="text-[#303030] dark:text-[#F8FAFC] font-semibold text-2xl">
-              Frequently Asked Questions
+              Start. Earn. Own.
             </h3>
-            <div className="mt-6">
-              <li className="text-[#303030] dark:text-[#F8FAFC] font-medium text-xl">
-                When does the blockchain launch?
-              </li>
-              <p className="mt-2">
-                Within 90 days of the final PrivateSeed round.
-              </p>
-              <li className="text-[#303030] dark:text-[#F8FAFC] font-medium text-xl">
-                Can I increase my allocation later?
-              </li>
-              <p className="mt-2">Yes, subject to available seats and terms.</p>
-              <li className="text-[#303030] dark:text-[#F8FAFC] font-medium text-xl">
-                What is the vesting period?
-              </li>
-              <p className="mt-2">
-                Participation terms apply; each round defines its own on-chain
-                rules
-              </p>
-              <li className="text-[#303030] dark:text-[#F8FAFC] font-medium text-xl">
-                What if I miss PrivateSeed?
-              </li>
-              <p className="mt-2">
-                You may join future rounds, but{' '}
-                <strong>access and rewards will differ</strong>.
-              </p>
-            </div>
+
+            <ul className="list-disc ml-6 mt-6">
+              <li>Seed now to activate your on-chain rewards</li>
+              <li>Earn through participation and referrals</li>
+              <li>Own the movement by claiming your Full Seat</li>
+            </ul>
+            <p className="mt-6">
+              This is more than a role. This is your place in the{' '}
+              <strong>future of Web3</strong>
+            </p>
           </div>
+
           <div className="py-6">
             <div className=" border border-[#D4D4D4] dark:border-[#737373] p-2.5 text-center rounded-3xl mt-6">
               <div className="bg-[#D4D4D4] dark:bg-[#3F3F3F] p-2 rounded-2xl font-bold">

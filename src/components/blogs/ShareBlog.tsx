@@ -21,8 +21,8 @@ const ShareBlog: React.FC<ShareBlogProps> = ({ isOpen, onClose, shareUrl }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
-      <div className="bg-[#E9E9E9] font-archivo dark:bg-[#1C1D20] text-[#303030] dark:text-[#F1F5F9] rounded-3xl shadow-xl w-[467px] p-6 relative">
+    <div className="fixed inset-0 px-4 md:px-1 bg-black/30 flex items-center justify-center z-50">
+      <div className="bg-[#E9E9E9] font-archivo dark:bg-[#1C1D20] text-[#303030] dark:text-[#F1F5F9] rounded-3xl shadow-xl w-full max-w-[467px] p-6 relative">
         {/* Top Bar Gradient */}
         <div className="absolute top-0 left-0 right-0 h-[24px] rounded-t-3xl bg-gradient-to-r from-gradient-from2 to-gradient-to2" />
 

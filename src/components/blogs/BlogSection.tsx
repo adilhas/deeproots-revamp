@@ -52,7 +52,7 @@ const BlogSection = () => {
         {/* <h2 className="text-3xl text-[#303030] dark:text-[#F8FAFC] font-semibold mb-4">
           All news
         </h2> */}
-        <div className="flex flex-wrap gap-4 w-fit">
+        <div className="flex flex-wrap gap-4 w-fit mx-auto">
           {allBlogs.map((blog, idx) => (
             <BlogCard key={idx} {...blog} />
           ))}

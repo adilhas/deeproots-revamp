@@ -191,7 +191,7 @@ const WhatIsDRC = () => {
               </li>
               <li>
                 <a
-                  href="GameFi reimagined with purpose"
+                  href="https://www.rootopia.earth/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline"
