@@ -42,7 +42,7 @@ export default async function handler(
         where: { email },
       });
 
-      if (existingSubmission) {
+      if (existingSubmission || email === 'admin@deeproots.earth') {
         return res.status(400).json({
           message: 'An application with this email has already been submitted.',
         });

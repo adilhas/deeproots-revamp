@@ -129,7 +129,7 @@ export const DeWorldEcosysData = [
       { name: 'X', link: '' },
     ],
     projectLink: 'Explore',
-    url: '',
+    url: 'https://www.rootscan.earth',
     darkIcon: '/deworld/ecosystem_icons/rootscan-dark.png',
     lightIcon: '/deworld/ecosystem_icons/rootscan-light.png',
     isLaunch: true,

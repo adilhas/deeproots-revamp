@@ -3,6 +3,7 @@ import React from 'react';
 import { formatDate } from '@/utils/formatDate';
 import StatusBadge from './StatusBadge';
 import SeederManagementNote from './SeederManagementNote';
+import DealRoomAccessBenefits from './DealRoomAccessBenefits';
 interface DashboardItem {
   title: string;
   description: string;
@@ -53,33 +54,45 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
   ];
   console.log(application);
   return (
-    <div className="flex flex-col gap-y-11">
-      {dashboardData.map((data, index) => (
-        <div
-          key={data.title}
-          className="bg-white text-black p-4 rounded-3xl w-full"
-        >
-          <div className="flex items-center mb-3 flex-wrap justify-between">
-            <div className="text-2xl font-medium">
-              {index + 1}. {data.title}
-            </div>
-            <StatusBadge status={data.status} />
+    <div>
+      <div className="flex flex-col md:flex-row gap-6 mb-6">
+        <div>
+          <div className="ext-[#303030] text-2xl font-semibold mb-8">
+            3 steps to Secure your seat
           </div>
-          <div className="flex items-center mb-3 flex-wrap justify-between">
-            <div className="text-[#525252] text-lg">{data.description}</div>
-            {data.status !== 'not-submitted' && data.status !== 'no-access' && (
-              <div className="text-sm">{data.date}</div>
-            )}
+          <div className="flex flex-col gap-y-11">
+            {dashboardData.map((data, index) => (
+              <div
+                key={data.title}
+                className="bg-white text-[#303030] p-4 rounded-3xl w-full"
+              >
+                <div className="flex items-center mb-3 flex-wrap justify-between">
+                  <div className="text-2xl font-medium">
+                    {index + 1}. {data.title}
+                  </div>
+                  <StatusBadge status={data.status} />
+                </div>
+                <div className="flex items-center mb-3 flex-wrap justify-between">
+                  <div className="text-[#525252] text-lg">
+                    {data.description}
+                  </div>
+                  {data.status !== 'not-submitted' &&
+                    data.status !== 'no-access' && (
+                      <div className="text-sm">{data.date}</div>
+                    )}
+                </div>
+                <button
+                  onClick={() => setCurrentTab(data.tabName)}
+                  className="bg-[#E9E9E9] font-semibold text-lg px-6 py-[10px] rounded-lg text-[#4B5563]"
+                >
+                  View Details
+                </button>
+              </div>
+            ))}
           </div>
-          <button
-            onClick={() => setCurrentTab(data.tabName)}
-            className="bg-[#E9E9E9] font-semibold text-lg px-6 py-[10px] rounded-lg text-[#4B5563]"
-          >
-            View Details
-          </button>
         </div>
-      ))}
-      <div className="bg-white text-black p-4 rounded-3xl w-full">
+        <DealRoomAccessBenefits />
+        {/* <div className="bg-white text-black p-4 rounded-3xl w-full">
         <div className="flex flex-col md:flex-row items-start md:items-center mb-3 gap-2 flex-wrap justify-between">
           <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
             <div className="text-2xl font-medium">
@@ -139,7 +152,8 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
               Explore more inside the Deal Room.
             </div>
           </div>
-        </div>
+        </div> */}
+        {/* </div> */}
       </div>
       <SeederManagementNote />
     </div>
