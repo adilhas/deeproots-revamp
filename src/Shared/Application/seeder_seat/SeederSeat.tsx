@@ -7,8 +7,9 @@ import SeederNotification from './SeederNotification';
 import SeederPerks from './SeederPerks';
 import SeederContactAccess from './SeederContactAccess';
 import SeederDocuments from './SeederDocuments';
-import TokenVesting from './TokenVesting';
-import SeederManagementNote from '../SeederManagementNote';
+import TokenSeedingDetails from './TokenSeedingDetails';
+import { PiCopy } from 'react-icons/pi';
+// import SeederManagementNote from '../SeederManagementNote';
 
 const SeederSeat = () => {
   const { data: session } = useSession();
@@ -33,15 +34,28 @@ const SeederSeat = () => {
         <SeederNotification />
         <div className="flex flex-col lg:flex-row-reverse gap-6">
           <div className="min-w-[385px]">
-            <TokenVesting />
+            <TokenSeedingDetails />
           </div>
           <div>
             <SeederPerks />
             <SeederContactAccess />
+            <SeederDocuments />
           </div>
         </div>
-        <SeederManagementNote />
-        <SeederDocuments />
+        {/* <SeederManagementNote /> */}
+      </div>
+      <div className="text-center mt-14">
+        <div className="text-xl w-fit mx-auto">
+          Need help? Contact Team via mail at
+        </div>
+        <div className="flex flex-row w-full max-w-[234px] justify-between items-center mx-auto mt-2">
+          <div className="text-md font-bold text-[#2563EB]">
+            admin@deeproots.earth
+          </div>
+          <div>
+            <PiCopy className="w-5 h-5 text-[#737373]" />
+          </div>
+        </div>
       </div>
     </div>
   );

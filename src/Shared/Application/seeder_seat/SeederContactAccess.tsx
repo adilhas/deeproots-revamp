@@ -1,11 +1,11 @@
 import React from 'react';
-import { AiOutlineQuestionCircle } from 'react-icons/ai';
-import { BiEnvelope } from 'react-icons/bi';
+// import { AiOutlineQuestionCircle } from 'react-icons/ai';
+// import { BiEnvelope } from 'react-icons/bi';
 
 const SeederContactAccess = () => {
   return (
-    <div className="w-full text-[#303030] min-h-[297px] my-5 bg-white p-6 rounded-4xl">
-      <div className=" text-2xl font-semibold">Contact</div>
+    <div className="w-full text-[#303030] my-5 bg-white p-6 rounded-4xl">
+      {/* <div className=" text-2xl font-semibold">Contact</div> */}
       <div className="my-3.5">
         <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
           <div className="text-xl font-medium">Founders Call</div>
@@ -24,7 +24,7 @@ const SeederContactAccess = () => {
         </div>
       </div>
 
-      <div className="my-3.5">
+      {/* <div className="my-3.5">
         <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
           <div className="text-xl font-medium">Question Submission</div>
         </div>
@@ -50,7 +50,7 @@ const SeederContactAccess = () => {
             <BiEnvelope className="w-6 h-6" /> Contact Support
           </button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

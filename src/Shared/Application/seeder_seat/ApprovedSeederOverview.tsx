@@ -10,9 +10,15 @@ const ApprovedSeederOverview = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 w-full md:w-[75%] gap-y-3">
         <div className=" col-span-1 md:col-span-2 flex flex-col md:flex-row jjustify-start items-start md:items-center gap-1">
           <h2 className="text-4xl font-bold">{application?.fullName}</h2>
-          <div className="text-[#9333EA] font-semibold bg-[#F3E8FF] text-md md:text-lg py-1 px-4 rounded-[40px] w-fit">
-            You own 1 of 100 Foundation Seats
-          </div>
+          {application?.seedTier === 'tier-1' ? (
+            <div className="text-[#EA580C] font-semibold bg-[#FED7AA] text-md md:text-lg py-1 px-4 rounded-[40px] w-fit">
+              You own 1 of 10 Founder Seats
+            </div>
+          ) : (
+            <div className="text-[#9333EA] font-semibold bg-[#F3E8FF] text-md md:text-lg py-1 px-4 rounded-[40px] w-fit">
+              You own 1 of 100 Foundation Seats
+            </div>
+          )}
         </div>
         <div className="text-xl flex items-center gap-2">
           <div>

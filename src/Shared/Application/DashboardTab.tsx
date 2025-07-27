@@ -44,7 +44,7 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
     {
       title: 'Deal Room',
       description: 'Sign NDA Submit relvant Documents',
-      date: formatDate(application.paymentDetails?.updatedAt ?? ''),
+      date: formatDate(application.updatedAt ?? ''),
       status:
         application.preApproval === 'approved'
           ? application.dealRoom
@@ -72,13 +72,13 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
                   </div>
                   <StatusBadge status={data.status} />
                 </div>
-                <div className="flex items-center mb-3 flex-wrap justify-between">
+                <div className="flex items-start mb-3 flex-col lg:flex-row justify-between">
                   <div className="text-[#525252] text-lg">
                     {data.description}
                   </div>
                   {data.status !== 'not-submitted' &&
                     data.status !== 'no-access' && (
-                      <div className="text-sm">{data.date}</div>
+                      <div className="text-sm text-nowrap">{data.date}</div>
                     )}
                 </div>
                 <button

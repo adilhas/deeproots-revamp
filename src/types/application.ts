@@ -28,6 +28,7 @@ export type ApplicationDataType = {
   managementNotes?: ManagementNotesType[];
   isDealRoomExpired?: boolean;
   notifications?: NotificationItemType[];
+  updatedAt: string;
 };
 
 export type StatusType =

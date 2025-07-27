@@ -1,5 +1,5 @@
 'use client';
-
+// TODO to be removed this file is replaced by TokenSeedingDetails.tsx
 import { useApplication } from '@/context/ApplicationContext';
 import { formatCurrencyShort } from '@/utils/formatCapital';
 import { ChevronRight } from 'lucide-react';
