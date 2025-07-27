@@ -65,7 +65,11 @@ const ApprovedSeederOverview = () => {
       </div>
 
       <div className="text-start mt-6 md:mt-0 p-3 rounded-2xl h-full flex flex-col justify-center w-full md:w-[25%] bg-white text-[#696969]">
-        <div>ID: Genesis Seat #7</div>
+        <div>
+          ID:{' '}
+          {application?.seedTier === 'tier-1' ? 'Founder Seat' : 'Genesis Seat'}{' '}
+          #7
+        </div>
         <div className="w-fit mx-auto font-semibold text-3xl my-4">
           {Number(application?.capital) / 5} dRC
         </div>

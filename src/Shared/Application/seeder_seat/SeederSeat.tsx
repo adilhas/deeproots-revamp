@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DashboardHeader from '../DashboardHeader';
 import { signOut, useSession } from 'next-auth/react';
 import ApplicationStatusInfo from '@/components/admin/ApplicationStatusInfo';
@@ -9,22 +9,41 @@ import SeederContactAccess from './SeederContactAccess';
 import SeederDocuments from './SeederDocuments';
 import TokenSeedingDetails from './TokenSeedingDetails';
 import { PiCopy } from 'react-icons/pi';
+import { Check } from 'lucide-react';
+import PrivateRoundProgress from './PrivateRoundProgress';
+import BroadcastModal from './BroadcastModal';
 // import SeederManagementNote from '../SeederManagementNote';
 
 const SeederSeat = () => {
   const { data: session } = useSession();
+  const email = 'admin@deeproots.earth';
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 3000); // ⏱️ reset after 3 seconds
+    } catch (err) {
+      console.error('Failed to copy email:', err);
+    }
+  };
   return (
     <div className="border min-h-screen font-archivo bg-[#E7E7E7] text-[#303030] pb-10">
-      <div className="py-3">
+      <div className="py-3 sticky md:static top-0 z-50 ">
         <DashboardHeader
           label={session?.user.role === 'seeder' ? 'Pre seed' : 'Admin'}
           onRight={
-            <button
-              className="text-lg text-[#696969] underline"
-              onClick={() => signOut()}
-            >
-              Log Out
-            </button>
+            <div className="flex flex-row items-center justify-end gap-2">
+              <BroadcastModal />
+
+              <button
+                className="text-lg text-[#696969] underline"
+                onClick={() => signOut()}
+              >
+                Log Out
+              </button>
+            </div>
           }
         />
       </div>
@@ -32,9 +51,10 @@ const SeederSeat = () => {
         <ApplicationStatusInfo />
         <ApprovedSeederOverview />
         <SeederNotification />
-        <div className="flex flex-col lg:flex-row-reverse gap-6">
+        <div className="flex flex-col-reverse lg:flex-row-reverse gap-6">
           <div className="min-w-[385px]">
             <TokenSeedingDetails />
+            <PrivateRoundProgress />
           </div>
           <div>
             <SeederPerks />
@@ -53,7 +73,13 @@ const SeederSeat = () => {
             admin@deeproots.earth
           </div>
           <div>
-            <PiCopy className="w-5 h-5 text-[#737373]" />
+            <button onClick={handleCopy}>
+              {copied ? (
+                <Check className="w-5 h-5 text-green-600" />
+              ) : (
+                <PiCopy className="w-5 h-5 text-[#737373] hover:text-[#2563EB]" />
+              )}
+            </button>
           </div>
         </div>
       </div>
