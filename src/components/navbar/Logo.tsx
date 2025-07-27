@@ -7,12 +7,12 @@ export default function Logo() {
   return (
     <div className="text-2xl font-bold flex flex-row items-center gap-2 justify-between">
       <Link
-        href="/"
+        href="https://i.postimg.cc/Pr2PRDQG/logo-big.png"
         className="w-10 h-10 md:w-16 md:h-16 relative overflow-hidden"
       >
         <Image
           alt="logo"
-          src="/landing/logo-big.png"
+          src="https://i.postimg.cc/Pr2PRDQG/logo-big.png"
           fill
           className="object-contain"
         />

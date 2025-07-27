@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   i18n: nextI18NextConfig.i18n,
   compress: true,
   images: {
+    domains: ['i.postimg.cc'],
     unoptimized: false,
   },
 };
