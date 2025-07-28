@@ -107,15 +107,15 @@ export const allBlogs = [
     image: '/blog/blog-card-img.png',
     slug: 'what-is-the-privateseed-access-round',
   },
-  // {
-  //   title: 'dRC Tokenomics',
-  //   subtitle: 'Native Currency Built to Last',
-  //   description:
-  //     'Explore the tokenomics of dRC – DeepRoots’ native currency fueling 20+ dApps, governance, GameFi, and long-term participation across the DeWorld ecosystem.',
-  //   date: 'June 2025',
-  //   image: '/blog/blog-card-img.png',
-  //   slug: 'drc-tokenomics',
-  // },
+  {
+    title: 'dRC Tokenomics',
+    subtitle: 'Native Currency Built to Last',
+    description:
+      'Explore the tokenomics of dRC – DeepRoots’ native currency fueling 20+ dApps, governance, GameFi, and long-term participation across the DeWorld ecosystem.',
+    date: 'July 28, 2025',
+    image: '/blog/blog-card-img.png',
+    slug: 'drc-tokenomics',
+  },
   // {
   //   title: 'What Is Seeding on Deep Roots?',
   //   subtitle: 'It’s Not Staking. It’s Not Farming. It’s Seeding.',

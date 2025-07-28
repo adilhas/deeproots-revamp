@@ -25,7 +25,7 @@ const Hero = () => {
                 <br />
                 {rest.join(' ')}
               </h2>
-              <p className="max-w-[500px] mb-10">
+              <p className="max-w-[500px] mb-10 mt-4">
                 {t('hero-section.subtitle')}
               </p>
             </div>

@@ -27,7 +27,7 @@ const BlogLayout = ({ title, subtitle, children, date, slug }: IBlogLayout) => {
         </Link>
       </div>
       <div className="w-full max-w-[800px] mx-auto px-2">
-        <div className="text-center pb-8 relative  border-2 border-[#d5d5d5] rounded-4xl">
+        <div className="text-center pb-8 relative  border-2 border-[#d5d5d5] dark:border-[#343434] rounded-4xl">
           <div className="w-full h-[27px] bg-gradient-to-r from-[#AD1AAF] to-[#0085A8] rounded-t-[36px] mt-[0.1px]"></div>
           <div className="px-8">
             <h1 className="text-[#303030] dark:text-[#F8FAFC] my-5 font-semibold text-2xl md:text-5xl">
