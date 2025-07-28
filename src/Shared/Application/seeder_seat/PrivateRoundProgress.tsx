@@ -10,6 +10,7 @@ const PrivateRoundProgress = () => {
       value: <span className="text-[#2563EB]">30d : 7h : 4m : 2s</span>,
     },
     { label: 'Foundation Seats Left', value: '10 of 100' },
+    { label: 'Start Date', value: '10th June, 2026' },
     { label: 'End Date', value: '10th June, 2026' },
     { label: 'Founders seats Left', value: '4 of 10' },
   ];

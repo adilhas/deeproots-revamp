@@ -66,7 +66,7 @@ const DealRoomAccessBenefits = () => {
             className=""
           />
 
-          <div className="text-xl font-semibold">Foundation seat</div>
+          <div className="text-xl font-semibold">Founder seat</div>
           <div className="bg-[#FED7AA] py-1 px-4 text-[#EA580C] text-sm w-fit font-semibold rounded-4xl">
             10 Seats
           </div>
