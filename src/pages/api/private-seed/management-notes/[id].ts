@@ -54,14 +54,14 @@ export default async function handler(
         },
       });
 
-      await prisma.notification.create({
-        data: {
-          title: 'New Message',
-          message: note.trim(),
-          sender: sender,
-          submissionId: id,
-        },
-      });
+      // await prisma.notification.create({
+      //   data: {
+      //     title: 'New Message',
+      //     message: note.trim(),
+      //     sender: sender,
+      //     submissionId: id,
+      //   },
+      // });
 
       const html = await render(
         CheckInboxMail({

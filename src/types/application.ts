@@ -85,6 +85,20 @@ export type ManagementNotesType = {
   sender: SenderTypeEnum;
 };
 
+export type BroadcastMessageType = {
+  id: string;
+  message: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type AnnouncementType = {
+  id: string;
+  message: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
 export type SenderTypeEnum = 'ADMIN' | 'SEEDER';
 
 export type NotificationItemType = {

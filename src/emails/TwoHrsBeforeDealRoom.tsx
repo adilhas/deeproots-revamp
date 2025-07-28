@@ -8,6 +8,7 @@ import {
   Container,
   Heading,
   Text,
+  Link,
 } from '@react-email/components';
 
 export default function TwoHrsLeftDealRoom(props: {
@@ -58,13 +59,18 @@ export default function TwoHrsLeftDealRoom(props: {
           <Text>After that, your seat will no longer be guaranteed.</Text>
           <Text>To confirm your participation and secure your allocation:</Text>
           <Text>
-            <a
+            <Link
               href={`${url}/seeder/login`}
               target="_blank"
               rel="noopener noreferrer"
+              style={{
+                color: '#0070f3',
+                textDecoration: 'underline',
+                fontWeight: 'bold',
+              }}
             >
               Return to Deal Room
-            </a>
+            </Link>
           </Text>
           <Text>
             If you're encountering any issues, contact us immediately.

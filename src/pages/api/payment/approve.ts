@@ -5,6 +5,8 @@ import { supabaseAdmin } from '@/lib/supabaseAdmin';
 import { v4 as uuidv4 } from 'uuid';
 import { prisma } from '@/lib/prisma';
 import nodemailer from 'nodemailer';
+import { render } from '@react-email/render';
+import PaymentApprovalMail from '@/emails/PaymentApprovalMail';
 
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
@@ -124,12 +126,19 @@ We’ve received your payment and your allocation has been approved.
 Thank you for securing your seat in DEEPROOTS!
 
 - DEEPROOTS Team`;
-
+    const html = await render(
+      PaymentApprovalMail({
+        name: submission.fullName,
+        url: process.env.NEXTAUTH_URL || '',
+      }),
+      { pretty: true }
+    );
     await transporter.sendMail({
       from: `Team DEEPROOTS`,
       to: submission.email,
       subject,
       text,
+      html,
     });
     return res.status(200).json({
       receiptUrl: updated.receiptUrl,

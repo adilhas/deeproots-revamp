@@ -6,13 +6,15 @@ import {
   Container,
   Heading,
   Text,
+  Link,
 } from '@react-email/components';
 
 export default function PreApprovalDeclineEmail(props: {
   name: string;
   reason: string;
+  url: string;
 }) {
-  const { name, reason } = props;
+  const { name, reason, url } = props;
   return (
     <Html>
       <Head />
@@ -52,6 +54,20 @@ export default function PreApprovalDeclineEmail(props: {
           <Text>
             <strong>Reason:</strong> {reason}
           </Text>
+          <Link
+            href={`${url}/seeder/login/`}
+            style={{
+              display: 'inline-block',
+              padding: '12px 20px',
+              backgroundColor: '#AD1AAF',
+              color: '#ffffff',
+              textDecoration: 'none',
+              borderRadius: '6px',
+              fontWeight: 'bold',
+            }}
+          >
+            Return to Dashboard
+          </Link>
           <Text>Thank you for your interest.</Text>
           <Text>- Team DEEPROOTS</Text>
         </Container>

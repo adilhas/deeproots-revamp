@@ -7,10 +7,14 @@ import {
   Container,
   Heading,
   Text,
+  Link,
 } from '@react-email/components';
 
-export default function DealRoomExpiredMail(props: { fullName: string }) {
-  const { fullName } = props;
+export default function DealRoomExpiredMail(props: {
+  fullName: string;
+  url: string;
+}) {
+  const { fullName, url } = props;
   return (
     <Html>
       <Head>
@@ -54,6 +58,20 @@ export default function DealRoomExpiredMail(props: { fullName: string }) {
           <Text>
             If you have any questions or need assistance, we’re here to help.
           </Text>
+          <Link
+            href={`${url}/seeder/login/`}
+            style={{
+              display: 'inline-block',
+              padding: '12px 20px',
+              backgroundColor: '#AD1AAF',
+              color: '#ffffff',
+              textDecoration: 'none',
+              borderRadius: '6px',
+              fontWeight: 'bold',
+            }}
+          >
+            Go to Dashboard
+          </Link>
           <Text>- Team DEEPROOTS Foundation Team</Text>
         </Container>
       </Body>

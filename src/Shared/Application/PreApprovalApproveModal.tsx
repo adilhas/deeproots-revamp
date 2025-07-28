@@ -16,6 +16,20 @@ const PreApprovalApproveModal = ({
 }: IPreApprovalApproveModal) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const validateUsdtAddress = (address: string) => {
+    if (!address.startsWith('T')) return 'TRC20 address must start with "T".';
+    if (address.length !== 34)
+      return 'TRC20 address must be 34 characters long.';
+    return '';
+  };
+
+  const validateUsdcAddress = (address: string) => {
+    if (!address.startsWith('0x')) return 'BEP20 address must start with "0x".';
+    if (address.length !== 42)
+      return 'BEP20 address must be 42 characters long.';
+    return '';
+  };
+
   const [isOpen, setIsOpen] = useState(false);
   const { setApplication, application } = useApplication();
   const handleOpen = () => setIsOpen(true);
@@ -24,6 +38,18 @@ const PreApprovalApproveModal = ({
   };
 
   const handleConfirm = async () => {
+    const usdtError = validateUsdtAddress(usdtAddress);
+    const usdcError = validateUsdcAddress(usdcAddress);
+
+    if (usdtError) {
+      toast.error(`USDT Address Error: ${usdtError}`);
+      return;
+    }
+
+    if (usdcError) {
+      toast.error(`USDC Address Error: ${usdcError}`);
+      return;
+    }
     setIsSubmitting(true);
     try {
       const res = await fetch(`/api/private-seed/${application?.id}`, {

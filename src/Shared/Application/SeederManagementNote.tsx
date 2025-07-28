@@ -1,7 +1,7 @@
 'use client';
 
 import { useApplication } from '@/context/ApplicationContext';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { formatDistanceToNow } from 'date-fns';
 import { useSession } from 'next-auth/react';
 import { ManagementNotesType } from '@/types/application';
@@ -20,6 +20,7 @@ const NotificationCard = ({
   canSend = false,
   filterBySender,
   onNewNote,
+  loadingMessages,
 }: {
   title: string;
   buttonLabel: string;
@@ -28,6 +29,7 @@ const NotificationCard = ({
   canSend?: boolean;
   filterBySender?: 'ADMIN' | 'SEEDER';
   onNewNote?: (note: NoteMessage) => void;
+  loadingMessages?: boolean;
 }) => {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState<NoteMessage[]>([]);
@@ -35,6 +37,7 @@ const NotificationCard = ({
   const { data: session } = useSession();
   const isAdmin = session?.user?.role === 'admin';
   const { application } = useApplication();
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     setMessages(initialMessages);
@@ -83,41 +86,36 @@ const NotificationCard = ({
     ? messages.filter((msg) => msg.sender === filterBySender)
     : messages;
 
+  useEffect(() => {
+    const el = scrollContainerRef.current;
+    if (el) {
+      el.scrollTop = el.scrollHeight;
+    }
+  }, [visibleMessages]);
+
   return (
-    <div className="w-full rounded-2xl overflow-hidden bg-white border border-[#D4D4D4] flex flex-col h-[400px]">
+    <div className="w-full rounded-2xl overflow-hidden justify-between bg-white border border-[#D4D4D4] flex flex-col h-[400px]">
       <div className="bg-[#E9E9E9] px-4 py-3 flex flex-col rounded-t-2xl">
         <h2 className="font-semibold text-black text-2xl mb-3">{title}</h2>
-        {canSend && (
-          <div className="flex gap-4 items-center">
-            <input
-              type="text"
-              placeholder="Enter Message"
-              maxLength={40}
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              className="px-4 w-full py-2 rounded-full border border-gray-300 bg-white text-sm outline-none"
-            />
-            <button
-              onClick={handleAction}
-              disabled={loading}
-              className="bg-gradient-to-r w-full max-w-[172px] from-gradient-from2 to-gradient-to2 text-white px-4 py-2 rounded-lg text-sm font-medium disabled:opacity-50"
-            >
-              {loading ? 'Saving...' : buttonLabel}
-            </button>
-          </div>
-        )}
       </div>
 
-      <div className="px-4 py-4 space-y-3 flex-1 overflow-y-auto">
-        {visibleMessages.length === 0 ? (
+      <div
+        className="px-4 py-4 space-y-3 flex-1 overflow-y-auto"
+        ref={scrollContainerRef}
+      >
+        {loadingMessages ? (
+          <div className="flex w-full text-center text-gray-500 text-sm animate-pulse">
+            Loading messages...
+          </div>
+        ) : visibleMessages.length === 0 ? (
           <p className="text-center text-gray-500 text-sm">No messages yet</p>
         ) : (
-          <ul className="space-y-3">
+          <ul className="space-y-3 py-4">
             {visibleMessages
               .sort(
                 (a, b) =>
-                  new Date(b.createdAt).getTime() -
-                  new Date(a.createdAt).getTime()
+                  new Date(a.createdAt).getTime() -
+                  new Date(b.createdAt).getTime()
               )
               .map((msg, index) => (
                 <li
@@ -141,11 +139,37 @@ const NotificationCard = ({
           </ul>
         )}
       </div>
+
+      {canSend && (
+        <div className="px-4 py-3 border-t border-[#E5E5E5] flex gap-4 items-center">
+          <input
+            type="text"
+            placeholder="Enter Message"
+            maxLength={40}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            className="px-4 w-full py-2 rounded-full border border-gray-300 bg-white text-sm outline-none"
+          />
+          <button
+            onClick={handleAction}
+            disabled={loading}
+            className="bg-gradient-to-r w-full max-w-[172px] from-gradient-from2 to-gradient-to2 text-white px-4 py-2 rounded-lg text-sm font-medium disabled:opacity-50"
+          >
+            {loading ? 'Saving...' : buttonLabel}
+          </button>
+        </div>
+      )}
     </div>
   );
 };
 
-const SeederManagementNote = () => {
+interface SeederManagementNoteProps {
+  layoutClassName?: string;
+}
+
+const SeederManagementNote = ({
+  layoutClassName,
+}: SeederManagementNoteProps) => {
   const { application } = useApplication();
   const { data: session } = useSession();
   const isAdmin = session?.user?.role === 'admin';
@@ -153,10 +177,12 @@ const SeederManagementNote = () => {
   const submissionId = application?.id;
 
   const [notes, setNotes] = useState<NoteMessage[]>([]);
+  const [loadingNotes, setLoadingNotes] = useState(true); // NEW
 
   useEffect(() => {
     const fetchNotes = async () => {
       if (!submissionId) return;
+      setLoadingNotes(true);
       try {
         const res = await fetch(
           `/api/private-seed/management-notes/${submissionId}`
@@ -170,6 +196,8 @@ const SeederManagementNote = () => {
         setNotes(formattedNotes);
       } catch (error) {
         console.error('Failed to fetch management notes', error);
+      } finally {
+        setLoadingNotes(false);
       }
     };
 
@@ -180,12 +208,14 @@ const SeederManagementNote = () => {
     setNotes((prev) => [note, ...prev]);
   };
 
+  const appliedLayoutClass =
+    layoutClassName ||
+    (isAdmin ? 'flex-col lg:flex-row' : 'flex-col-reverse lg:flex-row-reverse');
+
   return (
     <div
       className={`flex ${
-        isAdmin
-          ? 'flex-col lg:flex-row'
-          : 'flex-col-reverse lg:flex-row-reverse'
+        appliedLayoutClass
       } gap-6 justify-center items-start w-full`}
     >
       <NotificationCard
@@ -196,6 +226,7 @@ const SeederManagementNote = () => {
         canSend={isSeeder}
         filterBySender="SEEDER"
         onNewNote={handleNewNote}
+        loadingMessages={loadingNotes}
       />
       <NotificationCard
         title={isAdmin ? 'Contact Seeder' : 'Management Notification'}
@@ -205,6 +236,7 @@ const SeederManagementNote = () => {
         canSend={isAdmin}
         filterBySender="ADMIN"
         onNewNote={handleNewNote}
+        loadingMessages={loadingNotes}
       />
     </div>
   );

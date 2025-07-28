@@ -13,7 +13,8 @@ import SubmitSuccessModal from './SubmitSuccessModal';
 import { PrivateSeedSchema } from '@/schema/privateSeedSchema';
 import countries from 'i18n-iso-countries';
 import enLocale from 'i18n-iso-countries/langs/en.json';
-import { toast } from 'react-toastify';
+import OpenSoonModal from './OpenSoonModal';
+// import { toast } from 'react-toastify';
 
 countries.registerLocale(enLocale); // Register English
 
@@ -41,35 +42,43 @@ const PrivateSeedForm = () => {
     resolver: zodResolver(PrivateSeedSchema),
   });
 
-  const [submitting, setSubmitting] = useState(false);
+  const [submitting] = useState(false);
   const selectedCapital = watch('capital');
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const onSubmit = async (data: PrivateSeedFormData) => {
-    setSubmitting(true);
-    try {
-      const response = await fetch('/api/private-seed', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
+    (
+      document.getElementById('opensoon_modal') as HTMLDialogElement
+    )?.showModal();
+    reset();
+    setCustomCapital('');
+    // setSubmitting(true);
 
-      if (response.ok) {
-        (
-          document.getElementById(
-            'form_success_submit_modal'
-          ) as HTMLDialogElement
-        )?.showModal();
-        reset();
-      } else {
-        const errorData = await response.json();
-        toast.error(errorData.message || 'Failed to submit form.');
-      }
-    } catch (error) {
-      console.error('Submission error:', error);
-      toast.error('Something went wrong.');
-    } finally {
-      setSubmitting(false);
-    }
+    // try {
+    //   const response = await fetch('/api/private-seed', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify(data),
+    //   });
+
+    //   if (response.ok) {
+    //     (
+    //       document.getElementById(
+    //         'form_success_submit_modal'
+    //       ) as HTMLDialogElement
+    //     )?.showModal();
+    //     reset();
+    //     setCustomCapital('');
+    //   } else {
+    //     const errorData = await response.json();
+    //     toast.error(errorData.message || 'Failed to submit form.');
+    //   }
+    // } catch (error) {
+    //   console.error('Submission error:', error);
+    //   toast.error('Something went wrong.');
+    // } finally {
+    //   setSubmitting(false);
+    // }
   };
   const capitalOptions = [
     { label: '$5k', value: 5000 },
@@ -422,6 +431,7 @@ const PrivateSeedForm = () => {
           </div>
         </form>
         <SubmitSuccessModal />
+        <OpenSoonModal />
       </div>
 
       {/* Note Section */}

@@ -20,13 +20,13 @@ export default async function handler(
       return res.status(400).json({ error: 'Invalid submission ID.' });
     }
 
-    const currentUserRole = session.user.role;
-    const filterSender = currentUserRole === 'admin' ? 'SEEDER' : 'ADMIN';
+    // const currentUserRole = session.user.role;
+    // const filterSender = currentUserRole === 'admin' ? 'SEEDER' : 'ADMIN';
     try {
       const notifications = await prisma.notification.findMany({
         where: {
           submissionId,
-          sender: filterSender,
+          // sender: filterSender,
         },
         orderBy: { createdAt: 'desc' },
       });

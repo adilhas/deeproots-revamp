@@ -33,6 +33,7 @@ export async function sendSeedReminder(
     html = await render(
       React.createElement(DealRoomExpiredMail, {
         fullName: props?.fullName,
+        url: props.url,
       })
     );
   }

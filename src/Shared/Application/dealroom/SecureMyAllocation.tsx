@@ -58,7 +58,7 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
 
   const handleConfirm = async () => {
     if (!amountSent || !transactionLink || !screenshot || !application?.id) {
-      alert('Please complete all fields.');
+      toast.info('Please complete all fields.');
       return;
     }
 

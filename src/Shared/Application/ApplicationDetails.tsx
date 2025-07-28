@@ -14,6 +14,10 @@ import AdminDealRoom from './AdminDealRoomTab';
 import { formatCurrencyShort } from '@/utils/formatCapital';
 import DashboardHeader from './DashboardHeader';
 import SeederNotification from './seeder_seat/SeederNotification';
+// import SeederSeat from './seeder_seat/SeederSeat';
+import ApprovedSeederOverview from './seeder_seat/ApprovedSeederOverview';
+import BroadcastModal from './seeder_seat/BroadcastModal';
+import SeederSeatDetails from './seeder_seat/SeederSeatDetails';
 
 interface ApplicationDetailsProps {
   application: ApplicationDataType;
@@ -23,7 +27,7 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
   application,
 }) => {
   const [currentTab, setCurrentTab] = useState<
-    'dashboard' | 'application' | 'pre-approval' | 'deal-room'
+    'dashboard' | 'application' | 'pre-approval' | 'deal-room' | 'private-seat'
   >('dashboard');
   const { data: session } = useSession();
 
@@ -41,19 +45,25 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
         <DashboardHeader
           label={session?.user.role === 'seeder' ? 'Pre seed' : 'Admin'}
           onRight={
-            <button
-              className="text-lg text-[#696969] underline"
-              onClick={() => signOut()}
-            >
-              Log Out
-            </button>
+            <div className="flex flex-row items-center justify-end gap-2">
+              {application.dealRoom === 'approved' && <BroadcastModal />}
+
+              <button
+                className="text-lg text-[#696969] underline"
+                onClick={() => signOut()}
+              >
+                Log Out
+              </button>
+            </div>
           }
         />
       </div>
 
       <div className="max-w-[1200px] mx-auto px-3">
         <ApplicationStatusInfo />
-        {application && (
+        {application && application.dealRoom === 'approved' ? (
+          <ApprovedSeederOverview />
+        ) : (
           <div className="p-6 rounded-4xl bg-gradient-to-r from-[#AD1AAF] to-[#0085A8] border border-[#999100] text-white flex flex-col md:flex-row justify-between items-start">
             <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-y-3">
               <h2 className="text-4xl font-bold col-span-1 md:col-span-2">
@@ -163,6 +173,19 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
               {tab.label}
             </button>
           ))}
+          {session?.user?.role === 'admin' &&
+            application?.dealRoom === 'approved' && (
+              <button
+                onClick={() => setCurrentTab('private-seat')}
+                className={`p-2 rounded-[64px] flex flex-row text-[#696969]  items-center justify-start md:justify-center gap-2 w-full text-xl ${
+                  currentTab === 'private-seat'
+                    ? 'bg-[#E9E9E9] font-semibold border border-[#D4D4D4]'
+                    : 'font-normal'
+                }`}
+              >
+                Private Seat
+              </button>
+            )}
         </div>
         {currentTab === 'dashboard' &&
           (session?.user?.role === 'admin' ? (
@@ -188,6 +211,7 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
           ) : (
             <DealRoomTab />
           ))}
+        {currentTab === 'private-seat' && <SeederSeatDetails />}
       </div>
     </div>
   );

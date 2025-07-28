@@ -7,6 +7,7 @@ import {
   Container,
   Heading,
   Text,
+  Link,
 } from '@react-email/components';
 
 export default function ApplicationApproveEmail(props: {
@@ -53,7 +54,7 @@ export default function ApplicationApproveEmail(props: {
           <Text>
             Congratulations—your application has been approved!{' '}
             <a
-              href={`${url}/seeder/login`}
+              href={`${url}/seeder/login/`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -62,6 +63,20 @@ export default function ApplicationApproveEmail(props: {
             now to complete the next steps and secure your Full Seat in the
             Foundation.
           </Text>
+          <Link
+            href={`${url}/seeder/login/`}
+            style={{
+              display: 'inline-block',
+              padding: '12px 20px',
+              backgroundColor: '#AD1AAF',
+              color: '#ffffff',
+              textDecoration: 'none',
+              borderRadius: '6px',
+              fontWeight: 'bold',
+            }}
+          >
+            Go to Dashboard
+          </Link>
           <Text>Thank you for your patience and welcome aboard.</Text>
           <Text>Team DEEPROOTS</Text>
         </Container>

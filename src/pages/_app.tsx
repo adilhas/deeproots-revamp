@@ -8,6 +8,7 @@ import { SessionProvider } from 'next-auth/react';
 import { ApplicationProvider } from '@/context/ApplicationContext';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { BroadcastProvider } from '@/context/BroadcastContext';
 
 const MyApp = ({
   Component,
@@ -18,12 +19,14 @@ const MyApp = ({
     <SessionProvider session={session}>
       <ThemeProvider>
         <ApplicationProvider>
-          <Head>
-            <title>DEEPROOTS</title>
-            <link rel="icon" href="/landing/logo.png" />
-          </Head>
-          <ToastContainer position="top-right" autoClose={3000} />
-          <Component {...pageProps} />
+          <BroadcastProvider>
+            <Head>
+              <title>DEEPROOTS</title>
+              <link rel="icon" href="/landing/logo.png" />
+            </Head>
+            <ToastContainer position="top-right" autoClose={3000} />
+            <Component {...pageProps} />
+          </BroadcastProvider>
         </ApplicationProvider>
       </ThemeProvider>
     </SessionProvider>

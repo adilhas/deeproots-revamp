@@ -12,10 +12,12 @@ import {
 
 interface RequestSubmittedEmailProps {
   fullName: string;
+  url: string;
 }
 
 export default function RequestSubmittedEmail({
   fullName,
+  url,
 }: RequestSubmittedEmailProps) {
   return (
     <Html>
@@ -131,6 +133,20 @@ export default function RequestSubmittedEmail({
           <Text style={{ fontSize: '14px', color: '#555', marginTop: '20px' }}>
             If you did not request this, you can safely ignore this email.
           </Text>
+          <Link
+            href={`${url}/seeder/login/`}
+            style={{
+              display: 'inline-block',
+              padding: '12px 20px',
+              backgroundColor: '#AD1AAF',
+              color: '#ffffff',
+              textDecoration: 'none',
+              borderRadius: '6px',
+              fontWeight: 'bold',
+            }}
+          >
+            Go to Dashboard
+          </Link>
         </Container>
       </Body>
     </Html>

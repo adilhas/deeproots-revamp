@@ -5,12 +5,33 @@ import { PiMapPinArea, PiUser } from 'react-icons/pi';
 
 const ApprovedSeederOverview = () => {
   const { application } = useApplication();
+  console.log('application', application?.paymentDetails?.updatedAt);
+  const paymentUpdatedAt = application?.paymentDetails?.updatedAt
+    ? new Date(application.paymentDetails.updatedAt)
+    : null;
+
+  let progressPercent = 0;
+
+  if (paymentUpdatedAt) {
+    const vestingEnd = new Date(paymentUpdatedAt);
+    vestingEnd.setFullYear(vestingEnd.getFullYear() + 1); // Add 12 months
+
+    const now = new Date();
+
+    const totalDuration = vestingEnd.getTime() - paymentUpdatedAt.getTime();
+    const timeElapsed = now.getTime() - paymentUpdatedAt.getTime();
+
+    progressPercent = Math.min(
+      100,
+      Math.max(0, (timeElapsed / totalDuration) * 100)
+    );
+  }
   return (
     <div className="p-6 rounded-4xl bg-gradient-to-r from-[#AD1AAF] to-[#0085A8] border border-[#999100] text-white flex flex-col md:flex-row justify-between items-start gap-2">
       <div className="grid grid-cols-1 md:grid-cols-2 w-full md:w-[75%] gap-y-3">
         <div className=" col-span-1 md:col-span-2 flex flex-col md:flex-row jjustify-start items-start md:items-center gap-1">
           <h2 className="text-4xl font-bold">{application?.fullName}</h2>
-          {application?.seedTier === 'tier-1' ? (
+          {application?.seedTier === 'tier-3' ? (
             <div className="text-[#EA580C] font-semibold bg-[#FED7AA] text-md md:text-lg py-1 px-4 rounded-[40px] w-fit">
               You own 1 of 10 Founder Seats
             </div>
@@ -65,22 +86,22 @@ const ApprovedSeederOverview = () => {
       </div>
 
       <div className="text-start mt-6 md:mt-0 p-3 rounded-2xl h-full flex flex-col justify-center w-full md:w-[25%] bg-white text-[#696969]">
-        <div>
+        {/* <div>
           ID:{' '}
-          {application?.seedTier === 'tier-1' ? 'Founder Seat' : 'Genesis Seat'}{' '}
+          {application?.seedTier === 'tier-3' ? 'Founder Seat' : 'Genesis Seat'}{' '}
           #7
-        </div>
+        </div> */}
         <div className="w-fit mx-auto font-semibold text-3xl my-4">
           {Number(application?.capital) / 5} dRC
         </div>
         <div>
           <div className="w-full flex flex-wrap justify-between">
-            <div className="font-normal">Vesting Progress</div>
-            <div>15%</div>
+            <div className="font-normal">Seeding Progress</div>
+            <div>{progressPercent.toFixed(0)}%</div>
           </div>
           <progress
             className="progress bg-[#E9E9E9] [&::-webkit-progress-value]:bg-[#3664AA] [&::-moz-progress-bar]:bg-[#3664AA] w-full"
-            value={15}
+            value={progressPercent}
             max="100"
           ></progress>
         </div>

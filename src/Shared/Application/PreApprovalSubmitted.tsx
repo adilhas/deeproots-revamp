@@ -23,6 +23,7 @@ const PreApprovalSubmitted = () => {
   const [usdcAddress, setUsdcAddress] = useState('');
   const { application } = useApplication();
   const { data: session } = useSession();
+
   const getFileIcon = (url: string): string => {
     if (!url) return '/dashboard/png-upload.svg'; // default fallback
 

@@ -30,8 +30,8 @@ const FounderSeatPerks = () => {
         </div>
 
         <div className="text-xl font-semibold">Founder’s call</div>
-        <div className="bg-[#BFBFBF] text-center mx-auto py-1 px-4 text-[#525252] text-sm w-fit font-semibold rounded-4xl">
-          Not Earned
+        <div className="bg-[#E9D5FF] text-center mx-auto py-1 px-4 text-[#7E22CE] text-sm w-fit font-semibold rounded-4xl">
+          Active
         </div>
       </div>
     </div>

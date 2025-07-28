@@ -1,3 +1,4 @@
+'use client';
 import ApplicationStatusInfo from '@/components/admin/ApplicationStatusInfo';
 import ApplicationTable from '@/components/admin/ApplicationTable';
 import DashboardHeader from '@/Shared/Application/DashboardHeader';

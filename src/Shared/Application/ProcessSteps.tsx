@@ -57,11 +57,11 @@ const ProcessSteps = () => {
             ? '#E78181'
             : '#D9D9D9',
     },
-    {
-      title: 'Welcome Onboard',
-      description: 'Admin sends welcome email & dashboard link.',
-      statusColor: '#D9D9D9',
-    },
+    // {
+    //   title: 'Welcome Onboard',
+    //   description: 'Admin sends welcome email & dashboard link.',
+    //   statusColor: '#D9D9D9',
+    // },
   ];
   return (
     <div className="mt-8 bg-white text-[#525252] p-4 md:p-6 rounded-xl">

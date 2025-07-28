@@ -1,21 +1,27 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import DashboardHeader from '../DashboardHeader';
 import { signOut, useSession } from 'next-auth/react';
 import ApplicationStatusInfo from '@/components/admin/ApplicationStatusInfo';
 import ApprovedSeederOverview from './ApprovedSeederOverview';
 import SeederNotification from './SeederNotification';
-import SeederPerks from './SeederPerks';
-import SeederContactAccess from './SeederContactAccess';
-import SeederDocuments from './SeederDocuments';
-import TokenSeedingDetails from './TokenSeedingDetails';
+// import SeederPerks from './SeederPerks';
+// import SeederContactAccess from './SeederContactAccess';
+// import SeederDocuments from './SeederDocuments';
+// import TokenSeedingDetails from './TokenSeedingDetails';
 import { PiCopy } from 'react-icons/pi';
 import { Check } from 'lucide-react';
-import PrivateRoundProgress from './PrivateRoundProgress';
 import BroadcastModal from './BroadcastModal';
+// import SeederManagementNote from '../SeederManagementNote';
+import { useBroadcast } from '@/context/BroadcastContext';
+// import BroadcastMessages from './BroadcastMessages';
+import SeederSeatDetails from './SeederSeatDetails';
 // import SeederManagementNote from '../SeederManagementNote';
 
 const SeederSeat = () => {
   const { data: session } = useSession();
+  // const isAdmin = session?.user?.role === 'admin';
+  const { setBroadcasts } = useBroadcast();
+
   const email = 'admin@deeproots.earth';
   const [copied, setCopied] = useState(false);
 
@@ -23,13 +29,29 @@ const SeederSeat = () => {
     try {
       await navigator.clipboard.writeText(email);
       setCopied(true);
-      setTimeout(() => setCopied(false), 3000); // ⏱️ reset after 3 seconds
+      setTimeout(() => setCopied(false), 3000);
     } catch (err) {
       console.error('Failed to copy email:', err);
     }
   };
+
+  useEffect(() => {
+    const fetchBroadcasts = async () => {
+      try {
+        const res = await fetch('/api/broadcast');
+        if (!res.ok) throw new Error('Failed to fetch broadcasts');
+        const data = await res.json();
+        setBroadcasts(data);
+      } catch (error) {
+        console.error('Broadcast fetch error:', error);
+      }
+    };
+
+    fetchBroadcasts();
+  }, [setBroadcasts]);
+
   return (
-    <div className="border min-h-screen font-archivo bg-[#E7E7E7] text-[#303030] pb-10">
+    <div className="min-h-screen font-archivo bg-[#E7E7E7] text-[#303030] pb-10">
       <div className="py-3 sticky md:static top-0 z-50 ">
         <DashboardHeader
           label={session?.user.role === 'seeder' ? 'Pre seed' : 'Admin'}
@@ -51,18 +73,7 @@ const SeederSeat = () => {
         <ApplicationStatusInfo />
         <ApprovedSeederOverview />
         <SeederNotification />
-        <div className="flex flex-col-reverse lg:flex-row-reverse gap-6">
-          <div className="min-w-[385px]">
-            <TokenSeedingDetails />
-            <PrivateRoundProgress />
-          </div>
-          <div>
-            <SeederPerks />
-            <SeederContactAccess />
-            <SeederDocuments />
-          </div>
-        </div>
-        {/* <SeederManagementNote /> */}
+        <SeederSeatDetails />
       </div>
       <div className="text-center mt-14">
         <div className="text-xl w-fit mx-auto">

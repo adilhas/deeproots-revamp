@@ -173,7 +173,7 @@ const PAStep1: React.FC<PAStep1Props> = ({
           </div>
 
           {/* Signature Section */}
-          <div className="flex flex-col  md:flex-row items-start gap-4 w-full">
+          <div className="flex flex-col  md:flex-row items-end gap-4 w-full">
             <div className="w-full max-w-[503px]">
               <label className="block text-lg w-full font-medium mb-3">
                 E-Signature (Enter full Legal name)

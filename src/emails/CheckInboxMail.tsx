@@ -27,7 +27,7 @@ export default function CheckInboxMail({ link }: CheckInboxMailProps) {
     `}
         </style>
       </Head>{' '}
-      <Preview>You have notification</Preview>
+      <Preview>You have Announcement</Preview>
       <Body
         style={{
           fontFamily: 'Arial, sans-serif',
@@ -43,7 +43,11 @@ export default function CheckInboxMail({ link }: CheckInboxMailProps) {
           }}
         >
           <Text style={{ fontSize: '16px', marginBottom: '20px' }}>
-            You have new notification on your dashboard.
+            You’ve received a new announcement through the Foundation Seat
+            system on Deep Roots.
+          </Text>
+          <Text style={{ fontSize: '16px', marginBottom: '20px' }}>
+            Please log in to your dashboard to view
           </Text>
           <Link
             href={link}
@@ -57,7 +61,7 @@ export default function CheckInboxMail({ link }: CheckInboxMailProps) {
               fontWeight: 'bold',
             }}
           >
-            Click to go on your dashboard
+            Go to your dashboard
           </Link>
         </Container>
       </Body>

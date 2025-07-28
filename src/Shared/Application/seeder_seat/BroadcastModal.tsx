@@ -1,5 +1,7 @@
 'use client';
 
+import { useBroadcast } from '@/context/BroadcastContext';
+import { formatDistanceToNow } from 'date-fns';
 import React, { useEffect, useRef, useState } from 'react';
 import { PiMegaphoneSimple } from 'react-icons/pi';
 
@@ -9,21 +11,20 @@ const BroadcastModal = () => {
   const [hasHoveredDropdown, setHasHoveredDropdown] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const { broadcasts } = useBroadcast();
 
-  const broadcastsData = [
-    {
-      type: 'personal',
-      message:
-        'Broadcast message to come here..Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis nisi mauris, pulvinar maximus erat vestibulum et. Sed si',
-      time: 'Today, 12:00 pm',
-    },
-    {
-      type: 'general',
-      message:
-        'Broadcast message to come here..Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis nisi mauris, pulvinar maximus erat vestibulum et. Sed si',
-      time: 'Today, 12:38 pm',
-    },
-  ];
+  // const broadcastsData = [
+  //   {
+  //     message:
+  //       'Broadcast message to come here..Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis nisi mauris, pulvinar maximus erat vestibulum et. Sed si',
+  //     time: 'Today, 12:00 pm',
+  //   },
+  //   {
+  //     message:
+  //       'Broadcast message to come here..Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis nisi mauris, pulvinar maximus erat vestibulum et. Sed si',
+  //     time: 'Today, 12:38 pm',
+  //   },
+  // ];
 
   useEffect(() => {
     const handleResize = () => {
@@ -90,28 +91,29 @@ const BroadcastModal = () => {
       {isOpen && (
         <ul
           className="fixed md:absolute max-w-[411px] w-full right-0 mt-2 menu bg-white rounded-3xl z-10 p-2 shadow-sm"
-          style={{
-            minWidth: '411px',
-          }}
+          style={{ minWidth: '411px' }}
           onMouseEnter={handleMouseEnterDropdown}
           onMouseLeave={handleMouseLeaveDropdown}
         >
-          {broadcastsData.map((broadcast) => (
-            <li
-              key={broadcast.message}
-              className="bg-[#F3F3F3] p-2 text-md mb-2 rounded-2xl w-full"
-            >
-              <div className="flex flex-wrap justify-between gap-2">
-                <div
-                  className={`font-medium text-sm py-1 px-2 rounded-lg text-white ${broadcast.type === 'personal' ? 'bg-[#F97316]' : ' bg-[#3B82F6]'}`}
-                >
-                  {broadcast.type}
-                </div>
-                <div className="text-[#696969] text-sm">{broadcast.time}</div>
-              </div>
-              <div>{broadcast.message}</div>
+          {broadcasts.length === 0 ? (
+            <li className="bg-[#F3F3F3] p-4 text-md text-center rounded-2xl w-full text-[#999]">
+              No broadcasts yet.
             </li>
-          ))}
+          ) : (
+            broadcasts.map((broadcast) => (
+              <li
+                key={broadcast.message + broadcast.createdAt}
+                className="bg-[#F3F3F3] p-2 text-md mb-2 rounded-2xl w-full"
+              >
+                <div className="flex flex-wrap justify-between gap-2">
+                  <div className="text-[#696969] text-sm">
+                    {formatDistanceToNow(new Date(broadcast.createdAt))}
+                  </div>
+                </div>
+                <div>{broadcast.message}</div>
+              </li>
+            ))
+          )}
         </ul>
       )}
     </div>

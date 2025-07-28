@@ -7,6 +7,7 @@ import {
   Container,
   Heading,
   Text,
+  Link,
 } from '@react-email/components';
 
 export default function ImmediateDealRoomUpdate(props: {
@@ -58,7 +59,7 @@ export default function ImmediateDealRoomUpdate(props: {
             Your seat is currently held. Please complete your submission before
             the access window expires.
           </Text>
-          <Text>
+          {/* <Text>
             <a
               href={`${url}/seeder/login`}
               target="_blank"
@@ -66,7 +67,21 @@ export default function ImmediateDealRoomUpdate(props: {
             >
               Return to Deal Room
             </a>{' '}
-          </Text>
+          </Text> */}
+          <Link
+            href={`${url}/seeder/login/`}
+            style={{
+              display: 'inline-block',
+              padding: '12px 20px',
+              backgroundColor: '#AD1AAF',
+              color: '#ffffff',
+              textDecoration: 'none',
+              borderRadius: '6px',
+              fontWeight: 'bold',
+            }}
+          >
+            Return to Deal Room
+          </Link>
           <Text>Need help? We’re here to support you.</Text>
           <Text>Team DEEPROOTS Foundation Team</Text>
         </Container>

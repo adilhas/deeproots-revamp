@@ -5,10 +5,12 @@ import { useRouter } from 'next/router';
 import ApplicationDetails from '@/Shared/Application/ApplicationDetails';
 import { useApplication } from '@/context/ApplicationContext';
 import SeederSeat from '@/Shared/Application/seeder_seat/SeederSeat';
+import { useSession } from 'next-auth/react';
 
 const ApplicationDetailsPage = () => {
   const router = useRouter();
   const { applicationId } = router.query;
+  const { data: session } = useSession();
 
   const { application, setApplication } = useApplication();
 
@@ -58,7 +60,8 @@ const ApplicationDetailsPage = () => {
     );
   }
 
-  return application.dealRoom === 'approved' ? (
+  return application.dealRoom === 'approved' &&
+    session?.user?.role === 'seeder' ? (
     <SeederSeat />
   ) : (
     <ApplicationDetails application={application} />

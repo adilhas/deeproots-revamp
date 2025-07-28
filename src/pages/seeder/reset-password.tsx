@@ -22,7 +22,11 @@ export default function ResetPasswordPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setMessage('');
-
+    if (password.length < 8) {
+      toast.error('Password must be at least 8 characters long');
+      setIsSubmitting(false);
+      return;
+    }
     if (!token) return setMessage('Missing or invalid token.');
     if (password !== confirmPassword) {
       toast.error('Passwords do not match');

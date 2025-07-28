@@ -1,4 +1,6 @@
 'use client';
+import AnnouncementManager from '@/Shared/Application/AnnouncementManager';
+// import { BroadcastNotification } from '@/Shared/Application/BroadcastNotification';
 import StatusDot from '@/Shared/StatusDot';
 import { ApplicationDataType, StatusType } from '@/types/application';
 import { formatDate } from '@/utils/formatDate';
@@ -64,7 +66,10 @@ const ApplicationTable = () => {
   };
   return (
     <div className=" w-full p-4">
-      <div className="flex justify-end">
+      <AnnouncementManager />
+      <div className="flex justify-between items-center mb-4 gap-8">
+        {/* here add send notification to all */}
+        {/* <BroadcastNotification /> */}
         <div className="relative w-full max-w-[474px] mb-4">
           {/* Left Icon */}
           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">

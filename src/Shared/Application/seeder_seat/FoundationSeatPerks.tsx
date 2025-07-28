@@ -1,7 +1,9 @@
+import { useApplication } from '@/context/ApplicationContext';
 import Image from 'next/image';
 import React from 'react';
 
 const FoundationSeatPerks = () => {
+  const { application } = useApplication();
   return (
     <div className="flex flex-row gap-[18px]">
       <div className="bg-[#F5F5F5] w-full p-4 text-center rounded-2xl">
@@ -30,9 +32,15 @@ const FoundationSeatPerks = () => {
         </div>
 
         <div className="text-xl font-semibold">Founder’s call</div>
-        <div className="bg-[#BFBFBF] text-center mx-auto py-1 px-4 text-[#525252] text-sm w-fit font-semibold rounded-4xl">
-          Not Earned
-        </div>
+        {application?.seedTier === 'tier-1' ? (
+          <div className="bg-[#BFBFBF] text-center mx-auto py-1 px-4 text-[#525252] text-sm w-fit font-semibold rounded-4xl">
+            Not Earned
+          </div>
+        ) : (
+          <div className="bg-[#E9D5FF] text-center mx-auto py-1 px-4 text-[#7E22CE] text-sm w-fit font-semibold rounded-4xl">
+            Active
+          </div>
+        )}
       </div>
     </div>
   );

@@ -105,7 +105,7 @@ export default async function handler(
         let html = await render(
           ApplicationApproveEmail({
             name: applicantName,
-            url: process.env.NEXTAUTH_URL || '',
+            url: process.env.NEXTAUTH_URL || 'https://deeproots.earth',
           }),
           {
             pretty: true,
@@ -119,6 +119,7 @@ export default async function handler(
             ApplicationDeclineEmail({
               name: applicantName,
               reason,
+              url: process.env.NEXTAUTH_URL || 'https://deeproots.earth',
             }),
             {
               pretty: true,
@@ -143,7 +144,7 @@ export default async function handler(
         let html = await render(
           PreApprovalApproveEmail({
             name: applicantName,
-            url: process.env.NEXTAUTH_URL || '',
+            url: process.env.NEXTAUTH_URL || 'https://deeproots.earth',
           }),
           {
             pretty: true,
@@ -168,6 +169,7 @@ export default async function handler(
             PreApprovalDeclineEmail({
               name: applicantName,
               reason,
+              url: process.env.NEXTAUTH_URL || '',
             }),
             {
               pretty: true,

@@ -39,6 +39,13 @@ export default function CreateAccountPage() {
     setError('');
     setSubmitting(true);
 
+    if (password.length < 8) {
+      // setError('Password must be at least 8 characters long');
+      toast.error('Password must be at least 8 characters long');
+      setSubmitting(false);
+      return;
+    }
+
     if (password !== confirmPassword) {
       setError('Passwords do not match');
       toast.error('Passwords do not match');

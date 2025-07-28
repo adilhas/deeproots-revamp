@@ -1,4 +1,6 @@
+import PaymentDeclineMail from '@/emails/PaymentDeclineMail';
 import { prisma } from '@/lib/prisma';
+import { render } from '@react-email/render';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import nodemailer from 'nodemailer';
@@ -69,12 +71,21 @@ Reason: ${declineReason}
 Please reach out if you believe this was in error.
 
 - DEEPROOTS Team`;
+    const html = await render(
+      PaymentDeclineMail({
+        name: submission.fullName,
+        url: process.env.NEXTAUTH_URL || '',
+        reason: declineReason,
+      }),
+      { pretty: true }
+    );
 
     await transporter.sendMail({
       from: `Team DEEPROOTS`,
       to: submission.email,
       subject,
       text,
+      html,
     });
 
     return res.status(200).json({

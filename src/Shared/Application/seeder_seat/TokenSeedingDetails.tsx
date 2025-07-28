@@ -3,15 +3,29 @@
 import { useApplication } from '@/context/ApplicationContext';
 import { formatCurrencyShort } from '@/utils/formatCapital';
 import React from 'react';
+import { format } from 'date-fns';
 
 const TokenSeedingDetails = () => {
   const { application } = useApplication();
+  const startDateStr = application?.paymentDetails?.updatedAt ?? '';
+  const startDate = new Date(startDateStr);
+
+  // Add 12 months
+  const endDate = new Date(startDate);
+  endDate.setMonth(endDate.getMonth() + 12);
+
+  // Format dates
+  const formattedStartDate = format(startDate, 'do MMMM, yyyy');
+  const formattedEndDate = format(endDate, 'do MMMM, yyyy');
 
   const vestingDetails = [
     { label: 'Seed Lock Period', value: '12 month' },
     { label: 'Seeding Reward Onchain', value: '12%' },
-    { label: 'Start date', value: '10th June, 2026' },
-    { label: 'End Date', value: '10th June, 2026' },
+    {
+      label: 'Start date',
+      value: formattedStartDate,
+    },
+    { label: 'End Date', value: formattedEndDate },
     { label: 'Exclusive Seed Price', value: '$5 per dRC' },
     {
       label: 'Contribution Amount',

@@ -7,6 +7,7 @@ import {
   Container,
   Heading,
   Text,
+  Link,
 } from '@react-email/components';
 
 export default function TwelveHrsLeftDealRoom(props: {
@@ -62,13 +63,18 @@ export default function TwelveHrsLeftDealRoom(props: {
             ✅ Complete your Deal Room submission before the countdown ends.
           </Text>
           <Text>
-            <a
+            <Link
               href={`${url}/seeder/login`}
               target="_blank"
               rel="noopener noreferrer"
+              style={{
+                color: '#0070f3',
+                textDecoration: 'underline',
+                fontWeight: 'bold',
+              }}
             >
               Return to Deal Room
-            </a>{' '}
+            </Link>{' '}
           </Text>
           <Text>
             If you have any questions or need assistance, we’re here to help.

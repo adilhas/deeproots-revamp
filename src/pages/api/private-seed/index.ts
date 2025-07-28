@@ -78,12 +78,16 @@ export default async function handler(
       });
 
       const link = `${process.env.NEXTAUTH_URL}/seeder/create-account?token=${token}`;
+      const url = process.env.NEXTAUTH_URL || 'https://deeproots.earth';
       const html = await render(SeederTokenEmail({ fullName, link }), {
         pretty: true,
       });
-      const WelcomeHtml = await render(RequestSubmittedEmail({ fullName }), {
-        pretty: true,
-      });
+      const WelcomeHtml = await render(
+        RequestSubmittedEmail({ fullName, url }),
+        {
+          pretty: true,
+        }
+      );
 
       await transporter.sendMail({
         from: `Team DEEPROOTS`,

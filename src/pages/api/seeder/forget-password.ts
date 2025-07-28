@@ -40,7 +40,7 @@ export default async function handler(
     });
 
     await transporter.sendMail({
-      from: process.env.SMTP_USER,
+      from: `Team DEEPROOTS`,
       to: email,
       subject: 'Reset your password',
       html: html,
