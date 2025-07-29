@@ -81,11 +81,26 @@ const SocialLinks = dynamic(
 const FooterV2 = dynamic(() => import('@/components/footer/FooterV2'));
 
 const Home = () => {
+  const jsonLd = {
+    '@context': 'http://schema.org',
+    '@type': 'Organization',
+    name: 'DEEPROOTS',
+    url: 'https://www.deeproots.earth',
+    logo: 'https://www.deeproots.earth/landing/logo.png',
+    sameAs: [
+      'https://twitter.com/DeepRoots_earth',
+      'https://www.youtube.com/@DeepRoots',
+      'https://t.me/DeepRootsCommunity',
+      'https://reddit.com/r/DeepRoots',
+      'https://discord.gg/DeepRoots',
+      'https://www.tiktok.com/@DeepRoots',
+    ],
+  };
   return (
     <>
       <Seo />
       <Head>
-        <script
+        {/* <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -104,7 +119,8 @@ const Home = () => {
               ],
             }),
           }}
-        />
+        /> */}
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Head>
       <div className="overflow-x-hidden relative bg-primary-light dark:bg-primary-dark text-[#404040] dark:text-neutral-200">
         <Navbar />

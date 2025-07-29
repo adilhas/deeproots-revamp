@@ -77,11 +77,11 @@ export default async function handler(
     const fileArray = files.file as File[] | File | undefined;
     const file = Array.isArray(fileArray) ? fileArray[0] : fileArray;
     const submissionId = fields.submissionId?.toString();
-    console.log('FIELDS:', fields);
-    console.log('FILES:', files);
-    console.log('submissionId:', submissionId);
-    console.log('file:', file);
-    console.log('file?.filepath:', file?.filepath);
+    // console.log('FIELDS:', fields);
+    // console.log('FILES:', files);
+    // console.log('submissionId:', submissionId);
+    // console.log('file:', file);
+    // console.log('file?.filepath:', file?.filepath);
 
     if (!file || !file.filepath || !submissionId) {
       return res.status(400).json({

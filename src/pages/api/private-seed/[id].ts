@@ -8,6 +8,8 @@ import PreApprovalApproveEmail from '@/emails/PreApprovalApproveMail';
 import PreApprovalDeclineEmail from '@/emails/PreApprovalDecline';
 import { transporter } from '@/lib/mailer';
 import ImmediateDealRoomUpdate from '@/emails/ImmediateDealRoomUpdate';
+import { getServerSession } from 'next-auth/next';
+import { authOptions } from '../auth/[...nextauth]';
 
 export default async function handler(
   req: NextApiRequest,
@@ -17,6 +19,11 @@ export default async function handler(
     query: { id },
     method,
   } = req;
+
+  const session = await getServerSession(req, res, authOptions);
+  if (!session) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
 
   if (typeof id !== 'string') {
     return res.status(400).json({ message: 'Invalid application ID' });

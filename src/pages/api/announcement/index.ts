@@ -4,11 +4,18 @@ import { transporter } from '@/lib/mailer';
 import { prisma } from '@/lib/prisma';
 import { render } from '@react-email/render';
 import { NextApiRequest, NextApiResponse } from 'next';
+import { getServerSession } from 'next-auth/next';
+import { authOptions } from '../auth/[...nextauth]';
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  const session = await getServerSession(req, res, authOptions);
+  if (!session) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+
   if (req.method === 'GET') {
     try {
       const announcements = await prisma.announcement.findMany({
@@ -32,11 +39,19 @@ export default async function handler(
       });
       // 2. Fetch all emails from submissions table
       const submissions = await prisma.privateSeedSubmission.findMany({
+        where: {
+          OR: [
+            { applicationStatus: 'declined' },
+            { dealRoom: 'declined' },
+            { preApproval: 'declined' },
+            { paymentDetails: { paymentStatus: 'declined' } },
+          ],
+        },
         select: { email: true },
       });
 
       const allEmails = submissions.map((s) => s.email).filter(Boolean);
-      const link = `${process.env.NEXT_PUBLIC_BASE_URL || 'https://deeproots.earth'}/seeder/application`;
+      const link = `${process.env.NEXTAUTH_URL || 'https://deeproots.earth'}/seeder/application`;
 
       if (allEmails.length > 0) {
         // 3. Render email

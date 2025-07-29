@@ -4,6 +4,7 @@ import { useThemeContext } from '@/context/ThemeContext';
 import { useTranslation } from 'next-i18next';
 import clsx from 'clsx';
 import Image from 'next/image';
+import parse from 'html-react-parser';
 
 const AccessBenefitsMobile = () => {
   const { isDark } = useThemeContext();
@@ -61,10 +62,13 @@ const AccessBenefitsMobile = () => {
                   alt="card background"
                   className="w-[90vw] max-w-[350px] h-auto"
                 />
-                <div
+                {/* <div
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-md text-center w-[87%]"
                   dangerouslySetInnerHTML={{ __html: formatted }}
-                />
+                /> */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-md text-center w-[87%]">
+                  {parse(formatted)}
+                </div>
               </div>
             )
           );
@@ -92,10 +96,13 @@ const AccessBenefitsMobile = () => {
                 alt="card background"
                 className="w-[90vw] max-w-[350px] h-auto"
               />
-              <div
+              {/* <div
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-md text-center w-[87%]"
                 dangerouslySetInnerHTML={{ __html: formatted }}
-              />
+              /> */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-md text-center w-[87%]">
+                {parse(formatted)}
+              </div>
             </div>
           );
         })}

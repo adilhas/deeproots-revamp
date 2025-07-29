@@ -6,6 +6,7 @@ import ApplicationDetails from '@/Shared/Application/ApplicationDetails';
 import { useApplication } from '@/context/ApplicationContext';
 import SeederSeat from '@/Shared/Application/seeder_seat/SeederSeat';
 import { useSession } from 'next-auth/react';
+import { toast } from 'react-toastify';
 
 const ApplicationDetailsPage = () => {
   const router = useRouter();
@@ -19,10 +20,10 @@ const ApplicationDetailsPage = () => {
   const fetchSubmissionById = async (id: string) => {
     try {
       const res = await fetch(`/api/private-seed/${id}`);
-      if (!res.ok) throw new Error('Failed to fetch submission');
+      if (!res.ok) toast.error('Failed to fetch submission');
       return await res.json();
-    } catch (err) {
-      console.error(err);
+    } catch {
+      toast.error('An unexpected error occurred');
       return null;
     }
   };
@@ -43,7 +44,6 @@ const ApplicationDetailsPage = () => {
     fetchData();
   }, [applicationId]);
 
-  console.log('-->', application);
   if (loading) {
     return (
       <div className="flex justify-center items-center h-40">

@@ -3,11 +3,17 @@ import { prisma } from '@/lib/prisma';
 import { render } from '@react-email/render';
 import CheckInboxMail from '@/emails/CheckInboxMail';
 import { transporter } from '@/lib/mailer';
+import { getServerSession } from 'next-auth/next';
+import { authOptions } from '../../auth/[...nextauth]';
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  const session = await getServerSession(req, res, authOptions);
+  if (!session) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
   const { id } = req.query;
 
   if (typeof id !== 'string') {

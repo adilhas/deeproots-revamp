@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.deeproots.earth
+Host: http://localhost:3000
 
 # Sitemaps
-Sitemap: https://www.deeproots.earth/sitemap.xml
+Sitemap: http://localhost:3000/sitemap.xml

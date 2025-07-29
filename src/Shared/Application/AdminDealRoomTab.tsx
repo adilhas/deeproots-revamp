@@ -10,7 +10,7 @@ import ExclusiveSeedTerms from './dealroom/ExclusiveSeedTerms';
 const AdminDealRoom = () => {
   const { application } = useApplication();
 
-  console.log(application);
+  // console.log(application);
   if (application?.isDealRoomExpired) {
     return (
       <div className="text-center text-2xl">

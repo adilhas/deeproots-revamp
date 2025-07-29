@@ -52,7 +52,7 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
       tabName: 'deal-room',
     },
   ];
-  console.log(application);
+  // console.log(application);
   return (
     <div>
       <div className="flex flex-col md:flex-row gap-6 mb-6">

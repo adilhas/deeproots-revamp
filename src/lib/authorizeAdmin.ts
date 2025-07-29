@@ -4,8 +4,8 @@ type Credentials = {
 };
 export async function authorizeAdmin(credentials: Credentials | undefined) {
   if (
-    credentials?.username === 'admin' &&
-    credentials?.password === 'pass12345'
+    credentials?.username === process.env.ADMIN_EMAIL &&
+    credentials?.password === process.env.ADMIN_PASSWORD
   ) {
     return {
       id: '1',

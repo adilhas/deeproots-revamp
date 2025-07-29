@@ -5,6 +5,8 @@ import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
+import parse from 'html-react-parser';
+
 // import { IoMdFunnel } from 'react-icons/io';
 
 export default function Academy() {
@@ -25,8 +27,10 @@ export default function Academy() {
             <div className="py-16">
               <h1
                 className="text-3xl md:text-6xl font-semibold font-orbitron  w-fit text-transparent leading-tight bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text"
-                dangerouslySetInnerHTML={{ __html: t('academy.heading') }}
-              />
+                // dangerouslySetInnerHTML={{ __html: t('academy.heading') }}
+              >
+                {parse(t('academy.heading'))}
+              </h1>
               <p className="text-[#4B5563] dark:text-[#E2E8F0]">
                 {t('academy.subheading')}
               </p>

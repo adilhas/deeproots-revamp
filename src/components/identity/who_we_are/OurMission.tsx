@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import React from 'react';
 import { useTranslation } from 'next-i18next';
+import parse from 'html-react-parser';
 
 const OurMission = () => {
   const { t } = useTranslation('identity/who_we_are');
@@ -11,13 +12,15 @@ const OurMission = () => {
     <div className="flex flex-col md:flex-row items-start">
       <div className="w-full md:w-1/2">
         <div className="font-semibold text-3xl text-black dark:text-white">
-          {t('ourMission.title')}
+          {parse(t('ourMission.title'))}
         </div>
 
         <div
           className="my-4"
-          dangerouslySetInnerHTML={{ __html: t('ourMission.line1') }}
-        />
+          // dangerouslySetInnerHTML={{ __html: t('ourMission.line1') }}
+        >
+          {parse(t('ourMission.line1'))}
+        </div>
 
         <div className="my-4">{t('ourMission.line2')}</div>
 

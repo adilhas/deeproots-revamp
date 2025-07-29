@@ -16,7 +16,10 @@ export const authOptions: NextAuthOptions = {
 
         if (!username || !password) return null;
 
-        if (username === 'admin@deeproots.earth' && password === 'pass12345') {
+        if (
+          username === process.env.ADMIN_EMAIL &&
+          password === process.env.ADMIN_PASSWORD
+        ) {
           return {
             id: '1',
             name: 'Admin',

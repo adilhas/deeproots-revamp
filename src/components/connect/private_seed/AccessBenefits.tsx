@@ -1,4 +1,5 @@
 'use client';
+import parse from 'html-react-parser';
 
 import { useThemeContext } from '@/context/ThemeContext';
 import Image from 'next/image';
@@ -84,10 +85,13 @@ const AccessBenefits = () => {
                     className={item === '' ? 'opacity-0' : ''}
                   />
                   {item && (
-                    <div
-                      className="absolute top-[50%] text-center left-1/2 -translate-x-1/2 text-md md:text-xs lg:text-lg w-[87%]"
-                      dangerouslySetInnerHTML={{ __html: formatted }}
-                    />
+                    // <div
+                    //   className="absolute top-[50%] text-center left-1/2 -translate-x-1/2 text-md md:text-xs lg:text-lg w-[87%]"
+                    //   dangerouslySetInnerHTML={{ __html: formatted }}
+                    // />
+                    <div className="absolute top-[50%] text-center left-1/2 -translate-x-1/2 text-md md:text-xs lg:text-lg w-[87%]">
+                      {parse(formatted)}
+                    </div>
                   )}
                 </div>
               );
@@ -119,10 +123,13 @@ const AccessBenefits = () => {
                     }
                     alt="card background"
                   />
-                  <div
+                  {/* <div
                     className="absolute top-[50%] text-center left-1/2 -translate-x-1/2 text-md md:text-xs lg:text-lg w-[87%]"
                     dangerouslySetInnerHTML={{ __html: formatted }}
-                  />
+                  /> */}
+                  <div className="absolute top-[50%] text-center left-1/2 -translate-x-1/2 text-md md:text-xs lg:text-lg w-[87%]">
+                    {parse(formatted)}
+                  </div>
                 </div>
               );
             })}

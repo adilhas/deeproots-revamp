@@ -5,7 +5,7 @@ import { PiMapPinArea, PiUser } from 'react-icons/pi';
 
 const ApprovedSeederOverview = () => {
   const { application } = useApplication();
-  console.log('application', application?.paymentDetails?.updatedAt);
+  // console.log('application', application?.paymentDetails?.updatedAt);
   const paymentUpdatedAt = application?.paymentDetails?.updatedAt
     ? new Date(application.paymentDetails.updatedAt)
     : null;

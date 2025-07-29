@@ -5,10 +5,10 @@ const ContactBox = () => (
       For legal or compliance inquiries, please contact:
     </p>
     <a
-      href="mailto:Admin@deeproots.earth"
+      href={`mailto:admin@deeproots.earth`}
       className="text-blue-600 dark:text-blue-400 underline font-semibold text-sm"
     >
-      Admin@deeproots.earth
+      admin@deeproots.earth
     </a>
   </div>
 );

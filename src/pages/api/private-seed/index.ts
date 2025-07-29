@@ -7,6 +7,8 @@ import SeederTokenEmail from '@/emails/SeederTokenEmail';
 import { getSeedTierFromCapital } from '@/lib/getSeedTierFromCapital';
 import { transporter } from '@/lib/mailer';
 import RequestSubmittedEmail from '@/emails/RequestSubmittedEmail';
+import { getServerSession } from 'next-auth/next';
+import { authOptions } from '../auth/[...nextauth]';
 
 export default async function handler(
   req: NextApiRequest,
@@ -115,6 +117,10 @@ export default async function handler(
   }
 
   if (req.method === 'GET') {
+    const session = await getServerSession(req, res, authOptions);
+    if (!session) {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
     try {
       const submissions = await prisma.privateSeedSubmission.findMany({
         orderBy: { createdAt: 'desc' },
@@ -134,7 +140,6 @@ export default async function handler(
       return res.status(500).json({
         message: 'Internal Server Error',
         error: errorInfo,
-        dbEnv: process.env.DATABASE_URL,
       });
     }
   }

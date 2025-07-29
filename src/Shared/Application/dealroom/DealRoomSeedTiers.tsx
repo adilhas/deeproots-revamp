@@ -114,7 +114,7 @@ const DealRoomSeedingTiers = () => {
       setLoading(false);
     }
   };
-  console.log('ap', application);
+  // console.log('ap', application);
 
   return (
     <div className="py-16 text-[#303030]">

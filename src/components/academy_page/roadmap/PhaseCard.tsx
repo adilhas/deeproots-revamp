@@ -2,6 +2,7 @@
 
 import { RocketIcon } from 'lucide-react';
 import { clsx } from 'clsx';
+import parse, { DOMNode, Element } from 'html-react-parser';
 
 export interface PhaseCardProps {
   phase: string;
@@ -26,6 +27,22 @@ export default function PhaseCard({
   titleContainerClassname,
   innerContainerClassname,
 }: PhaseCardProps) {
+  const replacedTimeline = timeline.replace(
+    /Q/g,
+    '<span class="highlight-q">Q</span>'
+  );
+
+  const parsedContent = parse(replacedTimeline, {
+    replace: (domNode: DOMNode) => {
+      if (
+        domNode.type === 'tag' &&
+        (domNode as Element).name === 'span' &&
+        (domNode as Element).attribs?.class === 'highlight-q'
+      ) {
+        return <span style={{ color: '#c6613f' }}>Q</span>;
+      }
+    },
+  });
   return (
     <div
       className={clsx(
@@ -59,7 +76,7 @@ export default function PhaseCard({
             <span className="text-[#c6613f] font-sans">Q</span>
             {timeline}
           </p> */}
-          <p
+          {/* <p
             className="font-orbitron font-semibold md:text-2xl text-right"
             dangerouslySetInnerHTML={{
               __html: timeline.replace(
@@ -67,7 +84,10 @@ export default function PhaseCard({
                 '<span style="color:#c6613f">Q</span>'
               ),
             }}
-          />
+          /> */}
+          <p className="font-orbitron font-semibold md:text-2xl text-right">
+            {parsedContent}
+          </p>
         </div>
 
         <ul className="mt-6 space-y-4">

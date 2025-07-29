@@ -9,7 +9,7 @@ import SeederManagementNote from '../SeederManagementNote';
 const SeederSeatDetails = () => {
   return (
     <div className="flex flex-col-reverse lg:flex-row-reverse gap-6">
-      <div className="w-full max-w-[385px] lg:max-w-non ">
+      <div className="w-full lg:max-w-[385px] max-w-none ">
         <TokenSeedingDetails />
 
         <BroadcastMessages />

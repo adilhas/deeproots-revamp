@@ -1,5 +1,28 @@
 import React from 'react';
 import { FiCheck, FiCheckCircle } from 'react-icons/fi';
+import parse, { domToReact, Element, DOMNode } from 'html-react-parser';
+
+function parseWithBold(input: string) {
+  const html = input.replace(
+    /\*\*(.*?)\*\*/g,
+    '<span class="font-semibold">$1</span>'
+  );
+
+  return parse(html, {
+    replace: (domNode) => {
+      if (
+        domNode instanceof Element &&
+        domNode.attribs?.class === 'font-semibold'
+      ) {
+        return (
+          <span className="font-semibold">
+            {domToReact(domNode.children as DOMNode[])}
+          </span>
+        );
+      }
+    },
+  });
+}
 
 const RULES = [
   'Only submit original, responsibly disclosed vulnerabilities',
@@ -26,13 +49,15 @@ const BountyRules = () => {
               <FiCheck className="text-[#10B981] w-5 h-5 mt-1" />
               <p
                 className="text-base"
-                dangerouslySetInnerHTML={{
-                  __html: rule.replace(
-                    /\*\*(.*?)\*\*/g,
-                    '<span class="font-semibold">$1</span>'
-                  ),
-                }}
-              />
+                // dangerouslySetInnerHTML={{
+                //   __html: rule.replace(
+                //     /\*\*(.*?)\*\*/g,
+                //     '<span class="font-semibold">$1</span>'
+                //   ),
+                // }}
+              >
+                {parseWithBold(rule)}
+              </p>
             </li>
           ))}
         </ul>

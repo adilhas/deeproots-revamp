@@ -3,8 +3,11 @@ import { IncomingForm } from 'formidable';
 import fs from 'fs/promises';
 import { v4 as uuidv4 } from 'uuid';
 import { prisma } from '@/lib/prisma';
-import { KycDocumentType } from '@prisma/client'; // ✅ built-in, Vercel-compatible
-
+import { KycDocumentType } from '@prisma/client';
+import type { File } from 'formidable';
+import { supabaseAdmin } from '@/lib/supabaseAdmin';
+import { getServerSession } from 'next-auth/next';
+import { authOptions } from '../auth/[...nextauth]';
 export const config = {
   api: { bodyParser: false },
 };
@@ -30,9 +33,6 @@ const parseForm = (req: NextApiRequest) =>
     });
   });
 
-import type { File } from 'formidable';
-import { supabaseAdmin } from '@/lib/supabaseAdmin';
-
 const uploadFileToSupabase = async (file: File, folder: string) => {
   const buffer = await fs.readFile(file.filepath);
   const fileExt = file.originalFilename?.split('.').pop() || 'pdf';
@@ -54,6 +54,10 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  const session = await getServerSession(req, res, authOptions);
+  if (!session) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
@@ -64,7 +68,7 @@ export default async function handler(
     const userId = fields.userId?.toString();
     const fullName = fields.fullName?.toString();
 
-    console.log(userId, fullName);
+    // console.log(userId, fullName);
     if (!userId || !fullName) {
       return res.status(400).json({
         message: 'Missing required NDA details',

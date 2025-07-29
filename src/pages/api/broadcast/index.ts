@@ -1,10 +1,14 @@
 import { prisma } from '@/lib/prisma';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { getServerSession } from 'next-auth/next';
+import { authOptions } from '../auth/[...nextauth]';
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  const session = await getServerSession(req, res, authOptions);
+
   try {
     if (req.method === 'GET') {
       const broadcasts = await prisma.boradcastMessage.findMany({
@@ -16,6 +20,9 @@ export default async function handler(
     }
 
     if (req.method === 'POST') {
+      if (session?.user?.role !== 'admin') {
+        return res.status(401).json({ error: 'Unauthorized' });
+      }
       const { message } = req.body;
 
       if (!message || typeof message !== 'string') {

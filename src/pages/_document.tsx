@@ -25,7 +25,7 @@ class MyDocument extends Document {
         dir={locale === 'ar' ? 'rtl' : 'ltr'}
       >
         <Head>
-          <link
+          {/* <link
             href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap"
             rel="stylesheet"
           />
@@ -40,7 +40,7 @@ class MyDocument extends Document {
           <link
             href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap"
             rel="stylesheet"
-          />
+          /> */}
         </Head>
         <body className="antialiased">
           <Main />
