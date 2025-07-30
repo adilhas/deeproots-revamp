@@ -116,15 +116,15 @@ export const allBlogs = [
     image: '/blog/blog-card-img.png',
     slug: 'drc-tokenomics',
   },
-  // {
-  //   title: 'What Is Seeding on Deep Roots?',
-  //   subtitle: 'It’s Not Staking. It’s Not Farming. It’s Seeding.',
-  //   description:
-  //     'Seeding is how users support and grow the Deep Roots ecosystem. Earning 12% APY, unlocking access, and fueling DeWorld. It’s not staking. It’s seeding.',
-  //   date: 'June 2025',
-  //   image: '/blog/blog-card-img.png',
-  //   slug: 'what-is-seeding-on-deep-roots',
-  // },
+  {
+    title: 'What Is Seeding on Deep Roots?',
+    subtitle: 'It’s Not Staking. It’s Not Farming. It’s Seeding.',
+    description:
+      'Seeding is how users support and grow the Deep Roots ecosystem. Earning 12% APY, unlocking access, and fueling DeWorld. It’s not staking. It’s seeding.',
+    date: 'July 30, 2025',
+    image: '/blog/blog-card-img.png',
+    slug: 'what-is-seeding-on-deep-roots',
+  },
   // {
   //   title: 'What Is DeWorld?',
   //   subtitle:

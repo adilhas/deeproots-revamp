@@ -7,7 +7,6 @@ import { toast } from 'react-toastify';
 const DealRoomCountdown = () => {
   const { application, setApplication } = useApplication();
 
-  // Store a fixed expiry timestamp (30 seconds for testing)
   const expiryRef = useRef<number | null>(null);
 
   if (!expiryRef.current && application?.preApprovalUpdatedAt) {

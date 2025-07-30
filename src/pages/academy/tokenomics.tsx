@@ -1,5 +1,5 @@
 import DRCTokenFeatures from '@/components/academy_page/tokenomics/DRCTokenFeatures';
-import FoundationRounds from '@/components/academy_page/tokenomics/FoundationRounds';
+// import FoundationRounds from '@/components/academy_page/tokenomics/FoundationRounds';
 import RootopiaRewards from '@/components/academy_page/tokenomics/RootopiaRewards';
 import TokenAllocation from '@/components/academy_page/tokenomics/TokenAllocation';
 import TokenomicsHero from '@/components/academy_page/tokenomics/TokenomicsHero';
@@ -59,7 +59,7 @@ const TokenomicsPage = () => {
               <TokenTotalSupply />
               <TokenomicsUtility />
               <TokenAllocation />
-              <FoundationRounds />
+              {/* <FoundationRounds /> */}
             </div>
             <RootopiaRewards />
             <div className="py-16 max-w-[1200px] px-3 mx-auto">

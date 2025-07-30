@@ -1,13 +1,15 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { IncomingForm } from 'formidable';
-import fs from 'fs/promises';
-import { v4 as uuidv4 } from 'uuid';
+// import fs from 'fs/promises';
+// import { v4 as uuidv4 } from 'uuid';
 import { prisma } from '@/lib/prisma';
 import { KycDocumentType } from '@prisma/client';
 import type { File } from 'formidable';
-import { supabaseAdmin } from '@/lib/supabaseAdmin';
+// import { supabaseAdmin } from '@/lib/supabaseAdmin';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from '../auth/[...nextauth]';
+import { uploadToSupabase } from '@/lib/uploadToSupabase';
+
 export const config = {
   api: { bodyParser: false },
 };
@@ -33,22 +35,22 @@ const parseForm = (req: NextApiRequest) =>
     });
   });
 
-const uploadFileToSupabase = async (file: File, folder: string) => {
-  const buffer = await fs.readFile(file.filepath);
-  const fileExt = file.originalFilename?.split('.').pop() || 'pdf';
-  const fileName = `${folder}/${uuidv4()}.${fileExt}`; // e.g., 'kyc/user-1234/abc.png'
+// const uploadFileToSupabase = async (file: File, folder: string) => {
+//   const buffer = await fs.readFile(file.filepath);
+//   const fileExt = file.originalFilename?.split('.').pop() || 'pdf';
+//   const fileName = `${folder}/${uuidv4()}.${fileExt}`; // e.g., 'kyc/user-1234/abc.png'
 
-  const { error } = await supabaseAdmin.storage
-    .from('deeproots-upload') // Bucket name
-    .upload(fileName, buffer, {
-      contentType: file.mimetype || 'application/octet-stream',
-      upsert: true, // optional, avoids duplicate uploads
-    });
+//   const { error } = await supabaseAdmin.storage
+//     .from('deeproots-upload') // Bucket name
+//     .upload(fileName, buffer, {
+//       contentType: file.mimetype || 'application/octet-stream',
+//       upsert: true, // optional, avoids duplicate uploads
+//     });
 
-  if (error) throw new Error(error.message);
+//   if (error) throw new Error(error.message);
 
-  return `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/deeproots-upload/${fileName}`;
-};
+//   return `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/deeproots-upload/${fileName}`;
+// };
 
 export default async function handler(
   req: NextApiRequest,
@@ -75,15 +77,41 @@ export default async function handler(
       });
     }
 
-    // ----- Save NDA Submission -----
+    const allowedMimeTypes = ['application/pdf', 'image/png', 'image/jpeg'];
+    const maxSize = 5 * 1024 * 1024; // 5MB
+
+    // // ----- Save NDA Submission -----
+    // let signatureUrl: string | null = null;
+    // const sigFile = files.signature;
+    // const isFile = (val: unknown): val is File =>
+    //   typeof val === 'object' && val !== null && 'filepath' in val;
+    // if (sigFile) {
+    //   const file = Array.isArray(sigFile) ? sigFile[0] : sigFile;
+    //   if (isFile(file)) {
+    //     signatureUrl = await uploadFileToSupabase(file, `nda/${userId}`);
+    //   }
+    // }
+
+    // ----- Save NDA Signature -----
     let signatureUrl: string | null = null;
     const sigFile = files.signature;
     const isFile = (val: unknown): val is File =>
       typeof val === 'object' && val !== null && 'filepath' in val;
+
     if (sigFile) {
       const file = Array.isArray(sigFile) ? sigFile[0] : sigFile;
       if (isFile(file)) {
-        signatureUrl = await uploadFileToSupabase(file, `nda/${userId}`);
+        if (!file.mimetype || !allowedMimeTypes.includes(file.mimetype)) {
+          return res.status(400).json({
+            message: 'Signature must be an image or PDF.',
+          });
+        }
+        if (file.size > maxSize) {
+          return res.status(400).json({
+            message: 'Signature file size must be under 5MB.',
+          });
+        }
+        signatureUrl = await uploadToSupabase(file, `nda/${userId}`);
       }
     }
 
@@ -126,7 +154,7 @@ export default async function handler(
         console.warn(`No file provided for KYC field: ${key}`);
         continue;
       }
-      const url = await uploadFileToSupabase(file, 'kyc/' + userId);
+      const url = await uploadToSupabase(file, 'kyc/' + userId);
 
       const doc = await prisma.kycDocument.create({
         data: {
