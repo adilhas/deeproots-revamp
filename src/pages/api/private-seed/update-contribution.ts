@@ -8,7 +8,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const session = await getServerSession(req, res, authOptions);
-  if (!session) {
+  if (!session || session?.user?.role !== 'seeder') {
     return res.status(401).json({ error: 'Unauthorized' });
   }
   if (req.method !== 'PATCH') {

@@ -4,6 +4,8 @@ import { render } from '@react-email/render';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import nodemailer from 'nodemailer';
+import { authOptions } from '../auth/[...nextauth]';
+import { getServerSession } from 'next-auth/next';
 
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
@@ -17,6 +19,10 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  const session = await getServerSession(req, res, authOptions);
+  if (!session || session.user.role !== 'admin') {
+    return res.status(403).json({ message: 'Unauthorized' });
+  }
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method Not Allowed' });
   }

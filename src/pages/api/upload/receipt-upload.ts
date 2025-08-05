@@ -1,60 +1,61 @@
-import formidable from 'formidable';
-import { NextApiRequest, NextApiResponse } from 'next';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '../auth/[...nextauth]';
+// TODO: this is to be removed handling receipt upload in payment approve
+// import formidable from 'formidable';
+// import { NextApiRequest, NextApiResponse } from 'next';
+// import { getServerSession } from 'next-auth';
+// import { authOptions } from '../auth/[...nextauth]';
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
+// export const config = {
+//   api: {
+//     bodyParser: false,
+//   },
+// };
 
-const parseForm = (
-  req: NextApiRequest
-): Promise<{ fields: formidable.Fields; files: formidable.Files }> =>
-  new Promise((resolve, reject) => {
-    const form = formidable({ multiples: false });
+// const parseForm = (
+//   req: NextApiRequest
+// ): Promise<{ fields: formidable.Fields; files: formidable.Files }> =>
+//   new Promise((resolve, reject) => {
+//     const form = formidable({ multiples: false });
 
-    form.parse(req, (err, fields, files) => {
-      if (err) reject(err);
-      else resolve({ fields, files });
-    });
-  });
+//     form.parse(req, (err, fields, files) => {
+//       if (err) reject(err);
+//       else resolve({ fields, files });
+//     });
+//   });
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  const session = await getServerSession(req, res, authOptions);
-  if (session?.user?.role !== 'admin') {
-    return res.status(401).json({ error: 'Unauthorized' });
-  }
-  if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method Not Allowed' });
-  }
+// export default async function handler(
+//   req: NextApiRequest,
+//   res: NextApiResponse
+// ) {
+//   const session = await getServerSession(req, res, authOptions);
+//   if (session?.user?.role !== 'admin') {
+//     return res.status(401).json({ error: 'Unauthorized' });
+//   }
+//   if (req.method !== 'POST') {
+//     return res.status(405).json({ message: 'Method Not Allowed' });
+//   }
 
-  try {
-    const { fields, files } = await parseForm(req);
+//   try {
+//     const { fields, files } = await parseForm(req);
 
-    const declineReason = fields.declineReason as string | undefined;
-    const file = files.file as File | undefined;
+//     const declineReason = fields.declineReason as string | undefined;
+//     const file = files.file as File | undefined;
 
-    let paymentStatus;
+//     let paymentStatus;
 
-    if (declineReason) {
-      paymentStatus = 'declined';
-    } else if (file) {
-      paymentStatus = 'approved';
-    }
+//     if (declineReason) {
+//       paymentStatus = 'declined';
+//     } else if (file) {
+//       paymentStatus = 'approved';
+//     }
 
-    return res.status(200).json({
-      receiptLink: 'https://dummy.receipts.com/receipt123.pdf',
-      paymentStatus,
-    });
-  } catch (err) {
-    console.error('Merged Submission Error:', err);
-    return res
-      .status(500)
-      .json({ message: 'Upload failed', error: (err as Error).message });
-  }
-}
+//     return res.status(200).json({
+//       // receiptLink: 'https://dummy.receipts.com/receipt123.pdf',
+//       paymentStatus,
+//     });
+//   } catch (err) {
+//     console.error('Merged Submission Error:', err);
+//     return res
+//       .status(500)
+//       .json({ message: 'Upload failed', error: (err as Error).message });
+//   }
+// }

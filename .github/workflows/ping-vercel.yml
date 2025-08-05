@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
+      CRON_SECRET: ${{ secrets.CRON_SECRET }}
 
     steps:
       - name: Ping Reminder Endpoint
@@ -20,14 +21,17 @@ jobs:
                 echo "❌ NEXTAUTH_URL is not set!"
                  exit 1
             fi
+            if [ -z "${CRON_SECRET}" ]; then
+              echo "❌ CRON_SECRET is not set!"
+              exit 1
+            fi
+            echo "🌐 Pinging: ${NEXTAUTH_URL}/api/cron/maintenance"
+            STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" -L "${NEXTAUTH_URL}/api/cron/maintenance/")
 
-          echo "🌐 Pinging: ${NEXTAUTH_URL}/api/cron/maintenance"
-          STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" -L "${NEXTAUTH_URL}/api/cron/maintenance/")
-
-          echo "🔎 Received status code: $STATUS_CODE"
-           if [ "$STATUS_CODE" -ne 200 ]; then
-              echo "❌ Endpoint returned non-200 status code."
-           exit 2
+            echo "🔎 Received status code: $STATUS_CODE"
+            if [ "$STATUS_CODE" -ne 200 ]; then
+                echo "❌ Endpoint returned non-200 status code."
+            exit 2
             fi
 
-            echo "✅ Cron job ran successfully."
+              echo "✅ Cron job ran successfully."

@@ -39,7 +39,11 @@ model PrivateSeedSubmission {
   seedTier             String?
   managementNotes      ManagementNotes[]
   isDealRoomExpired    Boolean           @default(false)
-  notifications        Notification[]    
+  notifications        Notification[]   
+
+  @@index([id])
+  @@index([email])
+  @@index([preApprovalUpdatedAt])
 }
 
 model PaymentDetails {
@@ -54,6 +58,9 @@ model PaymentDetails {
   paymentStatus   String                @default("not-submitted")
   receiptUrl      String?
   submission      PrivateSeedSubmission @relation(fields: [submissionId], references: [id])
+
+  @@index([paymentStatus])
+  @@index([updatedAt])
 }
 
 model SeederAccountToken {
@@ -72,6 +79,8 @@ model KycDocument {
   userId    String
   createdAt DateTime              @default(now())
   user      PrivateSeedSubmission @relation(fields: [userId], references: [id])
+
+  @@index([id])
 }
 
 model NdaSubmission {
@@ -82,6 +91,8 @@ model NdaSubmission {
   acceptedAt     DateTime              @default(now())
   updatedAt      DateTime?             @updatedAt
   user           PrivateSeedSubmission @relation(fields: [userId], references: [id])
+
+  @@index([id])
 }
 
 enum SenderType {

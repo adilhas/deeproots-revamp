@@ -7,7 +7,8 @@ export const PrivateSeedSchema = z.object({
   contact: z
     .string()
     .refine((val) => parsePhoneNumberFromString(val)?.isValid() ?? false, {
-      message: 'Invalid phone number. Use format +1234567890',
+      message:
+        'Invalid phone number. Use format [country code + 10 digit number]. eg: +1234567890',
     }),
   country: z.string().min(1, 'Country is required'),
   linkedin: z.string().url('Invalid URL').optional().or(z.literal('')),

@@ -44,7 +44,7 @@ const Seo = ({ title, description, image, url, noIndex }: SeoProps) => {
         content="https://www.deeproots.earth/landing/logo.png"
       />
 
-      <meta name="twitter:card" content={meta.description} />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={meta.title} />
       <meta name="twitter:description" content={meta.description} />
       <meta name="twitter:image" content={meta.image} />

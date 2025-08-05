@@ -1,6 +1,6 @@
 'use client';
 
-import { Mail, User, MapPin, Globe, Bell } from 'lucide-react';
+import { Mail, User, MapPin, Bell } from 'lucide-react';
 import useEventForm from './useEventForm';
 import { useTranslation } from 'next-i18next';
 export interface InterestOption {
@@ -18,13 +18,13 @@ export interface Interests {
 const EventsRegistrationForm = () => {
   const { formData, handleChange, handleSubmit, setFormData } = useEventForm();
   const { t } = useTranslation('connect/events');
-  const interestsList: InterestOption[] = [
-    { key: 'web3', labelKey: 'form.interests.web3' },
-    { key: 'gamefi', labelKey: 'form.interests.gamefi' },
-    { key: 'nfts', labelKey: 'form.interests.nfts' },
-    { key: 'governance', labelKey: 'form.interests.governance' },
-    { key: 'updates', labelKey: 'form.interests.updates' },
-  ];
+  // const interestsList: InterestOption[] = [
+  //   { key: 'web3', labelKey: 'form.interests.web3' },
+  //   { key: 'gamefi', labelKey: 'form.interests.gamefi' },
+  //   { key: 'nfts', labelKey: 'form.interests.nfts' },
+  //   { key: 'governance', labelKey: 'form.interests.governance' },
+  //   { key: 'updates', labelKey: 'form.interests.updates' },
+  // ];
 
   return (
     <section className="bg-white dark:bg-white/5 text-gray-800 dark:text-white border border-gray-200 dark:border-white/10 rounded-3xl p-10 shadow-2xl shadow-[#ad1aaf]/10 transition-all duration-300">
@@ -83,7 +83,7 @@ const EventsRegistrationForm = () => {
         </div>
 
         {/* Interests */}
-        <div className="space-y-4">
+        {/* <div className="space-y-4">
           <div className="flex items-start">
             <Globe className="w-5 h-5 text-[#0085a8] mx-3 mt-1" />
             <div>
@@ -111,7 +111,7 @@ const EventsRegistrationForm = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Early Access */}
         <div className="space-y-4">
