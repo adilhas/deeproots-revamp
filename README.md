@@ -142,10 +142,14 @@ DIRECT_URL=database direct url of supabase
 NEXT_PUBLIC_SUPABASE_URL=suapbase public url
 SUPABASE_SERVICE_ROLE_KEY=supabase service role key
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your supabse anon key
+
 EMAIL_USER=email address from which we will send mail to seeders
 EMAIL_PASS=app password for email authentication
+RESEND_API_KEY=api key for resend account
+
 ADMIN_EMAIL=email for admin login
 ADMIN_PASSWORD=password for admin login
+
 CRON_SECRET=secret text to run maintanince cron job it should be same as repository variable
 ```
 
