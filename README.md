@@ -146,6 +146,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your supabse anon key
 EMAIL_USER=email address from which we will send mail to seeders
 EMAIL_PASS=app password for email authentication
 RESEND_API_KEY=api key for resend account
+REDIS_URL=redis url
 
 ADMIN_EMAIL=email for admin login
 ADMIN_PASSWORD=password for admin login
