@@ -1,13 +1,39 @@
 import type { NextConfig } from 'next';
 import nextI18NextConfig from './next-i18next.config.js';
+const isDev = process.env.NODE_ENV === 'development';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   i18n: nextI18NextConfig.i18n,
   compress: true,
   images: {
-    // domains: ['i.postimg.cc'],
-    unoptimized: true,
+    domains: ['i.postimg.cc'],
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 60,
+  },
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: `default-src 'self'; script-src 'self'${isDev ? " 'unsafe-eval'" : ''}; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://i.postimg.cc; connect-src 'self'; font-src 'self'; frame-ancestors 'none';`,
+          },
+          { key: 'Referrer-Policy', value: 'same-origin' },
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'X-Frame-Options', value: 'DENY' },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()',
+          },
+        ],
+      },
+    ];
   },
 };
 

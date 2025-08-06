@@ -53,7 +53,7 @@ const PAStep1: React.FC<PAStep1Props> = ({
       <div className="">
         <div className="relative w-full h-[575px] border-y border-[#A1A1A1] bg-white">
           {/* PDF Renderer */}
-          <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+          <Worker workerUrl="/pdf-worker/pdf.worker.min.js">
             <Viewer fileUrl="/NDA_SAFT_agreement.pdf" defaultScale={1.2} />
           </Worker>
 

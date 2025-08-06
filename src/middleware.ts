@@ -1,9 +1,19 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { getToken } from 'next-auth/jwt';
+import { rateLimit } from './lib/rateLimit';
 
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
+
+  const ip =
+    req.headers.get('x-forwarded-for') ||
+    req.headers.get('x-real-ip') ||
+    '127.0.0.1';
+
+  if (!rateLimit(String(ip))) {
+    return new NextResponse('Too many requests', { status: 429 });
+  }
 
   // Allow public access to these paths
   const isPublicPath =
@@ -12,9 +22,14 @@ export async function middleware(req: NextRequest) {
     pathname.startsWith('/seeder/forget-password') ||
     pathname.startsWith('/seeder/reset-password') ||
     pathname.startsWith('/seeder/create-account') ||
+    pathname.startsWith('/api/private-seed') ||
+    pathname.startsWith('/api/auth') ||
+    pathname.startsWith('/api/seeder/create-account') ||
+    pathname.startsWith('/api/seeder/forget-password') ||
+    pathname.startsWith('/api/seeder/reset-password') ||
+    pathname.startsWith('/api/seeder/validate-token') ||
     pathname.startsWith('/_next') ||
-    pathname.startsWith('/favicon') ||
-    pathname.startsWith('/api');
+    pathname.startsWith('/favicon');
 
   if (isPublicPath) {
     return NextResponse.next();
@@ -23,7 +38,7 @@ export async function middleware(req: NextRequest) {
   // Get session token from NextAuth
   const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
 
-  // If user is not logged in, redirect to respective login page
+  // If user is not logged in, redirect or block as appropriate
   if (!token) {
     if (pathname.startsWith('/admin')) {
       const loginUrl = new URL('/admin/login', req.url);
@@ -35,6 +50,10 @@ export async function middleware(req: NextRequest) {
       const loginUrl = new URL('/seeder/login', req.url);
       loginUrl.searchParams.set('callbackUrl', pathname);
       return NextResponse.redirect(loginUrl);
+    }
+
+    if (pathname.startsWith('/api')) {
+      return new NextResponse('Unauthorized', { status: 401 });
     }
   }
 
@@ -50,5 +69,5 @@ export async function middleware(req: NextRequest) {
   return NextResponse.next();
 }
 export const config = {
-  matcher: ['/admin/:path*', '/seeder/:path*'],
+  matcher: ['/admin/:path*', '/seeder/:path*', '/api/:path*'],
 };

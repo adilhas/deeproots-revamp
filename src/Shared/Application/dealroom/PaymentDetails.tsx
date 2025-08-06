@@ -2,7 +2,6 @@ import { useApplication } from '@/context/ApplicationContext';
 import React, { useState } from 'react';
 import DealApprovalModal from './DealApprovalModal';
 import DealDeclineModal from './DealDeclineModal';
-// import { FileUpload } from '../FileUpload';
 import { toast } from 'react-toastify';
 import { formatDate, formateDateUTCTime } from '@/utils/formatDate';
 import ViewFileLink from '../ViewFileLink';
@@ -36,9 +35,6 @@ const PaymentDetails = () => {
     }
   };
 
-  // const handleRemove = () => {
-  //   setReceiptFile(null);
-  // };
   const dealData = [
     {
       label: 'Amount Paid',
@@ -276,16 +272,6 @@ const PaymentDetails = () => {
         session?.user.role === 'admin' && (
           <div className="text-center p-4 bg-[#E9E9E9]  flex flex-col md:flex-row  justify-between w-full">
             <div className="">
-              {/* <FileUpload
-              label="Upload Receipt"
-              description=""
-              file={receiptFile}
-              inputId="receipt-upload"
-              accept=".pdf,image/*"
-              previewPDF
-              onUpload={handleUpload}
-              onRemove={handleRemove}
-            /> */}
               <div className="flex flex-col  md:flex-row items-end justify-between w-full">
                 <div className="flex flex-col md:flex-row items-start gap-4 w-full">
                   <div className="text-[#696969] text-lg mt-2">

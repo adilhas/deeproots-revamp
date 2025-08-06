@@ -1,5 +1,4 @@
 import CheckInboxMail from '@/emails/CheckInboxMail';
-// import { transporter } from '@/lib/mailer';
 import { prisma } from '@/lib/prisma';
 import { render } from '@react-email/render';
 import { NextApiRequest, NextApiResponse } from 'next';
@@ -90,26 +89,6 @@ export default async function handler(
         }
       }
 
-      // if (allEmails.length > 0) {
-
-      // // 3. Render email
-      // const html = await render(
-      //   CheckInboxMail({
-      //     link,
-      //   }),
-      //   {
-      //     pretty: true,
-      //   }
-      // );
-
-      // // 4. Send bulk email
-      // await transporter.sendMail({
-      //   from: 'Team DEEPROOTS <noreply@deeproots.earth>',
-      //   bcc: allEmails,
-      //   subject: 'New Announcement on DEEPROOTS',
-      //   html,
-      // });
-      // }
       return res.status(201).json(announcement);
     } catch (err) {
       return res
