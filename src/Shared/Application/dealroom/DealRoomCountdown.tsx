@@ -1,7 +1,7 @@
 'use client';
 
 import { useApplication } from '@/context/ApplicationContext';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { toast } from 'react-toastify';
 
 const DealRoomCountdown = () => {
@@ -32,7 +32,7 @@ const DealRoomCountdown = () => {
 
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
 
-  const handleDecline = async (): Promise<void> => {
+  const handleDecline = useCallback(async (): Promise<void> => {
     const declineReason = 'Payment not submitted within time limit.';
 
     const submissionId = application?.id;
@@ -67,7 +67,7 @@ const DealRoomCountdown = () => {
       console.error('❌ Decline request failed:', err);
       toast.error('There was an error declining the payment.');
     }
-  };
+  }, [application?.id, setApplication]);
 
   useEffect(() => {
     if (!expiryRef.current) {

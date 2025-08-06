@@ -31,7 +31,7 @@ export default function ContributorDashboard() {
     if (status === 'authenticated') {
       fetchApplication();
     }
-  }, [session, status]);
+  }, [session, status, setApplication]);
 
   if (loading) {
     return <AuthLoader />;
