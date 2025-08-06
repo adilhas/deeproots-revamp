@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import bcrypt from 'bcryptjs';
 import { prisma } from '@/lib/prisma';
+import zxcvbn from 'zxcvbn';
 
 export default async function handler(
   req: NextApiRequest,
@@ -16,6 +17,16 @@ export default async function handler(
     return res.status(400).json({ message: 'Invalid or expired token.' });
   }
 
+  const result = zxcvbn(password);
+
+  if (result.score < 2) {
+    return res.status(400).json({
+      error:
+        'Password is too weak. Try adding more characters, symbols, or unique words.',
+      suggestions: result.feedback.suggestions,
+    });
+  }
+
   const hashedPassword = await bcrypt.hash(password, 10);
 
   await prisma.privateSeedSubmission.updateMany({
@@ -26,6 +37,7 @@ export default async function handler(
   await prisma.passwordResetToken.delete({
     where: { token },
   });
+
   return res
     .status(200)
     .json({ message: 'Password has been reset successfully.' });

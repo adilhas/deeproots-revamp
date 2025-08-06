@@ -2,6 +2,8 @@ import NextAuth, { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { prisma } from '@/lib/prisma';
 import bcrypt from 'bcryptjs';
+import { loginRateLimiter } from '@/lib/rateLimiter';
+import { NextApiRequest } from 'next';
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -11,10 +13,19 @@ export const authOptions: NextAuthOptions = {
         username: { label: 'Email', type: 'text' },
         password: { label: 'Password', type: 'password' },
       },
-      async authorize(credentials) {
+      async authorize(credentials, req) {
         const { username, password } = credentials || {};
+        const _req = req as unknown as NextApiRequest;
 
-        if (!username || !password) return null;
+        const ip =
+          (_req.headers['x-forwarded-for'] as string)?.split(',')[0] ||
+          _req.socket?.remoteAddress ||
+          'unknown';
+
+        if (!username || !password) {
+          await loginRateLimiter.consume(ip).catch(() => {}); // still rate limit on empty attempt
+          return null;
+        }
 
         if (
           username === process.env.ADMIN_EMAIL &&
@@ -32,10 +43,20 @@ export const authOptions: NextAuthOptions = {
           where: { email: username },
         });
 
-        if (!seeder || !seeder.passwordHash) return null;
+        if (!seeder || !seeder.passwordHash) {
+          await loginRateLimiter.consume(ip).catch(() => {});
+          return null;
+        }
 
         const isValid = await bcrypt.compare(password, seeder.passwordHash);
-        if (!isValid) return null;
+
+        if (!isValid) {
+          await loginRateLimiter.consume(ip).catch(() => {});
+          return null;
+        }
+
+        // ✅ SUCCESS — reset rate limiter
+        await loginRateLimiter.delete(ip).catch(() => {});
 
         return {
           id: seeder.id,

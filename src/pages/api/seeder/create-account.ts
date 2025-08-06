@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { prisma } from '@/lib/prisma';
 import bcrypt from 'bcryptjs';
+import zxcvbn from 'zxcvbn';
 
 export default async function handler(
   req: NextApiRequest,
@@ -18,6 +19,15 @@ export default async function handler(
 
   if (password !== confirmPassword) {
     return res.status(400).json({ error: 'Passwords do not match' });
+  }
+
+  const passwordStrength = zxcvbn(password);
+  if (passwordStrength.score < 2) {
+    return res.status(400).json({
+      error:
+        'Password is too weak. Try adding more characters, symbols, or unique words.',
+      suggestions: passwordStrength.feedback.suggestions,
+    });
   }
 
   try {
