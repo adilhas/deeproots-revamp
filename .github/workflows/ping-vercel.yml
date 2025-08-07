@@ -26,7 +26,7 @@ jobs:
               exit 1
             fi
             echo "🌐 Pinging: ${NEXTAUTH_URL}/api/cron/maintenance"
-            STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" -L "${NEXTAUTH_URL}/api/cron/maintenance/")
+            STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" -L \ -H "Authorization: Bearer ${CRON_SECRET}" \ "${NEXTAUTH_URL}/api/cron/maintenance/")
 
             echo "🔎 Received status code: $STATUS_CODE"
             if [ "$STATUS_CODE" -ne 200 ]; then
