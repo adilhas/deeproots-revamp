@@ -8,30 +8,35 @@ const phaseStyles = [
     border: 'border-[#C084FC]',
     titleBg: 'bg-[#F3E8FF] border-[#C084FC]',
     y: 'lg:translate-y-[10px]',
+    iconColor: '#7E22CE',
   },
   {
     bg: 'bg-[#D1E9FF]',
     border: 'border-[#53B1FD]',
     titleBg: 'bg-[#EFF8FF] border-[#84CAFF]',
     y: 'lg:translate-y-[110px]',
+    iconColor: '#055bcb',
   },
   {
     bg: 'bg-[#BBF7D0]',
     border: 'border-[#34D399]',
     titleBg: 'bg-[#D1FAE5] border-[#34D399]',
     y: 'lg:translate-y-[110px]',
+    iconColor: '#06976a',
   },
   {
     bg: 'bg-[#FBCFE8]',
     border: 'border-[#8F8F8F]',
     titleBg: 'bg-[#FFE3F2] border-[#F472B6]',
     y: 'lg:translate-y-[100px]',
+    iconColor: '#db2678',
   },
   {
     bg: 'bg-[#FED7AA]',
     border: 'border-[#8F8F8F]',
     titleBg: 'bg-[#FFEDD5] border-[#FB923C]',
     y: 'lg:translate-y-[200px]',
+    iconColor: '#ea580c',
   },
 ];
 
@@ -77,6 +82,7 @@ const PhasesList: React.FC = () => {
                 timeline={data.timeline}
                 items={data.items}
                 isCurrent={isCurrent}
+                iconColor={styles.iconColor}
               />
             );
           })}

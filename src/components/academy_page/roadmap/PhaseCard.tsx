@@ -3,6 +3,7 @@
 import { RocketIcon } from 'lucide-react';
 import { clsx } from 'clsx';
 import parse, { DOMNode, Element } from 'html-react-parser';
+import { LuCircleDashed } from 'react-icons/lu';
 
 export interface PhaseCardProps {
   phase: string;
@@ -14,6 +15,7 @@ export interface PhaseCardProps {
   className?: string;
   titleContainerClassname?: string;
   innerContainerClassname?: string;
+  iconColor?: string;
 }
 
 export default function PhaseCard({
@@ -26,6 +28,7 @@ export default function PhaseCard({
   className,
   titleContainerClassname,
   innerContainerClassname,
+  iconColor,
 }: PhaseCardProps) {
   const replacedTimeline = timeline.replace(
     /Q/g,
@@ -46,7 +49,7 @@ export default function PhaseCard({
   return (
     <div
       className={clsx(
-        `py-8 px-2 rounded-2xl shadow-md w-full max-w-3xl mx-auto text-[#3F3F3F] ${innerContainerClassname}`,
+        `py-6 px-2 rounded-3xl shadow-md w-full max-w-3xl mx-auto text-[#3F3F3F] ${innerContainerClassname}`,
         className
       )}
     >
@@ -72,35 +75,42 @@ export default function PhaseCard({
             <div className="text-xl font-orbitron">{title}</div>
             <div className="text-sm text-[#4B3863]">{subtitle}</div>
           </div>
-          {/* <p className="font-orbitron font-semibold md:text-2xl text-right">
-            <span className="text-[#c6613f] font-sans">Q</span>
-            {timeline}
-          </p> */}
-          {/* <p
-            className="font-orbitron font-semibold md:text-2xl text-right"
-            dangerouslySetInnerHTML={{
-              __html: timeline.replace(
-                /Q/g,
-                '<span style="color:#c6613f">Q</span>'
-              ),
-            }}
-          /> */}
+
           <p className="font-orbitron font-semibold md:text-2xl text-right">
             {parsedContent}
           </p>
         </div>
 
         <ul className="mt-6 space-y-4">
-          {items.map((item, idx) => (
-            <li
-              key={idx}
-              className="flex items-start gap-3 text-sm md:text-base"
-            >
-              <RocketIcon className="w-4 h-4 mt-1 text-purple-800" />
-              <span>{item}</span>
-            </li>
-          ))}
+          {items.map((item, idx) => {
+            const showRocket = phase === 'Phase 1' && idx < 6;
+            return (
+              <li
+                key={idx}
+                className="flex items-start gap-3 text-sm md:text-base"
+              >
+                {showRocket ? (
+                  <RocketIcon
+                    className={`w-4 h-4 mt-1`}
+                    style={{ color: iconColor }}
+                  />
+                ) : (
+                  <LuCircleDashed
+                    className={`w-4 h-4 mt-1`}
+                    style={{ color: iconColor }}
+                  />
+                )}
+                <span>{item}</span>
+              </li>
+            );
+          })}
         </ul>
+        {phase === 'Phase 5' && (
+          <p className="w-full max-w-[760px] mt-8 text-lg font-semibold text-[#303030]">
+            Phase 5 reflects coordinated public rollouts. Internal development
+            may lead to earlier release of some tools.
+          </p>
+        )}
       </div>
     </div>
   );

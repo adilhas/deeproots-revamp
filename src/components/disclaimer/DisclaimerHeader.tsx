@@ -3,9 +3,6 @@ const DisclaimerHeader = () => (
     <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-gradient-from to-gradient-to bg-clip-text text-transparent w-fit">
       Legal Disclaimer
     </h2>
-    <h3 className="text-lg font-semibold w-fit mt-2">
-      - DEEPROOTS PROJECT DISCLAIMER -
-    </h3>
   </div>
 );
 

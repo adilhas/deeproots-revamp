@@ -4,7 +4,7 @@ const products = [
   'DeepAssets.earth – RWA Tokenization',
   'ShareValue.earth – Learn & Earn Platform',
   'InnoFi.earth – Vote & Fund',
-  'InnoLaunch.earth – IDO Platform',
+  'InnoLaunch.earth – Utility Launch Platform',
   'InnoFarm.earth – Web3 Job Marketplace',
   'MetaFabric.earth – Fashion NFT Protocol',
   'GiveFi.earth – Donation Infrastructure',

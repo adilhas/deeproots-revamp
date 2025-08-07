@@ -6,38 +6,41 @@
       "1": {
         "phase": "Phase 1",
         "title": "Core Infrastructure Launch",
-        "subtitle": "The roots are planted — our world begins.",
-        "timeline": "Q2–Q3 2025",
+        "subtitle": "The roots are planted, our world begins.",
+        "timeline": "Q3–Q4 2025",
         "items": [
-          "Launch deeproots.earth – the digital gateway to DeWorld",
-          "Deploy DEEPROOTS Blockchain Architecture (custom consensus, EVM-compatible)",
-          "Open global Community Channels (Discord, X, Telegram)",
-          "Release the Tokenomics Manifesto - the blueprint of $dRC",
-          "Preview the Seeding Engine – a new way to earn & grow",
-          "Enable Cross-Chain Connectivity (ETH, BSC, more)",
-          "Deploy the Referral System Framework – built for virality"
+          "DEEPROOTS.Earth goes live — the gateway into DeWorld",
+          "Socials activated - join us on X, LinkedIn, and Telegram",
+          "Launch Foundation Seat Funnel. Verify early contributors with on-chain badge + app visibility",
+          "Full audit underway: Checking security, speed, and performance",
+          "Tokenomics revealed: How $dRC moves, works, and empowers",
+          "Custom chain launches, powered by PoZ, DRVM, and EVM compatibility",
+          "Seeding Engine preview: A new way to earn and grow together",
+          "Cross-chain ready: Linking with Ethereum, BSC, and more"
         ]
       },
       "2": {
         "phase": "Phase 2",
         "title": "Activate the Ecosystem Core",
         "subtitle": "The users rise. Identity, rewards, and purpose converge.",
-        "timeline": "Q3–Q4 2025",
+        "timeline": "Q1–Q2 2026",
         "items": [
-          "Launch the Full Seat Foundation Campaign – 5 powerful rounds",
-          "Activate On-Chain Referral Rewards – growth goes viral",
-          "Deploy TelexCoin DEX – swap, trade, and own liquidity",
-          "Go live with Ocean Bazaar – discover & mint NFTs"
+          "Foundation Seat Campaign continues ",
+          "Referral system drops: Invite your circle, earn rewards, expand fast",
+          "Activate On-Chain Referral Rewards, growth goes viral",
+          "Deploy TelexCoin DEX: Swap, trade, and own liquidity",
+          "Launch The Address Wallet — Root access into DeWorld ecosystem"
         ]
       },
       "3": {
         "phase": "Phase 3",
         "title": "Engage & Expand the Movement",
         "subtitle": "The ecosystem awakens. Value begins to flow.",
-        "timeline": "Q1–Q2 2026",
+        "timeline": "Q3–Q4 2026",
         "items": [
-          "Launch RootOpia GameFi – play, earn, seed, lead",
-          "Deploy CopyMe AI Assistant – your digital mind, mirrored",
+          "Launch RootOpia GameFi - play, earn, seed, lead",
+          "Deploy CopyMe AI Assistant - your digital mind, mirrored",
+          "Go live with Ocean Bazaar, discover & mint NFTs",
           "Finalize Foundation Governance – decentralized by design",
           "Launch Mobile Wallet (iOS & Android) – power in your pocket"
         ]
@@ -46,9 +49,9 @@
         "phase": "Phase 4",
         "title": "Launch Core Opportunity Platforms",
         "subtitle": "Builders, dreamers, and doers your time begins now.",
-        "timeline": "Q2–Q3 2026",
+        "timeline": "Q1–Q2 2027",
         "items": [
-          "Launch InnoLaunch – a decentralized IDO engine",
+          "Launch InnoLaunch – a decentralized Utility Launch engine",
           "Launch InnoFi – raise funds, distribute grants",
           "Launch GiveFi – redefine transparent giving",
           "Launch InnoFarm – connect talent, unlock jobs in Web3"
@@ -58,7 +61,7 @@
         "phase": "Phase 5",
         "title": "Real-World Integration & Creative Expansion",
         "subtitle": "The digital root system meets the world. Culture becomes code.",
-        "timeline": "Q3–Q4 2026",
+        "timeline": "Q3–Q4 2027",
         "items": [
           "Launch Saxophone – news, culture, and podcast platform",
           "Activate RootIdentity + DAO Governance – verified voice & vote",
@@ -72,6 +75,7 @@
         ]
       }
     },
+
     "techNote": {
       "title": "Tech Access Note",
       "description": "DEEPROOTS will operate in closed development mode until 2027. In Year 3, we will open full documentation, SDKs, and dev tools to empower builders across the ecosystem once the foundation is fully established, audited, and secured."
