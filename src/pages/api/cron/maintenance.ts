@@ -8,6 +8,13 @@ export default async function handler(
 ) {
   if (req.method !== 'GET') return res.status(405).end();
 
+  const authHeader = req.headers.authorization;
+  const expectedSecret = process.env.CRON_SECRET;
+
+  if (!authHeader || authHeader !== `Bearer ${expectedSecret}`) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+
   const now = new Date();
   const clientUrl = process.env.NEXTAUTH_URL || 'http://localhost:3000';
 
