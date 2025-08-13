@@ -7,16 +7,38 @@ import Document, {
   DocumentInitialProps,
 } from 'next/document';
 
-class MyDocument extends Document {
+interface MyDocumentProps extends DocumentInitialProps {
+  nonce: string;
+}
+
+class MyDocument extends Document<MyDocumentProps> {
   static async getInitialProps(
     ctx: DocumentContext
-  ): Promise<DocumentInitialProps> {
+  ): Promise<DocumentInitialProps & { nonce: string }> {
     const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
+    const nonce = ctx.req?.headers['x-nonce']?.toString() || '';
+
+    return { ...initialProps, nonce };
   }
 
   render() {
     const locale = this.props.__NEXT_DATA__.locale || 'en';
+    const { nonce } = this.props as { nonce: string };
+    const jsonLd = {
+      '@context': 'http://schema.org',
+      '@type': 'Organization',
+      name: 'DEEPROOTS',
+      url: 'https://www.deeproots.earth',
+      logo: 'https://www.deeproots.earth/landing/logo.png',
+      sameAs: [
+        'https://twitter.com/DeepRoots_earth',
+        'https://www.youtube.com/@DeepRoots',
+        'https://t.me/DeepRootsCommunity',
+        'https://reddit.com/r/DeepRoots',
+        'https://discord.gg/DeepRoots',
+        'https://www.tiktok.com/@DeepRoots',
+      ],
+    };
 
     return (
       <Html
@@ -25,22 +47,9 @@ class MyDocument extends Document {
         dir={locale === 'ar' ? 'rtl' : 'ltr'}
       >
         <Head>
-          {/* <link
-            href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap"
-            rel="stylesheet"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
-            rel="stylesheet"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
-            rel="stylesheet"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap"
-            rel="stylesheet"
-          /> */}
+          <script nonce={nonce} type="application/ld+json">
+            {JSON.stringify(jsonLd)}
+          </script>
         </Head>
         <body className="antialiased">
           <Main />

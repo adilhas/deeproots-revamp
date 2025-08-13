@@ -1,103 +1,60 @@
 import React from 'react';
 import Image from 'next/image';
-import { FaTwitter, FaDiscord, FaXTwitter } from 'react-icons/fa6';
 import { useThemeContext } from '@/context/ThemeContext';
-import Link from 'next/link';
 
 interface DeWorldCardProps {
   name: string;
   category: string;
   description: string;
-  socialLinks: { name: string; link: string }[];
-  projectLink: string;
-  darkIcon: string;
   lightIcon: string;
+  lightBg: string;
+  darkBg: string;
+  cateColorLight: string;
+  cateColorDark: string;
   url: string;
 }
-
-const iconMap = {
-  twitter: FaTwitter,
-  discord: FaDiscord,
-  X: FaXTwitter,
-};
 
 const DeWorldCard: React.FC<DeWorldCardProps> = ({
   name,
   category,
   description,
-  socialLinks,
-  projectLink,
-  darkIcon,
+  cateColorDark,
+  cateColorLight,
+  darkBg,
+  lightBg,
   lightIcon,
-  url,
 }) => {
   const { isDark } = useThemeContext();
 
   return (
-    <div
-      className="bg-white dark:bg-[#1E222C] rounded-xl shadow-md p-4 w-full max-w-sm  border-muted flex flex-col justify-between h-full"
-      style={{ boxShadow: `${isDark ? '0px 4px 20px 0px #000000' : 'none'}` }}
-    >
+    <div className="bg-white dark:bg-[#FFFFFF08] rounded-4xl p-4 w-full max-w-[282px]  border-muted flex flex-col justify-between h-full">
       <div>
-        <div className="flex flex-row items-center gap-2 mb-2">
-          <div className="p-2 rounded-md dark:bg-[#581C8757] bg-[#F3E8FF]">
-            <Image
-              src={isDark ? darkIcon : lightIcon}
-              alt="icon"
-              width={42}
-              height={42}
-            />
+        <div className=" items-center gap-2 mb-2">
+          <div
+            className="p-5 rounded-full mx-auto w-fit h-fit"
+            style={{ backgroundColor: isDark ? darkBg : lightBg }}
+          >
+            <Image src={lightIcon} alt="icon" width={65} height={65} />
           </div>
-          <div className="flex flex-col gap-3">
-            <h3 className="text-lg font-semibold text-[#1F2937] dark:text-white">
+          <div className="flex flex-col gap-3 text-center my-4">
+            <h3 className="text-xl font-semibold text-[#1F2937] dark:text-white">
               {name}
             </h3>
-            <span className="w-fit px-3 py-1 text-sm rounded-full text-[#5925DC] font-semibold bg-[#F4F3FF] dark:bg-[#F4F3FF] ">
+            <span
+              className="w-fit mx-auto px-3 py-1 text-sm rounded-full font-semibold"
+              style={{
+                backgroundColor: isDark ? darkBg : lightBg,
+                color: isDark ? cateColorDark : cateColorLight,
+              }}
+            >
               {category}
             </span>
           </div>
         </div>
 
-        <div className="flex items-center space-x-3 my-4">
-          {socialLinks.map((link) => {
-            const Icon = iconMap[link.name as keyof typeof iconMap];
-            return (
-              <a
-                key={link.name}
-                href={link.link || '#'}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon className="w-5 h-5 text-[#64748B] dark:text-[#F8FAFC]" />
-              </a>
-            );
-          })}
-        </div>
-
-        <p className="text-sm text-[#4B5563] dark:text-[#E2E8F0]">
+        <p className="text-md text-center text-[#303030] dark:text-[#A1A1A1]">
           {description}
         </p>
-      </div>
-
-      {/* Spacer above the button */}
-      <div className="mt-6">
-        {url?.startsWith('http') ? (
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-outline w-full text-[#4B5563] dark:text-[#E2E8F0] inline-block text-center"
-          >
-            {projectLink}
-          </a>
-        ) : (
-          <Link
-            href={url || '#'}
-            className="btn-outline w-full text-[#4B5563] dark:text-[#E2E8F0] inline-block text-center"
-          >
-            {projectLink}
-          </Link>
-        )}
       </div>
     </div>
   );

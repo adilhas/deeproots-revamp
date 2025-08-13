@@ -23,7 +23,7 @@ export const authOptions: NextAuthOptions = {
           'unknown';
 
         if (!username || !password) {
-          await loginRateLimiter.consume(ip).catch(() => {}); // still rate limit on empty attempt
+          await loginRateLimiter.consume(ip).catch(() => {});
           return null;
         }
 

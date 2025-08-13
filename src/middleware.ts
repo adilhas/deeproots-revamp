@@ -5,6 +5,8 @@ import { rateLimit } from './lib/rateLimit';
 
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
+  const siteUrl = process.env.NEXTAUTH_URL || 'https://www.deeproots.earth';
+  const isDev = process.env.NODE_ENV !== 'production';
 
   const ip =
     req.headers.get('x-forwarded-for') ||
@@ -15,6 +17,27 @@ export async function middleware(req: NextRequest) {
     return new NextResponse('Too many requests', { status: 429 });
   }
 
+  function generateNonce() {
+    const array = new Uint8Array(16);
+    crypto.getRandomValues(array);
+    return btoa(String.fromCharCode(...array));
+  }
+
+  const nonce = generateNonce();
+
+  const csp = `
+    default-src 'self';
+    connect-src 'self';
+    img-src 'self' ${siteUrl} data:;
+    script-src 'self' 'nonce-${nonce}'${isDev ? " 'unsafe-eval'" : ''};
+    style-src 'self' 'unsafe-inline';
+    object-src 'none';
+    base-uri 'self';
+    frame-ancestors 'none';
+  `
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+
   // Allow public access to these paths
   const isPublicPath =
     pathname.startsWith('/admin/login') ||
@@ -24,6 +47,7 @@ export async function middleware(req: NextRequest) {
     pathname.startsWith('/seeder/create-account') ||
     pathname.startsWith('/api/private-seed') ||
     pathname.startsWith('/api/auth') ||
+    pathname.startsWith('/api/auth/') ||
     pathname.startsWith('/api/seeder/create-account') ||
     pathname.startsWith('/api/seeder/forget-password') ||
     pathname.startsWith('/api/seeder/reset-password') ||
@@ -33,7 +57,10 @@ export async function middleware(req: NextRequest) {
     pathname.startsWith('/favicon');
 
   if (isPublicPath) {
-    return NextResponse.next();
+    const res = NextResponse.next();
+    res.headers.set('Content-Security-Policy', csp);
+    res.headers.set('x-nonce', nonce);
+    return res;
   }
 
   // Get session token from NextAuth
@@ -67,7 +94,12 @@ export async function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL('/seeder/login', req.url));
   }
 
-  return NextResponse.next();
+  // return NextResponse.next();
+  // Default: allow & set CSP
+  const res = NextResponse.next();
+  res.headers.set('Content-Security-Policy', csp);
+  res.headers.set('x-nonce', nonce);
+  return res;
 }
 export const config = {
   matcher: ['/admin/:path*', '/seeder/:path*', '/api/:path*'],

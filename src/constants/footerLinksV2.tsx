@@ -55,7 +55,7 @@ export const getfooterLinks = (t: TFunction) => [
         label: t('footer.RootLab.DecentralizedWorld'),
         href: '/deworld/ecosystem',
       },
-      { label: t('footer.RootLab.Ecosystem'), href: '/academy' },
+      // { label: t('footer.RootLab.Ecosystem'), href: '/academy' },
       {
         label: t('footer.RootLab.RootOpiaReward'),
         href: '/lab/rootopia-reward-system',

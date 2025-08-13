@@ -78,11 +78,11 @@ export const getMenuSectionData = (t: TFunction): MenuSection[] => [
           'Explore a connected world of decentralized products, services, and tools, all rooted in innovation and trust.',
         link: '/deworld/ecosystem',
       },
-      {
-        title: 'Ecosystem',
-        description: 'Master the DeepRoots Ecosystem',
-        link: '/academy',
-      },
+      // {
+      //   title: 'Ecosystem',
+      //   description: 'Master the DeepRoots Ecosystem',
+      //   link: '/academy',
+      // },
     ],
   },
   {
