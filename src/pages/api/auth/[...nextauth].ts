@@ -68,8 +68,25 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
+  session: {
+    strategy: 'jwt',
+    maxAge: 1800, // 30 minutes
+    updateAge: 900, // Rolling refresh every 15 min
+  },
+
+  jwt: {
+    maxAge: 1800, // 30 min token expiry
+  },
   callbacks: {
     async jwt({ token, user }) {
+      const now = Math.floor(Date.now() / 1000);
+      if (
+        !token.iat ||
+        typeof token.iat !== 'number' ||
+        now - token.iat > 900
+      ) {
+        token.iat = now;
+      }
       if (user) {
         token.role = user.role;
         token.id = user.id;
@@ -88,6 +105,22 @@ export const authOptions: NextAuthOptions = {
         session.user.applicationId = token.applicationId!;
       }
       return session;
+    },
+  },
+
+  cookies: {
+    sessionToken: {
+      name:
+        process.env.NODE_ENV === 'production'
+          ? '__Secure-next-auth.session-token'
+          : 'next-auth.session-token',
+      options: {
+        httpOnly: true,
+        sameSite: 'lax',
+        secure: process.env.NODE_ENV === 'production',
+        domain: process.env.COOKIE_DOMAIN,
+        path: '/',
+      },
     },
   },
   secret: process.env.NEXTAUTH_SECRET,
