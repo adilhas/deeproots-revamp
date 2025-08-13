@@ -176,6 +176,8 @@ const BroadcastMessages = ({ layoutClassName }: BroadcastMessagesProps) => {
     };
 
     fetchNotes();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleNewNote = (note: BroadcastMessageType) => {

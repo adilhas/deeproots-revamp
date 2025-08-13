@@ -4,6 +4,6 @@ module.exports = {
   generateRobotsTxt: true,
   sitemapSize: 7000,
   changefreq: 'daily',
-  exclude: ['/api/*', '/admin/*'],
+  exclude: ['/api/*', '/admin/*', '/seeder/*'],
   priority: 0.7,
 };

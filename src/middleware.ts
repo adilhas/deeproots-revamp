@@ -1,21 +1,11 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { getToken } from 'next-auth/jwt';
-import { rateLimit } from './lib/rateLimit';
 
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
   const siteUrl = process.env.NEXTAUTH_URL || 'https://www.deeproots.earth';
   const isDev = process.env.NODE_ENV !== 'production';
-
-  const ip =
-    req.headers.get('x-forwarded-for') ||
-    req.headers.get('x-real-ip') ||
-    '127.0.0.1';
-
-  if (!rateLimit(String(ip))) {
-    return new NextResponse('Too many requests', { status: 429 });
-  }
 
   function generateNonce() {
     const array = new Uint8Array(16);

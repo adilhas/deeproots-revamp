@@ -22,8 +22,18 @@ export const authOptions: NextAuthOptions = {
           _req.socket?.remoteAddress ||
           'unknown';
 
+        const { success, blocked, retryAfter } = await loginRateLimiter(ip);
+        if (!success) {
+          throw new Error(
+            blocked
+              ? `Too many failed attempts. Try again after ${Math.ceil(
+                  ((retryAfter ?? Date.now()) - Date.now()) / 1000 / 60
+                )} minutes.`
+              : 'Too many requests. Please try later.'
+          );
+        }
+
         if (!username || !password) {
-          await loginRateLimiter.consume(ip).catch(() => {});
           return null;
         }
 
@@ -44,19 +54,14 @@ export const authOptions: NextAuthOptions = {
         });
 
         if (!seeder || !seeder.passwordHash) {
-          await loginRateLimiter.consume(ip).catch(() => {});
           return null;
         }
 
         const isValid = await bcrypt.compare(password, seeder.passwordHash);
 
         if (!isValid) {
-          await loginRateLimiter.consume(ip).catch(() => {});
           return null;
         }
-
-        // ✅ SUCCESS — reset rate limiter
-        await loginRateLimiter.delete(ip).catch(() => {});
 
         return {
           id: seeder.id,

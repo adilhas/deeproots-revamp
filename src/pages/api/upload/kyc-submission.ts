@@ -22,6 +22,7 @@ const fieldToKycEnum: Record<string, KycDocumentType> = {
 };
 
 import type { Fields, Files } from 'formidable';
+import { uploadRateLimiter } from '@/lib/rateLimiter';
 
 const parseForm = (req: NextApiRequest) =>
   new Promise<{ fields: Fields; files: Files }>((resolve, reject) => {
@@ -42,6 +43,22 @@ export default async function handler(
   }
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method Not Allowed' });
+  }
+
+  const ip =
+    (req.headers['x-forwarded-for'] as string)?.split(',')[0] ||
+    req.socket?.remoteAddress ||
+    'unknown';
+
+  const { success, blocked, retryAfter } = await uploadRateLimiter(ip);
+  if (!success) {
+    return res.status(429).json({
+      error: blocked
+        ? `Too many uploads. Try again after ${Math.ceil(
+            ((retryAfter ?? Date.now()) - Date.now()) / 1000 / 60
+          )} minutes.`
+        : 'Upload limit exceeded. Please try later.',
+    });
   }
 
   try {
@@ -114,13 +131,6 @@ export default async function handler(
         console.warn(`Unknown KYC field: ${key}`);
         continue;
       }
-
-      // const file = Array.isArray(fileVal) ? fileVal[0] : fileVal;
-      // if (!file) {
-      //   console.warn(`No file provided for KYC field: ${key}`);
-      //   continue;
-      // }
-      // const url = await uploadToSupabase(file, 'kyc/' + userId);
 
       const file = Array.isArray(fileVal) ? fileVal[0] : fileVal;
       if (!file || !isFile(file)) {

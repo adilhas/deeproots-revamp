@@ -1,36 +1,16 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-// import { IncomingForm, File } from 'formidable';
-// import fs from 'fs/promises';
-// import { v4 as uuidv4 } from 'uuid';
 import { prisma } from '@/lib/prisma';
-// import { supabaseAdmin } from '@/lib/supabaseAdmin';
 import { IncomingForm } from 'formidable';
 
 export const config = {
   api: { bodyParser: false },
 };
 
-// const uploadPaymentFileToSupabase = async (file: File, folder: string) => {
-//   const buffer = await fs.readFile(file.filepath);
-//   const fileExt = file.originalFilename?.split('.').pop() || 'pdf';
-//   const fileName = `${folder}/${uuidv4()}.${fileExt}`;
-
-//   const { error } = await supabaseAdmin.storage
-//     .from('deeproots-upload')
-//     .upload(fileName, buffer, {
-//       contentType: file.mimetype || 'application/octet-stream',
-//       upsert: true,
-//     });
-
-//   if (error) throw new Error(error.message);
-
-//   return `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/deeproots-upload/${fileName}`;
-// };
-
 import type { Fields, Files } from 'formidable';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from '../auth/[...nextauth]';
 import { uploadToSupabase } from '@/lib/uploadToSupabase';
+import { uploadRateLimiter } from '@/lib/rateLimiter';
 
 const parseForm = (req: NextApiRequest) =>
   new Promise<{ fields: Fields; files: Files }>((resolve, reject) => {
@@ -46,10 +26,30 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const session = await getServerSession(req, res, authOptions);
+
   if (!session) {
     return res.status(401).json({ error: 'Unauthorized' });
   }
   if (req.method !== 'POST') return res.status(405).end();
+
+  // 1️⃣ Rate limit check before doing heavy parsing
+  const ip =
+    (req.headers['x-forwarded-for'] as string)?.split(',')[0] ||
+    req.socket?.remoteAddress ||
+    'unknown';
+
+  const { success, blocked, retryAfter } = await uploadRateLimiter(ip);
+  if (!success) {
+    return res.status(429).json({
+      error: blocked
+        ? typeof retryAfter === 'number'
+          ? `Too many uploads. Try again after ${Math.ceil(
+              (retryAfter - Date.now()) / 1000 / 60
+            )} minutes.`
+          : 'Too many uploads. Please try again later.'
+        : 'Upload limit exceeded. Please try later.',
+    });
+  }
 
   try {
     const { fields, files } = await parseForm(req);
@@ -58,11 +58,6 @@ export default async function handler(
     const transactionLink = fields.transactionLink?.toString();
     const submissionId = fields.submissionId?.toString();
     const paymentFile = files.paymentImage;
-    // const file = Array.isArray(paymentFile) ? paymentFile[0] : paymentFile;
-
-    // if (!amountSent || !transactionLink || !file || !submissionId) {
-    //   return res.status(400).json({ error: 'Missing required payment fields' });
-    // }
 
     const file = Array.isArray(paymentFile) ? paymentFile[0] : paymentFile;
 

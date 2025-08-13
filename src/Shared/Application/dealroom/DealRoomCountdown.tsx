@@ -92,6 +92,7 @@ const DealRoomCountdown = () => {
     }, 1000);
 
     return () => clearInterval(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Empty dependency array ensures it runs only once
 
   return (
