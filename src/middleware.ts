@@ -44,7 +44,7 @@ export async function middleware(req: NextRequest) {
     pathname.startsWith('/api/seeder/validate-token') ||
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api/cron/') ||
-    pathname.startsWith('/api/cron/maintenance/') ||
+    pathname.startsWith('/api/cron/maintenance') ||
     pathname.startsWith('/favicon');
 
   if (isPublicPath) {

@@ -14,27 +14,34 @@ jobs:
 
     steps:
       - name: Ping Reminder Endpoint
-        run: |
-          echo "🔁 Triggering deal room cron at $(date)"
+    run: |
+      echo "🔁 Triggering deal room cron at $(date)"
 
-            if [ -z "${NEXTAUTH_URL}" ]; then
-                echo "❌ NEXTAUTH_URL is not set!"
-                 exit 1
-            fi
-            if [ -z "${CRON_SECRET}" ]; then
-              echo "❌ CRON_SECRET is not set!"
-              exit 1
-            fi
-            echo "🌐 Pinging: ${NEXTAUTH_URL}/api/cron/maintenance"
-            STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
-              -L \
-              -H "Authorization: Bearer ${CRON_SECRET}" \
-              "${NEXTAUTH_URL}/api/cron/maintenance")
+      if [ -z "${NEXTAUTH_URL}" ]; then
+          echo "❌ NEXTAUTH_URL is not set!"
+          exit 1
+      fi
+      if [ -z "${CRON_SECRET}" ]; then
+          echo "❌ CRON_SECRET is not set!"
+          exit 1
+      fi
 
-            echo "🔎 Received status code: $STATUS_CODE"
-            if [ "$STATUS_CODE" -ne 200 ]; then
-                echo "❌ Endpoint returned non-200 status code."
-            exit 2
-            fi
+      echo "🌐 Pinging: ${NEXTAUTH_URL}/api/cron/maintenance"
 
-              echo "✅ Cron job ran successfully."
+      RESPONSE=$(curl -s -w "\n%{http_code}" \
+        -L \
+        -H "Authorization: Bearer ${CRON_SECRET}" \
+        "${NEXTAUTH_URL}/api/cron/maintenance")
+
+      BODY=$(echo "$RESPONSE" | head -n 1)
+      STATUS_CODE=$(echo "$RESPONSE" | tail -n 1)
+
+      echo "🔎 Status code: $STATUS_CODE"
+      echo "📦 Response body: $BODY"
+
+      if [ "$STATUS_CODE" -ne 200 ]; then
+          echo "❌ Endpoint returned non-200 status code."
+          exit 2
+      fi
+
+      echo "✅ Cron job ran successfully."
