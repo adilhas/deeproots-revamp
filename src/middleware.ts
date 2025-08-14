@@ -43,7 +43,8 @@ export async function middleware(req: NextRequest) {
     pathname.startsWith('/api/seeder/reset-password') ||
     pathname.startsWith('/api/seeder/validate-token') ||
     pathname.startsWith('/_next') ||
-    pathname.startsWith('/api/cron/maintenance') ||
+    pathname.startsWith('/api/cron/') ||
+    pathname.startsWith('/api/cron/maintenance/') ||
     pathname.startsWith('/favicon');
 
   if (isPublicPath) {
@@ -92,5 +93,5 @@ export async function middleware(req: NextRequest) {
   return res;
 }
 export const config = {
-  matcher: ['/admin/:path*', '/seeder/:path*', '/api/:path*'],
+  matcher: ['/admin/:path*', '/seeder/:path*'],
 };

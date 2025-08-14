@@ -11,8 +11,22 @@ export default async function handler(
   const authHeader = req.headers.authorization;
   const expectedSecret = process.env.CRON_SECRET;
 
-  if (!authHeader || authHeader !== `Bearer ${expectedSecret}`) {
-    return res.status(401).json({ error: 'Unauthorized' });
+  // if (!authHeader || authHeader !== `Bearer ${expectedSecret}`) {
+  //   return res.status(401).json({ error: 'Unauthorized' });
+  // }
+
+  if (!authHeader) {
+    return res.status(401).json({ error: 'Missing Authorization header' });
+  }
+
+  if (!authHeader.startsWith('Bearer ')) {
+    return res
+      .status(401)
+      .json({ error: 'Invalid Authorization format, expected Bearer token' });
+  }
+
+  if (authHeader !== `Bearer ${expectedSecret}`) {
+    return res.status(401).json({ error: 'Invalid CRON_SECRET' });
   }
 
   const now = new Date();
