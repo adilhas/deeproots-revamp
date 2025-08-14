@@ -11,6 +11,7 @@ import { getServerSession } from 'next-auth/next';
 import { authOptions } from '../auth/[...nextauth]';
 import { uploadToSupabase } from '@/lib/uploadToSupabase';
 import { uploadRateLimiter } from '@/lib/rateLimiter';
+import { scanFileWithOPSWAT } from '@/lib/scanFileWithOPSWAT';
 
 const parseForm = (req: NextApiRequest) =>
   new Promise<{ fields: Fields; files: Files }>((resolve, reject) => {
@@ -88,6 +89,13 @@ export default async function handler(
     if (file.size > maxSize) {
       return res.status(400).json({
         error: 'File too large. Maximum size is 5MB.',
+      });
+    }
+
+    const isSafe = await scanFileWithOPSWAT(file.filepath);
+    if (!isSafe) {
+      return res.status(400).json({
+        message: `Malware detected in ${file.originalFilename} file.`,
       });
     }
 
