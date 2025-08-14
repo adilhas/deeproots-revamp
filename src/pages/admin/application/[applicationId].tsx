@@ -42,6 +42,7 @@ const ApplicationDetailsPage = () => {
     };
 
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [applicationId]);
 
   if (loading) {

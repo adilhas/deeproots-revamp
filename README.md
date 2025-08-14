@@ -151,6 +151,13 @@ REDIS_URL=redis url
 ADMIN_EMAIL=email for admin login
 ADMIN_PASSWORD=password for admin login
 
+REDIS_URL=redis url
+UPSTASH_REDIS_REST_URL=redis upstash url
+UPSTASH_REDIS_REST_TOKEN=redis upstash token
+
+OPSWAT_API_KEY=OPSWAT api key
+
+
 CRON_SECRET=secret text to run maintanince cron job it should be same as repository variable
 ```
 
