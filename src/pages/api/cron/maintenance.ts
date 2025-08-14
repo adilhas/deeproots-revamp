@@ -16,20 +16,17 @@ export default async function handler(
   // }
 
   if (!authHeader) {
-    return res
-      .status(401)
-      .json({ error: 'Missing Authorization header', authHeader });
+    return res.status(401).json({ error: 'Missing Authorization header' });
   }
 
   if (!authHeader.startsWith('Bearer ')) {
     return res.status(401).json({
       error: 'Invalid Authorization format, expected Bearer token',
-      authHeader,
     });
   }
 
   if (authHeader !== `Bearer ${expectedSecret}`) {
-    return res.status(401).json({ error: 'Invalid CRON_SECRET', authHeader });
+    return res.status(401).json({ error: 'Invalid CRON_SECRET' });
   }
 
   const now = new Date();
