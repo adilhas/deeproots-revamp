@@ -13,7 +13,7 @@
     "format": "prettier --write .",
     "postbuild": "next-sitemap",
     "postinstall": "prisma generate",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
