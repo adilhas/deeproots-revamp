@@ -71,7 +71,7 @@ const CopyMeDropdown = () => {
       >
         <Image
           src="/copyme-logo.png"
-          alt="profile"
+          alt="copyme logo"
           width={35}
           height={35}
           className=""

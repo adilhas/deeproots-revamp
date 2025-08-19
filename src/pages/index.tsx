@@ -10,6 +10,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import type { GetStaticProps } from 'next';
 import Seo from '@/Shared/Seo';
 import FounderNote from '@/components/academy_page/about_page/FounderNote';
+import CopyMeChatbot from '@/components/copyme/CopyMeChatbot';
 
 const AddressWallet = dynamic(
   () => import('@/components/main_page/address_wallet_section/AddressWallet')
@@ -85,6 +86,7 @@ const Home = () => {
       <Seo />
       <div className="overflow-x-hidden relative bg-primary-light dark:bg-primary-dark text-[#404040] dark:text-neutral-200">
         <Navbar />
+        <CopyMeChatbot />
         <Hero />
         <Features />
         <div className="w-full max-w-[1200px] mx-auto">
