@@ -60,7 +60,7 @@ export default function CopyMeChatbot() {
       {/* Floating Button */}
       <button
         onClick={() => setOpen(!open)}
-        className={`fixed right-1 bottom-2 md:bottom-6 md:right-6 z-30  text-primary-dark dark:text-primary-light rounded-full px-5 py-3 shadow-soft hover:opacity-90 focus:outline-none ${open ? 'hidden' : ''}`}
+        className={`fixed right-2 bottom-2 md:bottom-6 md:right-6 z-30  text-primary-dark dark:text-primary-light hover:opacity-90 ${open ? 'hidden' : ''}`}
         aria-label="Open COPYME AI"
       >
         <Image
@@ -68,9 +68,9 @@ export default function CopyMeChatbot() {
           alt="copyme"
           width={56}
           height={56}
-          className="mx-auto"
+          className="mx-auto w-14 h-12"
         />
-        <div className="bg-[#a690ec] dark:bg-[#5527e7]  text-center w-fit mx-auto mt-2 rounded-2xl px-3 py-2">
+        <div className="bg-[#a690ec] dark:bg-[#5527e7]  text-center w-fit mx-auto mt-2 rounded-2xl px-3 py-1 md:px-4 md:py-2">
           Ask Me
         </div>
       </button>
@@ -99,7 +99,9 @@ export default function CopyMeChatbot() {
                 <X className="w-6 h-6" />
               </button>
             </div>
-            <div>I learn you. I copy you. I guide you</div>
+            <div className="text-sm md:text-md">
+              I learn you. I copy you. I guide you
+            </div>
           </div>
           <div
             ref={boxRef}
