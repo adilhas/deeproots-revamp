@@ -14,7 +14,7 @@ interface SecureMyAllocationProps {
 }
 
 const paymentSchema = z.object({
-  amountSent: z.string().min(1, 'Amount is required'),
+  // amountSent: z.string().min(1, 'Amount is required'),
   transactionLink: z.string().url('Must be a valid URL'),
   screenshot: z.custom<File>((file) => file instanceof File, {
     message: 'Screenshot file is required',
@@ -24,13 +24,13 @@ const paymentSchema = z.object({
 const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
   const { application, setApplication } = useApplication();
   const [isOpen, setIsOpen] = useState(false);
-  const [amountSent] = useState(application?.capital);
+  // const [amountSent] = useState(application?.capital);
   const [transactionLink, setTransactionLink] = useState('');
   const [screenshot, setScreenshot] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const isFormValid = paymentSchema.safeParse({
-    amountSent,
+    // amountSent,
     transactionLink,
     screenshot,
   }).success;
@@ -57,7 +57,7 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
   };
 
   const handleConfirm = async () => {
-    if (!amountSent || !transactionLink || !screenshot || !application?.id) {
+    if (!transactionLink || !screenshot || !application?.id) {
       toast.info('Please complete all fields.');
       return;
     }
@@ -65,7 +65,6 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
     setIsSubmitting(true);
 
     const formData = new FormData();
-    formData.append('amountSent', amountSent);
     formData.append('transactionLink', transactionLink);
     formData.append('submissionId', application.id);
     formData.append('paymentImage', screenshot);
@@ -78,8 +77,7 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
 
       if (!res.ok) {
         const data = await res.json();
-        console.error(data.error);
-        toast.error('Failed to upload payment');
+        toast.error(data.message);
       }
 
       const { payment } = await res.json();

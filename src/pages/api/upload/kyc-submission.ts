@@ -130,25 +130,30 @@ export default async function handler(
       const enumKey = fieldToKycEnum[key];
       if (!enumKey) {
         console.warn(`Unknown KYC field: ${key}`);
-        continue;
+        return res.status(400).json({
+          message: `Unknown KYC field: ${key}`,
+        });
       }
 
       const file = Array.isArray(fileVal) ? fileVal[0] : fileVal;
       if (!file || !isFile(file)) {
         console.warn(`Invalid or missing file for: ${key}`);
-        continue;
+        return res.status(400).json({
+          message: `Invalid or missing file for: ${key}`,
+        });
       }
 
       if (!file.mimetype || !allowedMimeTypes.includes(file.mimetype)) {
-        console.warn(
-          `Rejected KYC file for ${key} due to invalid mimetype: ${file.mimetype}`
-        );
-        continue; // Skip invalid MIME types
+        return res.status(400).json({
+          message: `Invalid file type for ${key}: ${file.originalFilename}. Allowed types: PDF, PNG, JPEG.`,
+        });
       }
 
       if (file.size > maxSize) {
         console.warn(`Rejected KYC file for ${key} due to size: ${file.size}`);
-        continue; // Skip oversized files
+        return res.status(400).json({
+          message: `File ${file.originalFilename} exceeds 5MB limit.`,
+        });
       }
 
       const isSafe = await scanFileWithOPSWAT(file.filepath);

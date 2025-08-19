@@ -42,10 +42,11 @@ export const authOptions: NextAuthOptions = {
           password === process.env.ADMIN_PASSWORD
         ) {
           return {
-            id: '1',
+            id: 'admin0x1',
             name: 'Admin',
             email: username,
             role: 'admin',
+            applicationId: '',
           };
         }
 

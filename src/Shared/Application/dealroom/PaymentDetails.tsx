@@ -21,6 +21,7 @@ const PaymentDetails = () => {
 
   const handleUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0] || null;
+    const allowedMimeTypes = ['application/pdf', 'image/png', 'image/jpeg'];
 
     if (selectedFile) {
       const fileSizeMB = selectedFile.size / (1024 * 1024);
@@ -30,7 +31,11 @@ const PaymentDetails = () => {
         e.target.value = '';
         return;
       }
-
+      if (!selectedFile.type || !allowedMimeTypes.includes(selectedFile.type)) {
+        toast.info('Only PDF, PNG, and JPEG files are allowed.');
+        e.target.value = '';
+        return;
+      }
       setReceiptFile(selectedFile);
     }
   };
@@ -99,11 +104,11 @@ const PaymentDetails = () => {
         body: formData,
       });
 
-      if (!res.ok) {
-        toast.error('Receipt upload failed');
-      }
-
       const data = await res.json();
+      if (!res.ok) {
+        toast.error(data.message);
+        return;
+      }
 
       setApplication((prevState) => {
         if (!prevState || !prevState.paymentDetails) return prevState;

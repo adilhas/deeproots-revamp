@@ -45,7 +45,14 @@ const PAStep2: React.FC<PAStep2Props> = ({
     setter: React.Dispatch<React.SetStateAction<File | null>>
   ) => {
     const file = e.target.files?.[0];
+    const allowedTypes = ['application/pdf', 'image/png', 'image/jpeg'];
     if (file) {
+      if (!allowedTypes.includes(file.type)) {
+        toast.error(
+          `${file.name} has an invalid type. Only PDF, PNG, and JPG are allowed.`
+        );
+        return;
+      }
       if (file.size > MAX_FILE_SIZE_BYTES) {
         toast.error(
           `File "${file.name}" is too large! Maximum allowed size is ${MAX_FILE_SIZE_MB}MB.`
@@ -63,7 +70,8 @@ const PAStep2: React.FC<PAStep2Props> = ({
   };
 
   const handleSubmit = async () => {
-    let totalSize = 0;
+    // const totalSize = 0;
+    const maxFileSize = 5 * 1024 * 1024; // 5MB
     const files = [
       signatureFile,
       passportFile,
@@ -74,17 +82,31 @@ const PAStep2: React.FC<PAStep2Props> = ({
       authLetterFile,
       orgSelfieFile,
     ];
+    const allowedTypes = ['application/pdf', 'image/png', 'image/jpeg'];
 
     for (const file of files) {
-      if (file) totalSize += file.size;
+      if (!file) continue;
+      if (file.size > maxFileSize) {
+        toast.error(`${file.name} exceeds 5MB. Please upload a smaller file.`);
+        return;
+      }
+
+      // ✅ Type check
+      if (!allowedTypes.includes(file.type)) {
+        toast.error(
+          `${file.name} has an invalid type. Only PDF, PNG, and JPG are allowed.`
+        );
+        return;
+      }
+      // if (file) totalSize += file.size;
     }
 
-    if (totalSize > MAX_FILE_SIZE_BYTES) {
-      toast.error(
-        `Total files size exceeds the maximum allowed (${MAX_FILE_SIZE_BYTES}MB). Please remove some files.`
-      );
-      return;
-    }
+    // if (totalSize > MAX_FILE_SIZE_BYTES) {
+    //   toast.error(
+    //     `Total files size exceeds the maximum allowed (${MAX_FILE_SIZE_BYTES}MB). Please remove some files.`
+    //   );
+    //   return;
+    // }
 
     if (!userId || !fullName.trim() || !isChecked) {
       toast.error('Missing required NDA or user details');
@@ -120,7 +142,7 @@ const PAStep2: React.FC<PAStep2Props> = ({
 
       const result = await res.json();
       if (!res.ok) {
-        toast.error('Something went wrong');
+        toast.error(result.message);
         return;
       }
       toast.success('Submission successful!');

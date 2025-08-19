@@ -30,15 +30,24 @@ const PAStep1: React.FC<PAStep1Props> = ({
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
-    if (file) {
-      if (file.size > 5 * 1024 * 1024) {
-        toast.info('File size must be less than 5MB');
-        event.target.value = '';
-        setSignatureFile(null);
-        return;
-      }
-      setSignatureFile(file);
+    const allowedTypes = ['application/pdf', 'image/png', 'image/jpeg'];
+
+    if (!file) return;
+
+    if (file.size > 5 * 1024 * 1024) {
+      toast.info('File size must be less than 5MB');
+      event.target.value = '';
+      setSignatureFile(null);
+      return;
     }
+    if (!allowedTypes.includes(file.type)) {
+      toast.info('Only PDF, PNG, and JPG files are allowed');
+      event.target.value = '';
+      setSignatureFile(null);
+      return;
+    }
+
+    setSignatureFile(file);
   };
 
   return (

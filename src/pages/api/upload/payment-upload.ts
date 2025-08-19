@@ -55,7 +55,7 @@ export default async function handler(
   try {
     const { fields, files } = await parseForm(req);
 
-    const amountSent = fields.amountSent?.toString();
+    // const amountSent = fields.amountSent?.toString();
     const transactionLink = fields.transactionLink?.toString();
     const submissionId = fields.submissionId?.toString();
     const paymentFile = files.paymentImage;
@@ -68,27 +68,21 @@ export default async function handler(
     const isFile = (val: unknown): val is File =>
       typeof val === 'object' && val !== null && 'filepath' in val;
 
-    if (
-      !amountSent ||
-      !transactionLink ||
-      !submissionId ||
-      !file ||
-      !isFile(file)
-    ) {
+    if (!transactionLink || !submissionId || !file || !isFile(file)) {
       return res
         .status(400)
-        .json({ error: 'Missing or invalid payment fields' });
+        .json({ message: 'Missing or invalid payment fields' });
     }
 
     if (!file.mimetype || !allowedMimeTypes.includes(file.mimetype)) {
       return res.status(400).json({
-        error: 'Invalid file type. Only JPG, PNG, and PDF are allowed.',
+        message: 'Invalid file type. Only JPG, PNG, and PDF are allowed.',
       });
     }
 
     if (file.size > maxSize) {
       return res.status(400).json({
-        error: 'File too large. Maximum size is 5MB.',
+        message: 'File too large. Maximum size is 5MB.',
       });
     }
 
@@ -104,9 +98,24 @@ export default async function handler(
       `payments/${submissionId}`
     );
 
+    const capitalAmount = await prisma.privateSeedSubmission.findUnique({
+      where: {
+        id: submissionId,
+      },
+      select: {
+        capital: true,
+      },
+    });
+
+    if (!capitalAmount) {
+      return res.status(400).json({
+        message: 'Cannot Find capital amount for this account.',
+      });
+    }
+
     const payment = await prisma.paymentDetails.create({
       data: {
-        amountSent,
+        amountSent: capitalAmount.capital,
         transactionLink,
         paymentImage: paymentImageUrl,
         submissionId,

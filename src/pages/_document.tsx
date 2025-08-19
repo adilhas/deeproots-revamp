@@ -47,6 +47,7 @@ class MyDocument extends Document<MyDocumentProps> {
         dir={locale === 'ar' ? 'rtl' : 'ltr'}
       >
         <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <script nonce={nonce} type="application/ld+json">
             {JSON.stringify(jsonLd)}
           </script>
