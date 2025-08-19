@@ -60,7 +60,7 @@ export default function CopyMeChatbot() {
       {/* Floating Button */}
       <button
         onClick={() => setOpen(!open)}
-        className={`fixed right-2 bottom-3 md:bottom-6 md:right-6 z-30  text-primary-dark dark:text-primary-light rounded-full px-5 py-3 shadow-soft hover:opacity-90 focus:outline-none ${open ? 'hidden' : ''}`}
+        className={`fixed right-1 bottom-2 md:bottom-6 md:right-6 z-30  text-primary-dark dark:text-primary-light rounded-full px-5 py-3 shadow-soft hover:opacity-90 focus:outline-none ${open ? 'hidden' : ''}`}
         aria-label="Open COPYME AI"
       >
         <Image
