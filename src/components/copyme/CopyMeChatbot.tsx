@@ -59,7 +59,7 @@ export default function CopyMeChatbot() {
       {/* Floating Button */}
       <button
         onClick={() => setOpen(!open)}
-        className={`fixed bottom-6 right-6 z-30  text-primary-dark dark:text-primary-light rounded-full px-5 py-3 shadow-soft hover:opacity-90 focus:outline-none ${open ? 'hidden' : ''}`}
+        className={`fixed right-2 bottom-3 md:bottom-6 md:right-6 z-30  text-primary-dark dark:text-primary-light rounded-full px-5 py-3 shadow-soft hover:opacity-90 focus:outline-none ${open ? 'hidden' : ''}`}
         aria-label="Open COPYME AI"
       >
         <Image
@@ -76,7 +76,7 @@ export default function CopyMeChatbot() {
 
       {/* Panel */}
       {open && (
-        <div className="fixed bottom-20 right-6 w-[360px] max-h-[70vh] bg-drSlate rounded-2xl shadow-soft border border-white/10 flex flex-col bg-primary-light text-primary-dark dark:text-primary-light dark:bg-primary-dark z-30">
+        <div className="fixed bottom-10 md:bottom-20 right-3 md:right-6 w-[90vw] md:w-[360px] max-h-[70vh] bg-drSlate rounded-2xl shadow-soft border border-white/10 flex flex-col bg-primary-light text-primary-dark dark:text-primary-light dark:bg-primary-dark z-30">
           <div className="p-4 border-b border-white/10 font-semibold w-full text-center">
             <div className="w-full flex flex-row justify-between items-center">
               <div className="text-center w-full">COPYME AI</div>
