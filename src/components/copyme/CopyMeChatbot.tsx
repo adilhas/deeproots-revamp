@@ -1,6 +1,7 @@
 import { X } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
+import { IoIosSend } from 'react-icons/io';
 
 export default function CopyMeChatbot() {
   const [open, setOpen] = useState(false);
@@ -76,10 +77,24 @@ export default function CopyMeChatbot() {
 
       {/* Panel */}
       {open && (
-        <div className="fixed bottom-10 md:bottom-20 right-3 md:right-6 w-[90vw] md:w-[360px] max-h-[70vh] bg-drSlate rounded-2xl shadow-soft border border-white/10 flex flex-col bg-primary-light text-primary-dark dark:text-primary-light dark:bg-primary-dark z-30">
-          <div className="p-4 border-b border-white/10 font-semibold w-full text-center">
-            <div className="w-full flex flex-row justify-between items-center">
-              <div className="text-center w-full">COPYME AI</div>
+        <div
+          className="fixed bottom-10 right-3 md:right-6 w-[90vw] md:w-[360px] max-h-[70vh] rounded-2xl shadow-soft border border-white/10 flex flex-col text-primary-light bg-[#19123b] z-30"
+          style={{
+            boxShadow: `0 0 10px rgba(0, 255, 255, 0.4),0 0 20px rgba(255, 0, 255, 0.4),inset 0 0 15px rgba(255, 255, 255, 0.15)`,
+          }}
+        >
+          <div className="p-4 font-semibold w-full text-center">
+            <div className="w-full flex flex-row justify-between items-start">
+              <div className="text-center w-full text-2xl flex flex-row justify-center items-center gap-1">
+                <Image
+                  src="/copyme-logo.png"
+                  alt="copyme"
+                  width={28}
+                  height={28}
+                  className="w-fit"
+                />
+                <div>COPY-ME</div>
+              </div>
               <button onClick={() => setOpen(!open)}>
                 <X className="w-6 h-6" />
               </button>
@@ -88,7 +103,7 @@ export default function CopyMeChatbot() {
           </div>
           <div
             ref={boxRef}
-            className="px-4 pt-3 space-y-3 overflow-y-auto min-h-[100px]"
+            className="px-4 py-3 space-y-3 overflow-y-auto min-h-[100px] bg-[#0d0a14] rounded-3xl"
             style={{ maxHeight: '50vh' }}
           >
             {messages.map((m, i) => (
@@ -98,7 +113,7 @@ export default function CopyMeChatbot() {
               >
                 <div
                   className={
-                    (m.role === 'user' ? 'bg-white/10' : 'bg-black/30') +
+                    (m.role === 'user' ? 'bg-[#371f69]' : 'bg-[#191636]') +
                     ' inline-block px-3 py-2 rounded-xl'
                   }
                 >
@@ -108,7 +123,7 @@ export default function CopyMeChatbot() {
             ))}
             {loading && <div className="text-xs opacity-70">Thinking…</div>}
           </div>
-          <div className="p-3 border-t border-white/10">
+          <div className="p-3">
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -117,16 +132,16 @@ export default function CopyMeChatbot() {
               className="flex gap-2"
             >
               <input
-                className="flex-1 rounded-xl px-3 py-2 outline-none"
+                className="flex-1 px-3 py-2 outline-none bg-[#15102c] border border-[#201b3d] rounded-3xl"
                 placeholder="Ask about Rootopia, INNOFI…"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
               />
               <button
                 disabled={loading}
-                className="bg-drPrimary rounded-xl px-4 py-2 font-medium disabled:opacity-50"
+                className="p-2 font-medium disabled:opacity-50 bg-[#15102c] border border-[#201b3d] rounded-full"
               >
-                Send
+                <IoIosSend className="w-6 h-5 text-[#b07fe3]" />
               </button>
             </form>
           </div>
