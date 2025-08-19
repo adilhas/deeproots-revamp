@@ -2,6 +2,8 @@ import { X } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { IoIosSend } from 'react-icons/io';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export default function CopyMeChatbot() {
   const [open, setOpen] = useState(false);
@@ -119,7 +121,9 @@ export default function CopyMeChatbot() {
                     ' inline-block px-3 py-2 rounded-xl'
                   }
                 >
-                  {m.content}
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {m.content}
+                  </ReactMarkdown>
                 </div>
               </div>
             ))}
