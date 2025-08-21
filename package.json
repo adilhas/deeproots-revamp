@@ -5,7 +5,6 @@
   "prisma": {
     "generate": "prisma generate"
   },
-  "type": "module",
   "scripts": {
     "embed": "node --loader ts-node/esm scripts/embed.ts",
     "dev": "next dev",
