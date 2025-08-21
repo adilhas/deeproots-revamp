@@ -30,7 +30,7 @@ export default async function handler(
 
     // 1. Create embedding for the user query
     const embeddingResponse = await openai.embeddings.create({
-      model: 'text-embedding-3-small',
+      model: 'text-embedding-3-large',
       input: message,
     });
 
@@ -40,8 +40,8 @@ export default async function handler(
     // 2. Query Supabase for similar documents
     const { data: matches, error } = await supabase.rpc('match_documents', {
       query_embedding: vector,
-      match_threshold: 0.2, // adjust as needed
-      match_count: 3,
+      match_threshold: 0.1, // adjust as needed
+      match_count: 5,
     });
 
     if (error) throw error;

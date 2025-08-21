@@ -11,6 +11,15 @@ const supabase = createClient(
   process.env.SUPABASE_SERVICE_ROLE_KEY!
 );
 
+// ✅ Chunking function
+function chunkText(content: string, chunkSize = 1000): string[] {
+  const chunks: string[] = [];
+  for (let i = 0; i < content.length; i += chunkSize) {
+    chunks.push(content.slice(i, i + chunkSize));
+  }
+  return chunks;
+}
+
 const run = async () => {
   const dir = 'deeproots-data';
   const files = fs.readdirSync(dir);
@@ -21,25 +30,34 @@ const run = async () => {
 
     console.log(`📥 Embedding ${file}...`);
 
-    // 1. Get embeddings from OpenAI
-    const embeddingResponse = await openai.embeddings.create({
-      model: 'text-embedding-3-small',
-      input: content,
-    });
+    // ✅ Split file into chunks
+    const chunks = chunkText(content, 1000);
 
-    const [{ embedding }] = embeddingResponse.data;
+    for (let i = 0; i < chunks.length; i++) {
+      const chunk = chunks[i];
 
-    // 2. Insert into Supabase
-    const { error } = await supabase.from('documents').insert({
-      content,
-      embedding,
-      source: file,
-    });
+      // 1. Get embeddings from OpenAI
+      const embeddingResponse = await openai.embeddings.create({
+        model: 'text-embedding-3-large',
+        input: chunk,
+      });
 
-    if (error) {
-      console.error(`❌ Failed to insert ${file}:`, error);
-    } else {
-      console.log(`✅ Embedded and stored ${file}`);
+      const [{ embedding }] = embeddingResponse.data;
+
+      // 2. Insert into Supabase
+      const { error } = await supabase.from('documents').insert({
+        content: chunk,
+        embedding,
+        source: `${file}#chunk-${i + 1}`,
+      });
+
+      if (error) {
+        console.error(`❌ Failed to insert ${file} (chunk ${i + 1}):`, error);
+      } else {
+        console.log(
+          `✅ Embedded and stored ${file} (chunk ${i + 1}/${chunks.length})`
+        );
+      }
     }
   }
 };
