@@ -1,0 +1,27 @@
+---
+title: Events & Meetups
+url: https://www.deeproots.earth/connect/events
+lang: en
+lastmod: 2025-08-20
+tags: [events, meetups, community, DeWorld, gatherings]
+section: community
+---
+
+# DEEPROOTS Events & Meetups
+
+## Hello, Builder – Let's Meet
+From virtual town halls to global gatherings, connect with the people shaping DeWorld.
+
+---
+
+## Why Attend
+Big updates. Bold ideas. Real energy.  
+DEEPROOTS events are your chance to connect, learn, and grow with the community.
+
+---
+
+## Get Invited
+Register to receive:
+- Exclusive invites  
+- Early access  
+- Location details for upcoming events

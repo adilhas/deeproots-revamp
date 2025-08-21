@@ -1,0 +1,81 @@
+---
+title: Ocean Bazaar – NFT Marketplace
+url: https://www.oceanbazaar.earth/
+lang: en
+lastmod: 2025-08-20
+tags: [nft, marketplace, collectibles, auction, wallet, web3, trading, deep roots, ocean theme, gamefi, rootopia, foundation, trademark, digital ip]
+section: overview
+---
+
+# OCEAN BAZAAR  
+**A New Wave of NFT Ownership – Dive Into the Real World of Digital Collectibles**
+
+OceanBazaar.earth is the NFT marketplace of the Deep Roots ecosystem — blending art, rarity, utility, and identity into one immersive ocean-themed experience.  
+It’s where NFTs become living value — inside your wallet, wardrobe, game, and governance seat.
+
+---
+
+## Overview  
+
+Ocean Bazaar reimagines how NFTs are used — not just collected, but **played, worn, redeemed, governed, and licensed**.  
+From fashion to weapons, land to badges — Ocean Bazaar powers the full spectrum of Web3 identity across DeWorld.
+
+---
+
+## Key Features  
+
+**NFT Marketplace with Ocean Flow UI**  
+Buy, sell, and auction digital assets in a stunning ocean-inspired interface.
+
+**Easy Sell & Auction**  
+Upload, list, or run timed auctions with secure wallet-based listing tools.
+
+**Wallet-Connected Trading**  
+Track ownership, royalties, bids, and trade history via The Address Wallet.
+
+**GameFi-Ready Integration (Rootopia)**  
+Use NFTs purchased on Ocean Bazaar as:
+- **Weapons** for combat
+- **Land** for staking & territory control
+- **Outfits & Wearables** for gameplay advantage
+- **Name Badges** for leaderboard identity & social clout
+
+**Foundation Seats as NFTs**  
+Buy, sell, or play with verified **Foundation Seats** and **Founder Tokens** — NFTs with on-chain governance access and legacy status.
+
+**Real-World Redeemables**  
+Convert digital goods into fashion, gear, and lifestyle products via MetaFabric.
+
+**Trademark & Digital IP Gateway**  
+Enable brands, designers, and DAOs to protect and monetize NFTs as **verifiable digital trademarks** inside the Deep Roots IP layer.
+
+---
+
+## Ecosystem Integration  
+
+- **Rootopia** – NFT utility in-game as weapons, badges, outfits, land  
+- **Foundation** – Trade and hold governance seats as NFTs  
+- **MetaFabric** – Redeem or print NFTs as fashion/lifestyle merch  
+- **The Address Wallet** – Unified dashboard for trading, ownership, royalties  
+- **Saxophone** – Audio and video-powered drops, reveals, and storytelling
+
+---
+
+## Built for the NFT Renaissance  
+
+- GameFi + Lifestyle + Governance in one ecosystem  
+- Trademark-compatible NFTs and metadata  
+- Smart contract trading with verified scarcity  
+- Creator tools for royalty, distribution, and brand launch
+
+---
+
+## Availability  
+
+Ocean Bazaar will launch on:
+- **Web App**  
+- **Mobile App**  
+- **The Address Wallet Integration**
+
+**Swim deeper into the new NFT era.**  
+**Ocean Bazaar** — where digital value meets identity, fashion, gaming, and governance.

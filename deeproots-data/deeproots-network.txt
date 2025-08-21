@@ -1,0 +1,40 @@
+---
+title: DeWorld Network
+url: https://www.deeproots.earth/lab/deeproots-network
+lang: en
+lastmod: 2025-08-20
+tags: [DeWorld, blockchain, public-network, private-network, ecosystem, infrastructure, governance]
+section: overview
+---
+
+# DeWorld Networks
+Two complementary layers powering the ecosystem
+
+## DeWorld Public Network
+**Public Network — For users, creators, and open access**
+
+This is the main blockchain layer where people interact, create, and earn.
+
+### Built for
+- Everyday users (wallets, staking, GameFi, NFTs)
+- Creators launching tokens, games, or digital assets
+- Projects seeking visibility and adoption
+- Seamless onboarding without technical barriers
+
+> Open. Transparent. Made for the world.
+
+## DeWorld Private Network
+**Private Network — For teams, builders, and long-term protection**
+
+This is the infrastructure layer supporting innovation, compliance, and governance.
+
+### Built for
+- Project teams managing smart contracts and token logic
+- Company admins using compliance tools
+- Secure testing and audit environments
+- Identity systems before going public
+
+> Protected. Controlled. Built for longevity.
+
+## Two Networks, One Ecosystem
+Whether building publicly or privately, you are part of the same growing DeWorld.

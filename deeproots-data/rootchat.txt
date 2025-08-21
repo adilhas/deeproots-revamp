@@ -1,0 +1,71 @@
+---
+title: RootChat – The Decentralized Voice, Call & Messaging Platform
+url: https://www.rootchat.earth/
+lang: en
+lastmod: 2025-08-20
+tags: [rootchat, messaging, voice call, video chat, hybrid communication, decentralized, private messaging, deworld, deeproots]
+section: communication
+---
+
+ROOTCHAT  
+The First Hybrid Call & Messaging App for DeWorld.
+
+RootChat is the secure, high-performance communication layer within the DeepRoots ecosystem — featuring wallet-to-wallet messaging, encrypted voice calls, and seamless mode switching between centralized speed and decentralized resilience.:contentReference[oaicite:1]{index=1}
+
+---
+
+###  Mobile-First Hybrid Communication
+
+Engineered for Web3 users on the move:
+- Optimized for mobile and PWA environments — swift, responsive, and reliable across devices.:contentReference[oaicite:2]{index=2}
+- Intuitive interface supports smooth, real-time messaging and voice calling — no phone numbers needed.
+
+---
+
+###  Wallet-to-Wallet Voice Calling
+
+Speak directly and securely:
+- Encrypted voice calling anchored to wallet identity — no metadata, no central servers.:contentReference[oaicite:3]{index=3}
+- Calls stay peer-to-peer, retaining privacy and control with every session.
+
+---
+
+###  Mode Flexibility with One Tap
+
+Switch communication modes instantly:
+- **Centralized Mode** for fast delivery and media-rich interactions.
+- **Decentralized Mode** for censorship-resistant, peer-to-peer messaging and calls.:contentReference[oaicite:4]{index=4}
+
+---
+
+###  Privacy by Default
+
+Absolute confidentiality:
+- No tracking, backdoors, or data logging — ever.:contentReference[oaicite:5]{index=5}
+- Secure by design with zero centralized data exposure.
+
+---
+
+###  Built for DeWorld — Borderless and Free
+
+RootChat is crafted for decentralized living:
+- A censorship-free, global communication layer that respects autonomy and freedom.:contentReference[oaicite:6]{index=6}
+- Ideal for coordinating within DAOs, managing contributor teams, or hosting live voice sessions — all with complete control.
+
+---
+
+###  RootChat Across the DeepRoots Ecosystem
+
+Play. Build. Govern. Communicate.
+- Activate game strategies during **Rootopia** battles
+- Conduct strategic fireside chats for **Foundation** governance
+- Enable live voice support and onboarding via **Join App**
+- Host community AMAs and async governance talks
+
+RootChat is not just messaging — it’s the decentralized voice infrastructure of DeWorld.
+
+---
+
+Speak freely. Organize wisely. Connect securely.
+
+**RootChat — powering the decentralized voice of Web3.**

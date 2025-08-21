@@ -1,0 +1,80 @@
+---
+title: ShareValue – Learn & Earn Education Platform
+url: https://www.sharevalue.earth/
+lang: en
+lastmod: 2025-08-20
+tags: [education, learn to earn, web3, ai, innovation, hackathon, mentorship, blockchain, deep roots]
+section: overview
+---
+
+# SHAREVALUE  
+**Learn, Create, Innovate – A DeWorld Education Hub**
+
+ShareValue.earth is the Learn & Earn platform of the Deep Roots ecosystem.  
+It empowers global creators, builders, and learners to master decentralized technologies, contribute to DeWorld, and transform ideas into real-world impact.
+
+---
+
+## Overview  
+
+ShareValue is where blockchain education meets creation and collaboration.  
+With AI-driven learning modules, decentralized resources, and global community access, it transforms learning into an active force for innovation.
+
+---
+
+## Key Features  
+
+**AI-Powered Learning**  
+Personalized courses and guidance using AI tutors and training assistants.
+
+**Decentralized Tech Resources**  
+Access curated materials to build on blockchain, smart contracts, and DeWorld tools.
+
+**Learn & Earn**  
+Complete challenges, contribute to community projects, and earn tokens and credentials.
+
+**Global Accessibility**  
+Open to learners from all backgrounds — no barriers, just opportunity.
+
+**Innovation Hub**  
+Launch and join hackathons, sprints, and global collabs for ecosystem growth.
+
+**Empowering Creators**  
+From idea to launch: mentorship, support, and funding paths for creators and builders.
+
+**Mentorship & Idea Sharing**  
+Lead groups, run workshops, and become a knowledge provider in your field.
+
+**Knowledge Exchange**  
+Teach others, share expertise, and grow your value through impact.
+
+---
+
+## Ecosystem Integration  
+
+- **INNOFI** – Raise funds for ideas and projects born in ShareValue.  
+- **Foundation** – Refer, seed, and grow talent through education nodes.  
+- **Rootopia** – Gamified learning with real rewards and NFT achievements.  
+- **Saxophone** – Stream educational content and participate in expert-led podcasts.
+
+---
+
+## Built for Empowerment  
+
+- AI-personalized content  
+- Proof-of-learning and on-chain credentials  
+- Multilingual support and global reach  
+- Integrated wallet rewards via The Address Wallet  
+- Zero-cost access to foundational courses
+
+---
+
+## Availability  
+
+ShareValue will launch on:
+- **Web App**  
+- **Mobile App**  
+- **The Address Wallet Integration**
+
+**Learn, build, earn — and lead the future.**  
+**ShareValue** — powering minds across DeWorld.

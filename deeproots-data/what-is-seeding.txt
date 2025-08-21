@@ -1,0 +1,43 @@
+---
+title: What is Seeding?
+url: https://www.deeproots.earth/identity/what-is-seeding
+lang: en
+lastmod: 2025-08-20
+tags: [seeding, rewards, apy, dao, governance, deeproots, growth, foundation-seat, gamefi]
+section: seeding
+---
+
+# What is Seeding?
+Seeding is the DEEPROOTS way to grow, not just invest.  
+It’s how users plant value into the ecosystem and earn real rewards in return.
+
+## How Seeding Works
+- **Grow rewards** — 12% APY or more  
+- **Unlock early access** — to projects and perks  
+- **Strengthen the network** — by supporting real growth  
+
+> It’s not staking,  
+> It’s not farming,  
+> It’s seeding.  
+> Because this is how DeWorld grows.
+
+## Why Seeding Matters
+- **Long-Term Alignment** — You're supporting the ecosystem, not just chasing short-term gains  
+- **Real Utility** — Seeding connects you to platform launches, Foundation Seats, and in-game power  
+- **Low Circulation, High Impact** — Seeding reduces supply pressure while rewarding commitment  
+
+## What You Get When You Seed
+- **12% APY** — On-chain yield (Seeding access only)  
+- **Referral Boosts** — Rewards, boosts, and bonuses for invites  
+- **Access** — Exclusive Foundation Seat access  
+- **DAO Power** — Future governance and reputation rights  
+- **Connection** — Integration with GameFi, Launchpad, and beyond  
+
+## Seeding is Live Soon
+The seeding engine is preparing for launch. When it opens:  
+1. Connect your wallet  
+2. Choose your amount and lock time  
+3. Preview your rewards  
+4. Confirm and grow  
+
+From roots to rewards — it all begins with seeding.

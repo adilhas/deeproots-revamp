@@ -1,0 +1,48 @@
+---
+title: Who We Are
+url: https://www.deeproots.earth/identity/who-we-are
+lang: en
+lastmod: 2025-08-20
+tags: [about, deeproots, mission, movement, decentralized, community, blockchain, ai, deworld]
+section: about
+---
+
+# Who We Are
+We are not a company.  
+We are not a brand.  
+We are a movement.  
+
+DEEPROOTS is a decentralized ecosystem powered by blockchain, AI, and the people who believe in building a freer, fairer digital world.
+
+## What Drives Us
+- Freedom over control  
+- Ownership over permission  
+- Community over corporations  
+
+We believe the internet’s future belongs to its users, not platforms.  
+We’re here to build that future, from the ground up.
+
+## What We’re Building
+We’re building an ecosystem of over **20 products** — all connected by one chain, one token, and one mission:
+
+- **The Address Wallet** — Web3 gateway  
+- **TelexCoin DEX** — On-chain liquidity  
+- **Ocean Bazaar** — NFT economy  
+- **RootOpia GameFi** — Earn by playing and seeding  
+- **MetaFabric, GiveFi, InnoLaunch, and more…**
+
+## Who Builds It
+- Developers, designers, strategists, and creators  
+- Open-source contributors and full-stack builders  
+- Backed by community, not VC control  
+- Global, borderless, and mission-first  
+
+> We don’t just build tech. We build tools for generations.
+
+## From World To DeWorld
+We call our mission **DeWorld** — the shift from centralized control to a decentralized digital reality.  
+
+This isn’t a brand project.  
+It’s a root system for the new internet.  
+
+We seed visions in the earth’s roots and harvest deep solutions for life.

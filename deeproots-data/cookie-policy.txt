@@ -1,0 +1,50 @@
+---
+title: Cookie Policy - DEEPROOTS
+url: https://www.deeproots.earth/cookie-policy
+lang: en
+lastmod: 2025-08-20
+tags: [cookie policy, privacy, data, user rights, DeWorld]
+section: legal
+---
+
+# Simple, Transparent, and Respectful
+**Cookie Policy – DEEPROOTS**  
+
+At DEEPROOTS, we believe in **privacy by design** — not intrusive tracking.  
+We use cookies sparingly, only where they improve your experience or help us protect the platform.
+
+---
+
+## What We Use Cookies For
+- Remember your preferences (like dark mode or language)  
+- Secure your session if you log in  
+- Understand site performance (basic analytics, privacy-respecting)  
+- Simplify navigation across DeWorld products  
+
+---
+
+## What We Never Do
+- No third-party marketing cookies  
+- No data resale or behavioral tracking  
+- No personalized ads or invasive profiling  
+
+---
+
+## Your Control
+You can manage cookies in these ways:
+- Accept/decline non-essential cookies anytime  
+- Clear or block cookies via browser settings  
+- Use the site with only required cookies  
+
+---
+
+## Our Commitment
+- Essential cookies only by default  
+- Optional cookies require consent  
+- All data stays within DEEPROOTS  
+
+---
+
+## Questions?
+For privacy-related concerns or cookie inquiries:  
+📧 **hello@deeproots.earth**

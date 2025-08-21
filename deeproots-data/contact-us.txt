@@ -1,0 +1,32 @@
+---
+title: Contact Us
+url: https://www.deeproots.earth/identity/contact-us
+lang: en
+lastmod: 2025-08-20
+tags: [contact, support, partnerships, community, events, builders, deeproots]
+section: contact
+---
+
+# Let's Talk — We're Listening
+Whether you're a builder, backer, creator, or just curious — we'd love to hear from you.
+
+## Contact DEEPROOTS
+**Contact Us Anytime**  
+For support, partnerships, media, or general inquiries:  
+📧 **hello@deeproots.earth**
+
+### Building Something?
+Planning to launch, integrate, or collaborate? We support creators, communities, and teams across DeWorld:  
+- dApp Integration  
+- Community Growth  
+- Wallet Solutions  
+
+### Want to Meet?
+Join our events and meetups to connect with the community in person or virtually.  
+- **Virtual Town Halls** — Monthly updates and AMAs  
+- **Local Meetups** — Global community gatherings  
+- **Builder Workshops** — Technical deep dives  
+
+## Join Events & Meetups
+This movement grows through conversation.  
+Reach out anytime — we're here to connect and collaborate.

@@ -1,0 +1,54 @@
+---
+title: Privacy Policy - DEEPROOTS
+url: https://www.deeproots.earth/identity/privacy-policy
+lang: en
+lastmod: 2025-08-20
+tags: [privacy, data protection, policy, security, DeWorld]
+section: legal
+---
+
+# We Are the Privacy. We Are the Protection.
+At DEEPROOTS, privacy is not a feature — it's a right.
+
+---
+
+# Privacy Policy – Our Commitment to You
+We don't just talk about decentralization — we build it into how we collect, store, and protect your data.
+
+---
+
+## What We Don't Do
+- We don't track your behavior  
+- We don't sell your data  
+- We don't store personal information without your consent  
+- We don't allow third-party tracking on our core products  
+
+---
+
+## What We Do
+- Store only what's needed — and only if you allow it  
+- Use encrypted systems across all platforms  
+- Offer anonymous or wallet-based access wherever possible  
+- Let you manage your own data through **decentralized identity (DID)** tools  
+- Use AI responsibly — with transparency, not intrusion  
+
+---
+
+## How Your Data Is Handled
+- End-to-end encryption  
+- Minimal metadata  
+- Optional login across platforms  
+- Open-source audits and smart contract transparency  
+- Future DID and self-sovereign profile integration  
+
+---
+
+## No Secrets. No Surveillance.
+We're building **DeWorld** — a digital space where you're not the product.  
+Your privacy is baked into the roots of the platform, not added later.
+
+---
+
+## Contact Us
+For any questions or concerns about privacy:  
+📧 **hello@deeproots.earth**  

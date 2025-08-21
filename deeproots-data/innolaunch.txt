@@ -1,0 +1,78 @@
+---
+title: InnoLaunch – IDO Launchpad for DeWorld Projects
+url: https://www.innolaunch.earth/
+lang: en
+lastmod: 2025-08-20
+tags: [launchpad, ido, funding, innovation, telexcoin, deep roots, projects, foundation, contributors]
+section: overview
+---
+
+# INNOLAUNCH  
+**Empowering DeWorld Projects on the DeepRoots Blockchain**
+
+InnoLaunch.earth is the official launchpad of the Deep Roots ecosystem, designed to accelerate next-generation Web3 startups.  
+It connects vetted teams with structured funding rounds, community support, and on-chain launch mechanisms.
+
+---
+
+## Overview  
+
+InnoLaunch provides a clear multi-phase launch pipeline:  
+- **First Round** – internal milestone-based funding via InnoFi  
+- **Private Round** – Foundation-based ecosystem access  
+- **HNWI Access** – Secure private entry for external high-net-worth contributors  
+- **Community Referrals** – DeepRoots Foundation referral rewards  
+- **Public Launch** – Token goes live on **Telexcoin DEX**
+
+---
+
+## Key Features  
+
+**Phased Launch Structure**  
+From internal grants to global trading — structured, staged, and trackable.
+
+**On-Chain Fundraising**  
+Transparent wallet-based contribution system with milestone tracking.
+
+**Foundation Integration**  
+Private round access via Foundation credentials and referrals.
+
+**Public Market Access**  
+Final stage goes live on **Telexcoin DEX**, with liquidity support and trading pairs.
+
+**Creator Empowerment**  
+Support for token design, marketing, legal, and fundraising strategies.
+
+**Multi-Tier Investor Access**  
+Open funding lanes for Foundation, HNWI, DAO pools, and the public.
+
+---
+
+## Ecosystem Integration  
+
+- **InnoFi** – First-round grants for MVP and product readiness  
+- **Foundation** – Referral and private round structure  
+- **Telexcoin DEX** – Final token listing and liquidity access  
+- **The Address Wallet** – Contribution, claiming, and tracking dashboard
+
+---
+
+## Built for Impact  
+
+- KYC-optional onboarding  
+- Launchpad smart contracts  
+- Verified team and project data  
+- Vesting schedules and contributor controls  
+- Token economics templates and strategy support
+
+---
+
+## Availability  
+
+InnoLaunch will launch on:
+- **Web App**  
+- **Telexcoin DEX Integration**  
+- **The Address Wallet Access**
+
+**From vision to trading — launch your project the DeWorld way.**  
+**InnoLaunch** — the ignition engine of DeepRoots.

@@ -1,0 +1,62 @@
+---
+title: Terms of Service - DEEPROOTS
+url: https://www.deeproots.earth/identity/terms-of-service
+lang: en
+lastmod: 2025-08-20
+tags: [terms of use, legal, service, trust, DeWorld]
+section: legal
+---
+
+# We Are the Terms. We Are the Trust.
+Simple, fair, and human terms for using DEEPROOTS.
+
+---
+
+# Terms of Service – Welcome to DEEPROOTS
+By using any product, platform, or service built within the DEEPROOTS ecosystem (including DeWorld, dApps, wallets, and websites), you agree to these Terms of Service.
+
+---
+
+## What You Can Expect from Us
+- Access to decentralized tools designed to empower you  
+- Transparent communication and open updates  
+- Secure, permissionless infrastructure  
+- No hidden fees, trackers, or control mechanisms  
+- A commitment to innovation and user ownership  
+
+---
+
+## What We Expect from You
+- Use DEEPROOTS services respectfully and legally  
+- Do not exploit the network or other users  
+- Do not reverse-engineer or copy protected logic or code  
+- Respect the decentralized spirit — no spam, scams, or manipulation  
+- Understand that blockchain actions are final and non-reversible  
+
+---
+
+## Important Disclaimers
+- We don't offer financial or legal advice  
+- All blockchain transactions are at your own risk  
+- Smart contract performance is subject to on-chain limitations  
+- Features and services may evolve without notice  
+
+---
+
+## Your Data & Privacy
+We believe in **privacy by design**.  
+For more info, visit our [Privacy Policy](https://deeproots.earth/privacy-policy).  
+
+---
+
+## Questions?
+Reach out to us anytime:  
+📧 **hello@deeproots.earth**  
+
+---
+
+## Final Note
+DEEPROOTS is more than a service — it's a movement.  
+
+By joining, you're part of something bigger.  
+Use it wisely. Grow with it wildly.  

@@ -1,0 +1,47 @@
+---
+title: DEEPROOTS Brand Assets
+url: https://www.deeproots.earth/brand-assets
+lang: en
+lastmod: 2025-08-20
+tags: [brand, assets, media, press, design, logos]
+section: resources
+---
+
+# DEEPROOTS Brand Assets
+Download approved logos, icons, and branding materials.  
+For press, media, and partners only.
+
+---
+
+## Colors
+- **#AD1AAF**  
+- **#0085A8**  
+- **#D06328**  
+- **Cocoa Brown**  
+- **#101245** – Penn Blue  
+- **#E9E9E9** – Platinum  
+- **#FFFFFF** – White  
+
+---
+
+## Typography
+### Primary Font
+- **Orbitron**  
+- Size: 12–128px  
+- Line height: 120%  
+
+### Heading 2
+- **Archivo**  
+- Size: 24–128px  
+- Line height: 130%  
+
+### Body
+- **Segoe UI**  
+- Size: 10–20px  
+- Line height: 150%  
+
+---
+
+## More Details
+For the latest guidelines and downloadable files:  
+👉 [deeproots.earth/brand-assets](https://www.deeproots.earth/brand-assets)  

@@ -1,0 +1,46 @@
+---
+title: What is Web3?
+url: https://www.deeproots.earth/academy/what-is-web3
+lang: en
+lastmod: 2025-08-20
+tags: [web3, blockchain, decentralization, ownership, internet, identity, tokens, deeproots, deworld]
+section: education
+---
+
+# What is Web3?
+
+## Introduction
+The internet we know today was shaped by centralized companies.  
+They own the data, control the platforms, and dictate the rules.  
+
+**Web3 is the shift away from that control toward a decentralized, user-owned internet.**  
+It’s not just a new technology — it’s a new internet model built on blockchain, governed by users, and designed for open participation.
+
+## The Evolution of the Web
+### Web 1.0 — Read Only
+The early web (1990–2004) was static.  
+You could read, but not interact. Pages were simple, and users were just consumers.  
+
+### Web 2.0 — Read and Write
+Web 2.0 (2004–present) brought platforms like Facebook, YouTube, and Twitter.  
+You could create content, but companies owned your data and monetized your activity.  
+
+### Web 3.0 — Read, Write, Own
+Web3 changes the game.  
+Now, users can own their identity, assets, and participation.  
+With wallets, smart contracts, and tokens, the internet becomes open, programmable, and user-driven.  
+
+## Core Principles of Web3
+- **Decentralization** — No central authority. Control is shared across nodes and smart contracts.  
+- **Permissionless** — Anyone can participate. No approvals, no gatekeepers.  
+- **Trustless** — Code replaces middlemen. Smart contracts handle logic and security.  
+- **Ownership** — Your tokens, your NFTs, your identity is truly yours, portable and protected.  
+- **Native Payment** — Send and receive value with crypto, no banks required.  
+
+## Why Web3 Matters
+- **You own your data and assets** — not the platform.  
+- **You earn and govern** — not just use.  
+- **You participate globally** — no borders, no banks, no bias.  
+- **You build and migrate freely** — your identity moves with you.  
+
+> Web3 puts power in the hands of users — and DEEPROOTS is building the foundation to make it real.

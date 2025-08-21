@@ -1,0 +1,61 @@
+---
+title: Tokenomics
+url: https://www.deeproots.earth/academy/tokenomics
+lang: en
+lastmod: 2025-08-20
+tags: [tokenomics, dRC, deeproots, token, governance, staking, referral, seeding, liquidity, gamefi, defi, ecosystem]
+section: tokenomics
+---
+
+# Tokenomics — DEEPROOTS (dRC)
+
+**Built for Generations. Designed to Empower.**  
+Ultra-low initial circulation to protect early growth.  
+
+> Real Utility — Not Just a Token.
+
+## Core Utilities
+- **Seed & Earn** — 12% annual rewards on-chain  
+- **Refer & Grow** — Multi-tier referral rewards  
+- **Play & Win** — GameFi prize pools (RootOpia)  
+- **Vote & Govern** — On-chain governance rights  
+- **Access & Unlock** — Private seed, exclusive rewards  
+- **Fuel the Ecosystem** — Used across 20+ Web3 products  
+
+## Token Allocation
+The **dRC token** is strategically distributed to ensure a sustainable and growing ecosystem. 
+- **Over 41 Years:** 60M  
+- **Vesting (3–10 Years):** 20M  
+- **Dev & Innovation:** 6M  
+- **Seed & GameFi:** 4M  
+- **Community & Partnerships:** 2M  
+- **AI Development:** 4M  
+- **Foundation:** 2M  
+- **Reserved:** 2M  
+
+### Rootopia Rewards
+- Daily + weekly prizes  
+- Leaderboard rankings  
+- Magic Box & treasury drops  
+- Seeding level-up rewards  
+
+## Trade & Participate
+- Live trading on **TelexCoin DEX** (USDT / USDC pairs)  
+- Built on DEEPROOTS Blockchain (**PoZ + DRVM**)  
+- Cross-chain connectivity with ETH, BSC, and more  
+- Fully decentralized swaps via smart contract logic  
+- No custody — you control your assets  
+
+## Liquidity Lock — 40% Commitment
+40% of dRC supply is **protocol-locked** to maintain on-chain stability and protect against market manipulation.  
+
+## dRC Token Trust Features
+- **Liquidity Lock Proof** — Protocol-enforced asset security  
+- **On-Chain Utility Live** — Real-time ecosystem integration  
+- **Token Loop Mechanics** — Continuous utility across dApps  
+- **Multi-Year Vesting Contracts** — Long-term alignment for teams & partners  
+- **DAO Treasury Growth Plan** — Community-managed treasury roadmap  
+- **20+ dApps Powered by dRC** — Ecosystem-wide functionality  
+
+> dRC is not hype. It’s fuel for DeWorld.  
+> Earn it. Seed it. Use it. Govern with it.

@@ -1,0 +1,74 @@
+---
+title: InnoFarm – Web3 Job & Freelance Marketplace
+url: https://www.innofarm.earth/
+lang: en
+lastmod: 2025-08-20
+tags: [jobs, freelance, web3, hiring, escrow, ai, wallet, kyc, learning, deep roots]
+section: overview
+---
+
+# INNOFARM  
+**The Web3 Job Marketplace – Work, Hire, Earn, Grow**
+
+InnoFarm.earth is the decentralized job and freelance platform of the Deep Roots ecosystem.  
+It connects talent, teams, and tasks across Web3 using smart contracts, AI, and verified identity.
+
+---
+
+## Overview  
+
+InnoFarm redefines how the decentralized world works — from job posting to payment.  
+Built on blockchain, it empowers workers, startups, and DAOs with secure hiring, automated matching, and transparent contracts.
+
+---
+
+## Key Features  
+
+**Decentralized Hiring**  
+Post jobs or find work in a secure, blockchain-powered talent network.
+
+**AI Job Matching**  
+Smart algorithms connect verified talent with relevant open opportunities.
+
+**Secure Escrow Payments**  
+Crypto and fiat payments are held in escrow via smart contracts until tasks are complete.
+
+**Verified Web3 Profiles**  
+Use wallet identity, on-chain badges, and optional KYC to build trust and reputation.
+
+**Learn & Grow**  
+Access integrated courses and certifications from ShareValue to boost skills and earnings.
+
+**DAO & Startup Access**  
+Teams can hire, fund, and build through a fully decentralized gig layer.
+
+---
+
+## Ecosystem Integration  
+
+- **The Address Wallet** – Sync wallet for identity, reputation, and payments  
+- **ShareValue** – Access education, skill-building, and credentials  
+- **Foundation** – Refer and seed job hubs or DAO employment networks  
+- **Saxophone** – Discover audio-based job listings, project pitches, and updates
+
+---
+
+## Built for the Future of Work  
+
+- AI matching engine  
+- Smart contract escrow  
+- On-chain work history and trust  
+- DAO-friendly infrastructure  
+- Fiat + crypto compatibility
+
+---
+
+## Availability  
+
+InnoFarm will launch on:
+- **Web App**  
+- **Mobile App**  
+- **The Address Wallet Integration**
+
+**Work the DeWorld way.**  
+**InnoFarm** — where talent meets purpose in the decentralized world.

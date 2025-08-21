@@ -1,0 +1,73 @@
+---
+title: InnoFi – Web3 Funding & Grants Platform
+url: https://www.innofi.earth/
+lang: en
+lastmod: 2025-08-20
+tags: [funding, grants, web3, governance, innovation, deep roots, projects, milestone funding, community voting]
+section: overview
+---
+
+# INNOFI  
+**Vote & Fund DeWorld** — where community-driven innovation comes to life.
+
+InnoFi.earth is the funding, grant, and governance platform of the Deep Roots ecosystem.  
+It empowers users to vote, fund, and directly influence the development of decentralized projects — from idea to launch.
+
+---
+
+## Overview  
+
+InnoFi bridges capital and community through decentralized funding.  
+It enables milestone-based grants, open proposal submissions, and real-time governance powered by on-chain wallet connections.
+
+---
+
+## Key Features  
+
+**Community-Driven Innovation**  
+Fund and vote on projects that shape the future of DeWorld.
+
+**Milestone-Based Funding**  
+Support projects step-by-step — approve or deny fund releases based on verified progress.
+
+**Democratic Approval**  
+One wallet, one vote. Project approval is decided by the community.
+
+**Empowering Creators**  
+Enable innovators to raise funds, gain exposure, and deliver on their vision.
+
+**Transparency & Control**  
+Track contributions, funding status, and voting outcomes — all on-chain.
+
+**Secure Wallet Integration**  
+Connect The Address Wallet for secure participation and contribution management.
+
+---
+
+## Ecosystem Integration  
+
+- **The Address Wallet** – Connect, vote, and fund directly from your profile.  
+- **Foundation** – Seed and support early-stage applicants through ecosystem incentives.  
+- **ShareValue** – Graduate top creators into funded projects via InnoFi.  
+- **Saxophone** – Tune into live pitch sessions, proposal reviews, and progress updates.
+
+---
+
+## Built for Ecosystem Governance  
+
+- Smart contract-based funding logic  
+- Proposal & voting registry  
+- Grant transparency via on-chain tracking  
+- Scalable for DAOs, builders, and ecosystem initiatives
+
+---
+
+## Availability  
+
+InnoFi will launch on:
+- **Web App**  
+- **The Address Wallet Integration**  
+- **Governance API** for partners & DAOs
+
+**Fund change. Vote with impact.**  
+**InnoFi** — powering innovation across DeWorld.

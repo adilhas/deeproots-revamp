@@ -5,7 +5,9 @@
   "prisma": {
     "generate": "prisma generate"
   },
+  "type": "module",
   "scripts": {
+    "embed": "node --loader ts-node/esm scripts/embed.ts",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -33,6 +35,7 @@
     "daisyui": "^5.0.43",
     "date-fns": "^4.1.0",
     "dom-to-image-more": "^3.6.0",
+    "dotenv": "^17.2.1",
     "formidable": "^3.5.4",
     "html-react-parser": "^5.2.6",
     "html-to-text": "^9.0.5",
@@ -85,6 +88,7 @@
     "prisma": "^6.11.1",
     "tailwindcss": "^4.1.10",
     "ts-jest": "^29.4.1",
-    "typescript": "^5"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
   }
 }

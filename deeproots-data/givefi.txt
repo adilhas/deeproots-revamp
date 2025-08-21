@@ -1,0 +1,77 @@
+---
+title: GiveFi – Transparent Donation & Charity Platform
+url: https://www.givefi.earth/
+lang: en
+lastmod: 2025-08-20
+tags: [donation, charity, nonprofits, donors, blockchain, giving, transparency, deep roots, low fees, high speed]
+section: overview
+---
+
+# GIVEFI  
+**Rebuilding Trust in Giving – A New Bridge Between Donors & Nonprofits**
+
+GiveFi.earth is the decentralized donation and charity platform of the Deep Roots ecosystem.  
+It provides a transparent, high-speed, and low-fee solution for donations — designed to empower nonprofits and serve millions of global donors.
+
+---
+
+## Overview  
+
+GiveFi transforms the global giving economy by restoring trust, cutting friction, and giving both donors and nonprofits the tools they need to operate transparently at scale.  
+Every donation is tracked on-chain, every nonprofit is verified, and every cause can build its own branded donation experience.
+
+---
+
+## Key Features  
+
+**Low Fees, High Speed**  
+Built on the DeepRoots Blockchain — fast, near-zero-cost donations with no middlemen.
+
+**On-Chain Transparency**  
+Every transaction is publicly traceable, verifiable, and stored forever. No fraud, no loss.
+
+**Custom Branded Donation Hubs**  
+Nonprofits can launch custom portals with their own story, content, and tracking — powered by GiveFi’s infrastructure.
+
+**Mass Donor Support**  
+Built to support millions of users at once — crypto or fiat, all managed via The Address Wallet.
+
+**Real-Time Impact Updates**  
+Causes can post visual and financial impact reports, milestones, and donor messages tied to campaigns.
+
+**Decentralized Identity for Nonprofits**  
+Every nonprofit has a verified on-chain profile — building credibility, trust, and long-term donor loyalty.
+
+**One-Click Giving**  
+Frictionless giving via web, mobile, or wallet — with instant confirmation, receipts, and sharing tools.
+
+---
+
+## Ecosystem Integration  
+
+- **The Address Wallet** – Donation dashboard, history, and impact tracking for donors  
+- **Foundation** – Seed the highest-impact projects with matched funding  
+- **Saxophone** – Feature donation campaigns, stories, interviews, and updates  
+- **Rootopia** – Gamify giving: earn NFTs, badges, and leaderboard status through donation missions
+
+---
+
+## Built for Scalable Good  
+
+- DeepRoots-native smart contracts  
+- Multi-chain & fiat support  
+- Tax receipt automation  
+- Donor privacy + verified transparency  
+- Designed for global NGOs, local charities, and decentralized campaigns
+
+---
+
+## Availability  
+
+GiveFi will launch on:
+- **Web App**  
+- **Mobile App**  
+- **The Address Wallet Integration**
+
+**Reclaim your impact. Track your giving. Build trust at scale.**  
+**GiveFi** — the transparent donation network of DeWorld.

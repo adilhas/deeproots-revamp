@@ -1,0 +1,61 @@
+---
+title: RootScan Explorer
+url: https://www.rootscan.earth/
+lang: en
+lastmod: 2025-08-20
+tags: [blockchain explorer, rootscan, deeproots, transactions, blocks, tokens, contracts, validators, DeWorld]
+section: infrastructure
+---
+
+ROOTSCAN EXPLORER  
+Your Real-Time Window into DeWorld
+
+Experience the heartbeat of the DeepRoots ecosystem with RootScan — the official blockchain explorer for the DeWorld movement.
+
+---
+
+###  What You Can Do
+
+- **Blocks & Transactions**  
+  Explore live blockchain activity at the speed of the network — including real-time blocks and transaction streams.:contentReference[oaicite:1]{index=1}
+
+- **Search with Precision**  
+  Look up wallet addresses, transaction hashes, blocks, contracts, tokens, and validators instantly. Get clear insights, structured data, and deeper context.:contentReference[oaicite:2]{index=2}
+
+- **Quick Utility Tools**  
+  Verify contracts, view rich lists, or perform contract submissions — all from one powerful interface.:contentReference[oaicite:3]{index=3}
+
+---
+
+###  Why RootScan Matters
+
+- It’s the trusted gateway into **DeepRoots Blockchain**, the technological backbone of **DeWorld**.:contentReference[oaicite:4]{index=4}  
+- Built for transparency, speed, and simplicity — designed for explorers, developers, and community members alike.  
+- Seamlessly connects you to every corner of the DeWorld network — from token data and validators to contracts and chains.:contentReference[oaicite:5]{index=5}
+
+---
+
+###  Integration with DeWorld
+
+RootScan serves as the reliable lens that puts the DeWorld ecosystem in focus.  
+Explore how each piece of the ecosystem — The Address, TeleXcoin, INNOFI, Rootopia, Ocean Bazaar, CopyMe, and more — connects, grows, and evolves on-chain.:contentReference[oaicite:6]{index=6}
+
+---
+
+###  Explorer Use Cases
+
+| Role | Use Case |
+|------|----------|
+| **Developer** | Analyze transaction flows, monitor smart contract behavior, and integrate RootScan’s API for dApp data. |
+| **Investor** | Track wallet movements, evaluate token transfers, and validate staking/validator activity. |
+| **Community Member** | Follow project launches, review referrals, validate NFT actions, and stay connected with DeWorld activity. |
+
+---
+
+###  Join the Movement
+
+RootScan is more than a tool — it's the transparent mirror reflecting the vitality and innovation of DeWorld.
+
+Start your journey. Reveal the block. Navigate DeWorld with clarity and confidence.
+
+RootScan — Because what happens on-chain, should always be seen.

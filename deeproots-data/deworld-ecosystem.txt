@@ -1,0 +1,98 @@
+---
+title: DeWorld Ecosystem
+url: https://www.deeproots.earth/deworld/ecosystem
+lang: en
+lastmod: 2025-08-20
+tags: [ecosystem, products, services, wallet, dex, nft, launchpad, ai, gamefi, governance, jobs, education]
+section: ecosystem
+---
+
+# DeWorld Ecosystem
+Explore a connected world of decentralized products, services, and tools — all rooted in innovation and trust.
+
+## Core Products & Services
+
+### The Address Wallet
+**Wallet**  
+Warp Around Wealth – 21 Layers of Dynamic Finance.
+
+### TeleXcoin DEX
+**DEX**  
+A decentralized exchange for swaps, pools, and liquidity.
+
+### Share Value
+**Education**  
+Learn & Earn in DeWorld Education.
+
+### InnoFI
+**Donation**  
+Vote & Fund Innovation in DeWorld.
+
+### InnoLaunch
+**Launchpad**  
+Empowering DeWorld Projects on the DEEPROOTS Blockchain.
+
+### Ocean Bazaar
+**NFT Marketplace**  
+Buy, Sell, Auction.
+
+### Foundation
+**Earn**  
+Earn from every project built on the DEEPROOTS Blockchain.
+
+### Meta Fabric
+**Fashion**  
+Blockchain to Runway™. Your Style. Your NFT. Your DeWorld.
+
+### RootScan
+**Explorer**  
+DEEPROOTS Blockchain Explorer.
+
+### RootChat
+**Chat**  
+The First Hybrid Call & Messaging App.
+
+### GiveFi
+**Crowdfunding**  
+Empowering Non-Profits through Transparent Giving.
+
+### CopyMe
+**AI**  
+An AI that mirrors your mind – learns, adapts, and leads.
+
+### Innofarm
+**Jobs**  
+The Web3 Job Marketplace.
+
+### Saxophone
+**Podcast**  
+Live Podcasts for Blockchain Insights.
+
+### Rootopia
+**GameFi**  
+Step into Rootopia DeWorld War. Game to Compete. Win. Rule.
+
+### Deep Assets
+**RWA**  
+Transforming Real-World Assets into Digital Value.
+
+## DEEPROOTS Ecosystem — From World to DeWorld
+The DeWorld ecosystem unites multiple use cases into one integrated blockchain environment.
+
+### Use Cases
+- AI  
+- Jobs  
+- Wallet  
+- Fashion  
+- Exchange  
+- Education  
+- Fundraising  
+- Tokenization  
+- NFTs  
+- GameFi  
+- Charity  
+- Podcast  
+- Explorer  
+- Launchpad  
+- Messaging  
+- Governance

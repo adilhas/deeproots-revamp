@@ -1,0 +1,79 @@
+---
+title: Legal Disclaimer - DEEPROOTS
+url: https://www.deeproots.earth/disclaimer
+lang: en
+lastmod: 2025-08-20
+tags: [legal, disclaimer, compliance, liability, blockchain, Web3]
+section: compliance
+---
+
+# Legal Disclaimer  
+
+This legal disclaimer applies to all users, contributors, participants, and partners engaging with the **DEEPROOTS Blockchain**, its digital assets (including **dRC tokens**), and all Web3 products and services within the **DeWorld Ecosystem**.  
+
+The DEEPROOTS Blockchain Ecosystem is operated by **DEEPROOTS BLOCKCHAIN LLC**, a limited liability company registered in the **State of Wyoming, United States**.  
+
+---
+
+## Scope  
+This disclaimer applies to, but is not limited to, the following products and platforms:  
+
+- **TheAddress.earth** – Decentralized Wallet  
+- **TeleXcoin.earth** – Decentralized Exchange  
+- **DeepAssets.earth** – RWA Tokenization  
+- **ShareValue.earth** – Learn & Earn Platform  
+- **InnoFi.earth** – Vote & Fund  
+- **InnoLaunch.earth** – Utility Launch Platform  
+- **InnoFarm.earth** – Web3 Job Marketplace  
+- **MetaFabric.earth** – Fashion NFT Protocol  
+- **GiveFi.earth** – Donation Infrastructure  
+- **Saxophone.earth** – Podcast & Media Platform  
+- **RootOpia.earth** – GameFi Platform  
+- **OceanBazaar.earth** – NFT Marketplace  
+- **RootScan.earth** – Blockchain Explorer  
+- **RootChat** – Decentralized Messaging  
+- **CopyMe AI Agent**  
+- **DEEPROOTS.earth** – Main Ecosystem Interface  
+- And all associated **dApps, smart contracts, services, and interfaces** owned or operated under the DEEPROOTS Project.  
+
+---
+
+## 🚫 No Investment or Financial Advice  
+All content, documentation, smart contracts, or communications provided by DEEPROOTS are strictly for **informational and educational purposes**.  
+
+Nothing constitutes financial, investment, legal, or tax advice. Users should not interpret any part of the ecosystem as a solicitation or recommendation to buy or sell digital assets or securities.  
+
+---
+
+## 🔏 Token Usage & Regulatory Position  
+- The **DEEPROOTS Coin (dRC)** and all associated tokens are **utility tokens**, not registered or classified as securities by the **U.S. SEC** or any other authority.  
+- Tokens serve functional roles within the ecosystem: governance, staking, referral rewards, in-game benefits, and access to services.  
+- No guarantee is made regarding value appreciation, income generation, or financial returns.  
+- Participation in token activities (staking, seeding, GameFi, liquidity pools) is **voluntary and at the user’s sole risk**.  
+
+---
+
+## ⚙️ No Performance Guarantee  
+- The DEEPROOTS ecosystem is an **experimental decentralized infrastructure**.  
+- All platforms, applications, and services are provided **“as-is” and “as-available”**.  
+- No claims are made regarding uptime, performance, or smart contract security.  
+- Users assume full responsibility when interacting with any service or asset.  
+
+---
+
+## 🌍 Regulatory Compliance  
+- Users are responsible for complying with the **laws of their local jurisdiction**.  
+- DEEPROOTS makes no representation that its services are appropriate, legal, or available in any location.  
+- By using the ecosystem, you confirm you are **not in a restricted or sanctioned jurisdiction** and have full legal capacity to engage with blockchain technologies.  
+
+---
+
+## 🧠 Intellectual Property Rights  
+- All **trademarks, code, content, UI/UX assets, and product names** within DEEPROOTS are the intellectual property of **DEEPROOTS BLOCKCHAIN LLC**.  
+- Unauthorized reproduction, use, or modification is strictly prohibited.  
+
+---
+
+## ⚖️ Governing Law & Dispute Resolution  
+- This disclaimer and any disputes are governed by the **laws of Wyoming, United States**, without regard to conflict of law provisions.  
+- By using the ecosystem, you agree to resolve disputes via **confidential, binding arbitration**

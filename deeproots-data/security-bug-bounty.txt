@@ -1,0 +1,51 @@
+---
+title: Security & Bug Bounty
+url: https://www.deeproots.earth/lab/security-bug-bounty
+lang: en
+lastmod: 2025-08-20
+tags: [security, bug-bounty, vulnerability, smart-contracts, rewards, compliance, testing]
+section: security
+---
+
+# Security & Bug Bounty Program
+Help Secure DEEPROOTS  
+
+DEEPROOTS is built to last and we invite you to help us make it stronger.  
+If you find a vulnerability, we'll reward you for reporting it responsibly.
+
+## What You Can Test
+- dRC Smart Contracts (seeding, referrals, liquidity, etc.)
+- The Address Wallet (frontend + API)
+- TelexCoin DEX (swaps, pools, router)
+- RootOpia GameFi contracts
+- Ocean Bazaar (NFT logic)
+- Website & backend APIs (input validation, authentication)
+
+## Bounty Rewards
+Find bugs in any of these severity levels and get rewarded:
+
+- **Critical**: $5,000 – $20,000+
+- **High**: $1,000 – $5,000
+- **Medium**: $500 – $1,000
+- **Low**: Swag / Public Credit  
+
+Rewards are paid in USDT or dRC based on impact & clarity of the report.
+
+## Rules
+- Only submit original, responsibly disclosed vulnerabilities  
+- Do not perform denial-of-service attacks  
+- Do not access private data or users’ funds  
+- Simulate attacks in testnet where possible  
+- Provide clear PoC, steps, and suggested fixes  
+
+## How to Submit
+Follow the format below to submit:
+
+**Email**: security@deeproots.earth  
+**Subject**: Bug Report – [Component Name]  
+
+Include in your report:  
+- Description of the bug  
+- Steps to reproduce  
+- PoC / Screenshots / Code  
+- Your contact wallet for reward

@@ -177,3 +177,4 @@ enum NotificationType {
   SUCCESS
   ERROR
 }
+

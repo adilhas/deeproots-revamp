@@ -1,0 +1,77 @@
+---
+title: Telexcoin DEX
+url: https://www.telexcoin.earth/
+lang: en
+lastmod: 2025-08-20
+tags: [dex, defi, liquidity, swap, trade, telexcoin, deep roots, drc, foundation, seeding, podcasts, innolaunch, saxophone, live podcast]
+section: overview
+---
+
+# TELEXCOIN DEX  
+Unlock the Future of Decentralized Access.
+
+**Swap → Trade → Seed → Talk → Grow** — the liquidity engine of the Deep Roots ecosystem (DeWorld).  
+Telexcoin is the native DEX powering token exchange, liquidity pooling, live podcasting, and Foundation-based seeding — all connected in real time.
+
+---
+
+## Overview  
+
+Telexcoin.earth is the decentralized exchange (DEX) of the Deep Roots ecosystem.  
+It allows users to swap tokens, add/remove liquidity, access Foundation seeding, join INNOLAUNCH launches, and engage in live trader podcasts and discussion — all in one place.
+
+---
+
+## Key Features  
+
+**Instant Token Swaps**  
+Trade Deep Roots tokens and partner assets instantly.
+
+**Liquidity Pools**  
+Earn by providing liquidity for supported trading pairs.
+
+**INNOLAUNCH Integration**  
+Join token launches and early-stage projects directly from the DEX.
+
+**Foundation Seeding Access**  
+Seed into ecosystem initiatives, refer users, and unlock benefits.
+
+**Live Podcast Hub**  
+Built-in Saxophone channel for live AMAs, trader conversations, and ecosystem news.  
+Connect directly with traders, founders, and Foundation members to share strategies and experiences.
+
+**Referral Rewards**  
+Earn rewards through successful project referrals and seeding campaigns.
+
+---
+
+## Ecosystem Role  
+
+- **Main trading center** for dRC and Deep Roots tokens  
+- **Liquidity gateway** to DeWorld projects  
+- **Seeding & IDO portal** via Foundation + INNOLAUNCH  
+- **Real-time communication** through the embedded Saxophone Live Hub  
+- **On-chain, wallet-first UX** via The Address Wallet
+
+---
+
+## Built for the Future  
+
+Telexcoin DEX is built for live, decentralized interaction:  
+- No KYC  
+- Fully transparent smart contracts  
+- Direct wallet access (via The Address Wallet)  
+- Live podcast integration (Saxophone)  
+- Smart routing and multichain ready
+
+---
+
+## Availability  
+
+Telexcoin DEX will be available on:
+- **Web App** (desktop & mobile optimized)  
+- **The Address Wallet** (fully integrated)  
+- **Saxophone App** (embedded Live Hub)
+
+**Trade. Seed. Talk. Grow.**  
+Telexcoin DEX — the voice and engine of DeWorld.
