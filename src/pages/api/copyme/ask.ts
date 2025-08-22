@@ -60,7 +60,7 @@ export default async function handler(
         },
         {
           role: 'user',
-          content: `Question: ${message}\n\nContext:\n${context}`,
+          content: `Question: ${message}\n\nContext:\n${context},`,
         },
       ],
     });
