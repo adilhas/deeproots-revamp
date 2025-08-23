@@ -18,15 +18,20 @@ export default function CopyMeChatbot() {
     if (!input.trim()) return;
 
     const userMsg = { role: 'user' as const, content: input };
-    setMessages((m) => [...m, userMsg]);
+    const newMessages = [...messages, userMsg];
+    // setMessages((m) => [...m, userMsg]);
+    setMessages(newMessages);
     setInput('');
     setLoading(true);
+
+    console.log(newMessages);
 
     try {
       const res = await fetch('/api/copyme/ask', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: userMsg.content }),
+        // body: JSON.stringify({ message: userMsg.content }),
+        body: JSON.stringify({ messages: newMessages }),
       });
 
       if (!res.body) throw new Error('No response body');

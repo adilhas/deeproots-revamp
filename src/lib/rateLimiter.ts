@@ -67,3 +67,12 @@ export const sensitiveApiLimiter = withBlock(
   'sensitive_api_ip',
   0 // no block, just rate limit
 );
+// Create a limiter for the /ask API
+const askLimiterBase = new Ratelimit({
+  redis,
+  limiter: Ratelimit.slidingWindow(20, '1 m'), // 20 reqs per minute
+  analytics: true,
+  prefix: 'ask_api_ip',
+});
+
+export const askRateLimiter = withBlock(askLimiterBase, 'ask_api_ip', 60 * 5);

@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import OpenAI from 'openai';
 import { createClient } from '@supabase/supabase-js';
+import { askRateLimiter } from '@/lib/rateLimiter';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
 
@@ -26,46 +27,79 @@ export default async function handler(
   }
 
   try {
-    const { message } = req.body;
+    const ip =
+      req.headers['x-forwarded-for']?.toString().split(',')[0] ||
+      req.socket.remoteAddress ||
+      'unknown';
 
-    // 1. Create embedding for the user query
+    const limit = await askRateLimiter(ip);
+
+    if (!limit.success) {
+      if (limit.blocked) {
+        return res.status(429).json({
+          error: 'Too many requests. You are temporarily blocked.',
+          retryAfter: limit.retryAfter,
+        });
+      }
+      return res.status(429).json({
+        error: 'Too many requests. Please slow down.',
+      });
+    }
+
+    const { messages } = req.body || {};
+
+    if (!Array.isArray(messages) || messages.length === 0) {
+      return res.status(400).json({ error: 'No valid user message provided.' });
+    }
+
+    const lastUserMsg = messages[messages.length - 1]?.content || '';
+    if (!lastUserMsg.trim()) {
+      return res.status(400).json({ error: 'No valid user message provided.' });
+    }
+
+    // 1. Create embedding for latest user message
     const embeddingResponse = await openai.embeddings.create({
       model: 'text-embedding-3-large',
-      input: message,
+      input: lastUserMsg,
     });
 
-    // const [{ embedding }] = embeddingResponse.data;
     const vector = embeddingResponse.data[0].embedding;
 
-    // 2. Query Supabase for similar documents
+    // 2. Query Supabase
     const { data: matches, error } = await supabase.rpc('match_documents', {
       query_embedding: vector,
-      match_threshold: 0.1, // adjust as needed
+      match_threshold: 0.3,
       match_count: 5,
     });
-
     if (error) throw error;
 
-    // 3. Build context from retrieved docs
-    const context = matches.map((m: MatchDocument) => m.content).join('\n\n');
+    // 3. Build context
+    const context = (matches || [])
+      .map((m: MatchDocument) => m.content)
+      .join('\n\n');
 
-    // 4. Ask GPT with context
+    // 4. Inject context into last user message
+    const messagesWithContext = [
+      {
+        role: 'system',
+        content: `You are COPY-ME, an AI guide for DeepRoots.
+Always answer clearly and concisely.
+If the user asks for "points" or "as point", reformat into structured numbered or bulleted lists.`,
+      },
+      ...messages.slice(0, -1),
+      {
+        ...messages[messages.length - 1],
+        content: `${lastUserMsg}\n\nContext:\n${context}`,
+      },
+    ];
+
+    // 5. Ask GPT with streaming
     const stream = await openai.chat.completions.create({
       model: 'gpt-4o',
       stream: true,
-      messages: [
-        {
-          role: 'system',
-          content: `You are COPYME AI — an assistant trained **only** on DeepRoots ecosystem data (like INNOFI, Rootopia, MetaFabric, dRC, and the roadmap). If a user asks anything outside that scope, respond with: "Sorry, I don’t have that information yet.`,
-        },
-        {
-          role: 'user',
-          content: `Question: ${message}\n\nContext:\n${context},`,
-        },
-      ],
+      messages: messagesWithContext,
     });
 
-    // 5. Stream response back to client
     res.writeHead(200, {
       'Content-Type': 'text/plain; charset=utf-8',
       'Transfer-Encoding': 'chunked',
@@ -80,12 +114,8 @@ export default async function handler(
     res.end();
   } catch (err) {
     console.error('Ask API error:', err);
-
-    // 👇 Always return a safe plain-text message (not HTML)
     if (!res.headersSent) {
-      res.writeHead(200, {
-        'Content-Type': 'text/plain; charset=utf-8',
-      });
+      res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
       res.write('⚠️ Sorry, something went wrong. Please try again later.');
       res.end();
     }
