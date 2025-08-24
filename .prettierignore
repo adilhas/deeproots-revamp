@@ -4,3 +4,4 @@ out
 prisma
 src/generated
 # public
+/bin

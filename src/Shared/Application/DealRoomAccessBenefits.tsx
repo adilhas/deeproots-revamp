@@ -82,7 +82,8 @@ const DealRoomAccessBenefits = () => {
             src={'/dashboard/founder-call.png'}
             width={132}
             height={132}
-            alt="founder call"
+            alt="founder call "
+            className="min-w-[132px] min-h-[132px]"
           />
           <div>
             <div className="text-xl font-semibold">Founder’s call</div>
