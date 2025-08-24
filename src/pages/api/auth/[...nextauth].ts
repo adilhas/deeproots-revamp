@@ -113,22 +113,18 @@ export const authOptions: NextAuthOptions = {
     },
   },
 
-  cookies: {
-    sessionToken: {
-      name:
-        process.env.NODE_ENV === 'production'
-          ? '__Secure-next-auth.session-token'
-          : 'next-auth.session-token',
-      options: {
-        httpOnly: true,
-        sameSite: 'lax',
-        secure: process.env.NODE_ENV === 'production',
-        domain: process.env.COOKIE_DOMAIN,
-        path: '/',
-      },
+  secret: process.env.NEXTAUTH_SECRET,
+  logger: {
+    error(code, metadata) {
+      console.error('NEXTAUTH ERROR:', code, metadata);
+    },
+    warn(code) {
+      console.warn('NEXTAUTH WARN:', code);
+    },
+    debug(code, metadata) {
+      console.log('NEXTAUTH DEBUG:', code, metadata);
     },
   },
-  secret: process.env.NEXTAUTH_SECRET,
 };
 
 export default NextAuth(authOptions);
