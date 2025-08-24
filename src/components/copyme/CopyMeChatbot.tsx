@@ -77,7 +77,7 @@ export default function CopyMeChatbot() {
           height={56}
           className="mx-auto w-14 h-12"
         />
-        <div className="bg-[#a690ec] dark:bg-[#120938]  text-center w-fit mx-auto mt-2 rounded-2xl px-3 py-1 md:px-4 md:py-2">
+        <div className="bg-[#a690ec] dark:bg-[#332a5e]  text-center w-fit mx-auto mt-2 rounded-2xl px-3 py-1 md:px-4 md:py-2">
           Ask Me
         </div>
       </button>
@@ -85,7 +85,7 @@ export default function CopyMeChatbot() {
       {/* Panel */}
       {open && (
         <div
-          className="fixed bottom-5 right-3 md:right-6 w-[90vw] md:w-[360px] lg:w-[500px] max-h-[90vh] rounded-2xl shadow-soft border border-white/10 flex flex-col text-primary-light bg-[#0c032f] z-30"
+          className="fixed bottom-5 right-3 md:right-6 w-[90vw] md:w-[360px] lg:w-[500px] max-h-[90vh] rounded-2xl shadow-soft border border-white/10 flex flex-col text-primary-light bg-[#060117] z-30"
           style={{
             boxShadow: `0 0 10px rgba(0, 255, 255, 0.4),0 0 20px rgba(255, 0, 255, 0.4),inset 0 0 15px rgba(255, 255, 255, 0.15)`,
           }}
@@ -114,7 +114,7 @@ export default function CopyMeChatbot() {
           </div>
           <div
             ref={boxRef}
-            className="px-4 mx-2 py-3 space-y-3 overflow-y-auto min-h-[100px] bg-[#0d0a14] rounded-3xl"
+            className="px-4 mx-2 py-3 space-y-3 overflow-y-auto min-h-[100px] bg-[#110f16] rounded-3xl"
             style={{ maxHeight: '50vh' }}
           >
             {messages.map((m, i) => (
