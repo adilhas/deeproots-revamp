@@ -79,7 +79,6 @@ export const authOptions: NextAuthOptions = {
     maxAge: 1800, // 30 minutes
     updateAge: 900, // Rolling refresh every 15 min
   },
-
   jwt: {
     maxAge: 1800, // 30 min token expiry
   },
