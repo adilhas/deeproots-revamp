@@ -130,6 +130,17 @@ export const authOptions: NextAuthOptions = {
     },
   },
   secret: process.env.NEXTAUTH_SECRET,
+  logger: {
+    error(code, metadata) {
+      console.error('NEXTAUTH ERROR:', code, metadata);
+    },
+    warn(code) {
+      console.warn('NEXTAUTH WARN:', code);
+    },
+    debug(code, metadata) {
+      console.log('NEXTAUTH DEBUG:', code, metadata);
+    },
+  },
 };
 
 export default NextAuth(authOptions);
