@@ -124,7 +124,7 @@ export const authOptions: NextAuthOptions = {
         httpOnly: true,
         sameSite: 'lax',
         secure: process.env.NODE_ENV === 'production',
-        domain: process.env.COOKIE_DOMAIN,
+        domain: process.env.COOKIE_DOMAIN || undefined,
         path: '/',
       },
     },
