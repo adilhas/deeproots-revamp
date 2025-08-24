@@ -73,18 +73,23 @@ export default async function handler(
     });
     if (error) throw error;
 
-    // 3. Build context
+    // 3. Build context (truncate to avoid token overflow)
     const context = (matches || [])
       .map((m: MatchDocument) => m.content)
-      .join('\n\n');
+      .join('\n\n')
+      .slice(0, 3000);
 
     // 4. Inject context into last user message
     const messagesWithContext = [
       {
         role: 'system',
-        content: `You are COPY-ME, an AI guide for DeepRoots.
-Always answer clearly and concisely.
-If the user asks for "points" or "as point", reformat into structured numbered or bulleted lists.`,
+        content: `You are COPY-ME, the official AI guide for DeepRoots.
+Rules:
+1. Every answer starts with one icon headline (choose randomly from: 🌍 ⚡ 🪨 🌀 🔑 🔥 🌙).
+2. Responses must always be 2–4 short bullet points (no long paragraphs).
+3. If user asks off-topic questions, return a branded fallback:
+   "⚡ COPY-ME is your DeepRoots guide. I only provide insights related to DeepRoots. Please reframe your question!"
+4. If user asks for "points" or "as point", keep response structured in bullet/numbered lists.`,
       },
       ...messages.slice(0, -1),
       {
@@ -103,6 +108,7 @@ If the user asks for "points" or "as point", reformat into structured numbered o
     res.writeHead(200, {
       'Content-Type': 'text/plain; charset=utf-8',
       'Transfer-Encoding': 'chunked',
+      'Cache-Control': 'no-cache',
       Connection: 'keep-alive',
     });
 
@@ -116,7 +122,7 @@ If the user asks for "points" or "as point", reformat into structured numbered o
     console.error('Ask API error:', err);
     if (!res.headersSent) {
       res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
-      res.write('⚠️ Sorry, something went wrong. Please try again later.');
+      res.write('⚡ Sorry, something went wrong. Please try again later.');
       res.end();
     }
   }
