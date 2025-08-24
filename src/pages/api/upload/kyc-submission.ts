@@ -23,7 +23,7 @@ const fieldToKycEnum: Record<string, KycDocumentType> = {
 
 import type { Fields, Files } from 'formidable';
 import { uploadRateLimiter } from '@/lib/rateLimiter';
-import { scanFileWithOPSWAT } from '@/lib/scanFileWithOPSWAT';
+import { enqueueFileScan } from '@/services/scanService';
 
 const parseForm = (req: NextApiRequest) =>
   new Promise<{ fields: Fields; files: Files }>((resolve, reject) => {
@@ -156,12 +156,13 @@ export default async function handler(
         });
       }
 
-      const isSafe = await scanFileWithOPSWAT(file.filepath);
-      if (!isSafe) {
-        return res.status(400).json({
-          message: `Malware detected in ${file.originalFilename} file.`,
-        });
-      }
+      // const isSafe = await scanFileWithOPSWAT(file.filepath);
+      // if (!isSafe) {
+      //   return res.status(400).json({
+      //     message: `Malware detected in ${file.originalFilename} file.`,
+      //   });
+      // }
+      await enqueueFileScan(file.filepath);
 
       const url = await uploadToSupabase(file, 'kyc/' + userId);
 
