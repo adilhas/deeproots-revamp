@@ -1,6 +1,6 @@
 import OpenAI from 'openai';
 import { createClient } from '@supabase/supabase-js';
-import * as fs from 'fs/promises'; // ✅ async fs
+import * as fs from 'fs/promises';
 import * as path from 'path';
 import dotenv from 'dotenv';
 dotenv.config();
@@ -21,7 +21,7 @@ function split(str: string, size: number) {
 }
 
 async function embedAll() {
-  const dir = './deeproots-data'; // ✅ your folder
+  const dir = './deeproots-data';
   const files = await fs.readdir(dir);
 
   for (const file of files) {
@@ -33,27 +33,47 @@ async function embedAll() {
 
     console.log(`📥 Processing ${file} (${chunks.length} chunks)...`);
 
-    // For each chunk, generate embedding and store
     for (let i = 0; i < chunks.length; i++) {
       const chunk = chunks[i];
+      const sourceId = `${file}#chunk-${i + 1}`;
 
-      // 1. Get embedding
+      // ✅ 1. Check if this chunk already exists in Supabase
+      const { data: existing, error: checkError } = await supabase
+        .from('documents')
+        .select('id')
+        .eq('metadata->>source', sourceId) // ✅ JSON path query
+        .maybeSingle();
+
+      if (checkError) {
+        console.error(
+          `⚠️ Error checking existence of ${sourceId}:`,
+          checkError
+        );
+        continue;
+      }
+
+      if (existing) {
+        console.log(`⏭️ Skipping ${sourceId}, already exists.`);
+        continue; // skip this chunk
+      }
+
+      // ✅ 2. Get embedding
       const e = await openai.embeddings.create({
         model: 'text-embedding-3-large',
         input: chunk,
       });
 
-      // 2. Insert into supabase
+      // ✅ 3. Insert only if not exists
       const { error } = await supabase.from('documents').insert({
         content: chunk,
         embedding: e.data[0].embedding,
-        metadata: { source: `${file}#chunk-${i + 1}` }, // ✅ preserve file + chunk info
+        metadata: { source: sourceId },
       });
 
       if (error) {
-        console.error(`❌ Failed to insert ${file} (chunk ${i + 1}):`, error);
+        console.error(`❌ Failed to insert ${sourceId}:`, error);
       } else {
-        console.log(`✅ Stored ${file} (chunk ${i + 1}/${chunks.length})`);
+        console.log(`✅ Stored ${sourceId}`);
       }
     }
   }

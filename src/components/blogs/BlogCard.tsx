@@ -21,7 +21,7 @@ const BlogCard = ({
   return (
     <Link
       href={`/blog/${slug}`}
-      className="bg-[#EEEEEE] dark:bg-[#1C1D20] dark:text-[#F1F5F9] rounded-4xl overflow-hidden  border border-[#D4D4D4] dark:border-[#737373] w-full max-w-[383px] h-[390px]"
+      className="bg-[#EEEEEE] dark:bg-[#1C1D20] dark:text-[#F1F5F9] rounded-4xl overflow-hidden  border border-[#D4D4D4] dark:border-[#737373] w-full max-w-[383px] h-[390px] mx-auto"
     >
       {image && (
         <div className="w-full h-[102px] relative overflow-hidden ">

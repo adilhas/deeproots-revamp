@@ -125,14 +125,14 @@ export const allBlogs = [
     image: '/blog/blog-card-img.png',
     slug: 'what-is-seeding-on-deep-roots',
   },
-  // {
-  //   title: 'What Is DeWorld?',
-  //   subtitle:
-  //     'The Future of the Internet Decentralized, Transparent, and Community-Powered',
-  //   description:
-  //     'DeWorld is the decentralized internet powered by Deep Roots: a connected Web3 ecosystem of 18 dApps built on trust, transparency, and long-term utility.',
-  //   date: 'June 2025',
-  //   image: '/blog/blog-card-img.png',
-  //   slug: 'what-is-deworld',
-  // },
+  {
+    title: 'Why Deep Roots dRC Coin Uses a 41-Year Distribution Model?',
+    subtitle:
+      'Discover why Deep Roots designed the dRC Coin with a 41-year distribution model.',
+    description:
+      'A symbolic illustration of a tree growing through four decades, with roots spreading deep underground - each decade marked as a “growth ring,” symbolizing sustainable distribution over time.',
+    date: 'August 25, 2025',
+    image: '/blog/blog-card-img.png',
+    slug: 'why-41-years-model',
+  },
 ];

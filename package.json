@@ -2,6 +2,7 @@
   "name": "deeproots_revamp",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "prisma": {
     "generate": "prisma generate"
   },

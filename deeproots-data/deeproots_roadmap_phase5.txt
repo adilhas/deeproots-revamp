@@ -1,0 +1,27 @@
+DeepRoots Roadmap – Phase 5
+
+Phase 5 marks the beginning of coordinated public rollouts. 
+Some tools may appear earlier due to internal development progress, but official release cycles will be aligned with community milestones.
+
+Private Ecosystem Disclosure Protocol
+- Alliances, flagship dApp integrations, and strategic partnerships will be revealed exclusively to verified Foundation Members via the private dashboard during closed phases.
+- No public disclosure will occur until full activation.
+- Access is privilege, not publicity.
+
+Tech Access Note
+- Deep Roots will remain in closed development mode until 2027.
+- In Year 3, full documentation, SDKs, and dev tools will be opened to empower builders across the ecosystem, after the foundation is fully established, audited, and secured.
+
+Trust, Governance & Security
+- 40% of token supply locked with AI-governed mechanics (Seeding + CopyMe)
+- DAO Treasury and Voting active from 2026
+- Open audits + blockchain explorer
+- SDKs for verified builders
+- No custody; full user control preserved
+
+Foundation Access
+- 100 Seats Only, structured in tiers:
+  • Tier 1: Foundation Seat ($5k – $9,999)  
+  • Tier 2: Core Foundation Seat ($10k – $99,999)  
+  • Tier 3: Founder Seat ($100k – $1M+)  
+- Benefits include governance rights, yield, early whitelists, product access, and exclusive founder privile

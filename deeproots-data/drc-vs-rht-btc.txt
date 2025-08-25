@@ -1,0 +1,30 @@
+GENERATION 1 – BITCOIN (BTC)
+- Launched 2009
+- The first decentralized digital currency
+- Key innovation: Proof-of-Work (PoW)
+- Strength: Store of value, scarcity (21M max supply)
+- Limitation: Slow transactions, high fees, limited smart contract ability
+
+GENERATION 2 – ETHEREUM (ETH)
+- Launched 2015
+- Introduced Smart Contracts and dApps
+- Key innovation: Programmable blockchain
+- Strength: Ecosystem of DeFi, NFTs, DAOs
+- Limitation: High gas fees, scalability issues, centralization risks with validators
+
+GENERATION 3 – DEEP ROOTS (dRC)
+- Launched 2025 (3rd-Gen Blockchain + AI)
+- Key innovation: Proof-of-Seed (PoZ) + Deep Roots Virtual Machine (DRVM)
+- Strengths:
+  • 41-year fair distribution of dRC (100M supply, built to last generations)  
+  • Integrated AI + Blockchain  
+  • 20+ Web3 dApps (finance, jobs, education, governance, media, GameFi)  
+  • Fast, low fees, highly scalable  
+  • Rootopia, InnoFi, TeleXcoin, Ocean Bazaar, CopyMe AI, and more  
+- Vision: Build “DeWorld” – a decentralized internet owned by people
+- Limitation: Early stage ecosystem (still expanding globally)
+
+COMPARISON SUMMARY
+- BTC = Digital Gold (Gen 1, Store of Value)  
+- ETH = Programmable Money (Gen 2, Smart Contracts)  
+- dRC = Decentralized World (Gen 3, AI + Blockchain, fair long-term design)  
