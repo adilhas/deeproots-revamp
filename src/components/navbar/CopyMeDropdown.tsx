@@ -101,7 +101,7 @@ const CopyMeDropdown = () => {
                 alt="copyme bg"
               />
               <div className="text-[#352B38] text-2xl">CopyMe AI</div>
-              <div className="text-white text-lg">Live on V3</div>
+              <div className="text-white text-lg">Live Now V1</div>
             </div>
           </li>
         </ul>
