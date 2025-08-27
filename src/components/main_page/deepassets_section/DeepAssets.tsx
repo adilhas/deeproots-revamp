@@ -70,8 +70,12 @@ const DeepAssets = () => {
               rel="noopener noreferrer"
               target="_blank"
               href="https://deepassets.earth/"
+              aria-label="explore deepassets link"
             >
-              <button className="py-3 shadow-[0px_8px_28px_0px_#605644A3] dark:shadow-[0px_15px_31px_0px_#000000] font-sans mt-8 hover:scale-105 text-neutral-200 text-lg px-5 bg-gradient-to-r from-[#3D81A4] dark:to-[#EF8F35] to-[#3D81A4] rounded-lg flex justify-center items-center">
+              <button
+                aria-label="explore deepassets button"
+                className="py-3 shadow-[0px_8px_28px_0px_#605644A3] dark:shadow-[0px_15px_31px_0px_#000000] font-sans mt-8 hover:scale-105 text-neutral-200 text-lg px-5 bg-gradient-to-r from-[#3D81A4] dark:to-[#EF8F35] to-[#3D81A4] rounded-lg flex justify-center items-center"
+              >
                 {t('deepAssets.button')}
                 <ChevronRight />
               </button>

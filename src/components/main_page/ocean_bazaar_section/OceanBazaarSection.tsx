@@ -86,6 +86,7 @@ export default function OceanBazaarSection() {
                 rel="noopener noreferrer"
                 target="_blank"
                 className="text-neutral-800 px-6 py-2 bg-gradient-to-r from-[#1bc1ff] to-[#fead46] rounded-lg hover:scale-105 font-bold transition"
+                aria-label="Visit Ocean Bazaar Website"
               >
                 {t('ocean_bazaar_section.button')}
               </a>

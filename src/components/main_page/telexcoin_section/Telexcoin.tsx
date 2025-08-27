@@ -99,6 +99,7 @@ const Telexcoin = () => {
                 style={{
                   boxShadow: `${isDark ? '0px 15px 31px 0px #000000' : '0px 8px 28px 0px #605644A3'}`,
                 }}
+                aria-label="join and earn button"
               >
                 {t('telexcoin.cta')}
               </a>

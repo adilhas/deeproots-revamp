@@ -62,8 +62,12 @@ const InnolaunchSection = () => {
             rel="noopener noreferrer"
             target="_blank"
             href="https://innolaunch.earth/"
+            aria-label="innolaunch, visit innolaunch.earth website link"
           >
-            <button className="py-3 font-bold mt-5 font-sans text-neutral-200 text-lg px-5 bg-[#f68082] hover:scale-105 rounded-lg flex justify-center items-center">
+            <button
+              aria-label="innolaunch, visit innolaunch.earth website button"
+              className="py-3 font-bold mt-5 font-sans text-neutral-200 text-lg px-5 bg-[#f68082] hover:scale-105 rounded-lg flex justify-center items-center"
+            >
               {t('innolaunch_section.button')}
               <ChevronRight />
             </button>

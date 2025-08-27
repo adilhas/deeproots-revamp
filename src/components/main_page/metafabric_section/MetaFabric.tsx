@@ -78,8 +78,12 @@ const MetaFabricSection = () => {
             rel="noopener noreferrer"
             target="_blank"
             href="https://metafabric.earth/"
+            aria-label="Visit MetaFabric website"
           >
-            <button className="mt-6 px-6 py-2 bg-gradient-to-l from-[#EE49FC] to-[#32d8fd] text-white rounded-lg  font-bold hover:scale-105 transition">
+            <button
+              aria-label="Explore Metafabric button"
+              className="mt-6 px-6 py-2 bg-gradient-to-l from-[#EE49FC] to-[#32d8fd] text-white rounded-lg  font-bold hover:scale-105 transition"
+            >
               {t('metafabric_section.button')}
             </button>
           </a>

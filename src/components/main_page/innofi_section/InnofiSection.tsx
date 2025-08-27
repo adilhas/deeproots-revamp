@@ -90,8 +90,12 @@ const InnofiSection = () => {
               rel="noopener noreferrer"
               target="_blank"
               href={'https://innofi.earth/'}
+              aria-label="Vote for Innofi on Innofi.Earth"
             >
-              <button className="mt-6 flex flex-row gap-2 items-center font-bold hover:scale-105  text-white bg-gradient-to-r from-[#fb7087] to-[#76dbfa] mr-6 px-6 font-orbitron py-3 text-center  transition-all hover:ease-in-out rounded-lg text-lg tracking-wider">
+              <button
+                aria-label="Vote for Innofi button"
+                className="mt-6 flex flex-row gap-2 items-center font-bold hover:scale-105  text-white bg-gradient-to-r from-[#fb7087] to-[#76dbfa] mr-6 px-6 font-orbitron py-3 text-center  transition-all hover:ease-in-out rounded-lg text-lg tracking-wider"
+              >
                 VOTE
                 <ChevronRight />
               </button>

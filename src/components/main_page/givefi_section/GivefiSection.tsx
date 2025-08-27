@@ -91,6 +91,7 @@ export default function GivefiSection() {
               rel="noopener noreferrer"
               target="_blank"
               className="inline-block text-white mt-6 px-6 py-2 bg-gradient-to-r from-[#A66EFF] to-[#6ECCFF] rounded-lg hover:scale-105 font-bold transition"
+              aria-label="Visit GiveFi Website"
             >
               {t('givefi_section.button')}
             </a>

@@ -54,6 +54,7 @@ const CopyMeSection = () => {
               rel="noopener noreferrer"
               target="_blank"
               href="https://copyme.earth/"
+              aria-label="CopyMe Website Link"
             >
               <button className="hover:scale-105 flex flex-row gap-2 bg-gradient-to-r from-[#8D9FFF] to-[#A4D1FF] font-[600] font-orbitron text-white py-3 px-6 rounded-lg shadow-lg transition duration-300">
                 {t('copyme_section.cta')} <Wand2 />

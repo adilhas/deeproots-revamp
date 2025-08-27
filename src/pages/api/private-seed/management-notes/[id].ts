@@ -82,7 +82,7 @@ export default async function handler(
         await transporter.sendMail({
           from: `Team DEEPROOTS`,
           to: seeder?.email,
-          subject: 'New Notification on our dashboard',
+          subject: 'New Notification on your dashboard',
           html,
         });
       }

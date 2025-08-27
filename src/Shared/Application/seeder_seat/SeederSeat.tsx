@@ -56,7 +56,7 @@ const SeederSeat = () => {
         <DashboardHeader
           label={session?.user.role === 'seeder' ? 'Pre seed' : 'Admin'}
           onRight={
-            <div className="flex flex-row items-center justify-end gap-2">
+            <div className="flex flex-col md:flex-row items-center justify-end gap-2">
               <BroadcastModal />
 
               <button

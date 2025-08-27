@@ -45,7 +45,7 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
         <DashboardHeader
           label={session?.user.role === 'seeder' ? 'Pre seed' : 'Admin'}
           onRight={
-            <div className="flex flex-row items-center justify-end gap-2">
+            <div className="flex flex-col md:flex-row items-center justify-end gap-2">
               {application.dealRoom === 'approved' && <BroadcastModal />}
 
               <button

@@ -24,8 +24,6 @@ export default function CopyMeChatbot() {
     setInput('');
     setLoading(true);
 
-    console.log(newMessages);
-
     try {
       const res = await fetch('/api/copyme/ask', {
         method: 'POST',

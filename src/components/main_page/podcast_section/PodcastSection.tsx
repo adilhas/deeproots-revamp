@@ -52,6 +52,7 @@ const PodcastSection = () => {
               rel="noopener noreferrer"
               target="_blank"
               href="https://saxophone.earth/"
+              aria-label="Saxophone Podcast website Link"
             >
               <button className="hover:scale-105 bg-[#4B210A] font-orbitron text-white py-3 px-6 rounded-lg shadow-lg transition duration-300">
                 {t('podcast_section.cta')}

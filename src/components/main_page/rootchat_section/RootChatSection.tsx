@@ -73,8 +73,12 @@ const RootChatSection = () => {
             rel="noopener noreferrer"
             target="_blank"
             href={'https://rootchat.earth/'}
+            aria-label="Explore RootChat website Link"
           >
-            <button className="hover:scale-105 mt-8 px-6 py-3 bg-gradient-to-r from-[#AD80FD] to-[#C6B6F2] text-black  font-bold rounded-lg hover:opacity-90 transition">
+            <button
+              aria-label="Explore rootchat button"
+              className="hover:scale-105 mt-8 px-6 py-3 bg-gradient-to-r from-[#AD80FD] to-[#C6B6F2] text-black  font-bold rounded-lg hover:opacity-90 transition"
+            >
               Explore RootChat
             </button>
           </a>

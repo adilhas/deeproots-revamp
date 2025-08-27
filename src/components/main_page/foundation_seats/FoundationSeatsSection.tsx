@@ -81,8 +81,14 @@ const FoundationSeatsSection = () => {
               )
             )}
           </div>
-          <Link href={'/seeding/foundation'}>
-            <button className=" text-white font-bold w-fit hover:scale-105  bg-[#0085a8] px-6 font-orbitron py-3 text-center  transition-all hover:ease-in-out rounded-lg text-lg">
+          <Link
+            href={'/seeding/foundation'}
+            aria-label="Foundation Seats Page Link"
+          >
+            <button
+              aria-label="Join foundation movement button"
+              className=" text-white font-bold w-fit hover:scale-105  bg-[#0085a8] px-6 font-orbitron py-3 text-center  transition-all hover:ease-in-out rounded-lg text-lg"
+            >
               {t('foundation.cta')}
             </button>
           </Link>

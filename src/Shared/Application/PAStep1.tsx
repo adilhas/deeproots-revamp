@@ -4,7 +4,7 @@ import { formatDate } from '@/utils/formatDate';
 import { FiImage } from 'react-icons/fi';
 import React from 'react';
 import { toast } from 'react-toastify';
-import { Worker, Viewer } from '@react-pdf-viewer/core';
+import { Worker, Viewer, SpecialZoomLevel } from '@react-pdf-viewer/core';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 
 interface PAStep1Props {
@@ -63,7 +63,10 @@ const PAStep1: React.FC<PAStep1Props> = ({
         <div className="relative w-full h-[575px] border-y border-[#A1A1A1] bg-white">
           {/* PDF Renderer */}
           <Worker workerUrl="/pdf-worker/pdf.worker.min.js">
-            <Viewer fileUrl="/NDA_SAFT_agreement.pdf" defaultScale={1.2} />
+            <Viewer
+              fileUrl="/NDA_SAFT_agreement.pdf"
+              defaultScale={SpecialZoomLevel.PageWidth}
+            />
           </Worker>
 
           {/* Custom Download Button */}

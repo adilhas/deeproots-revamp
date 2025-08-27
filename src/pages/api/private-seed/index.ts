@@ -6,7 +6,7 @@ import { render } from '@react-email/render';
 import SeederTokenEmail from '@/emails/SeederTokenEmail';
 import { getSeedTierFromCapital } from '@/lib/getSeedTierFromCapital';
 import { transporter } from '@/lib/mailer';
-import RequestSubmittedEmail from '@/emails/RequestSubmittedEmail';
+// import RequestSubmittedEmail from '@/emails/RequestSubmittedEmail';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from '../auth/[...nextauth]';
 
@@ -80,23 +80,23 @@ export default async function handler(
       });
 
       const link = `${process.env.NEXTAUTH_URL}/seeder/create-account?token=${token}`;
-      const url = process.env.NEXTAUTH_URL || 'https://deeproots.earth';
+      // const url = process.env.NEXTAUTH_URL || 'https://deeproots.earth';
       const html = await render(SeederTokenEmail({ fullName, link }), {
         pretty: true,
       });
-      const WelcomeHtml = await render(
-        RequestSubmittedEmail({ fullName, url }),
-        {
-          pretty: true,
-        }
-      );
+      // const WelcomeHtml = await render(
+      //   RequestSubmittedEmail({ fullName, url }),
+      //   {
+      //     pretty: true,
+      //   }
+      // );
 
-      await transporter.sendMail({
-        from: `"Team DEEPROOTS" <${process.env.EMAIL_USER}>`,
-        to: email,
-        subject: 'Welcome To DEEPROOTS',
-        html: WelcomeHtml,
-      });
+      // await transporter.sendMail({
+      //   from: `"Team DEEPROOTS" <${process.env.EMAIL_USER}>`,
+      //   to: email,
+      //   subject: 'Welcome To DEEPROOTS',
+      //   html: WelcomeHtml,
+      // });
 
       await transporter.sendMail({
         from: `"Team DEEPROOTS" <${process.env.EMAIL_USER}>`,

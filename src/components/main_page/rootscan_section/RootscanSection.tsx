@@ -66,8 +66,12 @@ export default function RootscanSection() {
                 rel="noopener noreferrer"
                 target="_blank"
                 href="https://rootscan.earth"
+                aria-label="Visit Rootscan website"
               >
-                <button className="px-6 font-orbitron hover:scale-105 py-3 text-lg font-medium rounded-full bg-gradient-to-r from-yellow-500 to-green-500 text-black hover:from-yellow-400 hover:to-green-400 transition">
+                <button
+                  aria-label="Explore Rootscan button"
+                  className="px-6 font-orbitron hover:scale-105 py-3 text-lg font-medium rounded-full bg-gradient-to-r from-yellow-500 to-green-500 text-black hover:from-yellow-400 hover:to-green-400 transition"
+                >
                   {t('rootscan.cta')}
                 </button>
               </a>

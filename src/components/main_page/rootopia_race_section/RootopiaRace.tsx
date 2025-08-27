@@ -109,8 +109,10 @@ const RootopiaRace = () => {
               rel="noopener noreferrer"
               target="_blank"
               href={'https://rootopia.earth/'}
+              aria-label="Visit Rootopia Website"
             >
               <button
+                aria-label="Rootopia Play Now button"
                 className="bg-gradient-to-b from-[#B44601] to-[#853401] rounded-2xl border-[#EE8A08] text-[#FEA500] cursor-pointer  lg:mt-10  px-6 font-serif font-[600] py-3 text-center border-3  transition-all hover:ease-in-out text-lg"
                 style={{
                   boxShadow: `0px 6px 12px 0px #552100, 0px 0px 0px 1px #331400`,

@@ -63,6 +63,7 @@ export default function InnofarmSection() {
               rel="noopener noreferrer"
               target="_blank"
               className="text-white py-3 font-orbitron mt-8 px-6  bg-gradient-to-l   from-[#FF8120] to-[#00903D] rounded-lg hover:scale-105  font-bold  transition"
+              arria-label={'explore innofarm website'}
             >
               {t('innofarm_section.button')}
             </a>

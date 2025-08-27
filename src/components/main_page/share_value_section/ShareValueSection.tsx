@@ -89,8 +89,12 @@ const ShareValueSection = () => {
             target="_blank"
             href="https://sharevalue.earth/"
             className="w-fit"
+            aria-label="learn about Share Value link"
           >
-            <button className="mt-8 py-4 px-7 w-fit font-orbitron font-bold text-lg text-neutral-200 bg-gradient-to-r from-[#E07C76] to-[#52b797] hover:scale-105 rounded-lg">
+            <button
+              aria-label="learn about Share Value button"
+              className="mt-8 py-4 px-7 w-fit font-orbitron font-bold text-lg text-neutral-200 bg-gradient-to-r from-[#E07C76] to-[#52b797] hover:scale-105 rounded-lg"
+            >
               {t('share_value_section.button')}
             </button>
           </a>

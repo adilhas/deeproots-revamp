@@ -80,6 +80,7 @@ const AddressWallet = () => {
                 style={{
                   boxShadow: `${isDark ? '0px 15px 31px 0px #000000' : '0px 8px 28px 0px #6D5D3F'}`,
                 }}
+                aria-label={'Mange asset button'}
               >
                 {t('address_wallet.button')}
               </a>

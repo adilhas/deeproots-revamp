@@ -27,7 +27,7 @@ export default function CheckInboxMail({ link }: CheckInboxMailProps) {
     `}
         </style>
       </Head>{' '}
-      <Preview>You have Announcement</Preview>
+      <Preview>You have Admin Notification</Preview>
       <Body
         style={{
           fontFamily: 'Arial, sans-serif',
@@ -43,7 +43,7 @@ export default function CheckInboxMail({ link }: CheckInboxMailProps) {
           }}
         >
           <Text style={{ fontSize: '16px', marginBottom: '20px' }}>
-            You’ve received a new announcement through the Foundation Seat
+            You’ve received a new admin notification through the Foundation Seat
             system on Deep Roots.
           </Text>
           <Text style={{ fontSize: '16px', marginBottom: '20px' }}>
