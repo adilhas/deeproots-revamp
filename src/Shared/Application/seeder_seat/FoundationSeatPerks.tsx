@@ -5,7 +5,7 @@ import React from 'react';
 const FoundationSeatPerks = () => {
   const { application } = useApplication();
   return (
-    <div className="flex flex-row gap-[18px]">
+    <div className="flex flex-col md:flex-row gap-[18px]">
       <div className="bg-[#F5F5F5] w-full p-4 text-center rounded-2xl">
         <div className="w-fit h-fit mx-auto">
           <Image
