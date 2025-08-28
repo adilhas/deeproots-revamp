@@ -1,6 +1,11 @@
 import type { NextConfig } from 'next';
 import nextI18NextConfig from './next-i18next.config.js';
+// import withBundleAnalyzer from '@next/bundle-analyzer';
+
 const isDev = process.env.NODE_ENV === 'development';
+// const withAnalyzer = withBundleAnalyzer({
+//   enabled: process.env.ANALYZE === 'true',
+// });
 
 const securityHeaders = [
   {

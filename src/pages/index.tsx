@@ -9,8 +9,13 @@ import DeepRootsEcosystemSection from '@/components/main_page/deeproots_ecosyste
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import type { GetStaticProps } from 'next';
 import Seo from '@/Shared/Seo';
-import FounderNote from '@/components/academy_page/about_page/FounderNote';
-import CopyMeChatbot from '@/components/copyme/CopyMeChatbot';
+const FounderNote = dynamic(
+  () => import('@/components/academy_page/about_page/FounderNote')
+);
+
+const CopyMeChatbot = dynamic(
+  () => import('@/components/copyme/CopyMeChatbot')
+);
 
 const AddressWallet = dynamic(
   () => import('@/components/main_page/address_wallet_section/AddressWallet')

@@ -39,35 +39,35 @@ const DealRoomAccessBenefits = () => {
       <div className="text-xl font-semibold mb-6">
         Complete Deal room and gain access to
       </div>
-      <div className="grid grid-cols-2 gap-x-4">
-        <div className="bg-[#F5F5F5] p-2 rounded-2xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="bg-[#F5F5F5] p-2 rounded-2xl text-center">
           <Image
             src={'/dashboard/foundation-seat.png'}
             width={144}
             height={144}
             alt="foundation seat"
-            className=""
+            className="mx-auto"
           />
 
           <div className="text-xl font-semibold">Foundation seat</div>
-          <div className="bg-[#E9D5FF] py-1 px-4 text-[#7E22CE] text-sm w-fit font-semibold rounded-4xl">
+          <div className="bg-[#E9D5FF] mx-auto py-1 px-4 text-[#7E22CE] text-sm w-fit font-semibold rounded-4xl">
             100 Seats
           </div>
           <div className="text-md text-[#525252] font-normal mt-4">
             Secure your place in DEEPROOTS.Join the Deal Room for details.
           </div>
         </div>
-        <div className="bg-[#F5F5F5] p-2 rounded-2xl">
+        <div className="bg-[#F5F5F5] p-2 rounded-2xl text-center">
           <Image
             src={'/dashboard/founder-seat.png'}
             width={144}
             height={144}
             alt="founder seat"
-            className=""
+            className="mx-auto"
           />
 
           <div className="text-xl font-semibold">Founder seat</div>
-          <div className="bg-[#FED7AA] py-1 px-4 text-[#EA580C] text-sm w-fit font-semibold rounded-4xl">
+          <div className="bg-[#FED7AA] py-1 mx-auto px-4 text-[#EA580C] text-sm w-fit font-semibold rounded-4xl">
             10 Seats
           </div>
           <div className="text-md text-[#525252] font-normal mt-4">

@@ -40,6 +40,7 @@ const Hero = () => {
               alt="banner"
               fill
               priority
+              fetchPriority="high"
               className="object-cover rounded-2xl border-4 border-white dark:border-black"
             />
           </div>
