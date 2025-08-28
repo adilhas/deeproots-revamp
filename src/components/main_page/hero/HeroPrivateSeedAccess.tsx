@@ -11,8 +11,11 @@ const HeroPrivateSeedAccess = () => {
     <div className="relative scale-80 md:scale-100 w-[450px] h-[252px] translate-y-[-40px] overflow-visible">
       {/* Background eclipse */}
       <Image
-        width={1000}
-        height={1000}
+        // width={1000}
+        // height={1000}
+        width={450}
+        height={403}
+        sizes="(max-width: 1024px) 100vw, 450px"
         alt="eclipse"
         fetchPriority="high"
         className="scale-150  absolute top-[-35%] lg:top-[70%] lg:-translate-y-1/2 lg:left-[-160px] lg:scale-x-[143%] z-0 pointer-events-none"

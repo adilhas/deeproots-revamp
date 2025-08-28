@@ -24,8 +24,9 @@ const EarnFoundationSection = () => {
               src="/landing/earn-foundation.png"
               alt="foundation seat"
               fill
-              className="rounded-3xl object-contain"
               priority
+              className="rounded-3xl object-contain"
+              sizes="(max-width: 768px) 100vw, 388px"
             />
           </div>
           <div className="w-fit mx-auto text-lg">

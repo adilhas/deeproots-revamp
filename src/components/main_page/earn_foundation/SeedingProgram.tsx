@@ -44,8 +44,9 @@ const SeedingProgram = () => {
             <Image
               src="/landing/seeding-program.jpg"
               alt="foundation seat"
-              width={442}
-              height={453}
+              width={382}
+              height={382}
+              sizes="382px"
               className="rounded-xl w-full h-auto"
               priority
             />
@@ -60,6 +61,7 @@ const SeedingProgram = () => {
                 fill
                 className="rounded-[13px] object-cover"
                 priority
+                sizes="382px"
               />
             </div>
           </div>

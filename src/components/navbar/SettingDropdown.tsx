@@ -79,6 +79,7 @@ const SettingDropdown = () => {
           width={35}
           height={35}
           className=""
+          sizes="35px"
         />
       </div>
 

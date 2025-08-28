@@ -42,6 +42,7 @@ const Hero = () => {
               priority
               fetchPriority="high"
               className="object-cover rounded-2xl border-4 border-white dark:border-black"
+              sizes="(max-width: 768px) 100vw, 650px"
             />
           </div>
         </div>
