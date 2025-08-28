@@ -54,12 +54,6 @@ export default function Navbar({ navContainerClassName }: NavbarProps) {
           <div className="flex items-center gap-4">
             {/* <LanguageDropdown /> */}
 
-            {/* <Image
-              src="/copyme-logo.png"
-              alt="copy me"
-              width={35}
-              height={35}
-            /> */}
             <CopyMeDropdown />
             <DeWorldAllProducts />
 

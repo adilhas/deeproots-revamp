@@ -88,6 +88,7 @@ export default function Footer({ className }: FooterProps) {
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`text-sm hover:underline ${section.hoverColor}`}
+                        aria-label={`${link.label} page link`}
                       >
                         {link.label}
                       </a>
@@ -95,6 +96,7 @@ export default function Footer({ className }: FooterProps) {
                       <Link
                         href={`${link.href}`}
                         className={`text-sm hover:underline ${section.hoverColor}`}
+                        aria-label={`${link.label} page link`}
                       >
                         {link.label}
                       </Link>
@@ -108,7 +110,7 @@ export default function Footer({ className }: FooterProps) {
 
         {/* Bottom Section */}
         <div className="text-center pt-20">
-          <Link href={`/deepquest`}>
+          <Link href={`/deepquest`} aria-label={`deepquest page link`}>
             <div className="flex justify-center items-center">
               <h3 className="text-xl font-bold font-orbitron bg-gradient-to-r from-[#ad1aaf] to-[#0085a8] bg-clip-text text-transparent mb-2">
                 DeepQuest (Quiz Hub)
@@ -116,37 +118,68 @@ export default function Footer({ className }: FooterProps) {
             </div>
           </Link>
           <p className="text-sm dark:text-gray-400 mx-2 flex flex-wrap justify-center gap-x-2 gap-y-1">
-            <Link href={`/our-story`} className="hover:underline">
+            <Link
+              href={`/our-story`}
+              aria-label={`our story page link`}
+              className="hover:underline"
+            >
               {t('footer.OurStory')}
             </Link>
             -
-            <Link href={'/brand-assets'} className="hover:underline">
+            <Link
+              href={'/brand-assets'}
+              aria-label={`brand asset page link`}
+              className="hover:underline"
+            >
               {t('footer.BrandAssets')}
             </Link>
             -
-            <Link href={`/code-of-honor`} className="hover:underline">
+            <Link
+              href={`/code-of-honor`}
+              aria-label={`code of honor page link`}
+              className="hover:underline"
+            >
               {t('footer.CodeOfHonor')}
             </Link>
             -
-            <Link href={`/identity/privacy-policy`} className="hover:underline">
+            <Link
+              href={`/identity/privacy-policy`}
+              aria-label={`deeproots privacy policy page link`}
+              className="hover:underline"
+            >
               {t('footer.PrivacyPolicy')}
             </Link>
             -
             <Link
               href={`/identity/terms-of-service`}
               className="hover:underline"
+              aria-label={`deeproots terms of use page link`}
             >
               {t('footer.TermsOfUse')}
             </Link>
             -
-            <Link href={`/cookie-policy`} className="hover:underline">
+            <Link
+              href={`/cookie-policy`}
+              aria-label={`deeproots cookie policy page link`}
+              className="hover:underline"
+            >
               {t('footer.CookiePolicy')}
             </Link>
             -
-            <Link href={`/public-relations`} className="hover:underline">
+            <Link
+              href={`/public-relations`}
+              aria-label={`deeproots public relations page link`}
+              className="hover:underline"
+            >
               {t('footer.PublicRelations')}
             </Link>
-            -<Link href={`/disclaimer`}>{t('footer.Disclaimer')}</Link>
+            -
+            <Link
+              href={`/disclaimer`}
+              aria-label={`deeproots disclaimer page link`}
+            >
+              {t('footer.Disclaimer')}
+            </Link>
           </p>
         </div>
       </div>

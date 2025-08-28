@@ -75,6 +75,7 @@ const SocialLinks = ({
                   : currentVariant.cardBg,
                 'flex flex-col items-start rounded-2xl p-5 transition-all duration-300 w-full max-w-[350px] md:max-w-none mx-auto'
               )}
+              aria-label={`DEEPROOTS ${name} link`}
               style={{ boxShadow: `0px 12px 24px 0px #0000001A` }}
             >
               <div className="text-lg font-semibold w-full">

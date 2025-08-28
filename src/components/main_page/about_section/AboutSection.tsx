@@ -1,6 +1,6 @@
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'next-i18next';
 
 const aboutItems = [
@@ -9,17 +9,11 @@ const aboutItems = [
   { title: 'deworld', link: '/deworld/ecosystem' },
   { title: 'drc', link: '/academy/drc' },
   { title: 'foundation', link: '/seeding/foundation' },
-  { title: 'whitepaper', link: '/' },
+  { title: 'whitepaper', link: '/deeproots-whitepaper.pdf' },
   { title: 'roadmap', link: '/academy/roadmap' },
 ];
 const AboutSection: React.FC = () => {
   const { t } = useTranslation('landing_page');
-
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggleAccordion = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
 
   return (
     <section className="max-w-4xl mx-auto py-[112px] z-40 px-4">
@@ -33,18 +27,17 @@ const AboutSection: React.FC = () => {
             key={index}
             className="border w-full max-w-[580px] mx-auto border-[#0085a8] rounded-lg cursor-pointer hover:scale-105 transition-all"
           >
-            <Link href={item.link}>
-              <button
-                onClick={() => toggleAccordion(index)}
-                className="w-full text-left px-4 py-3 flex justify-between items-center cursor-pointer"
-              >
-                <span className="font-semibold">
-                  {t(`about.items.${item.title}`)}
-                </span>
-                <span>
-                  <ArrowUpRight />
-                </span>
-              </button>
+            <Link
+              href={item.link}
+              aria-label={t(`about.items.${item.title} link`)}
+              className="w-full text-left px-4 py-3 flex justify-between items-center cursor-pointer"
+            >
+              <span className="font-semibold">
+                {t(`about.items.${item.title}`)}
+              </span>
+              <span>
+                <ArrowUpRight />
+              </span>
             </Link>
           </div>
         ))}
