@@ -63,6 +63,7 @@ export default function Navbar({ navContainerClassName }: NavbarProps) {
               <button
                 className="xl:hidden p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
                 onClick={onMenuClose}
+                aria-label="Close mobile menu button"
               >
                 <X className="h-6 w-6 text-gray-800 dark:text-white" />
               </button>
@@ -70,6 +71,7 @@ export default function Navbar({ navContainerClassName }: NavbarProps) {
               <button
                 className="xl:hidden p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
                 onClick={() => setMobileMenuOpen(true)}
+                aria-label="Open mobile menu button"
               >
                 <Menu className="h-6 w-6 text-gray-800 dark:text-white" />
               </button>

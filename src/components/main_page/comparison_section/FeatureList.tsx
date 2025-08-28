@@ -38,7 +38,7 @@ const FeatureList: React.FC<FeatureListProps> = ({
     <div
       className={`${colorClasses[color].bg} p-6 rounded-3xl shadow-lg w-full max-w-[400px] mx-auto`}
     >
-      <h3
+      <div
         className={`text-2xl font-semibold font-orbitron ${colorClasses[color].text} mb-8 flex items-center`}
       >
         {React.cloneElement(icon, {
@@ -46,7 +46,7 @@ const FeatureList: React.FC<FeatureListProps> = ({
           size: 30,
         })}
         {title}
-      </h3>
+      </div>
       <ul className="space-y-2">
         {features.map(({ icon, label }, idx) => (
           <li

@@ -49,6 +49,7 @@ export default function Submenu({ activeMenu }: Props) {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={commonClasses}
+                    aria-label={`${subitem.title} link`}
                   >
                     {content}
                   </a>
@@ -57,6 +58,7 @@ export default function Submenu({ activeMenu }: Props) {
                     key={subitem.title}
                     href={subitem.link}
                     className={commonClasses}
+                    aria-label={`${subitem.title} link`}
                   >
                     {content}
                   </Link>

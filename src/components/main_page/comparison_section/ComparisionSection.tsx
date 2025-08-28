@@ -97,9 +97,9 @@ const ComparisonSection = () => {
 
         {/* Mobile View */}
         <div className="grid grid-cols-1 lg:hidden gap-6">
-          <h1 className="font-extrabold text-2xl text-center bg-gradient-to-r from-[#0085a8] to-[#a45204] bg-clip-text font-orbitron text-transparent">
+          <h2 className="font-extrabold text-2xl text-center bg-gradient-to-r from-[#0085a8] to-[#a45204] bg-clip-text font-orbitron text-transparent">
             {t('comparison.centralized-title')}
-          </h1>
+          </h2>
           <FeatureList
             title={t('comparison.centralized-title')}
             icon={<SlidersVertical />}
@@ -107,13 +107,13 @@ const ComparisonSection = () => {
             color="red"
           />
 
-          <h1 className="font-extrabold text-6xl text-center mb-10 bg-gradient-to-r from-[#0085a8] to-[#a45204] bg-clip-text font-orbitron text-transparent">
+          <h2 className="font-extrabold text-6xl text-center mb-10 bg-gradient-to-r from-[#0085a8] to-[#a45204] bg-clip-text font-orbitron text-transparent">
             {t('comparison.vs')}
-          </h1>
+          </h2>
 
-          <h1 className="font-extrabold text-2xl text-center bg-gradient-to-r from-[#0085a8] to-[#a45204] bg-clip-text font-orbitron text-transparent">
+          <h2 className="font-extrabold text-2xl text-center bg-gradient-to-r from-[#0085a8] to-[#a45204] bg-clip-text font-orbitron text-transparent">
             {t('comparison.decentralized-title')}
-          </h1>
+          </h2>
           <FeatureList
             title={t('comparison.decentralized-title')}
             icon={<Globe />}

@@ -75,7 +75,7 @@ const SettingDropdown = () => {
       >
         <Image
           src="/profile-pic.png"
-          alt="profile"
+          alt="profile pic"
           width={35}
           height={35}
           className=""
@@ -139,22 +139,49 @@ const SettingDropdown = () => {
           </li>
           <hr className="my-2 text-[#CBD5E1] dark:text-[#334155]" />
           <li>
-            <Link href="/identity/privacy-policy">Privacy Policy</Link>
+            <Link
+              href="/identity/privacy-policy"
+              aria-label="deeproots privacy policy link"
+            >
+              Privacy Policy
+            </Link>
           </li>
           <li>
-            <Link href="/cookie-policy">Cookie Policy</Link>
+            <Link
+              href="/cookie-policy"
+              aria-label="deeproots cookie policy link"
+            >
+              Cookie Policy
+            </Link>
           </li>
           <li>
-            <Link href="/identity/terms-of-service">Terms of Use</Link>
+            <Link
+              href="/identity/terms-of-service"
+              aria-label="deeproots terms of service link"
+            >
+              Terms of Use
+            </Link>
           </li>
           <li>
-            <Link href="/public-relations">Public Relations</Link>
+            <Link
+              href="/public-relations"
+              aria-label="deeproots public relations link"
+            >
+              Public Relations
+            </Link>
           </li>
           <li>
-            <Link href="/admin/login">Root Admin Login</Link>
+            <Link href="/admin/login" aria-label="deeproots admin login link">
+              Root Admin Login
+            </Link>
           </li>
           <li>
-            <Link href={'/seeder/login'}>Foundation Login</Link>
+            <Link
+              href={'/seeder/login'}
+              aria-label="deeproots seeder login link"
+            >
+              Foundation Login
+            </Link>
           </li>
         </ul>
       )}

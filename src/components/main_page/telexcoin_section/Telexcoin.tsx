@@ -29,9 +29,9 @@ const Telexcoin = () => {
           >
             <div className="mt-6">
               {/* Header */}
-              <h1 className="font-extrabold text-2xl  lg:text-start lg:text-4xl  lg:leading-normal bg-gradient-to-r dark:bg-gradient-to-r from-[#0085a8] dark:via-[#ad1] dark:to-amber-400 via-blue-900 to-amber-600 bg-clip-text font-orbitron text-transparent">
+              <h2 className="font-extrabold text-2xl  lg:text-start lg:text-4xl  lg:leading-normal bg-gradient-to-r dark:bg-gradient-to-r from-[#0085a8] dark:via-[#ad1] dark:to-amber-400 via-blue-900 to-amber-600 bg-clip-text font-orbitron text-transparent">
                 {t('telexcoin.title')}
-              </h1>
+              </h2>
 
               {/* Mobile Image */}
               <div className="w-full lg:hidden flex mx-auto justify-center my-5">
@@ -46,13 +46,13 @@ const Telexcoin = () => {
               </div>
 
               {/* Subheading */}
-              <h1 className="font-extrabold text-xl lg:text-2xl lg:text-start mb-5 lg:mb-10 lg:leading-normal bg-gradient-to-r dark:bg-gradient-to-r from-[#0085a8] dark:via-[#ad1] dark:to-amber-400 via-blue-900 to-amber-600 bg-clip-text font-orbitron lg:text-transparent">
+              <div className="font-extrabold text-xl lg:text-2xl lg:text-start mb-5 lg:mb-10 lg:leading-normal bg-gradient-to-r dark:bg-gradient-to-r from-[#0085a8] dark:via-[#ad1] dark:to-amber-400 via-blue-900 to-amber-600 bg-clip-text font-orbitron lg:text-transparent">
                 {t('telexcoin.subtitle')}
-              </h1>
+              </div>
               <div className="inline-block">
-                <h4 className="font-orbitron font-bold text-xl leading-normal w-full">
+                <div className="font-orbitron font-bold text-xl leading-normal w-full">
                   {t('telexcoin.access')}
-                </h4>
+                </div>
               </div>
             </div>
 

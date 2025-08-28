@@ -10,9 +10,9 @@ const UseCases = () => {
   return (
     <div className="flex justify-center items-center flex-col my-20">
       <div className="inline-block">
-        <h1 className="font-extrabold mx-5 text-2xl mb-14 leading-[40px] lg:text-start lg:text-3xl my-5 lg:leading-normal bg-gradient-to-r from-[#0085a8] to-[#ad1] bg-clip-text font-orbitron text-transparent">
+        <h2 className="font-extrabold mx-5 text-2xl mb-14 leading-[40px] lg:text-start lg:text-3xl my-5 lg:leading-normal bg-gradient-to-r from-[#0085a8] to-[#ad1] bg-clip-text font-orbitron text-transparent">
           DEEPROOTS Use Cases - Game-Changing Internet
-        </h1>
+        </h2>
       </div>
 
       <div className="w-full overflow-hidden py-10">
@@ -26,9 +26,9 @@ const UseCases = () => {
                 {item.icon}
               </div>
               <div className="text-start ml-8">
-                <h3 className="text-lg font-bold mb-3 font-orbitron w-full text-gray-900 dark:text-white">
+                <div className="text-lg font-bold mb-3 font-orbitron w-full text-gray-900 dark:text-white">
                   {item.title}
-                </h3>
+                </div>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
                   {item.description}
                 </p>

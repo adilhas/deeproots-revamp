@@ -31,7 +31,9 @@ export default function MobileMenu({
                 onClick={() => toggleItem(item.name)}
                 className="flex justify-between items-center w-full cursor-pointer text-xl hover:scale-105 px-4 py-2 hover:border-2 hover:border-[#0085a8] rounded transition-all"
               >
-                <Link href={item.link}>{item.name}</Link>
+                <Link href={item.link} aria-label={`${item.name} link`}>
+                  {item.name}
+                </Link>
                 {expandedItems[item.name] ? (
                   <ChevronUp className="w-5 h-5" />
                 ) : (
@@ -47,6 +49,7 @@ export default function MobileMenu({
                       <li key={index}>
                         <a
                           href={subitem.link}
+                          aria-label={`${subitem.title} link`}
                           className="my-3 block w-full text-left px-4 py-2 bg-neutral-400 text-neutral-950 hover:scale-105 dark:bg-neutral-700 dark:text-neutral-200  hover:bg-neutral-600 rounded transition-all"
                         >
                           {subitem.title}

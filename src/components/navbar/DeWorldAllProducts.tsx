@@ -110,6 +110,7 @@ const DeWorldAllProducts = () => {
                     rel="noopener noreferrer"
                     key={product.name}
                     href={product.link || '#'}
+                    aria-label={`${product.name} link`}
                     className="flex flex-col items-center justify-center text-center hover:bg-gray-100 dark:hover:bg-[#2c2c2c] p-2 rounded-xl transition bg-white dark:bg-[#1D1D1D]"
                     style={{
                       boxShadow: isDark

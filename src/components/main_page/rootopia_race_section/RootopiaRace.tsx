@@ -82,17 +82,17 @@ const RootopiaRace = () => {
                     src={`/landing/${isDark ? Data[index].icon + '-dark' : Data[index].icon}.svg`}
                     width={24}
                     height={24}
-                    alt={data}
+                    alt={`reward number ${index + 1} icon`}
                   />
                   <div>{data}</div>
                 </li>
               ))}
-              <div className="flex flex-row gap-2 my-3 items-start">
+              <li className="flex flex-row gap-2 my-3 items-start">
                 <Image
                   src={`/landing/${isDark ? 'rootopia-starting-pool-dark' : 'rootopia-starting-pool'}.svg`}
                   width={24}
                   height={24}
-                  alt={'rootopia-starting-pool'}
+                  alt={'rootopia starting pool icon'}
                 />
                 <div>
                   {t('rootopia.starting-pool.label')} <br />
@@ -102,7 +102,7 @@ const RootopiaRace = () => {
                     {t('rootopia.starting-pool.ending')} */}
                   </span>
                 </div>
-              </div>
+              </li>
             </ul>
 
             <a
