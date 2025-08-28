@@ -33,7 +33,7 @@ const nextConfig: NextConfig = {
     domains: ['i.postimg.cc'],
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 60,
-    unoptimized: true,
+    // unoptimized: true,
   },
   async headers() {
     return [
