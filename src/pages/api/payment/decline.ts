@@ -3,17 +3,18 @@ import { prisma } from '@/lib/prisma';
 import { render } from '@react-email/render';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import nodemailer from 'nodemailer';
+// import nodemailer from 'nodemailer';
 import { authOptions } from '../auth/[...nextauth]';
 import { getServerSession } from 'next-auth/next';
+import { transporter } from '@/lib/mailer';
 
-const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+// const transporter = nodemailer.createTransport({
+//   host: 'smtp.gmail.com',
+//   auth: {
+//     user: process.env.EMAIL_USER,
+//     pass: process.env.EMAIL_PASS,
+//   },
+// });
 
 export default async function handler(
   req: NextApiRequest,

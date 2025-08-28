@@ -57,7 +57,7 @@ export default async function handler(
       .filter((sub) => sub.email)
       .map((sub) =>
         transporter.sendMail({
-          from: 'Team DEEPROOTS <noreply@deeproots.earth>',
+          from: 'Team DEEPROOTS',
           to: sub.email!,
           subject: 'New Notification on our dashboard',
           html,

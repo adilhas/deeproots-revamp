@@ -15,18 +15,6 @@ const SeederPerks = () => {
       ) : (
         <FoundationSeatPerks />
       )}
-      {/* <div className="w-fit mx-auto">
-        <Image
-          src={'/dashboard/seeder-perks.svg'}
-          width={172}
-          height={133}
-          alt="seeder perks"
-        />
-      </div>
-      <div className="text-lg w-full max-w-[466px] mx-auto text-[#525252] text-center">
-        You have no Perks available to claim now. You’ll find Perks and Early
-        access deals here as soon as they are available
-      </div> */}
     </div>
   );
 };

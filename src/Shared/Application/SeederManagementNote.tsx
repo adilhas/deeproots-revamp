@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { formatDistanceToNow } from 'date-fns';
 import { useSession } from 'next-auth/react';
 import { ManagementNotesType } from '@/types/application';
+import { toast } from 'react-toastify';
 
 type NoteMessage = {
   note: string;
@@ -76,7 +77,7 @@ const NotificationCard = ({
       setMessage('');
     } catch (err) {
       console.error(err);
-      alert('Error saving note');
+      toast.error('Error saving note');
     } finally {
       setLoading(false);
     }

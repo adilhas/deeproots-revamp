@@ -63,7 +63,7 @@ const NotificationCard = ({
       setMessage('');
     } catch (err) {
       console.error(err);
-      alert('Error saving note');
+      toast.error('Error saving note');
     } finally {
       setLoading(false);
     }

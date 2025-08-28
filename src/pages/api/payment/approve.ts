@@ -4,19 +4,20 @@ import fs from 'fs/promises';
 import { supabaseAdmin } from '@/lib/supabaseAdmin';
 import { v4 as uuidv4 } from 'uuid';
 import { prisma } from '@/lib/prisma';
-import nodemailer from 'nodemailer';
+// import nodemailer from 'nodemailer';
 import { render } from '@react-email/render';
 import PaymentApprovalMail from '@/emails/PaymentApprovalMail';
 import { authOptions } from '../auth/[...nextauth]';
 import { getServerSession } from 'next-auth/next';
+import { transporter } from '@/lib/mailer';
 
-const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+// const transporter = nodemailer.createTransport({
+//   host: 'smtp.gmail.com',
+//   auth: {
+//     user: process.env.EMAIL_USER,
+//     pass: process.env.EMAIL_PASS,
+//   },
+// });
 
 export const config = {
   api: {

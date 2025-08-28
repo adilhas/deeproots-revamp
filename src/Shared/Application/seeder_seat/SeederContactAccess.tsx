@@ -1,6 +1,4 @@
 import React from 'react';
-// import { AiOutlineQuestionCircle } from 'react-icons/ai';
-// import { BiEnvelope } from 'react-icons/bi';
 
 const SeederContactAccess = () => {
   return (
@@ -18,39 +16,16 @@ const SeederContactAccess = () => {
             Have a 15 min call with founder to ask Questions and review live
             products on DEEPROOTS
           </div>
-          <button className="bg-[#E9E9E9] text-nowrap w-fit py-2 px-4 rounded-lg font-semibold text-[#4B5563] text-lg">
+          <a
+            href="https://calendly.com/hashmiadil161/deeproots-founder-call"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#E9E9E9] text-center text-nowrap flex justify-center items-center w-fit py-2 px-4 rounded-lg font-semibold text-[#4B5563] text-lg"
+          >
             Schedule call
-          </button>
+          </a>
         </div>
       </div>
-
-      {/* <div className="my-3.5">
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
-          <div className="text-xl font-medium">Question Submission</div>
-        </div>
-        <div className="mt-3 flex flex-col lg:flex-row w-full justify-between gap-2 i">
-          <div className="text-[#525252] text-lg">
-            Submit your question to the founder team and Get Answers Quickly.
-          </div>
-          <button className="bg-[#E9E9E9] text-nowrap w-fit flex flex-rew items-center gap-2 py-2 px-4 rounded-lg font-semibold text-[#4B5563] text-lg">
-            <AiOutlineQuestionCircle className="w-6 h-6" /> Ask Question
-          </button>
-        </div>
-      </div>
-
-      <div className="my-3.5">
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
-          <div className="text-xl font-medium">Support</div>
-        </div>
-        <div className="mt-3 flex flex-col lg:flex-row w-full justify-between gap-2 i">
-          <div className="text-[#525252] text-lg">
-            Ran into a problem? Contact support.
-          </div>
-          <button className="bg-[#E9E9E9] text-nowrap w-fit flex flex-rew items-center gap-2 py-2 px-4 rounded-lg font-semibold text-[#4B5563] text-lg">
-            <BiEnvelope className="w-6 h-6" /> Contact Support
-          </button>
-        </div>
-      </div> */}
     </div>
   );
 };
