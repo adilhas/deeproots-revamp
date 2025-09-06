@@ -71,7 +71,7 @@ export default async function handler(
           const batch = allEmails.slice(i, i + batchSize);
           const emails = batch.map((email) => ({
             to: email,
-            from: 'onboarding@resend.dev',
+            from: 'Team DEEPROOTS',
             subject: 'New Announcement on DEEPROOTS',
             html,
             text,
