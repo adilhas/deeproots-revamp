@@ -80,7 +80,7 @@ export default async function handler(
 
       if (sender === 'ADMIN') {
         await transporter.sendMail({
-          from: `Team DEEPROOTS`,
+          from: `"Team DEEPROOTS" <${process.env.EMAIL_USER}>`,
           to: seeder?.email,
           subject: 'New Notification on your dashboard',
           html,

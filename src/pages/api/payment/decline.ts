@@ -88,7 +88,7 @@ Please reach out if you believe this was in error.
     );
 
     await transporter.sendMail({
-      from: `Team DEEPROOTS`,
+      from: `"Team DEEPROOTS" <${process.env.EMAIL_USER}>`,
       to: submission.email,
       subject,
       text,

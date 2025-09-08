@@ -39,7 +39,7 @@ export async function sendSeedReminder(
   }
 
   await transporter.sendMail({
-    from: `Team DEEPROOTS`,
+    from: `"Team DEEPROOTS" <${process.env.EMAIL_USER}>`,
     to: email,
     subject,
     html,

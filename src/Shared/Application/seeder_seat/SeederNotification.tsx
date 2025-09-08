@@ -60,40 +60,39 @@ const SeederNotification = () => {
   // }, [application?.id]);
 
   useEffect(() => {
-    const controller = new AbortController();
+    let didCancel = false;
 
     const fetchNotifications = async () => {
       try {
-        const res = await fetch(`/api/announcement`, {
-          signal: controller.signal,
-        });
+        const res = await fetch(`/api/announcement`);
         const data: AnnouncementType[] = await res.json();
 
-        setNotifications((prevState) => {
-          const all = [...prevState, ...data];
-          const unique = all.filter(
-            (item, index, self) =>
-              index === self.findIndex((n) => n.id === item.id)
-          );
-          return unique;
-        });
+        if (!didCancel) {
+          setNotifications((prevState) => {
+            const all = [...prevState, ...data];
+            const unique = all.filter(
+              (item, index, self) =>
+                index === self.findIndex((n) => n.id === item.id)
+            );
+            return unique;
+          });
+        }
       } catch (err) {
-        if (
-          typeof err === 'object' &&
-          err !== null &&
-          'name' in err &&
-          (err as { name?: unknown }).name !== 'AbortError'
-        ) {
+        if (!didCancel) {
           console.error('Error fetching notifications', err);
         }
       } finally {
-        setLoading(false);
+        if (!didCancel) {
+          setLoading(false);
+        }
       }
     };
 
     fetchNotifications();
 
-    return () => controller.abort();
+    return () => {
+      didCancel = true; // ✅ prevents state updates after unmount
+    };
   }, [application?.id]);
 
   // const unreadedNotification = notifications.filter(

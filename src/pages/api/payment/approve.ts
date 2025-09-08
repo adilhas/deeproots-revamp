@@ -154,7 +154,7 @@ Thank you for securing your seat in DEEPROOTS!
       { pretty: true }
     );
     await transporter.sendMail({
-      from: `Team DEEPROOTS`,
+      from: `"Team DEEPROOTS" <${process.env.EMAIL_USER}>`,
       to: submission.email,
       subject,
       text,

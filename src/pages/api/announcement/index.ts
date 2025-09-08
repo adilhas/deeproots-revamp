@@ -94,7 +94,7 @@ export default async function handler(
 
         try {
           await resend.emails.send({
-            from: 'Team DEEPROOTS',
+            from: `"Team DEEPROOTS" <${process.env.EMAIL_USER}>`,
             to: allEmails,
             subject: 'New Announcement on DEEPROOTS',
             html,

@@ -137,7 +137,7 @@ export default async function handler(
         }
 
         await transporter.sendMail({
-          from: `Team DEEPROOTS`,
+          from: `"Team DEEPROOTS" <${process.env.EMAIL_USER}>`,
           to: applicantEmail,
           subject,
           text,
@@ -187,7 +187,7 @@ export default async function handler(
         }
 
         await transporter.sendMail({
-          from: `Team DEEPROOTS`,
+          from: `"Team DEEPROOTS" <${process.env.EMAIL_USER}>`,
           to: applicantEmail,
           subject,
           text,
@@ -196,7 +196,7 @@ export default async function handler(
 
         if (preApproval === 'approved') {
           await transporter.sendMail({
-            from: `Team DEEPROOTS`,
+            from: `"Team DEEPROOTS" <${process.env.EMAIL_USER}>`,
             to: applicantEmail,
             subject: 'Action Needed: Your Foundation Seat is Waiting',
             text: `Hi ${applicantName},\n\nYou’ve unlocked access to the DeepRoots Foundation Deal Room — but your submission is still incomplete. This is a private allocation, and your seat is currently held.\n\nTo secure your position, please complete your submission before the access window expires.\n\nReturn to Deal Room\n\n- DeepRoots Team`,
