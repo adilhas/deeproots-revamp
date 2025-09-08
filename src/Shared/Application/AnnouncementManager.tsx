@@ -18,6 +18,8 @@ export default function AnnouncementManager() {
     fetchAnnouncements();
   }, []);
 
+  console.log(announcements);
+
   const fetchAnnouncements = async () => {
     try {
       const res = await axios.get('/api/announcement');

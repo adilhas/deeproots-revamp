@@ -99,7 +99,7 @@ export default async function handler(
       // });
 
       await transporter.sendMail({
-        from: `"Team DEEPROOTS" <${process.env.EMAIL_USER}>`,
+        from: `Team DEEPROOTS`,
         to: email,
         subject: 'Create Your Seeder Account - DEEPROOTS',
         html,

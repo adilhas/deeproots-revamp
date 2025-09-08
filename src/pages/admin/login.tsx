@@ -44,7 +44,7 @@ export default function AdminLogin() {
     if (res?.ok) {
       window.location.href = '/admin/applications'; // trust backend role check
     } else {
-      toast.error('Invalid admin credentials');
+      toast.error('Invalid credentials');
       setLoading(false);
     }
   };

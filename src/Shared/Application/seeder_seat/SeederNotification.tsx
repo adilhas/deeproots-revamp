@@ -13,23 +13,87 @@ import { useApplication } from '@/context/ApplicationContext';
 const SeederNotification = () => {
   const { application } = useApplication();
   const [isOpen, setIsOpen] = useState(false);
-  const [notifications, setNotifications] = useState<AnnouncementType[]>([]);
+  const [notifications, setNotifications] = useState<AnnouncementType[]>([
+    {
+      id: 'cmf1',
+      message: 'Foundation Seat Seeding is now live — secure your seat today.',
+      createdAt: '2025-09-08T08:35:29.524Z',
+      updatedAt: '2025-09-08T08:35:29.524Z',
+    },
+    {
+      id: 'cmf2',
+      message:
+        'Only 100 Foundation Seats available! Join the Foundation Circle before allocations close.',
+      createdAt: '2025-09-08T08:35:29.524Z',
+      updatedAt: '2025-09-08T08:35:29.524Z',
+    },
+    {
+      id: 'cmf3',
+      message: 'Pre-Approval in progress — check your dashboard for updates.',
+      createdAt: '2025-09-08T08:35:29.524Z',
+      updatedAt: '2025-09-08T08:35:29.524Z',
+    },
+    {
+      id: 'cmf4',
+      message:
+        'Welcome to DeepRoots Foundation — your voice helps shape the future. Together we rise: secure your Foundation Seat and build DeWorld.',
+      createdAt: '2025-09-08T08:35:29.524Z',
+      updatedAt: '2025-09-08T08:35:29.524Z',
+    },
+  ]);
   const [loading, setLoading] = useState(true);
 
+  // useEffect(() => {
+  //   const fetchNotifications = async () => {
+  //     try {
+  //       const res = await fetch(`/api/announcement`);
+  //       const data = await res.json();
+  //       setNotifications((prevState) => [...data, ...prevState]);
+  //     } catch (err) {
+  //       console.error('Error fetching notifications', err);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   fetchNotifications();
+  // }, [application?.id]);
+
   useEffect(() => {
+    const controller = new AbortController();
+
     const fetchNotifications = async () => {
       try {
-        const res = await fetch(`/api/announcement`);
-        const data = await res.json();
-        setNotifications(data);
+        const res = await fetch(`/api/announcement`, {
+          signal: controller.signal,
+        });
+        const data: AnnouncementType[] = await res.json();
+
+        setNotifications((prevState) => {
+          const all = [...prevState, ...data];
+          const unique = all.filter(
+            (item, index, self) =>
+              index === self.findIndex((n) => n.id === item.id)
+          );
+          return unique;
+        });
       } catch (err) {
-        console.error('Error fetching notifications', err);
+        if (
+          typeof err === 'object' &&
+          err !== null &&
+          'name' in err &&
+          (err as { name?: unknown }).name !== 'AbortError'
+        ) {
+          console.error('Error fetching notifications', err);
+        }
       } finally {
         setLoading(false);
       }
     };
 
     fetchNotifications();
+
+    return () => controller.abort();
   }, [application?.id]);
 
   // const unreadedNotification = notifications.filter(
@@ -37,6 +101,8 @@ const SeederNotification = () => {
   // );
 
   // const latest = unreadedNotification[0];
+
+  console.log(notifications);
 
   return (
     <div className="my-5 bg-white p-2 rounded-4xl flex flex-row items-center w-full justify-between gap-2">

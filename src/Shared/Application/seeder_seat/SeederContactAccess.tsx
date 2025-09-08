@@ -17,7 +17,7 @@ const SeederContactAccess = () => {
             products on DEEPROOTS
           </div>
           <a
-            href="https://calendly.com/hashmiadil161/deeproots-founder-call"
+            href="https://calendly.com/team-deeproots/30min"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#E9E9E9] text-center text-nowrap flex justify-center items-center w-fit py-2 px-4 rounded-lg font-semibold text-[#4B5563] text-lg"
