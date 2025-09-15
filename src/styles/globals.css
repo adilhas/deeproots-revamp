@@ -78,7 +78,7 @@ button {
 .notification-marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee 10s linear infinite;
+  animation: marquee 11s linear infinite;
 }
 
 .marquee-track:hover {
