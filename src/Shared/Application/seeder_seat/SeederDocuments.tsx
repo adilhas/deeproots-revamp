@@ -24,7 +24,7 @@ const SeederDocuments = () => {
             />
           ))}
         <ViewFileLink
-          fileName={'Initail Capital Receipt'}
+          fileName={`$${formatCurrencyShort(Number(application?.paymentDetails?.amountSent))} Receipt`}
           fileLink={application?.paymentDetails?.receiptUrl || ''}
         />
       </div>
