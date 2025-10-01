@@ -133,11 +133,11 @@ const AddMoreCapital = () => {
         )}
 
         {(application?.morePayments ?? []).length > 0 ? (
-          <div className="mt-6 space-y-4">
+          <div className="mt-6 space-y-4 max-h-[300px] overflow-auto">
             {(application?.morePayments ?? []).map((payment) => (
               <div
                 key={payment.id}
-                className="p-4 border rounded-xl bg-gray-50 flex flex-col md:flex-row justify-start gap-2 md:justify-between items-start md:items-center"
+                className="p-4 border rounded-xl bg-gray-50 flex flex-col md:flex-row justify-start gap-2 md:justify-between items-start md:items-center "
               >
                 <div>
                   <p className="font-semibold text-gray-800">
@@ -193,7 +193,9 @@ const AddMoreCapital = () => {
             ))}
           </div>
         ) : (
-          <div className="mt-4">No Funds Request</div>
+          <div className="mt-4 text-center min-h-[150px]">
+            No Add Capital Requests Yet
+          </div>
         )}
       </div>
 
