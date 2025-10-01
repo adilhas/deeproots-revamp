@@ -147,7 +147,7 @@ const AddMoreCapital = () => {
                     Status:{' '}
                     <span
                       className={
-                        payment.paymentStatus === 'pending'
+                        payment.paymentStatus === 'under-review'
                           ? 'text-yellow-600'
                           : payment.paymentStatus === 'approved'
                             ? 'text-green-600'
@@ -157,14 +157,24 @@ const AddMoreCapital = () => {
                       {payment.paymentStatus}
                     </span>
                   </p>
-                  <a
-                    href={payment.paymentImage}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:underline text-blue-500"
-                  >
-                    View Screenshot
-                  </a>
+                  <div className="flex flex-col md:flex-row gap-2 justify-between">
+                    <a
+                      href={payment.transactionLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline text-blue-700"
+                    >
+                      View Transaction Link
+                    </a>
+                    <a
+                      href={payment.paymentImage}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline text-blue-700"
+                    >
+                      View Screenshot
+                    </a>
+                  </div>
                   {payment.comment && (
                     <p className="text-sm text-red-500">
                       Reason: {payment.comment}
