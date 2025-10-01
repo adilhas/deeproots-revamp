@@ -22,7 +22,7 @@ const CopyMeSection = () => {
         </div>
       </div>
 
-      <section className="relative z-40 py-12 px-4 max-w-[1200px] mx-auto">
+      <section className="relative z-30 py-12 px-4 max-w-[1200px] mx-auto">
         <div className="absolute bottom-[-100px] left-0 w-[250px] lg:w-[400px] h-[250px] lg:h-[400px] bg-[#F4C9FF] dark:bg-black blur-md opacity-70 dark:opacity-100 pointer-events-none rounded-full z-0" />
 
         <div className="relative z-10 container lg:px-24 flex flex-col lg:flex-row items-center justify-between gap-8 mx-auto">

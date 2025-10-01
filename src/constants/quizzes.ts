@@ -69,7 +69,7 @@ export const quizzes: Quiz[] = [
       {
         question: 'How many core products are in the DEEPROOTS ecosystem?',
         options: ['5', '10', '14', '20'],
-        correct: 2,
+        correct: 3,
       },
       {
         question: 'What is the name of the DEEPROOTS wallet?',

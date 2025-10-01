@@ -65,7 +65,7 @@ export default function CopyMeChatbot() {
       {/* Floating Button */}
       <button
         onClick={() => setOpen(!open)}
-        className={`fixed right-2 bottom-2 md:bottom-6 md:right-6 z-30  text-primary-dark dark:text-primary-light hover:opacity-90 ${open ? 'hidden' : ''}`}
+        className={`fixed right-2 bottom-2 md:bottom-6 md:right-6 z-40  text-primary-dark dark:text-primary-light hover:opacity-90 ${open ? 'hidden' : ''}`}
         aria-label="Open COPYME AI"
       >
         <Image
@@ -83,7 +83,7 @@ export default function CopyMeChatbot() {
       {/* Panel */}
       {open && (
         <div
-          className="fixed bottom-5 right-3 md:right-6 w-[90vw] md:w-[360px] lg:w-[500px] max-h-[90vh] rounded-2xl shadow-soft border border-white/10 flex flex-col text-primary-light bg-[#060117] z-30"
+          className="fixed bottom-5 right-3 md:right-6 w-[90vw] md:w-[360px] lg:w-[500px] max-h-[90vh] rounded-2xl shadow-soft border border-white/10 flex flex-col text-primary-light bg-[#060117] z-40"
           style={{
             boxShadow: `0 0 10px rgba(0, 255, 255, 0.4),0 0 20px rgba(255, 0, 255, 0.4),inset 0 0 15px rgba(255, 255, 255, 0.15)`,
           }}

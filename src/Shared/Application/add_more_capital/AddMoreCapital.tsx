@@ -157,7 +157,7 @@ const AddMoreCapital = () => {
                       {payment.paymentStatus}
                     </span>
                   </p>
-                  <div className="flex flex-col md:flex-row gap-2 justify-between">
+                  <div className="flex flex-col md:flex-row gap-3 justify-between">
                     <a
                       href={payment.transactionLink}
                       target="_blank"

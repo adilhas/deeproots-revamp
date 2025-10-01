@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { quizzes } from '@/constants/quizzes';
 import QuizIntro from './QuizIntro';
 import QuizResult from './QuizResult';
@@ -35,6 +35,9 @@ const QuizStart = () => {
     setUserSelections((prev) => ({ ...prev, [qIndex]: optionIndex }));
   };
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentQuizIndex, showResult]);
   const handleNextQuiz = () => {
     const quizAnswers = currentQuiz.questions.map((q, idx) => ({
       quizTitle: currentQuiz.title,
@@ -49,11 +52,12 @@ const QuizStart = () => {
 
     if (currentQuizIndex + 1 < quizzes.length) {
       setCurrentQuizIndex((prev) => prev + 1);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       setShowResult(true);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+    // window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleRestart = () => {
