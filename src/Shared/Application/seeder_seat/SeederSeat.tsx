@@ -4,18 +4,11 @@ import { signOut, useSession } from 'next-auth/react';
 import ApplicationStatusInfo from '@/components/admin/ApplicationStatusInfo';
 import ApprovedSeederOverview from './ApprovedSeederOverview';
 import SeederNotification from './SeederNotification';
-// import SeederPerks from './SeederPerks';
-// import SeederContactAccess from './SeederContactAccess';
-// import SeederDocuments from './SeederDocuments';
-// import TokenSeedingDetails from './TokenSeedingDetails';
 import { PiCopy } from 'react-icons/pi';
 import { Check } from 'lucide-react';
 import BroadcastModal from './BroadcastModal';
-// import SeederManagementNote from '../SeederManagementNote';
 import { useBroadcast } from '@/context/BroadcastContext';
-// import BroadcastMessages from './BroadcastMessages';
 import SeederSeatDetails from './SeederSeatDetails';
-// import SeederManagementNote from '../SeederManagementNote';
 
 const SeederSeat = () => {
   const { data: session } = useSession();

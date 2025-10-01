@@ -29,6 +29,7 @@ export type ApplicationDataType = {
   isDealRoomExpired?: boolean;
   notifications?: NotificationItemType[];
   updatedAt: string;
+  morePayments: MorePaymentType[];
 };
 
 export type StatusType =
@@ -73,6 +74,19 @@ export type PaymentDetailsType = {
   createdAt: string;
   receiptUrl: string;
   declineReason: string;
+  paymentStatus: string;
+};
+
+export type MorePaymentType = {
+  id: string;
+  amountSent: string;
+  transactionLink: string;
+  paymentImage: string;
+  submissionId: string;
+  updatedAt: string;
+  createdAt: string;
+  receiptUrl: string;
+  comment: string;
   paymentStatus: string;
 };
 

@@ -27,7 +27,7 @@ const ApprovedSeederOverview = () => {
     );
   }
   return (
-    <div className="p-6 rounded-4xl bg-gradient-to-r from-[#AD1AAF] to-[#0085A8] border border-[#999100] text-white flex flex-col md:flex-row justify-between items-start gap-2">
+    <div className="p-6 rounded-4xl bg-gradient-to-r overflow-hidden from-[#AD1AAF] to-[#0085A8] border border-[#999100] text-white flex flex-col md:flex-row justify-between items-start gap-2">
       <div className="grid grid-cols-1 md:grid-cols-2 w-full md:w-[75%] gap-y-3">
         <div className=" col-span-1 md:col-span-2 flex flex-col md:flex-row jjustify-start items-start md:items-center gap-1">
           <h2 className="text-4xl font-bold">{application?.fullName}</h2>
@@ -67,7 +67,7 @@ const ApprovedSeederOverview = () => {
             <a
               target="_blank"
               href={application?.website}
-              className="underline"
+              className="underline line-clamp-1 overflow-hidden"
             >
               {application?.website}
             </a>

@@ -37,7 +37,12 @@ export default async function handler(
           kycDocuments: true,
           ndaSubmission: true,
           paymentDetails: true,
-          // managementNotes: true,
+          // morePayments: true,
+          morePayments: {
+            orderBy: {
+              createdAt: 'desc', // assuming you have a `createdAt` field
+            },
+          },
         },
       });
 

@@ -7,10 +7,12 @@ import SeederDocuments from './SeederDocuments';
 import SeederManagementNote from '../SeederManagementNote';
 import { useApplication } from '@/context/ApplicationContext';
 import { useSession } from 'next-auth/react';
+import AddMoreCapital from '../add_more_capital/AddMoreCapital';
 
 const SeederSeatDetails = () => {
   const { application } = useApplication();
   const { data: session } = useSession();
+  console.log({ application });
   return (
     <div className="flex flex-col-reverse lg:flex-row-reverse gap-6 w-full">
       <div className="w-full lg:max-w-[385px] max-w-none ">
@@ -23,6 +25,7 @@ const SeederSeatDetails = () => {
         {application?.seedTier !== 'tier-1' &&
           session?.user.role === 'seeder' && <SeederContactAccess />}
         <SeederDocuments />
+        <AddMoreCapital />
         <SeederManagementNote />
       </div>
     </div>

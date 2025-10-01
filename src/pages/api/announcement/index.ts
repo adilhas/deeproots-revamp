@@ -58,36 +58,6 @@ export default async function handler(
       const allEmails = submissions.map((s) => s.email).filter(Boolean);
       const link = `${process.env.NEXTAUTH_URL || 'https://deeproots.earth'}/seeder/application`;
 
-      // function sleep(ms: number) {
-      //   return new Promise((resolve) => setTimeout(resolve, ms));
-      // }
-      // if (allEmails.length > 0) {
-      //   const html = await render(CheckInboxMail({ link }), { pretty: true });
-      //   const text = htmlToText(html);
-
-      //   // Resend has batch size limits (usually 100), so we might need to chunk
-      //   const batchSize = 100;
-      //   for (let i = 0; i < allEmails.length; i += batchSize) {
-      //     const batch = allEmails.slice(i, i + batchSize);
-      //     const emails = batch.map((email) => ({
-      //       to: email,
-      //       from: 'Team DEEPROOTS',
-      //       subject: 'New Announcement on DEEPROOTS',
-      //       html,
-      //       text,
-      //     }));
-
-      //     try {
-      //       await resend.batch.send(emails);
-      //       await sleep(2000);
-      //     } catch (emailError) {
-      //       console.error(
-      //         `Failed to send batch starting at index ${i}:`,
-      //         emailError
-      //       );
-      //     }
-      //   }
-      // }
       if (allEmails.length > 0) {
         const html = await render(CheckInboxMail({ link }), { pretty: true });
         const text = htmlToText(html);

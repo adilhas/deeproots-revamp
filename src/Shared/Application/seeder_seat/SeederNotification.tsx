@@ -101,7 +101,7 @@ const SeederNotification = () => {
 
   // const latest = unreadedNotification[0];
 
-  console.log(notifications);
+  // console.log(notifications);
 
   return (
     <div className="my-5 bg-white p-2 rounded-4xl flex flex-row items-center w-full justify-between gap-2">

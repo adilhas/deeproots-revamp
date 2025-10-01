@@ -1,24 +1,30 @@
 import { useApplication } from '@/context/ApplicationContext';
 import React from 'react';
-// import DocsViewCard from './DocsViewCard';
 import ViewFileLink from '../ViewFileLink';
-
-// const documentTypeLabels: Record<string, string> = {
-//   BUSINESS_LICENSE: 'Business License',
-//   COMPANY_ADDRESS: 'Company Address',
-//   AUTHORIZATION_LETTER: 'Authorization Letter',
-//   REP_ID_SELFIE: 'Representative ID Selfie',
-// };
+import { formatCurrencyShort } from '@/utils/formatCapital';
 
 const SeederDocuments = () => {
   const { application } = useApplication();
+  const approvedPayments =
+    application?.morePayments?.filter(
+      (pay) => pay.paymentStatus === 'approved'
+    ) || [];
 
   return (
     <div className="w-full my-5 bg-white p-6 rounded-4xl flex flex-col gap-2 items-start justify-between">
       <div className="text-[#303030] text-2xl font-semibold">My Documents</div>
       <div className="max-w-[437px] w-full">
+        {approvedPayments &&
+          approvedPayments.length > 0 &&
+          approvedPayments.map((pay) => (
+            <ViewFileLink
+              key={pay.id}
+              fileName={`$${formatCurrencyShort(Number(pay.amountSent))} Receipt`}
+              fileLink={pay.receiptUrl}
+            />
+          ))}
         <ViewFileLink
-          fileName={'Receipt'}
+          fileName={'Initail Capital Receipt'}
           fileLink={application?.paymentDetails?.receiptUrl || ''}
         />
       </div>

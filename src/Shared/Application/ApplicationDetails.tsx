@@ -95,7 +95,7 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
                   <a
                     target="_blank"
                     href={application.website}
-                    className="underline"
+                    className="underline line-clamp-1 overflow-hidden"
                   >
                     {application.website}
                   </a>

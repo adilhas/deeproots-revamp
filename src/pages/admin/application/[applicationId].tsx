@@ -37,6 +37,7 @@ const ApplicationDetailsPage = () => {
     const fetchData = async () => {
       setLoading(true);
       const data = await fetchSubmissionById(applicationId);
+      console.log({ data });
       setApplication(data);
       setLoading(false);
     };
