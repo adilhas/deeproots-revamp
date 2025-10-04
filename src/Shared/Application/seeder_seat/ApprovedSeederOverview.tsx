@@ -85,25 +85,26 @@ const ApprovedSeederOverview = () => {
         </div>
       </div>
 
-      <div className="text-start mt-6 md:mt-0 p-3 rounded-2xl h-full flex flex-col justify-center w-full md:w-[25%] bg-white text-[#696969]">
-        {/* <div>
-          ID:{' '}
-          {application?.seedTier === 'tier-3' ? 'Founder Seat' : 'Genesis Seat'}{' '}
-          #7
-        </div> */}
-        <div className="w-fit mx-auto font-semibold text-3xl my-4">
+      <div className="text-start mt-6 md:mt-0 p-6 rounded-3xl h-full flex flex-col justify-center w-full md:w-[25%] bg-neutral-200 shadow-xl text-gradient-from">
+        {/* dRC Amount */}
+        <div className="w-fit mx-auto font-bold text-4xl my-4 drop-shadow-lg">
           {Number(application?.capital) / 5} dRC
         </div>
-        <div>
-          <div className="w-full flex flex-wrap justify-between">
-            <div className="font-normal">Seeding Progress</div>
-            <div>{progressPercent.toFixed(0)}%</div>
+
+        {/* Seeding Progress */}
+        <div className="w-full text-gradient-to">
+          <div className="w-full flex flex-wrap justify-between mb-2">
+            <div className="font-medium">Seeding Progress</div>
+            <div className="font-semibold">{progressPercent.toFixed(0)}%</div>
           </div>
-          <progress
-            className="progress bg-[#E9E9E9] [&::-webkit-progress-value]:bg-[#3664AA] [&::-moz-progress-bar]:bg-[#3664AA] w-full"
-            value={progressPercent}
-            max="100"
-          ></progress>
+
+          {/* Progress Bar */}
+          <div className="w-full h-3 rounded-full bg-white overflow-hidden shadow-inner">
+            <div
+              className="h-3 rounded-full bg-gradient-to-r from-[#AD1AAF] to-[#0085A8] shadow-md"
+              style={{ width: `${progressPercent}%` }}
+            ></div>
+          </div>
         </div>
       </div>
     </div>

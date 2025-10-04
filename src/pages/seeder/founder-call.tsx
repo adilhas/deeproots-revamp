@@ -1,10 +1,15 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Script from 'next/script';
 import Image from 'next/image';
-
-const MEET_URL = 'https://calendly.com/team-deeproots/30min';
+import { useApplication } from '@/context/ApplicationContext';
+import { useSession } from 'next-auth/react';
+import AuthLoader from '@/components/AuthLoader';
 
 const MeetPage = () => {
+  const { application, setApplication } = useApplication();
+  const [loading, setLoading] = useState(true);
+  const { data: session, status } = useSession();
+
   useEffect(() => {
     const link = document.createElement('link');
     link.href = 'https://assets.calendly.com/assets/external/widget.css';
@@ -16,11 +21,37 @@ const MeetPage = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const fetchApplication = async () => {
+      if (!session?.user?.applicationId) return;
+
+      try {
+        const res = await fetch(
+          `/api/private-seed/${session.user.applicationId}`
+        );
+        const data = await res.json();
+        setApplication(data);
+      } catch (error) {
+        console.error('Failed to fetch application', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (status === 'authenticated') {
+      fetchApplication();
+    }
+  }, [session, status, setApplication]);
+
+  if (loading) {
+    return <AuthLoader />;
+  }
+
   return (
-    <section className=" min-h-screen flex flex-col items-center justify-center p-5 text-white font-poppins">
-      <div className="max-w-[900px] w-fit md:w-full bg-[#111a3c] rounded-2xl p-5 shadow-lg">
+    <section className="min-h-screen flex items-center justify-center p-1 md:p-5 bg-primary-dark font-poppins text-white">
+      <div className="w-full max-w-[900px] bg-[#111a3c] rounded-2xl p-2 md:p-8 shadow-lg">
         {/* Header */}
-        <div className="text-center mb-5">
+        <div className="text-center mb-6">
           <Image
             src="/landing/logo.png"
             alt="DeepRoots"
@@ -28,31 +59,38 @@ const MeetPage = () => {
             height={70}
             className="mx-auto"
           />
-          <h1 className="mt-2 text-2xl text-[#6a0dad] font-bold">
+          <h1 className="mt-2 font-orbitron text-2xl md:text-3xl text-transparent bg-gradient-to-r bg-gradient-from to-gradient-to bg-clip-text w-fit mx-auto font-bold">
             DEEPROOTS Founders Call
           </h1>
-          <p className="text-gray-300 text-sm mt-1">
+          <p className="text-gray-300 text-sm md:text-base mt-1">
             From Silence → Voice. Book your time to build the DeWorld.
           </p>
         </div>
 
-        {/* Calendly Inline Widget */}
-        <div
-          className="calendly-inline-widget"
-          data-url={MEET_URL}
-          style={{ minWidth: '320px', height: '700px' }}
-        ></div>
+        {application?.seedTier === 'tier-2' ||
+        application?.seedTier === 'tier-3' ? (
+          <>
+            <div className="w-full">
+              <div
+                className="calendly-inline-widget w-full h-[700px] md:h-[800px] lg:h-[900px]"
+                data-url={`https://calendly.com/team-deeproots/30min?email=${application.email}&name=${application.fullName}`}
+              />
+            </div>
 
-        {/* Load Calendly script safely */}
-        <Script
-          src="https://assets.calendly.com/assets/external/widget.js"
-          strategy="afterInteractive"
-        />
+            <Script
+              src="https://assets.calendly.com/assets/external/widget.js"
+              strategy="afterInteractive"
+            />
 
-        {/* Footer CTA */}
-        <p className="text-center mt-5 text-gray-300 text-sm">
-          100 Foundation Seats only — your Voice matters.
-        </p>
+            <p className="text-center mt-5 text-gray-300 text-sm md:text-base">
+              100 Foundation Seats only — your Voice matters.
+            </p>
+          </>
+        ) : (
+          <p className="text-center mt-10 text-red-500">
+            You do not have access to book a Founders Call.
+          </p>
+        )}
       </div>
     </section>
   );
