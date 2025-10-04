@@ -41,6 +41,7 @@ model PrivateSeedSubmission {
   notifications        Notification[]
   paymentDetails       PaymentDetails?
   morePayments    MorePayment[] 
+  canAddFund      String @default("not-submitted")
 
   @@index([id])
   @@index([email])

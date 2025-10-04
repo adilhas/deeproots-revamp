@@ -7,24 +7,26 @@ export async function middleware(req: NextRequest) {
   const siteUrl = process.env.NEXTAUTH_URL || 'https://www.deeproots.earth';
   const isDev = process.env.NODE_ENV !== 'production';
 
-  function generateNonce() {
-    const array = new Uint8Array(16);
-    crypto.getRandomValues(array);
-    return btoa(String.fromCharCode(...array));
-  }
+  // function generateNonce() {
+  //   const array = new Uint8Array(16);
+  //   crypto.getRandomValues(array);
+  //   return btoa(String.fromCharCode(...array));
+  // }
 
-  const nonce = generateNonce();
+  // const nonce = generateNonce();
 
   const csp = `
-    default-src 'self';
-    connect-src 'self';
-    img-src 'self' ${siteUrl} data:;
-    script-src 'self' 'nonce-${nonce}'${isDev ? " 'unsafe-eval'" : ''};
-    style-src 'self' 'unsafe-inline';
-    object-src 'none';
-    base-uri 'self';
-    frame-ancestors 'none';
-  `
+  default-src 'self';
+  connect-src 'self';
+  img-src 'self' ${siteUrl} data:;
+  script-src 'self' https://assets.calendly.com${isDev ? " 'unsafe-eval'" : ''};
+  style-src 'self' https://assets.calendly.com 'unsafe-inline';
+  frame-src 'self' https://calendly.com;
+  child-src 'self' https://calendly.com;
+  object-src 'none';
+  base-uri 'self';
+  frame-ancestors 'none';
+`
     .replace(/\s{2,}/g, ' ')
     .trim();
 
@@ -50,7 +52,7 @@ export async function middleware(req: NextRequest) {
   if (isPublicPath) {
     const res = NextResponse.next();
     res.headers.set('Content-Security-Policy', csp);
-    res.headers.set('x-nonce', nonce);
+    // res.headers.set('x-nonce', nonce);
     return res;
   }
 
@@ -89,7 +91,7 @@ export async function middleware(req: NextRequest) {
   // Default: allow & set CSP
   const res = NextResponse.next();
   res.headers.set('Content-Security-Policy', csp);
-  res.headers.set('x-nonce', nonce);
+  // res.headers.set('x-nonce', nonce);
   return res;
 }
 export const config = {

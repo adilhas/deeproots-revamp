@@ -13,7 +13,7 @@ const SeederDocuments = () => {
   return (
     <div className="w-full my-5 bg-white p-6 rounded-4xl flex flex-col gap-2 items-start justify-between">
       <div className="text-[#303030] text-2xl font-semibold">My Documents</div>
-      <div className=" w-full max-h-[300px] overflow-auto">
+      <div className=" w-full max-h-[200px] overflow-auto">
         {approvedPayments &&
           approvedPayments.length > 0 &&
           approvedPayments.map((pay) => (

@@ -6,6 +6,7 @@ import Document, {
   DocumentContext,
   DocumentInitialProps,
 } from 'next/document';
+import Script from 'next/script';
 
 interface MyDocumentProps extends DocumentInitialProps {
   nonce: string;
@@ -23,7 +24,7 @@ class MyDocument extends Document<MyDocumentProps> {
 
   render() {
     const locale = this.props.__NEXT_DATA__.locale || 'en';
-    const { nonce } = this.props as { nonce: string };
+    // const { nonce } = this.props as { nonce: string };
     const jsonLd = {
       '@context': 'http://schema.org',
       '@type': 'Organization',
@@ -48,9 +49,16 @@ class MyDocument extends Document<MyDocumentProps> {
       >
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <script nonce={nonce} type="application/ld+json">
+          {/* <script nonce={nonce} type="application/ld+json">
             {JSON.stringify(jsonLd)}
-          </script>
+          </script> */}
+          <Script
+            id="json-ld"
+            type="application/ld+json"
+            strategy="afterInteractive"
+          >
+            {JSON.stringify(jsonLd)}
+          </Script>
         </Head>
         <body className="antialiased">
           <Main />

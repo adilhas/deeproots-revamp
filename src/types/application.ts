@@ -30,6 +30,7 @@ export type ApplicationDataType = {
   notifications?: NotificationItemType[];
   updatedAt: string;
   morePayments: MorePaymentType[];
+  canAddFund: StatusType;
 };
 
 export type StatusType =

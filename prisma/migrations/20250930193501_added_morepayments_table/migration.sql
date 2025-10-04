@@ -5,7 +5,7 @@
 
 */
 -- AlterTable
-ALTER TABLE "documents" DROP COLUMN "source",
+ALTER TABLE "documents"
 ALTER COLUMN "id" SET DEFAULT gen_random_uuid();
 
 -- CreateTable

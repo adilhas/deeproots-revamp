@@ -1,16 +1,26 @@
 import type { NextConfig } from 'next';
 import nextI18NextConfig from './next-i18next.config.js';
-// import withBundleAnalyzer from '@next/bundle-analyzer';
 
 const isDev = process.env.NODE_ENV === 'development';
-// const withAnalyzer = withBundleAnalyzer({
-//   enabled: process.env.ANALYZE === 'true',
-// });
 
 const securityHeaders = [
+  // {
+  //   key: 'Content-Security-Policy',
+  //   value: `default-src 'self';frame-src 'self' https://calendly.com; script-src 'self'${isDev ? " 'unsafe-eval'" : ''}; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://i.postimg.cc; connect-src 'self'; font-src 'self'; frame-ancestors 'none';`,
+  // },
   {
     key: 'Content-Security-Policy',
-    value: `default-src 'self'; script-src 'self'${isDev ? " 'unsafe-eval'" : ''}; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://i.postimg.cc; connect-src 'self'; font-src 'self'; frame-ancestors 'none';`,
+    value: `
+      default-src 'self';
+      frame-src 'self' https://calendly.com;
+      child-src 'self' https://calendly.com;
+      script-src 'self' https://assets.calendly.com ${isDev ? " 'unsafe-eval'" : ''};
+      style-src 'self' 'unsafe-inline';
+      img-src 'self' data: https://i.postimg.cc;
+      connect-src 'self';
+      font-src 'self';
+      frame-ancestors 'none';
+    `.replace(/\n/g, ' '),
   },
   { key: 'Referrer-Policy', value: 'same-origin' },
   { key: 'X-Content-Type-Options', value: 'nosniff' },

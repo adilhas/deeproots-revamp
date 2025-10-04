@@ -67,7 +67,7 @@ async function embedAll() {
       const { error } = await supabase.from('documents').insert({
         content: chunk,
         embedding: e.data[0].embedding,
-        source: sourceId,
+        // source: sourceId,
         metadata: { source: sourceId },
       });
 

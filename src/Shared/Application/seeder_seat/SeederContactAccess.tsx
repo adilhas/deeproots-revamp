@@ -1,9 +1,9 @@
+import Link from 'next/link';
 import React from 'react';
 
 const SeederContactAccess = () => {
   return (
     <div className="w-full text-[#303030] my-5 bg-white p-6 rounded-4xl">
-      {/* <div className=" text-2xl font-semibold">Contact</div> */}
       <div className="my-3.5">
         <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
           <div className="text-xl font-medium">Founders Call</div>
@@ -16,14 +16,21 @@ const SeederContactAccess = () => {
             Have a 15 min call with founder to ask Questions and review live
             products on DEEPROOTS
           </div>
-          <a
+          {/* <a
             href="https://calendly.com/team-deeproots/30min"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#E9E9E9] text-center text-nowrap flex justify-center items-center w-fit py-2 px-4 rounded-lg font-semibold text-[#4B5563] text-lg"
           >
             Schedule call
-          </a>
+          </a> */}
+          <Link
+            target="_blank"
+            href="/seeder/founder-call"
+            className="bg-[#E9E9E9] text-center text-nowrap flex justify-center items-center w-fit py-2 px-4 rounded-lg font-semibold text-[#4B5563] text-lg"
+          >
+            Schedule call
+          </Link>
         </div>
       </div>
     </div>

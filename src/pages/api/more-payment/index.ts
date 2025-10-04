@@ -95,6 +95,13 @@ export default async function handler(
       },
     });
 
+    await prisma.privateSeedSubmission.update({
+      where: { id: submissionId },
+      data: {
+        canAddFund: 'not-submitted',
+      },
+    });
+
     return res.status(200).json({
       message: 'Payment submitted successfully!',
       fileUrl: uploadedUrl,

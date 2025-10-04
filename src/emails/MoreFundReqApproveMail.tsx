@@ -1,0 +1,79 @@
+/* eslint-disable @next/next/no-page-custom-font */
+/* eslint-disable @next/next/no-img-element */
+import {
+  Html,
+  Head,
+  Body,
+  Container,
+  Heading,
+  Text,
+  Link,
+} from '@react-email/components';
+
+export default function MoreFundReqApproveMail(props: {
+  name: string;
+  url: string;
+}) {
+  const { name, url } = props;
+  return (
+    <Html>
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap"
+          rel="stylesheet"
+        />
+      </Head>{' '}
+      <Body style={{ fontFamily: 'Arial, sans-serif' }}>
+        <Container>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              marginBottom: '20px',
+            }}
+          >
+            <img
+              src="https://www.deeproots.earth/landing/logo-big.png"
+              alt="DeepRoots Logo"
+              width="36"
+              height="36"
+              style={{
+                display: 'block',
+                marginRight: '12px',
+                border: 'none',
+                borderRadius: '100%',
+              }}
+            />
+            <Heading
+              style={{ margin: 0, fontFamily: "'Orbitron', Arial, sans-serif" }}
+            >
+              DEEPROOTS
+            </Heading>
+          </div>{' '}
+          <Text>Hi {name},</Text>
+          <Text>
+            We’re pleased to confirm that your request to add more funds has
+            been successfully Approved.
+          </Text>
+          <Text>You can now go and add more funds.</Text>
+          <Link
+            href={`${url}/seeder/login/`}
+            style={{
+              display: 'inline-block',
+              padding: '12px 20px',
+              backgroundColor: '#AD1AAF',
+              color: '#ffffff',
+              textDecoration: 'none',
+              borderRadius: '6px',
+              fontWeight: 'bold',
+            }}
+          >
+            Go to Dashboard
+          </Link>
+          <Text>Thank you for your patience.</Text>
+          <Text>Team DEEPROOTS</Text>
+        </Container>
+      </Body>
+    </Html>
+  );
+}

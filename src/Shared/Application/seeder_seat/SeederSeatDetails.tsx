@@ -22,10 +22,10 @@ const SeederSeatDetails = () => {
       </div>
       <div className="w-full">
         <SeederPerks />
+        <AddMoreCapital />
         {application?.seedTier !== 'tier-1' &&
           session?.user.role === 'seeder' && <SeederContactAccess />}
         <SeederDocuments />
-        <AddMoreCapital />
         <SeederManagementNote />
       </div>
     </div>
