@@ -29,8 +29,15 @@ export default async function handler(
     const updatedPayment = await prisma.morePayment.update({
       where: { id: paymentId },
       data: {
-        paymentStatus: 'declined',
-        comment,
+        status: 'payment_rejected',
+        adminComment: comment,
+      },
+    });
+
+    await prisma.privateSeedSubmission.update({
+      where: { id: updatedPayment.submissionId },
+      data: {
+        canAddFund: 'not-submitted',
       },
     });
 

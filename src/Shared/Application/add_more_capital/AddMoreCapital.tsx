@@ -9,6 +9,15 @@ import AddMoreCapitalModal from './AddMoreCapitalModal';
 import ApproveAddMoreRequest from './ApproveAddMoreRequest';
 import { toast } from 'react-toastify';
 
+const paymentStatusMap: Record<string, { label: string; color: string }> = {
+  requested: { label: 'Requested', color: 'text-gray-500' },
+  request_approved: { label: 'Request Approved', color: 'text-blue-600' },
+  request_rejected: { label: 'Request Rejected', color: 'text-red-600' },
+  payment_submitted: { label: 'Payment Submitted', color: 'text-yellow-600' },
+  payment_approved: { label: 'Payment Approved', color: 'text-green-600' },
+  payment_rejected: { label: 'Payment Rejected', color: 'text-red-600' },
+};
+
 const AddMoreCapital = () => {
   const { application, setApplication } = useApplication();
   const [isOpen, setIsOpen] = useState(false);
@@ -32,9 +41,12 @@ const AddMoreCapital = () => {
     setDeclineModalOpen(true);
   };
 
-  const handleDecision = async (status: 'approved' | 'declined') => {
-    if (!application?.id) {
-      toast.error('Missing application ID.');
+  const handleDecision = async (
+    status: 'approved' | 'declined',
+    paymentId: string
+  ) => {
+    if (!paymentId) {
+      toast.error('Missing payment request ID.');
       return;
     }
 
@@ -44,7 +56,10 @@ const AddMoreCapital = () => {
       const res = await fetch('/api/more-payment/request/status', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ seederId: application.id, status }),
+        body: JSON.stringify({
+          morePaymentId: paymentId,
+          status,
+        }),
       });
 
       const data = await res.json();
@@ -55,7 +70,21 @@ const AddMoreCapital = () => {
         return;
       }
 
-      setApplication((prev) => (prev ? { ...prev, canAddFund: status } : prev));
+      const newStatus: 'request_approved' | 'request_rejected' =
+        status === 'approved' ? 'request_approved' : 'request_rejected';
+      setApplication((prev) => {
+        if (!prev) return prev;
+
+        const updatedPayments = (prev.morePayments || []).map((payment) =>
+          payment.id === paymentId ? { ...payment, status: newStatus } : payment
+        );
+
+        return {
+          ...prev,
+          morePayments: updatedPayments as typeof prev.morePayments,
+          canAddFund: status === 'approved' ? 'under-review' : 'not-submitted',
+        };
+      });
 
       toast.success(
         status === 'approved'
@@ -69,6 +98,7 @@ const AddMoreCapital = () => {
       setIsSubmitting(false);
     }
   };
+  console.log(application);
 
   return (
     <>
@@ -79,50 +109,18 @@ const AddMoreCapital = () => {
           </div>
 
           {session?.user.role === 'seeder' &&
-            application?.canAddFund === 'approved' && (
-              <button
-                onClick={() => setIsOpen(true)}
-                className="px-4 disabled:opacity-60 py-2 btn-success bg-gradient-to-r from-gradient-from to-gradient-to rounded-xl text-white font-semibold"
-              >
-                Add More Capital
-              </button>
-            )}
-          {session?.user.role === 'seeder' &&
             application?.canAddFund === 'not-submitted' && (
               <ApproveAddMoreRequest />
             )}
         </div>
 
-        {session?.user.role === 'admin' &&
-          application?.canAddFund === 'under-review' && (
-            <div className="flex flex-col md:flex-row gap-2 justify-between">
-              <div>
-                The Seeder as requested to add more funds. Do you want to accept
-                this request?
-              </div>
-              <div className="flex gap-2">
-                <button
-                  onClick={() => handleDecision('approved')}
-                  disabled={isSubmitting}
-                  className="px-4 disabled:opacity-60 py-2 btn-success bg-green-500 rounded-xl text-white font-semibold"
-                >
-                  Accept
-                </button>
-                <button
-                  onClick={() => handleDecision('declined')}
-                  disabled={isSubmitting}
-                  className="px-4 disabled:opacity-60 py-2 btn-success bg-red-500 rounded-xl text-white font-semibold"
-                >
-                  Reject
-                </button>
-              </div>
-            </div>
-          )}
         {session?.user.role === 'seeder' &&
-          application?.canAddFund === 'under-review' && (
-            <div className="text-sm text-orange-500">
-              Your add more fund request in under review. Once it is approved by
-              admin you will get access to add more funds.
+          application?.morePayments.some(
+            (payment) => payment.status === 'requested'
+          ) && (
+            <div className="text-sm text-orange-500 mb-2">
+              Your add more fund request in submitted. Once it is approved by
+              admin you will get access to submit more funds.
             </div>
           )}
 
@@ -135,63 +133,96 @@ const AddMoreCapital = () => {
               >
                 <div>
                   <p className="font-semibold text-gray-800">
-                    Amount: ${payment.amountSent}
+                    Amount: ${payment.requestedAmount}
                   </p>
                   <p className="text-sm text-gray-500">
                     Status:{' '}
                     <span
                       className={
-                        payment.paymentStatus === 'under-review'
-                          ? 'text-yellow-600'
-                          : payment.paymentStatus === 'approved'
-                            ? 'text-green-600'
-                            : 'text-red-600'
+                        paymentStatusMap[payment.status]?.color ||
+                        'text-gray-500'
                       }
                     >
-                      {payment.paymentStatus}
+                      {paymentStatusMap[payment.status]?.label || 'Unknown'}
                     </span>
                   </p>
-                  <div className="flex flex-col md:flex-row gap-3 justify-between">
-                    <a
-                      href={payment.transactionLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline text-blue-700"
-                    >
-                      View Transaction Link
-                    </a>
-                    <a
-                      href={payment.paymentImage}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline text-blue-700"
-                    >
-                      View Screenshot
-                    </a>
-                  </div>
-                  {payment.comment && (
+                  {(payment.status === 'payment_submitted' ||
+                    payment.status === 'payment_approved' ||
+                    payment.status === 'payment_rejected') && (
+                    <div className="flex flex-col md:flex-row gap-3 justify-between">
+                      <a
+                        href={payment.transactionLink ?? ''}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline text-blue-700"
+                      >
+                        View Transaction Link
+                      </a>
+                      <a
+                        href={payment.paymentImage ?? ''}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline text-blue-700"
+                      >
+                        View Screenshot
+                      </a>
+                    </div>
+                  )}
+                  {payment.adminComment && (
                     <p className="text-sm text-red-500">
-                      Reason: {payment.comment}
+                      {payment.adminComment}
                     </p>
                   )}
                 </div>
 
                 {session?.user.role === 'admin' &&
-                  payment.paymentStatus === 'under-review' && (
-                    <div className="flex gap-2">
+                  payment.status === 'payment_submitted' && (
+                    <div className="flex flex-col lg:flex-row gap-2">
                       <button
                         onClick={() => handleOpenApprovalModal(payment.id)}
                         className="px-3 py-1 bg-green-500 text-white rounded-lg hover:bg-green-600"
                       >
-                        Approve
+                        Approve Payment
                       </button>
                       <button
                         onClick={() => handleOpenDeclineModal(payment.id)}
                         className="px-3 py-1 bg-red-500 text-white rounded-lg hover:bg-red-600"
                       >
-                        Reject
+                        Reject Payment
                       </button>
                     </div>
+                  )}
+
+                {session?.user.role === 'admin' &&
+                  payment.status === 'requested' && (
+                    <div className="flex flex-col lg:flex-row gap-2">
+                      <button
+                        onClick={() => handleDecision('approved', payment.id)}
+                        disabled={isSubmitting}
+                        className="px-3 py-1 disabled:opacity-50 bg-green-500 text-white rounded-lg hover:bg-green-600"
+                      >
+                        Approve Request
+                      </button>
+                      <button
+                        onClick={() => handleDecision('declined', payment.id)}
+                        disabled={isSubmitting}
+                        className="px-3 py-1 disabled:opacity-50 bg-red-500 text-white rounded-lg hover:bg-red-600"
+                      >
+                        Reject Request
+                      </button>
+                    </div>
+                  )}
+                {session?.user.role === 'seeder' &&
+                  payment.status === 'request_approved' && (
+                    <button
+                      onClick={() => {
+                        setIsOpen(true);
+                        setSelectedPaymentId(payment.id);
+                      }}
+                      className="px-4 disabled:opacity-60 py-2 btn-success bg-gradient-to-r from-gradient-from to-gradient-to rounded-xl text-white font-semibold"
+                    >
+                      Add Fund
+                    </button>
                   )}
               </div>
             ))}
@@ -203,7 +234,11 @@ const AddMoreCapital = () => {
         )}
       </div>
 
-      <AddMoreCapitalModal isOpen={isOpen} setIsOpen={setIsOpen} />
+      <AddMoreCapitalModal
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        selectedPaymentId={selectedPaymentId || ''}
+      />
 
       <MoreCapitalApprovalModal
         isOpen={modalIsOpen}

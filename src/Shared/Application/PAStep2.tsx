@@ -173,7 +173,7 @@ const PAStep2: React.FC<PAStep2Props> = ({
       </div>
 
       {/* Tabs */}
-      <div className="flex bg-white px-3 py-4 border-y border-[#D4D4D4]">
+      {/* <div className="flex bg-white px-3 py-4 border-y border-[#D4D4D4]">
         <button
           className={`flex-1 py-3 px-6 rounded-full font-medium transition-all ${
             activeTab === 'individual' ? 'bg-[#E9E9E9] text-black' : ''
@@ -188,7 +188,7 @@ const PAStep2: React.FC<PAStep2Props> = ({
         >
           Organization
         </button>
-      </div>
+      </div> */}
 
       {/* Form */}
       {activeTab === 'individual' ? (

@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { prisma } from '@/lib/prisma'; // Adjust the path if needed
+import { prisma } from '@/lib/prisma';
 import { uploadToSupabase } from '@/lib/uploadToSupabase';
 import formidable, { File as FormidableFile, Fields, Files } from 'formidable';
 import { getServerSession } from 'next-auth';
@@ -56,6 +56,7 @@ export default async function handler(
   if (session?.user.role !== 'seeder') {
     return res.status(401).json({ error: 'Unauthorized' });
   }
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -64,12 +65,18 @@ export default async function handler(
     const [fields, files] = await parseForm(req);
 
     const transactionLink = fields.transactionLink?.[0];
-    const submissionId = fields.submissionId?.[0];
+    const morePaymentId = fields.morePaymentId?.[0];
     const paymentFile = files.paymentImage?.[0] as FormidableFile | undefined;
-    const amountSent = fields.amountSent?.[0];
 
-    if (!transactionLink || !submissionId || !paymentFile || !amountSent) {
+    if (!transactionLink || !morePaymentId || !paymentFile) {
       return res.status(400).json({ message: 'Missing required fields.' });
+    }
+    const existingPayment = await prisma.morePayment.findUnique({
+      where: { id: morePaymentId },
+    });
+
+    if (!existingPayment) {
+      return res.status(404).json({ message: 'Payment request not found.' });
     }
 
     // Validate file
@@ -78,34 +85,39 @@ export default async function handler(
       return res.status(400).json({ message });
     }
 
-    // Upload to Supabase
+    // Upload file to Supabase
     const uploadedUrl = await uploadToSupabase(
       paymentFile,
-      paymentFile.originalFilename || 'payment-proof'
+      `payments/${existingPayment.submissionId}`
     );
 
-    // Save record to database
-    const payment = await prisma.morePayment.create({
+    // Find existing morePayment request
+
+    // ✅ Update the record
+    const updatedPayment = await prisma.morePayment.update({
+      where: { id: morePaymentId },
       data: {
         transactionLink,
         paymentImage: uploadedUrl,
-        paymentStatus: 'under-review',
-        submissionId: submissionId,
-        amountSent,
+        status: 'payment_submitted',
+        amountSent: existingPayment.requestedAmount, // ✅ match requested amount
+        paymentSubmittedAt: new Date(),
       },
     });
 
+    // Optionally update parent submission if needed
     await prisma.privateSeedSubmission.update({
-      where: { id: submissionId },
+      where: { id: existingPayment.submissionId },
       data: {
-        canAddFund: 'not-submitted',
+        updatedAt: new Date(),
       },
     });
 
     return res.status(200).json({
+      success: true,
       message: 'Payment submitted successfully!',
       fileUrl: uploadedUrl,
-      payment, // ✅ return the created payment
+      payment: updatedPayment,
     });
   } catch (error) {
     console.error('Error submitting payment:', error);

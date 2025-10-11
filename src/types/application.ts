@@ -80,15 +80,26 @@ export type PaymentDetailsType = {
 
 export type MorePaymentType = {
   id: string;
-  amountSent: string;
-  transactionLink: string;
-  paymentImage: string;
+  requestedAmount: string;
+  amountSent?: string | null;
+  transactionLink?: string | null;
+  paymentImage?: string | null;
+  receiptUrl?: string | null;
+  comment?: string | null;
+  adminComment?: string | null;
+  status:
+    | 'requested'
+    | 'request_approved'
+    | 'request_rejected'
+    | 'payment_submitted'
+    | 'payment_approved'
+    | 'payment_rejected';
   submissionId: string;
-  updatedAt: string;
   createdAt: string;
-  receiptUrl: string;
-  comment: string;
-  paymentStatus: string;
+  updatedAt?: string | null;
+  requestApprovedAt?: string | null;
+  paymentSubmittedAt?: string | null;
+  paymentApprovedAt?: string | null;
 };
 
 export type ManagementNotesType = {

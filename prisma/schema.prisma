@@ -66,21 +66,37 @@ model PaymentDetails {
 }
 
 model MorePayment {
-  id              String                @id @default(cuid())
-  amountSent      String
-  transactionLink String?
-  paymentImage    String?
-  paymentStatus   String                @default("submitted")
-  comment         String?               
-  receiptUrl      String?
-  submissionId    String
-  submission      PrivateSeedSubmission @relation(fields: [submissionId], references: [id])
-  createdAt       DateTime              @default(now())
-  updatedAt       DateTime?             @updatedAt
+  id               String                @id @default(cuid())
+  requestedAmount  String                // amount user wishes to add
+  amountSent       String?               // actual amount user sent (after approval)
+  transactionLink  String?
+  paymentImage     String?
+  receiptUrl       String?
+  comment          String?               // user comment
+  adminComment     String?               // admin note for request/payment
+  status           PaymentStatus         @default(requested)
+  submissionId     String
+  submission       PrivateSeedSubmission @relation(fields: [submissionId], references: [id])
+  
+  // timestamps
+  createdAt        DateTime              @default(now())
+  updatedAt        DateTime?             @updatedAt
+  requestApprovedAt DateTime?
+  paymentSubmittedAt DateTime?
+  paymentApprovedAt DateTime?
 
   @@index([submissionId])
-  @@index([paymentStatus])
+  @@index([status])
   @@index([createdAt])
+}
+
+enum PaymentStatus {
+  requested           
+  request_approved    
+  request_rejected    
+  payment_submitted   
+  payment_approved    
+  payment_rejected    
 }
 
 model SeederAccountToken {

@@ -5,23 +5,13 @@
 import React, { useState } from 'react';
 import { Loader, X } from 'lucide-react';
 import { toast } from 'react-toastify';
-import { PiCurrencyDollarSimple, PiLink } from 'react-icons/pi';
+import { PiLink } from 'react-icons/pi';
 import { FiImage } from 'react-icons/fi';
 import WalletInfo from '../dealroom/WalletInfo';
 import { z } from 'zod';
 import { useApplication } from '@/context/ApplicationContext';
 
 const paymentSchema = z.object({
-  amountSent: z.string().refine(
-    (val) => {
-      const num = Number(val);
-      return !isNaN(num) && num >= 1000;
-    },
-    {
-      message: 'Amount must be at least 1000',
-    }
-  ),
-
   transactionLink: z
     .string()
     .url(
@@ -36,11 +26,15 @@ const paymentSchema = z.object({
 interface Props {
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;
+  selectedPaymentId: string;
 }
 
-const AddMoreCapitalModal: React.FC<Props> = ({ isOpen, setIsOpen }) => {
+const AddMoreCapitalModal: React.FC<Props> = ({
+  isOpen,
+  setIsOpen,
+  selectedPaymentId,
+}) => {
   const { application, setApplication } = useApplication();
-  const [amountSent, setAmountSent] = useState('');
   const [transactionLink, setTransactionLink] = useState('');
   const [screenshot, setScreenshot] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -48,7 +42,6 @@ const AddMoreCapitalModal: React.FC<Props> = ({ isOpen, setIsOpen }) => {
   const MAX_FILE_SIZE_MB = 5;
 
   const isFormValid = paymentSchema.safeParse({
-    amountSent,
     transactionLink,
     screenshot,
   }).success;
@@ -65,7 +58,7 @@ const AddMoreCapitalModal: React.FC<Props> = ({ isOpen, setIsOpen }) => {
   };
 
   const handleConfirm = async () => {
-    if (!transactionLink || !screenshot || !application?.id || !amountSent) {
+    if (!transactionLink || !screenshot || !selectedPaymentId) {
       toast.info('Please complete all fields.');
       return;
     }
@@ -74,12 +67,12 @@ const AddMoreCapitalModal: React.FC<Props> = ({ isOpen, setIsOpen }) => {
 
     const formData = new FormData();
     formData.append('transactionLink', transactionLink);
-    formData.append('submissionId', application.id);
+    formData.append('morePaymentId', selectedPaymentId); // ✅ changed key
     formData.append('paymentImage', screenshot);
-    formData.append('amountSent', amountSent);
 
     try {
       const res = await fetch('/api/more-payment', {
+        // ✅ correct endpoint
         method: 'POST',
         body: formData,
       });
@@ -92,39 +85,41 @@ const AddMoreCapitalModal: React.FC<Props> = ({ isOpen, setIsOpen }) => {
         if (!prev) return prev;
         return {
           ...prev,
-          canAddFund: 'not-submitted',
-          morePayments: [data.payment, ...(prev.morePayments ?? [])],
+          morePayments: prev.morePayments?.map((p) =>
+            p.id === selectedPaymentId
+              ? { ...p, ...data.payment } // ✅ merge updated fields (status, image, link)
+              : p
+          ),
         };
       });
 
       toast.success('Payment submitted successfully!');
       setIsOpen(false);
-      setAmountSent('');
       setTransactionLink('');
       setScreenshot(null);
     } catch (err) {
-      console.error('Upload failed: ' + err);
-      toast.error('Upload failed');
+      console.error('Upload failed:', err);
+      toast.error('Upload failed. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const result = paymentSchema.safeParse({
-    amountSent,
     transactionLink,
     screenshot,
   });
 
   const formErrors = result.success ? {} : result.error.flatten().fieldErrors;
 
+  console.log('button:', !isFormValid);
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20">
       <div className="bg-white w-full max-w-[772px] relative max-h-[90vh] overflow-y-auto mx-4 md:mx-0 rounded-2xl shadow-xl">
         <div className="flex sticky top-0 justify-between items-center bg-gradient-to-r mb-4 p-4 rounded-t-2xl from-gradient-from to-gradient-to">
-          <h2 className="text-3xl font-semibold text-white">Add More Funds</h2>
+          <h2 className="text-3xl font-semibold text-white">Add Fund</h2>
           <X
             className="w-6 h-6 text-white cursor-pointer"
             onClick={() => setIsOpen(false)}
@@ -136,6 +131,17 @@ const AddMoreCapitalModal: React.FC<Props> = ({ isOpen, setIsOpen }) => {
               <div>Curent Seed amount:</div>
               <div className="text-gray-700 text-2xl font-orbitron">
                 ${application?.capital}
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row w-full justify-between items-start md:items-center text-center font-semibold">
+              <div>Fund Requested:</div>
+              <div className="text-gray-700 text-2xl font-orbitron">
+                $
+                {
+                  application?.morePayments.find(
+                    (payment) => payment.id === selectedPaymentId
+                  )?.requestedAmount
+                }
               </div>
             </div>
           </div>
@@ -151,13 +157,13 @@ const AddMoreCapitalModal: React.FC<Props> = ({ isOpen, setIsOpen }) => {
 
           <div className="mt-6">
             <h3 className="font-semibold text-2xl">Payment Information</h3>
-            {!isFormValid && formErrors.amountSent && (
+            {/* {!isFormValid && formErrors.amountSent && (
               <p className="text-red-500 text-sm mt-1">
                 {formErrors.amountSent[0]}
               </p>
-            )}
+            )} */}
             <div className="space-y-3 mt-2">
-              <div className="relative w-full">
+              {/* <div className="relative w-full">
                 <PiCurrencyDollarSimple className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
                 <input
                   type="number"
@@ -166,7 +172,7 @@ const AddMoreCapitalModal: React.FC<Props> = ({ isOpen, setIsOpen }) => {
                   value={amountSent}
                   onChange={(e) => setAmountSent(e.target.value)}
                 />
-              </div>
+              </div> */}
               {formErrors.transactionLink && (
                 <p className="text-red-500 text-sm mt-1">
                   {formErrors.transactionLink}

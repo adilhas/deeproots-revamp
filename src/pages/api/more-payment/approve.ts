@@ -65,17 +65,28 @@ export default async function handler(
     const { valid, message } = isValidFile(receiptFile);
     if (!valid) return res.status(400).json({ message });
 
+    const submission = await prisma.morePayment.findUnique({
+      where: { id: paymentId },
+      include: { submission: true },
+    });
+
+    if (!submission) {
+      return res
+        .status(400)
+        .json({ message: 'No Submission is found with this payment id' });
+    }
+
     // Upload receipt to Supabase
     const uploadedUrl = await uploadToSupabase(
       receiptFile,
-      receiptFile.originalFilename || 'receipt-proof'
+      `receipts/${submission.id}`
     );
 
     // Update payment and include submission
     const payment = await prisma.morePayment.update({
       where: { id: paymentId },
       data: {
-        paymentStatus: 'approved',
+        status: 'payment_approved',
         receiptUrl: uploadedUrl,
       },
       include: {
@@ -83,10 +94,13 @@ export default async function handler(
       },
     });
 
-    // Update capital
+    if (!payment.amountSent) {
+      return res.status(400).json({ message: 'Missing amount sent.' });
+    }
+
     const approvedAmount = parseFloat(payment.amountSent);
     if (!isNaN(approvedAmount)) {
-      const currentCapital = parseFloat(payment.submission?.capital || '0');
+      const currentCapital = parseFloat(payment.submission?.capital);
       const updatedCapital = currentCapital + approvedAmount;
 
       const updatedSubmission = await prisma.privateSeedSubmission.update({
@@ -94,10 +108,10 @@ export default async function handler(
         data: {
           capital: updatedCapital.toString(),
           seedTier: getSeedTierFromCapital(updatedCapital.toString()),
+          canAddFund: 'not-submitted',
         },
       });
 
-      // Attach updated submission to payment for response
       payment.submission = updatedSubmission;
     } else {
       console.warn(
@@ -110,6 +124,7 @@ export default async function handler(
       payment,
       updatedCapital: payment.submission.capital,
       updatedSeedTier: payment.submission.seedTier,
+      canAddFund: payment.submission.canAddFund,
     });
   } catch (err) {
     console.error('Error approving payment:', err);

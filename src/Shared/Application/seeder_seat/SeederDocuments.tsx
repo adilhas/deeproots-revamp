@@ -5,10 +5,11 @@ import { formatCurrencyShort } from '@/utils/formatCapital';
 
 const SeederDocuments = () => {
   const { application } = useApplication();
-  const approvedPayments =
-    application?.morePayments?.filter(
-      (pay) => pay.paymentStatus === 'approved'
-    ) || [];
+  const approvedPayments = Array.isArray(application?.morePayments)
+    ? application.morePayments.filter(
+        (pay) => pay.status === 'payment_approved'
+      )
+    : [];
 
   return (
     <div className="w-full my-5 bg-white p-6 rounded-4xl flex flex-col gap-2 items-start justify-between">
@@ -20,7 +21,7 @@ const SeederDocuments = () => {
             <ViewFileLink
               key={pay.id}
               fileName={`$${formatCurrencyShort(Number(pay.amountSent))} Receipt`}
-              fileLink={pay.receiptUrl}
+              fileLink={pay.receiptUrl || ''}
             />
           ))}
         <ViewFileLink

@@ -131,12 +131,12 @@ export default function AdminLogin() {
           </form>
 
           {/* Bottom Links */}
-          <div className="mt-4 text-sm max-w-[474px] text-center text-[#525252] flex flex-wrap items-center justify-between">
+          {/* <div className="mt-4 text-sm max-w-[474px] text-center text-[#525252] flex flex-wrap items-center justify-between">
             <div>Can’t access your account?</div>
             <div className="text-[#2563EB] font-medium hover:underline">
               Forgot password?
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

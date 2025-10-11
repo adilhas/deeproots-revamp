@@ -24,34 +24,60 @@ export default async function handler(
       .json({ success: false, message: 'Method not allowed' });
   }
 
-  const { seederId, status } = req.body;
+  const { morePaymentId, status } = req.body;
 
-  if (!seederId || !status) {
-    return res
-      .status(400)
-      .json({ success: false, message: 'Seeder ID and status are required' });
+  if (!morePaymentId || !status) {
+    return res.status(400).json({
+      success: false,
+      message: 'MorePayment ID and status are required',
+    });
   }
 
+  // ✅ Validate allowed statuses for this phase
   if (!['approved', 'declined'].includes(status)) {
-    return res
-      .status(400)
-      .json({ success: false, message: 'Invalid status value' });
+    return res.status(400).json({
+      success: false,
+      message: 'Invalid status value. Must be "approved" or "declined".',
+    });
   }
 
   try {
-    const seeder = await prisma.privateSeedSubmission.update({
-      where: { id: seederId },
+    const payment = await prisma.morePayment.findUnique({
+      where: { id: morePaymentId },
+      include: { submission: true },
+    });
+
+    if (!payment) {
+      return res
+        .status(404)
+        .json({ success: false, message: 'MorePayment not found' });
+    }
+
+    // Update the payment status
+    const updatedPayment = await prisma.morePayment.update({
+      where: { id: morePaymentId },
       data: {
-        canAddFund: status === 'approved' ? 'approved' : 'not-submitted',
+        status: status === 'approved' ? 'request_approved' : 'request_rejected',
+        requestApprovedAt: new Date(),
+      },
+      include: { submission: true },
+    });
+
+    await prisma.privateSeedSubmission.update({
+      where: { id: updatedPayment.submissionId },
+      data: {
+        canAddFund: status === 'approved' ? 'under-review' : 'not-submitted',
       },
     });
 
+    const seeder = updatedPayment.submission;
+
     if (!seeder?.email) {
       console.warn('Seeder email not found.');
-      return res.status(200).json({ success: true });
+      return res.status(200).json({ success: true, data: updatedPayment });
     }
 
-    // ✅ Prepare email content
+    // email
     const baseUrl =
       process.env.NEXT_PUBLIC_APP_URL || 'https://www.deeproots.earth';
     let subject = '';
@@ -69,6 +95,7 @@ export default async function handler(
       );
     }
 
+    // Send notification email
     await transporter.sendMail({
       from: `"Team DEEPROOTS" <${process.env.EMAIL_USER}>`,
       to: seeder.email,
@@ -76,11 +103,16 @@ export default async function handler(
       html,
     });
 
-    return res.status(200).json({ success: true });
+    return res.status(200).json({
+      success: true,
+      message: `Fund addition request ${status}.`,
+      data: updatedPayment,
+    });
   } catch (error) {
-    console.error('Error updating status:', error);
-    return res
-      .status(500)
-      .json({ success: false, message: 'Error updating status' });
+    console.error('Error updating payment status:', error);
+    return res.status(500).json({
+      success: false,
+      message: 'Error updating payment request status.',
+    });
   }
 }

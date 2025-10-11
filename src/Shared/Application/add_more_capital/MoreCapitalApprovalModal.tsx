@@ -62,11 +62,12 @@ const MoreCapitalApprovalModal: React.FC<MoreCapitalApprovalModalProps> = ({
 
       const data = await res.json();
 
-      if (!res.ok) {
-        throw new Error(data?.message || 'Approval failed');
+      if (!res.ok || !data.payment) {
+        console.error(data?.message);
+        toast.error('Approval failed');
+        return;
       }
 
-      console.log(data);
       setApplication((prev) => {
         if (!prev) return prev;
 
@@ -79,8 +80,11 @@ const MoreCapitalApprovalModal: React.FC<MoreCapitalApprovalModalProps> = ({
           morePayments: updatedPayments,
           capital: data.updatedCapital,
           seedTier: data.updatedSeedTier,
+          canAddFund: data.canAddFund,
         };
       });
+
+      toast.success('Payment approved successfully!'); // ✅ show success
       setReceiptFile(null);
       setIsOpen(false);
     } catch (err) {

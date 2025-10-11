@@ -51,6 +51,7 @@ const MoreCapitalDeclineModal: React.FC<MoreCapitalDeclineModalProps> = ({
 
         return {
           ...prev,
+          canAddFund: 'not-submitted',
           morePayments: updatedPayments,
         };
       });
