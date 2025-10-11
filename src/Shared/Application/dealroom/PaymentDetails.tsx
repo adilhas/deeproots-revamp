@@ -228,7 +228,7 @@ const PaymentDetails = () => {
                   Approved Date
                 </div>
                 <a className="text-gray-800 font-semibold">
-                  {formateDateUTCTime(application?.paymentDetails?.updatedAt)}
+                  {formatDate(application?.paymentDetails?.updatedAt)}
                 </a>
               </div>
               <div

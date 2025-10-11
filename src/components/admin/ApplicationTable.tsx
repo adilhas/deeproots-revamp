@@ -1,14 +1,25 @@
 'use client';
 import AnnouncementManager from '@/Shared/Application/AnnouncementManager';
-// import { BroadcastNotification } from '@/Shared/Application/BroadcastNotification';
 import StatusDot from '@/Shared/StatusDot';
 import { ApplicationDataType, StatusType } from '@/types/application';
 import { formatDate } from '@/utils/formatDate';
-import { ArrowRight, Search } from 'lucide-react';
+import { ArrowRight, Search, Trash2 } from 'lucide-react';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 
-const ApplicationTable = () => {
+type ApplicationTableProps = {
+  selectedSubmission: ApplicationDataType | null;
+  setSelectedSubmission: React.Dispatch<
+    React.SetStateAction<ApplicationDataType | null>
+  >;
+  isModalOpen: boolean;
+  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const ApplicationTable: React.FC<ApplicationTableProps> = ({
+  setSelectedSubmission,
+  setIsModalOpen,
+}) => {
   const router = useRouter();
   const [submissions, setSubmissions] = useState<ApplicationDataType[]>([]);
   const [loading, setLoading] = useState(true);
@@ -64,6 +75,11 @@ const ApplicationTable = () => {
 
     return { status, stage };
   };
+  const openDeleteModal = (submission: ApplicationDataType) => {
+    setSelectedSubmission(submission);
+    setIsModalOpen(true);
+  };
+
   return (
     <div className=" w-full p-4">
       <AnnouncementManager />
@@ -110,7 +126,8 @@ const ApplicationTable = () => {
                 <th>Name</th>
                 <th>Seed Amount</th>
                 <th>Stage</th>
-                <th className="rounded-r-2xl">Status</th>
+                <th>Status</th>
+                <th className="rounded-r-2xl text-center">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -129,10 +146,20 @@ const ApplicationTable = () => {
                     <td>{item.fullName}</td>
                     <td>{item.capital}</td>
                     <th>{stage}</th>
-                    <td className='className=" rounded-r-2xl'>
-                      <div className="">
-                        <StatusDot status={status} />
-                      </div>
+                    <td>
+                      <StatusDot status={status} />
+                    </td>
+                    <td
+                      className="rounded-r-2xl text-center"
+                      onClick={(e) => e.stopPropagation()} // prevent row click
+                    >
+                      <button
+                        onClick={() => openDeleteModal(item)}
+                        className="p-2 text-red-500 hover:text-red-700"
+                        title="Delete submission"
+                      >
+                        <Trash2 className="w-5 h-5" />
+                      </button>
                     </td>
                   </tr>
                 );

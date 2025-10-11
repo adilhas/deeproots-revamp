@@ -4,10 +4,7 @@ import NotificationModal from '@/Shared/NotificationModal';
 import { Bell, ChevronRight } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
-import type {
-  AnnouncementType,
-  // NotificationItemType,
-} from '@/types/application';
+import type { AnnouncementType } from '@/types/application';
 import { useApplication } from '@/context/ApplicationContext';
 
 const SeederNotification = () => {
@@ -43,22 +40,6 @@ const SeederNotification = () => {
   ]);
   const [loading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   const fetchNotifications = async () => {
-  //     try {
-  //       const res = await fetch(`/api/announcement`);
-  //       const data = await res.json();
-  //       setNotifications((prevState) => [...data, ...prevState]);
-  //     } catch (err) {
-  //       console.error('Error fetching notifications', err);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   fetchNotifications();
-  // }, [application?.id]);
-
   useEffect(() => {
     let didCancel = false;
 
@@ -91,17 +72,9 @@ const SeederNotification = () => {
     fetchNotifications();
 
     return () => {
-      didCancel = true; // ✅ prevents state updates after unmount
+      didCancel = true;
     };
   }, [application?.id]);
-
-  // const unreadedNotification = notifications.filter(
-  //   (noti) => noti.isRead === false
-  // );
-
-  // const latest = unreadedNotification[0];
-
-  // console.log(notifications);
 
   return (
     <div className="my-5 bg-white p-2 rounded-4xl flex flex-row items-center w-full justify-between gap-2">

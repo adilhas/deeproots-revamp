@@ -10,7 +10,7 @@ import ApproveAddMoreRequest from './ApproveAddMoreRequest';
 import { toast } from 'react-toastify';
 
 const paymentStatusMap: Record<string, { label: string; color: string }> = {
-  requested: { label: 'Requested', color: 'text-gray-500' },
+  requested: { label: 'Requested', color: 'text-blue-500' },
   request_approved: { label: 'Request Approved', color: 'text-blue-600' },
   request_rejected: { label: 'Request Rejected', color: 'text-red-600' },
   payment_submitted: { label: 'Payment Submitted', color: 'text-yellow-600' },
@@ -132,16 +132,16 @@ const AddMoreCapital = () => {
                 className="p-4 border rounded-xl bg-gray-50 flex flex-col md:flex-row justify-start gap-2 md:justify-between items-start md:items-center "
               >
                 <div>
-                  <p className="font-semibold text-gray-800">
+                  <p className="font-semibold text-lg text-gray-800">
                     Amount: ${payment.requestedAmount}
                   </p>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-md text-gray-500">
                     Status:{' '}
                     <span
-                      className={
+                      className={`${
                         paymentStatusMap[payment.status]?.color ||
                         'text-gray-500'
-                      }
+                      } font-semibold`}
                     >
                       {paymentStatusMap[payment.status]?.label || 'Unknown'}
                     </span>
@@ -156,7 +156,7 @@ const AddMoreCapital = () => {
                         rel="noopener noreferrer"
                         className="underline text-blue-700"
                       >
-                        View Transaction Link
+                        View Transaction
                       </a>
                       <a
                         href={payment.paymentImage ?? ''}

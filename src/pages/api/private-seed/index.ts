@@ -6,7 +6,6 @@ import { render } from '@react-email/render';
 import SeederTokenEmail from '@/emails/SeederTokenEmail';
 import { getSeedTierFromCapital } from '@/lib/getSeedTierFromCapital';
 import { transporter } from '@/lib/mailer';
-// import RequestSubmittedEmail from '@/emails/RequestSubmittedEmail';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from '../auth/[...nextauth]';
 
@@ -51,7 +50,7 @@ export default async function handler(
       }
       const seedTier = getSeedTierFromCapital(String(capital));
 
-      // ✅ Create application
+      // Create application
       const submission = await prisma.privateSeedSubmission.create({
         data: {
           fullName,
@@ -67,7 +66,7 @@ export default async function handler(
         },
       });
 
-      // ✅ Generate token
+      // Generate token
       const token = crypto.randomBytes(32).toString('hex');
       const expiresAt = addHours(new Date(), 12);
 
@@ -80,29 +79,28 @@ export default async function handler(
       });
 
       const link = `${process.env.NEXTAUTH_URL}/seeder/create-account?token=${token}`;
-      // const url = process.env.NEXTAUTH_URL || 'https://deeproots.earth';
       const html = await render(SeederTokenEmail({ fullName, link }), {
         pretty: true,
       });
-      // const WelcomeHtml = await render(
-      //   RequestSubmittedEmail({ fullName, url }),
-      //   {
-      //     pretty: true,
-      //   }
-      // );
-
-      // await transporter.sendMail({
-      //   from: `"Team DEEPROOTS" <${process.env.EMAIL_USER}>`,
-      //   to: email,
-      //   subject: 'Welcome To DEEPROOTS',
-      //   html: WelcomeHtml,
-      // });
 
       await transporter.sendMail({
         from: `"Team DEEPROOTS" <${process.env.EMAIL_USER}>`,
         to: email,
         subject: 'Create Your Seeder Account - DEEPROOTS',
         html,
+      });
+
+      await transporter.sendMail({
+        from: `"Team DEEPROOTS" <${process.env.EMAIL_USER}>`,
+        to: process.env.EMAIL_USER, // Send to admin
+        subject: 'New Seeder Application Submitted',
+        html: `
+    <p><strong>${fullName}</strong> (${email}) has submitted a seeder application.</p>
+    <p>Visit the admin dashboard to review the application:</p>
+    <a href="${process.env.NEXTAUTH_URL}/admin/applications" target="_blank">
+      Go to Dashboard
+    </a>
+  `,
       });
 
       return res.status(200).json({

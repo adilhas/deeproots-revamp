@@ -5,7 +5,7 @@ import ApplicationStatusInfo from '@/components/admin/ApplicationStatusInfo';
 import ApprovedSeederOverview from './ApprovedSeederOverview';
 import SeederNotification from './SeederNotification';
 import { PiCopy } from 'react-icons/pi';
-import { Check } from 'lucide-react';
+import { Check, LogOut } from 'lucide-react';
 import BroadcastModal from './BroadcastModal';
 import { useBroadcast } from '@/context/BroadcastContext';
 import SeederSeatDetails from './SeederSeatDetails';
@@ -49,14 +49,18 @@ const SeederSeat = () => {
         <DashboardHeader
           label={session?.user.role === 'seeder' ? 'Pre seed' : 'Admin'}
           onRight={
-            <div className="flex flex-col md:flex-row items-center justify-end gap-2">
+            <div className="flex flex-row items-center justify-end gap-2">
               <BroadcastModal />
 
               <button
                 className="text-lg text-[#696969] underline"
                 onClick={() => signOut()}
               >
-                Log Out
+                <LogOut className="w-6 h-6 text-black inline-block md:hidden" />{' '}
+                <span className="hidden md:inline-block underline">
+                  {' '}
+                  Log Out
+                </span>
               </button>
             </div>
           }

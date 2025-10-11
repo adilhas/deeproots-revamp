@@ -110,9 +110,9 @@ const ApproveAddMoreRequest = () => {
               <div>
                 <label
                   htmlFor="amount"
-                  className="block text-md mb-1 font-semibold"
+                  className="block text-xl mb-1 font-semibold"
                 >
-                  Requested Amount (in USD)
+                  Enter Request Amount (in USD)
                 </label>
                 <ul className="text-md text-gray-600 mb-2">
                   <li>• Minimum: $1,000</li>

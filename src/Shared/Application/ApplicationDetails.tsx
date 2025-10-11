@@ -6,7 +6,7 @@ import DashboardTab from './DashboardTab';
 import ApplicationTab from './ApplicationTab';
 import PreApprovalTab from './PreApprovalTab';
 import DealRoomTab from './DealRoomTab';
-import { Globe, Mail, Phone } from 'lucide-react';
+import { Globe, LogOut, Mail, Phone } from 'lucide-react';
 import { PiMapPinArea, PiUser } from 'react-icons/pi';
 import AdminDashboardTab from './AdminDashboardTab';
 import StatusDot from '../StatusDot';
@@ -45,14 +45,18 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
         <DashboardHeader
           label={session?.user.role === 'seeder' ? 'Pre seed' : 'Admin'}
           onRight={
-            <div className="flex flex-col md:flex-row items-center justify-end gap-2">
+            <div className="flex flex-row items-center justify-end gap-2">
               {application.dealRoom === 'approved' && <BroadcastModal />}
 
               <button
                 className="text-lg text-[#696969] underline"
                 onClick={() => signOut()}
               >
-                Log Out
+                <LogOut className="w-6 h-6 text-black inline-block md:hidden" />{' '}
+                <span className="hidden md:inline-block underline">
+                  {' '}
+                  Log Out
+                </span>
               </button>
             </div>
           }

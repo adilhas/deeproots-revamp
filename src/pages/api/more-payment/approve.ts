@@ -79,7 +79,7 @@ export default async function handler(
     // Upload receipt to Supabase
     const uploadedUrl = await uploadToSupabase(
       receiptFile,
-      `receipts/${submission.id}`
+      `receipts/${submission.submissionId}`
     );
 
     // Update payment and include submission
