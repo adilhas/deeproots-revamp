@@ -41,9 +41,9 @@ export const socialLinks = [
   // },
   {
     name: 'Telegram',
-    username: '@deeproots_official',
+    username: '@deeproots_DeWorld',
     description: 'Official channel for news & private group access.',
-    href: 'https://t.me/deeproots_official',
+    href: 'https://t.me/deeproots_DeWorld',
     Icon: SiTelegram,
     brandColor: '#2AAAEC',
     iconColor: '#2AAAEC',
@@ -120,8 +120,8 @@ export const getSocialLinksData = (t: TFunction) => [
   // },
   {
     name: 'Telegram',
-    username: '@deeproots_official',
-    href: 'https://t.me/deeproots_official',
+    username: '@deeproots_DeWorld',
+    href: 'https://t.me/deeproots_DeWorld',
     Icon: SiTelegram,
     brandColor: '#2AAAEC',
     iconColor: '#2AAAEC',
