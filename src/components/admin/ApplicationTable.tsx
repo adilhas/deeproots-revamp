@@ -117,7 +117,7 @@ const ApplicationTable: React.FC<ApplicationTableProps> = ({
           No applications found.
         </div>
       ) : (
-        <div className="p-4 bg-white rounded-4xl">
+        <div className="p-4 bg-white rounded-4xl overflow-x-auto">
           <table className="table w-full rounded-4xl">
             <thead className="bg-[#E9E9E9] rounded-4xl text-[#303030]">
               <tr className="rounded-2xl">
