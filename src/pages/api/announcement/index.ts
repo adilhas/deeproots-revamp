@@ -56,25 +56,36 @@ export default async function handler(
 
       const allEmails = submissions.map((s) => s.email).filter(Boolean);
       const link = `${process.env.NEXTAUTH_URL || 'https://deeproots.earth'}/seeder/application`;
-      console.log({ allEmails });
-      if (allEmails.length > 0) {
-        const html = await render(CheckInboxMail({ link }), { pretty: true });
-        const text = htmlToText(html);
 
-        for (const email of allEmails) {
+      if (allEmails.length > 0) {
+        (async () => {
           try {
-            await transporter.sendMail({
-              from: `"Team DEEPROOTS" <${process.env.EMAIL_USER}>`,
-              to: email, // single recipient
-              subject: 'New Announcement on DEEPROOTS',
-              html,
-              text,
+            const html = await render(CheckInboxMail({ link }), {
+              pretty: true,
             });
-            console.log(`Email sent to ${email}`);
+            const text = htmlToText(html);
+
+            await Promise.all(
+              allEmails.map((email) =>
+                transporter
+                  .sendMail({
+                    from: `"Team DEEPROOTS" <${process.env.EMAIL_USER}>`,
+                    to: email,
+                    subject: 'New Announcement on DEEPROOTS',
+                    html,
+                    text,
+                  })
+                  .then(() => console.log(`Email sent to ${email}`))
+                  .catch((err) =>
+                    console.error(`Failed to send email to ${email}:`, err)
+                  )
+              )
+            );
+            console.log('All emails processed');
           } catch (err) {
-            console.error(`Failed to send email to ${email}:`, err);
+            console.error('Error sending announcement emails:', err);
           }
-        }
+        })();
       }
 
       return res.status(201).json(announcement);
