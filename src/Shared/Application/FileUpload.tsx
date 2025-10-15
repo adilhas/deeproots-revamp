@@ -54,7 +54,9 @@ export const FileUpload: React.FC<FileUploadProps> = ({
                 </span>
               </div>
               <div>
-                <p className="font-medium text-gray-800">{file.name}</p>
+                <p className="font-medium text-gray-800 truncate max-w-[80px]">
+                  {file.name}
+                </p>
                 <p className="text-sm text-gray-600">
                   {(file.size / 1024).toFixed(1)} kb
                 </p>

@@ -76,14 +76,14 @@ const DealRoomAccessBenefits = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#F5F5F5] p-4 rounded-2xl  mt-6 w-full gap-2 items-center">
-        <div className="flex flex-row">
+      <div className="bg-[#F5F5F5] p-4 rounded-2xl  mt-6 w-full gap-2 items-center text-center md:text-start">
+        <div className="flex flex-col md:flex-row">
           <Image
             src={'/dashboard/founder-call.png'}
             width={132}
             height={132}
             alt="founder call "
-            className="min-w-[132px] min-h-[132px]"
+            className="min-w-[132px] min-h-[132px] mx-auto"
           />
           <div>
             <div className="text-xl font-semibold">Founder’s call</div>

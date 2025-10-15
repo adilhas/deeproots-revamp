@@ -49,8 +49,9 @@ export default function ResetPasswordPage() {
 
       toast.success('Password reset successful! Redirecting...');
       setTimeout(() => router.push('/seeder/login'), 2000);
-    } catch {
+    } catch (err) {
       toast.error('Something went wrong.');
+      console.log(err);
     } finally {
       setIsSubmitting(false);
     }
@@ -64,11 +65,11 @@ export default function ResetPasswordPage() {
 
       <div className="max-w-[1200px] mx-auto mt-10">
         <div className="w-full max-w-[576px] mx-auto bg-white p-6 rounded-2xl">
-          <h1 className="text-3xl font-semibold mb-4 text-center text-transparent bg-gradient-to-r from-gradient-from2 to-gradient-to2 bg-clip-text w-full max-w-[451px] mx-auto">
+          <h1 className="text-xl md:text-3xl font-semibold mb-2 text-center text-transparent bg-gradient-to-r from-gradient-from2 to-gradient-to2 bg-clip-text w-full max-w-[451px] mx-auto">
             Reset Your Password
           </h1>
 
-          <h1 className="text-2xl text-[#525252] my-10 font-semibold w-fit mx-auto text-center">
+          <h1 className="text-md md:text-2xl text-[#525252] my-10 font-semibold w-fit mx-auto text-center">
             Enter new password to continue
           </h1>
 

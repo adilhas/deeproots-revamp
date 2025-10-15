@@ -9,14 +9,32 @@ import { Check, LogOut } from 'lucide-react';
 import BroadcastModal from './BroadcastModal';
 import { useBroadcast } from '@/context/BroadcastContext';
 import SeederSeatDetails from './SeederSeatDetails';
+import { useRouter } from 'next/router';
 
 const SeederSeat = () => {
   const { data: session } = useSession();
-  // const isAdmin = session?.user?.role === 'admin';
   const { setBroadcasts } = useBroadcast();
 
   const email = 'admin@deeproots.earth';
   const [copied, setCopied] = useState(false);
+
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    try {
+      const role = session?.user?.role;
+
+      await signOut({ redirect: false });
+
+      if (role === 'admin') {
+        router.push('/admin/login');
+      } else {
+        router.push('/seeder/login');
+      }
+    } catch (err) {
+      console.error('Logout failed:', err);
+    }
+  };
 
   const handleCopy = async () => {
     try {
@@ -45,7 +63,7 @@ const SeederSeat = () => {
 
   return (
     <div className="min-h-screen font-archivo bg-[#E7E7E7] text-[#303030] pb-10">
-      <div className="py-3 sticky md:static top-0 z-50 ">
+      <div className="py-0 md:py-3 sticky md:static top-0 z-50 ">
         <DashboardHeader
           label={session?.user.role === 'seeder' ? 'Pre seed' : 'Admin'}
           onRight={
@@ -54,7 +72,8 @@ const SeederSeat = () => {
 
               <button
                 className="text-lg text-[#696969] underline"
-                onClick={() => signOut()}
+                // onClick={() => signOut()}
+                onClick={handleLogout}
               >
                 <LogOut className="w-6 h-6 text-black inline-block md:hidden" />{' '}
                 <span className="hidden md:inline-block underline">

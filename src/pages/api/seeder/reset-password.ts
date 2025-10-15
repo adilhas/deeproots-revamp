@@ -21,7 +21,7 @@ export default async function handler(
 
   if (result.score < 2) {
     return res.status(400).json({
-      error:
+      message:
         'Password is too weak. Try adding more characters, symbols, or unique words.',
       suggestions: result.feedback.suggestions,
     });

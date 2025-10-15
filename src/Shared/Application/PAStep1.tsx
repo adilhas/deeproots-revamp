@@ -55,7 +55,7 @@ const PAStep1: React.FC<PAStep1Props> = ({
     <div className="w-full mx-auto border border-[#A1A1A1] rounded-2xl">
       {/* Header */}
       <div className="text-center py-[18px] px-2">
-        <h1 className="text-2xl font-semibold bg-gradient-to-r px-2 from-gradient-from2 to-gradient-to2 w-fit mx-auto bg-clip-text text-transparent">
+        <h1 className="text-lg md:text-2xl font-semibold bg-gradient-to-r px-2 from-gradient-from2 to-gradient-to2 w-fit mx-auto bg-clip-text text-transparent">
           Non-Disclosure Agreement & Simple Agreement for Future Tokens (SAFT)
         </h1>
       </div>
@@ -141,9 +141,11 @@ const PAStep1: React.FC<PAStep1Props> = ({
                       className="flex items-start justify-center gap-2 border-2 border-dashed border-gray-300 rounded-2xl py-4 cursor-pointer hover:border-gray-400 transition-colors"
                     >
                       <FiImage size={24} className="text-[#3F3F3F]" />
-                      <span className="">
+                      <div className="">
                         {signatureFile ? (
-                          signatureFile.name
+                          <div className="max-w-[100px] truncate">
+                            {signatureFile.name}
+                          </div>
                         ) : (
                           <div className="text-lg text-center">
                             <div className="text-[#525252]">
@@ -157,7 +159,7 @@ const PAStep1: React.FC<PAStep1Props> = ({
                             </div>
                           </div>
                         )}
-                      </span>
+                      </div>
                     </label>
                   </div>
                 </div>

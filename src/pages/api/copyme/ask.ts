@@ -13,7 +13,6 @@ const supabase = createClient(
 type MatchDocument = {
   id: number;
   content: string;
-  // source: string;
   metadata: {
     source: string; // JSONB structure
   };

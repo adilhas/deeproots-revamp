@@ -1,12 +1,9 @@
-// components/modals/AddMoreCapitalModal.tsx
-
 'use client';
 
 import React, { useState } from 'react';
 import { Loader, X } from 'lucide-react';
 import { toast } from 'react-toastify';
 import { PiLink } from 'react-icons/pi';
-import { FiImage } from 'react-icons/fi';
 import WalletInfo from '../dealroom/WalletInfo';
 import { z } from 'zod';
 import { useApplication } from '@/context/ApplicationContext';
@@ -67,12 +64,11 @@ const AddMoreCapitalModal: React.FC<Props> = ({
 
     const formData = new FormData();
     formData.append('transactionLink', transactionLink);
-    formData.append('morePaymentId', selectedPaymentId); // ✅ changed key
+    formData.append('morePaymentId', selectedPaymentId);
     formData.append('paymentImage', screenshot);
 
     try {
       const res = await fetch('/api/more-payment', {
-        // ✅ correct endpoint
         method: 'POST',
         body: formData,
       });
@@ -86,9 +82,7 @@ const AddMoreCapitalModal: React.FC<Props> = ({
         return {
           ...prev,
           morePayments: prev.morePayments?.map((p) =>
-            p.id === selectedPaymentId
-              ? { ...p, ...data.payment } // ✅ merge updated fields (status, image, link)
-              : p
+            p.id === selectedPaymentId ? { ...p, ...data.payment } : p
           ),
         };
       });
@@ -119,7 +113,9 @@ const AddMoreCapitalModal: React.FC<Props> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20">
       <div className="bg-white w-full max-w-[772px] relative max-h-[90vh] overflow-y-auto mx-4 md:mx-0 rounded-2xl shadow-xl">
         <div className="flex sticky top-0 justify-between items-center bg-gradient-to-r mb-4 p-4 rounded-t-2xl from-gradient-from to-gradient-to">
-          <h2 className="text-3xl font-semibold text-white">Add Fund</h2>
+          <h2 className="text-xl md:text-3xl font-semibold text-white">
+            Add Fund
+          </h2>
           <X
             className="w-6 h-6 text-white cursor-pointer"
             onClick={() => setIsOpen(false)}
@@ -129,13 +125,13 @@ const AddMoreCapitalModal: React.FC<Props> = ({
           <div className="bg-[#F4F4F4] rounded-2xl py-4 px-6">
             <div className="flex flex-col md:flex-row w-full justify-between items-start md:items-center text-center font-semibold">
               <div>Curent Seed amount:</div>
-              <div className="text-gray-700 text-2xl font-orbitron">
+              <div className="text-gray-700 text-xl md:text-2xl font-orbitron">
                 ${application?.capital}
               </div>
             </div>
-            <div className="flex flex-col md:flex-row w-full justify-between items-start md:items-center text-center font-semibold">
+            <div className="flex flex-col mt-1 md:mt-0 md:flex-row w-full justify-between items-start md:items-center text-center font-semibold">
               <div>Fund Requested:</div>
-              <div className="text-gray-700 text-2xl font-orbitron">
+              <div className="text-gray-700 text-xl md:text-2xl font-orbitron">
                 $
                 {
                   application?.morePayments.find(
@@ -148,31 +144,13 @@ const AddMoreCapitalModal: React.FC<Props> = ({
 
           <div className="mt-6">
             <h3 className="font-semibold text-2xl">Wallet Information</h3>
-            <WalletInfo
-              layoutClass="flex-col md:flex-col"
-              usdcAddress={application?.usdcAddress}
-              usdtAddress={application?.usdtAddress}
-            />
+            <WalletInfo layoutClass="flex-col md:flex-col" />
           </div>
 
           <div className="mt-6">
             <h3 className="font-semibold text-2xl">Payment Information</h3>
-            {/* {!isFormValid && formErrors.amountSent && (
-              <p className="text-red-500 text-sm mt-1">
-                {formErrors.amountSent[0]}
-              </p>
-            )} */}
+
             <div className="space-y-3 mt-2">
-              {/* <div className="relative w-full">
-                <PiCurrencyDollarSimple className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
-                <input
-                  type="number"
-                  placeholder="Enter Amount Sent"
-                  className="w-full border border-gray-300 rounded-3xl pl-10 pr-4 py-2 text-sm"
-                  value={amountSent}
-                  onChange={(e) => setAmountSent(e.target.value)}
-                />
-              </div> */}
               {formErrors.transactionLink && (
                 <p className="text-red-500 text-sm mt-1">
                   {formErrors.transactionLink}
@@ -196,8 +174,8 @@ const AddMoreCapitalModal: React.FC<Props> = ({
                   className="flex flex-col items-center justify-center cursor-pointer"
                 >
                   <div className="flex flex-row justify-center items-center gap-2">
-                    <FiImage size={24} />
-                    <p className="mt-2 font-medium text-lg">
+                    {/* <FiImage size={24} /> */}
+                    <p className="mt-2 font-medium text-md md:text-lg">
                       Upload Payment Screenshot
                     </p>
                   </div>
@@ -210,7 +188,9 @@ const AddMoreCapitalModal: React.FC<Props> = ({
                     onChange={handleFileChange}
                   />
                   {screenshot && (
-                    <span className="text-xs mt-2">{screenshot.name}</span>
+                    <div className="text-xs max-w-[200px] truncate mt-2">
+                      {screenshot.name}
+                    </div>
                   )}
                 </label>
               </div>

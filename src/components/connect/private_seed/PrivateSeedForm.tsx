@@ -224,7 +224,7 @@ const PrivateSeedForm = () => {
               </div>
             </div>
             <div
-              className="flex w-full flex-wrap gap-1 text-white mx-auto  justify-between px-2 my-3 py-4 bg-gradient-to-r from-[#AD1AAF] to-[#0085A8] dark:from-[#26252E] dark:to-[#26252E] rounded-lg"
+              className="flex w-full flex-wrap gap-1 text-white mx-auto  justify-start md:justify-between px-2 my-3 py-4 bg-gradient-to-r from-[#AD1AAF] to-[#0085A8] dark:from-[#26252E] dark:to-[#26252E] rounded-lg"
               style={{
                 boxShadow: isDark
                   ? `0px 8px 16px 0px #0F172A05,0px 4px 8px 0px #0F172A08,0px 0px 20px 0px #433E57 inset,10px 10px 30px 0px #000000B2`

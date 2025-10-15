@@ -5,13 +5,32 @@ import DashboardHeader from '@/Shared/Application/DashboardHeader';
 import DeleteSubmissionModal from '@/Shared/Application/DeleteSubmissionModal';
 import { ApplicationDataType } from '@/types/application';
 import { LogOut } from 'lucide-react';
-import { signOut } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 
 const Applications = () => {
   const [selectedSubmission, setSelectedSubmission] =
     useState<ApplicationDataType | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { data: session } = useSession();
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    try {
+      const role = session?.user?.role;
+
+      await signOut({ redirect: false });
+
+      if (role === 'admin') {
+        router.push('/admin/login');
+      } else {
+        router.push('/seeder/login');
+      }
+    } catch (err) {
+      console.error('Logout failed:', err);
+    }
+  };
 
   const closeModal = () => {
     setSelectedSubmission(null);
@@ -25,7 +44,8 @@ const Applications = () => {
           onRight={
             <button
               className="text-lg text-[#696969] underline"
-              onClick={() => signOut()}
+              // onClick={() => signOut()}
+              onClick={handleLogout}
             >
               <LogOut className="w-6 h-6 text-black inline-block md:hidden" />{' '}
               <span className="hidden md:inline-block underline"> Log Out</span>

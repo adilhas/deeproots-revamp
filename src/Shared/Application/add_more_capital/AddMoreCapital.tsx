@@ -103,10 +103,8 @@ const AddMoreCapital = () => {
   return (
     <>
       <div className="w-full my-5 bg-white p-6 rounded-4xl">
-        <div className="w-full flex flex-col md:flex-row justify-between items-center">
-          <div className="text-[#303030] text-2xl font-semibold mb-6">
-            Add Funds
-          </div>
+        <div className="w-full flex flex-col md:flex-row justify-between items-center mb-6">
+          <div className="text-[#303030] text-2xl font-semibold">Add Funds</div>
 
           {session?.user.role === 'seeder' &&
             application?.canAddFund === 'not-submitted' && (

@@ -18,6 +18,7 @@ import SeederNotification from './seeder_seat/SeederNotification';
 import ApprovedSeederOverview from './seeder_seat/ApprovedSeederOverview';
 import BroadcastModal from './seeder_seat/BroadcastModal';
 import SeederSeatDetails from './seeder_seat/SeederSeatDetails';
+import { useRouter } from 'next/router';
 
 interface ApplicationDetailsProps {
   application: ApplicationDataType;
@@ -30,6 +31,7 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
     'dashboard' | 'application' | 'pre-approval' | 'deal-room' | 'private-seat'
   >('dashboard');
   const { data: session } = useSession();
+  const router = useRouter();
 
   const tabs = [
     { key: 'dashboard', label: 'Dashboard' },
@@ -37,6 +39,22 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
     { key: 'pre-approval', label: 'Pre-Approval' },
     { key: 'deal-room', label: 'Deal Room' },
   ] as const;
+
+  const handleLogout = async () => {
+    try {
+      const role = session?.user?.role;
+
+      await signOut({ redirect: false });
+
+      if (role === 'admin') {
+        router.push('/admin/login');
+      } else {
+        router.push('/seeder/login');
+      }
+    } catch (err) {
+      console.error('Logout failed:', err);
+    }
+  };
 
   return (
     <div className="border min-h-screen font-archivo bg-[#E7E7E7] text-[#303030] pb-10">
@@ -50,7 +68,8 @@ const ApplicationDetails: React.FC<ApplicationDetailsProps> = ({
 
               <button
                 className="text-lg text-[#696969] underline"
-                onClick={() => signOut()}
+                // onClick={() => signOut()}
+                onClick={handleLogout}
               >
                 <LogOut className="w-6 h-6 text-black inline-block md:hidden" />{' '}
                 <span className="hidden md:inline-block underline">

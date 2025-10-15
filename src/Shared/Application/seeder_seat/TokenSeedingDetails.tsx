@@ -40,9 +40,12 @@ const TokenSeedingDetails = () => {
         Token Seeding Details
       </h2>
 
-      <div className="space-y-2 text-lg ">
+      <div className="space-y-2 text-md md:text-lg ">
         {vestingDetails.map((item) => (
-          <div key={item.label} className="flex justify-between">
+          <div
+            key={item.label}
+            className="flex flex-col md:flex-row justify-between"
+          >
             <span className="text-[#696969]">{item.label}</span>
             <span className="font-medium text-[#525252] ">{item.value}</span>
           </div>

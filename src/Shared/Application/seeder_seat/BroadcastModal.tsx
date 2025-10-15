@@ -90,8 +90,7 @@ const BroadcastModal = () => {
 
       {isOpen && (
         <ul
-          className="fixed md:absolute max-w-[411px] w-full right-0 mt-2 menu bg-white rounded-3xl z-10 p-2 shadow-sm"
-          style={{ minWidth: '411px' }}
+          className="fixed md:absolute max-w-none md:max-w-[411px] w-full md:w-[200px] right-0 mt-2 menu bg-white rounded-3xl z-10 p-2 shadow-sm"
           onMouseEnter={handleMouseEnterDropdown}
           onMouseLeave={handleMouseLeaveDropdown}
         >

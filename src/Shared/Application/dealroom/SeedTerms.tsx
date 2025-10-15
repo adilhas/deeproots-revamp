@@ -63,10 +63,7 @@ const SeedTerms = () => {
       </div>
       <div className="w-full max-w-[991px] mx-auto py-3 px-3">
         <div className="text-2xl font-bold">Payment Wallet Information</div>
-        <WalletInfo
-          usdcAddress={application?.usdcAddress}
-          usdtAddress={application?.usdtAddress}
-        />
+        <WalletInfo />
       </div>
     </div>
   );

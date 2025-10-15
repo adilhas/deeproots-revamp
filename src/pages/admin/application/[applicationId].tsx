@@ -7,6 +7,7 @@ import { useApplication } from '@/context/ApplicationContext';
 import SeederSeat from '@/Shared/Application/seeder_seat/SeederSeat';
 import { useSession } from 'next-auth/react';
 import { toast } from 'react-toastify';
+import AuthLoader from '@/components/AuthLoader';
 
 const ApplicationDetailsPage = () => {
   const router = useRouter();
@@ -47,11 +48,7 @@ const ApplicationDetailsPage = () => {
   }, [applicationId]);
 
   if (loading) {
-    return (
-      <div className="flex justify-center items-center h-40">
-        <span className="loading loading-spinner loading-lg text-primary" />
-      </div>
-    );
+    return <AuthLoader />;
   }
 
   if (!application) {

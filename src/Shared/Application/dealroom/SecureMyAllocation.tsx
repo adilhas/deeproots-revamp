@@ -2,19 +2,16 @@
 
 import React, { useState } from 'react';
 import { Loader, X } from 'lucide-react';
-// import WalletInfo from './WalletInfo';
 import { useApplication } from '@/context/ApplicationContext';
 import { z } from 'zod';
 import { toast } from 'react-toastify';
 import { PiLink } from 'react-icons/pi';
-import { FiImage } from 'react-icons/fi';
 
 interface SecureMyAllocationProps {
   disabled: boolean;
 }
 
 const paymentSchema = z.object({
-  // amountSent: z.string().min(1, 'Amount is required'),
   transactionLink: z.string().url('Must be a valid URL'),
   screenshot: z.custom<File>((file) => file instanceof File, {
     message: 'Screenshot file is required',
@@ -115,7 +112,7 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20">
           <div className="bg-white w-full max-w-[772px] relative max-h-[90vh] overflow-y-auto mx-4 md:mx-0 rounded-2xl shadow-xl">
             <div className="flex sticky top-0 justify-between items-center bg-gradient-to-r mb-4 p-4 rounded-t-2xl from-gradient-from to-gradient-to">
-              <h2 className="text-3xl  font-semibold  text-white ">
+              <h2 className="text-lg md:text-3xl  font-semibold  text-white ">
                 Secure my Allocation
               </h2>
               <X
@@ -126,39 +123,20 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
             <div className="p-4 text-[#525252]">
               <div className="bg-[#F4F4F4] rounded-2xl py-4 px-6">
                 <div className="">
-                  <div className=" text-center flex flex-col md:flex-row w-full justify-between items-start md:items-center font-semibold">
+                  <div className="text-center flex flex-col md:flex-row w-full justify-between items-start md:items-center font-semibold">
                     <div>Seed amount:</div>
-                    <div className="text-gray-700 text-2xl font-orbitron">
+                    <div className="text-gray-700 text-xl md:text-2xl font-orbitron">
                       ${application?.capital}
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* <div className="mt-6">
-                <h3 className="font-semibold text-2xl">Wallet Information</h3>
-                <WalletInfo
-                  layoutClass="flex-col md:flex-col"
-                  usdcAddress={application?.usdcAddress}
-                  usdtAddress={application?.usdtAddress}
-                />
-              </div> */}
-
               <div className="mt-6">
-                <h3 className="font-semibold text-2xl"> Payment Information</h3>
+                <h3 className="font-semibold text-xl md:text-2xl">
+                  Payment Information
+                </h3>
                 <div className="space-y-3 mt-2">
-                  {/* <div className="relative w-full">
-                    <PiCurrencyDollarSimple className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
-                    <input
-                      type="number"
-                      placeholder="Enter Amount Sent"
-                      className="w-full border border-gray-300 rounded-3xl pl-10 pr-4 py-2 text-sm"
-                      value={amountSent}
-                      onChange={(e) => setAmountSent(e.target.value)}
-                    />
-                  </div> */}
-
-                  {/* Transaction Link with icon */}
                   <div className="relative w-full">
                     <PiLink className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
                     <input
@@ -176,10 +154,7 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
                       className="flex flex-col items-center justify-center cursor-pointer"
                     >
                       <div className="flex flex-row justify-center items-center gap-2">
-                        <div className="translate-y-[2px]">
-                          <FiImage size={24} />
-                        </div>
-                        <p className="mt-2 font-medium text-lg">
+                        <p className="mt-2 font-medium text-md md:text-lg">
                           Upload Payment Screenshot
                         </p>
                       </div>
@@ -194,7 +169,9 @@ const SecureMyAllocation = ({ disabled }: SecureMyAllocationProps) => {
                         onChange={handleFileChange}
                       />
                       {screenshot && (
-                        <span className="text-xs mt-2">{screenshot.name}</span>
+                        <div className="text-xs mt-2 max-w-[130px] truncate">
+                          {screenshot.name}
+                        </div>
                       )}
                     </label>
                   </div>

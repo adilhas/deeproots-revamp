@@ -28,7 +28,7 @@ const TokenUtilitisSupply = () => {
       <div className="flex flex-col md:flex-row items-start mb-10">
         <div className="w-fit mx-auto my-5 flex flex-col">
           <TotalSupplyChart theme="light" />
-          <div className="mt-6">
+          <div className="mt-6 mx-4 md:mx-1 scale-90 md:scale-100">
             <TotalSupply theme="light" />
           </div>
         </div>

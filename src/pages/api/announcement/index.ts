@@ -4,8 +4,8 @@ import { render } from '@react-email/render';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from '../auth/[...nextauth]';
-import { resend } from '@/lib/resend';
 import { htmlToText } from 'html-to-text';
+import { transporter } from '@/lib/mailer';
 
 export default async function handler(
   req: NextApiRequest,
@@ -40,7 +40,6 @@ export default async function handler(
       const announcement = await prisma.announcement.create({
         data: { message },
       });
-      // 2. Fetch all emails from submissions table
       const submissions = await prisma.privateSeedSubmission.findMany({
         where: {
           NOT: {
@@ -57,21 +56,24 @@ export default async function handler(
 
       const allEmails = submissions.map((s) => s.email).filter(Boolean);
       const link = `${process.env.NEXTAUTH_URL || 'https://deeproots.earth'}/seeder/application`;
-
+      console.log({ allEmails });
       if (allEmails.length > 0) {
         const html = await render(CheckInboxMail({ link }), { pretty: true });
         const text = htmlToText(html);
 
-        try {
-          await resend.emails.send({
-            from: `"Team DEEPROOTS" <${process.env.EMAIL_USER}>`,
-            to: allEmails,
-            subject: 'New Announcement on DEEPROOTS',
-            html,
-            text,
-          });
-        } catch (emailError) {
-          console.error('Failed to send emails:', emailError);
+        for (const email of allEmails) {
+          try {
+            await transporter.sendMail({
+              from: `"Team DEEPROOTS" <${process.env.EMAIL_USER}>`,
+              to: email, // single recipient
+              subject: 'New Announcement on DEEPROOTS',
+              html,
+              text,
+            });
+            console.log(`Email sent to ${email}`);
+          } catch (err) {
+            console.error(`Failed to send email to ${email}:`, err);
+          }
         }
       }
 

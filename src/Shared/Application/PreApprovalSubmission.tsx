@@ -21,10 +21,10 @@ const PreAprovalSubmission = () => {
       {/* Progress Bar */}
       <div className="flex flex-row justify-between max-w-[800px] my-10 gap-2 mx-auto text-center">
         <div className="w-fit">
-          <div className={`text-purple-500 font-semibold text-2xl`}>
+          <div className={`text-purple-500 font-semibold text-sm md:text-2xl`}>
             Step - 1
           </div>
-          <div className="text-nowrap text-[#696969] text-lg">
+          <div className="text-nowrap text-[#696969] text-md md:text-lg">
             NDA & Signature
           </div>
         </div>
@@ -34,6 +34,7 @@ const PreAprovalSubmission = () => {
             width={24}
             height={24}
             alt="step active"
+            className="w-4 h-4 md:w-6 md:h-6"
           />
           <div
             className={`w-full border-t ${currentStep === 2 ? 'border-[#9333EA]' : 'border-dashed'} border-neutral-500 flex-grow`}
@@ -44,15 +45,18 @@ const PreAprovalSubmission = () => {
             width={24}
             height={24}
             alt="step active"
+            className="w-4 h-4 md:w-6 md:h-6"
           />
         </div>
         <div className="w-fit">
           <div
-            className={`${currentStep === 2 ? 'text-purple-500' : 'text-[#696969]'} font-semibold text-2xl`}
+            className={`${currentStep === 2 ? 'text-purple-500' : 'text-[#696969]'} font-semibold text-sm md:text-2xl`}
           >
             Step - 2
           </div>
-          <div className="text-nowrap text-[#696969] text-lg">KYC & Docs</div>
+          <div className="text-nowrap text-[#696969] text-md md:text-lg">
+            KYC & Docs
+          </div>
         </div>
       </div>
 
