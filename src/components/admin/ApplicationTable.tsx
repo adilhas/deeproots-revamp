@@ -1,5 +1,6 @@
 'use client';
 import AnnouncementManager from '@/Shared/Application/AnnouncementManager';
+import MainSiteAnnouncementManager from '@/Shared/Application/MainSiteAnnouncemntManager';
 import StatusDot from '@/Shared/StatusDot';
 import { ApplicationDataType, StatusType } from '@/types/application';
 import { formatDate } from '@/utils/formatDate';
@@ -82,7 +83,10 @@ const ApplicationTable: React.FC<ApplicationTableProps> = ({
 
   return (
     <div className=" w-full p-4">
-      <AnnouncementManager />
+      <div className="flex flex-col md:flex-row gap-2 items-start my-2">
+        <AnnouncementManager />
+        <MainSiteAnnouncementManager />
+      </div>
       <div className="flex justify-between items-center mb-4 gap-8">
         {/* here add send notification to all */}
         {/* <BroadcastNotification /> */}

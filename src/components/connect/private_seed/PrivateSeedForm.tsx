@@ -201,8 +201,10 @@ const PrivateSeedForm = () => {
           <div className="border-0 shadow-[0px_4px_20px_0px_#0000001A] dark:shadow-[0px_4px_20px_0px_#00000073] bg-white dark:bg-[#303030] gap-2 rounded-2xl w-full py-3 px-4 ">
             <div className="flex flex-col items-start gap-y-2 lg:items-center lg:flex-row w-full justify-between">
               <div>
-                <div className="flex items-center text-lg">
-                  <PiCurrencyDollarSimple className="w-6 h-6" />
+                <div className="flex flex-row items-start md:items-center text-md md:text-lg gap-2">
+                  <div className="mt-1 md:mt-0">
+                    <PiCurrencyDollarSimple className="w-6 h-6" />
+                  </div>
                   <div>{t(`form.placeholders.capital`)}</div>
                 </div>
               </div>

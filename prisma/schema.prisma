@@ -157,6 +157,13 @@ model Announcement {
   updatedAt DateTime @updatedAt
 }
 
+model MainSiteAnnouncement {
+  id        String   @id @default(cuid())
+  message   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
 model Blog {
   id        String   @id @default(uuid())
   title     String

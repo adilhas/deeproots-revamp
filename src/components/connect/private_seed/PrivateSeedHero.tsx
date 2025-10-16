@@ -4,6 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { useTranslation } from 'next-i18next';
+import { MdOutlineSecurity, MdOutlineRocketLaunch } from 'react-icons/md';
+import { FaGlobeAmericas } from 'react-icons/fa';
+import MainSiteSeederAnnouncement from './MainSiteSeederAnnouncement';
 
 const PrivateSeedHero = () => {
   const { t } = useTranslation('connect/private_seed');
@@ -11,7 +14,14 @@ const PrivateSeedHero = () => {
   const features: string[] = Array.isArray(rawFeatures)
     ? (rawFeatures as string[])
     : [];
-  const featuresIcons = ['🔒', '🌐', '📈'];
+  const featuresIcons = [
+    <MdOutlineSecurity key="security" className="text-green-700 w-6 h-6" />,
+    <FaGlobeAmericas key="global" className="text-blue-600 w-6 h-6" />,
+    <MdOutlineRocketLaunch
+      key={'launching'}
+      className="text-purple-700 w-6 h-6"
+    />,
+  ];
   return (
     <div className="relative w-full min-h-screen rounded-3xl overflow-hidden">
       <div className="z-20 bg-gradient-to-b from-[#CCCCCC] to-[#FFFFFF] dark:from-[#070707] dark:to-[#252525]  px-2 py-2 border-3 border-[#D4D4D4] w-fit mx-auto rounded-4xl">
@@ -43,25 +53,16 @@ const PrivateSeedHero = () => {
           </Link>
         </div>
       </div>
-      <div className="relative w-full mx-auto my-10 overflow-hidden bg-white dark:bg-[#303030] py-2 max-w-[800px]">
-        <div className="absolute left-0 top-0 h-full w-12 z-10 bg-gradient-to-r from-primary-light dark:from-primary-dark via-transparent to-transparent pointer-events-none" />
-        <div className="absolute right-0 top-0 h-full w-12 z-10 bg-gradient-to-l from-primary-light dark:from-primary-dark via-transparent to-transparent pointer-events-none" />
-
-        <div className="marquee-wrapper">
-          <div className="marquee-track text-lg font-medium whitespace-nowrap">
-            <span className="mr-20">{t('hero.description')}</span>
-            <span className="mr-20">{t('hero.description')}</span>
-          </div>
-        </div>
-      </div>
+      <MainSiteSeederAnnouncement />
 
       <div className="flex flex-col md:flex-row gap-3 items-center justify-center my-10">
         {features.map((feature, index) => (
           <div
             key={feature}
-            className="bg-white dark:bg-gradient-to-b w-full md:w-fit max-w-[300px] md:max-w-none text-center dark:from-[#070707] dark:to-[#252525] text-lg  md:text-xl lg:text-2xl py-2 px-4 rounded-2xl"
+            className="bg-white flex flex-row gap-2 items-center dark:bg-gradient-to-b w-full md:w-fit max-w-[300px] md:max-w-none text-center dark:from-[#070707] dark:to-[#252525] text-lg  md:text-xl lg:text-2xl py-2 px-4 rounded-2xl"
           >
-            {featuresIcons[index]} {feature}
+            <div>{featuresIcons[index]}</div>
+            <div>{feature}</div>
           </div>
         ))}
       </div>

@@ -98,7 +98,7 @@ const AddMoreCapital = () => {
       setIsSubmitting(false);
     }
   };
-  console.log(application);
+  // console.log(application);
 
   return (
     <>

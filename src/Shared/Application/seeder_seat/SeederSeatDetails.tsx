@@ -12,7 +12,7 @@ import AddMoreCapital from '../add_more_capital/AddMoreCapital';
 const SeederSeatDetails = () => {
   const { application } = useApplication();
   const { data: session } = useSession();
-  console.log({ application });
+  // console.log({ application });
   return (
     <div className="flex flex-col-reverse lg:flex-row-reverse gap-6 w-full">
       <div className="w-full lg:max-w-[385px] max-w-none ">
