@@ -9,15 +9,17 @@ export default function CountdownTimer() {
   });
 
   useEffect(() => {
-    const targetDate = new Date();
-    targetDate.setDate(0);
+    // start date (16 Oct 2025)
+    const startDate = new Date('2025-10-16T00:00:00');
+    // Target = start date + 60 days
+    const targetDate = new Date(startDate.getTime() + 60 * 24 * 60 * 60 * 1000);
 
-    const interval = setInterval(() => {
+    const updateCountdown = () => {
       const now = new Date();
       const difference = targetDate.getTime() - now.getTime();
 
       if (difference <= 0) {
-        clearInterval(interval);
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
         return;
       }
 
@@ -29,8 +31,10 @@ export default function CountdownTimer() {
       const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
       setTimeLeft({ days, hours, minutes, seconds });
-    }, 1000);
+    };
 
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
     return () => clearInterval(interval);
   }, []);
 
@@ -56,7 +60,6 @@ export default function CountdownTimer() {
                 </div>
               </span>
             </div>
-
             {index < 2 && (
               <span className="mx-1 text-2xl select-none dark:text-[#8F8F8F] text-black">
                 |
