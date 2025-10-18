@@ -10,38 +10,39 @@ datasource db {
 }
 
 model PrivateSeedSubmission {
-   id                   String            @id @default(cuid())
-  fullName             String
-  email                String            @unique
-  contact              String
-  country              String
-  website              String
-  capital              String
-  value                String
-  whyJoin              String
-  indvOrOrg            String
-  applicationStatus    String            @default("received")
-  createdAt            DateTime          @default(now())
-  dealRoomOpen         Boolean           @default(false)
-  preApproval          String            @default("not-submitted")
-  updatedAt            DateTime          @updatedAt
-  passwordHash         String?
-  dealRoom             String            @default("not-submitted")
-  usdcAddress          String?
-  usdtAddress          String?
-  contributionAmount   String?
-  seedTier             String?
-  preApprovalUpdatedAt DateTime?
-  firstReminderSent    Boolean           @default(false)
-  secondReminderSent   Boolean           @default(false)
-  isDealRoomExpired    Boolean           @default(false)
-  kycDocuments         KycDocument[]
-  managementNotes      ManagementNotes[]
-  ndaSubmission        NdaSubmission?
-  notifications        Notification[]
-  paymentDetails       PaymentDetails?
-  morePayments    MorePayment[] 
-  canAddFund      String @default("not-submitted")
+  id                    String            @id @default(cuid())
+  fullName              String
+  email                 String            @unique
+  contact               String
+  country               String
+  website               String
+  capital               String
+  value                 String
+  whyJoin               String
+  indvOrOrg             String
+  applicationStatus     String            @default("received")
+  createdAt             DateTime          @default(now())
+  dealRoomOpen          Boolean           @default(false)
+  preApproval           String            @default("not-submitted")
+  updatedAt             DateTime          @updatedAt
+  passwordHash          String?
+  dealRoom              String            @default("not-submitted")
+  usdcAddress           String?
+  usdtAddress           String?
+  contributionAmount    String?
+  seedTier              String?
+  preApprovalUpdatedAt  DateTime?
+  firstReminderSent     Boolean           @default(false)
+  secondReminderSent    Boolean           @default(false)
+  isDealRoomExpired     Boolean           @default(false)
+  kycDocuments          KycDocument[]
+  managementNotes       ManagementNotes[]
+  ndaSubmission         NdaSubmission?
+  notifications         Notification[]
+  paymentDetails        PaymentDetails?
+  morePayments          MorePayment[]
+  canAddFund            String            @default("not-submitted")
+  applicationApprovedAt DateTime?
 
   @@index([id])
   @@index([email])
@@ -64,25 +65,26 @@ model PaymentDetails {
   @@index([paymentStatus])
   @@index([updatedAt])
 }
+
 model MorePayment {
-  id               String                @id @default(cuid())
-  requestedAmount  String                // amount user wishes to add
-  amountSent       String?               // actual amount user sent (after approval)
-  transactionLink  String?
-  paymentImage     String?
-  receiptUrl       String?
-  comment          String?               // user comment
-  adminComment     String?               // admin note for request/payment
-  status           PaymentStatus         @default(requested)
-  submissionId     String
-  submission       PrivateSeedSubmission @relation(fields: [submissionId], references: [id])
-  
+  id              String                @id @default(cuid())
+  requestedAmount String // amount user wishes to add
+  amountSent      String? // actual amount user sent (after approval)
+  transactionLink String?
+  paymentImage    String?
+  receiptUrl      String?
+  comment         String? // user comment
+  adminComment    String? // admin note for request/payment
+  status          PaymentStatus         @default(requested)
+  submissionId    String
+  submission      PrivateSeedSubmission @relation(fields: [submissionId], references: [id])
+
   // timestamps
-  createdAt        DateTime              @default(now())
-  updatedAt        DateTime?             @updatedAt
-  requestApprovedAt DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime? @updatedAt
+  requestApprovedAt  DateTime?
   paymentSubmittedAt DateTime?
-  paymentApprovedAt DateTime?
+  paymentApprovedAt  DateTime?
 
   @@index([submissionId])
   @@index([status])
@@ -90,14 +92,13 @@ model MorePayment {
 }
 
 enum PaymentStatus {
-  requested           
-  request_approved    
-  request_rejected    
-  payment_submitted   
-  payment_approved    
-  payment_rejected    
+  requested
+  request_approved
+  request_rejected
+  payment_submitted
+  payment_approved
+  payment_rejected
 }
-
 
 model SeederAccountToken {
   id        String   @id @default(cuid())
@@ -109,33 +110,33 @@ model SeederAccountToken {
 }
 
 model KycDocument {
-  id        String          @id @default(cuid())
+  id        String                @id @default(cuid())
   type      KycDocumentType
   url       String
   userId    String
-  createdAt DateTime        @default(now())
+  createdAt DateTime              @default(now())
   user      PrivateSeedSubmission @relation(fields: [userId], references: [id])
 
   @@index([id])
 }
 
 model NdaSubmission {
-  id             String    @id @default(cuid())
-  userId         String    @unique
+  id             String                @id @default(cuid())
+  userId         String                @unique
   typedSignature String
   signatureImage String
-  acceptedAt     DateTime  @default(now())
-  updatedAt      DateTime? @updatedAt
+  acceptedAt     DateTime              @default(now())
+  updatedAt      DateTime?             @updatedAt
   user           PrivateSeedSubmission @relation(fields: [userId], references: [id])
 
   @@index([id])
 }
 
 model ManagementNotes {
-  id           String     @id @default(cuid())
+  id           String                @id @default(cuid())
   note         String
-  createdAt    DateTime   @default(now())
-  updatedAt    DateTime   @updatedAt
+  createdAt    DateTime              @default(now())
+  updatedAt    DateTime              @updatedAt
   submissionId String
   sender       SenderType
   submission   PrivateSeedSubmission @relation(fields: [submissionId], references: [id])
@@ -167,7 +168,7 @@ model MainSiteAnnouncement {
 model Blog {
   id        String   @id @default(uuid())
   title     String
-  slug      String    @unique
+  slug      String   @unique
   content   String
   thumbnail String?
   published Boolean  @default(false)
@@ -177,14 +178,14 @@ model Blog {
 }
 
 model Notification {
-  id           String           @id @default(cuid())
+  id           String                 @id @default(cuid())
   message      String
-  type         NotificationType @default(INFO)
-  isRead       Boolean          @default(false)
-  createdAt    DateTime         @default(now())
-  updatedAt    DateTime         @updatedAt
+  type         NotificationType       @default(INFO)
+  isRead       Boolean                @default(false)
+  createdAt    DateTime               @default(now())
+  updatedAt    DateTime               @updatedAt
   submissionId String?
-  sender       SenderType       @default(ADMIN)
+  sender       SenderType             @default(ADMIN)
   link         String?
   title        String
   submission   PrivateSeedSubmission? @relation(fields: [submissionId], references: [id], onDelete: Cascade)

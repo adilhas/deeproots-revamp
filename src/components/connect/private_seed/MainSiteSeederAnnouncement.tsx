@@ -1,10 +1,12 @@
 import { AnnouncementType } from '@/types/application';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { toast } from 'react-toastify';
 
 const MainSiteSeederAnnouncement = () => {
   const [announcements, setAnnouncements] = useState<AnnouncementType[]>([]);
+  const marqueeRef = useRef<HTMLDivElement | null>(null);
+  const [duration, setDuration] = useState(20);
 
   useEffect(() => {
     fetchAnnouncements();
@@ -19,6 +21,20 @@ const MainSiteSeederAnnouncement = () => {
       toast.error('Failed to load announcements');
     }
   };
+
+  useEffect(() => {
+    if (marqueeRef.current && announcements.length > 0) {
+      const totalWidth = marqueeRef.current.scrollWidth;
+      const containerWidth = marqueeRef.current.parentElement?.clientWidth || 1;
+      const distance = totalWidth + containerWidth;
+
+      // speed: pixels per second (adjust for smoothness)
+      const speed = 100;
+      const newDuration = distance / speed;
+
+      setDuration(newDuration);
+    }
+  }, [announcements]);
   if (announcements.length <= 0) return <div></div>;
 
   return (
@@ -27,7 +43,13 @@ const MainSiteSeederAnnouncement = () => {
       <div className="absolute right-0 top-0 h-full w-12 z-10 bg-gradient-to-l from-primary-light dark:from-primary-dark via-transparent to-transparent pointer-events-none" />
 
       <div className="marquee-wrapper">
-        <div className="marquee-track text-lg font-medium whitespace-nowrap">
+        <div
+          ref={marqueeRef}
+          style={{
+            animation: `marquee ${duration}s linear infinite`,
+          }}
+          className="marquee-track text-lg font-medium whitespace-nowrap"
+        >
           {announcements.map((a) => (
             <React.Fragment key={a.id}>
               <span className="mx-10 ">{a.message}</span>

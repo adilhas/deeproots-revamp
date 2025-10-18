@@ -79,7 +79,7 @@ const NotificationCard = ({
   }, [visibleMessages]);
 
   return (
-    <div className="w-full rounded-2xl overflow-hidden justify-between bg-white border border-[#D4D4D4] flex flex-col h-[250px]">
+    <div className="w-full rounded-2xl overflow-hidden justify-between bg-white border border-[#D4D4D4] flex flex-col h-[300px]">
       <div className="bg-[#E9E9E9] px-4 py-3 flex flex-col rounded-t-2xl">
         <h2 className="font-semibold text-black text-2xl mb-3">{title}</h2>
       </div>
@@ -121,13 +121,12 @@ const NotificationCard = ({
 
       {canSend && (
         <div className="px-4 py-3 border-t border-[#E5E5E5] flex gap-4 items-center">
-          <input
-            type="text"
+          <textarea
             placeholder="Broadcast message"
-            maxLength={40}
+            maxLength={300}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="px-4 w-full py-2 rounded-full border border-gray-300 bg-white text-sm outline-none"
+            className="px-4 w-full py-2 rounded-xl border border-gray-300 bg-white text-sm outline-none"
           />
           <button
             onClick={handleAction}

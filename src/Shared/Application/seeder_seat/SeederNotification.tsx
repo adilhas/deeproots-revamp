@@ -2,7 +2,7 @@
 
 import NotificationModal from '@/Shared/NotificationModal';
 import { Bell, ChevronRight } from 'lucide-react';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import type { AnnouncementType } from '@/types/application';
 import { useApplication } from '@/context/ApplicationContext';
@@ -10,33 +10,35 @@ import { useApplication } from '@/context/ApplicationContext';
 const SeederNotification = () => {
   const { application } = useApplication();
   const [isOpen, setIsOpen] = useState(false);
+  const marqueeRef = useRef<HTMLDivElement | null>(null);
+  const [duration, setDuration] = useState(20);
   const [notifications, setNotifications] = useState<AnnouncementType[]>([
-    {
-      id: 'cmf1',
-      message: 'Foundation Seat Seeding is now live — secure your seat today.',
-      createdAt: '2025-09-08T08:35:29.524Z',
-      updatedAt: '2025-09-08T08:35:29.524Z',
-    },
-    {
-      id: 'cmf2',
-      message:
-        'Only 100 Foundation Seats available! Join the Foundation Circle before allocations close.',
-      createdAt: '2025-09-08T08:35:29.524Z',
-      updatedAt: '2025-09-08T08:35:29.524Z',
-    },
-    {
-      id: 'cmf3',
-      message: 'Pre-Approval in progress — check your dashboard for updates.',
-      createdAt: '2025-09-08T08:35:29.524Z',
-      updatedAt: '2025-09-08T08:35:29.524Z',
-    },
-    {
-      id: 'cmf4',
-      message:
-        'Welcome to DeepRoots Foundation — your voice helps shape the future. Together we rise: secure your Foundation Seat and build DeWorld.',
-      createdAt: '2025-09-08T08:35:29.524Z',
-      updatedAt: '2025-09-08T08:35:29.524Z',
-    },
+    // {
+    //   id: 'cmf1',
+    //   message: 'Foundation Seat Seeding is now live — secure your seat today.',
+    //   createdAt: '2025-09-08T08:35:29.524Z',
+    //   updatedAt: '2025-09-08T08:35:29.524Z',
+    // },
+    // {
+    //   id: 'cmf2',
+    //   message:
+    //     'Only 100 Foundation Seats available! Join the Foundation Circle before allocations close.',
+    //   createdAt: '2025-09-08T08:35:29.524Z',
+    //   updatedAt: '2025-09-08T08:35:29.524Z',
+    // },
+    // {
+    //   id: 'cmf3',
+    //   message: 'Pre-Approval in progress — check your dashboard for updates.',
+    //   createdAt: '2025-09-08T08:35:29.524Z',
+    //   updatedAt: '2025-09-08T08:35:29.524Z',
+    // },
+    // {
+    //   id: 'cmf4',
+    //   message:
+    //     'Welcome to DeepRoots Foundation — your voice helps shape the future. Together we rise: secure your Foundation Seat and build DeWorld.',
+    //   createdAt: '2025-09-08T08:35:29.524Z',
+    //   updatedAt: '2025-09-08T08:35:29.524Z',
+    // },
   ]);
   const [loading, setLoading] = useState(true);
 
@@ -76,6 +78,20 @@ const SeederNotification = () => {
     };
   }, [application?.id]);
 
+  useEffect(() => {
+    if (marqueeRef.current) {
+      const totalWidth = marqueeRef.current.scrollWidth;
+      const containerWidth = marqueeRef.current.parentElement?.clientWidth || 1;
+      const distance = totalWidth + containerWidth;
+
+      // Adjust this value to control speed (e.g., 100px/sec)
+      const speed = 100;
+      const newDuration = distance / speed;
+
+      setDuration(newDuration);
+    }
+  }, [notifications]);
+
   return (
     <div className="my-5 bg-white p-2 rounded-4xl flex flex-row items-center w-full justify-between gap-2">
       <div className="indicator">
@@ -92,7 +108,13 @@ const SeederNotification = () => {
         {loading ? (
           <div>Loading notifications...</div>
         ) : notifications.length > 0 ? (
-          <div className="notification-marquee-track text-[#111827] font-medium gap-12">
+          <div
+            ref={marqueeRef}
+            style={{
+              animation: `marquee ${duration}s linear infinite`,
+            }}
+            className="notification-marquee-track text-[#111827] font-medium gap-12"
+          >
             {notifications.map((noti, idx) => (
               <div key={noti.id || idx} className="mx-6 flex-shrink-0">
                 {noti.message}

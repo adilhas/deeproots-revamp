@@ -11,10 +11,6 @@ export default async function handler(
   const authHeader = req.headers.authorization;
   const expectedSecret = process.env.CRON_SECRET;
 
-  // if (!authHeader || authHeader !== `Bearer ${expectedSecret}`) {
-  //   return res.status(401).json({ error: 'Unauthorized' });
-  // }
-
   if (!authHeader) {
     return res.status(401).json({ error: 'Missing Authorization header' });
   }
@@ -31,6 +27,28 @@ export default async function handler(
 
   const now = new Date();
   const clientUrl = process.env.NEXTAUTH_URL || 'http://localhost:3000';
+
+  // 0. Pre-Approval Reminder Logic (every 12h after applicationApprovedAt)
+  const preApprovalPending = await prisma.privateSeedSubmission.findMany({
+    where: {
+      applicationStatus: 'approved',
+      preApproval: 'not-submitted',
+      applicationApprovedAt: { not: null },
+    },
+  });
+
+  for (const s of preApprovalPending) {
+    const approvedAt = s.applicationApprovedAt!;
+    const hours = (now.getTime() - approvedAt.getTime()) / (1000 * 60 * 60);
+
+    // Send a reminder every 12 hours (12h, 24h, 36h, etc.)
+    if (hours % 12 < 0.2) {
+      await sendSeedReminder(s.email, 'preApproval_pending', {
+        fullName: s.fullName || 'Seeder',
+        url: clientUrl,
+      });
+    }
+  }
 
   // 1. Deal Room Reminder Logic
   const pending = await prisma.privateSeedSubmission.findMany({

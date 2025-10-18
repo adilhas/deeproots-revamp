@@ -19,27 +19,11 @@ const NotificationModal: React.FC<NotificationModalProps> = ({
   // setNotifications,
 }) => {
   if (!isOpen) return null;
-  // const markAsRead = async (id: string) => {
-  //   try {
-  //     await fetch('/api/notifications/read', {
-  //       method: 'POST',
-  //       headers: { 'Content-Type': 'application/json' },
-  //       body: JSON.stringify({ id }),
-  //     });
-
-  //     setNotifications((prev) =>
-  //       prev.map((notif) =>
-  //         notif.id === id ? { ...notif, isRead: true } : notif
-  //       )
-  //     );
-  //   } catch (err) {
-  //     console.error('Failed to mark notification as read', err);
-  //   }
-  // };
 
   return (
     <div className="fixed inset-0 px-4 z-50 flex items-center justify-center bg-black/30">
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-[707px] h-[60vh] overflow-y-auto  p-6 relative">
+      {/* Remove overflow from modal, only limit height */}
+      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-[707px] max-h-[80vh] p-6 relative flex flex-col">
         {/* Close button */}
         <button
           className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
@@ -49,7 +33,7 @@ const NotificationModal: React.FC<NotificationModalProps> = ({
         </button>
 
         {/* Header */}
-        <div className="flex items-center gap-2 mb-4">
+        <div className="flex items-center gap-2 mb-4 flex-shrink-0">
           <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center">
             <svg
               className="w-3.5 h-3.5 text-blue-500"
@@ -62,29 +46,20 @@ const NotificationModal: React.FC<NotificationModalProps> = ({
           <h2 className="text-lg font-semibold text-gray-800">Notification</h2>
         </div>
 
-        <div className="space-y-6 max-h-[60vh] overflow-y-auto pr-2">
+        {/* Notification list - only this part scrolls */}
+        <div className="space-y-6 overflow-y-auto pr-2 flex-1">
           {notifications.length === 0 ? (
-            <div className="text-center">No Notifications</div>
+            <div className="text-center text-gray-500">No Notifications</div>
           ) : (
-            notifications &&
             notifications.map((notif: AnnouncementType, index) => (
               <div
                 key={index}
-                className="flex justify-between items-start cursor-pointer"
-                // onClick={() => markAsRead(notif.id)}
+                className="flex flex-col md:flex-row justify-between gap-2 items-start cursor-pointer"
               >
                 <div className="flex items-start gap-2">
-                  {/* <span
-                    className={`w-2.5 h-2.5 rounded-full mt-1 ${
-                      notif.isRead ? 'bg-gray-300' : 'bg-blue-600'
-                    }`}
-                  /> */}
-                  <div>
-                    {/* <h3 className={`text-sm font-semibold `}>{notif.message}</h3> */}
-                    <p className="text-xs text-gray-500 mt-1 leading-snug">
-                      {notif.message}
-                    </p>
-                  </div>
+                  <p className="text-xs text-gray-500 leading-snug">
+                    {notif.message}
+                  </p>
                 </div>
                 <span className="text-xs text-gray-400 whitespace-nowrap">
                   {formatDistanceToNow(new Date(notif.updatedAt), {

@@ -68,6 +68,9 @@ export default async function handler(
       }
 
       dataToUpdate.applicationStatus = applicationStatus;
+      if (applicationStatus === 'approved') {
+        dataToUpdate.applicationApprovedAt = new Date();
+      }
     }
 
     if (preApproval) {
