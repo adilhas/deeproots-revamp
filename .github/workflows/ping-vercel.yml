@@ -17,6 +17,7 @@ jobs:
         run: |
           echo "🔁 Triggering deal room cron at $(date)"
 
+          # ✅ Validate secrets
           if [ -z "${NEXTAUTH_URL}" ]; then
               echo "❌ NEXTAUTH_URL is not set!"
               exit 1
@@ -26,11 +27,12 @@ jobs:
               exit 1
           fi
 
+          # 🌐 Ping the endpoint
           echo "🌐 Pinging: ${NEXTAUTH_URL}/api/cron/maintenance"
 
           RESPONSE=$(curl -s -w "\n%{http_code}" \
-            -L \
             -H "Authorization: Bearer ${CRON_SECRET}" \
+            --location-trusted \
             "${NEXTAUTH_URL}/api/cron/maintenance")
 
           BODY=$(echo "$RESPONSE" | head -n 1)
@@ -39,6 +41,7 @@ jobs:
           echo "🔎 Status code: $STATUS_CODE"
           echo "📦 Response body: $BODY"
 
+          # ❌ Exit if non-200
           if [ "$STATUS_CODE" -ne 200 ]; then
               echo "❌ Endpoint returned non-200 status code."
               exit 2
