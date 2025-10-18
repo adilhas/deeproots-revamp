@@ -43,6 +43,7 @@ model PrivateSeedSubmission {
   morePayments          MorePayment[]
   canAddFund            String            @default("not-submitted")
   applicationApprovedAt DateTime?
+  seederTokens          SeederAccountToken[]
 
   @@index([id])
   @@index([email])
@@ -102,7 +103,9 @@ enum PaymentStatus {
 
 model SeederAccountToken {
   id        String   @id @default(cuid())
-  email     String
+  submission   PrivateSeedSubmission @relation(fields: [submissionId], references: [id])
+  submissionId String @unique
+  email     String   
   token     String   @unique
   expiresAt DateTime
   used      Boolean  @default(false)

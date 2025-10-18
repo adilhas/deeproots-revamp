@@ -1,6 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { sendSeedReminder } from '@/lib/sendReminder';
+import { render } from '@react-email/render';
+
 import { prisma } from '@/lib/prisma';
+import { transporter } from '@/lib/mailer';
+import React from 'react';
+import CompleteAccountReminderEmail from '@/emails/CompleteAccountReminder';
 
 export default async function handler(
   req: NextApiRequest,
@@ -94,13 +99,59 @@ export default async function handler(
   }
 
   // 2. Delete submissions older than 12h without passwordHash
-  const twelveHoursAgo = new Date(Date.now() - 12 * 60 * 60 * 1000);
-  const deletedSubmissions = await prisma.privateSeedSubmission.deleteMany({
+  // const twelveHoursAgo = new Date(Date.now() - 12 * 60 * 60 * 1000);
+  // const deletedSubmissions = await prisma.privateSeedSubmission.deleteMany({
+  //   where: {
+  //     passwordHash: null,
+  //     createdAt: { lt: twelveHoursAgo },
+  //   },
+  // });
+
+  const fourDaysAgo = new Date(Date.now() - 4 * 24 * 60 * 60 * 1000);
+  const inactiveSubmissions = await prisma.privateSeedSubmission.findMany({
     where: {
       passwordHash: null,
-      createdAt: { lt: twelveHoursAgo },
+      createdAt: { gte: fourDaysAgo },
     },
   });
+
+  let remindersSent = 0;
+
+  for (const s of inactiveSubmissions) {
+    const createdAt = s.createdAt;
+    const hours = (now.getTime() - createdAt.getTime()) / (1000 * 60 * 60);
+
+    // Send reminder every 12 hours, up to 4 days (96 hours)
+    if (hours <= 96 && hours % 12 < 0.2) {
+      // Get the token from SeederAccountToken table
+      const tokenRecord = await prisma.seederAccountToken.findFirst({
+        where: { submissionId: s.id },
+      });
+
+      if (!tokenRecord) {
+        console.warn(`No SeederAccountToken found for submission ${s.email}`);
+        continue; // skip if no token
+      }
+
+      const token = tokenRecord.token;
+      const accountLink = `${process.env.NEXTAUTH_URL}/seeder/create-account?token=${token}`;
+
+      const subject = 'Reminder: Complete Your Account Setup to Proceed';
+      const html = await render(
+        React.createElement(CompleteAccountReminderEmail, {
+          link: accountLink,
+        })
+      );
+
+      await transporter.sendMail({
+        from: `"Team DEEPROOTS" <${process.env.EMAIL_USER}>`,
+        to: s.email,
+        subject,
+        html,
+      });
+      remindersSent += 1;
+    }
+  }
 
   // 3. Delete expired PasswordResetTokens (older than 1h)
   const oneHourAgo = new Date(Date.now() - 1 * 60 * 60 * 1000);
@@ -112,7 +163,8 @@ export default async function handler(
 
   return res.status(200).json({
     ok: true,
-    deletedInactiveSubmissions: deletedSubmissions.count,
+    // deletedInactiveSubmissions: deletedSubmissions.count,
+    inactiveSubmissionReminders: remindersSent,
     deletedExpiredResetTokens: deletedTokens.count,
   });
 }

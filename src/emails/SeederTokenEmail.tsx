@@ -85,10 +85,7 @@ export default function SeederTokenEmail({
           >
             Create Your Account
           </Link>
-          <Text style={{ fontSize: '16px', marginBottom: '20px' }}>
-            (This link will expire in 12 hours, so please complete your
-            registration as soon as possible.)
-          </Text>
+
           <Text style={{ fontSize: '14px', color: '#555', marginTop: '20px' }}>
             If you did not request this, you can safely ignore this email.
           </Text>

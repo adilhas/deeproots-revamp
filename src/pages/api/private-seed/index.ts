@@ -1,7 +1,7 @@
 import { prisma } from '@/lib/prisma';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import crypto from 'crypto';
-import { addHours } from 'date-fns';
+// import { addHours } from 'date-fns';
 import { render } from '@react-email/render';
 import SeederTokenEmail from '@/emails/SeederTokenEmail';
 import { getSeedTierFromCapital } from '@/lib/getSeedTierFromCapital';
@@ -68,10 +68,13 @@ export default async function handler(
 
       // Generate token
       const token = crypto.randomBytes(32).toString('hex');
-      const expiresAt = addHours(new Date(), 12);
+      // const expiresAt = addHours(new Date(), 12);
+      const expiresAt = new Date();
+      expiresAt.setFullYear(expiresAt.getFullYear() + 1);
 
       await prisma.seederAccountToken.create({
         data: {
+          submissionId: submission.id,
           email,
           token,
           expiresAt,
