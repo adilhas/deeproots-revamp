@@ -9,8 +9,12 @@ export default function CountdownTimer() {
   });
 
   useEffect(() => {
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 100);
+    // const targetDate = new Date();
+    // targetDate.setDate(targetDate.getDate() + 100);
+    // start date (16 Oct 2025)
+    const startDate = new Date('2025-10-16T00:00:00');
+    // Target = start date + 60 days
+    const targetDate = new Date(startDate.getTime() + 60 * 24 * 60 * 60 * 1000);
 
     const interval = setInterval(() => {
       const now = new Date();
@@ -47,13 +51,13 @@ export default function CountdownTimer() {
         {timeUnits.map((unit) => (
           <div
             key={unit.label}
-            className="flex flex-col items-center min-w-13 sm:min-w-16"
+            className="flex  flex-col items-center min-w-13 sm:min-w-16"
           >
             <span
-              className=" flex flex-col justify-center  border border-[#FFFFFF29]  leading-tight px-6 lg:px-8 py-2 rounded-2xl"
+              className=" flex w-full flex-col justify-center  border border-[#FFFFFF29]  leading-tight px-3 md:px-6 lg:px-8 py-2 rounded-2xl"
               style={{ boxShadow: '0px 3px 8px 0px #000000BD inset' }}
             >
-              <div className="w-fit mx-auto text-center text-xl lg:text-3xl md:text-2xl">
+              <div className="w-fit mx-auto text-center text-sm lg:text-3xl md:text-2xl">
                 {unit.value}
               </div>
               <div className="text-xs w-fit justify-center text-center mx-auto">
