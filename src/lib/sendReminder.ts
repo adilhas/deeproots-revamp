@@ -7,7 +7,7 @@ import DealRoomExpiredMail from '@/emails/DealRoomExpiredMail';
 import PreApprovalReminder from '@/emails/PreApprovalReminder';
 export async function sendSeedReminder(
   email: string,
-  type: '12h' | '22h' | 'declined_by_system' | 'preApproval_pending',
+  type: '12h' | '2h' | 'declined_by_system' | 'preApproval_pending',
   props: { fullName: string; url: string }
 ) {
   let subject = '';
@@ -24,7 +24,7 @@ export async function sendSeedReminder(
       );
       break;
 
-    case '22h':
+    case '2h':
       subject = 'Final Reminder: Deal Room Expires in 2 Hours';
       html = await render(
         React.createElement(TwoHrsLeftDealRoom, {
