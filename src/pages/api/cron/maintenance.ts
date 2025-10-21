@@ -59,21 +59,46 @@ export default async function handler(
   const pending = await prisma.privateSeedSubmission.findMany({
     where: {
       preApproval: 'approved',
-      preApprovalUpdatedAt: { not: null },
+      dealRoomExpireIn: { not: null },
       dealRoom: 'not-submitted',
     },
   });
 
   for (const s of pending) {
-    const updatedAt = s.preApprovalUpdatedAt!;
-    const hours = (now.getTime() - updatedAt.getTime()) / (1000 * 60 * 60);
-
+    // const updatedAt = s.preApprovalUpdatedAt!;
+    // const hours = (now.getTime() - updatedAt.getTime()) / (1000 * 60 * 60);
+    const expireAt = s.dealRoomExpireIn;
+    if (!expireAt) continue; // skip if no expiration set
+    const hoursLeft = (expireAt.getTime() - now.getTime()) / (1000 * 60 * 60);
     const reminderProps = {
       fullName: s.fullName || 'Seeder',
       url: clientUrl,
     };
 
-    if (!s.firstReminderSent && hours >= 12 && hours < 22) {
+    // if (!s.firstReminderSent && hours >= 12 && hours < 22) {
+    //   await sendSeedReminder(s.email, '12h', reminderProps);
+    //   await prisma.privateSeedSubmission.update({
+    //     where: { id: s.id },
+    //     data: { firstReminderSent: true },
+    //   });
+    // }
+
+    // if (!s.secondReminderSent && hours >= 22 && hours < 24) {
+    //   await sendSeedReminder(s.email, '22h', reminderProps);
+    //   await prisma.privateSeedSubmission.update({
+    //     where: { id: s.id },
+    //     data: { secondReminderSent: true },
+    //   });
+    // }
+
+    // if (hours >= 24 && s.dealRoom !== 'declined') {
+    //   await prisma.privateSeedSubmission.update({
+    //     where: { id: s.id },
+    //     data: { dealRoom: 'declined', isDealRoomExpired: true },
+    //   });
+    //   await sendSeedReminder(s.email, 'declined_by_system', reminderProps);
+
+    if (!s.firstReminderSent && hoursLeft <= 12 && hoursLeft > 2) {
       await sendSeedReminder(s.email, '12h', reminderProps);
       await prisma.privateSeedSubmission.update({
         where: { id: s.id },
@@ -81,7 +106,7 @@ export default async function handler(
       });
     }
 
-    if (!s.secondReminderSent && hours >= 22 && hours < 24) {
+    if (!s.secondReminderSent && hoursLeft <= 2 && hoursLeft > 0) {
       await sendSeedReminder(s.email, '22h', reminderProps);
       await prisma.privateSeedSubmission.update({
         where: { id: s.id },
@@ -89,10 +114,13 @@ export default async function handler(
       });
     }
 
-    if (hours >= 24 && s.dealRoom !== 'declined') {
+    if (hoursLeft <= 0 && s.dealRoom !== 'declined') {
       await prisma.privateSeedSubmission.update({
         where: { id: s.id },
-        data: { dealRoom: 'declined', isDealRoomExpired: true },
+        data: {
+          dealRoom: 'declined',
+          isDealRoomExpired: true,
+        },
       });
       await sendSeedReminder(s.email, 'declined_by_system', reminderProps);
     }

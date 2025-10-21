@@ -9,11 +9,9 @@ const DealRoomCountdown = () => {
 
   const expiryRef = useRef<number | null>(null);
 
-  if (!expiryRef.current && application?.preApprovalUpdatedAt) {
+  if (!expiryRef.current && application?.dealRoomExpireIn) {
     // expiryRef.current = new Date().getTime() + 30 * 1000; // 30 seconds countdown
-    expiryRef.current =
-      new Date(application.preApprovalUpdatedAt).getTime() +
-      24 * 60 * 60 * 1000;
+    expiryRef.current = new Date(application.dealRoomExpireIn).getTime();
   }
 
   const getTimeLeft = () => {

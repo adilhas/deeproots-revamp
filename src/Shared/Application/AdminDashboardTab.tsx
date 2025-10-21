@@ -35,14 +35,14 @@ const AdminDashboardTab: React.FC<AdminDashboardProps> = ({
     },
     {
       title: 'Pre-approval',
-      description: 'Sign NDA & Submit relevant documents',
+      description: 'Sign NDA & Submit relevant documents.',
       date: formatDate(application?.ndaSubmission?.acceptedAt ?? ''),
       status: application?.preApproval,
       tabName: 'pre-approval',
     },
     {
       title: 'Deal Room',
-      description: 'Sign NDA Submit relvant Documents',
+      description: 'Complete Payment and secure your foundation seat.',
       date: formatDate(application?.paymentDetails?.updatedAt ?? ''),
       status: application?.dealRoom,
       tabName: 'deal-room',
@@ -85,7 +85,7 @@ const AdminDashboardTab: React.FC<AdminDashboardProps> = ({
           </div>
           <div className="flex items-center mb-3 flex-wrap justify-between">
             <div>{data.description}</div>
-            {data.status !== 'not-submitted' && (
+            {data.status === 'approved' && (
               <div className="text-sm">{data.date}</div>
             )}{' '}
           </div>

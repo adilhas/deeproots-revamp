@@ -5,6 +5,7 @@ import { useApplication } from '@/context/ApplicationContext';
 import PaymentDetails from './dealroom/PaymentDetails';
 import SeederManagementNote from './SeederManagementNote';
 import ExclusiveSeedTerms from './dealroom/ExclusiveSeedTerms';
+import DealRoomExtenModal from './dealroom/DealRoomExtendModal';
 // import DealSummaryAdmin from './DealSummaryAdmin';
 
 const AdminDealRoom = () => {
@@ -13,8 +14,13 @@ const AdminDealRoom = () => {
   // console.log(application);
   if (application?.isDealRoomExpired) {
     return (
-      <div className="text-center text-2xl">
-        Seeder Did not submitted payment within time limit. Deal room expired.
+      <div>
+        <div className="text-center text-2xl">
+          Seeder Did not submitted payment within time limit. Deal room expired.
+        </div>
+        <div className="w-fit mx-auto mt-3">
+          <DealRoomExtenModal />
+        </div>
       </div>
     );
   }

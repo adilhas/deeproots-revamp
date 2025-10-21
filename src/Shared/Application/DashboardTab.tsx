@@ -33,7 +33,7 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
     },
     {
       title: 'Pre-approval',
-      description: 'Sign NDA Submit relvant Documents',
+      description: 'Sign NDA & Submit relevant documents.',
       date: formatDate(application.ndaSubmission?.acceptedAt ?? ''),
       status:
         application.applicationStatus === 'approved'
@@ -43,7 +43,7 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
     },
     {
       title: 'Deal Room',
-      description: 'Sign NDA Submit relvant Documents',
+      description: 'Complete Payment and secure your foundation seat.',
       date: formatDate(application.updatedAt ?? ''),
       status:
         application.preApproval === 'approved'

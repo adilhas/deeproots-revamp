@@ -98,12 +98,12 @@ export default async function handler(
         to: process.env.EMAIL_USER, // Send to admin
         subject: 'New Seeder Application Submitted',
         html: `
-    <p><strong>${fullName}</strong> (${email}) has submitted a seeder application.</p>
-    <p>Visit the admin dashboard to review the application:</p>
-    <a href="${process.env.NEXTAUTH_URL}/admin/applications" target="_blank">
-      Go to Dashboard
-    </a>
-  `,
+        <p><strong>${fullName}</strong> (${email}) has submitted a seeder application.</p>
+        <p>Visit the admin dashboard to review the application:</p>
+        <a href="${process.env.NEXTAUTH_URL}/admin/applications" target="_blank">
+          Go to Dashboard
+        </a>
+      `,
       });
 
       return res.status(200).json({

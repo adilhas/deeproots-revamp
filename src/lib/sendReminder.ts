@@ -13,32 +13,6 @@ export async function sendSeedReminder(
   let subject = '';
   let html = '';
 
-  // if (type === '12h') {
-  //   subject = '12-hour Reminder: Deal Room Access Expires Soon';
-  //   html = await render(
-  //     React.createElement(TwelveHrsLeftDealRoom, {
-  //       fullName: props?.fullName,
-  //       url: props.url,
-  //     })
-  //   );
-  // } else if (type === '22h') {
-  //   subject = 'Final Reminder: Deal Room Expires in 2 Hours';
-  //   html = await render(
-  //     React.createElement(TwoHrsLeftDealRoom, {
-  //       fullName: props?.fullName,
-  //       url: props.url,
-  //     })
-  //   );
-  // } else {
-  //   subject = 'Deal Room Automatically Declined';
-  //   html = await render(
-  //     React.createElement(DealRoomExpiredMail, {
-  //       fullName: props?.fullName,
-  //       url: props.url,
-  //     })
-  //   );
-  // }
-
   switch (type) {
     case '12h':
       subject = '12-hour Reminder: Deal Room Access Expires Soon';
@@ -61,7 +35,7 @@ export async function sendSeedReminder(
       break;
 
     case 'declined_by_system':
-      subject = 'Deal Room Automatically Declined';
+      subject = 'Your Deal Room Expired and Declined';
       html = await render(
         React.createElement(DealRoomExpiredMail, {
           fullName: props.fullName,

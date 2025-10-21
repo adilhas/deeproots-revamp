@@ -44,6 +44,7 @@ model PrivateSeedSubmission {
   canAddFund            String            @default("not-submitted")
   applicationApprovedAt DateTime?
   seederTokens          SeederAccountToken[]
+  dealRoomExpireIn      DateTime?
 
   @@index([id])
   @@index([email])

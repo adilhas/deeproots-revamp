@@ -32,6 +32,7 @@ export type ApplicationDataType = {
   morePayments: MorePaymentType[];
   canAddFund: StatusType;
   applicationApprovedAt?: string;
+  dealRoomExpireIn?: string;
 };
 
 export type StatusType =

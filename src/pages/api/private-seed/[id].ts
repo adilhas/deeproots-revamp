@@ -80,6 +80,9 @@ export default async function handler(
 
       dataToUpdate.preApproval = preApproval;
       dataToUpdate.preApprovalUpdatedAt = new Date();
+      dataToUpdate.dealRoomExpireIn = new Date(
+        Date.now() + 24 * 60 * 60 * 1000
+      );
     }
 
     if (usdtAddress !== undefined) {
