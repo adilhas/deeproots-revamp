@@ -43,8 +43,11 @@ const ProcessSteps = () => {
     {
       title: 'Deal Room Received',
       description: 'Seeder accesses Deal Room, submits payment.',
-      statusColor:
-        application?.dealRoom !== 'not-submitted' ? '#4BE562' : '#D9D9D9',
+      statusColor: application?.isDealRoomExpired
+        ? '#E78181'
+        : application?.dealRoom !== 'not-submitted'
+          ? '#4BE562'
+          : '#D9D9D9',
     },
 
     {
