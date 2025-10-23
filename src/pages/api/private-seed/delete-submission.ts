@@ -34,7 +34,7 @@ export default async function handler(
       prisma.paymentDetails.deleteMany({ where: { submissionId: id } }),
       prisma.morePayment.deleteMany({ where: { submissionId: id } }),
       prisma.privateSeedSubmission.delete({ where: { id } }),
-      prisma.seederAccountToken.delete({ where: { submissionId: id } }),
+      prisma.seederAccountToken.deleteMany({ where: { submissionId: id } }),
     ]);
 
     await deleteFoldersFromSupabase(id, ['kyc', 'payments', 'receipts', 'nda']);
