@@ -37,7 +37,7 @@ export const DropdownField: React.FC<DropdownFieldProps> = ({
       </div>
       <ul
         tabIndex={0}
-        className="dropdown-content z-[1] menu p-2 shadow bg-white dark:bg-[#303030] rounded-box w-full max-h-60 overflow-y-auto"
+        className="dropdown-content z-[1] menu p-2 shadow bg-white dark:bg-[#303030] rounded-box w-full overflow-y-auto"
       >
         {options.map((opt) => {
           const isSelected = isMulti

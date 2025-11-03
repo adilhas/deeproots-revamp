@@ -8,8 +8,8 @@ import {
   PiUsersFour,
 } from 'react-icons/pi';
 import { JSX } from 'react';
-import { MdOutlineTranslate } from 'react-icons/md';
 import { useThemeContext } from '@/context/ThemeContext';
+import { BsGraphUpArrow } from 'react-icons/bs';
 
 interface WaysToContributeType {
   icon: JSX.Element;
@@ -37,7 +37,7 @@ const WaysToContribute = () => {
     },
     {
       icon: (
-        <MdOutlineTranslate className="w-6 h-6 text-[#1570EF] dark:text-[#84CAFF]" />
+        <BsGraphUpArrow className="w-6 h-6 text-[#1570EF] dark:text-[#84CAFF]" />
       ),
       bgColor: 'bg-[#EFF8FF] dark:bg-[#194185]',
       borderColor: 'border-[#B2DDFF] dark:border-[#2E90FA]',
@@ -57,16 +57,16 @@ const WaysToContribute = () => {
       borderColor: 'border-[#FB923C] dark:border-[#FB923C]',
     },
     {
+      icon: <PiGameController className="w-6 h-6" />,
+      bgColor: 'bg-[#D1FAE5] dark:bg-[#064E3B]',
+      borderColor: 'border-[#34D399] dark:border-[#34D399]',
+    },
+    {
       icon: (
         <PiGraduationCapBold className="w-6 h-6 text-[#DB2777] dark:text-[#F9A8D4]" />
       ),
       bgColor: 'bg-[#FFE3F2] dark:bg-[#831843]',
       borderColor: 'border-[#F472B6] dark:border-[#F472B6]',
-    },
-    {
-      icon: <PiGameController className="w-6 h-6" />,
-      bgColor: 'bg-[#D1FAE5] dark:bg-[#064E3B]',
-      borderColor: 'border-[#34D399] dark:border-[#34D399]',
     },
   ];
   return (

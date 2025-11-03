@@ -15,10 +15,12 @@ import {
   defaultVolunteerForm,
   handleVolunteerSelect,
 } from './volunteerFormUtils';
+import { toast } from 'react-toastify';
 
 const VolunteerForm = () => {
   const { t } = useTranslation('connect/volunteer');
-  const [formData, setFormData] = useState(defaultVolunteerForm);
+  const [formData, setFormData] =
+    useState<typeof defaultVolunteerForm>(defaultVolunteerForm);
 
   const handleInput = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -34,6 +36,76 @@ const VolunteerForm = () => {
     }));
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Required fields (except shortText)
+    const requiredFields: (keyof typeof defaultVolunteerForm)[] = [
+      'fullName',
+      'email',
+      'telegram',
+      'country',
+      'timezone',
+      'language',
+      'role',
+      'hours',
+      'whyJoin',
+      'whatValue',
+      'experience',
+      'portfolio',
+      'consent',
+    ];
+
+    for (const field of requiredFields) {
+      const value = formData[field];
+      const isEmpty = Array.isArray(value)
+        ? value.length === 0
+        : typeof value === 'boolean'
+          ? value === false
+          : !value;
+
+      if (isEmpty) {
+        toast.info(`⚠️ Please fill in the ${field} field.`);
+        return;
+      }
+    }
+
+    // Construct email content
+    const subject = encodeURIComponent(
+      `🌱 Volunteer Application from ${formData.fullName}`
+    );
+
+    const body = encodeURIComponent(
+      `
+🌿 New Volunteer Application
+
+👤 Name: ${formData.fullName}
+📧 Email: ${formData.email}
+💬 Telegram: ${formData.telegram}
+🌍 Country: ${formData.country}
+🕒 Timezone: ${formData.timezone}
+🗣️ Language: ${formData.language}
+🎯 Role: ${formData.role}
+⏱️ Hours: ${formData.hours}
+💼 Experience: ${formData.experience}
+🔗 Portfolio: ${formData.portfolio}
+
+💡 Why Join:
+${formData.whyJoin}
+
+✨ What Value You Bring:
+${formData.whatValue}
+
+📝 Short Text (optional):
+${formData.shortText || '—'}
+`
+    );
+
+    // Open user's mail app
+    const mailtoLink = `mailto:connect@deeproots.earth?subject=${subject}&body=${body}`;
+    window.location.href = mailtoLink;
+  };
+
   return (
     <section id="volunteer-form" className="max-w-2xl mx-auto px-4 py-16">
       <h1 className="text-3xl mb-6 font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-gradient-from to-gradient-to w-fit mx-auto font-orbitron">
@@ -43,7 +115,7 @@ const VolunteerForm = () => {
         {t('form.subtitle')}
       </p>
 
-      <form className="space-y-4">
+      <form className="space-y-4" onSubmit={handleSubmit}>
         {/* Simple Inputs */}
         {(['fullName', 'email', 'telegram'] as const).map((name) => (
           <label
@@ -115,7 +187,33 @@ const VolunteerForm = () => {
           label={t('form.roles')}
           icon={<PiMedalLight />}
           field="role"
-          options={['Community Moderator', 'Translator', 'Educator']}
+          options={[
+            'Community Moderator',
+            'Operations Assistant',
+            'Foundation Coordinator',
+            'Telegram / X / LinkedIn  Manager',
+            'Social Media Strategist',
+            'Content Creator',
+            'Brand Storyteller',
+            'Influencer Outreach / PR',
+            'Video Editor / Motion Designer',
+            'Web3 Developer (Solidity /Rust )',
+            'AI Engineer / Prompt Developer',
+            'API Integrator / Automation Assistant',
+            'Smart Contract Tester',
+            'Backend Developer — AI & Web3',
+            'UI/UX Designer',
+            'Graphic Designer',
+            '3D /2D Artist',
+            'NFT / Game Asset Designer',
+            'Game Designer (Rootopia)',
+            'Game Developer (Unity / Unreal)',
+            'Player Experience Tester',
+            'Gamification Architect',
+            'Educator / Mentor',
+            'Host / Podcaster (Saxophone)',
+            'Translator / Multilingual Support',
+          ]}
           value={formData.role}
           onSelect={(f, v) =>
             handleVolunteerSelect(formData, setFormData, f, v)
@@ -191,13 +289,13 @@ const VolunteerForm = () => {
         ))}
 
         {/* Consent */}
-        <label className="flex items-start gap-2 text-sm">
+        <label className="flex items-center gap-2 text-sm">
           <input
             name="consent"
             checked={formData.consent}
             onChange={handleInput}
             type="checkbox"
-            className="checkbox bg-white text-black placeholder-[#525252] dark:placeholder-[#F1F5F9]"
+            className="checkbox-success checkbox-lg bg-white text-black placeholder-[#525252] dark:placeholder-[#F1F5F9]"
           />
           <span>{t('form.consent')}</span>
         </label>
