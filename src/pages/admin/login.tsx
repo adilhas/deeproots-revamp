@@ -22,12 +22,11 @@ export default function AdminLogin() {
       if (role === 'admin') {
         router.push('/admin/applications');
       } else {
-        router.push('/seeder/dashboard'); // redirect seeder or unknown users
+        router.push('/seeder/dashboard');
       }
     }
   }, [status, session, router]);
 
-  // Optional: block UI rendering for already-authenticated non-admins
   if (status === 'authenticated' && session?.user?.role !== 'admin') {
     return router.push('/seeder/dashboard');
   }
@@ -42,7 +41,7 @@ export default function AdminLogin() {
     });
 
     if (res?.ok) {
-      window.location.href = '/admin/applications'; // trust backend role check
+      window.location.href = '/admin/applications';
     } else {
       toast.error('Invalid credentials');
       setLoading(false);

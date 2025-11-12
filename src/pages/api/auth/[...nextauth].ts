@@ -2,8 +2,6 @@ import NextAuth, { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { prisma } from '@/lib/prisma';
 import bcrypt from 'bcryptjs';
-import { loginRateLimiter } from '@/lib/rateLimiter';
-import { NextApiRequest } from 'next';
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -13,25 +11,8 @@ export const authOptions: NextAuthOptions = {
         username: { label: 'Email', type: 'text' },
         password: { label: 'Password', type: 'password' },
       },
-      async authorize(credentials, req) {
+      async authorize(credentials) {
         const { username, password } = credentials || {};
-        const _req = req as unknown as NextApiRequest;
-
-        const ip =
-          (_req.headers['x-forwarded-for'] as string)?.split(',')[0] ||
-          _req.socket?.remoteAddress ||
-          'unknown';
-
-        const { success, blocked, retryAfter } = await loginRateLimiter(ip);
-        if (!success) {
-          throw new Error(
-            blocked
-              ? `Too many failed attempts. Try again after ${Math.ceil(
-                  ((retryAfter ?? Date.now()) - Date.now()) / 1000 / 60
-                )} minutes.`
-              : 'Too many requests. Please try later.'
-          );
-        }
 
         if (!username || !password) {
           return null;
