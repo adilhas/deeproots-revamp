@@ -30,6 +30,8 @@ export default async function handler(
   }
 
   if (method === 'GET') {
+    const userRole = session.user.role;
+    const userId = session.user.id;
     try {
       const submission = await prisma.privateSeedSubmission.findUnique({
         where: { id: id as string },
@@ -50,13 +52,30 @@ export default async function handler(
         return res.status(404).json({ message: 'Submission not found' });
       }
 
-      return res.status(200).json(submission);
+      // ✅ Allow admins to access any submission
+      if (userRole === 'admin') {
+        return res.status(200).json(submission);
+      }
+
+      // ✅ Allow seeders to access only their own submission
+      if (userRole === 'seeder') {
+        if (submission.id === userId) {
+          return res.status(200).json(submission);
+        } else {
+          return res.status(403).json({ message: 'Forbidden' });
+        }
+      }
+
+      return res.status(403).json({ message: 'Forbidden' });
     } catch (error) {
       console.error('Error fetching submission by ID:', error);
       return res.status(500).json({ message: 'Internal Server Error' });
     }
   }
   if (method === 'PATCH') {
+    if (session.user.role !== 'admin') {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
     const { applicationStatus, preApproval, reason, usdcAddress, usdtAddress } =
       req.body;
 

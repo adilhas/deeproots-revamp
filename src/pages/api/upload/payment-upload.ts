@@ -75,6 +75,10 @@ export default async function handler(
         .json({ message: 'Missing or invalid payment fields' });
     }
 
+    if (session.user.id !== submissionId) {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
+
     if (!file.mimetype || !allowedMimeTypes.includes(file.mimetype)) {
       return res.status(400).json({
         message: 'Invalid file type. Only JPG, PNG, and PDF are allowed.',

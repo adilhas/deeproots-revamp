@@ -119,7 +119,7 @@ export default async function handler(
 
   if (req.method === 'GET') {
     const session = await getServerSession(req, res, authOptions);
-    if (!session) {
+    if (!session || session.user.role !== 'admin') {
       return res.status(401).json({ error: 'Unauthorized' });
     }
     try {

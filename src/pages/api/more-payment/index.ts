@@ -75,7 +75,7 @@ export default async function handler(
       where: { id: morePaymentId },
     });
 
-    if (!existingPayment) {
+    if (!existingPayment || existingPayment.submissionId !== session.user.id) {
       return res.status(404).json({ message: 'Payment request not found.' });
     }
 

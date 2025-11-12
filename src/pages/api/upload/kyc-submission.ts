@@ -22,7 +22,6 @@ const fieldToKycEnum: Record<string, KycDocumentType> = {
 };
 
 import type { Fields, Files } from 'formidable';
-import { uploadRateLimiter } from '@/lib/rateLimiter';
 import { enqueueFileScan } from '@/services/scanService';
 
 const parseForm = (req: NextApiRequest) =>
@@ -46,22 +45,6 @@ export default async function handler(
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
 
-  const ip =
-    (req.headers['x-forwarded-for'] as string)?.split(',')[0] ||
-    req.socket?.remoteAddress ||
-    'unknown';
-
-  const { success, blocked, retryAfter } = await uploadRateLimiter(ip);
-  if (!success) {
-    return res.status(429).json({
-      error: blocked
-        ? `Too many uploads. Try again after ${Math.ceil(
-            ((retryAfter ?? Date.now()) - Date.now()) / 1000 / 60
-          )} minutes.`
-        : 'Upload limit exceeded. Please try later.',
-    });
-  }
-
   try {
     const { fields, files } = await parseForm(req);
 
@@ -72,6 +55,10 @@ export default async function handler(
       return res.status(400).json({
         message: 'Missing required NDA details',
       });
+    }
+
+    if (session.user.id !== userId) {
+      return res.status(401).json({ error: 'Unauthorized' });
     }
 
     const allowedMimeTypes = ['application/pdf', 'image/png', 'image/jpeg'];

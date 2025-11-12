@@ -20,6 +20,9 @@ export default async function handler(
   if (!id) {
     return res.status(400).json({ message: 'Missing submission ID' });
   }
+  if (id !== session.user.id) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
 
   const numericAmount = Number(capital);
   if (!capital || isNaN(numericAmount) || numericAmount <= 0) {
