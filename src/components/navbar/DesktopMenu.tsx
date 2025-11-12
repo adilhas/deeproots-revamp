@@ -3,6 +3,7 @@ import { getMenuSectionData } from './headerMenuData';
 import { useTranslation } from 'next-i18next';
 
 type Props = {
+  // eslint-disable-next-line no-unused-vars
   onHover: (menuName: string) => void;
 };
 

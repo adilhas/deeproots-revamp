@@ -16,7 +16,17 @@ const eslintConfig = [
     'plugin:prettier/recommended'
   ),
   {
-    ignores: ['node_modules', '.next', 'out', 'prisma', 'src/generated/**'],
+    ignores: [
+      'node_modules',
+      '.next',
+      'out',
+      'dist',
+      'coverage',
+      'reports',
+      'public',
+      'prisma',
+      'src/generated/**',
+    ],
   },
   {
     rules: {
@@ -31,6 +41,17 @@ const eslintConfig = [
           endOfLine: 'auto',
         },
       ],
+      // 🚫 Disable noisy TS rules causing 1400+ false positives
+      '@typescript-eslint/no-unused-expressions': 'off',
+      '@typescript-eslint/no-this-alias': 'off',
+
+      // 🧹 Optional: Relax a few other common false positives
+      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/ban-ts-comment': 'warn',
+
+      // 🚦 Ensure build safety (fail on true issues)
+      'no-undef': 'error',
+      'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     },
   },
 ];

@@ -1,6 +1,6 @@
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import AuthLoader from './AuthLoader';
 
 export default function AuthGuard({ children }: { children: React.ReactNode }) {

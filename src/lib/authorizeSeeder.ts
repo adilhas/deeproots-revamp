@@ -3,7 +3,7 @@ type Credentials = {
   username: string;
   password: string;
 };
-export async function authorizeSeeder(credentials: Credentials | undefined) {
+export async function authorizeSeeder(_credentials: Credentials | undefined) {
   // Replace this with real DB logic later
   // if (
   //   credentials?.username === 'seeder@example.com' &&

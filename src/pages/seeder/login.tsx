@@ -5,7 +5,7 @@ import { Mail, Eye, EyeOff, Loader } from 'lucide-react';
 import { signIn, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { GrKey } from 'react-icons/gr';
 import { toast } from 'react-toastify';
 

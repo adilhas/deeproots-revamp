@@ -18,6 +18,7 @@ interface SeedingTierCardProps {
   handleTeirSelect?: () => void;
   benfitsTitle?: string;
   contriAmount?: string;
+  // eslint-disable-next-line no-unused-vars
   setContriAmount?: (value: string) => void;
   onSubmitAmount?: () => void;
   isLoading?: boolean;

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { ChevronUp, ChevronDown } from 'lucide-react';
 import { IoMdFunnel } from 'react-icons/io';

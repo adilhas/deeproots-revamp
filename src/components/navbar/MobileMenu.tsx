@@ -6,6 +6,7 @@ import { getMenuSectionData } from './headerMenuData';
 type Props = {
   isOpen: boolean;
   expandedItems: Record<string, boolean>;
+  // eslint-disable-next-line no-unused-vars
   toggleItem: (itemName: string) => void;
 };
 

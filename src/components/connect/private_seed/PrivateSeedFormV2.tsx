@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Mail, Phone } from 'lucide-react';
 import { PiMapPinArea, PiUser, PiUserCircleCheck } from 'react-icons/pi';
 import { useTranslation, Trans } from 'next-i18next';

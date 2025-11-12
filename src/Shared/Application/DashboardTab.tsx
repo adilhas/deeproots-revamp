@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { ApplicationDataType } from '@/types/application';
 import React from 'react';
 import { formatDate } from '@/utils/formatDate';

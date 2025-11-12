@@ -5,3 +5,8 @@ prisma
 src/generated
 # public
 /bin
+out/
+dist/
+public/
+reports/
+coverage/

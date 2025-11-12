@@ -1,7 +1,7 @@
 import { FaLinkedin, FaXTwitter } from 'react-icons/fa6';
 import { FaLink } from 'react-icons/fa';
 import { IoClose } from 'react-icons/io5';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 interface ShareBlogProps {
   isOpen: boolean;

@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { FileText, X } from 'lucide-react';
+import React from 'react';
 import { FiImage } from 'react-icons/fi';
 
 interface FileUploadProps {

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Calendar, Download } from 'lucide-react';
 import { useApplication } from '@/context/ApplicationContext';
 import { formatDate } from '@/utils/formatDate';

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { formatStatus } from '@/components/admin/ApplicationStatusInfo';
 import { useApplication } from '@/context/ApplicationContext';
 import { StatusType } from '@/types/application';

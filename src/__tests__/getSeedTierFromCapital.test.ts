@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { getSeedTierFromCapital } from '@/lib/getSeedTierFromCapital';
 
 describe('getSeedTierFromCapital', () => {

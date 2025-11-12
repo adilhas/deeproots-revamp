@@ -1,7 +1,7 @@
 'use client';
 
 import { BroadcastMessageType } from '@/types/application';
-import { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 type BroadcastContextType = {
   broadcasts: BroadcastMessageType[];

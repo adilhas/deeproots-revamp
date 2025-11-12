@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Eye, EyeOff, Loader, Mail } from 'lucide-react';
 import { GrKey } from 'react-icons/gr';

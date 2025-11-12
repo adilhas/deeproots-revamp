@@ -8,6 +8,7 @@ interface DashboardItem {
 }
 interface DashboardTabProps {
   setCurrentTab: (
+    // eslint-disable-next-line no-unused-vars
     tab: 'application' | 'pre-approval' | 'deal-room' | 'dashboard'
   ) => void;
 }

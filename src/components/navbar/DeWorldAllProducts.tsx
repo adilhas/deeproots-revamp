@@ -10,6 +10,7 @@ const DeWorldAllProducts = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
   const [hasEnteredDropdown, setHasEnteredDropdown] = useState(false);
+  // eslint-disable-next-line no-undef
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const { isDark } = useThemeContext();

@@ -9,6 +9,7 @@ interface Question {
 interface QuizQuestionGroupProps {
   questions: Question[];
   userSelections: Record<number, number | null>;
+  // eslint-disable-next-line no-unused-vars
   onSelect: (qIndex: number, optionIndex: number) => void;
 }
 

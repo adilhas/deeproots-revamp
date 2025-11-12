@@ -8,6 +8,7 @@ interface DropdownFieldProps {
   field: string;
   options: string[];
   value: string | string[];
+  // eslint-disable-next-line no-unused-vars
   onSelect: (field: string, value: string) => void;
 }
 

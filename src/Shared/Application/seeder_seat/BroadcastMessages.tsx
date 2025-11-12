@@ -19,6 +19,7 @@ const NotificationCard = ({
   buttonLabel: string;
   initialMessages?: BroadcastMessageType[];
   canSend?: boolean;
+  // eslint-disable-next-line no-unused-vars
   onNewNote?: (note: BroadcastMessageType) => void;
   loadingMessages?: boolean;
 }) => {

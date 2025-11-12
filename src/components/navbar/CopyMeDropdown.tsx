@@ -7,6 +7,7 @@ const CopyMeDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
   const [hasHoveredDropdown, setHasHoveredDropdown] = useState(false);
+  // eslint-disable-next-line no-undef
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
