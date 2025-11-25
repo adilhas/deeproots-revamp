@@ -183,6 +183,9 @@ export default function Footer({ className }: FooterProps) {
           </p>
         </div>
       </div>
+      <p className="text-[12px] dark:text-gray-400 mx-auto mt-10 text-center w-fit">
+        © 2025 DeepRoots • All Rights Reserved
+      </p>
     </footer>
   );
 }
