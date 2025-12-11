@@ -75,7 +75,7 @@ const sections = [
     icon: '🧠',
     title: 'INTELLECTUAL PROPERTY RIGHTS',
     content:
-      'All trademarks, code, content, UI/UX assets, and product names within the DEEPROOTS ecosystem are the intellectual property of DEEPROOTS BLOCKCHAIN LLC. Unauthorized reproduction, use, or modification is strictly prohibited.',
+      'All trademarks, code, content, UI/UX assets, and product names within the DEEPROOTS ecosystem are the intellectual property of DEEPROOTS Project. Unauthorized reproduction, use, or modification is strictly prohibited.',
   },
   {
     icon: '⚖️',
@@ -186,7 +186,7 @@ const LegalDisclaimerPage = () => {
 
       <p className="my-10">
         <strong>
-          DEEPROOTS Blockchain Ecosystem is operated by DEEPROOTS BLOCKCHAIN LLC
+          DEEPROOTS Blockchain Ecosystem is operated by DEEPROOTS Project
         </strong>
         , a limited liability company registered in the State of Wyoming, United
         States.

@@ -11,7 +11,7 @@ section: compliance
 
 This legal disclaimer applies to all users, contributors, participants, and partners engaging with the **DEEPROOTS Blockchain**, its digital assets (including **dRC tokens**), and all Web3 products and services within the **DeWorld Ecosystem**.  
 
-The DEEPROOTS Blockchain Ecosystem is operated by **DEEPROOTS BLOCKCHAIN LLC**, a limited liability company registered in the **State of Wyoming, United States**.  
+The DEEPROOTS Blockchain Ecosystem is operated by **DEEPROOTS Project**, a limited liability company registered in the **State of Wyoming, United States**.  
 
 ---
 
@@ -69,7 +69,7 @@ Nothing constitutes financial, investment, legal, or tax advice. Users should no
 ---
 
 ## 🧠 Intellectual Property Rights  
-- All **trademarks, code, content, UI/UX assets, and product names** within DEEPROOTS are the intellectual property of **DEEPROOTS BLOCKCHAIN LLC**.  
+- All **trademarks, code, content, UI/UX assets, and product names** within DEEPROOTS are the intellectual property of **DEEPROOTS Project**.  
 - Unauthorized reproduction, use, or modification is strictly prohibited.  
 
 ---
