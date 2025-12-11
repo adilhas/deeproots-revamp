@@ -188,8 +188,7 @@ const LegalDisclaimerPage = () => {
         <strong>
           DEEPROOTS Blockchain Ecosystem is operated by DEEPROOTS Project
         </strong>
-        , a limited liability company registered in the State of Wyoming, United
-        States.
+        , a decentralized initiative supported by its global community.
       </p>
 
       <p className="my-10">
