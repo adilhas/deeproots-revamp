@@ -56,7 +56,7 @@
     "ioredis": "^5.7.0",
     "libphonenumber-js": "^1.12.9",
     "lucide-react": "^0.509.0",
-    "next": "15.1.7",
+    "next": "15.1.9",
     "next-auth": "^4.24.11",
     "next-i18next": "^15.4.2",
     "next-sitemap": "^4.2.3",
