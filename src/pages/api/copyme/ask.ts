@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import OpenAI from 'openai';
 import { createClient } from '@supabase/supabase-js';
-import { askRateLimiter } from '@/lib/rateLimiter';
+// import { askRateLimiter } from '@/lib/rateLimiter';
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
 
@@ -14,7 +14,7 @@ type MatchDocument = {
   id: number;
   content: string;
   metadata: {
-    source: string; // JSONB structure
+    source: string;
   };
   similarity: number;
 };
@@ -29,24 +29,24 @@ export default async function handler(
   }
 
   try {
-    const ip =
-      req.headers['x-forwarded-for']?.toString().split(',')[0] ||
-      req.socket.remoteAddress ||
-      'unknown';
+    // const ip =
+    //   req.headers['x-forwarded-for']?.toString().split(',')[0] ||
+    //   req.socket.remoteAddress ||
+    //   'unknown';
 
-    const limit = await askRateLimiter(ip);
+    // const limit = await askRateLimiter(ip);
 
-    if (!limit.success) {
-      if (limit.blocked) {
-        return res.status(429).json({
-          error: 'Too many requests. You are temporarily blocked.',
-          retryAfter: limit.retryAfter,
-        });
-      }
-      return res.status(429).json({
-        error: 'Too many requests. Please slow down.',
-      });
-    }
+    // if (!limit.success) {
+    //   if (limit.blocked) {
+    //     return res.status(429).json({
+    //       error: 'Too many requests. You are temporarily blocked.',
+    //       retryAfter: limit.retryAfter,
+    //     });
+    //   }
+    //   return res.status(429).json({
+    //     error: 'Too many requests. Please slow down.',
+    //   });
+    // }
 
     const { messages } = req.body || {};
 
