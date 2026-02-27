@@ -45,7 +45,7 @@ export default function CountdownTimer() {
 
   const timeUnits = [
     { label: 'DAYS', value: '22' },
-    { label: 'HR', value: '02' },
+    { label: 'HR', value: '08' },
     { label: 'MIN', value: '26' },
     // { label: 'SEC', value: timeLeft.seconds.toString().padStart(2, '0') },
   ];
